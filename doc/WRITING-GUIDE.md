@@ -103,6 +103,24 @@ but the key logic.
 
 ---
 
+## Terminology
+
+- **Rete** — not RETE. Named after the Latin word for "net" by Charles Forgy (1970s). Not an acronym.
+- **Kanerva** — Pentti Kanerva, originator of hyperdimensional computing / Sparse Distributed Memory (1990s)
+- **McCarthy** — John McCarthy, inventor of LISP (1958). The symbolic AI lineage this work draws from.
+- The framing: this work deliberately embraces "ancient" and "fringe" AI — Rete, VSA/HDC, symbolic structure — that the modern ML orthodoxy ignores. That's not a weakness to hedge around. It's the thesis.
+- **The verb for what Holon does**: prefer **"recognition"** — it recognizes structure algebraically in high-dimensional space. Avoid "inference" (implies statistics), "reasoning" (implies symbolic AI in the classical sense), "prediction" (implies a training/serving split). When in doubt: "algebraic recognition".
+- **Holon vectors are NOT opaque.** Unlike neural network embeddings, Holon vectors are algebraically transparent — if you have the codebook (basis vectors), you can probe the vector and recover what's bound into it. The XDP rule derivation proves this: concrete filtering rules are extracted from learned vectors. Never describe hypervectors as black boxes. They are structured, queryable representations.
+- **Not neural.** There are no neurons, no weights, no activation functions. The term "programmatic neural memory" was considered and rejected. Prefer **"algebraic memory"** when describing engrams and the memory system.
+- **Deterministic encoding = consensus without synchronization.** Holon's encoder is effectively a hash function: same input → same vector on any machine. But unlike MD5/SHA, the output has exploitable geometric properties (similarity, decomposition, probing). This means distributed systems can achieve agreement on representations without coordination. Use this framing when discussing distributed or deployment implications.
+- **VSA** — Vector Symbolic Architecture (or Architectures)
+- **HDC** — Hyperdimensional Computing
+- **holon-rs** — lowercase, hyphenated
+- **holon-lab-ddos** — lowercase, hyphenated
+- Similarity metric in this work: **cosine similarity** over dense vectors, not Hamming distance over binary vectors
+
+---
+
 ## What to Avoid
 
 **Throat-clearing introductions.** Don't spend the first two paragraphs
@@ -179,7 +197,7 @@ and back it up with the mechanics of why rule-based systems drift.
 The most technically dense series. Do not simplify. Explain the eBPF
 verifier constraints we worked within, the exact structure of the XDP
 program, how the compiled tree communicates with the sidecar, why the
-RETE approach maps onto packet classification, and what "765ms before
+Rete approach maps onto packet classification, and what "765ms before
 drift-based detection" means at the packet level. Pull directly from
 `filter/src/lib.rs` — it's 2065 lines and it has the answers.
 

@@ -17,33 +17,54 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: "Overview",
-          items: [{ label: "Introduction", slug: "" }],
+          label: "The Story",
+          autogenerate: { directory: "blog" },
         },
         {
-          label: "Projects",
+          label: "The Library",
           items: [
             {
-              label: "Holon Core (Rust)",
+              label: "Python",
+              autogenerate: { directory: "projects/holon-python" },
+            },
+            {
+              label: "Rust",
               autogenerate: { directory: "projects/holon-rs" },
             },
             {
+              label: "Ruby (planned)",
+              autogenerate: { directory: "projects/holon-ruby" },
+            },
+            {
+              label: "Go (planned)",
+              autogenerate: { directory: "projects/holon-go" },
+            },
+            {
+              label: "Java (planned)",
+              autogenerate: { directory: "projects/holon-java" },
+            },
+            {
+              label: "Clojure (planned)",
+              autogenerate: { directory: "projects/holon-clojure" },
+            },
+          ],
+        },
+        {
+          label: "Demos",
+          items: [
+            {
               label: "DDoS Lab (eBPF/XDP)",
-              autogenerate: { directory: "projects/holon-lab-ddos" },
+              autogenerate: { directory: "demos/holon-lab-ddos" },
+            },
+            {
+              label: "Baseline Lab (LLM Traffic)",
+              autogenerate: { directory: "demos/holon-lab-baseline" },
             },
           ],
         },
         {
           label: "Guides",
           autogenerate: { directory: "guides" },
-        },
-        {
-          label: "Demos",
-          autogenerate: { directory: "demos" },
-        },
-        {
-          label: "Blog",
-          autogenerate: { directory: "blog" },
         },
       ],
     }),

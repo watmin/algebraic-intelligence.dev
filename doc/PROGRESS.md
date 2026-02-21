@@ -6,6 +6,16 @@ Update this file as posts move from outline → draft → published.
 
 ---
 
+## Prologue
+
+- `[~]` **Prologue: The Idea That Wouldn't Leave** — `blog/prologue.md`
+  The origin story: VSA itch from a Clojure/conj talk, years at Shield doing
+  informal research with no buy-in, Rete as the only win, post-AWS pivot,
+  LLM-assisted dev unlocking everything, Grok for ideation / Claude for code,
+  original DB use case, P vs NP detour, engram 750ms→3ms, naming.
+
+---
+
 ## Status Key
 
 - `[ ]` not started
@@ -31,6 +41,7 @@ naturally onto anomaly detection problems.
 - `[ ]` **1.2 — The Anomaly Detection Angle**
   Why anomaly detection is a natural fit. The baseline/drift model.
   Contrast with threshold-based and ML-heavy approaches.
+  Note: we use cosine similarity over dense vectors, not Hamming over binary.
 
 - `[ ]` **1.3 — Encoding the World**
   How arbitrary structured data (packets, JSON, time series) becomes a
@@ -46,6 +57,12 @@ The Python implementation was where we figured out what Holon actually was.
 Challenge batches 010–017 drove the design — each one forced a new capability.
 
 ### Posts
+
+- `[ ]` **2.0 — The Original Idea: Structural Querying**
+  Before anomaly detection — the database idea. Encoding JSON/EDN docs as
+  hypervectors for sub-document structural queries. "Which documents contain
+  this minimal JSON struct?" The Qdrant demo. Why we pivoted to streaming.
+  Note: engram work later closes the loop back to the DB use case.
 
 - `[ ]` **2.1 — Challenge 010: First Contact with Network Data**
   Anomaly detection on network traffic. F1=1.000, 8,339 req/sec.
@@ -68,7 +85,11 @@ Challenge batches 010–017 drove the design — each one forced a new capabilit
   Throughput numbers, where the bottlenecks were, and what that told us
   about what a production system would need.
 
-- `[ ]` **2.6 — What Python Taught Us**
+- `[ ]` **2.6 — The P vs NP Detour**
+  Challenge 004 and the omitted 005 batch. What VSA's combinatorial
+  structure representation might have to say here. Probably wrong. Maybe not.
+
+- `[ ]` **2.7 — What Python Taught Us**
   The ergonomics and API design that survived into Rust.
   What we threw out, what we kept, and why.
 
@@ -172,11 +193,11 @@ are brittle, why rules rot, and why a memory-based approach changes the calculus
 
 ## Series 6 — XDP + eBPF Scrubber
 
-*The implementation. Architecture, the compiled tree, the RETE sidecar.*
+*The implementation. Architecture, the compiled tree, the Rete sidecar.*
 
 The production system. How Holon's engram memory system runs at kernel
 speed in XDP, what the sidecar architecture looks like, and what's novel
-about the RETE-inspired compiled tree approach.
+about the Rete-inspired compiled tree approach.
 
 ### Posts
 
@@ -192,13 +213,14 @@ about the RETE-inspired compiled tree approach.
   Why detection lives in the sidecar, not the kernel.
   The compiled tree via sidecar and how it communicates back.
 
-- `[ ]` **5.4 — The RETE Approach**
-  What's RETE, why it maps onto packet classification, and what's novel
+- `[ ]` **5.4 — The Rete Approach**
+  What's Rete, why it maps onto packet classification, and what's novel
   about our compiled-tree variant for this use case.
 
 - `[ ]` **5.5 — Engram Memory at Kernel Speed**
   How engram minting and recall work in the eBPF context.
-  The 765ms advantage: firing before drift-based detection notices.
+  750ms → 3ms: what that number actually means at the packet level.
+  The engram fires in a single packet; the drift detector needs hundreds.
 
 - `[ ]` **5.6 — veth Lab: Testing Without Hardware**
   The virtual ethernet lab setup. How we stress tested the scrubber

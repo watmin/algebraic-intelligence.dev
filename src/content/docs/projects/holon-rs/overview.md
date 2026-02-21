@@ -1,8 +1,10 @@
 ---
-title: Holon Core
+title: Holon (Rust)
 description: Holographic reduced representations in Rust.
 ---
 
-Documentation for `holon-rs` — the core Rust library.
+Documentation for `holon-rs` — the Rust implementation.
 
-*Content coming soon.*
+**Repository:** [github.com/watmin/holon-rs](https://github.com/watmin/holon-rs)
+
+*Coming soon.*

@@ -1,0 +1,51 @@
+---
+title: Holon
+description: Ancient AI techniques. Microsecond recognition. Commodity hardware.
+template: splash
+hero:
+  tagline: Algebraic recognition on x86 and ARM. No GPU. No neural network. Just math — running at line rate on hardware you already have.
+  image:
+    file: ../../assets/logo.jpg
+    alt: Holon
+  actions:
+    - text: Read the Prologue
+      link: /blog/prologue/
+      icon: right-arrow
+    - text: GitHub
+      link: https://github.com/watmin
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="Microsecond operations" icon="rocket">
+    The Rust implementation runs VSA operations — encode, bind, bundle,
+    similarity — in microseconds. 12x faster than the Python prototype.
+  </Card>
+  <Card title="No GPU required" icon="laptop">
+    Cosine similarity over dense vectors on commodity x86 and ARM.
+    Microsecond-level algebraic recognition at packet rate.
+  </Card>
+  <Card title="Ancient AI, working" icon="puzzle">
+    McCarthy's Lisp (1958). Forgy's Rete (1974). Kanerva's HDC (1988).
+    Techniques the modern ML orthodoxy ignores — deployed at line rate.
+  </Card>
+  <Card title="Transparent vectors" icon="magnifier">
+    Not a black box. Holon vectors are algebraically decomposable —
+    probe them with basis vectors and recover the bound structure.
+  </Card>
+</CardGrid>
+
+## The work
+
+[**holon**](https://github.com/watmin/holon) *(Python)* — Where it started. The experimental lab that produced 17 challenge batches, F1=1.0 anomaly detection, and the encoding insight that made everything else possible.
+
+[**holon-rs**](https://github.com/watmin/holon-rs) — The Rust implementation. Encoder, accumulator, subspace, engram memory. 12x faster than Python. SIMD-accelerated.
+
+[**holon-lab-ddos**](https://github.com/watmin/holon-lab-ddos) — XDP + eBPF packet scrubber using Holon's engram memory for real-time DDoS mitigation. Zero-I/O functional pipeline. Rete-inspired compiled decision tree via sidecar.
+
+[**holon-lab-baseline**](https://github.com/watmin/holon-lab-baseline) — LLM-driven traffic generation. Playwright + Ollama agents producing organic WordPress HTTP traffic for realistic experiment baselines.
+
+[**algebraic-intelligence.dev**](https://github.com/watmin/algebraic-intelligence.dev) — This site.
