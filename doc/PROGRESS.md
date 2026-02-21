@@ -4,6 +4,8 @@ Tracking the narrative arc of the Holon project across all posts.
 Each top-level series will expand into multiple posts as we write them.
 Update this file as posts move from outline → draft → published.
 
+**Cross-repo timeline with commit-level detail:** see `doc/TIMELINE.md`
+
 ---
 
 ## Prologue
@@ -264,6 +266,7 @@ Quick reference for where to pull content when writing each post.
 
 | Source | Location |
 |--------|----------|
+| **Cross-repo timeline** | `doc/TIMELINE.md` |
 | Python README | `/holon/README.md` |
 | Python docs (83 files) | `/holon/docs/` |
 | Challenge learnings | `/holon/docs/` (batches 002–017) |
@@ -275,4 +278,5 @@ Quick reference for where to pull content when writing each post.
 | Holon lib entrypoint | `/holon-rs/src/lib.rs` |
 | Engram memory doc | `/holon-lab-ddos/veth-lab/docs/ENGRAM-MEMORY.md` |
 | eBPF filter impl | `/holon-lab-ddos/veth-lab/filter/src/lib.rs` |
-| Baseline lab | `holon-lab-baseline` (local clone, separate repo) |
+| Baseline lab | `/holon/holon-lab-baseline/` (local, 2 commits) |
+| Clojure port | `~/work/holon-clj/src/holon/core.clj` (no git, Neanderthal BLAS) |
