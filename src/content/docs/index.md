@@ -5,7 +5,7 @@ template: splash
 hero:
   tagline: The Holon project — algebraic structures for adaptive systems.
   image:
-    file: ../../assets/logo.jpeg
+    file: ../../assets/logo.jpg
     alt: Holon — Algebraic Intelligence
   actions:
     - text: Projects
