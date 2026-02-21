@@ -4,6 +4,9 @@ description: Holographic memory systems, algebraic encoders, and adaptive networ
 template: splash
 hero:
   tagline: The Holon project — algebraic structures for adaptive systems.
+  image:
+    file: ../../assets/logo.jpeg
+    alt: Holon — Algebraic Intelligence
   actions:
     - text: Projects
       link: /projects/holon-rs/overview/
