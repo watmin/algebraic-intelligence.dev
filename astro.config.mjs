@@ -21,12 +21,29 @@ export default defineConfig({
           items: [{ label: "Introduction", slug: "" }],
         },
         {
-          label: "Holon Core",
-          autogenerate: { directory: "holon-rs" },
+          label: "Projects",
+          items: [
+            {
+              label: "Holon Core (Rust)",
+              autogenerate: { directory: "projects/holon-rs" },
+            },
+            {
+              label: "DDoS Lab (eBPF/XDP)",
+              autogenerate: { directory: "projects/holon-lab-ddos" },
+            },
+          ],
         },
         {
-          label: "DDoS Lab",
-          autogenerate: { directory: "holon-lab-ddos" },
+          label: "Guides",
+          autogenerate: { directory: "guides" },
+        },
+        {
+          label: "Demos",
+          autogenerate: { directory: "demos" },
+        },
+        {
+          label: "Blog",
+          autogenerate: { directory: "blog" },
         },
       ],
     }),

@@ -5,11 +5,15 @@ template: splash
 hero:
   tagline: The Holon project — algebraic structures for adaptive systems.
   actions:
-    - text: Holon Core
-      link: /holon-rs/overview/
+    - text: Projects
+      link: /projects/holon-rs/overview/
       icon: right-arrow
-    - text: DDoS Lab
-      link: /holon-lab-ddos/overview/
+    - text: Guides
+      link: /guides/getting-started/
+      icon: right-arrow
+      variant: minimal
+    - text: Blog
+      link: /blog/hello-world/
       icon: right-arrow
       variant: minimal
 ---
@@ -18,8 +22,15 @@ hero:
 
 ### holon-rs
 
-The core Rust library implementing holographic reduced representations — high-dimensional vector encoders, accumulators, and associative memory backed by algebraic operations over hyperdimensional spaces.
+The core Rust library — holographic reduced representations, high-dimensional vector encoders, accumulators, and associative memory. **Rust.**
 
 ### holon-lab-ddos
 
-An eBPF-based adaptive DDoS mitigation lab using Holon's engram memory system for real-time traffic classification and response at the kernel level.
+Adaptive DDoS mitigation at the kernel level using Holon's engram memory system. **eBPF/XDP.**
+
+## What's here
+
+- **Docs** — technical documentation for each project
+- **Guides** — walkthroughs: building a WAF from scratch, eBPF+XDP pipelines, algebraic encoding
+- **Demos** — code examples, visualizations, and live experiments
+- **Blog** — updates, features, and design notes
