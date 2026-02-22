@@ -8,7 +8,15 @@ The algebra ops reference covered how to operate on vectors you already have. Th
 
 This is the memory layer. It sits on top of the encoding stack and algebra ops, and it's what turns a collection of vector operations into a system that improves with experience.
 
-A note on how this came together. At some point during the challenge batches, we built a 3D visualization — PCA projection of encoded traffic vectors, rendered so we could actually look at where things landed in space. Fake attack traffic and fake normal traffic showed up in dramatically different locations. Not close, not overlapping — separated. You could see it.
+A note on how this came together. At some point during the challenge batches, we built a 3D visualization — a random orthogonal projection from 4096 dimensions down to 3, so we could actually look at where things landed in space. Synthetic attack traffic (SYN flood, UDP flood, ICMP flood patterns) and normal traffic showed up in dramatically different locations. Not close, not overlapping — separated. You could see it.
+
+<video autoplay loop muted playsinline controls style="width: 100%; border-radius: 6px; margin: 1rem 0;">
+  <source src="/vector-space-anomaly-detection.mp4" type="video/mp4" />
+</video>
+
+<p style="text-align: center;"><em>Left pane: the baseline accumulator drifting through 3D space as it learns normal traffic, then freezing once warmup completes. Right pane: each incoming packet decomposed into atoms → bindings → composite, colored green to red by cosine similarity to the frozen baseline. Attack traffic lands in a different region of the space entirely.</em></p>
+
+<p style="text-align: center;"><em>This predates engrams. What you're seeing is the accumulator-and-cosine-threshold approach that made the spatial separation visible and sparked the idea. We haven't built an engram visualization yet.</em></p>
 
 That's when it clicked. Those regions of space weren't arbitrary. They were measurable, describable, repeatable. If a cluster of vectors occupies a region, you can characterize that region geometrically. You can name it. You can ask whether a new vector falls inside or outside it. Engrams followed from that observation — they're the formalization of "this region of space is a thing we want to remember."
 
