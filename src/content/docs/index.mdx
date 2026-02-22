@@ -8,12 +8,12 @@ hero:
     file: ../../assets/logo.jpg
     alt: Holon
   actions:
-    - text: Read the Prologue
-      link: /blog/prologue/
+    - text: Start with the Prologue
+      link: /blog/story/prologue/
       icon: right-arrow
-    - text: GitHub
-      link: https://github.com/watmin
-      icon: external
+    - text: VSA Primer
+      link: /blog/primers/series-1-000-vsa-primer/
+      icon: open-book
       variant: minimal
 ---
 
@@ -37,6 +37,25 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     probe them with basis vectors and recover the bound structure.
   </Card>
 </CardGrid>
+
+## Read the series
+
+Two tracks. Read in either order — the primers are reference material; the story is chronological.
+
+**Primers** — the technical foundation, bottom-up:
+
+- [VSA/HDC: A Working Introduction](/blog/primers/series-1-000-vsa-primer/) — what a hypervector is, the three operations, why it works for structured data
+- [Atoms, Vectors, and the Encoding Stack](/blog/primers/series-1-001-atoms-and-vectors/) — how structured data becomes geometry; the hash-function codebook design
+- [The Holon Algebra: Operations Reference](/blog/primers/series-1-002-holon-ops/) — the full primitive set: bind, bundle, prototype, difference, accumulate, and more
+- [Holon Memory: Subspaces and Engrams](/blog/primers/series-1-003-memory/) — incremental manifold learning, named memory snapshots, and the surprise fingerprint
+- [Coordination-Free at Scale](/blog/primers/series-1-004-coordination-free/) — how eliminating the codebook eliminates an entire class of distributed systems problems
+
+**Story** — the development arc, in order:
+
+- [Prologue: The Idea That Wouldn't Leave](/blog/story/prologue/) — years of conversations and a Clojure conference video, before there was any code
+- [Python: The First Two Weeks](/blog/story/series-2-001-first-experiments/) — twelve challenge batches, F1=1.000, and a performance ceiling that forced the Rust port
+
+---
 
 ## The work
 
