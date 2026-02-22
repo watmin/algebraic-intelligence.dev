@@ -17,7 +17,6 @@ export default defineConfig({
       title: "Algebraic Intelligence",
       description:
         "Holographic memory systems, algebraic encoders, and adaptive network defense.",
-      customCss: ["./src/styles/custom.css"],
       social: [
         {
           icon: "github",
