@@ -46,26 +46,32 @@ export default defineConfig({
           items: [
             {
               label: "Python (reference)",
+              collapsed: true,
               autogenerate: { directory: "projects/holon-python" },
             },
             {
               label: "Rust",
+              collapsed: true,
               autogenerate: { directory: "projects/holon-rs" },
             },
             {
               label: "Clojure",
+              collapsed: true,
               autogenerate: { directory: "projects/holon-clojure" },
             },
             {
               label: "Ruby",
+              collapsed: true,
               autogenerate: { directory: "projects/holon-ruby" },
             },
             {
               label: "Go",
+              collapsed: true,
               autogenerate: { directory: "projects/holon-go" },
             },
             {
               label: "Java",
+              collapsed: true,
               autogenerate: { directory: "projects/holon-java" },
             },
           ],
@@ -76,10 +82,12 @@ export default defineConfig({
           items: [
             {
               label: "DDoS Lab (eBPF/XDP)",
+              collapsed: true,
               autogenerate: { directory: "demos/holon-lab-ddos" },
             },
             {
               label: "Baseline Lab (LLM Traffic)",
+              collapsed: true,
               autogenerate: { directory: "demos/holon-lab-baseline" },
             },
           ],
