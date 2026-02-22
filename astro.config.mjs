@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import rehypeExternalLinks from "rehype-external-links";
+import mermaid from "astro-mermaid";
 
 export default defineConfig({
   site: "https://algebraic-intelligence.dev",
@@ -10,6 +11,7 @@ export default defineConfig({
     ],
   },
   integrations: [
+    mermaid(),
     starlight({
       favicon: "/favicon.jpg",
       title: "Algebraic Intelligence",

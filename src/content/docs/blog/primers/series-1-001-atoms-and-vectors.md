@@ -130,17 +130,18 @@ The superposition is lossy — you can't perfectly recover the individual compon
 
 Atomization → binding → bundling is the complete encoding stack. The full traversal:
 
-```
-structured input
-    │
-    ▼ atomize at every scalar leaf (recurse into nested structures)
-scalar (key, value) pairs
-    │
-    ▼ bind each pair
-bound field vectors, one per key-value pair
-    │
-    ▼ bundle all field vectors
-single document vector ∈ ℝᵈ  (d = your chosen dimensionality)
+```mermaid
+flowchart TD
+    A["Structured Input\n(JSON / event / document)"] --> B["Atomization\nRecurse to scalar leaves"]
+    B --> C{"Encoding Path?"}
+    C -->|"String / Categorical"| D["String Atom\nSHA-256 + seed → bipolar vector"]
+    C -->|"Numeric"| E["Magnitude-aware\n$linear / $log"]
+    C -->|"Timestamp"| F["Temporal\n$time rotations"]
+    D --> G["Bind\nrole × filler\n(element-wise multiply)"]
+    E --> G
+    F --> G
+    G --> H["Bundle\nelement-wise add + normalize"]
+    H --> I["Document Vector\nSingle structural fingerprint"]
 ```
 
 The recursion handles arbitrary nesting naturally. A deeply nested document like:

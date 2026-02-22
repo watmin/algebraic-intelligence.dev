@@ -167,22 +167,18 @@ The full library serializes to JSON — mean vectors, component matrices, thresh
 
 ## The Full Lifecycle
 
-```
-warmup stream
-    │
-    ▼ update() for each vector
-OnlineSubspace (adapting)
-    │
-    ▼ anomaly_streak ≥ threshold, attack subsides
-snapshot() + add() to library
-    │
-    ▼ new probe arrives
-EngramLibrary.match_vec(probe)
-    │
-    ├── residual below engram threshold → HIT: known pattern recognized
-    │       └── application fires response (rules, alert, action, ...)
-    │
-    └── no hit → unknown pattern, begin learning new subspace
+```mermaid
+flowchart TD
+    A["Live Stream"] --> B["OnlineSubspace.update()\nLearn manifold incrementally"]
+    B --> C{"Residual > threshold?"}
+    C -->|"No — in distribution"| B
+    C -->|"Yes — anomaly detected"| D["snapshot()\nFreeze subspace state"]
+    D --> E["EngramLibrary.add()\nMint engram + surprise profile"]
+    F["New Probe Vector"] --> G["Tier 1: Eigenvalue Pre-filter\nO(k·n) — cheap candidate ranking"]
+    G --> H["Tier 2: Full Residual Scoring\nO(k·dim) per candidate"]
+    H --> I{"Match found?"}
+    I -->|"Yes — known pattern"| J["Application responds\n(rules, alert, action)"]
+    I -->|"No — novel pattern"| K["Begin learning\nnew subspace"]
 ```
 
 The engram isn't the action — it's the memory. What happens on a hit is entirely up to the application. The DDoS lab deploys firewall rules. A fraud system might flag a transaction. A recommendation engine might serve a cached result. The pattern recognition is the library's job; the response is yours.
