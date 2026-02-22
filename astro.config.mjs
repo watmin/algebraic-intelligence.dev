@@ -45,7 +45,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
-              label: "Python (reference)",
+              label: "Python",
               autogenerate: { directory: "projects/holon-python" },
             },
             {
@@ -53,19 +53,19 @@ export default defineConfig({
               autogenerate: { directory: "projects/holon-rs" },
             },
             {
-              label: "Clojure (planned)",
+              label: "Clojure",
               autogenerate: { directory: "projects/holon-clojure" },
             },
             {
-              label: "Ruby (planned)",
+              label: "Ruby",
               autogenerate: { directory: "projects/holon-ruby" },
             },
             {
-              label: "Go (planned)",
+              label: "Go",
               autogenerate: { directory: "projects/holon-go" },
             },
             {
-              label: "Java (planned)",
+              label: "Java",
               autogenerate: { directory: "projects/holon-java" },
             },
           ],
