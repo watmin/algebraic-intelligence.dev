@@ -169,16 +169,16 @@ The full library serializes to JSON — mean vectors, component matrices, thresh
 
 ```mermaid
 flowchart TD
-    A["Live Stream"] --> B["OnlineSubspace.update()\nLearn manifold incrementally"]
+    A["Live Stream"] --> B["OnlineSubspace.update()<br>Learn manifold incrementally"]
     B --> C{"Residual > threshold?"}
     C -->|"No — in distribution"| B
-    C -->|"Yes — anomaly detected"| D["snapshot()\nFreeze subspace state"]
-    D --> E["EngramLibrary.add()\nMint engram + surprise profile"]
-    F["New Probe Vector"] --> G["Tier 1: Eigenvalue Pre-filter\nO(k·n) — cheap candidate ranking"]
-    G --> H["Tier 2: Full Residual Scoring\nO(k·dim) per candidate"]
+    C -->|"Yes — anomaly detected"| D["snapshot()<br>Freeze subspace state"]
+    D --> E["EngramLibrary.add()<br>Mint engram + surprise profile"]
+    F["New Probe Vector"] --> G["Tier 1: Eigenvalue Pre-filter<br>O(k·n) — cheap candidate ranking"]
+    G --> H["Tier 2: Full Residual Scoring<br>O(k·dim) per candidate"]
     H --> I{"Match found?"}
-    I -->|"Yes — known pattern"| J["Application responds\n(rules, alert, action)"]
-    I -->|"No — novel pattern"| K["Begin learning\nnew subspace"]
+    I -->|"Yes — known pattern"| J["Application responds<br>(rules, alert, action)"]
+    I -->|"No — novel pattern"| K["Begin learning<br>new subspace"]
 ```
 
 The engram isn't the action — it's the memory. What happens on a hit is entirely up to the application. The DDoS lab deploys firewall rules. A fraud system might flag a transaction. A recommendation engine might serve a cached result. The pattern recognition is the library's job; the response is yours.

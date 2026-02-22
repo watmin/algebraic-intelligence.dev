@@ -132,16 +132,16 @@ Atomization → binding → bundling is the complete encoding stack. The full tr
 
 ```mermaid
 flowchart TD
-    A["Structured Input\n(JSON / event / document)"] --> B["Atomization\nRecurse to scalar leaves"]
+    A["Structured Input<br>(JSON / event / document)"] --> B["Atomization<br>Recurse to scalar leaves"]
     B --> C{"Encoding Path?"}
-    C -->|"String / Categorical"| D["String Atom\nSHA-256 + seed → bipolar vector"]
-    C -->|"Numeric"| E["Magnitude-aware\n$linear / $log"]
-    C -->|"Timestamp"| F["Temporal\n$time rotations"]
-    D --> G["Bind\nrole × filler\n(element-wise multiply)"]
+    C -->|"String / Categorical"| D["String Atom<br>SHA-256 + seed → bipolar vector"]
+    C -->|"Numeric"| E["Magnitude-aware<br>$linear / $log"]
+    C -->|"Timestamp"| F["Temporal<br>$time rotations"]
+    D --> G["Bind<br>role × filler<br>(element-wise multiply)"]
     E --> G
     F --> G
-    G --> H["Bundle\nelement-wise add + normalize"]
-    H --> I["Document Vector\nSingle structural fingerprint"]
+    G --> H["Bundle<br>element-wise add + normalize"]
+    H --> I["Document Vector<br>Single structural fingerprint"]
 ```
 
 The recursion handles arbitrary nesting naturally. A deeply nested document like:
