@@ -27,22 +27,34 @@ export default defineConfig({
       sidebar: [
         {
           label: "The Foundation",
+          collapsed: true,
           autogenerate: { directory: "blog/primers" },
         },
         {
           label: "The Story",
+          collapsed: true,
           autogenerate: { directory: "blog/story" },
         },
         {
-          label: "The Library",
+          label: "Guides",
+          collapsed: true,
+          autogenerate: { directory: "guides" },
+        },
+        {
+          label: "Implementations",
+          collapsed: true,
           items: [
             {
-              label: "Python",
+              label: "Python (reference)",
               autogenerate: { directory: "projects/holon-python" },
             },
             {
               label: "Rust",
               autogenerate: { directory: "projects/holon-rs" },
+            },
+            {
+              label: "Clojure (planned)",
+              autogenerate: { directory: "projects/holon-clojure" },
             },
             {
               label: "Ruby (planned)",
@@ -56,14 +68,11 @@ export default defineConfig({
               label: "Java (planned)",
               autogenerate: { directory: "projects/holon-java" },
             },
-            {
-              label: "Clojure (planned)",
-              autogenerate: { directory: "projects/holon-clojure" },
-            },
           ],
         },
         {
           label: "Demos",
+          collapsed: true,
           items: [
             {
               label: "DDoS Lab (eBPF/XDP)",
@@ -74,10 +83,6 @@ export default defineConfig({
               autogenerate: { directory: "demos/holon-lab-baseline" },
             },
           ],
-        },
-        {
-          label: "Guides",
-          autogenerate: { directory: "guides" },
         },
       ],
     }),
