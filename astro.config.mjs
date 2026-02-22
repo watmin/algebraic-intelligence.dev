@@ -1,10 +1,17 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import rehypeExternalLinks from "rehype-external-links";
 
 export default defineConfig({
   site: "https://algebraic-intelligence.dev",
+  markdown: {
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: "_blank", rel: ["noopener", "noreferrer"] }],
+    ],
+  },
   integrations: [
     starlight({
+      favicon: "/favicon.jpg",
       title: "Algebraic Intelligence",
       description:
         "Holographic memory systems, algebraic encoders, and adaptive network defense.",
@@ -17,8 +24,12 @@ export default defineConfig({
       ],
       sidebar: [
         {
+          label: "The Foundation",
+          autogenerate: { directory: "blog/primers" },
+        },
+        {
           label: "The Story",
-          autogenerate: { directory: "blog" },
+          autogenerate: { directory: "blog/story" },
         },
         {
           label: "The Library",

@@ -45,9 +45,55 @@ naturally onto anomaly detection problems.
   Contrast with threshold-based and ML-heavy approaches.
   Note: we use cosine similarity over dense vectors, not Hamming over binary.
 
-- `[ ]` **1.3 — Encoding the World**
-  How arbitrary structured data (packets, JSON, time series) becomes a
-  hypervector. Scalar encoding, temporal encoding, the Walkable trait.
+- `[~]` **1.0 — VSA/HDC: A Working Introduction** — `blog/series-1-000-vsa-primer.md`
+  Minimum viable theory: hypervectors, bind/bundle/cosine, why high dimensions
+  give you nearly-orthogonal basis vectors, why the approach works for structured
+  data. Ends with a list of what Holon adds beyond standard VSA.
+
+- `[~]` **1.1 — Atoms, Vectors, and the Encoding Stack** — `blog/series-1-001-atoms-and-vectors.md`
+  The foundational concept. Atomization → binding → bundling → document vector.
+  Covers: deterministic atom hashing (SHA-256 → ChaCha8RNG), bipolar vectors,
+  why the codebook is a cache not a source of truth, why the XDP sidecar needs
+  no shared state, and the hash-with-geometric-properties insight.
+
+- `[~]` **1.2 — The Holon Algebra: Operations Reference** — `blog/series-1-002-holon-ops.md`
+  Exhaustive reference for all algebraic primitives: core algebra (unbind,
+  prototype, prototype_add, negate, amplify, flip, blend, difference, analogy),
+  pattern extraction (resonance, permute, cleanup, similarity_profile,
+  complexity, invert), extended algebra (attend, project, reject,
+  conditional_bind, segment), vector ops (sparsify, centroid, topk_similar,
+  similarity_matrix, bundle_with_confidence, coherence, entropy, power,
+  random_project), accumulator ops (accumulate/decay, accumulate_weighted,
+  merge_accumulators, capacity, purity, participation_ratio), streaming ops
+  (drift_rate, autocorrelate, cross_correlate), advanced (grover_amplify).
+  Each with Python signature, intuition, and application where available.
+
+- `[~]` **1.3 — Holon Memory: Subspaces and Engrams** — `blog/series-1-003-memory.md`
+  The memory layer: OnlineSubspace (CCIPCA incremental PCA, update/residual/
+  project/reconstruct/anomalous_component/snapshot, adaptive threshold),
+  Engram (named subspace snapshot, eigenvalue signature, surprise profile,
+  application-defined metadata), EngramLibrary (two-tier matching: eigenvalue
+  pre-filter + full residual, match_spectrum, save/load). Includes the full
+  lifecycle diagram and the surprise fingerprint / field attribution mechanism.
+
+- `[ ]` **1.4 — Encoding the World (Extended)**
+  Temporal encoding ($time, $log, $linear), Walkable trait for zero-copy
+  encoding of arbitrary Rust types, n-gram mode for text.
+
+- `[~]` **1.4 — Coordination-Free at Scale** — `blog/primers/series-1-004-coordination-free.md`
+  The distributed systems angle. Thesis: shared vector space across nodes
+  without coordination. No codebook distribution problem, no sync protocol,
+  no shared state infrastructure. HQ learns; edge operates in the same
+  geometric space by construction.   A learned engram (subspace snapshot: mean vector, k principal components,
+  adaptive threshold, application-defined metadata) is a portable unit of
+  geometric knowledge — bounded size, constant distribution cost regardless
+  of what the pattern encodes. The consumer decides what to do on a hit;
+  the engram is the memory, not the action. Per-packet scan cost grows linearly
+  with engram count — fixed-width vector ops, SIMD-friendly, small constant.
+  Passive upgrade: no code deployment, no restart, no config reload. Compare
+  to rule-based systems where every new rule is an operational event.
+  Implications for edge deployment, air-gapped nodes, and any architecture
+  where coordination is the bottleneck.
 
 ---
 
@@ -60,7 +106,13 @@ Challenge batches 010–017 drove the design — each one forced a new capabilit
 
 ### Posts
 
-- `[ ]` **2.0 — The Original Idea: Structural Querying**
+- `[~]` **2.0 — Python: The First Two Weeks** — `blog/series-2-001-first-experiments.md`
+  Jan 16–Feb 5. Day-one architecture, database origin, Rete emerging on day two,
+  challenge batches 001–012. Covers: structural encoding generalization, primitives
+  origin in Sudoku work, 123x similarity speedup, n-gram encoding, scale to 5M records,
+  F1=1.000 on challenge 011, zero-hardcode detection on challenge 012.
+
+- `[ ]` **2.1 — The Original Idea: Structural Querying**
   Before anomaly detection — the database idea. Encoding JSON/EDN docs as
   hypervectors for sub-document structural queries. "Which documents contain
   this minimal JSON struct?" The Qdrant demo. Why we pivoted to streaming.

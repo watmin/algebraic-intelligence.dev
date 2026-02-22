@@ -1,0 +1,13 @@
+# Cursor Rules for algebraic-intelligence.dev
+
+## Committing
+- NEVER commit without explicit user instruction. "Let's commit" or "commit that" is the signal.
+- For content work (blog posts, docs): the user wants to read the result in the browser before agreeing to commit. Write the files, confirm they render, wait for approval.
+- Do not auto-commit after finishing a task, even if it feels like a natural stopping point.
+
+## Content
+- All blog posts live in `src/content/docs/blog/`
+- Internal planning docs live in `doc/` (not deployed)
+- See `doc/WRITING-GUIDE.md` for voice and technical depth standards
+- See `doc/PROGRESS.md` for post status tracking
+- See `doc/TIMELINE.md` for cross-repo chronology reference

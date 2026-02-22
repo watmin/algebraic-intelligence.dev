@@ -32,6 +32,14 @@ brochure, stop and go deeper.
   story and often the most instructive parts.
 - Confident but not overclaiming. "This approach worked well for X" is
   better than "this is the best solution". Show the tradeoffs.
+- **Street smart, not book smart.** The author came to VSA/HDC through
+  a Clojure conference video and years of Grok conversations, not through
+  reading Kanerva or Gayler. The formal vocabulary (role-filler binding,
+  MAP variant, prototype learning) was discovered after the fact — the
+  experiments came first. When writing, this means: explain mechanisms
+  from first principles before introducing the academic term for them,
+  not the other way around. The work stands on its own results. The
+  nomenclature is annotation, not foundation.
 
 ---
 
@@ -106,13 +114,14 @@ but the key logic.
 ## Terminology
 
 - **Rete** — not RETE. Named after the Latin word for "net" by Charles Forgy (1970s). Not an acronym.
-- **Kanerva** — Pentti Kanerva, originator of hyperdimensional computing / Sparse Distributed Memory (1990s)
+- **Kanerva** — Pentti Kanerva, originator of hyperdimensional computing / Sparse Distributed Memory (1988)
 - **McCarthy** — John McCarthy, inventor of LISP (1958). The symbolic AI lineage this work draws from.
 - The framing: this work deliberately embraces "ancient" and "fringe" AI — Rete, VSA/HDC, symbolic structure — that the modern ML orthodoxy ignores. That's not a weakness to hedge around. It's the thesis.
 - **The verb for what Holon does**: prefer **"recognition"** — it recognizes structure algebraically in high-dimensional space. Avoid "inference" (implies statistics), "reasoning" (implies symbolic AI in the classical sense), "prediction" (implies a training/serving split). When in doubt: "algebraic recognition".
 - **Holon vectors are NOT opaque.** Unlike neural network embeddings, Holon vectors are algebraically transparent — if you have the codebook (basis vectors), you can probe the vector and recover what's bound into it. The XDP rule derivation proves this: concrete filtering rules are extracted from learned vectors. Never describe hypervectors as black boxes. They are structured, queryable representations.
 - **Not neural.** There are no neurons, no weights, no activation functions. The term "programmatic neural memory" was considered and rejected. Prefer **"algebraic memory"** when describing engrams and the memory system.
 - **Deterministic encoding = consensus without synchronization.** Holon's encoder is effectively a hash function: same input → same vector on any machine. But unlike MD5/SHA, the output has exploitable geometric properties (similarity, decomposition, probing). This means distributed systems can achieve agreement on representations without coordination. Use this framing when discussing distributed or deployment implications.
+- **Never split languages in a Holon deployment.** Vectors produced by different language implementations are not compatible — the encoding structure is identical but the specific numbers differ due to different RNGs. Any system that mixes Python and Rust vectors in the same space will produce meaningless results. This is not a limitation to hedge or caveat around; it is a design constraint. All nodes in a deployment use the same language. There is no cross-language vector portability, none is planned, and none is needed. Do not imply otherwise.
 - **VSA** — Vector Symbolic Architecture (or Architectures)
 - **HDC** — Hyperdimensional Computing
 - **holon-rs** — lowercase, hyphenated

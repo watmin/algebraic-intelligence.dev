@@ -237,8 +237,18 @@ holon-rs: vector bipolar distribution fix, doctest fixes.
 Also: tree Rete engine with blue/green deployment and s-expression rules.
 p0f-level fields (OS fingerprinting) in detection loop.
 
-holon (Python): 3D visualization module. holon-rs: $log/$linear markers,
-Walkable support for magnitude-aware encoding.
+holon (Python): 3D visualization module — PCA projection of encoded traffic
+vectors into 3D space, rendered to inspect where vectors actually land.
+**Key insight moment:** synthetic attack traffic and synthetic normal traffic
+appeared in dramatically separated regions of the projected space. Visually
+distinct, no overlap. This made the geometric separation concrete and observable
+— not an abstraction but something you could look at. The observation that
+these regions were measurable and nameable led directly to the engram concept:
+if a cluster of vectors occupies a region of space, you can characterize that
+region, snapshot it, and ask whether future vectors fall inside or outside it.
+Engrams formalized what the visualization revealed.
+
+holon-rs: $log/$linear markers, Walkable support for magnitude-aware encoding.
 
 **Blog:** Series 6, post 2 (1M rules, BPF tail-call DFS)
 
