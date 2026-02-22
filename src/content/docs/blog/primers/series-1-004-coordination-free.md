@@ -59,16 +59,12 @@ The encoding layer scales horizontally for free.
 The distributed systems payoff is most visible in an HQ/edge architecture.
 
 ```mermaid
-graph LR
-    Hash["Shared constant:<br>seed + hash function"]
-    HQ["HQ Node<br>Learn, mint engrams"]
-    Edge["Edge Node<br>Encode, score, act"]
-    Score["Residual scoring<br>against engram subspace"]
-
-    Hash -.-> HQ
-    Hash -.-> Edge
-    HQ -->|"Serialized engram<br>~1–4 MB"| Edge
-    Edge --> Score
+graph TD
+    Hash["Shared constant: seed + hash function"]
+    Hash -.-> HQ["HQ Node<br>Learn, mint engrams"]
+    Hash -.-> Edge["Edge Node<br>Encode, score, act"]
+    HQ -->|"Serialized engram"| Edge
+    Edge --> Score["Residual scoring<br>against engram subspace"]
 ```
 
 An HQ node runs continuously against live data: accumulating baselines, learning subspace models of normal behavior, minting engrams when patterns crystallize. This is computationally intensive work — CCIPCA updates on every sample, prototype extraction, subspace snapshots. It's exactly the kind of work you want to centralize.
