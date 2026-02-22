@@ -1,5 +1,5 @@
 ---
-title: Overview (reference implementation)
+title: Overview (reference)
 description: The original Python implementation — where the experiments happened.
 ---
 
