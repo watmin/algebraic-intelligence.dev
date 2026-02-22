@@ -45,7 +45,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
-              label: "Python",
+              label: "Python (reference)",
               autogenerate: { directory: "projects/holon-python" },
             },
             {
