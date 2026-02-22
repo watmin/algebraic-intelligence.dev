@@ -1,14 +1,4 @@
 :root {
   --sl-content-width: 860px;
   --sl-sidebar-width: 22rem;
-  --sl-toc-width: 10rem;
-}
-
-.right-sidebar {
-  width: 10rem;
-  min-width: 10rem;
-}
-
-starlight-toc {
-  width: 10rem;
 }
