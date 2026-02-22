@@ -1,5 +1,5 @@
 ---
-title: Holon (Clojure)
+title: Overview
 description: Idiomatic Clojure port of the Holon library.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Holon (Rust)
+title: Overview
 description: Holographic reduced representations in Rust.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Holon (Python)
+title: Overview (reference implementation)
 description: The original Python implementation — where the experiments happened.
 ---
 
