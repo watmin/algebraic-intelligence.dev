@@ -100,12 +100,15 @@ Posts below are approximate groupings. Boundaries will emerge during writing.
   2048-byte L4 payload analysis with autonomous byte-match rule derivation.
   Decay-based dual accumulator model — the 750ms detection baseline.
 
-- `[ ]` **Engrams and the 750ms-to-3ms Moment** (Feb 17–20)
-  CCIPCA online subspace learning in Python (batch 017). Engram library:
-  single-packet matching, 100% accuracy, zero false activations. Three-layer
-  architecture refactor (Python Feb 18, Rust Feb 20). Rust memory layer and
-  engram parity. Instant rule deploy on engram hit in the DDoS sidecar.
-  **750ms → 3ms.** Site launched.
+- `[x]` **Engrams and the 765ms → 3ms Moment** (Feb 17–20) — `blog/story/series-003-005-engrams.md`
+  CCIPCA online subspace learning in Python (batch 017, 13 experiments). Engram
+  library: single-packet recognition, 100% accuracy across 4 attack types, zero
+  false activations, persistent save/load. Three-layer architecture refactor in
+  Python (Feb 18) and Rust (Feb 20). Rust memory layer and engram parity.
+  Sidecar refactor (3812 → 1140 lines in main.rs, 7 modules). Two integration
+  bugs caught: IP address EDN round-trip quoting, raw vs normalized vector
+  domain mismatch. Instant rule deploy on engram hit: **765ms → 3ms.**
+  765ms lead time over drift-based detection, measured. Site launched same day.
 
 ---
 

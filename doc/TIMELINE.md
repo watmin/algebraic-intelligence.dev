@@ -393,7 +393,7 @@ organized: The Story / The Library / Demos / Guides.
 
 ---
 
-## Summary: The Three-Week Arc
+## Summary: The Five-Week Arc
 
 | Period | Focus | Key Output |
 |--------|-------|------------|
