@@ -98,7 +98,7 @@ The engram system builds on this: once you can extract structure from a vector, 
 
 This site documents the work. Not a product, not a paper — the actual development arc, in the order it happened, with the code and the numbers and the dead ends intact.
 
-The posts that follow start with the fundamentals of how VSA actually works — specifically how we use it, which means cosine similarity over dense vectors, not Hamming distance over binary ones, and a binding/bundling algebra that operates over structured data rather than semantic tokens. Then the Python experiments that built the intuition. Then the Rust port that made it fast enough for production. The baseline traffic lab. The DDoS problem framing. The XDP + eBPF scrubber. The engram system and what 750ms → 3ms actually means.
+The site is organized in two tracks. The primers cover the fundamentals — specifically how we use VSA, which means cosine similarity over dense vectors, not Hamming distance over binary ones, and a binding/bundling algebra that operates over structured data rather than semantic tokens. The story posts cover the development arc in order: the Python experiments that built the intuition, the Rust port that made it fast enough for production, the baseline traffic lab, the XDP + eBPF scrubber, and the engram system and what 750ms → 3ms actually means. Read either track first — the primers are reference material, not prerequisites.
 
 And eventually, probably, the database. And maybe something that touches P vs NP, which I'm aware sounds like the kind of thing a crazy person says. I've been the crazy person in the room before. Sometimes that's the right person for the job.
 
