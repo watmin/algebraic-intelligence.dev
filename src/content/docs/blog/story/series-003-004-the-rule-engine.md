@@ -2,6 +2,8 @@
 title: "The Rule Engine"
 description: February 13–16. EDN replaces JSON. Range, mask, and byte-match predicates. A real-time metrics dashboard with live DAG visualization. Full L4 payload analysis. Then the decay model — the architecture that establishes 750ms as the detection baseline before engrams change everything.
 date: 2026-02-23
+sidebar:
+  order: 7
 ---
 
 February 13, 1M rules proven and still accelerating. The BPF tail-call DFS committed at 10:37 PM on the 12th. By February 16 at end of day: full 2048-byte L4 payload analysis, byte-match rule derivation, real-time dashboard with live DAG visualization, 6 new IP header fingerprinting dimensions, and the decay model that replaces fixed windows entirely — a continuous per-packet accumulator that becomes the 750ms detection baseline that everything else is measured against.

@@ -2,6 +2,8 @@
 title: "The Labs"
 description: February 7–8. While holon-rs was still a day old, two new repos appeared. The DDoS lab needed something to attack and something to generate attack traffic. Both arrived in the same 48-hour window — along with the Walkable trait and batch 013 in both languages simultaneously.
 date: 2026-02-23
+sidebar:
+  order: 5
 ---
 
 February 7, 10:24 PM. The DDoS lab's initial scaffold commits. February 8, 2:03 AM. The baseline lab commits — 2,425 lines of WordPress infrastructure and LLM-driven traffic generation. By the end of February 8, four repos have commits on the same day: Python adding batch 013, Rust adding Walkable and batch 013, the DDoS lab getting XDP sampling and a name, and the baseline lab switching its networking model before the day was out.

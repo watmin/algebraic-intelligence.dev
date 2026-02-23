@@ -2,6 +2,8 @@
 title: "The Rust Port"
 description: February 6. Python was the specification language — 239 tests, every primitive proven, every encoding pattern validated. Translating that spec to Rust was nearly a single shot. This is how it started and what the first day produced.
 date: 2026-02-23
+sidebar:
+  order: 4
 ---
 
 February 5. The Python implementation of zero-hardcode detection is committed. 100% attack recall, 4% false positive rate, no domain knowledge. The benchmark result appended to the batch 012 LEARNINGS is: `encode_data()`: 182 µs/packet. At 3,100 packets/sec single-core, a 1Gbps link at full packet rate is a 1:489 sampling ratio. The Python number is precise. The gap to production is also precise.

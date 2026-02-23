@@ -2,6 +2,8 @@
 title: "Prologue: The Idea That Wouldn't Leave"
 description: Years of trying to convince people that VSA/HDC was worth exploring, and what finally made it possible to find out.
 date: 2026-02-20
+sidebar:
+  order: 0
 ---
 
 There's a specific kind of technical itch that's hard to explain to people who haven't had it. It's not about a tool or a library or a technique exactly — it's about a *shape of thinking* that you encounter and can't shake. You don't fully understand it yet. You don't have the math. You can't point to a production deployment. But you know, with the kind of certainty that comes from pattern recognition built over years of building real systems, that there's something there.

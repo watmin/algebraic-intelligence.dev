@@ -2,6 +2,8 @@
 title: "Engrams and the 765ms → 3ms Moment"
 description: "February 17–20. CCIPCA online subspace learning in Python. Engram library — learned manifolds as memory traces, single-packet recognition, 100% accuracy across 4 attack types. Three-layer architecture refactors in both Python and Rust. Rust memory layer and engram parity. Then: instant rule deploy on engram hit. 765ms to 3ms."
 date: 2026-02-23
+sidebar:
+  order: 8
 ---
 
 February 17. The decay model works. The detection baseline is 765ms — the accumulator needs that long to build enough signal to commit. That's acceptable. Then a question: what if we've already seen this attack before?
@@ -369,7 +371,7 @@ The first is HTTP DDoS — request floods at the application layer. Same structu
 
 The second is WAF territory — low-and-slow exploits, injection attempts, the kind of traffic ZAP, Nuclei, and Nikto generate. Script-kiddie tooling is noisy and repetitive; sophisticated attacks are sparse and deliberate. The question is whether Holon can catch either class in web traffic the same way it catches them in packet traffic: no regex, no libinjection, no signature database. Just structural encoding of HTTP requests and the same algebraic recognition that works at the packet level. Can the vector space separate a SQL injection attempt from a legitimate query the way it separates a SYN flood from normal TCP? That's the experiment.
 
-**Third: other language ports.** `holon-clj` exists — one file, Neanderthal BLAS, Fluokitten, proper numeric tower. The others (Ruby, Go, Java) are on the list. Python is the Rosetta Stone — each port validates against it. They'll happen when they happen.
+**Third: other language ports.** Clojure, Ruby, Go, Java are on the list. Python is the Rosetta Stone — each port validates against it. They'll happen when they happen.
 
 ---
 

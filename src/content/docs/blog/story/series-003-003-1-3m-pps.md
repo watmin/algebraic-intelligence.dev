@@ -2,6 +2,8 @@
 title: "1.3 Million Packets Per Second"
 description: February 9–12. The veth lab connects holon-rs to XDP for the first time. 52ms detection, 99.5% drop rate, 316 million packets dropped in a single stress test. Then the visualization that made the geometry visible, the tree Rete engine, and BPF tail-call DFS proving 1,000,000 rules at line rate.
 date: 2026-02-23
+sidebar:
+  order: 6
 ---
 
 February 9, 6:47 PM. The veth lab commits — 2,873 lines, 20 files, holon-rs wired directly into an XDP sidecar for the first time. By 9:05 PM the same evening: 1.3 million packets per second, 99.5% drop rate, 316 million packets dropped in a single stress test.

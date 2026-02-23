@@ -2,6 +2,8 @@
 title: "Python: The Foundation"
 description: From the initial commit to the first six challenge batches — day one architecture, the database origin, Rete emerging on day two, the 123x speedup, and the primitives forged in the Sudoku failure.
 date: 2026-02-21
+sidebar:
+  order: 1
 ---
 
 The prologue covers why this started. This post covers what happened when it actually started running.

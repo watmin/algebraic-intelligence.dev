@@ -2,6 +2,8 @@
 title: "Scale, Detection, and the Python Ceiling"
 description: After the NP wall, batches 006–012 confirmed what VSA is actually good at — LLM memory, enterprise retrieval, the GPU dead end, 5 million records, the accumulator breakthrough, and the throughput numbers that made the Rust port inevitable.
 date: 2026-02-23
+sidebar:
+  order: 3
 ---
 
 Coming off the Sudoku failure, the framing reset. Batch 004 showed where VSA doesn't work. Batches 006 through 012 showed where it does — and how far that goes before Python runs out of headroom.

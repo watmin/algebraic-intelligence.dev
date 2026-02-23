@@ -2,6 +2,8 @@
 title: "The NP Wall"
 description: We spent days trying to make VSA solve NP-hard constraint satisfaction problems. It can't. What we built in the attempt was worth more than the goal.
 date: 2026-02-22
+sidebar:
+  order: 2
 ---
 
 Coming off batch 001–003, the structural encoding had worked on everything we'd thrown at it. Tasks, recipes, graph topology, text — same machinery, all working. That success did something to the framing: it made the tool feel like it might generalize further than it had any right to.
