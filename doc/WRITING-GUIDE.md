@@ -49,8 +49,9 @@ brochure, stop and go deeper.
 
 If a concept has a mathematical basis, state it. Don't hide behind
 analogies when the actual formulation is clearer. Hypervector binding
-is XOR. Bundling is majority vote or superposition. Say so. Then explain
-what that means operationally.
+is element-wise multiplication over bipolar vectors. Bundling is
+majority vote or superposition. Say so. Then explain what that means
+operationally.
 
 ### Show the code when it matters
 
@@ -93,11 +94,7 @@ but still note it.
 
 ### Explain the why, not just the what
 
-"We used XOR for binding" is the what. The why is: XOR preserves the
-high-dimensional structure, is its own inverse (so unbinding is
-trivial), is maximally efficient in hardware, and distributes uniformly
-over binary vectors in ways that maintain statistical independence. That's
-what belongs in the post.
+"We used element-wise multiplication for binding" is the what. The why is: multiplying two bipolar `{-1, 0, 1}` vectors element-wise is its own inverse — applying the same key vector twice returns the original — and it distributes the bound structure in ways that maintain statistical independence across dimensions. That's what belongs in the post.
 
 ---
 
@@ -128,6 +125,19 @@ Never drop a code block without explaining what it is, where it lives,
 and what to pay attention to. After the block, explain what it's doing
 at the level that matters for the post's argument — not line by line,
 but the key logic.
+
+### Use Mermaid for architecture diagrams
+
+Starlight supports Mermaid fenced code blocks (` ```mermaid `). Use them
+for any diagram showing data flow, component relationships, or
+multi-step processes. ASCII box-and-arrow diagrams render poorly across
+screen sizes and don't get syntax highlighting. Keep Mermaid diagrams
+simple — labels should be short, connections should be legible without
+zooming.
+
+Code snippets, commit message quotes, s-expression rules, and short
+inline sequences (`A → B → C`) don't need Mermaid — keep those as
+plain fenced code blocks.
 
 ### Keep the landing page in sync
 

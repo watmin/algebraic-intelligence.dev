@@ -24,7 +24,7 @@ Once that existed, the Rust port was nearly a single shot. The commit message sa
 
 ---
 
-## February 6: One Evening, Thirteen Files
+## One Evening, Thirteen Files
 
 The initial commit message: "Initial Rust implementation of Holon VSA library." The commit itself: 2,554 lines across 13 files. One evening.
 

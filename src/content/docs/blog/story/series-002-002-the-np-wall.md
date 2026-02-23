@@ -101,7 +101,7 @@ The primitives.
 
 `prototype` — bundle a set of examples, threshold at 50% agreement, get the categorical essence. Used immediately in batch 002's graph topology classification (100% accuracy on 15 test graphs from 5 topological families). Used in text search for topic signatures. Used in anomaly detection for baseline construction.
 
-`difference` — `vec_A XOR vec_B`, producing a vector representing "what changed." Used in Raven's Progressive Matrices to extract abstract transformation rules across row/column sequences (~0.58 cosine similarity for consistent rules vs ~0.19 for cross-rule comparisons). The `difference` primitive is now a core part of the mitigation synthesis pipeline in the DDoS lab.
+`difference` — element-wise subtraction of two bipolar vectors (clamped to `{-1, 0, 1}`), producing a vector representing "what changed." Used in Raven's Progressive Matrices to extract abstract transformation rules across row/column sequences (~0.58 cosine similarity for consistent rules vs ~0.19 for cross-rule comparisons). The `difference` primitive is now a core part of the mitigation synthesis pipeline in the DDoS lab.
 
 `blend` — weighted interpolation between vectors. In batch 002, blending star and cycle graph prototypes at alpha=0.5 returned both topological families at the top of search results — a soft OR query that similarity search doesn't normally support.
 

@@ -14,7 +14,7 @@ What I can say a week later: it gets more manageable. The intensity of a full we
 
 ---
 
-## February 7: Scaffolding a DDoS Lab
+## Scaffolding a DDoS Lab
 
 The Python challenge batches ran against synthetic data. Good for proving the algebra, but synthetic DDoS data has clean edges — the attack and baseline distributions don't overlap the way real traffic does. The lab needed real packets: a realistic L2 network, real protocol headers, real timing, and enough traffic volume to stress the XDP filter.
 
@@ -89,7 +89,7 @@ The XDP filter at this stage is a stub — the eBPF toolchain has a compatibilit
 
 ---
 
-## February 8, Midnight: XDP Sampling, pcap, and a Name
+## XDP Sampling, pcap, and a Name
 
 The second DDoS lab commit (`85d4e80b`, timestamped 12:44 AM Feb 8) fixes the eBPF toolchain (`aya-ebpf 0.1.0` + `cty 0.2.1`), adds packet sampling via perf buffer, and gets to 45k PPS attack filtering with legitimate traffic captured separately.
 
@@ -101,7 +101,7 @@ At 12:49 AM: the repo gets its name. The commit message: "Rename to holon-lab-dd
 
 ---
 
-## February 8, 2 AM: The Baseline Lab
+## The Baseline Lab
 
 Building a DDoS detector requires two things: attack traffic and baseline traffic. The DDoS lab generates attacks. The baseline lab generates the normal.
 
@@ -130,17 +130,16 @@ A DDoS detector trained only on single-source traffic would identify attacks tri
 
 The solution is Squid proxy with 23 macvlan interfaces:
 
-```
-Traffic Gen (Playwright + Ollama)
-    │
-    ▼
-Squid (ports 40001–40023)
-    Each port binds to a different macvlan IP via tcp_outgoing_address
-    │
-macv1 (192.168.1.131) ... macv23 (192.168.1.153)
-    │ hairpin via eno1 → LAN → back
-    ▼
-nginx container (192.168.1.200)
+```mermaid
+flowchart TD
+  TG["Traffic Gen<br>(Playwright + Ollama)"]
+  SQ["Squid (ports 40001–40023)<br>each port → different macvlan IP"]
+  MV["macv1 … macv23<br>(192.168.1.131 – .153)"]
+  NX["nginx container<br>(192.168.1.200)"]
+
+  TG --> SQ
+  SQ --> MV
+  MV -- "hairpin via eno1 → LAN → back" --> NX
 ```
 
 The Playwright agents route through different Squid ports — each port is bound to a different macvlan interface with a different LAN IP. From the nginx server's perspective, 23 different hosts are making requests. The policy routing in `force-hairpin.sh` ensures each macvlan IP has a dedicated routing table so traffic egresses through the correct interface.
@@ -163,7 +162,7 @@ The intent: train the DDoS detector on traffic this complex, then see if it can 
 
 ---
 
-## February 8, 1:37 PM: macvlan → ipvlan
+## macvlan → ipvlan
 
 The baseline lab's second commit (`b178690c`, 13:37) swaps the network driver. The initial commit used macvlan. The switch is to ipvlan (L2 mode):
 
@@ -181,7 +180,7 @@ It won't, as it turns out. AF_XDP is a different tool than what we need here —
 
 ---
 
-## February 8, 2–4 PM: Walkable and Batch 013 Land in Both Languages
+## Walkable and Batch 013 Land in Both Languages
 
 While the baseline lab was getting its networking sorted out, holon-rs was adding two things that closed out the day.
 
