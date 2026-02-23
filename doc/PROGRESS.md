@@ -83,19 +83,22 @@ Posts below are approximate groupings. Boundaries will emerge during writing.
   rule derivation, rate decoding) in both languages. AF_XDP misunderstanding.
   First all-day weekend session and the mental load of LLM-assisted dev.
 
-- `[ ]` **1.3 Million Packets Per Second** (Feb 9–12)
-  veth-lab PoC with holon-rs integrated. 1.3M PPS stress test, 99.5% drop
-  rate. 3D visualization module — the PCA projection that made geometric
-  separation visible and led directly to the engram concept. Batch 014
-  (extended primitives). Tree rete engine with blue/green deploy. BPF
-  tail-call DFS: 1,000,000 rules at line rate, O(depth) not O(rules).
+- `[x]` **1.3 Million Packets Per Second** (Feb 9–12) — `blog/story/series-003-003-1-3m-pps.md`
+  veth-lab PoC with holon-rs integrated. Accidental 1.3M PPS stress test,
+  99.5% drop rate. 3D visualization ("I want to see into the machine") — random
+  orthogonal projection, geometric separation visible, engram concept seeded.
+  Batch 014 (9 extended forensics primitives). Tree Rete engine with blue/green
+  deploy. BPF tail-call DFS: 1,000,000 rules at line rate, O(depth) not
+  O(rules). DAG compiler as compiled beta network. Six verifier battles.
+  ProgramArray lifetime debugging. "Likely Contributions to the Field" section.
 
-- `[ ]` **The Rule Engine** (Feb 13–16)
-  EDN rule format with streaming parser. Range/Mask/In predicates.
-  Real-time metrics dashboard (SSE, DAG viewer). Multi-repo payload
-  analysis (Python batch 016, Rust examples, DDoS lab 2048-byte L4
-  windows). Decay-based dual accumulator model — the 750ms detection
-  baseline.
+- `[x]` **The Rule Engine** (Feb 13–16) — `blog/story/series-003-004-the-rule-engine.md`
+  EDN rule format with streaming parser (40% smaller, comment-supporting).
+  Range, bitmask, and L4 byte-match predicates. Named rate limiter buckets.
+  Real-time metrics dashboard (SSE, live DAG viewer, per-rule trendlines).
+  IPv4 header fingerprinting (6 new dimensions, zero detection code changes).
+  2048-byte L4 payload analysis with autonomous byte-match rule derivation.
+  Decay-based dual accumulator model — the 750ms detection baseline.
 
 - `[ ]` **Engrams and the 750ms-to-3ms Moment** (Feb 17–20)
   CCIPCA online subspace learning in Python (batch 017). Engram library:
