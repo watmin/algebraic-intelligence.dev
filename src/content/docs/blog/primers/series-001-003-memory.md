@@ -98,7 +98,7 @@ threshold = running_average_residual + sigma_mult * running_stddev_residual
 
 An engram is a named, serializable snapshot of a trained `OnlineSubspace`, plus metadata.
 
-An engram can be serialized to disk, sent over the wire, and loaded on a different machine — and it will score incoming vectors exactly the same way it did on the node that minted it. This works because every node independently derives the same atom vectors from the same hash function. The vectors stored inside the engram were computed in a space that every other node already lives in. Load the engram, start scoring — no setup, no sync, no negotiation. The [coordination-free post](/blog/primers/series-1-004-coordination-free/) covers why this works at the encoding level.
+An engram can be serialized to disk, sent over the wire, and loaded on a different machine — and it will score incoming vectors exactly the same way it did on the node that minted it. This works because every node independently derives the same atom vectors from the same hash function. The vectors stored inside the engram were computed in a space that every other node already lives in. Load the engram, start scoring — no setup, no sync, no negotiation. The [coordination-free post](/blog/primers/series-001-004-coordination-free/) covers why this works at the encoding level.
 
 ```python
 @dataclass

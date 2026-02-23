@@ -1,6 +1,6 @@
 ---
-title: "Python: The First Two Weeks"
-description: From the initial commit to the first real results — day one architecture, the database origin, Rete emerging on day two, and the challenge batches that stress-tested the structural encoding hypothesis.
+title: "Python: The Foundation"
+description: From the initial commit to the first six challenge batches — day one architecture, the database origin, Rete emerging on day two, the 123x speedup, and the primitives forged in the Sudoku failure.
 date: 2026-02-21
 ---
 
@@ -48,6 +48,8 @@ Eight days of API stabilization — bulk insert optimization, guard refinements,
 
 Both of them. Same day. Which is relevant because batch 002 requires primitives that don't exist yet in the API — or at least, didn't exist before the batch 004 Sudoku work that happens the next day. More on that in a moment.
 
+A note on where these challenges came from: they were LLM-generated. Every batch — the problem definitions, the test data, the evaluation criteria — came out of long chat threads with Grok (and occasionally Claude) about what problems would meaningfully stress-test the encoding. The challenges weren't hand-designed; they emerged from collaborative ideation sessions where the goal was "what's the hardest thing you can think of that this approach should be able to handle?" The LLMs proposed, I selected and reframed, and then we built solutions together. This is the same pattern as the code: every file in every repo is LLM-generated. The domain knowledge and the architectural direction are mine. The artifacts are not.
+
 ### Batch 001: Four Problems, One Encoding
 
 The four batch 001 challenges:
@@ -59,7 +61,7 @@ The four batch 001 challenges:
 
 Same approach across all four. Encode the document as a hypervector using role-filler binding, store it, query by encoding a probe document and finding similar vectors by cosine similarity.
 
-*(The full encoding stack is covered in [Atoms, Vectors, and the Encoding Stack](/blog/primers/series-1-001-atoms-and-vectors/). The short version: every scalar value — a field name, a string, a number — maps to a unique high-dimensional vector called an atom. The mapping is deterministic within a language implementation: a hash of the atom string combined with a global seed produces a deterministic 4096-dimensional bipolar vector. Same atom, same language, any machine, any process: identical vector. No codebook to persist or distribute. The function is the codebook.)*
+*(The full encoding stack is covered in [Atoms, Vectors, and the Encoding Stack](/blog/primers/series-001-001-atoms-and-vectors/). The short version: every scalar value — a field name, a string, a number — maps to a unique high-dimensional vector called an atom. The mapping is deterministic within a language implementation: a hash of the atom string combined with a global seed produces a deterministic 4096-dimensional bipolar vector. Same atom, same language, any machine, any process: identical vector. No codebook to persist or distribute. The function is the codebook.)*
 
 The mechanism: each field becomes a bound pair. A field name and its value are both atomized to vectors, then bound by element-wise multiplication into a product vector that's approximately orthogonal to both the key atom and value atom in isolation. The full document is the superposition (sum, normalized) of all its field bindings — "vectorized" back up from the atomized scalars into a single representation of the whole structure.
 
@@ -118,22 +120,22 @@ A prototype with threshold 0.5 keeps only dimensions that agree across at least 
 
 ---
 
-## Jan 25: Sudoku, Primitives, and an Honest Assessment
+## Jan 25–30: Sudoku, Primitives, and an Honest Assessment
 
-January 25. Batch 004. Sudoku.
-
-This is where `prototype`, `difference`, `blend`, `amplify`, and `negate` appear as formal primitives — developed specifically as tools to attack the Sudoku constraint satisfaction problem. The commit history for batch 002 LEARNINGS was written *after* these primitives existed, which is why it reads as if they were always available. They weren't. The Sudoku work built them.
+January 25. Batch 004. Sudoku begins — and doesn't end until January 30.
 
 The Sudoku hypothesis: Sudoku is a constraint satisfaction problem. VSA encodes structure. Constraint satisfaction is structural reasoning. Therefore, VSA similarity should be able to guide or replace backtracking search.
 
-The experiment was thorough. Three solver variants:
+Five days. 44 distinct approaches committed. Not five days of casual tinkering — five days of genuine effort, daily commits, approach after approach. This is also where `prototype`, `difference`, `blend`, `amplify`, and `negate` appear as formal primitives — developed specifically as tools to attack the constraint satisfaction problem. They were forged trying to solve Sudoku. They turned out to be enormously useful for everything else.
+
+The final results:
 - Traditional backtracking: 0.0248s baseline
 - Simple geometric (random vectors + similarity scoring): 0.0253s — essentially the same
 - Optimized geometric (proper constraint vectors + full VSA reasoning): 0.3443s — **14x slower**
 
 At scale (90 puzzles across four difficulty levels): 82.2% success with hybrid approach, 65.6% with pure geometric. Traditional backtracking: 100%.
 
-The honest assessment, written directly into the docs at the time:
+The honest assessment committed at the end of the run:
 
 > **What we claimed:** Geometric constraint satisfaction using hyperspace similarity.
 >
@@ -141,15 +143,15 @@ The honest assessment, written directly into the docs at the time:
 >
 > The hyperspace queries help *order guesses* during backtracking, but the actual constraint satisfaction uses traditional verification. This is valuable (faster convergence) but not the "radical" geometric solution originally envisioned.
 
-This is the first wall. VSA is a similarity engine over high-dimensional spaces. It finds approximate matches. Sudoku requires exact constraint enforcement — every row, column, and block must contain each digit exactly once. There is no approximate version of that constraint. The geometric approach can guide the search (better than random tie-breaking, worse than constraint propagation), but it cannot replace it.
+This is the first wall. VSA is a similarity engine over high-dimensional spaces. It finds approximate matches. Sudoku requires exact constraint enforcement — every row, column, and block must contain each digit exactly once. There is no approximate version of that constraint. The geometric approach can guide the search (better than random tie-breaking, worse than constraint propagation), but it cannot replace it. The next post covers the wall in full detail.
 
-What the Sudoku work *did* produce: five algebraic primitives that turned out to be enormously useful everywhere else. `prototype` for category learning. `difference` for change extraction. `blend` for fuzzy categorical queries. `amplify` for signal boosting. `negate` for "X but NOT Y" exclusion. The primitives were forged in the wrong problem and immediately applied to better ones.
+What the Sudoku work *did* produce: `prototype` for category learning. `difference` for change extraction. `blend` for fuzzy categorical queries. `amplify` for signal boosting. `negate` for "X but NOT Y" exclusion. The primitives were forged in the wrong problem and immediately applied to better ones.
 
 ---
 
 ## Jan 26–30: API Stabilization, Batch 003, Scale
 
-January 26 brings the unified `HolonClient` interface — a cleaner API layer over the encoding primitives. January 26 through 30 is a sustained push through batch 003, batch 006, batch 007, and the first scale experiments.
+The Sudoku work ran through January 30, but it wasn't the only thing happening. January 26 brings the unified `HolonClient` interface — a cleaner API layer over the encoding primitives. January 27 through 30 is a sustained push through batch 003, batch 006, and the first scale experiments, running in parallel with the tail end of the Sudoku approaches. Batch 007 lands January 31 alongside the Qdrant integration.
 
 ### Batch 003: Text and N-grams
 
@@ -200,81 +202,23 @@ This is VSA doing something algebraically meaningful that would require explicit
 
 ---
 
-## Jan 31: Scale, Batch 008, Dimension Analysis
+## What Two Weeks Built
 
-January 31. Time encoding, Qdrant integration, batch 008, and the first real dimension sensitivity analysis.
+By January 30 — two weeks after the first commit, all of it after hours — the Python implementation had a working structural encoding engine, six challenge batches demonstrating it across wildly different data shapes, five algebraic primitives forged in a failed Sudoku attempt, a 123x similarity speedup, and the first hints that this encoding might generalize further than the original database use case.
 
-**Time encoding (`$time` marker)**: temporal similarity encoded geometrically. Two timestamps from the same hour of the same day of the week map to similar vectors. Same time next week: high similarity. Monday 9am vs Sunday 9pm: low similarity. Time enters the vector as a smooth geometric property, not as a string comparison.
+To be precise about what "two weeks after hours" means: this is not two weeks of full-time engineering. It's evenings. Every challenge batch, every primitive, every speedup — squeezed into the hours after a full working day. The throughput is abnormal for that constraint, and the reason is the tool loop. The rate-limiting step in exploratory engineering is usually "write the thing, run it, interpret the result, think about what to try next, write the next thing." LLM-assisted development compresses every step in that loop except the thinking. The thinking still takes as long as it takes. But everything else — boilerplate, API wiring, test scaffolding, iteration — is gone. What remains is the experiment itself.
 
-**Dimension analysis**: the question is which dimensionality gives the best tradeoff between accuracy and memory/compute cost. 1k, 4k, 8k, 16k. Result: 16k dimensions is the right default for complex structured documents. The standard deviation of cosine similarity between two random vectors is ~1/√d — at 16k that's 0.0079, tight enough that 10,000+ near-orthogonal atoms fit comfortably before the space gets crowded.
+Several things were established:
 
-**Batch 008**: seven challenges in the enterprise/operational domain. Event correlation, ticket routing, configuration drift detection, API request pattern analysis. Accuracy: 92–100% across all seven. TorchHD GPU backend experimented with (98.4% precision on numeric fields, 300 ops/sec — too slow for any streaming use case; the GPU overhead dominates for per-item operations).
+**The structural encoding generalizes.** Tasks, recipes, graphs, text — same encoding, all working. The hypothesis held across every data shape we threw at it. Whether it would hold for network packets and streaming data was the next question.
 
-The GPU experiment is important to be honest about: the 4090 doesn't help here. The VSA operations are per-item, not batch. GPU throughput only matters when you're processing thousands of items simultaneously. For streaming anomaly detection — where each packet or request arrives individually and needs an answer immediately — the GPU is the wrong tool. CPU vectorized NumPy at 4096 or 16384 dimensions is the right tool.
+**The primitives compose into a real algebra.** `bind`, `bundle`, `prototype`, `difference`, `blend`, `amplify`, `negate` — they emerged from the Sudoku work and immediately applied everywhere else. Exact lookup, fuzzy search, categorical classification, exclusion queries, "what changed" queries. Not designed to cover all those cases. They just did.
 
----
+**The Sudoku wall was informative, not wasted.** The NP-hard failure told us exactly where the approach ends: approximate geometric similarity cannot do exact combinatorial search. That boundary is precise and useful. Everything on the other side of it — where "approximately correct" is a meaningful category — is where this algebra works.
 
-## Feb 1–5: Challenge 009–012, the Performance Ceiling
-
-The first five days of February are where Python's limits became undeniable.
-
-**Challenge 009** (Feb 2): deterministic training at scale on a 14-core, 54GB RAM machine.
-
-| Scale | Categories | Accuracy | Throughput | Time | Memory |
-|-------|-----------|---------|-----------|------|--------|
-| 1M records | 100 | 94.5% | 25,581 enc/sec | 44s | 3.9GB |
-| 1M records | 1,000 | 84.5% | — | — | — |
-| 5M records | 1,000 | 84.4% | 23,322 enc/sec | 7.5 min | 19.5GB |
-
-23,322 encoding operations per second across 10 parallel workers on a machine with 54GB RAM. At that rate, 1M records takes 44 seconds. The accuracy at 1000 categories — 84.4% — is on synthetic data with planted signal. Real-world data would be harder. The performance ceiling is visible.
-
-**Challenge 010** (Feb 3): first contact with real network traffic. HTTP anomaly detection.
-
-- F1=1.000
-- 8,339 requests/second
-- 0.12ms per request
-
-This is where the database idea met the domain that would eventually become everything. The structural encoding that works for recipe search and graph topology also works for HTTP requests — because it doesn't care what the data means, only how it's structured. A request with `{"method": "POST", "path": "/api/login", "status": 200}` encodes the same way a recipe encodes. The roles and fillers are different atoms, but the binding-bundling process is identical.
-
-The accumulator primitive is introduced here. Where `prototype()` extracts category essence by thresholding agreement (lossy), `accumulate()` builds a running sum that preserves frequency. 99% of traffic is benign — the accumulated baseline vector has a strong benign signal. An anomalous request's structural fingerprint diverges from the baseline. The divergence is measurable in a single cosine similarity computation.
-
-**Challenge 011** (Feb 4): structural detection. The proof that role-filler binding is doing real work, not a convenience.
-
-The experiment: encode `{"dst_port": 80}` and `{"src_port": 80}` using naive atom bundling (just concatenating all the values) versus structural binding (binding each value to its role). 
-
-Naive bundling: both documents contain the atom "80". They look similar. F1=0.368 on attack detection — the naive approach can't distinguish "80 as a destination port" from "80 as a source port."
-
-Structural binding: `bind("dst_port", "80")` ≠ `bind("src_port", "80")`. The binding operation makes them orthogonal. The structural distinction is encoded in the geometry. F1=1.000.
-
-That difference — 0.368 vs 1.000 — is the clearest single demonstration of what structural encoding buys you. It's not a trick or an optimization. It's the foundational claim of the approach: structure encodes into geometry, and geometric similarity then reflects structural similarity.
-
-**Challenge 012** (Feb 5): zero-hardcode detection.
-
-100% attack recall. 4% false positive rate. No port numbers. No protocol names. No labeled attack patterns. No domain knowledge of any kind. The detector learns from the stream of traffic what "normal" looks like, and flags deviations.
-
-The mechanism: character class bitmasks over byte sequences, accumulated into a frequency-preserving baseline vector. "Normal" traffic uses a consistent distribution of byte patterns. Attack traffic — SYN floods, NTP amplification, DNS reflection — uses a systematically different distribution. The geometric distance between a packet's structural fingerprint and the accumulated baseline is the anomaly score.
-
-This is what the Prologue means by "the geometry does the work." There is no hand-tuned rule here. No expert system. No feature engineering beyond the choice of encoding scheme. The algebra, accumulating over a stream of real packets, learns what normal looks like — and flags what isn't.
+**The foundation was ready for harder problems.** Batches 001–003 and 006 were proof the encoding worked. What we didn't know yet was whether it could do anomaly detection, whether it could scale to millions of records, or whether the performance ceiling would matter. Those questions drive the next two posts.
 
 ---
 
-## What Twenty Days Established
-
-By February 6 — twenty days after the first commit, all of it after hours — the Python implementation had run through twelve challenge batches, scale-tested up to 5 million records, and produced F1=1.000 on anomaly detection without any domain knowledge.
-
-To be precise about what "twenty days after hours" means here: this is not twenty days of full-time engineering. It's twenty days of evenings. Every challenge batch, every scale test, every primitive added to the algebra — squeezed into the hours after a full working day. The throughput is abnormal for that constraint, and the reason is the tool loop. The rate-limiting step in exploratory engineering is usually "write the thing, run it, interpret the result, think about what to try next, write the next thing." LLM-assisted development compresses every step in that loop except the thinking. The thinking still takes as long as it takes. But everything else — boilerplate, API wiring, test scaffolding, iteration — is gone. What remains is the experiment itself.
-
-Several things were clear:
-
-**The structural encoding generalizes further than expected.** Tasks, recipes, graphs, text, network packets — same encoding, all working. The hypothesis held across wildly different data shapes.
-
-**The primitives are a complete algebra.** `bind`, `bundle`, `prototype`, `difference`, `blend`, `amplify`, `negate` compose to cover a surprising range of query types: exact lookup, fuzzy search, categorical classification, anomaly detection, exclusion queries, and "what changed" queries. The primitives weren't designed to cover all these cases — they emerged from experiments, and they happened to be composable.
-
-**The performance ceiling is visible and specific.** Python tops out at ~23k encode operations/second with 10 workers, ~8k similarity queries/second for streaming. For a database, that might be acceptable. For real-time packet processing at 1M+ packets per second, it's not. The Rust port was already underway — it started the same week as challenge 012. Both tracks were running simultaneously by February 6.
-
-**The database is still there.** The streaming anomaly detection work is exciting, but the original use case — structural sub-document querying over large document stores — is validated too. The challenge 009 scale test at 1M and 5M records with Qdrant integration is that demonstration. The database and the stream processor are the same system. The engram work we'd do a few weeks later would close the loop back on this: learned patterns from streaming data become indexed, queryable memory. The database and the detector become one.
-
----
-
-Next: batches 004 and 005, where we tried to make VSA do something it fundamentally cannot do, built the primitive algebra in the attempt, and learned exactly where approximate geometric reasoning ends and exact symbolic reasoning must begin.
+Next: batch 004 — where we tried to make VSA do something it fundamentally cannot do, built the primitive algebra in the attempt, and learned exactly where approximate geometric reasoning ends and exact symbolic reasoning must begin. Batch 005 never happened. The wall was clear enough.
 

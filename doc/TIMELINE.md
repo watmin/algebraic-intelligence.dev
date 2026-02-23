@@ -37,63 +37,73 @@ tree.
 
 ---
 
-## Jan 24–25 — holon (Python): Batch 001 + 002, Sudoku
+## Jan 24–30 — holon (Python): Batch 001 + 002, Sudoku
 
 **2026-01-24** — Batch 001 challenges: task memory, recipe finder, bug reports,
 spell search. All working. Graph matching (batch 002 RPM/graph) implemented the
 same day. PDF quote finder scaffold.
 
-**2026-01-25** — **Sudoku** (challenge 004). Multiple approaches: geometric VSA,
-hybrid geometric + traditional solver. Commits range from "breakthrough" to
-"docs: remove hype and fix Challenge 2 union rule". The honest assessment: VSA
-cannot solve Sudoku. Constraint satisfaction requires exact backtracking — the
-approximate similarity geometry of HDC is the wrong tool.
+**2026-01-25 through 2026-01-30** — **Sudoku** (challenge 004). 44 distinct
+approaches across five days of commits. Starts with geometric VSA hypotheses,
+ends with a FINAL_ASSESSMENT documenting every approach tried. Commits range
+from "breakthrough" to "docs: remove hype and fix Challenge 2 union rule".
+The honest assessment: VSA cannot solve Sudoku. Constraint satisfaction requires
+exact backtracking — the approximate similarity geometry of HDC is the wrong tool.
 
-Also: mathematical primitives added (`prototype`, `difference`, `blend`,
-`amplify`, `negate`). These were developed *during* the Sudoku work as
-tools to attack it — and proved far more useful everywhere else.
+Initial mathematical primitives exploration begins Jan 25. The five named
+primitives — `prototype`, `difference`, `blend`, `amplify`, `negate` — are
+committed Jan 30 (`c02b12a`) during the radical approach phase. These were
+developed *during* the Sudoku work as tools to attack it — and proved far
+more useful everywhere else.
 
 **Blog:** Series 2, post 1 (batches 001-003); Series 2, post 2 (batch 004, P vs NP)
 
 ---
 
-## Jan 26–30 — holon (Python): Batches 003–007, Scale Testing
+## Jan 26–31 — holon (Python): Batches 003, 006, 007, Scale Testing
 
 **2026-01-26** — Unified `HolonClient` interface. API stabilization.
+No Sudoku commits this day — a pause between the initial attempt (Jan 25)
+and the radical approaches phase (Jan 28–30).
 
-**2026-01-30** — Batches 003 (quote finder), 005 (unknown/omitted), 006 (LLM
-memory augmentation), 007 (multi-domain demos including Rete challenge). All
-solutions complete. Qdrant integration. 16k dimensions found to be the right
-default for complex docs. Similarity function optimization: **123x speedup**.
-`$or` superposition (23x speedup over naive OR). Code structure search.
+**2026-01-27** — Batch 003 (quote finder) initial solution. N-gram encoding
+for fuzzy text search. Encoder improvements (configurable n-gram sizes,
+geometric primitives). No Sudoku commits.
 
-Also: honest assessment document added. 81.7% accuracy at 1000 categories on
-synthetic data. No baseline comparisons. All benchmarks on planted signal.
+**2026-01-30** — Massive day. Sudoku wraps up: approaches 25–44, negate +
+five new primitives added, FINAL_ASSESSMENT committed. Also: batch 006
+(LLM memory augmentation). Enhanced batch 003 with primitives applied to text:
+`prototype` for topic signatures (100% classification), `negate` for exclusion
+queries. Similarity function optimization: **123x speedup** (loop → NumPy
+matrix multiply). `$or` superposition (23x speedup over naive OR). Code
+structure search. 16k dimensions confirmed as right default. Honest assessment
+document added. Library consolidation.
 
-**Blog:** Series 2, post 2 (batches 004–005); Series 2, posts 3+ (batches 006–007)
+**2026-01-31** — Batch 007 (multi-domain demos including Rete challenge).
+`$time` marker for temporal similarity. Qdrant integration (`QdrantStore`).
+Qdrant stress test. Dimension selection guide. Parallel encoding.
+GPU support + batch 008 framework begins (see next entry).
+
+Note: Batch 005 was never attempted — problems were queued but abandoned
+when batch 004 exhausted patience. No batch 005 commits exist anywhere.
+
+**Blog:** Series 2, post 2 (batch 004); Series 2, posts 3+ (batches 006–007)
 
 ---
 
-## Jan 31 — holon (Python): Scale, Backends, Batch 008
+## Jan 31 – Feb 1 — holon (Python): Batch 008, GPU Experiment
 
-**2026-01-31** — Qdrant stress test. Time encoding (`$time` marker). Temporal
-similarity: same hour next week ≈ same vector. Batch 008 (7 challenges: event
-correlation, ticket routing, config drift, API pattern analysis — 92–100%
-accuracy). GPU backend (honest assessment: 40x for large batches, impractical
-for streaming). TorchHD backend (98.4% precision on numeric fields, 300 ops/sec
-— too slow).
+**2026-01-31** — Batch 008 begins: GPU support, batch 008 challenge framework,
+first two challenges (API Request Pattern Analyzer). Dimension analysis for
+prototype classification documented.
 
-Dimension selection guide added. Benchmarks across 1k/4k/8k/16k dims.
-
-**Blog:** Series 2, post 3+
-
----
-
-## Feb 1 — holon (Python): Batch 008 Complete, Primitives Polished
-
-**2026-02-01** — All 7 batch 008 challenges complete. New primitives added
-(`resonance`, `conditional_bind`, sequence encoding modes). `$mode` marker
-standardized. "Brutally honest" README section. Parallel encoding (10 workers).
+**2026-02-01** — All 7 batch 008 challenges complete (event correlation, ticket
+routing, config drift, API pattern analysis — 92–100% accuracy). GPU backend
+evaluated (honest assessment: 40x for large batches, impractical for streaming).
+TorchHD backend (98.4% precision on numeric fields, 300 ops/sec — too slow).
+New primitives (`resonance`, `conditional_bind`, sequence encoding modes).
+`$mode` marker standardized. "Brutally honest" README section. Parallel
+encoding (10 workers).
 
 **Blog:** Series 2, post 3+
 
@@ -182,6 +192,11 @@ to holon-rs added (Rust port already underway by this date — see below).
 Holon VSA library". Same day: comprehensive tests, SIMD support, Challenge 008
 port, benchmarks, Doctor Strange README aesthetic.
 
+The initial architecture is a flat `src/lib.rs` with a single `Holon` struct —
+a direct facade, not the layered structure that would come later. The three-layer
+refactor (kernel/memory/highlevel) does not happen until Feb 20. Everything from
+Feb 6 through Feb 19 builds on top of the original flat structure.
+
 The Rust port started the same week as Challenge 012 in Python. Both were
 running in parallel. The initial Rust commit already includes SIMD acceleration
 (`--features simd`).
@@ -203,7 +218,8 @@ Benchmark snapshot from first week:
 with AF_PACKET and macvlan hairpin. XDP packet sampling and pcap capture.
 
 **2026-02-08** — `holon-lab-baseline` initial commit. WordPress stack on Docker,
-macvlan + Squid proxy (23 unique source IPs), Playwright + Ollama LLM agents.
+ipvlan + Squid proxy (23 unique source IPs), Playwright + Ollama LLM agents.
+(Initial commit used macvlan; switched to ipvlan for AF_XDP support same day.)
 3 admin agents (post creation, comment moderation), 20 user agents (browsing,
 commenting). The traffic generator that would feed all subsequent experiments.
 
@@ -214,31 +230,20 @@ Also Feb 8: `holon-rs` adds Walkable trait (zero-serialization encoding), Batch
 
 ---
 
-## Feb 9–10 — holon-lab-ddos: veth Lab PoC, 1.3M PPS
+## Feb 9–10 — veth Lab PoC, 1.3M PPS, Batch 014, Visualization
 
-**2026-02-09** — veth-lab PoC: XDP DDoS mitigation proof-of-concept.
-holon-rs integrated. **Stress test: 1.3M PPS attack, 99.5% drop rate.**
+**2026-02-09** — holon-lab-ddos: veth-lab PoC: XDP DDoS mitigation
+proof-of-concept. holon-rs integrated. **Stress test: 1.3M PPS attack,
+99.5% drop rate.**
 
-**2026-02-10** — holon (Python) and holon-rs both add batch 014: extended
-primitives for explainable VSA (`segment`, `complexity`, `invert`,
-`similarity_profile`, `attend`, `project`, `analogy`, `conditional_bind`).
-holon-rs: vector bipolar distribution fix, doctest fixes.
+**2026-02-10** — holon (Python): 3D visualization module — PCA projection of
+encoded traffic vectors into 3D space, rendered to inspect where vectors
+actually land. Also batch 014: extended primitives for explainable VSA
+(`segment`, `complexity`, `invert`, `similarity_profile`, `attend`, `project`,
+`analogy`, `conditional_bind`).
 
-**Blog:** Series 6, post 1 (veth lab, first results)
+holon-rs: batch 014 ports, vector bipolar distribution fix, doctest fixes.
 
----
-
-## Feb 11 — holon-lab-ddos: Tree Rete Engine, 1M Rules
-
-**2026-02-11** — **Major milestone:** BPF tail-call DFS architecture.
-1,000,000 rules compiled into a decision tree, enforced at line rate.
-~5 BPF tail calls per packet regardless of rule count (O(depth), not O(rules)).
-
-Also: tree Rete engine with blue/green deployment and s-expression rules.
-p0f-level fields (OS fingerprinting) in detection loop.
-
-holon (Python): 3D visualization module — PCA projection of encoded traffic
-vectors into 3D space, rendered to inspect where vectors actually land.
 **Key insight moment:** synthetic attack traffic and synthetic normal traffic
 appeared in dramatically separated regions of the projected space. Visually
 distinct, no overlap. This made the geometric separation concrete and observable
@@ -246,52 +251,70 @@ distinct, no overlap. This made the geometric separation concrete and observable
 these regions were measurable and nameable led directly to the engram concept:
 if a cluster of vectors occupies a region of space, you can characterize that
 region, snapshot it, and ask whether future vectors fall inside or outside it.
-Engrams formalized what the visualization revealed.
+Engrams formalized what the visualization revealed. (Demo video added Feb 11.)
 
+**Blog:** Series 6, post 1 (veth lab, first results)
+
+---
+
+## Feb 11 — holon-lab-ddos: Tree Rete Engine, Blue/Green Deploy
+
+**2026-02-11** — Tree Rete engine with blue/green deployment and s-expression
+rules. p0f-level fields (OS fingerprinting) in detection loop. Vector-derived
+rate limiting integration with holon-rs.
+
+holon (Python): streaming demo video added to visualization README.
 holon-rs: $log/$linear markers, Walkable support for magnitude-aware encoding.
 
-**Blog:** Series 6, post 2 (1M rules, BPF tail-call DFS)
+**Blog:** Series 6, post 2 (tree rete engine)
 
 ---
 
-## Feb 12–14 — holon-lab-ddos: Rule Language, Predicates, Dashboard
+## Feb 12–14 — BPF Tail-Call DFS, Rule Language, Dashboard
 
-**2026-02-12** — Comprehensive documentation suite: RETE.md, VSA.md, EBPF.md,
-DECISIONS.md, SCALING.md. EDN rule format. PLAN-NEXT.md.
+**2026-02-12** — **Major milestone:** BPF tail-call DFS architecture.
+1,000,000 rules compiled into a decision tree, enforced at line rate.
+~5 BPF tail calls per packet regardless of rule count (O(depth), not O(rules)).
+Comprehensive documentation suite: RETE.md, VSA.md, EBPF.md, DECISIONS.md,
+SCALING.md. PLAN-NEXT.md.
 
-**2026-02-13** — Range predicates, Mask predicate, In predicate, rate limiter
-observability. Named rate limiter buckets. holon-rs parity tracking (PARITY.md,
-MISSING-PRIMITIVES.md).
+**2026-02-13** — EDN rule format with streaming parser. Range predicates, Mask
+predicate, In predicate, rate limiter observability. Named rate limiter buckets.
+Legacy flat rules and bitmask Rete engine removed.
+holon-rs: parity tracking (PARITY.md, MISSING-PRIMITIVES.md).
 
 **2026-02-14** — Real-time metrics dashboard (SSE streaming, DAG viewer).
-Multi-tenant byte matching. Multi-line EDN rule support. Token bucket
-nanosecond precision. Blue/green prefix list support.
+Multi-tenant byte matching. Multi-line EDN rule support. MaskEq predicates,
+pattern guards, per-rule drop metrics. IN/NOT/OR predicates removed in favor
+of explicit rule philosophy.
 
-**Blog:** Series 6, post 3 (rule language and architecture)
+**Blog:** Series 6, post 3 (1M rules, BPF tail-call DFS, rule language)
 
 ---
 
-## Feb 15 — Multi-Repo: Payload Analysis, Batch 016
+## Feb 15 — Multi-Repo: Batch 016, Infrastructure Hardening
 
 **2026-02-15** — Coordinated work across three repos:
 
 - **holon** (Python): Batch 016 — windowed payload analysis, byte match
   rule derivation.
 - **holon-rs**: Payload anomaly detection example, advanced vector ops,
-  byte match derivation example.
-- **holon-lab-ddos**: Full 2048-byte L4 payload analysis (32 windows),
-  byte match rule derivation writeup. IPv4 header fingerprinting for OS
-  detection. BPF RingBuf (replacing PerfEventArray). Token bucket fix.
+  byte match derivation example. Python parity for distance metrics.
+- **holon-lab-ddos**: IPv4 header fingerprinting for OS detection. BPF
+  RingBuf (replacing PerfEventArray). Nanosecond-precision token bucket fix.
   Comprehensive test coverage (tree compiler, token bucket, complex rulesets).
-  1M rules proven: 50K → 1M scaling data.
 
-**Blog:** Series 6, post 4 (payload analysis)
+**Blog:** Series 6, post 4 (infrastructure)
 
 ---
 
-## Feb 16 — holon-lab-ddos: Decay Model, Dual Accumulator
+## Feb 16 — holon-lab-ddos: Payload Analysis, Decay Model
 
-**2026-02-16** — Decay-based per-packet processing with dual accumulator model.
+**2026-02-16** — Full 2048-byte L4 payload analysis (32 windows). Windowed
+payload VSA with multi-byte l4-match rule derivation. Byte match derivation
+writeup.
+
+Decay-based per-packet processing with dual accumulator model.
 `drift_rate` early detection, rule subsumption, anomaly suppression.
 Full writeup with recording.
 
@@ -316,36 +339,47 @@ Also: drone behavioral cloning idea via engrams documented.
 
 ---
 
-## Feb 19 — holon-rs + holon-lab-ddos: Engram Integration, Instant Rules
+## Feb 18 — holon (Python): Three-Layer Architecture Refactor
 
-**2026-02-19** — holon-rs: memory layer, temporal encoding, showcase examples.
-Python-level engram/subspace parity in Rust.
+**2026-02-18** — holon (Python): major refactor to clean three-layer architecture
+(kernel/memory/highlevel). Module aliases promoted, TimeScale wrapper added,
+showcases rewritten for depth. The engram integration made the architectural
+separation obvious — the refactor followed naturally.
 
-**2026-02-19** — holon-lab-ddos: **instant rule deploy on engram hit.**
-Re-detected attacks recognized in a single packet. Rules deploy immediately
-without waiting for drift-based detector.
-
-**Result: 750ms → 3ms.** The accumulator baseline took 750ms to accumulate
-enough signal. The engram system recognizes a previously-seen attack in the
-first packet: 3ms.
-
-holon (Python): major refactor to clean three-layer architecture
-(kernel/memory/highlevel). Showcases rewritten for depth.
-
-**Blog:** Series 6, post 6 (engram integration, 750ms → 3ms)
+**Blog:** Series 2 or Series 3 (architecture retrospective)
 
 ---
 
-## Feb 20 — holon-rs: Three-Layer Refactor + ndarray
+## Feb 19 — holon-rs: Memory Layer, Engram Parity
+
+**2026-02-19** — holon-rs: memory layer, temporal encoding, showcase examples.
+Python-level engram/subspace parity in Rust. Crate prepared for crates.io
+publishing.
+
+holon-lab-ddos: sidecar refactored — split main.rs into focused modules.
+Bucket key derivation fix. Dead code cleanup. (Engram integration in sidecar
+happens the next day.)
+
+**Blog:** Series 3 (Rust memory layer)
+
+---
+
+## Feb 20 — Three-Layer Refactor, Engram Hit, 750ms → 3ms
 
 **2026-02-20** — holon-rs: three-layer module structure (kernel/memory/highlevel)
 matching Python. ndarray for vectorized CCIPCA and accumulator operations.
 `get_vector()` exposed on Encoder.
 
-holon-lab-ddos: sidecar refactored to use kernel/memory layer imports directly.
-Engram writeup finalized (ENGRAM-MEMORY.md).
+holon-lab-ddos: **instant rule deploy on engram hit.** Re-detected attacks
+recognized in a single packet. Rules deploy immediately without waiting for
+drift-based detector. Sidecar refactored to use kernel/memory layer imports
+directly. Engram writeup finalized (ENGRAM-MEMORY.md).
 
-**Blog:** Series 3, architecture post
+**Result: 750ms → 3ms.** The accumulator baseline took 750ms to accumulate
+enough signal. The engram system recognizes a previously-seen attack in the
+first packet: 3ms.
+
+**Blog:** Series 3, architecture post; Series 6, post 6 (engram hit, 750ms → 3ms)
 
 ---
 
@@ -364,17 +398,23 @@ organized: The Story / The Library / Demos / Guides.
 | Period | Focus | Key Output |
 |--------|-------|------------|
 | Jan 16–17 | Python foundation | Working VSA library, HTTP API |
-| Jan 24–25 | Batch 001, Sudoku wall | Structural encoding proven; NP limits found |
-| Jan 26–31 | Batches 003–008, scale | 123x similarity speedup, 5M records, Qdrant |
-| Feb 1–5 | Batches 009–012 | 94.5% at 1M scale, F1=1.0 detection, zero-hardcode |
-| Feb 6 | holon-rs starts | 10–15x speedup from day one |
+| Jan 24 | Batch 001 + 002 | Structural encoding proven across 8 challenges |
+| Jan 25–30 | Batch 004: Sudoku wall | NP limits found; 5 primitives forged (Jan 30) |
+| Jan 27–30 | Batches 003, 006, scale | 123x speedup, $or superposition (both Jan 30) |
+| Jan 31–Feb 1 | Batch 007, 008, Qdrant | 92–100% accuracy, GPU assessed, 7 domains |
+| Feb 2–5 | Batches 009–012 | 94.5% at 1M scale, F1=1.0 detection, zero-hardcode |
+| Feb 6 | holon-rs starts | 10–15x speedup, flat facade architecture |
 | Feb 7–8 | Labs start | DDoS lab scaffold, baseline traffic generator |
-| Feb 9–11 | veth-lab PoC | 1.3M PPS, 99.5% drop rate, 1M rules proven |
-| Feb 12–15 | Rule language | EDN rules, dashboard, payload analysis |
-| Feb 16 | Decay model | 750ms dual-accumulator baseline |
+| Feb 9–10 | veth-lab PoC, visualization | 1.3M PPS, 99.5% drop rate, 3D PCA viz |
+| Feb 11 | Tree rete engine | Blue/green deploy, p0f fields, rate limiting |
+| Feb 12 | **1M rules proven** | BPF tail-call DFS, O(depth) not O(rules) |
+| Feb 13–14 | Rule language, dashboard | EDN rules, predicates, SSE metrics |
+| Feb 15 | Infrastructure hardening | RingBuf, token bucket fix, test coverage |
+| Feb 16 | Payload analysis, decay model | 2048-byte L4 windows, 750ms baseline |
 | Feb 17 | Engrams (Python) | Single-packet attack recognition |
-| Feb 19 | Engrams (Rust + XDP) | **750ms → 3ms** instant rule deploy |
-| Feb 20 | Architecture cleanup | Three-layer refactor, site launched |
+| Feb 18 | Python three-layer refactor | kernel/memory/highlevel architecture |
+| Feb 19 | Engrams (Rust) | Memory layer, crates.io prep |
+| Feb 20 | Rust three-layer + engram hit | **750ms → 3ms**, kernel/memory layer imports |
 
 ---
 
@@ -394,19 +434,24 @@ organized: The Story / The Library / Demos / Guides.
 
 ## Notes for Writing
 
-- **Batches 004 and 005** are the P vs NP attempt. Batch 004 is committed
-  (Sudoku, `FUTURE_RADICAL_APPROACHES.md`). Batch 005 is "omitted" per the
-  author — presumably the experiments didn't produce anything worth committing.
-  Both feed Series 2 post 2.
+- **Batch 004** is the P vs NP attempt. Sudoku. 44 approaches committed across
+  five days (Jan 25–30), ending with `FUTURE_RADICAL_APPROACHES.md` and
+  `FINAL_ASSESSMENT.md`. Feeds Series 2 post 2 (the NP wall).
+  **Batch 005 was never attempted.** The problems (graph 3-coloring, Max-SAT,
+  TSP, Set Cover) were queued while batch 004 was still in progress. By the
+  time 44 approaches had run their course, patience and tokens were exhausted.
+  There are no batch 005 commits anywhere. The problems were abandoned, not omitted.
 
 - **holon-lab-baseline** has only 2 commits. The lab was built but the traffic
   hasn't yet been fed into scrubber experiments. Series 4 should note this
   honestly — the infrastructure exists, the integration is pending.
 
 - **The three-layer architecture** (kernel/memory/highlevel) was refactored
-  into both Python (Feb 19) and Rust (Feb 20) in the same sprint as the engram
+  into Python (Feb 18) and Rust (Feb 20) in the same sprint as the engram
   integration. This is not coincidence — the engram work made the architectural
-  separation obvious.
+  separation obvious. The initial Rust implementation (Feb 6) used a flat
+  `src/lib.rs` facade with a single `Holon` struct. The layered structure
+  was not the starting point; it was the destination.
 
 - **holon-clj** exists at `~/work/holon-clj/`. No git history — a single file
   (`src/holon/core.clj`) with deps: Clojure 1.12, Neanderthal 0.49 (BLAS/LAPACK),

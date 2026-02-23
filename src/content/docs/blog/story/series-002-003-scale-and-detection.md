@@ -1,6 +1,6 @@
 ---
 title: "Scale, Detection, and the Python Ceiling"
-description: After the NP wall, batches 006–012 confirmed what VSA is actually good at, pushed it to 5 million records, and produced the first real anomaly detection results — along with the throughput numbers that made the Rust port inevitable.
+description: After the NP wall, batches 006–012 confirmed what VSA is actually good at — LLM memory, enterprise retrieval, the GPU dead end, 5 million records, the accumulator breakthrough, and the throughput numbers that made the Rust port inevitable.
 date: 2026-02-23
 ---
 
@@ -27,9 +27,15 @@ The 82% token reduction comes from the right retrieval: instead of dumping the f
 
 This is what VSA was designed for. "Find the five most relevant decisions from the last three weeks" is a cosine similarity query. "Ensure the 9th digit in this Sudoku row isn't duplicated anywhere in the column" is not.
 
-Batches 007 and 008 pushed the same pattern into wider domains: multi-format database search, code repository search by call pattern and complexity, customer support ticket routing via k-NN over 1,000 labeled examples, event correlation over 10,000 security events, configuration drift detection across a 100-server fleet. Every one of these is fuzzy top-k retrieval — and every one of them worked.
+---
 
-Some numbers from batch 008:
+## Batches 007–008: Wider Domains, GPU Assessment
+
+Batch 007 (Jan 31) pushed into multi-domain demonstrations: a Rete/rule engine challenge (the same instinct that showed up on day two with the forward chaining demo), multi-format database search, code structure search by call pattern and complexity. These were breadth tests — does the encoding hold when the domain changes completely? It did.
+
+The same day brought the Qdrant integration (`QdrantStore`), the `$time` marker for temporal similarity encoding (same hour next week maps to a geometrically close vector), and the dimension selection guide. 16k dimensions is the right default for complex structured documents: the standard deviation of cosine similarity between two random vectors is ~1/√d, which at 16k is 0.0079 — tight enough that 10,000+ near-orthogonal atoms fit comfortably before the space gets crowded.
+
+Batch 008 (Jan 31 – Feb 1) was seven challenges in the enterprise/operational domain. Every one of them fuzzy top-k retrieval — and every one of them worked:
 
 - **Ticket routing**: k-NN at k=5 → 100% routing accuracy, 2.46ms latency
 - **Config drift**: `difference(golden, actual)` magnitudes — clean config: 0.0, drifted: 27.5 (2,747× ratio)
@@ -243,7 +249,7 @@ The performance benchmark is where Python's ceiling becomes explicit:
 | `similarity()` × 2 | 22 µs |
 | `accumulate()` | 2.6 µs |
 
-`encode_data()` is 182 µs per packet. At 3,100 packets/sec single-core, with 1Gbps link traffic at 1.5M packets/sec, that's a 1:489 sampling ratio. At 10Gbps, 1:4,885. For DDoS detection this is workable — the DDoS lab samples at 1:100 with a ring buffer to handle overflow, and attack traffic dominates sampled traffic enough that detection holds. The vector ops were never going to run on every packet; that's not the architecture.
+`encode_data()` is 182 µs per packet. At 3,100 packets/sec single-core, with 1Gbps link traffic at 1.5M packets/sec, that's a 1:489 sampling ratio. At 10Gbps, 1:4,885. For DDoS detection this is workable — the DDoS lab samples at 1:100 with a ring buffer to handle overflow, and attack traffic dominates sampled traffic enough that detection holds. The vector ops were never going to run on every packet; that's not the architecture. The exception is Layer 7: a WAF making per-request allow/deny decisions operates at HTTP request rates, not packet rates. The Python HTTP detector already demonstrated 8,339 req/sec at 0.12ms per request — that's every request, not sampled. A Rust WAF sidecar doing structural encoding on every request is well within reach, and that's where this is heading.
 
 What the architecture actually requires: the sidecar running on sampled packets needs to keep up with the sample rate, derive rules from what it sees, and push those rules to the XDP program fast enough that the XDP program — which does nothing but apply compiled rules at line rate, no vector ops — can drop or pass in time. The sidecar is the intelligence layer. The XDP program is the enforcement layer. Python's 3,100 pkt/sec ceiling constrains the sidecar throughput and therefore the detection latency, not packet-level drop rate.
 

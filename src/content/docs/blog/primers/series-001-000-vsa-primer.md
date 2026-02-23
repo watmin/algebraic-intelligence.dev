@@ -159,4 +159,4 @@ For the proper theory:
 - [A comparison of vector symbolic architectures](https://arxiv.org/abs/2106.05268) — Schlegel, Neubert & Protzel (2021), open access; systematic evaluation of 11 VSA variants including MAP, BSC, and HRR
 - [Vector Symbolic Architectures in Clojure](https://www.youtube.com/watch?v=j7ygjfbBJD0) — Carin Meier, Clojure/conj 2023; the talk that started this project
 
-For how Holon implements the above: [Atoms, Vectors, and the Encoding Stack](/blog/primers/series-1-001-atoms-and-vectors/).
+For how Holon implements the above: [Atoms, Vectors, and the Encoding Stack](/blog/primers/series-001-001-atoms-and-vectors/).
