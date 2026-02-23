@@ -123,4 +123,4 @@ We moved on. The batch 006 work came next: LLM memory augmentation and the multi
 
 ---
 
-Next: batches 006–008 and the scale experiments that made Python's performance ceiling undeniable.
+Next: batches 006–012 — what VSA is actually good at, 5 million records, the accumulator breakthrough, and the throughput numbers that made the Rust port inevitable.

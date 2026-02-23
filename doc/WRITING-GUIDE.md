@@ -71,6 +71,26 @@ not a decontextualized fragment.
 When there's a performance claim, explain what produced it. What was
 the hardware, what was the workload, what was being measured.
 
+### Synthetic data caveat
+
+Nearly all challenge batch experiments use synthetic data. When presenting
+accuracy numbers (F1, precision, recall, classification accuracy), state
+explicitly that the data is synthetic and note what that means for the result:
+
+- Synthetic data with clean class separation flatters accuracy scores.
+  100% on a well-separated synthetic benchmark does not mean 100% on
+  real production data.
+- We never benchmarked against standard alternatives (Elasticsearch,
+  TF-IDF, scikit-learn classifiers) for most challenges.
+- The numbers prove the encoding works as designed. They don't prove
+  it's better than alternatives for the same task.
+
+This caveat applies to every challenge batch post. Include it whenever
+presenting classification or detection accuracy. Detection numbers on
+network data (batches 010–012) are more meaningful because the attack
+patterns are structurally realistic even if synthetically generated —
+but still note it.
+
 ### Explain the why, not just the what
 
 "We used XOR for binding" is the what. The why is: XOR preserves the

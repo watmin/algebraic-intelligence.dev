@@ -145,6 +145,14 @@ Challenge batches 010–017 drove the design — each one forced a new capabilit
   can't, and the five primitives (prototype, difference, blend, amplify,
   negate) built in the attempt.
 
+- `[x]` **2.3 — Scale, Detection, and the Python Ceiling** — `blog/story/series-2-003-scale-and-detection.md`
+  Batches 006–012: what VSA is actually good at (LLM memory, fuzzy retrieval,
+  event correlation), the 5M record scale ceiling (23k enc/sec, 19.5GB),
+  the accumulator breakthrough (F1 0.23 → 1.000), structural encoding
+  vs naive bundling (F1 0.368 → 1.000), zero-hardcode detection
+  (100% recall / 4% FP), and the measured throughput numbers that made
+  the Rust port inevitable.
+
 - `[ ]` **2.7 — What Python Taught Us**
   The ergonomics and API design that survived into Rust.
   What we threw out, what we kept, and why.
