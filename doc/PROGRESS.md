@@ -71,10 +71,10 @@ The story is told chronologically, not per-repo.*
 
 Posts below are approximate groupings. Boundaries will emerge during writing.
 
-- `[ ]` **The Rust Port** (Feb 6)
+- `[x]` **The Rust Port** (Feb 6) — `blog/story/series-003-001-the-rust-port.md`
   Why Rust. The flat facade architecture (single `Holon` struct in `lib.rs`).
-  Initial benchmarks: 10x encode, 11x similarity, 15x bind. Same week as
-  batch 012 in Python — both tracks running simultaneously.
+  Initial benchmarks: 10x encode, 11x similarity, 15x bind. SIMD from day one.
+  Challenge 012 ported same day. Walkable trait (Feb 8). Batch 013 in parallel.
 
 - `[ ]` **The Labs** (Feb 7–8)
   DDoS lab scaffold: AF_PACKET, macvlan hairpin, XDP sampling. Baseline
