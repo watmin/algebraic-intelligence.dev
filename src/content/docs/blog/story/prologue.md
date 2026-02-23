@@ -100,6 +100,6 @@ This site documents the work. Not a product, not a paper — the actual developm
 
 The site is organized in two tracks. The primers cover the fundamentals — specifically how we use VSA, which means cosine similarity over dense vectors, not Hamming distance over binary ones, and a binding/bundling algebra that operates over structured data rather than semantic tokens. The story posts cover the development arc in order: the Python experiments that built the intuition, the Rust port that made it fast enough for production, the baseline traffic lab, the XDP + eBPF scrubber, and the engram system and what 750ms → 3ms actually means. Read either track first — the primers are reference material, not prerequisites.
 
-And eventually, probably, the database. And maybe something that touches P vs NP, which I'm aware sounds like the kind of thing a crazy person says. I've been the crazy person in the room before. Sometimes that's the right person for the job.
+The story isn't finished. The database idea that started all of this is still on the table — the engram work maps directly onto it. And somewhere down the line, probably, another run at P vs NP. I'm aware that sounds like the kind of thing a crazy person says. I've been the crazy person in the room before. Sometimes that's the right person for the job.
 
 If you came here for a polished pitch, this isn't it. If you came here because you had the same itch and you want to see what happened when someone finally got to scratch it — read on.
