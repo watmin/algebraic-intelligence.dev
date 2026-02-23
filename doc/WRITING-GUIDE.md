@@ -129,6 +129,13 @@ and what to pay attention to. After the block, explain what it's doing
 at the level that matters for the post's argument — not line by line,
 but the key logic.
 
+### Keep the landing page in sync
+
+When a new post is added, update `src/content/docs/index.mdx` to
+include it in the Story or Primers listing. Also mark it complete in
+`doc/PROGRESS.md`. Both files must stay in parity with the actual
+published posts.
+
 ---
 
 ## Terminology

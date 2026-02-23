@@ -76,10 +76,12 @@ Posts below are approximate groupings. Boundaries will emerge during writing.
   Initial benchmarks: 10x encode, 11x similarity, 15x bind. SIMD from day one.
   Challenge 012 ported same day. Walkable trait (Feb 8). Batch 013 in parallel.
 
-- `[ ]` **The Labs** (Feb 7–8)
-  DDoS lab scaffold: AF_PACKET, macvlan hairpin, XDP sampling. Baseline
-  lab: WordPress stack, ipvlan, LLM-driven agents (3 admin + 20 user).
-  Walkable trait in holon-rs. Batch 013 (rate limiting) in both languages.
+- `[x]` **The Labs** (Feb 7–8) — `blog/story/series-003-002-the-labs.md`
+  DDoS lab scaffold: AF_PACKET, macvlan hairpin, XDP sampling, 45k PPS.
+  Baseline lab: WordPress stack, ipvlan, LLM-driven agents (3 admin + 20
+  user, 80/15/5 browser distribution). Batch 013 (pattern identification,
+  rule derivation, rate decoding) in both languages. AF_XDP misunderstanding.
+  First all-day weekend session and the mental load of LLM-assisted dev.
 
 - `[ ]` **1.3 Million Packets Per Second** (Feb 9–12)
   veth-lab PoC with holon-rs integrated. 1.3M PPS stress test, 99.5% drop
