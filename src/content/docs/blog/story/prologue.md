@@ -48,7 +48,7 @@ There's a property of this encoding scheme that didn't fully hit me until later:
 
 I didn't spend time optimizing that path because about a week into it I realized the same encoding machinery could do something much wilder: dynamic rule derivation for a DDoS scrubbing solution. I pivoted hard. The database idea isn't gone — the engram work we've since built maps directly onto it — but streaming detection was more urgent and more interesting to explore first.
 
-The P vs NP rabbit hole is worth mentioning here because it illustrates the kind of problems I'm apparently incapable of leaving alone. Challenge 004 (and the omitted 005 batch) went into this territory. I think VSA's ability to represent and search over combinatorial structure might have something to say in this space. I'm probably wrong. But I'm also the kind of person who builds functional tools and wields them at impossible problems, and I've been surprised before.
+The P vs NP rabbit hole is worth mentioning here because it illustrates the kind of problems I'm apparently incapable of leaving alone. Challenge 004 went deep into this territory. I think VSA's ability to represent and search over combinatorial structure might have something to say in this space. I'm probably wrong. But I'm also the kind of person who builds functional tools and wields them at impossible problems, and I've been surprised before.
 
 ---
 

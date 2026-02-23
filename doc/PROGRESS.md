@@ -139,9 +139,11 @@ Challenge batches 010–017 drove the design — each one forced a new capabilit
   Throughput numbers, where the bottlenecks were, and what that told us
   about what a production system would need.
 
-- `[ ]` **2.6 — The P vs NP Detour**
-  Challenge 004 and the omitted 005 batch. What VSA's combinatorial
-  structure representation might have to say here. Probably wrong. Maybe not.
+- `[x]` **2.2 — The NP Wall** — `blog/story/series-2-002-the-np-wall.md`
+  Challenge 004 (Sudoku, 44 approaches) and the never-started 005 batch
+  (graph 3-coloring, Max-SAT, TSP, set cover). What VSA can't do, why it
+  can't, and the five primitives (prototype, difference, blend, amplify,
+  negate) built in the attempt.
 
 - `[ ]` **2.7 — What Python Taught Us**
   The ergonomics and API design that survived into Rust.
