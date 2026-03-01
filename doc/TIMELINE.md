@@ -393,6 +393,185 @@ organized: The Story / The Library / Demos / Guides.
 
 ---
 
+## Feb 21–22 — holon (Python): Batch 018, Projector Fix
+
+**2026-02-21** — Batch 018 challenge doc added: eigenvalue-as-probe window
+matching. Using the eigenvalue spectrum as a cheap pre-filter for engram
+library matching — O(k) comparison instead of O(k×dim) full residual.
+Concept: `match_spectrum()` for window-level pattern matching.
+
+**2026-02-22** — `.gitignore` updates. Projector docstring corrected:
+"orthogonal random projection" (QR decomposition), not plain random projection.
+
+**Blog:** Series 3 context (batch 018, match_spectrum concept)
+
+---
+
+## Feb 23 — holon-lab-ddos: http-lab Scaffold
+
+**2026-02-23** — `http-lab` initial implementation: Layer 7 WAF proxy
+mirroring veth-lab's architecture at HTTP. Same day as site launch.
+
+Core components in one session:
+- TLS-terminating reverse proxy (tokio-rustls) with lossless ClientHello
+  parsing via custom `ReplayStream` — bytes captured before rustls sees them
+- `TlsContext`: full lossless ClientHello (cipher suites, extensions,
+  supported groups, ALPN — all in wire order)
+- `RequestSample`: full HTTP request (path_parts, query_params, headers
+  in wire order, preserving duplicates and casing)
+- Both implement `Walkable` → holon Vector encoding
+- Rete-spirit DAG rule tree ported from veth-lab for HTTP dimensions
+- holon-rs sidecar with dual SubspaceDetector (TLS + REQ), EngramLibrary,
+  FieldTracker, RuleManager, ArcSwap deployment
+- `http-generator`: scenario-driven HTTP flood with named TLS profiles
+  (chrome_120, firefox_121, curl_800)
+- 97 tests: TLS parser, rule tree, enforcer, integration pipeline
+
+**Blog:** Series 4, post 1 (http-lab: L7 WAF scaffold)
+
+---
+
+## Feb 24–25 — holon-lab-ddos: Autonomous L7 WAF
+
+**2026-02-24** — String predicates, EDN rules, engram lifecycle fixes.
+Switched from FNV-1a hashes to String keys in Predicate/TreeNode — HTTP
+is clear-text, readability matters. EDN rule syntax matching veth-lab.
+Individual sample scoring (no bundling/averaging). Concentration-based
+field attribution. TLS detector separately tuned (faster convergence,
+tighter threshold for lower sample volume). Baseline RPS tracking.
+FieldTracker baseline freeze at warmup completion.
+
+**2026-02-25** — Full autonomous detection pipeline:
+- Per-IP token bucket rate limiting (true rate limiting, 429 on excess)
+- Engram memory: minting with surprise fingerprint + EDN rules, instant
+  re-deployment with dynamically recalculated rate limits
+- Multi-attack scenarios: `multi_attack.json` — 15 phases, 4 attack types
+  + 4 replay waves (GET flood, credential stuffing, scraper, TLS-randomized)
+- TLS randomization: `bot_shuffled` profile (consistent ciphers/extensions,
+  random ordering) → caught via set-based TLS fields (cipher_set, ext_set,
+  group_set) — order-independent detection
+- 14-second stall bug found and killed: `RwLock` contention in drain loop,
+  moved stats writes outside the hot path
+- Real-time SSE dashboard: uPlot charts, detection state panels, active
+  rules, event log, 120-second timeline window
+
+**Blog:** Series 4, post 1 (detection pipeline, rate limiting, dashboard,
+multi-attack scenarios)
+
+---
+
+## Feb 26 — holon-lab-ddos: DAG Viz, Per-Rule Counters, Specificity
+
+**2026-02-26** — Three major additions in one session:
+
+**DAG visualization**: interactive rule tree canvas (ported from veth-lab),
+terminal nodes as orange diamonds, two-pass pruning (dead-end leaves +
+wildcard chain collapse), bounding-box hit detection, tooltip with full
+EDN rule expression.
+
+**Per-rule hit counters**: `RULE_COUNTERS` global map, incremented on
+every rule match. Top-5 rules by rate overlaid as dashed lines on the
+enforcement chart. Rule labels via `constraints_sexpr()` (no wrapper noise).
+Legend capped at 75% width to keep latest chart data visible.
+
+**Best-match Specificity evaluator**: DFS explores both specific AND
+wildcard branches, selects highest `Specificity` (lexicographic: layers →
+has_http → constraints). Cross-layer TLS+HTTP rules beat single-layer.
+HTTP constraints preferred over TLS-only at same constraint count. Adding
+a new tiebreaker is a one-line field insertion.
+
+7-wave multi-attack scenario, all mitigated:
+GET flood, credential stuffing, scraper (via shape detection), shuffled
+TLS, 3 replay waves (2 engram hits + 1 existing rules).
+
+**Blog:** Series 4, post 1
+
+---
+
+## Feb 27 — holon-lab-ddos: Composable Rule Language + Expression Tree
+
+**2026-02-27** — Rule language and tree compiler:
+
+**RULE-LANGUAGE.md** spec written: Lisp-like s-expressions over EDN.
+Three orthogonal concepts: domain accessors (TLS/HTTP protocol fields),
+generic functions (`first`, `last`, `nth`, `get`, `count`, `keys`,
+`vals`, `set`, `lower`), and operators (`=`, `exists`, `prefix`,
+`suffix`, `contains`, `regex`, `gt`/`lt`, `subset`/`superset`).
+No magic named shortcuts — `(first (header "host"))` replaces `host`.
+26 dimensions (11 HTTP + 15 TLS), 13 operators. Extensible by adding
+domain accessors only.
+
+**`expr.rs`**: `RuleExpr`, `Expr`, `Dimension`, `Operator`, `Value`
+types. Full EDN parser/serializer via `edn-rs`. Dimension extraction
+(`extract_from_request()`, `extract_from_tls()`) resolves accessor
+chains against live protocol data.
+
+**`expr_tree.rs`**: Rete-spirit DAG compiler for `RuleExpr`. Dynamic
+dimension ordering (by rule participation count). Dual match modes:
+Exact (HashMap O(1)) + Membership (O(|collection|)). Guard predicates
+for tier-2 operators. Zero-clone recursion (`Cow` canonical keys, borrow
+slices). Lazy rule labels. FNV fingerprint for O(1) tree identity.
+
+Performance (1M rules, release):
+- 2-dim hit p50: 1,109ns — miss p50: 50ns
+- 6-dim hit p50: 2,573ns — miss p50: 50ns
+- Compilation: 3.2s (2-dim), 5.9s (6-dim)
+- 16-core throughput: ~6M+ evals/sec (mixed workload)
+
+**holon (Python)**: engram manifold visualization concept added to
+`visualization/README.md` — UMAP on k-D subspace coefficients instead
+of random orthogonal projection, preserving manifold geometry.
+
+**Blog:** Series 4, post 2 (rule language, expression tree, benchmarks)
+
+---
+
+## Feb 28 — holon-lab-ddos: VSA Surprise Probing, Engram Resilience, Manifold Firewall
+
+**2026-02-28** — Completing the autonomous mitigation pipeline:
+
+**VSA Surprise Probing** (`drilldown_probe`): unbinds anomalous vector
+component against role vectors for every walkable field, ranks by
+residual reduction. `SurpriseHistory` ring buffer requires cross-tick
+consistency before emitting a detection. `DetectionKind`: Content (same
+literal value) > Shape (same length) > Duplicate (repeated headers).
+
+**Shape Encoding**: path_shape (segment lengths via `ScalarValue::linear`),
+query_shape (key/value lengths), header_shapes (per-header name+value
+length). Catches fixed-length high-cardinality attacks — e.g., a scraper
+hitting 5-char product IDs with random values.
+
+**Bug Fix A — Rule Refinement**: removed `is_redundant` subsumed check.
+Broader rules (streak=3, early) now coexist with surgical compound rules
+(streak=5, surprise data ready). Tree Specificity picks the most surgical
+match. Before fix: compound rules were silently discarded.
+
+**Bug Fix B — Engram Resilience**: engram hit no longer short-circuits
+fresh rule generation. Fast-path deployment AND parallel learning. If
+engram's rules miss (false-match), fresh rules cover the gap. No
+poisoning: fresh rules stored separately from deployed engram rules.
+
+**Full scenario result**: 7/7 attack waves mitigated, including:
+- Scraper via shape detection (`(count (nth path-parts 2)) 5`)
+- Shuffled TLS via set-based matching
+- Replay waves via engram memory
+- Compound cross-layer rules: `{path + user-agent + tls-ext-types}`
+
+**Expression tree integration**: full pipeline swap from `RuleSpec`/
+`CompiledTree` to `RuleExpr`/`ExprCompiledTree`. All 287 tests passing.
+Engram rules serialized as EDN strings (round-trip stable).
+
+**CONCEPT-MANIFOLD-FIREWALL.md**: Four-layer defense architecture:
+- Layer 3: rule tree (~50ns, known threats)
+- Layer 0: normal allow list (manifold membership, ~0.4ms)
+- Layer 1: surprise-as-rule (residual IS the enforcement signal)
+- Layer 2: window-level spectrum matching (meta engrams, early warning)
+Inversion: the geometry IS the rule. Attacker must be genuinely normal.
+
+**Blog:** Series 4, post 2
+
+---
+
 ## Summary: The Five-Week Arc
 
 | Period | Focus | Key Output |
@@ -414,7 +593,13 @@ organized: The Story / The Library / Demos / Guides.
 | Feb 17 | Engrams (Python) | Single-packet attack recognition |
 | Feb 18 | Python three-layer refactor | kernel/memory/highlevel architecture |
 | Feb 19 | Engrams (Rust) | Memory layer, crates.io prep |
-| Feb 20 | Rust three-layer + engram hit | **750ms → 3ms**, kernel/memory layer imports |
+| Feb 20 | Rust three-layer + engram hit | **765ms → 3ms**, kernel/memory layer imports |
+| Feb 21–22 | Batch 018, projector fix | match_spectrum concept, docstring correction |
+| Feb 23 | http-lab scaffold | TLS proxy, dual SubspaceDetector, 97 tests |
+| Feb 24–25 | Full L7 detection pipeline | Rate limiting, engram memory, TLS randomization |
+| Feb 26 | DAG viz, Specificity ranking | 7/7 attack waves mitigated, per-rule counters |
+| Feb 27 | Rule language + expr tree | 26 dims, 13 ops, 1M rules at 1.1–2.6µs |
+| Feb 28 | VSA probing, manifold firewall | Engram resilience, 287 tests, concept doc |
 
 ---
 
@@ -428,7 +613,8 @@ organized: The Story / The Library / Demos / Guides.
 | Series 4: Baseline lab | Feb 8 (holon-lab-baseline) |
 | Series 5: DDoS problem framing | Feb 3–8 (context from Python + lab start) |
 | Series 6: XDP + eBPF scrubber | Feb 7 – Feb 20 (holon-lab-ddos) |
-| Series 7: Current state | Feb 20 onwards |
+| Series 4, post 1: http-lab scaffold + L7 pipeline | Feb 23–26 (holon-lab-ddos) |
+| Series 4, post 2: Rule language + manifold firewall | Feb 27–28 (holon-lab-ddos) |
 
 ---
 

@@ -112,13 +112,35 @@ Posts below are approximate groupings. Boundaries will emerge during writing.
 
 ---
 
-## Series 004 — Where It Stands and What's Next
+## Series 004 — The L7 Lab (Feb 23–28)
 
-*Current state across all codebases. Honest assessment. Forward look.*
+*http-lab: Layer 7 WAF. Same architecture, different layer. Same week as
+site launch. Two posts covering the scaffold + detection pipeline (Feb 23–26)
+and the rule language + manifold firewall concept (Feb 27–28).*
 
-- `[ ]` **Current State** — what works, what's rough, what's next across
-  Python, Rust, and the DDoS lab. The L7 scrubber and WAF roadmap.
-  The Clojure port. The bigger picture for algebraic intelligence.
+- `[ ]` **The L7 Lab: Building the HTTP WAF** (Feb 23–26) — `blog/story/series-004-001-the-l7-lab.md`
+  Four after-hours sessions. http-lab scaffold: TLS-terminating proxy,
+  lossless ClientHello via ReplayStream, dual SubspaceDetector (TLS + REQ),
+  FieldTracker, EngramLibrary, Rete-spirit DAG tree for HTTP. 97 tests day
+  one. Detection pipeline alignment with veth-lab (Feb 24–25): per-IP token
+  bucket rate limiting (with honest critique — per-IP is wrong for production,
+  DoS vector), engram memory, multi-attack scenarios, RwLock 14s stall bug,
+  adaptive TLS ordered-vs-set matching, real-time SSE dashboard (uPlot, DAG
+  viz, per-rule counters). Specificity ranking (Feb 26). Bar anecdote.
+  Concentration-based rules catching attacks; shape detection and surgical
+  compound rules deferred to post 2.
+
+- `[ ]` **No Rules, No Signatures: The Expression Tree** (Feb 27–28) — `blog/story/series-004-002-the-expression-tree.md`
+  Composable Lisp-like rule language: 26 dimensions (11 HTTP + 15 TLS),
+  13 operators, accessor chains (`(first (header "user-agent"))`,
+  `(count (nth path-parts 2))`). HTTP duplicate headers as multi-valued
+  lists, not single strings. `expr_tree.rs`: Rete-spirit DAG compiler,
+  O(depth) evaluation, 1M rules at 1.1–2.6µs hit, 50ns miss. Zero-clone
+  recursion. 16-core: 6M+ evals/sec. VSA surprise probing (`drilldown_probe`),
+  shape encoding (fixed-length attacks via ScalarValue::linear),
+  SurpriseHistory cross-tick consistency. Rule refinement + engram resilience
+  bugs fixed. 287 tests. 7/7 attack waves mitigated (full results here).
+  Manifold firewall concept moved to epilogue — just an idea, not built.
 
 ---
 
@@ -141,3 +163,9 @@ Posts below are approximate groupings. Boundaries will emerge during writing.
 | eBPF filter impl | `/holon-lab-ddos/veth-lab/filter/src/lib.rs` |
 | Baseline lab | `/holon/holon-lab-baseline/` (local, 2 commits) |
 | Clojure port | `~/work/holon-clj/src/holon/core.clj` (no git, Neanderthal BLAS) |
+| http-lab architecture | `/holon-lab-ddos/http-lab/docs/ARCHITECTURE.md` |
+| http-lab progress | `/holon-lab-ddos/http-lab/docs/PROGRESS.md` |
+| Manifold firewall concept | `/holon-lab-ddos/http-lab/docs/CONCEPT-MANIFOLD-FIREWALL.md` |
+| Rule language spec | `/holon-lab-ddos/http-lab/docs/RULE-LANGUAGE.md` |
+| Expr types | `/holon-lab-ddos/http-lab/proxy/src/expr.rs` |
+| Expr tree compiler | `/holon-lab-ddos/http-lab/proxy/src/expr_tree.rs` |

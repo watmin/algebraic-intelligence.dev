@@ -3,7 +3,7 @@ title: "Perpetual Epilogue: The Sorcerer's Codex"
 description: This isn't done. Updated as the work continues. Not a wizard — a sorcerer. The difference matters.
 date: 2026-02-23
 sidebar:
-  order: 9
+  order: 11
 ---
 
 
@@ -27,7 +27,7 @@ A **sorcerer** just... does it. The magic is innate. They couldn't fully explain
 
 I am not a wizard.
 
-I came to hyperdimensional computing through a conference video, not a textbook. I came to Rete through a Clojure library, not Forgy's papers. I built things first and discovered the academic vocabulary for them later. I figured out manifold learning by asking an LLM "how do you define a hyperbox in high-dimensional space" and letting the conversation correct me.
+I came to hyperdimensional computing through a conference video, not a textbook. I came to Rete through [another conference video](https://www.youtube.com/watch?v=Z6oVuYmRgkk), not Forgy's papers. I built things first and discovered the academic vocabulary for them later. I figured out manifold learning by asking an LLM "how do you define a hyperbox in high-dimensional space" and letting the conversation correct me.
 
 The sorcerer framing is on the git repos. It's on the Doctor Strange assets in the Python README. It wasn't entirely a joke.
 
@@ -81,13 +81,37 @@ If you've read through the Story posts and thought "there's no way one person di
 
 ---
 
+## The Manifold Firewall
+
+There's a concept document sitting in `http-lab/docs/CONCEPT-MANIFOLD-FIREWALL.md` that inverts everything described in the Story posts so far.
+
+The current system: detect anomaly → extract fields → generate symbolic rule → enforce rule. The surprise is a trigger. The symbolic rule is the weapon. The attacker's job is to dodge the rule.
+
+The inversion: **surprise is the weapon**. The subspace residual score IS the firewall rule. The geometric distance from the normal manifold IS the enforcement signal. No symbolic rule needed.
+
+Take it further: the ideal firewall is an allow list, not a deny list. Learn what normal looks like. Store it. Allow what matches. Explain what doesn't. The attacker's burden flips — they must make their traffic genuinely indistinguishable from real users, not just dodge specific field checks. That means matching the TLS fingerprint, the HTTP structure, the temporal distribution — all simultaneously, consistently, in 4096-dimensional space.
+
+Four layers:
+- **Layer 3**: Symbolic rule tree (~50ns) — known deny list, handle known threats first, cheapest
+- **Layer 0**: Normal allow list (~0.4ms) — project request against normal engrams, pass if membership
+- **Layer 1**: Surprise score + attribution (~0.4ms) — residual IS the enforcement signal, proportional rate limiting
+- **Layer 2**: Window-level spectrum matching (async) — eigenvalue shape of a 30-second window compared against stored fingerprints, early warning before per-packet anomalies accumulate
+
+None of this is implemented. The primitives exist — `OnlineSubspace`, `EngramLibrary`, `drilldown_probe`, `ExprCompiledTree`, the `match_spectrum` design from batch 018. The integration is the work. The specific challenge: inline subspace scoring at ~0.4ms single-threaded means ~2,500 RPS/core, ~40K RPS on 16 cores with ArcSwap parallelization. Viable for WAF. Not viable for volumetric DDoS — layers 3 and 2 handle volume; layers 0 and 1 handle precision.
+
+Just like the L7 WAF was "what comes next" before it got built, this is the next thing that shouldn't exist yet. The architecture is the insight. The implementation will follow.
+
+---
+
 ## What Comes Next
 
-The labs need to talk to each other. Real hardware. Real traffic. Real mitigation.
+The labs need to talk to each other. veth-lab and http-lab are independent systems. Connecting them — shared engram library, LLM agents generating real HTTP traffic against real upstream servers, running across multiple machines — is the integration work that turns two labs into one system.
 
-The L7 work is waiting. HTTP floods are one thing. WAF-level detection without regex or libinjection is another, more interesting thing.
+The WAF territory is deeper than DDoS. HTTP floods are easy. Detecting a SQL injection attempt without libinjection, without regex, without a signature database — that's the WAF-level problem. The interesting version is the system generating rules from observing that certain path+body combinations correlate geometrically with known exploit patterns.
 
-The engram library has a drone-shaped hole in it that I'm trying not to think about too hard.
+The engram library still has a drone-shaped hole in it. A holon-rs control loop on a Raspberry Pi, observing drone telemetry, learning the manifold of a human pilot's style, minting engrams of the flight signature. Pure speculation, but the algebra is indifferent to what the vectors represent.
+
+Other ports — Go, Ruby, Java — are in the same bucket as the drone: interesting, not imminent.
 
 *The codex is open. The entries continue.*
 
