@@ -53,7 +53,38 @@ The first experiment revealed something structural: holon-encoded records with 8
 | 64 | 1.1% | 44.1% | 50 vectors |
 | 128 | 1.2% | 42.3% | 50 vectors |
 
-90% of the variance falls in the first 25 components. Going from k=32 to k=128 reduces residual by 1.6%. For this workload — 8 fields, limited per-field vocabularies, structured packet data — k=32 is the right choice. *That number is application-dependent: a dataset with higher field cardinality or more complex structure will have a higher intrinsic dimensionality and will need a larger k to capture it. The right approach is to look at the eigenvalue spectrum and find the knee.*
+<div style="max-width: 500px; margin: 1.5rem auto; font-size: 0.9em">
+
+<div style="font-weight: bold; text-align: center; margin-bottom: 0.8rem; font-size: 0.95em">Residual CV vs Components (k)</div>
+
+<div style="margin-bottom: 0.5rem">
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem">
+<span style="width: 3rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">k=16</span>
+<div style="background: #ff6b6b; height: 1.3rem; border-radius: 2px; width: 83%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em"><strong>2.5%</strong></span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem">
+<span style="width: 3rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">k=32</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 37%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em"><strong>1.1%</strong> ← knee</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem">
+<span style="width: 3rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">k=64</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 37%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em">1.1%</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem">
+<span style="width: 3rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">k=128</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 40%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em">1.2%</span>
+</div>
+</div>
+
+<div style="text-align: center; font-size: 0.75em; color: var(--sl-color-gray-4)">Sharp drop from k=16 to k=32, then flatline. Doubling or quadrupling beyond 32 buys nothing.</div>
+
+</div>
+
+The knee at k=32 is clear — residual drops sharply, then flatlines. 90% of the variance falls in the first 25 components. Going from k=32 to k=128 reduces residual by 1.6%. For this workload — 8 fields, limited per-field vocabularies, structured packet data — k=32 is the right choice. *That number is application-dependent: a dataset with higher field cardinality or more complex structure will have a higher intrinsic dimensionality and will need a larger k to capture it. The right approach is to look at the eigenvalue spectrum and find the knee.*
 
 The eigenvalue spectrum has a clear two-tier shape: 4 dominant components (roughly 10% each) corresponding to high-cardinality fields like src_ip, dst_port, src_port, and packet length, then a second tier of medium-cardinality fields (proto, TTL, method, dst_ip), then a sharp drop. The encoding structure is legible in the eigenvalues.
 

@@ -68,6 +68,8 @@ Two tracks. Read in either order — the primers are reference material; the sto
 - [Engrams and the 765ms → 3ms Moment](/blog/story/series-003-005-engrams/) — Feb 17–20. CCIPCA online subspace learning, the engram primitive, three-layer architecture refactors in Python and Rust. Instant rule deploy on engram hit: 765ms → 3ms
 - [The L7 Lab: Building the HTTP WAF](/blog/story/series-004-001-the-l7-lab/) — Feb 23–26. Four after-hours sessions: TLS-terminating proxy, lossless ClientHello capture, dual SubspaceDetector, set-based TLS fingerprinting, Specificity ranking, and a bar demo
 - [No Rules, No Signatures: The Expression Tree](/blog/story/series-004-002-the-expression-tree/) — Feb 27–28. Composable s-expression rule language, Rete-spirit DAG compiler evaluating 1M rules in under 3µs, VSA surprise probing, shape detection, and 7/7 attack waves mitigated
+- [The Spectral Firewall](/blog/story/series-005-001-the-spectral-firewall/) — Mar 1–3. Four-layer geometric anomaly detection at 41µs deny latency, validated against a live Nikto scan of DVWA — 10,121 requests denied, zero exploitable vulnerabilities through the proxy
+- [Self-Calibrating](/blog/story/series-005-002-self-calibrating/) — Mar 4–6. Striped encoding eliminates crosstalk, self-calibrating thresholds remove every magic number, 20 LLM browsers + 3 scanners run concurrently — 3,605 attack denials, zero false positives, 99.1% precision
 - [Perpetual Epilogue: The Sorcerer's Codex](/blog/story/epilogue/) — A perpetual epilogue. Updated as the work continues.
 
 ---
@@ -78,7 +80,7 @@ Two tracks. Read in either order — the primers are reference material; the sto
 
 [**holon-rs**](https://github.com/watmin/holon-rs) — The Rust implementation. Encoder, accumulator, subspace, engram memory. 12x faster than Python. SIMD-accelerated.
 
-[**holon-lab-ddos**](https://github.com/watmin/holon-lab-ddos) — Two labs. `veth-lab`: XDP + eBPF packet scrubber, 1.3M PPS, 1M rules at line rate. `http-lab`: Layer 7 WAF with TLS-terminating proxy, composable rule expression language, and expression tree evaluation at sub-microsecond scale regardless of rule count.
+[**holon-lab-ddos**](https://github.com/watmin/holon-lab-ddos) — Two labs. `veth-lab`: XDP + eBPF packet scrubber, 1.3M PPS, 1M rules at line rate. `http-lab`: Layer 7 WAF with TLS-terminating proxy, composable rule expression language, expression tree evaluation at sub-microsecond scale, and a spectral firewall — geometric anomaly detection with self-calibrating thresholds, 41µs deny latency, 99.1% precision against concurrent mixed traffic with zero false positives.
 
 [**holon-lab-baseline**](https://github.com/watmin/holon-lab-baseline) — LLM-driven traffic generation. Playwright + Ollama agents producing organic WordPress HTTP traffic for realistic experiment baselines.
 

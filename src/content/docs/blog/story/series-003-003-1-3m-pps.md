@@ -387,6 +387,35 @@ The measured scaling:
 | 50,000 | ~90ms | ~100K | 0.04ms/rule |
 | 1,000,000 | 2,867ms | ~2M | 0.003ms/rule — DAG sharing improves at scale |
 
+<div style="max-width: 550px; margin: 1.5rem auto; font-size: 0.9em">
+
+<div style="font-weight: bold; text-align: center; margin-bottom: 0.8rem; font-size: 0.95em">DAG Compiler Scaling</div>
+
+<div style="margin-bottom: 0.6rem">
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem">
+<span style="width: 5rem; text-align: right; flex-shrink: 0; font-size: 0.8em; color: var(--sl-color-gray-3)">10K rules</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 1.4%; min-width: 4px"></div>
+<span style="flex-shrink: 0; font-size: 0.8em"><strong>40ms</strong></span>
+<span style="flex-shrink: 0; font-size: 0.75em; color: var(--sl-color-gray-4)">~20K nodes</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem">
+<span style="width: 5rem; text-align: right; flex-shrink: 0; font-size: 0.8em; color: var(--sl-color-gray-3)">50K rules</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 3.1%"></div>
+<span style="flex-shrink: 0; font-size: 0.8em"><strong>90ms</strong></span>
+<span style="flex-shrink: 0; font-size: 0.75em; color: var(--sl-color-gray-4)">~100K nodes · 0.04ms/rule</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem">
+<span style="width: 5rem; text-align: right; flex-shrink: 0; font-size: 0.8em; color: var(--sl-color-gray-3)">1M rules</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 100%"></div>
+<span style="flex-shrink: 0; font-size: 0.8em"><strong>2,867ms</strong></span>
+<span style="flex-shrink: 0; font-size: 0.75em; color: var(--sl-color-gray-4)">~2M nodes · 0.003ms/rule</span>
+</div>
+</div>
+
+<div style="text-align: center; font-size: 0.75em; color: var(--sl-color-gray-4)">Per-rule cost <em>decreases</em> at scale — DAG sharing improves with more rules.</div>
+
+</div>
+
 At 1M rules, compile time is 2.9 seconds and node count is ~2M — approximately 2 nodes per rule. Without DAG sharing, 1M 3-constraint rules would naively produce ~3M nodes minimum. The sharing reduces this, and more importantly caps the *per-packet* cost: the tree gets wider at each level, but it doesn't get deeper.
 
 The answer turned out to be: split the problem correctly. The compiler does the expensive join work once in userspace. The kernel does only the fast traversal work, one step per tail call, with no branching inside each step that would explode the verifier's path count. The constraint that seemed prohibitive — "you can't have complex loops in BPF" — is actually fine once you accept that the loop runs across tail calls rather than within a single program.

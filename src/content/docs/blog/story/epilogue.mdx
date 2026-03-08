@@ -3,7 +3,7 @@ title: "Perpetual Epilogue: The Sorcerer's Codex"
 description: This isn't done. Updated as the work continues. Not a wizard — a sorcerer. The difference matters.
 date: 2026-02-23
 sidebar:
-  order: 11
+  order: 14
 ---
 
 
@@ -67,7 +67,7 @@ This isn't cheating. This is the new sorcery.
 
 The LLMs serve as vocabulary layer, implementation engine, and — occasionally — the voice that says "actually, there are no neurons here, the word you want is *engram*." The collaboration is genuine. The work is real. The results speak.
 
-If you've read through the Story posts and thought "there's no way one person did all of this in five weeks" — correct. One person directed all of this in five weeks. That's the distinction that matters.
+If you've read through the Story posts and thought "there's no way one person did all of this in seven weeks" — correct. One person directed all of this in seven weeks. That's the distinction that matters.
 
 <div style="display: flex; flex-direction: column; align-items: center; text-align: center">
 
@@ -81,33 +81,21 @@ If you've read through the Story posts and thought "there's no way one person di
 
 ---
 
-## The Manifold Firewall
+## The Spectral Firewall
 
-There's a concept document sitting in `http-lab/docs/CONCEPT-MANIFOLD-FIREWALL.md` that inverts everything described in the Story posts so far.
+The concept document is no longer a concept. It's [running at 41 microseconds](/blog/story/series-005-001-the-spectral-firewall/), [self-calibrating](/blog/story/series-005-002-self-calibrating/), and proven against 20 concurrent browsers alongside three vulnerability scanners — 99.1% precision, no hardcoded thresholds.
 
-The current system: detect anomaly → extract fields → generate symbolic rule → enforce rule. The surprise is a trigger. The symbolic rule is the weapon. The attacker's job is to dodge the rule.
-
-The inversion: **surprise is the weapon**. The subspace residual score IS the firewall rule. The geometric distance from the normal manifold IS the enforcement signal. No symbolic rule needed.
-
-Take it further: the ideal firewall is an allow list, not a deny list. Learn what normal looks like. Store it. Allow what matches. Explain what doesn't. The attacker's burden flips — they must make their traffic genuinely indistinguishable from real users, not just dodge specific field checks. That means matching the TLS fingerprint, the HTTP structure, the temporal distribution — all simultaneously, consistently, in 4096-dimensional space.
-
-Four layers:
-- **Layer 3**: Symbolic rule tree (~50ns) — known deny list, handle known threats first, cheapest
-- **Layer 0**: Normal allow list (~0.4ms) — project request against normal engrams, pass if membership
-- **Layer 1**: Surprise score + attribution (~0.4ms) — residual IS the enforcement signal, proportional rate limiting
-- **Layer 2**: Window-level spectrum matching (async) — eigenvalue shape of a 30-second window compared against stored fingerprints, early warning before per-packet anomalies accumulate
-
-None of this is implemented. The primitives exist — `OnlineSubspace`, `EngramLibrary`, `drilldown_probe`, `ExprCompiledTree`, the `match_spectrum` design from batch 018. The integration is the work. The specific challenge: inline subspace scoring at ~0.4ms single-threaded means ~2,500 RPS/core, ~40K RPS on 16 cores with ArcSwap parallelization. Viable for WAF. Not viable for volumetric DDoS — layers 3 and 2 handle volume; layers 0 and 1 handle precision.
-
-Just like the L7 WAF was "what comes next" before it got built, this is the next thing that shouldn't exist yet. The architecture is the insight. The implementation will follow.
+The geometry is the rule. The data calibrates the boundary. The algebra does the rest.
 
 ---
 
 ## What Comes Next
 
-The labs need to talk to each other. veth-lab and http-lab are independent systems. Connecting them — shared engram library, LLM agents generating real HTTP traffic against real upstream servers, running across multiple machines — is the integration work that turns two labs into one system.
+HQ engram federation. The design is documented — async host-initiated call-home, passive HQ that merges and versions engrams, versioned rollback, fleet convergence without coordination. Each node learns its own baseline. HQ merges them into a shared definition of normal. New nodes cold-start from the merged engram instead of from scratch. The engram is the federated artifact — not rules, not signatures, not models. A geometric snapshot of what normal looks like, portable and executable on any machine with the same codebook.
 
-The WAF territory is deeper than DDoS. HTTP floods are easy. Detecting a SQL injection attempt without libinjection, without regex, without a signature database — that's the WAF-level problem. The interesting version is the system generating rules from observing that certain path+body combinations correlate geometrically with known exploit patterns.
+Just like the spectral firewall was "what comes next" before it got built, federation is the next thing that shouldn't exist yet. The architecture is clear. The implementation starts next week.
+
+Beyond federation: the WAF territory turned out to be closer than expected. [Nikto found 17 exploitable vulnerabilities](/blog/story/series-005-001-the-spectral-firewall/) when hitting DVWA directly — through the spectral firewall, it found zero. No libinjection, no regex, no signature database. The geometry caught what the scanners were doing because scanner traffic doesn't *look* like browser traffic, at any resolution the algebra can see. The sidecar already generates rules from the manifold's attributions. What's left is depth: body-level encoding, request sequence analysis, correlating path+body combinations with known exploit geometry. The foundation is proven. The surface area is expanding.
 
 The engram library still has a drone-shaped hole in it. A holon-rs control loop on a Raspberry Pi, observing drone telemetry, learning the manifold of a human pilot's style, minting engrams of the flight signature. Pure speculation, but the algebra is indifferent to what the vectors represent.
 

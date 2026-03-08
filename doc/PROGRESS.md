@@ -1,7 +1,7 @@
 # Blog Progress
 
 Tracking the narrative arc of the Holon project across all posts.
-Written ~4–5 weeks after the work started, as a detailed audit log of the
+Written ~5–7 weeks after the work started, as a detailed audit log of the
 journey. Retrospective commentary is expected and honest. Post boundaries
 emerge from natural narrative breaks, not rigid structure.
 
@@ -144,6 +144,40 @@ and the rule language + manifold firewall concept (Feb 27–28).*
 
 ---
 
+## Series 005 — The Spectral Firewall (Mar 1–6)
+
+*The manifold firewall concept doc from Feb 28 becomes working code. Four-layer
+geometric anomaly detection, validated against real vulnerability scanners,
+refined through parameter sweeps and encoding innovations, and proven against
+concurrent mixed traffic with zero false positives. The system eliminates all
+hardcoded thresholds — it calibrates itself from observed data.*
+
+- `[ ]` **The Spectral Firewall** (Mar 1–3) — `blog/story/series-005-001-the-spectral-firewall.md`
+  Batch 018 in Python: 16 experiments validating the four-layer architecture
+  end-to-end (`subspace_alignment`, `match_alignment`, dual-signal pre-filter
+  at 100% accuracy / 75% compute savings). Mar 2: the concept becomes Rust —
+  `ManifoldState`, `evaluate_manifold`, `drilldown_audit`, AES-256-GCM denial
+  tokens, `WindowTracker`, engram CLI. Four-layer defense at 41µs deny latency.
+  309 tests. Mar 3: live DVWA + Nikto validation — 10,121 requests denied, 0
+  exploitable vulnerabilities through the proxy. Bug fixes (WindowTracker
+  first-contact, NaN handling). Denial key persistence, `holon-engram unseal`.
+  "Manifold firewall" → "spectral firewall" branding.
+
+- `[ ]` **Self-Calibrating** (Mar 4–6) — `blog/story/series-005-002-self-calibrating.md`
+  Striped encoding (32 stripes, FQDN leaf hashing, cosine attribution, 14x
+  compute reduction). WAF dashboard (`/waf`) with verdict cards, attribution
+  bars, anomaly gauge. Parameter sweep: DIM=1024, K=32 — 2.1x faster, 13x
+  better separation at same compute budget. TLS attribution dominance finding.
+  char_list encoding for fuzzy string matching (leaf count ~100 → ~53). Anomaly
+  breadth design (2D decision space, threshold-free metrics). HQ engram
+  federation with versioned rollback. Multi-tool concurrent attack: 20 LLM
+  browser agents + Nikto + ZAP + Nuclei — 3,605 attack denials, 0 browser
+  denials. Self-calibrating decision boundaries: `ResidualBuffer`, empirical
+  thresholds, backend response gate, baseline engram persistence — eliminates
+  all magic numbers. 99.1% precision. Von Neumann automaton analysis.
+
+---
+
 ## Source Material Index
 
 | Source | Location |
@@ -169,3 +203,14 @@ and the rule language + manifold firewall concept (Feb 27–28).*
 | Rule language spec | `/holon-lab-ddos/http-lab/docs/RULE-LANGUAGE.md` |
 | Expr types | `/holon-lab-ddos/http-lab/proxy/src/expr.rs` |
 | Expr tree compiler | `/holon-lab-ddos/http-lab/proxy/src/expr_tree.rs` |
+| Manifold scoring impl | `/holon-lab-ddos/http-lab/proxy/src/manifold.rs` |
+| Denial tokens impl | `/holon-lab-ddos/http-lab/proxy/src/denial_token.rs` |
+| Significance analysis | `/holon-lab-ddos/http-lab/docs/SIGNIFICANCE.md` |
+| Striped encoding design | `/holon-lab-ddos/http-lab/docs/DESIGN-STRIPED-ENCODING.md` |
+| Parameter sweep results | `/holon-lab-ddos/http-lab/docs/PARAM-SWEEP.md` |
+| Spectral firewall findings | `/holon-lab-ddos/http-lab/docs/FINDINGS-MANIFOLD-FIREWALL.md` |
+| DVWA+Nikto experiment | `/holon-lab-ddos/http-lab/docs/EXPERIMENT-DVWA-NIKTO.md` |
+| Multi-tool attack experiment | `/holon-lab-ddos/http-lab/docs/EXPERIMENT-MULTI-ATTACK.md` |
+| Next investigations | `/holon-lab-ddos/http-lab/docs/NEXT-INVESTIGATIONS.md` |
+| Batch 018 experiments | `/holon/docs/challenges/018-batch/` |
+| Batch 018 learnings | `/holon/docs/challenges/018-batch/LEARNINGS.md` |

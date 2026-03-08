@@ -124,6 +124,54 @@ After the fix and a release build:
 | bind | 12 µs | 0.8 µs | **15x** |
 | Full detection pipeline | 15s | 1.2s | **12x** |
 
+<div style="max-width: 550px; margin: 1.5rem auto; font-size: 0.9em">
+
+<div style="font-weight: bold; text-align: center; margin-bottom: 0.8rem; font-size: 0.95em">Python vs Rust + SIMD</div>
+
+<div style="margin-bottom: 0.7rem">
+<div style="font-size: 0.8em; margin-bottom: 0.3rem; color: var(--sl-color-gray-3)">encode_json — <strong>10x</strong></div>
+<div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.15rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.8em; color: var(--sl-color-gray-3)">Python</span>
+<div style="background: #ff6b6b; height: 1.1rem; border-radius: 2px; width: 100%"></div>
+<span style="flex-shrink: 0; font-size: 0.8em">75µs</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.4rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.8em; color: var(--sl-color-gray-3)">Rust</span>
+<div style="background: #4a9eff; height: 1.1rem; border-radius: 2px; width: 9.3%"></div>
+<span style="flex-shrink: 0; font-size: 0.8em">7µs</span>
+</div>
+</div>
+
+<div style="margin-bottom: 0.7rem">
+<div style="font-size: 0.8em; margin-bottom: 0.3rem; color: var(--sl-color-gray-3)">similarity — <strong>11x</strong></div>
+<div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.15rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.8em; color: var(--sl-color-gray-3)">Python</span>
+<div style="background: #ff6b6b; height: 1.1rem; border-radius: 2px; width: 20%"></div>
+<span style="flex-shrink: 0; font-size: 0.8em">15µs</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.4rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.8em; color: var(--sl-color-gray-3)">Rust</span>
+<div style="background: #4a9eff; height: 1.1rem; border-radius: 2px; width: 1.9%"></div>
+<span style="flex-shrink: 0; font-size: 0.8em">1.4µs</span>
+</div>
+</div>
+
+<div style="margin-bottom: 0.7rem">
+<div style="font-size: 0.8em; margin-bottom: 0.3rem; color: var(--sl-color-gray-3)">bind — <strong>15x</strong></div>
+<div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.15rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.8em; color: var(--sl-color-gray-3)">Python</span>
+<div style="background: #ff6b6b; height: 1.1rem; border-radius: 2px; width: 16%"></div>
+<span style="flex-shrink: 0; font-size: 0.8em">12µs</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.4rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.8em; color: var(--sl-color-gray-3)">Rust</span>
+<div style="background: #4a9eff; height: 1.1rem; border-radius: 2px; width: 1.1%"></div>
+<span style="flex-shrink: 0; font-size: 0.8em">0.8µs</span>
+</div>
+</div>
+
+</div>
+
 With SIMD: similarity gets an additional **5x** on top of the 11x base. For the streaming detection workload — where similarity is computed on every packet — that compounds directly into packet throughput.
 
 ---

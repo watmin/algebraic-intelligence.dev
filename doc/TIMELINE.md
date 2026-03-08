@@ -568,11 +568,217 @@ Engram rules serialized as EDN strings (round-trip stable).
 - Layer 2: window-level spectrum matching (meta engrams, early warning)
 Inversion: the geometry IS the rule. Attacker must be genuinely normal.
 
+Also Feb 28:
+- `--rule-ttl` CLI flag for demo screencaptures (short expiry shows engram
+  recall from cold state), three demo scenario configs
+- Distinct TLS profiles in generator: `curl_800` uses TLS 1.2 only + 3
+  ciphers, `python_requests` drops ChaCha — creating genuine ClientHello
+  divergence for TLS detection validation
+
 **Blog:** Series 4, post 2
 
 ---
 
-## Summary: The Five-Week Arc
+## Mar 1 — holon (Python): Batch 018 Experiments — Spectral Firewall Validation
+
+**2026-03-01** — 16 experiments validating the four-layer spectral firewall
+architecture end-to-end in Python (8,152 insertions across 21 files).
+
+New library primitives:
+- `OnlineSubspace.subspace_alignment()` — directional manifold comparison
+  (principal angles between subspaces)
+- `EngramLibrary.match_alignment()` — library-wide alignment scoring
+
+Key findings:
+- Magnitude (spectrum) and direction (alignment) are complementary; neither
+  suffices alone (experiment 004)
+- Combined dual-signal pre-filter: 100% accuracy at 75–80% compute savings
+- `drilldown_probe` attributes anomaly to leaf fields (`tls.version`,
+  `headers.[1].[1]`) rather than monolithic parents
+- Denial tokens seal complete verdict in ~2KB, round-trip 100%
+- Preprod engrams generalize to production at 100% coverage
+- CI/CD engram promotion validated
+
+Introduces `match_spectrum` (eigenvalue cosine), `subspace_alignment`
+(principal angles), `match_alignment` (library-level directional matching),
+and recursive drilldown surprise probing — all validated against the
+four-layer architecture conceived in the Feb 28 concept doc.
+
+**Blog:** Series 5, post 1
+
+---
+
+## Mar 2 — holon-lab-ddos: Manifold Firewall Implemented — 41µs
+
+**2026-03-02** — The concept doc from Feb 28 becomes code. Four-layer defense
+with no signatures, no training data, no GPU:
+- Layer 3: symbolic rule tree (~50ns known patterns)
+- Layer 0+1: manifold scoring (encode + project + residual, inline)
+- Layer 2: window spectrum matching (async threat classification)
+
+New modules:
+- `proxy/src/manifold.rs`: `ManifoldState`, `evaluate_manifold`, `drilldown_audit`
+- `proxy/src/denial_token.rs`: AES-256-GCM sealed context tokens
+- `proxy/src/http.rs`: inline manifold scoring after Layer 3 eval
+- `sidecar/src/detectors.rs`: `WindowTracker`, normal engram freeze/thaw
+- `runner/src/engram_cli.rs`: engram list/export/import for CI/CD
+
+Experiment infrastructure:
+- Generator: `dvwa_browse`, `scanner`, `smuggle` patterns + per-phase
+  instrumentation (PHASE_RESULT with latency p50/p95/p99)
+- `scenarios/manifold_firewall.json`: 10-phase validation scenario
+- `scenarios/dvwa/`: Docker DVWA + Nikto live test setup
+
+Validated results (64,678 requests, 205 seconds):
+- Scanner deny rate: 97–100%
+- Normal false positive rate: 0%
+- DDoS rate-limit rate: 91%
+- Deny-path latency p50: **41 microseconds**
+- Training: 500 samples (~6 seconds), unsupervised, online
+
+309 tests passing (247 proxy + 62 sidecar).
+
+**Blog:** Series 5, post 1
+
+---
+
+## Mar 3 — holon-lab-ddos: DVWA+Nikto Live Validation, Spectral Firewall Branding
+
+**2026-03-03** — Validated against a real Nikto scanner targeting a live DVWA
+instance. **10,121 requests denied, 0 exploitable vulnerabilities found
+through the proxy.**
+
+Bug fixes:
+- `WindowTracker` spectrum classification runs on first contact (empty library)
+- NaN residuals default to Deny, NaN drilldown scores sort deterministically
+
+Features:
+- Denial key persisted to disk, `holon-engram unseal` CLI decodes tokens
+- Enriched `DenialContext` (query, user-agent, headers, cookie keys)
+- Generator `--cookie` flag for real authenticated DVWA sessions (94% 2xx)
+- End-to-end `run-nikto.sh`: DVWA setup, auth, warmup, scan, summary
+
+**Branding:** "manifold firewall" → "spectral firewall" across all docs,
+comments, and UI text. Code identifiers unchanged.
+
+**Blog:** Series 5, post 1
+
+---
+
+## Mar 4 — holon-lab-ddos: Striped Encoding, WAF Dashboard, Parameter Sweep
+
+**2026-03-04** — Intensive optimization day across four commits:
+
+**Striped encoding** (32×4096, k=8 per stripe) with FQDN leaf hashing for
+crosstalk-free anomaly attribution. Cosine similarity replaces broken
+L2-norm drilldown. Performance tuned: k=64→8 per stripe (8x speedup),
+double/triple residual computation eliminated (14x total reduction).
+
+**WAF dashboard** (`/waf`): streaming SSE verdict cards with color-coded
+JSON request views, spectral attribution bars, anomaly gauge, and trendline.
+Incremental DOM rendering with `rAF` batching and scroll-pause for 60fps
+under load.
+
+**Attribution logging + TLS dominance finding**: structured `log_attribution()`
+prints top 15 fields per deny. Discovered that Nikto's cipher/extension
+ordering dominates cosine attribution (99.5% of denies) — 30+ TLS leaf
+bindings collectively outrank HTTP fields. Technically correct (same signal
+as JA3/JA4) but limits WAF-level discrimination. HTTP fields appear in
+attribution tail.
+
+**Parameter sweep** (`DIM=1024, K=32`): at same compute budget (DIM×K×STRIPES=1M):
+- Old (4096×32×8): 2.1ms, 4.7x separation
+- New (1024×32×32): 997µs, **13.0x separation**
+- `sigma_mult` widened 3.5→5.0 (eliminates FP on real DVWA traffic)
+
+Control experiment: **Nikto finds 17 vulns hitting DVWA directly, 0 through
+the spectral firewall.**
+
+Docs: next investigations outlined (leaf binding ground truth, adaptive
+learning with four approaches: gated continuous, multi-tier probation,
+engram stacking, amnesia-gated).
+
+**Blog:** Series 5, post 2
+
+---
+
+## Mar 5 — holon-lab-ddos: char_list Encoding, HQ Federation Design
+
+**2026-03-05** — Encoding refinement and federation architecture:
+
+**char_list encoding**: character-level positional encoding for path, query,
+src_ip, and header values. Similar strings produce similar vectors (fuzzy
+matching) instead of maximally orthogonal hashes. Header values use
+char_list; names stay atomic. Leaf count dropped from ~100 to ~53/36
+(normal/attack) thanks to `List` composition. K optimized 32→20 (30%
+less residual latency, near-identical deny margin).
+
+**Anomaly breadth design**: breadth and adaptive learning are complementary —
+breadth is the intelligence that makes adaptive learning safe against slow
+poisoning. Documents the 2D decision space (residual × breadth), the
+dangerous "broad + sub-threshold" quadrant, and three threshold-free
+candidates (entropy, concentration ratio, Gini coefficient).
+
+**HQ federation investigation**: centralized engram collection/redistribution.
+HQ periodically collects learned state from edge nodes, merges, redistributes
+as cold-boot starting points. Engram merge strategies: subspace union,
+eigenvector averaging, concatenate-refit, federated CCIPCA.
+
+**Key design decision**: the engram (learned spectral subspace) is the
+primary federated artifact — the geometric "shape of normal." Rules are
+a separate DDoS-specific reactive mechanism, not the primary federation
+value.
+
+**Blog:** Series 5, post 2
+
+---
+
+## Mar 6 — holon-lab-ddos: Multi-Tool Attack, Self-Calibration, von Neumann
+
+**2026-03-06** — The most consequential day since the manifold firewall
+implementation. Four major developments:
+
+**Multi-tool concurrent attack experiment**: 20 LLM browser agents
+(Grok-4-fast + Playwright, 3 engines, 20 source IPs) alongside Nikto +
+ZAP + Nuclei, all concurrent. **3,605 attack denials, 0 browser-agent
+denials.** Traffic source labeling via `X-Traffic-Source` header (stripped
+before VSA encoding). Tuned sigma_mult 5.0→3.0, deny_mult 2.0→1.5,
+adaptive gate 0.7→0.5 after discovering threshold inflation and adaptive
+poisoning with diverse training data.
+
+**Self-calibrating decision boundaries** — eliminates all magic numbers:
+- Rolling `ResidualBuffer` tracks confirmed-normal residuals (allowed +
+  backend 2xx/3xx), providing ground truth for threshold calibration
+- `score_threshold` = buf_max (empirical allow ceiling)
+- `deny_threshold` = sqrt(buf_max × CCIPCA_threshold) — geometric mean
+  of tight empirical and loose statistical boundaries
+- Backend response status gate: only learn from 2xx/3xx responses
+- Baseline engram persistence: save/load StripedSubspace on shutdown/boot
+- Configurable warmup count via `WARMUP_SAMPLES` env var
+- Validated: 5,118 attack denies, **99.1% precision**, ~3 early FPs during
+  convergence then zero
+
+**Von Neumann automaton analysis**: the spectral firewall structurally
+satisfies von Neumann's three properties of self-reproducing automata —
+the engram is both the description (geometric knowledge of normal traffic)
+and the program (projection matrices that produce verdicts). Self-calibrating
+thresholds and HQ federation complete the analogy at fleet scale.
+
+**Async HQ federation with versioned rollback**: hosts call home on
+jittered intervals (push local engram, fetch latest merged norm). HQ is
+passive — merges, versions, serves. No push, no poll, no fleet coordination.
+Versioned engrams enable instant rollback: pin to prior version, freeze
+merging, fleet converges organically. Resilience: HQ down = local autonomy,
+network partition = local autonomy, bad merge = version rollback,
+compromised node = engram validation + rollback.
+
+Also: gitignore/Cargo.lock tracking fixes (`f12acab`, `b083016`, `123454c`).
+
+**Blog:** Series 5, post 2
+
+---
+
+## Summary: The Six-Week Arc
 
 | Period | Focus | Key Output |
 |--------|-------|------------|
@@ -600,6 +806,12 @@ Inversion: the geometry IS the rule. Attacker must be genuinely normal.
 | Feb 26 | DAG viz, Specificity ranking | 7/7 attack waves mitigated, per-rule counters |
 | Feb 27 | Rule language + expr tree | 26 dims, 13 ops, 1M rules at 1.1–2.6µs |
 | Feb 28 | VSA probing, manifold firewall | Engram resilience, 287 tests, concept doc |
+| Mar 1 | Batch 018 experiments (Python) | 16 experiments, spectral firewall validated E2E |
+| Mar 2 | **Manifold firewall implemented** | Four-layer defense, **41µs deny latency**, 309 tests |
+| Mar 3 | DVWA+Nikto live validation | 10,121 denials, 0 exploitable vulns, spectral branding |
+| Mar 4 | Striped encoding, param sweep | Cosine attribution, WAF dashboard, **13x separation** |
+| Mar 5 | char_list encoding, HQ design | Fuzzy string matching, engram federation architecture |
+| Mar 6 | **Self-calibrating boundaries** | 20 LLM browsers + 3 scanners, 0 FP, **99.1% precision** |
 
 ---
 
@@ -615,6 +827,8 @@ Inversion: the geometry IS the rule. Attacker must be genuinely normal.
 | Series 6: XDP + eBPF scrubber | Feb 7 – Feb 20 (holon-lab-ddos) |
 | Series 4, post 1: http-lab scaffold + L7 pipeline | Feb 23–26 (holon-lab-ddos) |
 | Series 4, post 2: Rule language + manifold firewall | Feb 27–28 (holon-lab-ddos) |
+| Series 5, post 1: The Spectral Firewall | Mar 1–3 (holon + holon-lab-ddos) |
+| Series 5, post 2: Self-Calibrating | Mar 4–6 (holon-lab-ddos) |
 
 ---
 
