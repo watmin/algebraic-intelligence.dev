@@ -176,6 +176,18 @@ hardcoded thresholds — it calibrates itself from observed data.*
   thresholds, backend response gate, baseline engram persistence — eliminates
   all magic numbers. 99.1% precision. Von Neumann automaton analysis.
 
+- `[ ]` **The Residual Profile** (Mar 8) — `blog/story/series-005-003-the-residual-profile.md`
+  21-strategy threshold sweep: simulation → live validation → log_mean wins
+  (1.9% FPR vs 3.3% geometric, 43% fewer FPs). Structural ratio experiment
+  fails — scanners have higher structural ratios than minority browsers.
+  The real fix: residual profile dual-signal gate. The 32 per-stripe residuals
+  were already being computed and discarded — taken as a vector in R^32, they
+  carry magnitude (RSS, existing) and direction (stripe activation pattern,
+  new). A tiny OnlineSubspace(dim=32, k=1) learns normal profiles. Live:
+  4,351 attacks denied, 0.1% FPR, 0 late FPs, continuous learning through
+  attacks. Fourth proof of the project's core principle: magnitude + direction.
+  holon-rs core gets `residual_profile()`.
+
 ---
 
 ## Source Material Index
@@ -209,6 +221,7 @@ hardcoded thresholds — it calibrates itself from observed data.*
 | Striped encoding design | `/holon-lab-ddos/http-lab/docs/DESIGN-STRIPED-ENCODING.md` |
 | Parameter sweep results | `/holon-lab-ddos/http-lab/docs/PARAM-SWEEP.md` |
 | Spectral firewall findings | `/holon-lab-ddos/http-lab/docs/FINDINGS-MANIFOLD-FIREWALL.md` |
+| Residual profile findings | `/holon-lab-ddos/http-lab/docs/FINDINGS-RESIDUAL-PROFILE.md` |
 | DVWA+Nikto experiment | `/holon-lab-ddos/http-lab/docs/EXPERIMENT-DVWA-NIKTO.md` |
 | Multi-tool attack experiment | `/holon-lab-ddos/http-lab/docs/EXPERIMENT-MULTI-ATTACK.md` |
 | Next investigations | `/holon-lab-ddos/http-lab/docs/NEXT-INVESTIGATIONS.md` |

@@ -778,7 +778,50 @@ Also: gitignore/Cargo.lock tracking fixes (`f12acab`, `b083016`, `123454c`).
 
 ---
 
-## Summary: The Six-Week Arc
+## Mar 8 — holon-rs + holon-lab-ddos: Threshold Sweep, Residual Profile
+
+**2026-03-08** — Two improvements to the spectral firewall's deny path:
+
+**Threshold strategy sweep**: 3-phase isolation funnel — 21 candidate
+threshold strategies enumerated (geometric, harmonic, arithmetic, power
+means, log mean, quantile-based, CUSUM, Kalman, etc.), 16 eliminated by
+simulation, 5 live-tested against DVWA + 3 scanners + 20 LLM browsers,
+7 rounds of multi-round validation across 4 survivors. Winner: `log_mean`
+= `(ccipca - buf_max) / ln(ccipca / buf_max)` — 1.9% avg FPR vs 3.3%
+geometric (43% fewer FPs, 45% fewer late FPs, fastest settling). Key
+insight: temporal FP distribution (when FPs occur) matters more than count.
+`DENY_STRATEGY` env var for strategy selection. Sweep runner and log
+parser scripts with temporal FP analysis.
+
+**Structural ratio — failed experiment**: attempted to classify drilldown
+fields as "structural" (TLS, header ordering) vs "content" (path, query)
+and downgrade structural-dominant denies. Live testing revealed the
+hypothesis was inverted: scanners had higher structural ratios (0.72–0.77)
+than minority browsers (0.50–0.52). Reverted to strict mode. The failure
+produced actionable data: ratio-based discrimination is ruled out.
+
+**Residual profile dual-signal gate** — the correction:
+- holon-rs (`bf9cc66`): `StripedSubspace::residual_profile()` exposes
+  the per-stripe residual vector as an N-dim signal with both magnitude
+  (RSS aggregate) and direction (which stripes are anomalous)
+- holon-lab-ddos (`b4eed24`): tiny `OnlineSubspace(dim=32, k=1)` learns
+  normal residual profiles during warmup. At deny time, both magnitude
+  AND direction must agree for a downgrade. `profile_alignment` measures
+  directional familiarity.
+- Live validation: 4,351 attacks denied, 1 early browser FP (0.1%),
+  0 late FPs, 44 adaptive learns (17 during active attacks), all denies
+  had profile_alignment < 0.155 (well below 0.5 gate)
+- Persisted alongside baseline engram (`.profile.json`)
+
+This is the fourth time the project proved magnitude + direction together
+succeed where either alone fails (batch 017, batch 018, spectral firewall
+dual-signal pre-filter, and now residual profiles).
+
+**Blog:** Series 5, post 3
+
+---
+
+## Summary: The Seven-Week Arc
 
 | Period | Focus | Key Output |
 |--------|-------|------------|
@@ -812,6 +855,7 @@ Also: gitignore/Cargo.lock tracking fixes (`f12acab`, `b083016`, `123454c`).
 | Mar 4 | Striped encoding, param sweep | Cosine attribution, WAF dashboard, **13x separation** |
 | Mar 5 | char_list encoding, HQ design | Fuzzy string matching, engram federation architecture |
 | Mar 6 | **Self-calibrating boundaries** | 20 LLM browsers + 3 scanners, 0 FP, **99.1% precision** |
+| Mar 8 | **Threshold sweep + residual profile** | log_mean (43% fewer FPs), dual-signal deny gate, **0.1% FPR** |
 
 ---
 
@@ -829,6 +873,7 @@ Also: gitignore/Cargo.lock tracking fixes (`f12acab`, `b083016`, `123454c`).
 | Series 4, post 2: Rule language + manifold firewall | Feb 27–28 (holon-lab-ddos) |
 | Series 5, post 1: The Spectral Firewall | Mar 1–3 (holon + holon-lab-ddos) |
 | Series 5, post 2: Self-Calibrating | Mar 4–6 (holon-lab-ddos) |
+| Series 5, post 3: The Residual Profile | Mar 8 (holon-rs + holon-lab-ddos) |
 
 ---
 
