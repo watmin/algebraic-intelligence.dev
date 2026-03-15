@@ -94,6 +94,83 @@ threshold = running_average_residual + sigma_mult * running_stddev_residual
 
 ---
 
+## The Capacity Ceiling — Why One Subspace Isn't Enough
+
+`OnlineSubspace` works well when the encoded vector has a moderate number of leaf bindings — the individual `bind(role, filler)` pairs that get bundled into the final vector. A network packet with `src_ip`, `dst_port`, `proto`, `ttl`, `bytes` produces ~7 bindings. The subspace learns these directions comfortably with k=32 components.
+
+HTTP requests are different. A full request with TLS fingerprint fields, path segments, query parameters, headers (name + value each), cookies, and shape features can produce 80–100+ leaf bindings. That's 80–100 near-orthogonal directions superimposed in one vector. CCIPCA with k=32 components can't separate them — there are more structural directions in the data than the subspace has capacity to learn. The residual becomes noisy because the subspace can't explain the variance, and drilldown attribution becomes meaningless because every field interferes with every other field in the projection.
+
+This is Kanerva's capacity ceiling applied to structured encoding. The theoretical limit for reliable recovery from a bundled superposition is roughly `O(dim / log(dim))` components. At dim=4096, that's ~330 components in theory — but CCIPCA's incremental approximation hits practical limits much sooner, especially with rank-1 data (each leaf binding is a single outer product, rank 1).
+
+The fix isn't more dimensions or more components. It's fewer bindings per vector.
+
+---
+
+## `StripedSubspace` — Crosstalk-Free Attribution
+
+`StripedSubspace` distributes leaf bindings across N independent subspaces. Instead of one vector with 100 bindings, you get N vectors with ~100/N bindings each. Each stripe learns its own portion of the data independently.
+
+```
+StripedSubspace::new(dim=1024, k=20, n_stripes=32)
+    dim:       1024  — vector dimensionality per stripe
+    k:         20    — principal components per stripe
+    n_stripes: 32    — number of independent subspaces
+```
+
+### Stripe assignment
+
+Each leaf binding is assigned to a stripe by hashing its fully-qualified domain name (the dotted path through the data structure) via FNV-1a:
+
+```python
+@staticmethod
+def field_stripe(path: str, n_stripes: int) -> int:
+    h = 0xCBF29CE484222325
+    for b in path.encode("utf-8"):
+        h ^= b
+        h = (h * 0x100000001B3) & 0xFFFFFFFFFFFFFFFF
+    return h % n_stripes
+```
+
+`"tls.cipher_suites"` always maps to the same stripe. `"headers.user-agent"` always maps to the same stripe. The assignment is deterministic — the same field always appears in the same stripe on every node, every restart, every cold boot. This is the same [hash-function-as-infrastructure](/blog/primers/series-001-001-atoms-and-vectors/#a-likely-contribution-the-hash-function-codebook) principle as the atom codebook: there's nothing to distribute or synchronize.
+
+With 100 leaf bindings across 32 stripes, each stripe averages ~3 bindings. CCIPCA with k=20 components can learn 3 directions comfortably. The attribution problem disappears: if stripe 7 has a high residual, the anomaly is in the fields assigned to stripe 7, with no interference from the fields in stripes 0–6 or 8–31.
+
+### Core operations
+
+**`update(stripe_vecs)`** — Feed one observation (a list of N stripe vectors) into all stripes simultaneously. Returns the RSS aggregate residual — the root-sum-of-squares of all per-stripe residuals:
+
+```python
+residual = sqrt(r₀² + r₁² + ... + r₃₁²)
+```
+
+This is the scalar magnitude: how anomalous overall.
+
+**`residual_profile(stripe_vecs)`** — Returns the N-dimensional vector of individual per-stripe residuals:
+
+```python
+profile = [r₀, r₁, r₂, ..., r₃₁]
+```
+
+This is the directional signal — the *pattern* of which stripes are anomalous. Two requests can have the same aggregate residual (same magnitude) but completely different profiles (different direction). A Firefox browser deviating from a Chrome-biased baseline lights up the TLS and header-ordering stripes. A Nikto scanner lights up the path-structure and missing-header stripes. Same distance from normal, different direction of deviation.
+
+The aggregate `residual()` is just `norm(residual_profile())` — it collapses the N-dimensional profile into a single scalar. The profile preserves what the scalar discards.
+
+**`anomalous_component(stripe_vecs, stripe_idx)`** — Returns the full-dimensional anomalous component for a specific stripe. This is the material for per-stripe surprise fingerprinting — the same unbinding-based attribution described below, but scoped to a single stripe's fields with no cross-stripe crosstalk.
+
+**`snapshot()` / `from_snapshot()`** — Serialize and restore all N stripe subspaces. A striped engram carries N independent snapshots, each with its own mean, components, and threshold state.
+
+### Why striping is a core primitive
+
+`StripedSubspace` lives in the Holon library, not in any application. The capacity ceiling isn't specific to HTTP requests — any `Walkable` structure with enough fields will hit it. The striped encoder, the FQDN hashing, the per-stripe CCIPCA state — all of it is a generic primitive. An application calls `StripedSubspace(dim, k, n_stripes)` the same way it calls `OnlineSubspace(dim, k)`. The application decides what to encode; the library handles the crosstalk problem.
+
+### The dual-signal principle
+
+Every successful discrimination in the holon project has required both magnitude and direction. Cosine-to-centroid alone misses non-radial anomalies (batch 017). Eigenvalue spectrum alone produces negative gaps (batch 018). Aggregate residual alone can't separate a minority browser from a scanner at the same distance (the [spectral firewall](/blog/story/series-005-003-the-residual-profile/)). The residual profile is the directional signal that makes `StripedSubspace` more than a performance optimization — it's a detection primitive.
+
+A tiny `OnlineSubspace(dim=32, k=1)` can learn the normal residual profile pattern during warmup. At decision time, both signals must agree: magnitude (is the aggregate residual above threshold?) and direction (does the profile pattern match known normal deviations?). Neither alone is sufficient. Combined, they haven't failed.
+
+---
+
 ## `Engram` — A Named Memory
 
 An engram is a named, serializable snapshot of a trained `OnlineSubspace`, plus metadata.
@@ -257,5 +334,9 @@ The same caveat as the algebra ops page: honest assessment, not a priority claim
 **Field attribution via VSA unbinding of the anomalous component.** The surprise fingerprint — unbinding the reconstruction residual with field role vectors to isolate per-field anomaly contributions — exploits VSA's algebraic transparency in a way that doesn't appear in HDC anomaly detection literature. Neural anomaly detection systems can't do this at all; their representations aren't decomposable. Holon's can because the encoding is built from reversible operations.
 
 **Passive upgrade via engram distribution.** A learned pattern can be serialized, transmitted, and matched against in the same vector space on any node — no code deployment, no vocabulary sync. The engram is a self-contained unit of geometric knowledge: load it, score against it, done. How consumers handle hot-loading is application-defined, but the format makes it viable in a way that prototype-vector or rule-based systems don't. This distribution model doesn't appear in the HDC deployment literature.
+
+**Striped FQDN leaf hashing for crosstalk-free VSA attribution.** Distributing leaf bindings across independent subspaces by fully-qualified domain name hash, reducing per-stripe binding count from ~100 to ~3 and eliminating the attribution crosstalk that makes monolithic high-dimensional encoding unusable for field-level anomaly explanation in high-cardinality structured data.
+
+**Residual profile as dual-signal detection primitive.** Using the per-stripe residual vector — already computed as an intermediate value in RSS aggregation — as an N-dimensional directional signal alongside the scalar magnitude. This enables detection decisions that distinguish iso-magnitude anomalies by their stripe activation pattern, at negligible additional cost (~3000x cheaper than one stripe operation).
 
 If any of this maps to existing published work, we'd genuinely want to know.
