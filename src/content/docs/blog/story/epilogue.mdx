@@ -3,7 +3,7 @@ title: "Perpetual Epilogue: The Sorcerer's Codex"
 description: This isn't done. Updated as the work continues. Not a wizard — a sorcerer. The difference matters.
 date: 2026-02-23
 sidebar:
-  order: 15
+  order: 17
 ---
 
 
@@ -83,25 +83,29 @@ If you've read through the Story posts and thought "there's no way one person di
 
 ## The Spectral Firewall
 
-This is a perpetual epilogue — it updates as the work does. The section you're reading now has been rewritten three times in a week. First it described a concept document. Then a 41µs prototype with known limitations. Then a self-calibrating system with 99.1% precision. Now it describes something that [learns its own deny confidence](/blog/story/series-005-003-the-residual-profile/) from the directional pattern of which stripes light up — 0.1% FPR, continuous learning through concurrent attacks without degradation. Each version replaced a claim that felt finished at the time. None of them were.
-
 The concept document is no longer a concept. It's [running at 41 microseconds](/blog/story/series-005-001-the-spectral-firewall/), [self-calibrating](/blog/story/series-005-002-self-calibrating/), and the residual profile has given it a second signal — magnitude and direction, the same dual-signal principle the project keeps proving. Three layers of self-calibration. No hardcoded parameters in the deny path. The geometry is the rule. The data calibrates the boundary. The algebra does the rest.
 
-By the time you read this, it may have been rewritten again.
+## The Thought Machine
+
+The algebra pointed at markets. [Same encoding, same journal, same cosine](/blog/story/series-006-001-the-thought-machine/) — different thoughts. The visual encoder captured every pixel of a price chart and predicted nothing. The thought encoder — 120 named facts per candle, composed via bind/bundle — predicted 57%. Then 62% with a larger vocabulary.
+
+[The conviction-accuracy curve](/blog/story/series-006-002-the-conviction-curve/) turned out to be exponential, continuous, and monotonic. One economic parameter — minimum acceptable edge — derives the operating point. The system identifies trend extremes with high confidence, flips the prediction, and catches reversals at 60% across six years of BTC.
+
+The vocabulary is the model. The discriminant is learned. The curve evaluates. 84 atoms got 57%. 107 got 62%. The hyperspace has room for thousands. The question is no longer "can machines trade?" It's "what should machines think about?"
 
 ---
 
 ## What Comes Next
 
-HQ engram federation. The design is documented — async host-initiated call-home, passive HQ that merges and versions engrams, versioned rollback, fleet convergence without coordination. Each node learns its own baseline. HQ merges them into a shared definition of normal. New nodes cold-start from the merged engram instead of from scratch. The engram is the federated artifact — not rules, not signatures, not models. A geometric snapshot of what normal looks like, portable and executable on any machine with the same codebook.
+**Multi-expert architecture**: N thought journals running in parallel, each with a different vocabulary subset. The Ichimoku expert, the RSI momentum expert, the Wyckoff volume expert. Each develops its own discriminant. Each produces its own conviction-accuracy curve. The curves compete. Champions emerge from the geometry, not from human judgment about which school of trading is "right."
 
-Just like the spectral firewall was "what comes next" before it got built, federation is the next thing that shouldn't exist yet. The architecture is clear. The implementation starts next week.
+**Thought engrams**: the engram system from the DDoS lab, applied to market regime detection. When the discriminant's eigenvalue structure shifts, that's a regime transition. Mint an engram. On re-encounter, recall the discriminant that worked in that regime. The immune system metaphor, applied to markets.
 
-Beyond federation: the WAF territory turned out to be closer than expected. [Nikto found 17 exploitable vulnerabilities](/blog/story/series-005-001-the-spectral-firewall/) when hitting DVWA directly — through the spectral firewall, it found zero. No libinjection, no regex, no signature database. The geometry caught what the scanners were doing because scanner traffic doesn't *look* like browser traffic, at any resolution the algebra can see. The sidecar already generates rules from the manifold's attributions. What's left is depth: body-level encoding, request sequence analysis, correlating path+body combinations with known exploit geometry. The foundation is proven. The surface area is expanding.
+**HQ engram federation**: async host-initiated call-home, passive HQ that merges and versions engrams, fleet convergence without coordination. The engram is the federated artifact — a geometric snapshot of what normal looks like, portable and executable on any machine with the same codebook.
 
-The engram library still has a drone-shaped hole in it. A holon-rs control loop on a Raspberry Pi, observing drone telemetry, learning the manifold of a human pilot's style, minting engrams of the flight signature. Pure speculation, but the algebra is indifferent to what the vectors represent.
+**Cross-asset generalization**: same architecture, different market, one economic parameter. If the conviction-accuracy curve is steep on a new asset with the same vocabulary, the system works there too. If it's flat, that asset needs different thoughts.
 
-Other ports — Go, Ruby, Java — are in the same bucket as the drone: interesting, not imminent.
+The drone-shaped hole in the engram library hasn't gone away. Neither have the language ports. The surface area keeps expanding.
 
 *The codex is open. The entries continue.*
 
