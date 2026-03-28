@@ -71,6 +71,8 @@ Two tracks. Read in either order — the primers are reference material; the sto
 - [The Spectral Firewall](/blog/story/series-005-001-the-spectral-firewall/) — Mar 1–3. Four-layer geometric anomaly detection at 41µs deny latency, validated against a live Nikto scan of DVWA — 10,121 requests denied, zero exploitable vulnerabilities through the proxy
 - [Self-Calibrating](/blog/story/series-005-002-self-calibrating/) — Mar 4–6. Striped encoding eliminates crosstalk, self-calibrating thresholds remove every magic number, 20 LLM browsers + 3 scanners run concurrently — 99.1% precision
 - [The Residual Profile](/blog/story/series-005-003-the-residual-profile/) — Mar 8. A 21-strategy threshold sweep, a failed structural ratio experiment, and the fix that was already being computed — the 32-dim residual profile. 0.1% FPR. The project's core principle, proven for the fourth time
+- [The Thought Machine](/blog/story/series-006-001-the-thought-machine/) — Mar 15–24. Same algebra, new domain. A self-supervised BTC trader discovers that charts don't predict — interpretations predict. Visual encoding: 50.5%. Thought encoding with 120 named facts per candle: 57%. The signal was never in the data. It was in the vocabulary
+- [The Conviction Curve](/blog/story/series-006-002-the-conviction-curve/) — Mar 25–27. The exponential relationship between conviction and accuracy. The contrarian flip. One economic parameter. 59.7% at q99 over 100k candles. 652k candles, six years, every regime — 56.5% with 84 atoms, 62.1% with 107. The curve judges. The vocabulary is the model
 - [Perpetual Epilogue: The Sorcerer's Codex](/blog/story/epilogue/) — A perpetual epilogue. Updated as the work continues.
 
 ---
@@ -82,6 +84,8 @@ Two tracks. Read in either order — the primers are reference material; the sto
 [**holon-rs**](https://github.com/watmin/holon-rs) — The Rust implementation. Encoder, accumulator, subspace, engram memory. 12x faster than Python. SIMD-accelerated.
 
 [**holon-lab-ddos**](https://github.com/watmin/holon-lab-ddos) — Two labs. `veth-lab`: XDP + eBPF packet scrubber, 1.3M PPS, 1M rules at line rate. `http-lab`: Layer 7 WAF with TLS-terminating proxy, composable rule expression language, expression tree evaluation at sub-microsecond scale, and a spectral firewall — geometric anomaly detection with self-calibrating thresholds, 41µs deny latency, 99.1% precision against concurrent mixed traffic with zero false positives.
+
+[**holon-lab-trading**](https://github.com/watmin/holon-lab-trading) — Self-supervised BTC trader. Two parallel encodings — visual (pixel-faithful raster grid, 50.5%) and thought (120+ compositional named facts via PELT segment narrative, 57–62%). The conviction-accuracy curve is exponential: one economic parameter derives the operating point. 56.5% across 652k candles (6 years, every regime) with 84 atoms. 62.1% with 107. The vocabulary is the model.
 
 [**holon-lab-baseline**](https://github.com/watmin/holon-lab-baseline) — LLM-driven traffic generation. Playwright + Ollama agents producing organic WordPress HTTP traffic for realistic experiment baselines.
 
