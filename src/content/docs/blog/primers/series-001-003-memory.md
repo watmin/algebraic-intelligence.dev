@@ -321,6 +321,46 @@ The surprise profile is computed at mint time and stored in the engram. On a hit
 
 ---
 
+## `Journal` — N-ary Discriminant Learner
+
+Where `OnlineSubspace` learns what *normal* looks like (anomaly detection), `Journal` learns what *separates classes* (classification). Both are memory-layer primitives. Both learn from a stream without storing raw vectors.
+
+```
+Journal::new("market", dims, recalib_interval)
+    dims:              10000  — vector dimensionality (must match encoder)
+    recalib_interval:  500    — updates between discriminant recomputations
+```
+
+A Journal maintains one `Accumulator` per registered label. Labels are symbols — `Label(u32)` handles created by `journal.register("Buy")`. Binary, ternary, N-ary — the Journal doesn't know or care how many classes exist.
+
+### Core operations
+
+**`register(name) → Label`** — create a label symbol. Idempotent: registering the same name twice returns the same handle.
+
+**`observe(&vec, label, weight)`** — accumulate a labeled observation. The vector is added to the accumulator for the given label, scaled by weight. Periodically (every `recalib_interval` calls), the Journal recomputes the discriminants.
+
+**`predict(&vec) → Prediction`** — score the input against all discriminants. Returns scores ranked by absolute cosine, plus the winning label (`direction`) and its magnitude (`conviction`). At prediction time, the mean prototype — the average of all label prototypes — is subtracted from the input to strip shared structure before the cosine. This removes the ~90% of the encoding that is common across all classes, leaving only the deviation that separates them.
+
+**`decay(factor)`** — fade all accumulators. Older observations contribute less. Call once per time step regardless of whether a label was observed.
+
+**`resolve(conviction, correct)`** — record a prediction outcome for curve self-evaluation.
+
+**`curve() → Option<(a, b)>`** — fit the conviction-accuracy curve: `accuracy = base + a × exp(b × conviction)` where `base = 1/N` (random chance for N labels). Returns the fitted parameters, or `None` if insufficient resolved predictions have accumulated.
+
+### Discriminant computation
+
+Each label's discriminant is `normalize(proto_i − mean(proto_j for j ≠ i))` — the direction that separates label i from the centroid of everything else. For two labels this is `normalize(buy_proto − sell_proto)`. For three labels, each label gets its own direction. Prediction is one cosine per discriminant; the label with the highest absolute cosine wins.
+
+The conviction-accuracy curve — the exponential relationship between projection magnitude and prediction correctness — is a method on the primitive, not external infrastructure. The Journal evaluates its own performance. Applications query it to make sizing and gating decisions.
+
+### Applications
+
+The [trading lab](/blog/story/series-006-001-the-thought-machine/) uses Journal for direction prediction (Buy/Sell labels) across six specialized observer vocabularies. The manager uses a second Journal to learn which observer panel shapes predict profitable trades (Win/Lose labels). The same 238-line struct handles both levels without modification.
+
+The Journal is domain-agnostic. Any stream of labeled vectors — network traffic classes, document categories, sentiment labels — can be classified by registering the appropriate labels and feeding observations. The conviction-accuracy curve evaluates whether the vocabulary carries signal for the task.
+
+---
+
 ## Likely Contributions to the Field
 
 The same caveat as the algebra ops page: honest assessment, not a priority claim.
@@ -338,5 +378,7 @@ The same caveat as the algebra ops page: honest assessment, not a priority claim
 **Striped FQDN leaf hashing for crosstalk-free VSA attribution.** Distributing leaf bindings across independent subspaces by fully-qualified domain name hash, reducing per-stripe binding count from ~100 to ~3 and eliminating the attribution crosstalk that makes monolithic high-dimensional encoding unusable for field-level anomaly explanation in high-cardinality structured data.
 
 **Residual profile as dual-signal detection primitive.** Using the per-stripe residual vector — already computed as an intermediate value in RSS aggregation — as an N-dimensional directional signal alongside the scalar magnitude. This enables detection decisions that distinguish iso-magnitude anomalies by their stripe activation pattern, at negligible additional cost (~3000x cheaper than one stripe operation).
+
+**N-ary discriminant learner with self-evaluating conviction-accuracy curve.** The Journal primitive combines discriminant-based classification with an integrated exponential curve fit that maps conviction magnitude to prediction accuracy — `accuracy = 1/N + a × exp(b × conviction)`. The primitive evaluates its own performance without external infrastructure. HDC classification literature uses prototype vectors and nearest-centroid matching; the discriminant approach (normalized difference between class prototypes, with mean-stripping to remove shared structure) and the self-evaluating curve appear to be novel in the HDC context.
 
 If any of this maps to existing published work, we'd genuinely want to know.
