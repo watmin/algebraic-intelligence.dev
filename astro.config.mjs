@@ -37,6 +37,12 @@ export default defineConfig({
           autogenerate: { directory: "blog/story" },
         },
         {
+          label: "The Book",
+          items: [
+            { slug: "blog/book" },
+          ],
+        },
+        {
           label: "Guides",
           collapsed: true,
           autogenerate: { directory: "guides" },
