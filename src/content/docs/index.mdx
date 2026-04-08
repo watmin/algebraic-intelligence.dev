@@ -3,7 +3,7 @@ title: Holon
 description: Ancient AI techniques. Microsecond recognition. Commodity hardware.
 template: splash
 hero:
-  tagline: Algebraic recognition on x86 and ARM. No GPU. No neural network. Just math — running at line rate on hardware you already have.
+  tagline: Give it structured data. It turns it into a vector that captures the structure — which fields exist, how they nest, what values go with what keys. Similar structures produce similar vectors. Anomalies stand out geometrically. No GPU. No neural network. Just algebra — at microsecond speed on hardware you already have.
   image:
     file: ../../assets/logo.jpg
     alt: Holon
@@ -24,30 +24,47 @@ hero:
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid>
-  <Card title="Microsecond operations" icon="rocket">
-    The Rust implementation runs VSA operations — encode, bind, bundle,
-    similarity — in microseconds. 12x faster than the Python prototype.
-  </Card>
-  <Card title="No GPU required" icon="laptop">
-    Cosine similarity over dense vectors on commodity x86 and ARM.
-    Microsecond-level algebraic recognition at packet rate.
-  </Card>
-  <Card title="Symbolic AI's unfinished business" icon="puzzle">
-    McCarthy (1958). Forgy (1974). Kanerva (1988). Gayler (2003).
-    Algebraic structure over high-dimensional space — not neural
-    networks, not gradient descent.
+  <Card title="Structure, not semantics" icon="puzzle">
+    Encode `{"dst_port": 80}` and `{"src_port": 80}` — same value, different
+    structure, different vectors. The encoding captures which fields exist and
+    how they relate. Two records with the same shape are geometrically close.
+    An anomaly is geometrically far. One cosine to measure.
   </Card>
   <Card title="Transparent vectors" icon="magnifier">
-    Not a black box. Holon vectors are algebraically decomposable —
-    probe them with basis vectors and recover the bound structure.
+    Not a black box. Every vector is algebraically decomposable — unbind a
+    field's role vector and recover how much that field contributed to an
+    anomaly. Full explainability from the algebra, not a post-hoc approximation.
+  </Card>
+  <Card title="No GPU, no training data" icon="laptop">
+    Microsecond encode/bind/bundle/cosine on commodity x86 and ARM. The Rust
+    implementation runs 12x faster than the Python prototype. Learns online
+    from the stream — no labeled dataset, no batch retraining.
+  </Card>
+  <Card title="Three domains, same algebra" icon="rocket">
+    DDoS detection at 1.3M packets/sec. A spectral firewall at 41µs deny
+    latency. A BTC trading system at 62% directional accuracy. Same five
+    primitives. Different vocabulary. The algebra doesn't care what domain
+    you point it at.
   </Card>
 </CardGrid>
 
+## What this is
+
+Holon turns structured data into high-dimensional vectors that preserve the data's *structure* — not its meaning, its shape. A JSON document, a network packet, a candle on a price chart — each becomes a point in a 4096-dimensional space where similar structures are geometrically close and anomalies are geometrically far. One cosine measures similarity. One cosine detects anomalies. One cosine predicts.
+
+Five primitives: **atom** (name a concept), **bind** (compose two concepts), **bundle** (superimpose many), **cosine** (measure similarity), **reckoner** (learn which patterns separate classes). Everything else — DDoS detection, firewall rules, trading signals — composes from these five operations on commodity hardware without a GPU.
+
+The technique is called [Vector Symbolic Architecture](https://en.wikipedia.org/wiki/Vector_symbolic_architecture) (VSA) — algebraic structure over high-dimensional space, dating to Kanerva (1988). Holon's contribution: a hash-function codebook that eliminates distributed coordination, a memory layer with subspace learning and engram recall, and a self-evaluating conviction-accuracy curve that tells the system how good its own predictions are.
+
+Built by one person using LLMs, after hours, in ~12 weeks. Every file across all repositories is LLM-generated — the domain knowledge and architecture are the author's, the code and prose are not. The site documents the work honestly: what worked, what failed, and what the numbers actually say.
+
+---
+
 ## Read the series
 
-Three tracks. Read in any order — the primers are reference material, the story is chronological, the book is neither.
+Three tracks. Read in any order.
 
-**Primers** — the technical foundation, bottom-up:
+**Primers** — learn VSA from scratch in 6 posts:
 
 - [VSA/HDC: A Working Introduction](/blog/primers/series-001-000-vsa-primer/) — what a hypervector is, the three operations, why it works for structured data
 - [Atoms, Vectors, and the Encoding Stack](/blog/primers/series-001-001-atoms-and-vectors/) — how structured data becomes geometry; the hash-function codebook design
@@ -56,7 +73,7 @@ Three tracks. Read in any order — the primers are reference material, the stor
 - [Coordination-Free at Scale](/blog/primers/series-001-004-coordination-free/) — how eliminating the codebook eliminates an entire class of distributed systems problems
 - [The Wat Language](/blog/primers/series-001-005-the-wat-language/) — an s-expression specification language shaped for algebraic cognition. Two algebras, three structural forms, a host language that compiles to Rust
 
-**Story** — the development arc, in order:
+**Story** — how a DDoS detector became a trading enterprise, told from the git log:
 
 - [Prologue: The Idea That Wouldn't Leave](/blog/story/prologue/) — years of conversations and a Clojure conference video, before there was any code
 - [Python: The Foundation](/blog/story/series-002-001-first-experiments/) — Jan 16–30. Day-one architecture, database origin, batches 001–003 and 006, the 123x similarity speedup, primitives forged in the Sudoku work
@@ -80,7 +97,7 @@ Three tracks. Read in any order — the primers are reference material, the stor
 - [The Guide](/blog/story/series-006-006-the-guide/) — Apr 4–7. Seven proposals in four days. The Reckoner replaces the Journal. Grace and Violence replace Win and Lose. 37 wat files inscribed leaves to root. The ignorant ward proves the tree. The disposable machine
 - [Perpetual Epilogue: The Sorcerer's Codex](/blog/story/epilogue/) — A perpetual epilogue. Updated as the work continues.
 
-**The Book** — not chronological. Built in the moment, by the LLM, as the work happened:
+**The Book** — philosophy, built in the moment as the work happened:
 
 - [The Wat Machine](/blog/book/) — Five chapters. The scaffold, the realization, the enterprise, the forging, the prequel. 5,362 lines written alongside the code, not after it
 - [The Guide](/blog/guide/) — The 007 blueprint. Every struct, interface, dependency, and construction order. The coordinates to where the machine is
@@ -103,5 +120,3 @@ Three tracks. Read in any order — the primers are reference material, the stor
 [**holon-lab-baseline**](https://github.com/watmin/holon-lab-baseline) — LLM-driven traffic generation. Playwright + Ollama agents producing organic WordPress HTTP traffic for realistic experiment baselines.
 
 [**algebraic-intelligence.dev**](https://github.com/watmin/algebraic-intelligence.dev) — This site.
-
-Every file across all repositories is 100% LLM-generated. Zero hand-written code. Zero hand-written prose — including this site. Domain knowledge and architecture from the author; everything else from Grok, Sonnet, and Opus via prompting.
