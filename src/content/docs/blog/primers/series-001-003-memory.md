@@ -321,43 +321,60 @@ The surprise profile is computed at mint time and stored in the engram. On a hit
 
 ---
 
-## `Journal` — N-ary Discriminant Learner
+## `Reckoner` — Unified Discriminant Learner
 
-Where `OnlineSubspace` learns what *normal* looks like (anomaly detection), `Journal` learns what *separates classes* (classification). Both are memory-layer primitives. Both learn from a stream without storing raw vectors.
+Where `OnlineSubspace` learns what *normal* looks like (anomaly detection), `Reckoner` learns what *separates classes* or *predicts values* (classification and regression). Both are memory-layer primitives. Both learn from a stream without storing raw vectors.
+
+The Reckoner (originally called Journal, renamed April 2026) supports two readout modes from the same accumulation mechanism:
+
+**Discrete mode** (`ReckConfig::Discrete`): N-ary classification. Maintains one accumulator per registered label. Each label's discriminant is `normalize(proto_i − mean(proto_j for j ≠ i))` — the direction that separates label i from the centroid of everything else. Prediction scores against all N discriminants. The binary case (Buy/Sell) falls out naturally.
+
+**Continuous mode** (`ReckConfig::Continuous`): Scalar regression. Predicts a continuous value from a thought vector — useful for learning stop distances, position sizes, or any parameter that should be derived from the market state rather than hardcoded.
 
 ```
-Journal::new("market", dims, recalib_interval)
-    dims:              10000  — vector dimensionality (must match encoder)
-    recalib_interval:  500    — updates between discriminant recomputations
+Reckoner::new("market", dims, recalib_interval, ReckConfig::Discrete(labels))
+Reckoner::new("stop_distance", dims, recalib_interval, ReckConfig::Continuous(0.015))
 ```
 
-A Journal maintains one `Accumulator` per registered label. Labels are symbols — `Label(u32)` handles created by `journal.register("Buy")`. Binary, ternary, N-ary — the Journal doesn't know or care how many classes exist.
+Labels are symbols — `Label(u32)` handles created by `reckoner.register("Buy")`. Cheap, Copy, O(1) equality.
 
 ### Core operations
 
-**`register(name) → Label`** — create a label symbol. Idempotent: registering the same name twice returns the same handle.
+**`register(name) → Label`** — create a label symbol. Idempotent.
 
-**`observe(&vec, label, weight)`** — accumulate a labeled observation. The vector is added to the accumulator for the given label, scaled by weight. Periodically (every `recalib_interval` calls), the Journal recomputes the discriminants.
+**`observe(&vec, label, weight)`** — accumulate a labeled observation (discrete mode).
 
-**`predict(&vec) → Prediction`** — score the input against all discriminants. Returns scores ranked by absolute cosine, plus the winning label (`direction`) and its magnitude (`conviction`). At prediction time, the mean prototype — the average of all label prototypes — is subtracted from the input to strip shared structure before the cosine. This removes the ~90% of the encoding that is common across all classes, leaving only the deviation that separates them.
+**`observe_scalar(&vec, value, weight)`** — accumulate a scalar observation (continuous mode).
 
-**`decay(factor)`** — fade all accumulators. Older observations contribute less. Call once per time step regardless of whether a label was observed.
+**`predict(&vec) → Prediction`** — score the input against all discriminants. Returns scores ranked by cosine, plus the winning label (`direction`) and its magnitude (`conviction`). Mean-stripping removes ~90% shared structure before the cosine.
+
+**`query(&vec) → f64`** — extract a continuous value from the learned manifold (continuous mode).
+
+**`decay(factor)`** — fade all accumulators. Call once per time step.
 
 **`resolve(conviction, correct)`** — record a prediction outcome for curve self-evaluation.
 
-**`curve() → Option<(a, b)>`** — fit the conviction-accuracy curve: `accuracy = base + a × exp(b × conviction)` where `base = 1/N` (random chance for N labels). Returns the fitted parameters, or `None` if insufficient resolved predictions have accumulated.
+**`curve() → Option<(a, b)>`** — fit the conviction-accuracy curve: `accuracy = 1/N + a × exp(b × conviction)`. The Reckoner evaluates its own performance.
 
-### Discriminant computation
+### The f64 pipeline
 
-Each label's discriminant is `normalize(proto_i − mean(proto_j for j ≠ i))` — the direction that separates label i from the centroid of everything else. For two labels this is `normalize(buy_proto − sell_proto)`. For three labels, each label gets its own direction. Prediction is one cosine per discriminant; the label with the highest absolute cosine wins.
+The standard bipolar pipeline (`bind`, `bundle`, `cosine`) operates on `{-1, 0, 1}` vectors — thresholded, discrete. This is correct for encoding and prediction. But for scalar extraction from accumulated prototypes, thresholding destroys the continuous gradient information needed for accurate recovery.
 
-The conviction-accuracy curve — the exponential relationship between projection magnitude and prediction correctness — is a method on the primitive, not external infrastructure. The Journal evaluates its own performance. Applications query it to make sizing and gating decisions.
+The f64 pipeline provides continuous-space operations:
+
+- **`bind_f64(a, b)`** — element-wise multiply in f64 space (self-inverse, same as bipolar but without quantization)
+- **`bundle_f64(vecs)`** — element-wise sum (no thresholding — preserves frequency)
+- **`negate_f64(super, component)`** — orthogonal projection removal in f64 space
+- **`cosine_f64(a, b)`** — standard cosine similarity
+- **`ScalarEncoder::encode_f64(value, mode)`** — continuous rotation without bipolar thresholding. Same angle as `encode()` but the result is a float vector, not a bipolar one.
+
+These operations enable the continuous readout mode: accumulate scalar encodings in f64 space, then recover the value via unbinding against the role vector and measuring the angle.
 
 ### Applications
 
-The [trading lab](/blog/story/series-006-001-the-thought-machine/) uses Journal for direction prediction (Buy/Sell labels) across six specialized observer vocabularies. The manager uses a second Journal to learn which observer panel shapes predict profitable trades (Win/Lose labels). The same 238-line struct handles both levels without modification.
+The [trading lab](/blog/story/series-006-001-the-thought-machine/) uses Reckoner in discrete mode for direction prediction (Buy/Sell labels) across six specialized observer vocabularies. The manager uses a second Reckoner to learn which observer panel shapes predict profitable trades (Win/Lose labels). Continuous mode is used for learning ATR-derived stop distances and position sizing from portfolio state.
 
-The Journal is domain-agnostic. Any stream of labeled vectors — network traffic classes, document categories, sentiment labels — can be classified by registering the appropriate labels and feeding observations. The conviction-accuracy curve evaluates whether the vocabulary carries signal for the task.
+The Reckoner is domain-agnostic. Any stream of labeled or scalar-valued vectors can be classified or regressed by configuring the appropriate mode.
 
 ---
 
@@ -379,6 +396,6 @@ The same caveat as the algebra ops page: honest assessment, not a priority claim
 
 **Residual profile as dual-signal detection primitive.** Using the per-stripe residual vector — already computed as an intermediate value in RSS aggregation — as an N-dimensional directional signal alongside the scalar magnitude. This enables detection decisions that distinguish iso-magnitude anomalies by their stripe activation pattern, at negligible additional cost (~3000x cheaper than one stripe operation).
 
-**N-ary discriminant learner with self-evaluating conviction-accuracy curve.** The Journal primitive combines discriminant-based classification with an integrated exponential curve fit that maps conviction magnitude to prediction accuracy — `accuracy = 1/N + a × exp(b × conviction)`. The primitive evaluates its own performance without external infrastructure. HDC classification literature uses prototype vectors and nearest-centroid matching; the discriminant approach (normalized difference between class prototypes, with mean-stripping to remove shared structure) and the self-evaluating curve appear to be novel in the HDC context.
+**Unified discriminant learner with discrete and continuous readout modes.** The Reckoner primitive (originally Journal) combines N-ary discriminant classification with continuous scalar regression in a single struct, plus an integrated exponential curve fit that maps conviction magnitude to prediction accuracy — `accuracy = 1/N + a × exp(b × conviction)`. The f64 pipeline (`bind_f64`, `bundle_f64`, `ScalarEncoder::encode_f64()`) enables scalar extraction from accumulated prototypes without bipolar quantization loss. HDC classification literature uses prototype vectors and nearest-centroid matching; the discriminant approach (normalized difference between class prototypes, with mean-stripping), the dual readout modes, and the self-evaluating curve appear to be novel in the HDC context.
 
 If any of this maps to existing published work, we'd genuinely want to know.

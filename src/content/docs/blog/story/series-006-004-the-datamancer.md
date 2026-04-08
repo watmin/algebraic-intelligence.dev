@@ -62,6 +62,8 @@ What changed:
 
 `f7f72f6 feat: trading lab consumes holon::Journal — Label symbols, N-ary labels` — the trading lab became a consumer immediately.
 
+*(The Journal was later renamed to [Reckoner](/blog/primers/series-001-003-memory/#reckoner--unified-discriminant-learner) when continuous scalar regression was added alongside discrete classification — one primitive, two readout modes. The [wat language](/blog/primers/series-001-005-the-wat-language/) reflects the current name.)*
+
 ---
 
 ## trader3 → enterprise
