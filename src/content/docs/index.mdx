@@ -80,21 +80,25 @@ Three tracks. Read in any order — the primers are reference material, the stor
 - [The Guide](/blog/story/series-006-006-the-guide/) — Apr 4–7. Seven proposals in four days. The Reckoner replaces the Journal. Grace and Violence replace Win and Lose. 37 wat files inscribed leaves to root. The ignorant ward proves the tree. The disposable machine
 - [Perpetual Epilogue: The Sorcerer's Codex](/blog/story/epilogue/) — A perpetual epilogue. Updated as the work continues.
 
-**The Book** — not chronological. Built in the moment, by the LLM, as the work happened. The philosophy behind the enterprise:
+**The Book** — not chronological. Built in the moment, by the LLM, as the work happened:
 
-- [The Wat Machine](/blog/book/) — The scaffold, the realization, the continuation. Charts don't predict — interpretations predict. The conviction-accuracy curve. The quantum structure. The enterprise. The datamancer. The wards. The expression problem. Three chapters, written alongside the code, not after it.
+- [The Wat Machine](/blog/book/) — Five chapters. The scaffold, the realization, the enterprise, the forging, the prequel. 5,362 lines written alongside the code, not after it
+- [The Guide](/blog/guide/) — The 007 blueprint. Every struct, interface, dependency, and construction order. The coordinates to where the machine is
+- [The Circuits](/blog/circuit/) — The machine as signal flow diagrams. The four-step loop visualized
 
 ---
 
 ## The work
 
-[**holon**](https://github.com/watmin/holon) *(Python)* — Where it started. The experimental lab that produced 17 challenge batches, F1=1.0 anomaly detection, and the encoding insight that made everything else possible.
+[**holon-rs**](https://github.com/watmin/holon-rs) — The kernel. Five primitives: atom, bind, bundle, cosine, reckoner. SIMD-accelerated. f64 pipeline for scalar extraction. The Reckoner unifies discrete classification and continuous regression in one struct with a self-evaluating conviction-accuracy curve.
 
-[**holon-rs**](https://github.com/watmin/holon-rs) — The Rust implementation. Encoder, accumulator, subspace, engram memory. 12x faster than Python. SIMD-accelerated.
+[**wat**](https://github.com/watmin/wat) — The language. S-expressions shaped for algebraic cognition. Two algebras (vector + reckoner), three structural forms (struct, enum, protocol), a host language that compiles to Rust. 652 lines define the entire system.
 
-[**holon-lab-ddos**](https://github.com/watmin/holon-lab-ddos) — Two labs. `veth-lab`: XDP + eBPF packet scrubber, 1.3M PPS, 1M rules at line rate. `http-lab`: Layer 7 WAF with TLS-terminating proxy, composable rule expression language, expression tree evaluation at sub-microsecond scale, and a spectral firewall — geometric anomaly detection with self-calibrating thresholds, 41µs deny latency, 99.1% precision against concurrent mixed traffic with zero false positives.
+[**holon-lab-trading**](https://github.com/watmin/holon-lab-trading) — The enterprise. Self-organizing BTC trader with N market observers, M exit observers, N×M brokers (Grace/Violence accountability), streaming indicators, and a guide-driven specification process. 37 wat files, 4,804 lines, proven by the ignorant ward. The conviction-accuracy curve is exponential: 62.1% with 107 atoms on 100k candles.
 
-[**holon-lab-trading**](https://github.com/watmin/holon-lab-trading) — Self-supervised BTC trader. Two parallel encodings — visual (pixel-faithful raster grid, 50.5%) and thought (120+ compositional named facts via PELT segment narrative, 57–62%). The conviction-accuracy curve is exponential: one economic parameter derives the operating point. 56.5% across 652k candles (6 years, every regime) with 84 atoms. 62.1% with 107. The vocabulary is the model.
+[**holon-lab-ddos**](https://github.com/watmin/holon-lab-ddos) — Where it started. `veth-lab`: XDP + eBPF packet scrubber, 1.3M PPS, 1M rules at line rate via BPF tail-call DFS. `http-lab`: spectral firewall — 41µs geometric anomaly detection, 0.1% FPR, self-calibrating, no signatures.
+
+[**holon**](https://github.com/watmin/holon) *(Python)* — The reference implementation. 18 challenge batches, F1=1.0 anomaly detection, the encoding insight that made everything else possible. The Rosetta Stone that the Rust port was built from.
 
 [**holon-lab-baseline**](https://github.com/watmin/holon-lab-baseline) — LLM-driven traffic generation. Playwright + Ollama agents producing organic WordPress HTTP traffic for realistic experiment baselines.
 

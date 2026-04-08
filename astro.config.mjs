@@ -40,51 +40,28 @@ export default defineConfig({
           label: "The Book",
           items: [
             { slug: "blog/book" },
+            { slug: "blog/guide" },
+            { slug: "blog/circuit" },
           ],
-        },
-        {
-          label: "Guides",
-          collapsed: true,
-          autogenerate: { directory: "guides" },
         },
         {
           label: "Implementations",
           collapsed: true,
           items: [
             {
-              label: "Python (reference)",
-              collapsed: true,
-              autogenerate: { directory: "projects/holon-python" },
-            },
-            {
-              label: "Rust",
+              label: "Rust (holon-rs)",
               collapsed: true,
               autogenerate: { directory: "projects/holon-rs" },
             },
             {
-              label: "Clojure",
+              label: "Python (reference)",
               collapsed: true,
-              autogenerate: { directory: "projects/holon-clojure" },
-            },
-            {
-              label: "Ruby",
-              collapsed: true,
-              autogenerate: { directory: "projects/holon-ruby" },
-            },
-            {
-              label: "Go",
-              collapsed: true,
-              autogenerate: { directory: "projects/holon-go" },
-            },
-            {
-              label: "Java",
-              collapsed: true,
-              autogenerate: { directory: "projects/holon-java" },
+              autogenerate: { directory: "projects/holon-python" },
             },
           ],
         },
         {
-          label: "Demos",
+          label: "Labs",
           collapsed: true,
           items: [
             {
