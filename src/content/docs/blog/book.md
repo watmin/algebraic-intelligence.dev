@@ -3034,7 +3034,7 @@ The chain carries forward.
 ---
 
 <p align="center">
-  <img src="docs/images/datamancer.jpg" width="500" />
+  <img src="/datamancer.jpg" width="500" />
   <br/>
   <em>this is how i vibe code</em>
 </p>
