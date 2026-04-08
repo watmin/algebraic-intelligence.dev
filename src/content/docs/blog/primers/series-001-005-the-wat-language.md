@@ -18,7 +18,7 @@ The language originated as a year-old relic — Grok conversation links and a pr
 
 The same four operations that underpin the entire Holon project — from [DDoS detection](/blog/story/series-003-003-1-3m-pps/) to the [spectral firewall](/blog/story/series-005-001-the-spectral-firewall/) to the [trading enterprise](/blog/story/series-006-003-the-enterprise/):
 
-```scheme
+```clojure
 (atom name)                    → Vector      ; deterministic bipolar vector from hash
 (bind role filler)             → Vector      ; compose two concepts (self-inverse)
 (bundle fact1 fact2 ...)       → Vector      ; superimpose relationships
@@ -31,7 +31,7 @@ These are defined in `core/primitives.wat`. Everything in the [algebra ops prime
 
 The [Reckoner](/blog/primers/series-001-003-memory/#reckoner--unified-discriminant-learner) — the memory-layer primitive that learns to separate classes or predict continuous values from a stream of labeled observations:
 
-```scheme
+```clojure
 (reckoner name dims refit-interval)     → Reckoner
 (register reckoner name)                → Label     ; symbol handle, idempotent
 (observe reckoner thought label weight) → ()        ; accumulate evidence
@@ -51,7 +51,7 @@ Five core operations (`observe`, `predict`, `decay`, `resolve`, `curve`), four a
 
 ### Products (Structs)
 
-```scheme
+```clojure
 (struct enterprise-state
   observers            ; Vec<Observer>
   generalist           ; Observer
@@ -68,7 +68,7 @@ Field access: `(:treasury state)`. Functional update: `(update state :treasury n
 
 ### Coproducts (Enums)
 
-```scheme
+```clojure
 (enum direction :long :short)          ; simple keyword variants
 
 (enum event                            ; tagged variants carry data
@@ -86,7 +86,7 @@ Match must be exhaustive — missing an arm is a spec violation. The forge ward 
 
 ### Protocols (Type Classes)
 
-```scheme
+```clojure
 (defprotocol indicator
   "A scalar stream processor. State in, state out."
   (step [state input] "Advance by one input. Returns (state, output)."))
