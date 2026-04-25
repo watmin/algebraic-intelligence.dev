@@ -18,6 +18,8 @@ Holon has multiple scalar encoding paths, chosen based on the semantic nature of
 
 **Magnitude-aware encoding** (`$linear`, `$log`) — for numeric values where proximity should be geometrically reflected. A packet with 50 bytes should be similar to a packet with 55 bytes; not to a packet with 1400 bytes near the MTU ceiling. The `$linear` marker encodes value on a linear scale; `$log` on a logarithmic scale, suited for quantities spanning orders of magnitude. The mechanism: interpolate between two deterministic orthogonal basis vectors weighted by the value's normalized position on the scale. Nearby values produce similar interpolations; distant values produce near-orthogonal results.
 
+**Thermometer encoding** (`ScalarMode::Thermometer`) — for fine-grained linear gradients that survive bipolar thresholding. Linear interpolation between basis vectors loses precision after thresholding: at scale=1.0, +0.07 and −0.07 encode identically because the rotation angle is small enough that thresholding to `{-1, 0, +1}` collapses both to the same vector. Thermometer encoding fills dimensions proportionally to the value's position in `[min, max]` instead of rotating between bases. Cosine similarity between two thermometer-encoded values is `1.0 − 2.0 × |a − b| / (max − min)` — an exact linear gradient at any scale. Useful for indicator rhythm encoding and any continuous value where small differences matter.
+
 **Temporal encoding** (`$time`) — for timestamps where the relevant similarity is cyclical. Monday 9am should be similar to Tuesday 9am, and to Monday 9am next week — same hour-of-day, same day-of-week position in the cycle. Encoding a Unix timestamp as a string or linear magnitude loses all of this. The temporal encoder decomposes the timestamp into circular components (hour-of-day, day-of-week, month) and encodes each as a rotation between two orthogonal basis vectors, so the geometry reflects the cyclic structure of time.
 
 Choosing the wrong path corrupts the geometry. Encode a byte count as a string atom and you've thrown away the ordering that makes "3x normal rate" detectable. Encode a protocol name linearly and you've implied `TCP` and `UDP` are numerically adjacent in some meaningful sense. The choice is explicit, marked in the data at encode time.
@@ -215,6 +217,21 @@ This has a distributed systems implication that's easy to miss. In a conventiona
 Holon has none of that. Every node derives the same atom vectors independently from the same hash function. An HQ process can learn baselines, accumulate prototypes, and mint engrams against live traffic — then distribute that knowledge to edge nodes as vectors directly. The edge re-derives identical atom vectors on demand and operates in the same vector space. Coordination happens at the data layer, not the encoding layer. The encoding layer scales horizontally for free.
 
 The fixed-width vector space makes the distribution cost model tractable. A learned engram — a named, serialized unit of geometric knowledge — arrives as a data structure of known, bounded size and gets loaded into the memory bank immediately. What the consumer does on a hit is application-defined; the engram is the memory, not the action. No code deployment. No config reload. No restart. The edge node doesn't need to understand what the engram encodes; it runs the matching operation against it and gets a score. The per-node cost to distribute a new pattern is constant in the complexity of the pattern. The per-packet scan cost grows linearly with the number of engrams in the library — but that scan is over fixed-width vectors using operations that SIMD parallelism is designed for, with a small constant per engram.
+
+---
+
+## Programs as Atoms — `HolonAST` and the Type Registry
+
+The atom interface is `Atom<T>` for any `T: Hash`. The string atom (`Atom<&str>`) is the canonical case, but the substrate accepts any hashable type. This includes `HolonAST` itself — an algebraic expression like `(bind (atom "rsi") (encode-linear 73.2))` is itself a hashable value, and therefore a valid atom.
+
+This produces two legitimate encodings for any composite Holon:
+
+- **Direct encode** — structural vector. Sub-parts recoverable via `unbind`. The standard pipeline.
+- **Atomized wrap** — `Atom<Arc<HolonAST>>` produces an opaque-identity vector whose hash is over the program's canonical-EDN form. Structure is NOT recoverable from the vector. Used for library keys, program similarity by identity, `Bundle` of programs, `Bind` to outcome.
+
+The `AtomTypeRegistry` registers types with stable type tags and canonical-bytes serialization. `AtomTypeRegistry::with_builtins()` covers every Rust primitive (integers, floats, bool, char, String, &str, unit) plus `HolonAST` itself. User-declared wat types — structs, enums, newtypes, type aliases — register at startup, then any value of those types can be wrapped as an atom.
+
+This is the substrate for **programs-as-atoms**: a wat program is a `HolonAST` value, which is hashable, which makes it an atom, which makes it a vector. You can `bundle` programs. You can `bind` a program to its outcome. You can build an `EngramLibrary` keyed by program identity. The algebra closes over its own representation. McCarthy's homoiconicity, in vector space.
 
 ---
 

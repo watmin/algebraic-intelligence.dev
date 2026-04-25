@@ -125,6 +125,30 @@ Standard Lisp forms for the program logic between algebraic operations:
 
 ---
 
+## Concurrency: Pipes and Processes
+
+Pipes are values, not declarations. They enable async signaling without async machinery — the fold IS the event loop, and pipes carry messages between concurrent producers and a deterministic consumer.
+
+```clojure
+(defpipe price-feed)              ; declare a pipe — a typed channel
+(send price-feed candle)          ; non-blocking write
+(recv price-feed)                 ; blocking read, returns next value
+(try-recv price-feed)             ; non-blocking read, returns Option
+(select-ready [pipe1 pipe2 ...])  ; wait for any pipe to have data
+
+(defprocess btc-feed-process [out : Pipe<Candle>]
+  (loop ...
+    (send out next-candle)))
+
+(make-topic source [pipe1 pipe2 pipe3])  ; 1→N fan-out — caller IS
+                                         ; the fan-out, no thread spawned
+(join [handle1 handle2])                 ; block until handles complete
+```
+
+The producers are the only concurrent part. The consumer (the enterprise's fold) is synchronous and deterministic. The concurrency boundary is the pipe between them. The backtest replays a `Vec<Candle>` through the same fold; the live system feeds a websocket through the same fold. The fold doesn't know.
+
+---
+
 ## Standard Library
 
 ```
@@ -157,6 +181,31 @@ The wat-to-Rust mapping is documented in `docs/COMPILATION.md`:
 | `set!`, `push!`, `inc!` | `&mut self` methods |
 | `pmap` | `par_iter().map()` (rayon) |
 | `(when cond body)` | `Option<T>` return via control flow |
+| `defpipe` | `crossbeam::channel::unbounded()` |
+| `:rust::module::function` | direct call to a Rust function via `#[wat_dispatch]` |
+
+---
+
+## wat-rs — The Implementation
+
+[wat-rs](https://github.com/watmin/wat-rs) is the actual implementation of the wat language — a Rust crate that ships:
+
+- `wat` — the library: parser, type checker, macro expander, runtime
+- `wat-macros` — sibling proc-macro crate. `#[wat_dispatch]` generates the shim code that surfaces a Rust `impl` block under `:rust::...`, letting wat programs call Rust crates as native forms
+- `wat` — the CLI binary: `wat <entry.wat>` runs a program via the `:user::main` contract
+- `wat::test! {}` — Rust macro for self-hosted testing through `cargo test`
+
+The runtime walks the INTERPRET path: parse → load-resolve → macro-expand → register types → register defines → resolve → type-check → freeze → invoke `:user::main`. UpperCalls (`:wat::holon::Atom`, `:wat::holon::Bind`, …) dispatch to `holon::HolonAST` and encode via `holon::encode`. The dependency stack:
+
+```
+holon   (algebra substrate — 5 core forms, encode, registry)
+    ↑
+wat     (wat-rs — wat frontend + interpret runtime + :rust:: shims)
+    ↑
+holon-lab-trading / holon-lab-ddos / any wat-consuming application
+```
+
+Same pattern as Clojure on the JVM: wat is a full language with its own parser, type checker, and runtime, and it borrows Rust's type system, safety, and ecosystem underneath. Rust crates surface into wat source under the `:rust::` namespace; wat programs call them like native forms.
 
 ---
 

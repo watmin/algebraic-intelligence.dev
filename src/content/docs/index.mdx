@@ -109,7 +109,9 @@ Three tracks. Read in any order.
 
 [**holon-rs**](https://github.com/watmin/holon-rs) — The kernel. Five primitives: atom, bind, bundle, cosine, reckoner. SIMD-accelerated. f64 pipeline for scalar extraction. The Reckoner unifies discrete classification and continuous regression in one struct with a self-evaluating conviction-accuracy curve.
 
-[**wat**](https://github.com/watmin/wat) — The language. S-expressions shaped for algebraic cognition. Two algebras (vector + reckoner), three structural forms (struct, enum, protocol), a host language that compiles to Rust. 652 lines define the entire system.
+[**wat**](https://github.com/watmin/wat) — The language. S-expressions shaped for algebraic cognition. Two algebras (vector + reckoner), three structural forms (struct, enum, protocol), pipes/processes/select for concurrency, a host language that compiles to Rust.
+
+[**wat-rs**](https://github.com/watmin/wat-rs) — The implementation. Parser, type checker, macro expander, runtime. `#[wat_dispatch]` proc-macro surfaces Rust crates under the `:rust::` namespace. The wat machine is real.
 
 [**holon-lab-trading**](https://github.com/watmin/holon-lab-trading) — The enterprise. Self-organizing BTC trader with N market observers, M exit observers, N×M brokers (Grace/Violence accountability), streaming indicators, and a guide-driven specification process. 37 wat files, 4,804 lines, proven by the ignorant ward. The conviction-accuracy curve is exponential: 62.1% with 107 atoms on 100k candles.
 

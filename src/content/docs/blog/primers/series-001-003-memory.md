@@ -54,6 +54,19 @@ Implemented using [CCIPCA (Candid Covariance-free Incremental PCA, Weng et al. 2
 | `sigma_mult` | 3.5 | How many standard deviations above the running average before something is flagged as anomalous. Higher = less sensitive, fewer false positives. |
 | `reorth_interval` | 500 | Re-orthogonalize components every N updates to prevent numerical drift. |
 
+### Reflexive subspace — discovers its own dimensionality
+
+The starting `k` is a hint, not a fix. The subspace can grow and shrink components based on the eigenvalue spectrum of what it's actually seeing.
+
+| Parameter | Default | Effect |
+|-----------|---------|--------|
+| `grow_threshold` | 0.05 | If the last eigenvalue exceeds 5% of the first, add a component. |
+| `shrink_threshold` | 0.01 | If the last eigenvalue drops below 1% of the first, drop a component. |
+| `min_components` | configurable | Floor on K. |
+| `max_components` | configurable | Ceiling on K. |
+
+Hysteresis between grow and shrink thresholds prevents oscillation. Complex backgrounds grow more components. Simple backgrounds shrink. The dimensionality breathes with the data — the subspace doesn't need to be told how complex its input is, it discovers it.
+
 ### Core operations
 
 **`update(vec)`** — Feed one vector into the subspace. Updates the mean, advances all k principal components via CCIPCA, updates the adaptive threshold EMA. Returns the residual of the new vector against the current subspace — useful for monitoring how anomalous the training stream is during warmup.
@@ -329,11 +342,14 @@ The Reckoner (originally called Journal, renamed April 2026) supports two readou
 
 **Discrete mode** (`ReckConfig::Discrete`): N-ary classification. Maintains one accumulator per registered label. Each label's discriminant is `normalize(proto_i − mean(proto_j for j ≠ i))` — the direction that separates label i from the centroid of everything else. Prediction scores against all N discriminants. The binary case (Buy/Sell) falls out naturally.
 
-**Continuous mode** (`ReckConfig::Continuous`): Scalar regression. Predicts a continuous value from a thought vector — useful for learning stop distances, position sizes, or any parameter that should be derived from the market state rather than hardcoded.
+**Continuous mode** (`ReckConfig::Continuous { default_value, buckets }`): Scalar regression with bucketed accumulators. Predicts a continuous value from a thought vector — useful for learning stop distances, position sizes, or any parameter that should be derived from the market state rather than hardcoded. K bucketed accumulators replace brute-force KNN: O(K·D) per query instead of O(N·D), constant in observations. K=10 sits at the knee of the error curve in measured experiments — 130× speedup over the brute-force baseline.
+
+The range is discovered from the data. Decay + rebalance = breathing range — buckets expand to cover new observations, contract when old weight decays. The resolution follows the living distribution. One parameter (K). The market teaches the range.
 
 ```
 Reckoner::new("market", dims, recalib_interval, ReckConfig::Discrete(labels))
-Reckoner::new("stop_distance", dims, recalib_interval, ReckConfig::Continuous(0.015))
+Reckoner::new("stop_distance", dims, recalib_interval,
+              ReckConfig::Continuous { default_value: 0.015, buckets: 10 })
 ```
 
 Labels are symbols — `Label(u32)` handles created by `reckoner.register("Buy")`. Cheap, Copy, O(1) equality.
