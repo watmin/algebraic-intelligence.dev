@@ -1,242 +1,304 @@
 ---
 title: "The Wat Language"
-description: "An s-expression specification language shaped for algebraic cognition. Two algebras (vector + reckoner), three structural forms (struct, enum, protocol), and a host language that compiles to Rust. 652 lines across 8 files define the entire system."
-date: 2026-04-07
+description: "A Lisp-family language for holon algebra, hosted on Rust. Same pattern as Clojure on the JVM. Fully typed, parenthesized, no braces. Six AST primitives, four measurements, three structural forms, kernel concurrency, Rust interop via #[wat_dispatch]. Defined by wat-rs."
+date: 2026-04-24
 ---
 
-Wat is a specification language. It describes programs in s-expression form — what a module reads, what it emits, what it does not read. The wat leads. The Rust follows. Automated wards (`/scry`, `/gaze`, `/forge`) verify that the two agree.
+`wat` is a Lisp-family language for holon algebra, hosted on Rust. Same pattern as Clojure on the JVM: wat is a full language with its own parser, type checker, macro expander, and runtime, and it borrows Rust's type system, safety, and ecosystem underneath. Rust crates surface into wat source under the `:rust::` namespace; wat programs call them like native forms.
 
-The language originated as a year-old relic — Grok conversation links and a proof-of-concept continuation function on GitHub from March 2025. It was revived in March 2026 as the specification layer for the [trading enterprise](/blog/story/series-006-004-the-datamancer/), and has since grown into a complete language with two algebras, three structural forms, a standard library, and a documented compilation path to Rust.
-
-8 files. 652 lines. Everything the system needs to specify itself.
-
----
-
-## Two Algebras
-
-### Algebra 1: Vector Algebra (4 Generators)
-
-The same four operations that underpin the entire Holon project — from [DDoS detection](/blog/story/series-003-003-1-3m-pps/) to the [spectral firewall](/blog/story/series-005-001-the-spectral-firewall/) to the [trading enterprise](/blog/story/series-006-003-the-enterprise/):
-
-```clojure
-(atom name)                    → Vector      ; deterministic bipolar vector from hash
-(bind role filler)             → Vector      ; compose two concepts (self-inverse)
-(bundle fact1 fact2 ...)       → Vector      ; superimpose relationships
-(cosine thought direction)     → Float       ; similarity measurement [-1.0, +1.0]
-```
-
-These are defined in `core/primitives.wat`. Everything in the [algebra ops primer](/blog/primers/series-001-002-holon-ops/) — `negate`, `amplify`, `difference`, `prototype`, `attend`, `coherence` — derives from these four in `std/vectors.wat`.
-
-### Algebra 2: Reckoner Coalgebra (Learning & Prediction)
-
-The [Reckoner](/blog/primers/series-001-003-memory/#reckoner--unified-discriminant-learner) — the memory-layer primitive that learns to separate classes or predict continuous values from a stream of labeled observations:
-
-```clojure
-(reckoner name dims refit-interval)     → Reckoner
-(register reckoner name)                → Label     ; symbol handle, idempotent
-(observe reckoner thought label weight) → ()        ; accumulate evidence
-(predict reckoner thought)              → Prediction
-(decay reckoner rate)                   → ()        ; fade older observations
-(resolve reckoner conviction correct)   → ()        ; record outcome for curve
-(curve reckoner)                        → (a, b)    ; accuracy = 1/N + a × exp(b × conviction)
-(discriminant reckoner label)           → Vector|None
-(recalib-count reckoner)                → Integer
-```
-
-Five core operations (`observe`, `predict`, `decay`, `resolve`, `curve`), four accessors. The accumulators are private — the coalgebra is defined by its interface, not its representation.
+The language is defined by [wat-rs](https://github.com/watmin/wat-rs) — the implementation is the spec. It's basically Scheme with the additions algebraic cognition needs: full static typing (rank-1 Hindley-Milner), six holon primitives baked into the substrate, a kernel of concurrency primitives, and a `:rust::` namespace that surfaces any annotated Rust crate as native wat forms. No braces. Just parentheses.
 
 ---
 
-## Three Structural Forms
+## The Mental Model
 
-### Products (Structs)
+Every wat program lives in a coordinate with two axes.
 
-```clojure
-(struct enterprise-state
-  observers            ; Vec<Observer>
-  generalist           ; Observer
-  manager              ; Reckoner
-  risk-branches        ; Vec<RiskBranch>
-  treasury             ; Treasury
-  portfolio            ; Portfolio
-  pending              ; VecDeque<Pending>
-  positions            ; Vec<ManagedPosition>
-  latest-candle?)      ; Option<Candle> — the ? suffix marks optional fields
-```
+### Axis 1 — Four layers
 
-Field access: `(:treasury state)`. Functional update: `(update state :treasury new-treasury :portfolio new-portfolio)` — parallel semantics, all fields updated simultaneously.
+1. **Holon algebra** (`:wat::holon::*`) — six AST-producing primitives (`Atom`, `Bind`, `Bundle`, `Blend`, `Permute`, `Thermometer`), four measurements (`cosine`, `dot`, `presence?`, `coincident?`), the `HolonAST` type. The substrate of hyperdimensional computing.
+2. **Language core** (`:wat::core::*`) — the language's own mechanics: `define`, `lambda`, `let*`, `match`, `if`, `cond`, `try`, `struct`, `enum`, `newtype`, `typealias`, `defmacro`. Cannot be written in wat itself.
+3. **Kernel** (`:wat::kernel::*`) — concurrency and I/O: `spawn`, `make-bounded-queue`, `send`, `recv`, `select`, `HandlePool`, plus `:wat::io::IOReader`. The things that move bytes between processes.
+4. **Stdlib** (`:wat::std::*`) — non-algebra conveniences written in wat: stream combinators, `Console` service, hermetic-test wrapper.
 
-### Coproducts (Enums)
+### Axis 2 — Two namespaces
 
-```clojure
-(enum direction :long :short)          ; simple keyword variants
+- **`:wat::*`** — forms and types defined by the language itself
+- **`:rust::*`** — types surfaced from Rust crates via `#[wat_dispatch]`. Every Rust type's path is its actual Rust path: `:rust::crossbeam_channel::Sender<T>`, `:rust::lru::LruCache<K,V>`. No short aliases.
 
-(enum event                            ; tagged variants carry data
-  (candle asset candle)
-  (deposit asset amount)
-  (withdraw asset amount))
+User code lives under its own prefix (`:my::`, `:project::`, `:alice::`). `:wat::*` and `:rust::*` are reserved.
 
-(match event                           ; exhaustive dispatch
-  (candle a c)   (handle-candle a c)
-  (deposit a n)  (handle-deposit a n)
-  (withdraw a n) (handle-withdraw a n))
-```
-
-Match must be exhaustive — missing an arm is a spec violation. The forge ward checks this. The Rust compiler enforces it.
-
-### Protocols (Type Classes)
-
-```clojure
-(defprotocol indicator
-  "A scalar stream processor. State in, state out."
-  (step [state input] "Advance by one input. Returns (state, output)."))
-
-(struct sma-state buffer period)
-
-(satisfies sma-state indicator
-  :step sma-step)
-```
-
-Check-only, not dispatch. The forge verifies that `sma-step` exists with the right arity. Call `sma-step` directly by name — no dynamic dispatch, no vtables. Explicit, exhaustive: every protocol function must be mapped.
+A program declares which Rust types it uses via `(:wat::core::use! :rust::some::Type)` — per-program opt-in.
 
 ---
 
-## Host Language
+## The Six Algebra Primitives
 
-Standard Lisp forms for the program logic between algebraic operations:
+```scheme
+(:wat::holon::Atom "rsi")              ; seed a vector from a literal
+(:wat::holon::Atom 42)                 ; typed — int, float, bool, string, keyword
+(:wat::holon::Atom my-ast)             ; or any registered composite type
 
-**Arithmetic**: `+`, `-`, `*`, `/`, `abs`, `sqrt`, `mod`, `max`, `min`, `round`, `clamp`, `exp`, `ln`, `signum`
+(:wat::holon::Bind role filler)        ; elementwise multiply — role-filler binding
+(:wat::holon::Bundle holons-vec)       ; sum + threshold — superposition
+                                       ;   returns :BundleResult (= Result<HolonAST, CapacityExceeded>)
+(:wat::holon::Permute holon k)         ; circular shift — positional encoding
+(:wat::holon::Thermometer v min max)   ; gradient encoding of a scalar
+(:wat::holon::Blend a b w1 w2)         ; scalar-weighted binary combination
+```
 
-**Collections**: `list`, `len`, `nth`, `first`, `rest`, `last`, `append`, `map`, `filter`, `fold`, `sort-by`, `range`, `empty?`, `member?`, `some?`, `quantile`, `zeros`
-
-**Maps**: `map-of` (flat key-value constructor), `get`, `assoc`, `keys`, `dissoc`
-
-**Control**: `let`, `let*`, `define`, `if`, `when`, `when-let`, `cond`, `match`, `lambda`, `begin`
-
-**Parallel**: `pmap`, `pfor-each` — semantically identical to `map`/`for-each`, signal that parallel execution is safe
-
-**Mutation**: `set!`, `push!`, `pop!`, `inc!` — honest about mutation, map to `&mut self` in Rust
-
-**Optionals**: `(Some value)`, `None` — Rust `Option<T>`. No `nil` value exists. Absence is structural: `field?` suffix on struct fields, `when` for conditional execution.
-
-**Quote**: `'(...)` — s-expressions as data. The expression IS the tree.
-
-**Type annotations** (optional): `[param : Type]` for parameters, `: ReturnType` for returns. Never enforced — purely metadata for tooling.
+These six produce `HolonAST` — the algebra's expression tree. `Atom` accepts any registered hashable type, including `HolonAST` itself: programs are atoms. `Bundle` returns a `Result` because superposition has a [Kanerva capacity ceiling](/blog/primers/series-001-003-memory/) — too many components and the bundle silently corrupts. The substrate refuses to lie about it.
 
 ---
 
-## Concurrency: Pipes and Processes
+## The Four Measurements
 
-Pipes are values, not declarations. They enable async signaling without async machinery — the fold IS the event loop, and pipes carry messages between concurrent producers and a deterministic consumer.
-
-```clojure
-(defpipe price-feed)              ; declare a pipe — a typed channel
-(send price-feed candle)          ; non-blocking write
-(recv price-feed)                 ; blocking read, returns next value
-(try-recv price-feed)             ; non-blocking read, returns Option
-(select-ready [pipe1 pipe2 ...])  ; wait for any pipe to have data
-
-(defprocess btc-feed-process [out : Pipe<Candle>]
-  (loop ...
-    (send out next-candle)))
-
-(make-topic source [pipe1 pipe2 pipe3])  ; 1→N fan-out — caller IS
-                                         ; the fan-out, no thread spawned
-(join [handle1 handle2])                 ; block until handles complete
+```scheme
+(:wat::holon::cosine a b)             ; → :f64   cosine similarity
+(:wat::holon::dot a b)                ; → :f64   dot product, un-normalized
+(:wat::holon::presence? target ref)   ; → :bool  cosine > sigma × noise-floor
+(:wat::holon::coincident? a b)        ; → :bool  (1 - cosine) < coincident-floor
 ```
 
-The producers are the only concurrent part. The consumer (the enterprise's fold) is synchronous and deterministic. The concurrency boundary is the pipe between them. The backtest replays a `Vec<Candle>` through the same fold; the live system feeds a websocket through the same fold. The fold doesn't know.
+`presence?` asks "is there signal of A in B?" — cosine clears the presence threshold. `coincident?` asks "are A and B the same point?" — cosine is so close to 1.0 that the substrate cannot distinguish them. Dual predicates of one statistical fact.
+
+The `eval-coincident?` family extends `coincident?` to evaluated programs — verify each side's source under integrity, evaluate, atomize, compare. The signed variant (`eval-signed-coincident?`) takes per-side source + signature + public key, verifies signatures, refuses mutation forms, evaluates each in a fresh sandbox, atomizes the result, and binarizes against the coincident floor. One library call covers consensus-via-coincidence, integrity-gated composition, and program-comparison under signature.
 
 ---
 
-## Standard Library
+## The Eleven wat-Written Idioms
 
-```
-std/scalars.wat      15 lines — encode-log, encode-linear, encode-circular
-std/vectors.wat      44 lines — permute, difference, negate, amplify, prototype,
-                                cleanup, attend, coherence, blend, l2-norm, zeros
-std/memory.wat       28 lines — online-subspace (CCIPCA), update, residual, threshold
-std/statistics.wat   41 lines — mean, variance, stddev, moments, skewness
+Each lives in `wat/holon/<Name>.wat` and expands to algebra-core primitives at parse time:
+
+```scheme
+(:wat::holon::Log v min max)              ; Thermometer on (ln v)
+(:wat::holon::ReciprocalLog n v)          ; Log v (1/n) n — log-symmetric ratio bounds
+(:wat::holon::Circular v period)          ; Blend of cos/sin-basis atoms
+(:wat::holon::Sequential list)            ; positional bind-chain
+(:wat::holon::Ngram n list)               ; n-wise adjacency
+(:wat::holon::Bigram list)                ; Ngram 2
+(:wat::holon::Trigram list)               ; Ngram 3
+(:wat::holon::Amplify x y s)              ; Blend x y 1 s — boost y in x
+(:wat::holon::Subtract x y)               ; Blend x y 1 -1 — remove y from x
+(:wat::holon::Reject x y)                 ; Gram-Schmidt reject step
+(:wat::holon::Project x y)                ; Gram-Schmidt project step
 ```
 
-128 lines of standard library. Everything derives from the core primitives or provides pre-algebra numeric helpers.
+The substrate ships only what it must. Everything else composes from these.
 
 ---
 
-## Compilation to Rust
+## Writing Functions
 
-The wat-to-Rust mapping is documented in `docs/COMPILATION.md`:
+Every parameter is typed. Return type is declared after `->`. Body must produce the declared return type. The type checker verifies at startup; bad types fail before any code runs.
 
-| Wat | Rust |
-|-----|------|
-| All numbers | `f64` |
-| `true` / `false` | `bool` |
-| `struct` | `pub struct { pub field: T }` |
-| `enum` | `enum` (exhaustive match) |
-| `:field record` | `record.field` |
-| `(update record :f1 v1)` | `Struct { f1: v1, ..record }` |
-| `defprotocol` | `trait` |
-| `satisfies` | `impl Trait for Struct` |
-| `field?` suffix | `Option<T>`, initialized `None` |
-| `set!`, `push!`, `inc!` | `&mut self` methods |
-| `pmap` | `par_iter().map()` (rayon) |
-| `(when cond body)` | `Option<T>` return via control flow |
-| `defpipe` | `crossbeam::channel::unbounded()` |
-| `:rust::module::function` | direct call to a Rust function via `#[wat_dispatch]` |
+```scheme
+;; named function — registered in the symbol table at startup
+(:wat::core::define (:my::app::double (n :i64) -> :i64)
+  (:wat::core::i64::* n 2))
+
+;; anonymous function — produces a :fn(i64,i64)->i64 first-class value
+(:wat::core::lambda ((x :i64) (y :i64) -> :i64)
+  (:wat::core::i64::+ x y))
+
+;; sequential let — every binding typed, later can reference earlier
+(:wat::core::let*
+  (((a :i64) 10)
+   ((b :i64) 20)
+   ((sum :i64) (:wat::core::i64::+ a b)))
+  sum)
+
+;; pattern match — exhaustive, checked at startup
+(:wat::core::match some-option -> :i64
+  ((Some v) (:wat::core::i64::* v 2))
+  (:None 0))
+
+;; error propagation — like Rust's ?
+(:wat::core::try fallible-call)
+
+;; typed boolean branch
+(:wat::core::if (gt? n 0) :i64
+  n
+  (:wat::core::i64::* n -1))
+```
+
+User namespaces are keyword-paths: `:my::app::deeply::nested::fn`. Compose freely.
 
 ---
 
-## wat-rs — The Implementation
+## The Three Structural Forms
 
-[wat-rs](https://github.com/watmin/wat-rs) is the actual implementation of the wat language — a Rust crate that ships:
+```scheme
+(:wat::core::struct :my::Position
+  ((source :Asset) (target :Asset) (size :f64)))
 
-- `wat` — the library: parser, type checker, macro expander, runtime
-- `wat-macros` — sibling proc-macro crate. `#[wat_dispatch]` generates the shim code that surfaces a Rust `impl` block under `:rust::...`, letting wat programs call Rust crates as native forms
-- `wat` — the CLI binary: `wat <entry.wat>` runs a program via the `:user::main` contract
-- `wat::test! {}` — Rust macro for self-hosted testing through `cargo test`
+(:wat::core::enum :my::Direction
+  :Buy :Sell)
 
-The runtime walks the INTERPRET path: parse → load-resolve → macro-expand → register types → register defines → resolve → type-check → freeze → invoke `:user::main`. UpperCalls (`:wat::holon::Atom`, `:wat::holon::Bind`, …) dispatch to `holon::HolonAST` and encode via `holon::encode`. The dependency stack:
+(:wat::core::enum :my::Event
+  ((Candle :Asset :Candle))
+  ((Deposit :Asset :f64)))
+
+(:wat::core::newtype :my::BasisPoints :i64)
+
+(:wat::core::typealias :Holons (:Vec :wat::holon::HolonAST))
+```
+
+`struct` is product. `enum` is sum. `newtype` is a wrapper that gets compile-time enforcement. `typealias` is a name for a type expression. No `nil`. No truthiness. Absence is structural — `:Option<T>` is the only way.
+
+---
+
+## Concurrency — Three Tiers, Zero Mutexes
+
+Every piece of state lives in one of three tiers:
+
+| Tier | Mechanism | Used for |
+|---|---|---|
+| 1 — Immutable | `Arc<T>`, frozen at startup | Config, symbol table, registered functions |
+| 2 — Thread-owned | `ThreadOwnedCell<T>` | Per-thread hot state (LocalCache) |
+| 3 — Program-owned | A spawned wat program + channels | Shared-access state (Console, Cache) |
+
+**There is no Mutex.** Zero. If you find yourself wanting one, you have a tier question to answer.
+
+```scheme
+;; queues — single-owner, like Linux fds
+(:wat::kernel::make-bounded-queue :Candle 1)     ; rendezvous (default — backpressure)
+(:wat::kernel::make-bounded-queue :Candle 64)    ; buffer of 64
+(:wat::kernel::make-unbounded-queue :LearnSignal) ; fire-and-forget
+
+(:wat::kernel::send sender value)    ; → :Option<()>  Some on sent, None on disconnect
+(:wat::kernel::recv receiver)        ; → :Option<T>   Some(v) on recv, None on disconnect
+(:wat::kernel::try-recv receiver)    ; → :Option<T>   None if empty OR disconnected
+(:wat::kernel::drop handle)          ; → :()          close a sender or receiver
+
+;; fan-in — caller owns the loop, removes disconnected receivers
+(:wat::kernel::select receivers)     ; → :(i64, Option<T>)
+
+;; spawn — OS thread running a named function
+(:wat::kernel::spawn :my::app::worker arg1 arg2)  ; → :ProgramHandle<T>
+(:wat::kernel::join handle)                        ; → :T  blocks for return value
+
+;; HandlePool — claim-or-panic distribution of N handles to N consumers
+(:wat::kernel::HandlePool::new "console" senders)
+(:wat::kernel::HandlePool::pop pool)        ; panics if empty
+(:wat::kernel::HandlePool::finish pool)     ; panics on orphans
+```
+
+Default to `bounded(1)`. It's the rendezvous shape that gives backpressure naturally — slow consumer throttles the producer. Larger buffers trade throughput for latency. Senders and receivers are single-owner — not cloneable. Like Linux `write(fd, data)`: whoever holds the fd owns the capability.
+
+---
+
+## Rust Interop — Surfacing a Crate Type
+
+```rust
+// In your Rust crate, on the impl block you want to surface:
+use wat_macros::wat_dispatch;
+
+#[wat_dispatch(prefix = ":rust::lru::LruCache")]
+impl<K: Hash + Eq, V: Clone> LruCache<K, V> {
+    pub fn new(cap: NonZeroUsize) -> Self { ... }
+    pub fn get(&mut self, k: &K) -> Option<&V> { ... }
+    pub fn put(&mut self, k: K, v: V) -> Option<V> { ... }
+}
+```
+
+```scheme
+;; Then in wat:
+(:wat::core::use! :rust::lru::LruCache)
+
+(:wat::core::let*
+  (((cache :rust::lru::LruCache<:String, :Holon>)
+    (:rust::lru::LruCache::new 1024)))
+  ...)
+```
+
+The proc-macro generates the shim code. The `:rust::` namespace surfaces the Rust impl as native wat forms. Three scope modes (`pub`, `pub(crate)`, hidden) control which methods cross the boundary. Method dispatch is direct — no vtables, no dynamic lookup, no runtime cost beyond a function call.
+
+This is how wat scales without reimplementing the world: `:rust::crossbeam_channel`, `:rust::ed25519_dalek`, `:rust::serde_json` — anything in the Rust ecosystem becomes a wat form by adding `#[wat_dispatch]` to its impl block.
+
+---
+
+## The wat-rs Stack
 
 ```
-holon   (algebra substrate — 5 core forms, encode, registry)
-    ↑
-wat     (wat-rs — wat frontend + interpret runtime + :rust:: shims)
-    ↑
+holon   (algebra substrate — 6 primitives, encode, AtomTypeRegistry)
+   ↑
+wat     (wat-rs — frontend + interpret runtime + :rust:: shims)
+   ↑
 holon-lab-trading / holon-lab-ddos / any wat-consuming application
 ```
 
-Same pattern as Clojure on the JVM: wat is a full language with its own parser, type checker, and runtime, and it borrows Rust's type system, safety, and ecosystem underneath. Rust crates surface into wat source under the `:rust::` namespace; wat programs call them like native forms.
+A wat application is a small Rust crate that delegates to two macros:
+
+```rust
+// build.rs — compile-time tree walker
+fn main() {
+    wat_macros::build_wat_tree!("src/wat");
+}
+
+// main.rs — runtime entry
+fn main() {
+    wat::run_entry!("src/wat/main.wat");
+}
+```
+
+The runtime walks the INTERPRET path: parse → load-resolve → macro-expand → register types → register defines → resolve → type-check → freeze → invoke `:user::main`. UpperCalls (`:wat::holon::Atom`, `:wat::holon::Bind`, …) dispatch to `holon::HolonAST` and encode via `holon::encode`.
+
+A source-to-source COMPILE path was sketched in the 058 batch's `WAT-TO-RUST.md` but retired April 21 — Rust-interop turned out to be covered by `#[wat_dispatch]` and the `:rust::` namespace, and native binary emission has no current caller.
 
 ---
 
-## The Wards
+## Testing — wat tests wat
 
-Five automated skills verify that wat specifications and Rust implementations agree:
+```scheme
+(:wat::test::deftest "double works"
+  (:wat::test::assert-eq (:my::app::double 21) 42))
+```
 
-- **`/sever`** — dead imports, unreachable branches, vestigial modules
-- **`/reap`** — computed values never read, struct fields never accessed
-- **`/scry`** — wat specifications vs Rust implementations. When they disagree, the wat wins.
-- **`/gaze`** — naming beauty, count accuracy. Three severities: lies (always report), mumbles (report), taste (do not chase)
-- **`/forge`** — is the wat a valid program in the language? Checks: forms exist in the grammar, enum match is exhaustive, protocol satisfaction is complete
+```rust
+// tests/test.rs
+wat::test! {
+    discovery_root: "src/wat",
+}
+```
 
-**Runes** suppress findings that can't be fixed — only acknowledged: `rune:gaze(complexity) — fold threading requires let* with discarded bindings`. The rune tells the ward: the datamancer has been here. This is conscious.
-
----
-
-## The Enterprise Example
-
-`examples/enterprise.wat` (315 lines) is the reference program — a complete trading enterprise specified in wat. It demonstrates struct definition, encoding layers, expert nodes, gate systems, position management, and exit logic. The corresponding Rust implementation in `holon-lab-trading/src/bin/enterprise.rs` follows the wat specification, verified by `/scry`.
-
-The enterprise's `wat/` directory mirrors its `src/` directory — 37 specification files across 4,804 lines. Every Rust source file with business logic has a corresponding wat. The wat is the source of truth.
+`cargo test` runs every `deftest` in the wat tree through the standard Rust test harness. Failures are reported with wat-side source locations (file:line:column). Hermetic mode spawns isolated runtimes for tests that exercise services or threads.
 
 ---
 
-## Design Principles
+## Error Handling
 
-**No `nil`.** Absence is structural — optional fields use `?` suffix, conditional execution uses `when`. There is no null value to accidentally propagate.
+```scheme
+;; absence
+(:Option<:i64>)
+(Some 42)
+:None
 
-**Protocols are check-only.** `defprotocol` + `satisfies` declares that a struct implements a behavior. The forge verifies existence and arity. Call functions by name — no dynamic dispatch overhead.
+;; fallible computation
+(:Result<:T, :E>)
+(Ok value)
+(Err err)
 
-**Quote is data.** `'(bind role filler)` is an s-expression tree, not an execution. This enables thought vectors to be specified as data structures that the encoder evaluates — the vocabulary IS a quoted program.
+;; the canonical algebra Result — Bundle's capacity check
+:wat::holon::BundleResult  ; = :Result<:HolonAST, :CapacityExceeded>
+```
 
-**The stdlib enables. The application decides.** The standard library provides operations (scalars, vectors, memory, statistics). No vocabulary. No encoding conventions. No application patterns. The boundary is the [Fact interface](/blog/story/series-006-004-the-datamancer/#the-fact-interface): the language knows how to bind and bundle. The application knows what "RSI divergence" means.
+There is no panic-by-default. There is no `nil` to silently propagate. `try` propagates `Result` errors like Rust's `?`. `match` on `:Option` and `:Result` is exhaustive — startup fails if you miss an arm.
+
+---
+
+## The 058 Algebra-Surface Batch
+
+The wat language as it exists today is the realization of the 058 proposal batch in [holon-lab-trading/docs/proposals/2026/04/058-ast-algebra-surface/](https://github.com/watmin/holon-lab-trading). Forty-plus design proposals reviewed by simulated Hickey and Beckman, resolved into a coherent language surface, then implemented in wat-rs across six weeks of work-arcs. The batch covers the algebra primitives, the type system, the namespace structure, the concurrency tiers, the testing model, and the Rust interop. The proposals stay on disk as the design record — anyone reading wat-rs can trace any decision back to the question that produced it.
+
+---
+
+## What This Replaces
+
+Wat replaces three layers of conventional infrastructure:
+
+- **A configuration language** (YAML, TOML, JSON) — wat is typed, composable, evaluated under integrity. Configuration IS a program.
+- **An orchestration layer** (Airflow, Temporal, Step Functions) — `spawn`/`send`/`recv`/`select` covers any pipeline shape with three-tier ownership and rendezvous backpressure.
+- **A glue language** (Bash, Python scripts) — `:rust::` brings any Rust crate inline. The shim is one annotation. The dispatch is direct.
+
+What remains in Rust: the substrate (parser, type checker, runtime, kernel primitives, holon algebra implementation). What lives in wat: the application logic, the algebra over named concepts, the orchestration of concurrent work. The boundary is the `#[wat_dispatch]` annotation. Either side can grow without disturbing the other.
