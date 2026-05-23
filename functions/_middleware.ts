@@ -21,8 +21,20 @@ interface Env {
 }
 
 /**
- * Returns true if the Accept header prefers `text/markdown` over `text/html`.
- * Handles q-values: `text/html;q=0.5, text/markdown;q=1.0` → markdown wins.
+ * Returns true if the Accept header EXPLICITLY prefers `text/markdown`.
+ *
+ * Markdown is only served when text/markdown appears in Accept with a q-value
+ * meeting or exceeding text/html's. A bare `*/*` (curl's default, many HTTP
+ * libraries' default) is neutral — it doesn't trigger markdown by itself; the
+ * static asset's HTML default wins.
+ *
+ * Examples:
+ *   "text/markdown"                                          → true
+ *   "text/html,text/markdown"                                → true (tied; explicit ask wins)
+ *   "text/html;q=1.0,text/markdown;q=0.5"                    → false (html preferred)
+ *   "text/html,application/xhtml+xml,*\/*;q=0.8"             → false (browser default)
+ *   "*\/*"                                                   → false (curl default)
+ *   ""                                                       → false (no preference)
  */
 function prefersMarkdown(accept: string): boolean {
   if (!accept) return false;
@@ -44,10 +56,10 @@ function prefersMarkdown(accept: string): boolean {
 
     if (type === "text/markdown") mdQ = Math.max(mdQ, q);
     else if (type === "text/html") htmlQ = Math.max(htmlQ, q);
-    else if (type === "*/*") {
-      // Generic catch-all — let an explicit text/markdown win against it
-      if (mdQ < 0) mdQ = Math.max(mdQ, q * 0.5);
-    }
+    // `*/*` is intentionally ignored — it means "anything works" not "markdown
+    // please." Without an explicit text/markdown entry we fall through to the
+    // static asset (HTML) which is the right default for browsers and tools
+    // that don't articulate a preference.
   }
 
   return mdQ > 0 && mdQ >= htmlQ;
