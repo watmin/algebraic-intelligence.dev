@@ -1,0 +1,29 @@
+{
+  "serverInfo": {
+    "name": "algebraic-intelligence.dev",
+    "version": "0.0.0"
+  },
+  "capabilities": {},
+  "x-no-server": true,
+  "x-note": "This site does not run an MCP server. The card exists to signal that explicitly (no transport field, capabilities is empty) rather than rely on a 404 to imply the same thing. All content is publicly accessible as documentation — fetch llms.txt for the agent map, or any /blog/<slug>.md for raw markdown source. A future MCP server (wat-mcp) is being designed in the scratch repo (see resources below) and is not yet running.",
+  "x-recommended-resources": [
+    {
+      "name": "llms.txt",
+      "uri": "https://algebraic-intelligence.dev/llms.txt",
+      "mimeType": "text/markdown",
+      "description": "Agent map — start here. Structured pointer to every section of the site."
+    },
+    {
+      "name": "topology",
+      "uri": "https://algebraic-intelligence.dev/blog/topology/",
+      "mimeType": "text/html",
+      "description": "How to read this site — trunk + branches + cliff notes."
+    },
+    {
+      "name": "future-mcp-design",
+      "uri": "https://github.com/watmin/scratch",
+      "mimeType": "text/markdown",
+      "description": "wat-mcp design proposals — the MCP server intended for this substrate, not yet running."
+    }
+  ]
+}

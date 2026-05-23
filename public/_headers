@@ -37,6 +37,14 @@
   Content-Type: application/json; charset=utf-8
   Cache-Control: public, max-age=300
 
+# MCP Server Card per SEP-1649 (draft) — explicit "no server" stub: empty
+# capabilities, no transport field, x-no-server: true. Strict MCP clients
+# requiring transport bail (same outcome as a 404 from their side); every
+# other agent gets a clearer signal that "no MCP server here" is intentional.
+/.well-known/mcp/server-card.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=300
+
 # Markdown companions — every blog HTML page also has a /blog/<slug>.md served
 # as the original markdown source. Set the right content-type so agents that
 # fetch the .md URL or honor the alternate link get markdown back.
