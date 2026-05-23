@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "node scripts/copy-markdown.mjs",
+    "postbuild": "node scripts/copy-markdown.mjs && node scripts/check-functions.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
