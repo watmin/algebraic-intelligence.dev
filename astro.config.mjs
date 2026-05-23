@@ -91,20 +91,26 @@ export default defineConfig({
           autogenerate: { directory: "blog/story" },
         },
         {
+          // Using `link:` (URL) instead of `slug:` (content-collection lookup)
+          // because Starlight's slug validation has been failing on Cloudflare's
+          // build env for blog/book — the 36k-line BOOK trunk seems to hit some
+          // content-sync edge case there that doesn't repro locally. `link:`
+          // skips that validation; the pages still get built (they have for
+          // every prior deploy), the URLs just don't go through slug lookup.
           label: "The Book",
           items: [
-            { slug: "blog/topology", label: "The Topology" },
-            { slug: "blog/book", label: "The Book (trunk)" },
+            { link: "/blog/topology/", label: "The Topology" },
+            { link: "/blog/book/", label: "The Book (trunk)" },
             {
               label: "Branches",
               collapsed: true,
               items: [
-                { slug: "blog/arc-170-cliffnotes", label: "Arc 170 — Cliff Notes" },
-                { slug: "blog/arc-170-realizations", label: "Arc 170 — Full Realizations" },
+                { link: "/blog/arc-170-cliffnotes/", label: "Arc 170 — Cliff Notes" },
+                { link: "/blog/arc-170-realizations/", label: "Arc 170 — Full Realizations" },
               ],
             },
-            { slug: "blog/guide" },
-            { slug: "blog/circuit" },
+            { link: "/blog/guide/", label: "The Guide" },
+            { link: "/blog/circuit/", label: "The Circuits" },
           ],
         },
         {
