@@ -20,22 +20,24 @@ interface Env {
   ASSETS: Fetcher;
 }
 
-/**
- * Returns true if the Accept header EXPLICITLY prefers `text/markdown`.
- *
- * Markdown is only served when text/markdown appears in Accept with a q-value
- * meeting or exceeding text/html's. A bare `*/*` (curl's default, many HTTP
- * libraries' default) is neutral — it doesn't trigger markdown by itself; the
- * static asset's HTML default wins.
- *
- * Examples:
- *   "text/markdown"                                          → true
- *   "text/html,text/markdown"                                → true (tied; explicit ask wins)
- *   "text/html;q=1.0,text/markdown;q=0.5"                    → false (html preferred)
- *   "text/html,application/xhtml+xml,*\/*;q=0.8"             → false (browser default)
- *   "*\/*"                                                   → false (curl default)
- *   ""                                                       → false (no preference)
- */
+// Returns true if the Accept header EXPLICITLY prefers `text/markdown`.
+//
+// Markdown is only served when text/markdown appears in Accept with a q-value
+// meeting or exceeding text/html's. A bare star-slash-star (curl's default,
+// many HTTP libraries' default) is neutral — it doesn't trigger markdown by
+// itself; the static asset's HTML default wins.
+//
+// Examples:
+//   "text/markdown"                                          → true
+//   "text/html,text/markdown"                                → true (tied; explicit ask wins)
+//   "text/html;q=1.0,text/markdown;q=0.5"                    → false (html preferred)
+//   "text/html,application/xhtml+xml,wildcard;q=0.8"         → false (browser default)
+//   "wildcard"                                               → false (curl default)
+//   ""                                                       → false (no preference)
+//
+// (Star-slash-star is spelled out in this comment because the literal token
+// inside a /* */ block comment closes the comment and breaks esbuild parsing.
+// Line comments are immune to that.)
 function prefersMarkdown(accept: string): boolean {
   if (!accept) return false;
 
