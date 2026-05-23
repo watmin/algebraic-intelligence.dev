@@ -68,6 +68,17 @@ The full philosophical book and the branches that grew alongside it.
 - [The Guide](https://algebraic-intelligence.dev/blog/guide/): The 007 architecture blueprint.
 - [The Circuits](https://algebraic-intelligence.dev/blog/circuit/): The machine as signal flow diagrams.
 
+## Agent skills — the wards
+
+The site advertises sixteen invokable agent skills via [/.well-known/agent-skills/index.json](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) per the Cloudflare Agent Skills Discovery RFC v0.2.0. These are the wards from the [datamancy grimoire](https://github.com/watmin/datamancy) — Latin-named defensive spells, each a `SKILL.md` the datamancer casts as a subagent against a target. Four categories:
+
+- **Tests of craft** (defensive against code quality, Hickey + Beckman lineage): `intueri`, `struere`, `solvere`, `purgare`, `temperare`, `secare`, `sequi`
+- **Tests of surface** (defensive against test quality): `perspicere`, `vocare`, `complectens`, `mora`
+- **Tests of fidelity** (defensive against spec/code drift): `conferre`, `probare`, `cernere`
+- **Solo wards**: `nesciens` (the fresh reader walking docs), `vigilia` (casts every defensive spell in parallel)
+
+Each entry in the index has a `sha256` digest agents can verify against the raw GitHub URL.
+
 ## The Work — repositories
 
 - [holon-rs](https://github.com/watmin/holon-rs): The Rust kernel. Five primitives (atom, bind, bundle, cosine, reckoner). SIMD-accelerated. f64 pipeline.

@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "postbuild": "node scripts/copy-markdown.mjs && node scripts/check-functions.mjs",
+    "skills:regen": "node scripts/generate-agent-skills.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
