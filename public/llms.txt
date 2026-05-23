@@ -93,18 +93,61 @@ Each entry in the index has a `sha256` digest agents can verify against the raw 
 
 ## Markdown companions — for agents that prefer the source
 
-Every `/blog/<slug>/` HTML page has a `.md` companion at `/blog/<slug>.md` that serves the original markdown source (with `Content-Type: text/markdown`). Same content, no HTML chrome, no lossy conversion. Each HTML page also advertises its companion via an HTTP `Link: rel="alternate"; type="text/markdown"` response header, so an agent can either follow the link or just append `.md` to the URL.
+Every `/blog/<slug>/` HTML page has a `.md` companion at `/blog/<slug>.md` that serves the original markdown source (with `Content-Type: text/markdown`). Same content, no HTML chrome, no lossy conversion — typically 4–5× lower token cost than the rendered HTML because no nav chrome / sidebar / footer is repeated per fetch. Each HTML page also advertises its companion via an HTTP `Link: rel="alternate"; type="text/markdown"` response header.
 
-Most useful companions:
+Every companion URL is listed below explicitly (not just the pattern) so allow-list-based fetchers that gate on previously-fetched URLs can reach them on first contact.
 
-- [/blog/topology.md](https://algebraic-intelligence.dev/blog/topology.md) — The Topology, raw markdown
-- [/blog/book.md](https://algebraic-intelligence.dev/blog/book.md) — The Book (trunk), raw markdown (~36k lines)
-- [/blog/arc-170-cliffnotes.md](https://algebraic-intelligence.dev/blog/arc-170-cliffnotes.md) — Arc 170 Cliff Notes, raw markdown
-- [/blog/arc-170-realizations.md](https://algebraic-intelligence.dev/blog/arc-170-realizations.md) — Arc 170 Full Realizations, raw markdown
-- [/blog/guide.md](https://algebraic-intelligence.dev/blog/guide.md) — The Guide, raw markdown
-- [/blog/circuit.md](https://algebraic-intelligence.dev/blog/circuit.md) — The Circuits, raw markdown
-- Story posts: every `/blog/story/<slug>/` has a `/blog/story/<slug>.md` companion
-- Primers: every `/blog/primers/<slug>/` has a `/blog/primers/<slug>.md` companion
+### Trunk and branches
+
+- [https://algebraic-intelligence.dev/blog/topology.md](https://algebraic-intelligence.dev/blog/topology.md) — The Topology
+- [https://algebraic-intelligence.dev/blog/book.md](https://algebraic-intelligence.dev/blog/book.md) — The Book (trunk; ~36k lines)
+- [https://algebraic-intelligence.dev/blog/arc-170-cliffnotes.md](https://algebraic-intelligence.dev/blog/arc-170-cliffnotes.md) — Arc 170 Cliff Notes (load first)
+- [https://algebraic-intelligence.dev/blog/arc-170-realizations.md](https://algebraic-intelligence.dev/blog/arc-170-realizations.md) — Arc 170 Full Realizations
+- [https://algebraic-intelligence.dev/blog/guide.md](https://algebraic-intelligence.dev/blog/guide.md) — The Guide
+- [https://algebraic-intelligence.dev/blog/circuit.md](https://algebraic-intelligence.dev/blog/circuit.md) — The Circuits
+
+### Primers
+
+- [https://algebraic-intelligence.dev/blog/primers/series-001-000-vsa-primer.md](https://algebraic-intelligence.dev/blog/primers/series-001-000-vsa-primer.md)
+- [https://algebraic-intelligence.dev/blog/primers/series-001-001-atoms-and-vectors.md](https://algebraic-intelligence.dev/blog/primers/series-001-001-atoms-and-vectors.md)
+- [https://algebraic-intelligence.dev/blog/primers/series-001-002-holon-ops.md](https://algebraic-intelligence.dev/blog/primers/series-001-002-holon-ops.md)
+- [https://algebraic-intelligence.dev/blog/primers/series-001-003-memory.md](https://algebraic-intelligence.dev/blog/primers/series-001-003-memory.md)
+- [https://algebraic-intelligence.dev/blog/primers/series-001-004-coordination-free.md](https://algebraic-intelligence.dev/blog/primers/series-001-004-coordination-free.md)
+- [https://algebraic-intelligence.dev/blog/primers/series-001-005-the-wat-language.md](https://algebraic-intelligence.dev/blog/primers/series-001-005-the-wat-language.md)
+
+### Story posts
+
+- [https://algebraic-intelligence.dev/blog/story/prologue.md](https://algebraic-intelligence.dev/blog/story/prologue.md)
+- [https://algebraic-intelligence.dev/blog/story/series-002-001-first-experiments.md](https://algebraic-intelligence.dev/blog/story/series-002-001-first-experiments.md)
+- [https://algebraic-intelligence.dev/blog/story/series-002-002-the-np-wall.md](https://algebraic-intelligence.dev/blog/story/series-002-002-the-np-wall.md)
+- [https://algebraic-intelligence.dev/blog/story/series-002-003-scale-and-detection.md](https://algebraic-intelligence.dev/blog/story/series-002-003-scale-and-detection.md)
+- [https://algebraic-intelligence.dev/blog/story/series-003-001-the-rust-port.md](https://algebraic-intelligence.dev/blog/story/series-003-001-the-rust-port.md)
+- [https://algebraic-intelligence.dev/blog/story/series-003-002-the-labs.md](https://algebraic-intelligence.dev/blog/story/series-003-002-the-labs.md)
+- [https://algebraic-intelligence.dev/blog/story/series-003-003-1-3m-pps.md](https://algebraic-intelligence.dev/blog/story/series-003-003-1-3m-pps.md)
+- [https://algebraic-intelligence.dev/blog/story/series-003-004-the-rule-engine.md](https://algebraic-intelligence.dev/blog/story/series-003-004-the-rule-engine.md)
+- [https://algebraic-intelligence.dev/blog/story/series-003-005-engrams.md](https://algebraic-intelligence.dev/blog/story/series-003-005-engrams.md)
+- [https://algebraic-intelligence.dev/blog/story/series-004-001-the-l7-lab.md](https://algebraic-intelligence.dev/blog/story/series-004-001-the-l7-lab.md)
+- [https://algebraic-intelligence.dev/blog/story/series-004-002-the-expression-tree.md](https://algebraic-intelligence.dev/blog/story/series-004-002-the-expression-tree.md)
+- [https://algebraic-intelligence.dev/blog/story/series-005-001-the-spectral-firewall.md](https://algebraic-intelligence.dev/blog/story/series-005-001-the-spectral-firewall.md)
+- [https://algebraic-intelligence.dev/blog/story/series-005-002-self-calibrating.md](https://algebraic-intelligence.dev/blog/story/series-005-002-self-calibrating.md)
+- [https://algebraic-intelligence.dev/blog/story/series-005-003-the-residual-profile.md](https://algebraic-intelligence.dev/blog/story/series-005-003-the-residual-profile.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-001-the-thought-machine.md](https://algebraic-intelligence.dev/blog/story/series-006-001-the-thought-machine.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-002-the-conviction-curve.md](https://algebraic-intelligence.dev/blog/story/series-006-002-the-conviction-curve.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-003-the-enterprise.md](https://algebraic-intelligence.dev/blog/story/series-006-003-the-enterprise.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-004-the-datamancer.md](https://algebraic-intelligence.dev/blog/story/series-006-004-the-datamancer.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-005-the-forging.md](https://algebraic-intelligence.dev/blog/story/series-006-005-the-forging.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-006-the-guide.md](https://algebraic-intelligence.dev/blog/story/series-006-006-the-guide.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-007-the-foundation.md](https://algebraic-intelligence.dev/blog/story/series-006-007-the-foundation.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-008-xx.md](https://algebraic-intelligence.dev/blog/story/series-006-008-xx.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-009-the-detour.md](https://algebraic-intelligence.dev/blog/story/series-006-009-the-detour.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-010-the-descent.md](https://algebraic-intelligence.dev/blog/story/series-006-010-the-descent.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-011-the-recognition.md](https://algebraic-intelligence.dev/blog/story/series-006-011-the-recognition.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-012-the-surface.md](https://algebraic-intelligence.dev/blog/story/series-006-012-the-surface.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-013-the-resolve.md](https://algebraic-intelligence.dev/blog/story/series-006-013-the-resolve.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-014-the-language.md](https://algebraic-intelligence.dev/blog/story/series-006-014-the-language.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-015-the-discipline.md](https://algebraic-intelligence.dev/blog/story/series-006-015-the-discipline.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-016-the-loop-closes.md](https://algebraic-intelligence.dev/blog/story/series-006-016-the-loop-closes.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-017-the-grimoire.md](https://algebraic-intelligence.dev/blog/story/series-006-017-the-grimoire.md)
 
 ## Notes for agents
 
