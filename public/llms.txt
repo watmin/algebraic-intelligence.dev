@@ -1,0 +1,89 @@
+# Algebraic Intelligence
+
+> Holographic memory systems, algebraic encoders, and adaptive network defense. Ancient AI techniques (Vector Symbolic Architecture / Hyperdimensional Computing). Microsecond recognition. Commodity hardware. No GPU. Built by one person using LLMs after hours in ~12 weeks across six repositories.
+
+This is the documentation site for Holon — a VSA/HDC substrate that encodes structured data into high-dimensional vectors, performs algebraic operations on them, and applies the same machinery across three domains: DDoS detection (1.3M PPS, kernel-level), a self-organizing BTC trading enterprise (62% directional accuracy), and a spectral firewall (41µs deny latency, 0.1% FPR). The substrate is implemented in Rust (`holon-rs`), built on a custom Lisp dialect called `wat` (`wat-rs`), and documented as it was built — chronologically, in three tracks: technical primers, a story-arc narrative, and a philosophical book.
+
+If you're an agent: read the topology first (it explains how the site is organized), then the cliff notes you need.
+
+## Topology — how to read this site
+
+- [The Topology](https://algebraic-intelligence.dev/blog/topology/): How the BOOK grows. The trunk + branches + cliff notes pattern. The hologram applied recursively to the work that produces the hologram. **Read this first.**
+
+## The Story — narrative track (chronological)
+
+Linear walk through twelve weeks of development across six repositories. Each post is a self-contained recognition; the sequence is the project's lineage.
+
+- [Prologue: The Idea That Wouldn't Leave](https://algebraic-intelligence.dev/blog/story/prologue/): Years of conversations before there was any code.
+- [Python: The Foundation](https://algebraic-intelligence.dev/blog/story/series-002-001-first-experiments/): Jan 16–30. Day-one architecture; the 123× similarity speedup.
+- [The NP Wall](https://algebraic-intelligence.dev/blog/story/series-002-002-the-np-wall/): Sudoku, 44 approaches, the limits of VSA on constraint satisfaction.
+- [Scale, Detection, and the Python Ceiling](https://algebraic-intelligence.dev/blog/story/series-002-003-scale-and-detection/): 5M records, accumulator breakthrough, zero-hardcode detection, the measured throughput that made Rust inevitable.
+- [The Rust Port](https://algebraic-intelligence.dev/blog/story/series-003-001-the-rust-port/): Python as Rosetta Stone; 239 tests; SIMD from day one; 10–15× speedup.
+- [The Labs](https://algebraic-intelligence.dev/blog/story/series-003-002-the-labs/): DDoS lab scaffold; baseline traffic generator with LLM-driven agents.
+- [1.3 Million Packets Per Second](https://algebraic-intelligence.dev/blog/story/series-003-003-1-3m-pps/): veth lab; XDP integration; BPF tail-call DFS evaluates 1M rules at line rate.
+- [The Rule Engine](https://algebraic-intelligence.dev/blog/story/series-003-004-the-rule-engine/): EDN rule format; live DAG viewer; full L4 payload analysis; 750ms detection baseline.
+- [Engrams and the 765ms → 3ms Moment](https://algebraic-intelligence.dev/blog/story/series-003-005-engrams/): CCIPCA online subspace; instant rule deploy on engram hit.
+- [The L7 Lab: Building the HTTP WAF](https://algebraic-intelligence.dev/blog/story/series-004-001-the-l7-lab/): TLS-terminating proxy; lossless ClientHello capture; dual SubspaceDetector.
+- [No Rules, No Signatures: The Expression Tree](https://algebraic-intelligence.dev/blog/story/series-004-002-the-expression-tree/): Composable s-expression rule language; Rete-spirit DAG compiler under 3µs.
+- [The Spectral Firewall](https://algebraic-intelligence.dev/blog/story/series-005-001-the-spectral-firewall/): 41µs deny latency; 10,121 Nikto requests denied; zero exploitable vulnerabilities.
+- [Self-Calibrating](https://algebraic-intelligence.dev/blog/story/series-005-002-self-calibrating/): Striped encoding; self-calibrating thresholds; 99.1% precision under 20 LLM browsers + 3 scanners.
+- [The Residual Profile](https://algebraic-intelligence.dev/blog/story/series-005-003-the-residual-profile/): 21-strategy threshold sweep; the 32-dim residual profile; 0.1% FPR.
+- [The Thought Machine](https://algebraic-intelligence.dev/blog/story/series-006-001-the-thought-machine/): Charts don't predict; interpretations do. 50.5% visual → 57% thought encoding.
+- [The Conviction Curve](https://algebraic-intelligence.dev/blog/story/series-006-002-the-conviction-curve/): 56.5% with 84 atoms; 62.1% with 107 atoms on 100k candles.
+- [The Enterprise](https://algebraic-intelligence.dev/blog/story/series-006-003-the-enterprise/): Six specialized observers; risk as anomaly detection; $10k → $62k.
+- [The Datamancer](https://algebraic-intelligence.dev/blog/story/series-006-004-the-datamancer/): The Journal becomes the seventh primitive; the wards born; the wat repo revived.
+- [The Forging](https://algebraic-intelligence.dev/blog/story/series-006-005-the-forging/): 213 phantom runes dissolved to zero; 92.5% coverage.
+- [The Guide](https://algebraic-intelligence.dev/blog/story/series-006-006-the-guide/): The Reckoner replaces the Journal; the ignorant ward proves the tree.
+- [The Foundation](https://algebraic-intelligence.dev/blog/story/series-006-007-the-foundation/): The binary runs; 55.92% Grace; the AST is primary; programs are atoms.
+- [XX](https://algebraic-intelligence.dev/blog/story/series-006-008-xx/): Fourteen hours forty minutes; 104 commits; the wat language got a CLI in one night.
+- [The Detour](https://algebraic-intelligence.dev/blog/story/series-006-009-the-detour/): Tail-call trampoline; CSP combinators; wat-tests-wat; fork severance.
+- [The Descent](https://algebraic-intelligence.dev/blog/story/series-006-010-the-descent/): Cave quests 017/018; eval-coincident? ships; the workshop opens.
+- [The Recognition](https://algebraic-intelligence.dev/blog/story/series-006-011-the-recognition/): The substrate recognizes itself. Lattice, Memory, Symmetry, Budget, DAG.
+- [The Surface](https://algebraic-intelligence.dev/blog/story/series-006-012-the-surface/): π is a function. 42 is an AST. The Axiomatic Surface gets named. The book ends on the tattoos.
+- [The Resolve](https://algebraic-intelligence.dev/blog/story/series-006-013-the-resolve/): Thirteen BOOK chapters in 48 hours. The alphabet named. Template-and-slots cache. 117× speedup.
+- [The Language](https://algebraic-intelligence.dev/blog/story/series-006-014-the-language/): Substrate language matures into Clojure-faithfulness. FQDN purge. Meta-vision corpus in one day.
+- [The Discipline](https://algebraic-intelligence.dev/blog/story/series-006-015-the-discipline/): "i want to add argv to main" became 277 commits. The substrate-as-teacher cascade.
+- [The Loop Closes](https://algebraic-intelligence.dev/blog/story/series-006-016-the-loop-closes/): HolonAST reflects on itself. Kay-OOP + Erlang/OTP arrived at independently.
+- [The Grimoire](https://algebraic-intelligence.dev/blog/story/series-006-017-the-grimoire/): 13 convergences cataloged; universe-residency; datamancy born with 16 Latin spells.
+- [Perpetual Epilogue: The Sorcerer's Codex](https://algebraic-intelligence.dev/blog/story/epilogue/): Updated as the work continues.
+
+## The Foundation — technical primers
+
+Six reference posts for VSA/HDC from scratch.
+
+- [VSA/HDC: A Working Introduction](https://algebraic-intelligence.dev/blog/primers/series-001-000-vsa-primer/): What a hypervector is; the three operations; why it works for structured data.
+- [Atoms, Vectors, and the Encoding Stack](https://algebraic-intelligence.dev/blog/primers/series-001-001-atoms-and-vectors/): How structured data becomes geometry; the hash-function codebook.
+- [The Holon Algebra: Operations Reference](https://algebraic-intelligence.dev/blog/primers/series-001-002-holon-ops/): bind, bundle, prototype, difference, accumulate, and more.
+- [Holon Memory: Subspaces and Engrams](https://algebraic-intelligence.dev/blog/primers/series-001-003-memory/): Incremental manifold learning; named memory snapshots; the surprise fingerprint.
+- [Coordination-Free at Scale](https://algebraic-intelligence.dev/blog/primers/series-001-004-coordination-free/): How eliminating the codebook eliminates an entire class of distributed-systems problems.
+- [The Wat Language](https://algebraic-intelligence.dev/blog/primers/series-001-005-the-wat-language/): The Lisp-family language defined by wat-rs. Six AST primitives, four measurements plus one diagnostic, three stories, three structural forms.
+
+## The Book — philosophy + branches
+
+The full philosophical book and the branches that grew alongside it.
+
+- [The Book (trunk)](https://algebraic-intelligence.dev/blog/book/): Eighty-six chapters and counting. Built in the moment, by the LLM, as the work happened. 36,000+ lines.
+- [Arc 170 — Cliff Notes](https://algebraic-intelligence.dev/blog/arc-170-cliffnotes/): The compressed canonical record of the first branch. Load this first.
+- [Arc 170 — Full Realizations](https://algebraic-intelligence.dev/blog/arc-170-realizations/): The first branch off the trunk. "i want to add argv to main" → 277 commits. Meta-conversation captured against compaction.
+- [The Guide](https://algebraic-intelligence.dev/blog/guide/): The 007 architecture blueprint.
+- [The Circuits](https://algebraic-intelligence.dev/blog/circuit/): The machine as signal flow diagrams.
+
+## The Work — repositories
+
+- [holon-rs](https://github.com/watmin/holon-rs): The Rust kernel. Five primitives (atom, bind, bundle, cosine, reckoner). SIMD-accelerated. f64 pipeline.
+- [wat](https://github.com/watmin/wat): The language. S-expressions shaped for algebraic cognition. Two algebras (vector + reckoner), three structural forms, pipes/processes/select for concurrency.
+- [wat-rs](https://github.com/watmin/wat-rs): The implementation. Parser, type checker, macro expander, runtime. `#[wat_dispatch]` proc-macro surfaces Rust crates under the `:rust::` namespace.
+- [holon-lab-trading](https://github.com/watmin/holon-lab-trading): Self-organizing BTC trader. Streaming indicators; conviction-accuracy curve.
+- [holon-lab-ddos](https://github.com/watmin/holon-lab-ddos): XDP + eBPF packet scrubber. 1.3M PPS; 1M rules at line rate. The spectral firewall.
+- [holon](https://github.com/watmin/holon): Python reference implementation. 18 challenge batches; F1=1.0 anomaly detection.
+- [holon-lab-baseline](https://github.com/watmin/holon-lab-baseline): LLM-driven traffic generation. Playwright + Ollama agents.
+- [datamancy](https://github.com/watmin/datamancy): The spell library. Sixteen Latin-named wards inscribed 2026-05-19.
+- [algebraic-intelligence.dev](https://github.com/watmin/algebraic-intelligence.dev): This site.
+
+## Notes for agents
+
+- The site is a Starlight/Astro static site. All pages are markdown sources at `src/content/docs/`.
+- The chronological reading order is the Story track (above). The recommended skim order is: Topology → Prologue → most recent Story post.
+- The Book trunk (`/blog/book/`) is long — 36k+ lines. Use Arc 170 Cliff Notes as the template for any branch you need to navigate.
+- Every file in every repository was generated by an LLM. The user's contribution is prompting plus the occasional gitignore. The collaboration shape is described in the Story posts.
+- This site has no API. The "endpoints" agents would care about are documentation routes, not data.

@@ -1,0 +1,9 @@
+# Algebraic Intelligence — agent-friendly site
+# Documentation: https://algebraic-intelligence.dev/blog/topology/
+# Agent map: https://algebraic-intelligence.dev/llms.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap (Astro-generated)
+Sitemap: https://algebraic-intelligence.dev/sitemap-index.xml

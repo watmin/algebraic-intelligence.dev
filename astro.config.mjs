@@ -18,6 +18,41 @@ export default defineConfig({
       description:
         "Holographic memory systems, algebraic encoders, and adaptive network defense.",
       customCss: ["./src/styles/custom.css"],
+      head: [
+        // RFC 8288 Link relations for agent discovery (HTML equivalent of the HTTP Link headers in public/_headers)
+        {
+          tag: "link",
+          attrs: {
+            rel: "describedby",
+            type: "text/markdown",
+            href: "/llms.txt",
+            title: "Agent map (llms.txt)",
+          },
+        },
+        {
+          tag: "link",
+          attrs: {
+            rel: "sitemap",
+            type: "application/xml",
+            href: "/sitemap-index.xml",
+          },
+        },
+        {
+          tag: "link",
+          attrs: {
+            rel: "help",
+            href: "/blog/topology/",
+            title: "How to read this site",
+          },
+        },
+        {
+          tag: "link",
+          attrs: {
+            rel: "author",
+            href: "https://github.com/watmin",
+          },
+        },
+      ],
       social: [
         {
           icon: "github",
