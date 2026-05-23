@@ -14,27 +14,48 @@
   Content-Type: text/markdown; charset=utf-8
   Cache-Control: public, max-age=300
 
+# Markdown companions — every blog HTML page also has a /blog/<slug>.md served
+# as the original markdown source. Set the right content-type so agents that
+# fetch the .md URL or honor the alternate link get markdown back.
+/blog/*.md
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=300
+
 /blog/*
   Link: </llms.txt>; rel="describedby"; type="text/markdown"
   Link: </sitemap-index.xml>; rel="sitemap"; type="application/xml"
   Link: </blog/topology/>; rel="help"
 
+/blog/topology/
+  Link: </blog/topology.md>; rel="alternate"; type="text/markdown"; title="Source markdown"
+  Link: </llms.txt>; rel="describedby"; type="text/markdown"
+  Link: </blog/book/>; rel="next"; title="The Book (trunk)"
+
 /blog/book/
+  Link: </blog/book.md>; rel="alternate"; type="text/markdown"; title="Source markdown"
   Link: </llms.txt>; rel="describedby"; type="text/markdown"
   Link: </blog/arc-170-cliffnotes/>; rel="related"; title="Arc 170 — Cliff Notes (branch)"
   Link: </blog/arc-170-realizations/>; rel="related"; title="Arc 170 — Full Realizations (branch)"
   Link: </blog/topology/>; rel="up"; title="The Topology"
 
 /blog/arc-170-realizations/
+  Link: </blog/arc-170-realizations.md>; rel="alternate"; type="text/markdown"; title="Source markdown"
   Link: </blog/arc-170-cliffnotes/>; rel="describedby"; title="Cliff Notes (load first)"
   Link: </blog/book/>; rel="up"; title="The Book (trunk)"
   Link: </blog/topology/>; rel="help"; title="The Topology"
 
 /blog/arc-170-cliffnotes/
+  Link: </blog/arc-170-cliffnotes.md>; rel="alternate"; type="text/markdown"; title="Source markdown"
   Link: </blog/arc-170-realizations/>; rel="canonical"; title="Full Realizations"
   Link: </blog/book/>; rel="up"; title="The Book (trunk)"
   Link: </blog/topology/>; rel="help"; title="The Topology"
 
-/blog/topology/
-  Link: </blog/book/>; rel="next"; title="The Book (trunk)"
+# Story posts and primers — Cloudflare Pages supports glob-with-path matching.
+# Each route gets an alternate-link pointing at the .md companion at the same slug.
+/blog/story/*/
   Link: </llms.txt>; rel="describedby"; type="text/markdown"
+  Link: </blog/topology/>; rel="help"
+
+/blog/primers/*/
+  Link: </llms.txt>; rel="describedby"; type="text/markdown"
+  Link: </blog/topology/>; rel="help"
