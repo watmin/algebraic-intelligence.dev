@@ -58,7 +58,14 @@ function prefersMarkdown(accept: string): boolean {
  * Returns `null` if the path doesn't have a companion under our convention.
  */
 function markdownCompanionPath(pathname: string): string | null {
-  // Only /blog/* has companions
+  // Homepage — serve llms.txt as the agent-curated markdown summary.
+  // The homepage is index.mdx (MDX with React-flavored components), so there's
+  // no pure-markdown source to mirror. llms.txt IS the agent-facing index of
+  // the site: structured pointer map, same content the homepage conveys, written
+  // for agents to consume directly.
+  if (pathname === "/" || pathname === "") return "/llms.txt";
+
+  // Blog pages — companions mirrored from src/content/docs/blog/ during build
   if (!pathname.startsWith("/blog/")) return null;
   // Already a .md URL — no rewrite needed
   if (pathname.endsWith(".md")) return null;
