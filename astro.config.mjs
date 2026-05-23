@@ -61,6 +61,16 @@ export default defineConfig({
             title: "API catalog (RFC 9727)",
           },
         },
+        // WebMCP registration — exposes tools to in-browser AI agents via
+        // navigator.modelContext.provideContext(). Feature-detects the API
+        // so the script no-ops cleanly when the browser doesn't have it.
+        {
+          tag: "script",
+          attrs: {
+            src: "/webmcp.js",
+            defer: true,
+          },
+        },
       ],
       social: [
         {
