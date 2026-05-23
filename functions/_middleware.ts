@@ -125,6 +125,9 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   headers.set("Content-Type", "text/markdown; charset=utf-8");
   headers.set("Vary", "Accept");
   headers.set("X-Markdown-Source", mdPath);
+  // Version marker — bump on every middleware change so curl can prove which
+  // version is live. Cloudflare Pages should pick up function changes on push.
+  headers.set("X-Middleware-Version", "2026-05-23-no-stars");
 
   return new Response(response.body, {
     status: response.status,
