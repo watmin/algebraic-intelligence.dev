@@ -1,9 +1,16 @@
 # Algebraic Intelligence — agent-friendly site
 # Documentation: https://algebraic-intelligence.dev/blog/topology/
 # Agent map: https://algebraic-intelligence.dev/llms.txt
+# Markdown companions: every /blog/<slug>/ has a /blog/<slug>.md alternate.
 
 User-agent: *
 Allow: /
+
+# Content Signals (contentsignals.org, IETF draft-romm-aipref-contentsignals)
+# This site explicitly invites agent consumption. Every file in every linked
+# repository is LLM-generated; the work is openly published; training extends
+# the loop the project is already part of.
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 # Sitemap (Astro-generated)
 Sitemap: https://algebraic-intelligence.dev/sitemap-index.xml
