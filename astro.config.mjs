@@ -39,7 +39,16 @@ export default defineConfig({
         {
           label: "The Book",
           items: [
-            { slug: "blog/book" },
+            { slug: "blog/topology", label: "The Topology" },
+            { slug: "blog/book", label: "The Book (trunk)" },
+            {
+              label: "Branches",
+              collapsed: true,
+              items: [
+                { slug: "blog/arc-170-cliffnotes", label: "Arc 170 — Cliff Notes" },
+                { slug: "blog/arc-170-realizations", label: "Arc 170 — Full Realizations" },
+              ],
+            },
             { slug: "blog/guide" },
             { slug: "blog/circuit" },
           ],
