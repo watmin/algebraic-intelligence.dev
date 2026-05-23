@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0.json",
+  "skills": [],
+  "x-no-skills": true,
+  "x-note": "This site does not currently advertise any agent-invokable skills. The skills array is intentionally empty (not absent) to signal that explicitly. The site is documentation; the agent-facing surface is llms.txt, the per-page .md companions, and the topology page — all reachable via plain HTTP GET, no skill invocation needed.",
+  "x-pointers": {
+    "agent-map": "https://algebraic-intelligence.dev/llms.txt",
+    "topology": "https://algebraic-intelligence.dev/blog/topology/",
+    "mcp-card": "https://algebraic-intelligence.dev/.well-known/mcp/server-card.json",
+    "api-catalog": "https://algebraic-intelligence.dev/.well-known/api-catalog"
+  }
+}

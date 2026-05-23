@@ -45,6 +45,14 @@
   Content-Type: application/json; charset=utf-8
   Cache-Control: public, max-age=300
 
+# Agent Skills Discovery index per Cloudflare RFC v0.2.0 — empty skills array
+# (structurally meaningful per the RFC; same shape as our OAuth empty-grants).
+# Documentation site, no invokable skills. Pointers to llms.txt + sibling
+# well-known docs included as x-fields.
+/.well-known/agent-skills/index.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=300
+
 # Markdown companions — every blog HTML page also has a /blog/<slug>.md served
 # as the original markdown source. Set the right content-type so agents that
 # fetch the .md URL or honor the alternate link get markdown back.
