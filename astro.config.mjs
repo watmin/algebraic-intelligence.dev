@@ -52,6 +52,15 @@ export default defineConfig({
             href: "https://github.com/watmin",
           },
         },
+        {
+          tag: "link",
+          attrs: {
+            rel: "api-catalog",
+            type: "application/linkset+json",
+            href: "/.well-known/api-catalog",
+            title: "API catalog (RFC 9727)",
+          },
+        },
       ],
       social: [
         {

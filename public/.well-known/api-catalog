@@ -1,0 +1,30 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://algebraic-intelligence.dev/",
+      "service-doc": [
+        {
+          "href": "https://algebraic-intelligence.dev/llms.txt",
+          "type": "text/markdown",
+          "title": "Agent map (llms.txt) — start here"
+        },
+        {
+          "href": "https://algebraic-intelligence.dev/blog/topology/",
+          "type": "text/html",
+          "title": "The Topology — how to read this site"
+        },
+        {
+          "href": "https://algebraic-intelligence.dev/blog/topology.md",
+          "type": "text/markdown",
+          "title": "The Topology — markdown source"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://algebraic-intelligence.dev/llms.txt",
+          "type": "text/markdown"
+        }
+      ]
+    }
+  ]
+}

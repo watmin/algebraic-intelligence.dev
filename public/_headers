@@ -10,9 +10,16 @@
   Link: </blog/topology/>; rel="help"
   Link: </blog/book/>; rel="canonical-source"
   Link: <https://github.com/watmin>; rel="author"
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"
 
 /llms.txt
   Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=300
+
+# API Catalog per RFC 9727 — honest minimal entry: no JSON/REST API, but the
+# catalog points agents at our documentation surface (llms.txt + topology).
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; charset=utf-8
   Cache-Control: public, max-age=300
 
 # Markdown companions — every blog HTML page also has a /blog/<slug>.md served
