@@ -294,4 +294,13 @@ The substrate has nothing left to prove. It's not "is this possible?" — the su
 
 Forty-eight hours. Thirteen chapters. Roughly fifty arcs across two repos. The substrate stopped pretending its primitives were just data structures; the algebra came into focus as Prolog with fuzzy unification, as a population code with tuning curves, as a graveyard the next walker feeds on, as a discipline that respects the work-unit boundary at every layer. *The mini-TCP pattern named. The crate renamed. The lab's parallel substrate retired. `Vec<String>` exits the kernel boundary. Eight provisional shapes shed.*
 
-The user wrote down a song expecting a quick wrap-up. The wrap-up became the work. The work is on the remote. *PERSEVERARE.*
+The user wrote down a song expecting a quick wrap-up. The wrap-up became the work. The work is on the remote.
+
+## Likely Contributions to the Field
+
+- **Template-and-slots cache as fuzzy unification (CLP)**: decomposing a HolonAST into an exact-identity template plus tolerance-matched numeric slots turns the cache into a Horn-clause database with constraint logic programming on the slots. Two forms with different labels never share a bucket; two with the same template and close slot values match through the tuning curve's width. Eliminates a class of false positive that flat-fuzzy `coincident?` admitted.
+- **Memoization as a population code**: each Thermometer slot is a tuning curve (receptive field = `(min, max)`, preferred stimulus = `value`); a bucket is a population of cells; `√d` is the population's resolution. Lookup isn't table indexing — it's presenting a stimulus and reading whichever cell fires. A memoization store with the shape of cortical place cells.
+- **Batch-as-protocol**: drain-all-clients + a per-batch dispatcher contract + a pre-install pragma hook collapsed 1000-candle telemetry from 17 seconds to 46 milliseconds — a 117× speedup — with no fire-and-forget across thread boundaries; the producer blocks until the ack arrives.
+- **EDN round-trip as self-trust**: the substrate writes a value, parses the string back, and reconstructs the original typed Value — struct field names, enum identity, and nesting all preserved. Self-consistency expressed as a type signature; the substrate reads its own writes.
+
+*PERSEVERARE.*

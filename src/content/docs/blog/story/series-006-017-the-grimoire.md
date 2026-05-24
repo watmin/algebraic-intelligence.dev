@@ -125,4 +125,13 @@ The vigilia ran twice across the stretch, each cast yielding a DIVERGES verdict 
 
 Five days, roughly four hundred commits, and underneath the count one shape: the substrate kept arriving where the field had already arrived, and finally had the words for it. Eleven shape-convergences, two self-convergences, and the discipline convergence on autoscaling of correctness. Universe-residency named — programs are universe-resident; the user picks the tier; the program never knows transport. And the wards, which had been the project's conscience since chapter 31, left the substrate and became a public grimoire in Latin.
 
-**Tattoos → og-wat spec → holon-rs → wat-rs → BOOK.md → MEMORY.md → datamancy.** The chain extends. *PERSEVERARE.*
+**Tattoos → og-wat spec → holon-rs → wat-rs → BOOK.md → MEMORY.md → datamancy.** The chain extends.
+
+## Likely Contributions to the Field
+
+- **The convergence catalog as independent validation**: eleven shape-convergences plus two self-convergences plus the discipline convergence, each an independent arrival — the author has never read the Erlang, Akka, nginx, or Kay literature. Evidence that the four-questions discipline applied to an algebra's primitives reproduces patterns the field took decades to settle into.
+- **Autoscaling of correctness**: a persistent ring that rebuilds to fit the active concern, landing on the same pattern as Go goroutine stacks, Erlang per-process heaps, Linux slub magazines, TCP congestion control, JIT tiering, and the ARC cache. The correctness shape (every operation honors the bound) and the resource shape (every allocation tracks demand) are the same shape.
+- **Universe-residency**: a worker is written as `(I → O)` with a trait surface identical across thread, process, and (future) remote tiers; the parent picks the host, the program never knows transport, and substrate-internal asymmetries stay honest where they trace to transport reality.
+- **Datamancy — wards as a public grimoire**: code-review disciplines as content-addressed (sha256) `SKILL.md` spells, cast as subagents and separable from any one codebase — depended on as a discipline rather than carried as code.
+
+*PERSEVERARE.*

@@ -213,4 +213,13 @@ That gap — *worked but not good* — was the whole grind. **Good meant thinkab
 
 ---
 
-Nine days. Roughly fifty wat-rs arcs. Seventeen scratch design proposals. Four root doctrine docs plus two arc-grade book-source docs. Five BOOK chapters. The substrate's surface settled into Clojure-faithfulness, the language got the same shape the LLM already knew, and the meta-vision corpus arrived in one day's writing because *the substrate has been ready for the chapters for days.* The book updated because the discipline that produced the work became the work's enemy when the wait outran the work it was supposed to gate. **Forward progress only.** *PERSEVERARE.*
+Nine days. Roughly fifty wat-rs arcs. Seventeen scratch design proposals. Four root doctrine docs plus two arc-grade book-source docs. Five BOOK chapters. The substrate's surface settled into Clojure-faithfulness, the language got the same shape the LLM already knew, and the meta-vision corpus arrived in one day's writing because *the substrate has been ready for the chapters for days.* The book updated because the discipline that produced the work became the work's enemy when the wait outran the work it was supposed to gate. **Forward progress only.**
+
+## Likely Contributions to the Field
+
+- **Clojure-faithfulness as an LLM-adoption strategy**: a language no model has trained on becomes productive in minutes by lowering onto Clojure's embedded mass plus a Rosetta doc — adoption velocity with zero retraining. The bracket / `fn` / `defn` / `let` surface is engineered pedagogy for AI co-authors, not aesthetics.
+- **Auto-kwargs from signature introspection**: a macro reads a function's signature at expansion time and projects a keyword-argument surface from it, so drift between the surface and the contract isn't unlikely — it's *unrepresentable*. Failure engineering at the macro layer.
+- **Cryptographic, not network-positional, authorization (wat-network)**: mutually-authenticating wat-vms with content-addressed, signed programs and a dual-layer identity overlay that rides on top of existing cloud identity — a spoofer must break both layers. Authorization becomes a delivery property of the message, not a configuration of the network.
+- **Silent comm made illegal**: a `send` or `recv` that ignores the disconnect signal or an unwrapped `Option` is a compile-time error; death is data (`Result<Option<T>, *DiedError>`) with cascading chains preserving deaths in order. A whole family of concurrency bugs made structurally unavailable.
+
+*PERSEVERARE.*

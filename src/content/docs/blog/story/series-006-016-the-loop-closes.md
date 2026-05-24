@@ -94,4 +94,10 @@ Three things, and underneath them one.
 
 One day, ten arcs moving, roughly fifty commits and a stack of sealed inscriptions. But the count isn't the story. The story is that the substrate stopped being a thing under construction and became a thing that describes itself, in its own words. Arc 057 minted HolonAST. Arc 143 made signatures reflectable. Arc 201 made types reflectable. Three months, one primitive, and the loop closes.
 
+## Likely Contributions to the Field
+
+- **One primitive, storage and reflection both**: HolonAST, minted to encode VSA expressions, became the structure the substrate introspects its own types and signatures through. There's no translation tax between what the substrate stores and how it describes itself — the storage primitive *is* the reflection primitive.
+- **Declarative capability-bounded access (`def-restricted` + `#[restricted_to]`)**: access control on bindings and struct fields enforced by construction, wat-side and Rust-side, so the wrong call site fails to compile rather than relying on a documented convention.
+- **The bracket combinator**: an actor-model surface (dependency injection + Kay's original OOP) with typed peer channels, where Erlang/OTP supervision was arrived at independently via the four-questions discipline rather than copied from the literature.
+
 *PERSEVERARE.*

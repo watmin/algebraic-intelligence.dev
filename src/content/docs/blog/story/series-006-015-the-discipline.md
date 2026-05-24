@@ -369,6 +369,14 @@ Three weeks built this. *DDoS at line rate ships. BTC at 59% directional cold-bo
 
 The arc is still in flight. The boss isn't down. The substrate continues to refuse what isn't honest. *PERSEVERARE.*
 
+## Likely Contributions to the Field
+
+- **The substrate-as-teacher cascade**: "add argv to main" expanded into 277 commits because each layer's honest failure produced the diagnostic the next layer briefed from — no layer was guessed in advance. A methodology for letting a substrate reveal its own missing primitives, in order, by probing it honestly.
+- **`ProcessJoinBeforeOutputDrain` compile-time check**: a deadlock class (join-before-drain) made structurally unrepresentable by a static walker that pairs a join-result with output accessors in the same scope and refuses to compile — with an explicit refusal to mask it behind a wall-clock timeout. Failure engineering at the static-analysis layer.
+- **Typed peer channels**: `ThreadPeer<I, O>` / `ProcessPeer<I, O>` give client/server symmetry from a single type-param swap rather than a Client/Server type hierarchy — the algebra's commutativity surfacing at the channel layer.
+- **The fractal**: `spawn-process` taking program forms composes recursively — each child a wat-vm with its own services and stdio — so lifecycle, backpressure, and crash-isolation cascade structurally; every subtree is a wat-network in miniature.
+- **Hot-reload by design, not bolt-on**: AST-as-data + per-universe static typing + services-as-OS-continuity eliminate the categories (ABI, monomorphization, codegen, layout drift) that block hot-reload in compiled languages.
+
 ---
 
 *One request: "i want to add argv to main." Two weeks. 277 commits. The substrate-as-teacher cascade running honest. Each layer's failure produced a clean diagnostic the next layer briefed from. No layer was guessed in advance; the substrate revealed each gap when probed honestly. The longest mile is between "I want X" and a substrate that can honestly support X without lying about which layer does what. Argv on main cost the substrate everything it needed to grow up.*
