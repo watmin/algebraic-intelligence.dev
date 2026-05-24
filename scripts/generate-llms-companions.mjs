@@ -69,7 +69,12 @@ const sections = [];
 
 sections.push("### Trunk and branches");
 sections.push("");
+// The Book's full text lives at public/blog/book.md (static, not in the
+// content collection — its 36k-line HTML render was OOMing the build), so the
+// src walker above doesn't see it. Add it explicitly at the top of the trunk.
+sections.push(formatEntry(`${SITE}/blog/book.md`, "The Book (trunk; ~36k lines)"));
 for (const f of topLevel) {
+  if (f === "book.md") continue; // handled above; would otherwise duplicate
   const url = `${SITE}/blog/${f}`;
   sections.push(formatEntry(url, TOP_LEVEL_LABELS[f] || ""));
 }

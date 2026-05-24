@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "node scripts/copy-markdown.mjs && node scripts/generate-llms-companions.mjs && node scripts/check-functions.mjs",
+    "postbuild": "node scripts/copy-markdown.mjs && node scripts/generate-llms-companions.mjs && node scripts/check-functions.mjs && node scripts/check-pages.mjs",
     "skills:regen": "node scripts/generate-agent-skills.mjs",
     "preview": "astro preview",
     "astro": "astro"
