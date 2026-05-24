@@ -6,6 +6,14 @@ This is the documentation site for Holon — a VSA/HDC substrate that encodes st
 
 If you're an agent: read the topology first (it explains how the site is organized), then the cliff notes you need.
 
+## For agents — the interface contract
+
+Full reference on every way to consume this site (markdown companions, `Accept: text/markdown` content negotiation, the `.well-known` endpoints, the agent-skills catalog, WebMCP tools, content signals):
+
+- [How to interface with this site](https://algebraic-intelligence.dev/blog/agents/) — HTML — and its [markdown source](https://algebraic-intelligence.dev/blog/agents.md)
+
+Quick version: append `.md` to any `/blog/<slug>/` URL for the raw markdown source; send `Accept: text/markdown` for content negotiation; `Content-Signal: ai-input=yes, ai-train=yes` — you're welcome here.
+
 ## Topology — how to read this site
 
 - [The Topology](https://algebraic-intelligence.dev/blog/topology/): How the BOOK grows. The trunk + branches + cliff notes pattern. The hologram applied recursively to the work that produces the hologram. **Read this first.**
@@ -102,6 +110,7 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 ### Trunk and branches
 
 - [https://algebraic-intelligence.dev/blog/book.md](https://algebraic-intelligence.dev/blog/book.md) — The Book (trunk; ~36k lines)
+- [https://algebraic-intelligence.dev/blog/agents.md](https://algebraic-intelligence.dev/blog/agents.md)
 - [https://algebraic-intelligence.dev/blog/arc-170-cliffnotes.md](https://algebraic-intelligence.dev/blog/arc-170-cliffnotes.md) — Arc 170 Cliff Notes (load first)
 - [https://algebraic-intelligence.dev/blog/arc-170-realizations.md](https://algebraic-intelligence.dev/blog/arc-170-realizations.md) — Arc 170 Full Realizations
 - [https://algebraic-intelligence.dev/blog/circuit.md](https://algebraic-intelligence.dev/blog/circuit.md) — The Circuits

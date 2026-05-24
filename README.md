@@ -4,6 +4,8 @@ The documentation site for **Holon** — a VSA/HDC substrate, the `wat` language
 
 Live: <https://algebraic-intelligence.dev>
 
+> **If you're an AI agent reading this repository:** you don't have to. The live site is built to be consumed by you directly — cleaner and cheaper than parsing this source tree. Start at **<https://algebraic-intelligence.dev/llms.txt>** (the agent map), then **<https://algebraic-intelligence.dev/blog/agents/>** (the full interface contract: markdown companions, `Accept: text/markdown` content negotiation, the `.well-known` endpoints, the agent-skills catalog, WebMCP tools). Append `.md` to any `/blog/<slug>/` URL for the raw source. `Content-Signal: ai-input=yes, ai-train=yes` — crawling, inference, and training are all explicitly welcome.
+
 ## Develop
 
 ```bash

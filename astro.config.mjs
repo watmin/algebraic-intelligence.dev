@@ -81,6 +81,10 @@ export default defineConfig({
       ],
       sidebar: [
         {
+          label: "For Agents",
+          items: [{ link: "/blog/agents/", label: "How to interface with this site" }],
+        },
+        {
           label: "The Foundation",
           collapsed: true,
           autogenerate: { directory: "blog/primers" },
