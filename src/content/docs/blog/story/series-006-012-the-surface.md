@@ -155,6 +155,14 @@ Right. What the Greeks actually found, on examining circles, was an **invariance
 
 Once you see π as `(defn pi [c d] (/ c d))`, the others fall out. `e` is `(defn e [n] (pow (+ 1 (/ 1 n)) n))` evaluated at the limit. `φ` is consecutive Fibonacci ratios in the limit. `√2` is `(defn sqrt [x] (find-y (= (* y y) x)))` at `x=2`. **Every "irrational constant" in mathematics is a function whose output, evaluated at a canonical input, has been deemed interesting enough to label.** Numbers are samples; programs are the truth.
 
+:::note[Corrigendum — 2026-05-24]
+`(/ c d)` was the wrong example, and it's worth naming why. That's not the function that *produces* π — it's the *ratio*, the division of two quantities you already hold. To evaluate it you must already possess a circle's circumference and diameter, which means π was present in the measuring before the division ran. Dividing two givens reports a relationship; it doesn't generate the constant.
+
+The function that *defines* π takes no circle as input. It generates π from first principles through a **limit** — an infinite process of refinement. That's lambda calculus, not arithmetic. A Newton's-method square root plus a Kahan sum over one hundred million polygonal arc-length deltas of a quarter circle converges to `3.141592653588962` — twelve correct digits against `Math/PI`'s `3.141592653589793`, no circle measured, only the limit walked.
+
+The recognition stands and sharpens: π is a function; the constant is its output. But the function is necessarily a *limit*, not a division — which is precisely *why* π is transcendental. `(/ c d)` was the observation wearing the definition's clothes. **We needed lambda calculus to actually define it.** The notes that echo this framing below — and in the Book's Chapter 58, Chapter 63, and the FUNCTIONS-ARE-REALITY corpus — carry the same correction: the shape of the claim was right; the example was the ratio, not the function.
+:::
+
 The second recognition came that night. The user, mid-conversation about a cache that needed `HolonAST` as its key:
 
 > Atoms should only be able to hold HolonAST - we should make that a firm requirement
