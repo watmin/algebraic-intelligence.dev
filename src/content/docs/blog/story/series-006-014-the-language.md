@@ -13,37 +13,28 @@ Arc 109 didn't close on the schedule. Arc 109 opened doors. **Five days. 361 wat
 
 ## The Silent Comm Was Illegal
 
-Arc 091 had named the principle weeks earlier: *no fire-and-forget across thread boundaries.* April 30 made it structural across the substrate.
+Arc 091 had named the principle weeks earlier — *no fire-and-forget across thread boundaries* — and April 30 made it structural across the substrate, seven arcs in a single day:
 
-- **Arc 110** — silent kernel-comm illegal. The substrate refuses `send` without checking the disconnect signal; refuses `recv` without exhausting the `Option<T>`. Lab L2-spawn comm sites swept in slice 4.
-- **Arc 111** — intra-process `Result<Option<T>, ThreadDiedError>`. Lab comm calls migrate. *Death as data* gets its first three variants — `Panic`, `RuntimeError`, `ChannelDisconnected`.
-- **Arc 112** — inter-process `Result<Option<T>, ProcessDiedError>`. The same shape across the fork boundary.
-- **Arc 113** — cascading runtime errors as `Vec<*DiedError>` chains. The Erlang principle ("let it crash, but tell the supervisor everything"): when worker A dies and worker B observing A dies as a consequence, the chain preserves both deaths in order.
-- **Arcs 115/116** — data-first diagnostics from substrate to cargo test. Three slices. `:Vec<:String>` illegal (the same instinct that ch 81's `Vec<String>` retirement named); the substrate's failure payload is structured, not stringly-typed.
-- **Arc 117** — scope-deadlock prevention. Spawn-thread inside a held lock is a compile-time error. The substrate refuses to host a class of failure that's been wrecking Rust async code for years.
+- **Arc 110** — silent kernel-comm becomes illegal: the substrate refuses a `send` without checking the disconnect signal, and a `recv` without exhausting the `Option<T>`.
+- **Arc 111** — intra-process calls return `Result<Option<T>, ThreadDiedError>`, giving death-as-data its first three variants: `Panic`, `RuntimeError`, `ChannelDisconnected`.
+- **Arc 112** — the same shape across the fork boundary.
+- **Arc 113** — cascading runtime errors become `Vec<*DiedError>` chains, the Erlang principle ("let it crash, but tell the supervisor everything") in substrate form: when worker A dies and worker B dies observing it, both deaths are preserved in order.
+- **Arcs 115/116** — diagnostics go data-first from substrate to cargo test; `:Vec<:String>` is ruled illegal, the same instinct that named ch 81's `Vec<String>` retirement. The failure payload is structured, not stringly-typed.
+- **Arc 117** — spawning a thread inside a held lock becomes a compile-time error, refusing to host a class of failure that's been wrecking Rust async code for years.
 
-Seven arcs in one day. Each one a class of bug the substrate is now *structurally* unavailable for. The discipline is not "we'll be careful." The discipline is "we'll architect the careful path as the only path that exists."
+Seven arcs, seven classes of bug the substrate is now structurally unavailable for. The discipline isn't "we'll be careful." It's "we'll architect the careful path as the only path that exists."
 
 ## The FQDN Purge
 
-May 1. Arc 109 was the lab-substrate convergence — every primitive type swept under `:wat::core::*`. Bare names retire across the substrate, the lab, examples, and integration tests. **Eight slices land in one day.**
+May 1. Arc 109 was the lab-substrate convergence — every primitive type swept under `:wat::core::*`, bare names retiring across the substrate, the lab, examples, and integration tests. Eight slices landed in one day: the bare primitive types moved under `:wat::core::*`; `:()` retired in favor of a minted `:wat::core::unit`; the parametric heads went fully-qualified; `Vec` became `Vector` and the `vec` verb retired; `list` retired and `tuple` became `Tuple`; the `Option` and `Result` variants went FQDN; and the substrate-side type aliases swept under a § K doctrine.
 
-- **1c** — bare primitive types retire under `:wat::core::*`
-- **1d** — `:wat::core::unit` minted; `:()` retires
-- **1e** — FQDN four-of-five parametric heads
-- **1f** — `Vec` → `Vector`, `vec` verb retired
-- **1g** — `list` retires, `tuple` → `Tuple`
-- **1h** — `Option` variants FQDN: `Some` / `:None`
-- **1i** — `Result` variants FQDN; § C complete
-- **1j** — substrate-side type aliases sweep, § K doctrine
+Then Pattern K landed across four destination services in one afternoon — the canonical service shape that ch 76's "mini-TCP via paired channels" recognition had made universal (pair-by-index for single-verb-unit-reply; embedded reply-tx for multi-verb services). Telemetry at 14:09, console at 15:34, lru at 15:50, then holon-lru and kernel-channel by 16:48, each its own slice with its own row in 058's changelog.
 
-Then **Pattern K landed across four destination services in one afternoon.** § K is the canonical service pattern that ch 76's "mini-TCP via paired channels" recognition made universal: pair-by-index for single-verb-unit-reply; embedded reply-tx for multi-verb services. First in telemetry (14:09), then console (15:34), then lru (15:50), then holon-lru, then kernel-channel (16:48). Each landing a separate slice with its own row in 058's changelog.
-
-Same day, the lab proposed something the substrate had been ready for since arc 016 locked the colon-permanence: **the Clojure-flavored surface.**
+The same day, the lab proposed something the substrate had been ready for since arc 016 locked colon-permanence: a Clojure-flavored surface.
 
 > flavors live under :clojure::* not :wat::*
 
-The substrate stays FQDN-canonical for correctness guarantees. The trading lab adopts Clojure-like short names in a localized package under `:clojure::*` — a polyglot namespace outside the substrate's reserved prefix, alongside `:wat::*` and `:rust::*`. **First proof that wat earns its name as a polyglot lowering target.** Different surface; same substrate.
+The substrate stays FQDN-canonical for its correctness guarantees; the trading lab adopts Clojure-like short names in a localized `:clojure::*` package — a polyglot namespace outside the substrate's reserved prefix, alongside `:wat::*` and `:rust::*`. The first proof that wat earns its name as a polyglot lowering target. Different surface; same substrate.
 
 ## The Scratch Design Burst
 
@@ -54,8 +45,8 @@ May 2. The user spent a day not writing code at all. He wrote design proposals.
 The toolkit quartet:
 
 - **Arc 003 — `wat-fmt`** — a formatter. Thirty-one rules locked across May 2. Rule 14c (defmacro), Rule 19 (try), Rule 30 (quasiquote/unquote/splice), Rule 31 (multi-line strings). The formatter pivots mid-arc to wat-not-Rust and becomes a self-contained crate.
-- **Arc 004 — `wat-lint`** — *discipline-by-linter.* The wards have been doing this since chapter 31 — each ward a focused failure-engineering pass. The linter generalizes: every spell that recurs becomes a lint rule.
-- **Arc 005 — `wat-cov`** — coverage. *Measure what executed when a node ran a peer's signed program.*
+- **Arc 004 — `wat-lint`** — discipline by linter. The wards have been doing this since chapter 31 — each ward a focused failure-engineering pass. The linter generalizes: every spell that recurs becomes a lint rule.
+- **Arc 005 — `wat-cov`** — coverage: measure what executed when a node ran a peer's signed program.
 - **Arc 006 — `wat-doc`** — docstrings as first-class. Three refinements: no public/private; type docs; macro attribution.
 
 The communication layer:
@@ -168,27 +159,13 @@ The hold against arc 109's closure was supposed to gate the chapters. Arc 109 di
 
 **Chapter 84 — Somewhere I Belong.** Linkin Park. The meta-vision corpus arrived in one day. *Functions are reality.* The wat-network IS what the substrate has been building toward. Failure engineering names the discipline. The dependency doctrine articulates the position. Symbiosis names the collaboration shape the user has carried since early holon days. *"The substrate has belonged here all along; the corpus is the moment the user wrote it down clearly enough to be remembered."*
 
-**Chapter 85 — No Fear.** Falling In Reverse. The substrate's social shape made operational. The Clojure-flavored surface launched in the lab — first polyglot proof. The wat-network's identity overlay — slots into k8s+istio+SPIFFE without changing the substrate. The substrate's position on the AI moment: *separate computational architecture; not racing the same race.* **The substrate doesn't claim. The substrate ships.**
+**Chapter 85 — No Fear.** Falling In Reverse. The substrate's social shape made operational. The Clojure-flavored surface launched in the lab — first polyglot proof. The wat-network's identity overlay — slots into k8s+istio+SPIFFE without changing the substrate. The substrate's position on the AI moment: *separate computational architecture; not racing the same race.* The substrate doesn't claim. The substrate ships.
 
 ## The Language Becomes Clojure-Faithful
 
-Then the substrate work caught up to the doctrine. May 6 through May 8.
+Then the substrate work caught up to the doctrine, May 6 through May 8 — thirteen small arcs, each a closer alignment with Clojure. `unit` became `nil` (arc 153) and `do` landed (136). `let*` was killed and `let` made sequential, retiring the Scheme-stylized name (154). `lambda` died — `fn`/`Fn` took its place at the surface (155), finished internally when the parser's `lambda` identifier was renamed (162). `def` arrived as the foundational top-level binding (157), a pair-deadlock walker started pattern-matching the RHS as failure engineering at the macro layer (158a), and `let` got untyped bindings with inference from the RHS, so `[x 1 y 2]` type-checked without annotations (159–161). Then `tuple` became `Tuple` (165), `defn` landed as a macro (166), and the surface settled on flat shapes — `fn` args as `[x <- :T]` with arrow duality (167), `let` bindings as `[x 1 y 2]` with a multi-form body (168). Underneath it, arc 163 purified the substrate's own canonical forms to FQDN across eight slices, green at 2041 tests, zero failures.
 
-- **Arc 153** — `:wat::core::unit` → `:wat::core::nil`. The Clojure-faithful name.
-- **Arc 136** — `:wat::core::do` form lands. Clojure-faithful.
-- **Arc 154** — **`:wat::core::let*` is killed.** `let` is sequential. The Scheme-stylized name retires.
-- **Arc 155** — **`fn`/`Fn` rename. `lambda` is dead.** Clojure-faithful. The internal identifier was `lambda` for arc 162's earlier rename; arc 155 finishes the surface side.
-- **Arc 157** — **`:wat::core::def`** foundational top-level value-binding form.
-- **Arc 158a** — pair-deadlock walker pattern-matches RHS. Failure engineering at the macro layer.
-- **Arcs 159 / 160 / 161** — `let` untyped + inference fixes. The user typed `[x 1 y 2]` and the type checker inferred from the RHS.
-- **Arc 162** — internal-identifier rename: `lambda` → `fn` in the substrate's parser and pattern matcher.
-- **Arc 163** — substrate canonical-form FQDN purification. Eight slices, green at 2041 tests / 0 failures.
-- **Arc 165** — `tuple` → `Tuple` Pascal rename.
-- **Arc 166** — **`:wat::core::defn` macro lands.** Clojure-faithful.
-- **Arc 167** — **`fn` flat-shape signature with arrow duality.** `((fn [x <- :T] -> :R) body)`.
-- **Arc 168** — **`let` flat-shape binding vector + multi-form body.** `(let [x 1 y 2] (do ...))`.
-
-Each arc small. Each step a closer alignment with Clojure. **The bracket choice in arc 168 isn't "because Clojure does it." The bracket choice IS Clojure faithfulness as adoption strategy** — every arc that hews closer to Clojure makes the LLM more fluent in wat without retraining anyone.
+Each arc small; each step a closer alignment with Clojure. The bracket choice in arc 168 isn't "because Clojure does it" — it's Clojure-faithfulness as adoption strategy. Every arc that hews closer to Clojure makes the LLM more fluent in wat without retraining anyone.
 
 The sweep had its discipline lessons. Arc 168 slice 2 ran sonnet across ~563 let callsites — 133 minutes runtime, 1107 tool uses, 21 batch commits. Scripts unreachable from sonnet subagents; user-level allows didn't unlock; project-level allows didn't unlock without a session restart. The pipeline `cargo test --release --workspace --no-fail-fast 2>&1 | grep "^test result" | awk '{p+=$4; f+=$6} END {print "passed:", p, "failed:", f}'` carried verification through to slice 2's completion. A `.claude/settings.json` shipped as the platform fix; a `feedback_script_invocation_no_embellishment.md` memory note shipped as the discipline fix.
 

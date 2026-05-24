@@ -23,21 +23,9 @@ This is the discipline of that ride.
 
 ## The Cascade Opens
 
-Arc 170 DESIGN went through five revisions in one morning. By noon May 9 the scope had settled:
+Arc 170's DESIGN went through five revisions in one morning. By noon May 9 the scope had settled into five slices: a Rust closure-extraction primitive (programs ship as `Vec<WatAST>`, so closure capture has to be structurally honest), the `ClosurePackage` shape with entry resolution and assembly, `hermetic.wat` rebuilt to a polished three-layer API with the ceremony hidden by default, the deftest migration that stops the substrate's own tests from using legacy spawn variants, and the FD-multiplex phases for orphan-zero process management. Three small Clojure-faithful sharpenings rode along the same days — struct-destructure in let bindings (arc 169), apostrophes inside keyword bodies so `:trader's-pulse` is legal (171), and the Scheme→Clojure macro renames that give `quote`, `unquote`, `quasiquote`, and `splice` their Clojure shapes (172) — mechanical sweeps the substrate's discipline ate without flinching.
 
-- **Slice 1** — Rust closure extraction substrate primitive. Programs ship as `Vec<WatAST>`; closure capture needs to be structurally honest.
-- **Slice 1b** — `ClosurePackage` shape + entry resolution + assembly.
-- **Slice 2 / 3** — `hermetic.wat` rebuilt to polished form; the three-layer API (ceremony hidden by default).
-- **Slice 4** — deftest migration; the substrate's own tests stop using legacy spawn variants.
-- **Slice 5+** — FD-multiplex phases for orphan-zero process management.
-
-Three small Clojure-faithful sharpenings landed in the same days, mechanical sweeps the substrate's discipline ate without flinching:
-
-- **Arc 169** — struct-destructure in let bindings. `(let [{:keys [a b]} record] ...)`.
-- **Arc 171** — apostrophe inside keyword bodies. `:trader's-pulse` legal.
-- **Arc 172** — Scheme→Clojure macro renames. `quote`, `unquote`, `quasiquote`, `splice` get their Clojure shapes.
-
-Then the substrate started revealing what "argv on main" required.
+Then the substrate started revealing what "argv on main" actually required.
 
 ## Closure Extraction
 
@@ -78,22 +66,15 @@ The wat-cli's contract simplifies. A program is a wat-vm process. A wat-vm proce
 
 The substrate's `spawn-thread` and `spawn-process` (from "The Discipline" of arc 170's doctrine) had been returning untyped channel handles. The deftest migration started, hit the same untyped wall, surfaced what the substrate had been ready for:
 
-- **`:wat::kernel::ThreadPeer<I, O>`** — typed thread handle. Input type `I`; output type `O`; `Thread/readln` and `Thread/println` work through the type-checked interface.
-- **`:wat::kernel::ProcessPeer<I, O>`** — same shape across the fork boundary. *Client/server symmetry from a single type-param swap, not a Client/Server pair.*
+The substrate minted a pair of typed peer handles: `:wat::kernel::ThreadPeer<I, O>` — input type `I`, output type `O`, with `Thread/readln` and `Thread/println` working through the type-checked interface — and `:wat::kernel::ProcessPeer<I, O>`, the same shape across the fork boundary. Client and server differ by a single type-param swap, not a separate Client/Server pair.
 
 A client holding `ThreadPeer<Request, Response>` writes Requests and reads Responses. A server holding `ThreadPeer<Response, Request>` (type params swapped) writes Responses and reads Requests. **Same type. Different witness side. No separate Client/Server type hierarchy.** The substrate's lattice property (BOOK ch 62 — bind's commutativity) shows up at the channel layer: the relationship is symmetric in the algebra.
 
 ## The Deftest Migration
 
-The substrate's tests were the substrate's biggest legacy comm consumer. Every test that touched concurrency had been using `:wat::test::run`, `run-ast`, `run-hermetic-ast`, or the `run-sandboxed*` family. **Arc 170 slice 4a** retired the lot across five stones over two days:
+The substrate's tests were its biggest legacy comm consumer — every test that touched concurrency leaned on `:wat::test::run`, `run-ast`, `run-hermetic-ast`, or the `run-sandboxed*` family. Arc 170 slice 4a retired the lot across five stones over two days: it minted `:wat::test::run-thread` and a standalone `deftest`, then swept 32 legacy callers — and mid-sweep a stdio-capture asymmetry surfaced that produced a three-rule classification, audited it, flagged five sites for hermetic decoration, decorated them (plus a rearchitecture of the stubborn site 154), and finally flipped the deftest macro body to `run-thread`.
 
-- **Slice 4a-α** — mint `:wat::test::run-thread` + standalone `deftest`.
-- **Slice 4a-β** — sweep 32 legacy callers. *Stdio-capture asymmetry surfaced — the three-rule classification got captured mid-sweep.*
-- **Slice 4a-γ-audit** — three-rule audit shipped; five sites flagged for hermetic decoration.
-- **Slice 4a-γ-decorate** — 5 decorations + site 154 rearchitecture + duplicate markers.
-- **Slice 4a-γ-flip** — deftest macro body flipped to `run-thread`.
-
-The three rules each test landed in:
+Each test landed in one of three rules:
 
 1. **Pure thread** — `run-thread`. The default. Tests that don't touch processes.
 2. **Hermetic decoration** — `run-thread` plus a hermetic wrapper that captures stdout/stderr cleanly.
@@ -103,16 +84,7 @@ Thirty-two callers migrated. Every old verb retired in the same sweep. The subst
 
 ## FD-Multiplex
 
-Before the surface could fully collapse, the kernel had to handle the resource pressure. Phase 1B through Phase 3 (May 13) wired the FD discipline:
-
-- **Phase 1B** — `spawn-process` lifeline; address Phase 1A's FD-inheritance defect.
-- **Phase 1C** — `fork-program` lifeline; retire PDEATHSIG.
-- **Phase 1D** — lifeline probe + leak-zero gate.
-- **Phase 1E** — `fork-program` FD hygiene + lifeline probe.
-- **Phase 2** — tier-2 PipeFd Receivers wake on shutdown.
-- **Phase 3** — canonical `child_post_fork_init` + pidfd probe migration.
-
-Phase 3's pidfd migration replaced PDEATHSIG (Linux-specific, brittle, kernel-version-dependent) with pidfds (Linux 5.3+, structured, reliable). The substrate's process management became *first-class.*
+Before the surface could fully collapse, the kernel had to handle the resource pressure. Phases 1B through 3 (May 13) wired the FD discipline: a `spawn-process` lifeline that addressed Phase 1A's FD-inheritance defect, a `fork-program` lifeline that retired PDEATHSIG, a leak-zero gate behind a lifeline probe, FD hygiene on `fork-program`, tier-2 PipeFd Receivers that wake on shutdown, and a canonical `child_post_fork_init`. The capstone was Phase 3's pidfd migration — replacing PDEATHSIG (Linux-specific, brittle, kernel-version-dependent) with pidfds (Linux 5.3+, structured, reliable). The substrate's process management became first-class.
 
 The user's stance on portability, articulated mid-Slice-C-spawn:
 
@@ -204,7 +176,7 @@ Struct/newtype consumers had been passing type-check via BACKUP PATHS:
 
 **The diagnose paid off architecturally.** "Just typealias" would have been a narrow fix. The actual gap: type declarations nested in top-level `do`/`let` don't register in TypeEnv. Three V5 patterns trace to it; **single substrate fix addresses all three.** Extend `register_types` (`src/types.rs:1182`) to recurse into top-level `do`/`let` forms. Becomes Gap J.
 
-The four-questions discipline + the diagnose-before-spec rule paid for themselves. *A speculative "typealias unfold" BRIEF would have been wrong scope. The actual scope is sharper, simpler, and addresses all 3 patterns from one fix.*
+The four-questions discipline and the diagnose-before-spec rule paid for themselves: a speculative "typealias unfold" BRIEF would have been the wrong scope. The actual scope is sharper, simpler, and addresses all three patterns from one fix.
 
 User direction 2026-05-14: *"if the path is clear - we step forward."*
 
@@ -232,7 +204,7 @@ The doctrine the nos came from is `scratch/FAILURE-ENGINEERING.md` (BOOK ch 84's
 >
 > the failure isn't "this specific case panicked." The failure is "a class of inputs / states / interactions can produce this kind of panic." The fix isn't "make this case stop panicking"; the fix is "make this CLASS of panic structurally impossible."
 
-Level-1 vs Level-2. Opus's 5s was level-1. **The user demanded level-2.**
+Level-1 vs Level-2. Opus's 5s was level-1. The user demanded level-2.
 
 The level-2 fix: **`ProcessJoinBeforeOutputDrain` compile-time check in `src/check.rs`.** Walks every let-form's syntactic scope; pairs calls to `:wat::kernel::Process/join-result <p>` with calls to `:wat::kernel::Process/{stdout,stderr,output} <p>` on the same identifier; if both present in the same scope, **fails compilation** with verbose diagnostic naming both sites + the rule + SERVICE-PROGRAMS.md citation + explicit "DO NOT add a wall-clock timeout to mask this."
 
