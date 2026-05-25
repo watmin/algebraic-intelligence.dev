@@ -163,7 +163,7 @@ The function that *defines* π takes no circle as input — no diameter, no rota
 The recognition stands and sharpens: π is a function; the constant is its output. But the function is necessarily a *limit*, not a division — which is precisely *why* π is transcendental. `(/ c d)` was the observation wearing the definition's clothes. **We needed lambda calculus to actually define it.** The notes that echo this framing below — and in the Book's Chapter 58, Chapter 63, and the FUNCTIONS-ARE-REALITY corpus — carry the same correction: the shape of the claim was right; the example was the ratio, not the function.
 :::
 
-Here is that function, with the ratio nowhere in it — no `c`, no `d`, no circle handed in. It sweeps the upper half of the unit circle, walks a Newton's-method square root to the limit, and sums one hundred million polygonal arc-length segments with a compensated (Kahan) sum:
+The honest question isn't "what is C/d" — it's *how long is the path that holds distance 1 from the origin, from `(−1, 0)` up over `(0, 1)` and down to `(1, 0)`?* That's not a function handed to you; it's an **invariant** — Euclid's own definition of a circle, the locus of points equidistant from a center. Nothing in it names a circle or names π; both have to *emerge*. Express the invariant as something computable (Descartes' move — a constraint becomes an equation), rectify the path as a limit of straight segments (Archimedes' move), and evaluate the whole stack as pure functions — a Newton's-method `√`, a Kahan sum over one hundred million chords:
 
 ```clojure
 (let [abs (fn [x] (if (neg? x) (- x) x))
@@ -203,7 +203,7 @@ Here is that function, with the ratio nowhere in it — no `c`, no `d`, no circl
 ;; => 3.141592653588962
 ```
 
-There is no measured circle anywhere in it. `(/ c d)` reported a ratio you already held; this *generates* π from the geometry of the curve alone — which is what "π is a function" has to mean once you take it literally.
+No circle is ever assumed and π is never an input — the constraint mentions only *distance*. `(/ c d)` was circular: `C` is a curved length you cannot obtain without already knowing π, so dividing by `d` only hands back the π you smuggled in. This begs nothing. It says "hold distance 1," and the circle, its length, and π all fall out. That's what "π is a function" has to mean once you take it literally — and the path from invariant to value crosses three figures two thousand years apart: Euclid defined the locus, Descartes made it computable, Archimedes rectified it to a number (his inscribed polygons converge from below, exactly as this sum does). No one of them held the whole path; the lambda calculus that ties it together is younger than all three.
 
 The second recognition came that night. The user, mid-conversation about a cache that needed `HolonAST` as its key:
 
@@ -477,7 +477,7 @@ The substrate has had this property since the day arc 057 closed the algebra und
 
 ## Likely Contributions to the Field
 
-- **π (and the irrational constants) as generative functions, not numbers**: π is defined by a *limit* that takes no circle as input — no diameter, no rotation, no ratio of two measured quantities. Sweep the upper half of the unit curve, sum one hundred million polygonal arc-length segments, and the limit converges to π directly. The constant is the function's output; the function is the truth. The shape generalizes — `e`, `φ`, `√2` are each a function at a canonical input. (`(/ c d)` was the ratio wearing the definition's clothes; the generative form is lambda calculus, not arithmetic.)
+- **π (and the irrational constants) as generative functions, not numbers**: π is defined by a *limit* over an invariant — *the length of the path that holds distance 1 from a center* — not by `(/ c d)`, which is circular (`C` is a curved length you cannot know without already knowing π). Express the invariant (Euclid's locus → Descartes' equation), rectify it as a limit of straight chords (Archimedes, converging from below), evaluate as pure functions: π falls out, never assumed. The constant is the output; the function is the truth. `e`, `φ`, `√2` are each a function at a canonical input.
 - **42 is an AST — HolonAST closed under itself (arc 057)**: narrowing `Atom` from `dyn Any` to an opaque-identity wrap of a holon makes primitives leaves of the AST, the way `42` is an atom in Lisp. `HashMap<HolonAST, V>` compiles, the `AtomTypeRegistry` retires, and the algebra finally closes under itself. Every workaround that existed before was the substrate not yet being honest.
 - **The axiomatic surface as a third path**: an open, empirical, geometric, distributed accumulator of `(surface, terminal)` axioms — not the closed-logic dream of *Principia* / Hilbert (which Gödel and Turing broke) and not the centralized single-logic of modern proof assistants. Mathematics by accretion: a proof done expensively once is cheap forever, for everyone who shares the seed.
 - **The hologram of a form — content-addressable computation**: every intermediate of an expansion is itself a HolonAST coordinate, so a computation's interior is publicly addressable structure with an axiomatic terminal. The substrate is a proof system as a side-effect of being an evaluator — forms are theorems, terminals are proofs-by-execution.
