@@ -158,10 +158,52 @@ Once you see π as `(defn pi [c d] (/ c d))`, the others fall out. `e` is `(defn
 :::note[Corrigendum — 2026-05-24]
 `(/ c d)` was the wrong example, and it's worth naming why. That's not the function that *produces* π — it's the *ratio*, the division of two quantities you already hold. To evaluate it you must already possess a circle's circumference and diameter, which means π was present in the measuring before the division ran. Dividing two givens reports a relationship; it doesn't generate the constant.
 
-The function that *defines* π takes no circle as input. It generates π from first principles through a **limit** — an infinite process of refinement. That's lambda calculus, not arithmetic. A Newton's-method square root plus a Kahan sum over one hundred million polygonal arc-length deltas of a quarter circle converges to `3.141592653588962` — twelve correct digits against `Math/PI`'s `3.141592653589793`, no circle measured, only the limit walked.
+The function that *defines* π takes no circle as input — no diameter, no rotation, no ratio. It generates π from first principles through a **limit** — an infinite process of refinement. That's lambda calculus, not arithmetic. A Newton's-method square root plus a Kahan sum over one hundred million polygonal arc-length deltas along the upper half of the unit circle converges to `3.141592653588962` — twelve correct digits against `Math/PI`'s `3.141592653589793`, no circle measured, only the limit walked.
 
 The recognition stands and sharpens: π is a function; the constant is its output. But the function is necessarily a *limit*, not a division — which is precisely *why* π is transcendental. `(/ c d)` was the observation wearing the definition's clothes. **We needed lambda calculus to actually define it.** The notes that echo this framing below — and in the Book's Chapter 58, Chapter 63, and the FUNCTIONS-ARE-REALITY corpus — carry the same correction: the shape of the claim was right; the example was the ratio, not the function.
 :::
+
+Here is that function, with the ratio nowhere in it — no `c`, no `d`, no circle handed in. It sweeps the upper half of the unit circle, walks a Newton's-method square root to the limit, and sums one hundred million polygonal arc-length segments with a compensated (Kahan) sum:
+
+```clojure
+(let [abs (fn [x] (if (neg? x) (- x) x))
+
+      sqrt (fn [x]
+             (if (zero? x)
+               0.0
+               (loop [g (/ (+ x 1.0) 2.0)
+                      prev 0.0]
+                 (if (< (abs (- g prev)) 1e-15)
+                   g
+                   (recur (/ (+ g (/ x g)) 2.0) g)))))
+
+      kahan-sum (fn [coll]
+                  (first
+                    (reduce (fn [[sum c] x]
+                              (let [y (- x c)
+                                    t (+ sum y)]
+                                [t (- (- t sum) y)]))
+                            [0.0 0.0]
+                            coll)))
+
+      n      100000000
+      dx     (/ 2.0 n)
+      points (mapv (fn [i]
+                     (let [x (+ -1.0 (* i dx))]
+                       [x (sqrt (max 0.0 (- 1.0 (* x x))))]))
+                   (range (inc n)))
+
+      deltas (map (fn [[x1 y1] [x2 y2]]
+                    (let [dx (- x2 x1)
+                          dy (- y2 y1)]
+                      (sqrt (+ (* dx dx) (* dy dy)))))
+                  points (rest points))]
+
+  (kahan-sum deltas))
+;; => 3.141592653588962
+```
+
+There is no measured circle anywhere in it. `(/ c d)` reported a ratio you already held; this *generates* π from the geometry of the curve alone — which is what "π is a function" has to mean once you take it literally.
 
 The second recognition came that night. The user, mid-conversation about a cache that needed `HolonAST` as its key:
 
@@ -432,6 +474,14 @@ This isn't speculation about future architecture. The substrate already supports
 To anyone outside the universe: keep away. Without the seed, vectors do not snap to coordinates; cosine returns numbers from random distributions; `coincident?` returns no. **The substrate doesn't argue with bad parties. It just doesn't speak their language.** Without the seed, you are noise. *I don't know who you are.* With the seed, you are a peer. *Find out what it means to me.*
 
 The substrate has had this property since the day arc 057 closed the algebra under itself and arc 023 made `coincident?` cosine-clean. The substrate caught up with the spell.
+
+## Likely Contributions to the Field
+
+- **π (and the irrational constants) as generative functions, not numbers**: π is defined by a *limit* that takes no circle as input — no diameter, no rotation, no ratio of two measured quantities. Sweep the upper half of the unit curve, sum one hundred million polygonal arc-length segments, and the limit converges to π directly. The constant is the function's output; the function is the truth. The shape generalizes — `e`, `φ`, `√2` are each a function at a canonical input. (`(/ c d)` was the ratio wearing the definition's clothes; the generative form is lambda calculus, not arithmetic.)
+- **42 is an AST — HolonAST closed under itself (arc 057)**: narrowing `Atom` from `dyn Any` to an opaque-identity wrap of a holon makes primitives leaves of the AST, the way `42` is an atom in Lisp. `HashMap<HolonAST, V>` compiles, the `AtomTypeRegistry` retires, and the algebra finally closes under itself. Every workaround that existed before was the substrate not yet being honest.
+- **The axiomatic surface as a third path**: an open, empirical, geometric, distributed accumulator of `(surface, terminal)` axioms — not the closed-logic dream of *Principia* / Hilbert (which Gödel and Turing broke) and not the centralized single-logic of modern proof assistants. Mathematics by accretion: a proof done expensively once is cheap forever, for everyone who shares the seed.
+- **The hologram of a form — content-addressable computation**: every intermediate of an expansion is itself a HolonAST coordinate, so a computation's interior is publicly addressable structure with an axiomatic terminal. The substrate is a proof system as a side-effect of being an evaluator — forms are theorems, terminals are proofs-by-execution.
+- **The spell — local-to-networked as a configuration choice**: because the substrate is timeless (no decoherence, no measurement collapse), the cache recording a terminal can live anywhere — RAM, disk, Redis, a network. Verification stays local (re-walk the form, compare via `coincident?`); possession is not capability; the geometry is the access control.
 
 ## The Inscription
 
