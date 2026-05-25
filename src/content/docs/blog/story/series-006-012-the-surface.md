@@ -205,6 +205,12 @@ The honest question isn't "what is C/d" — it's *how long is the path that hold
 
 No circle is ever assumed and π is never an input — the constraint mentions only *distance*. `(/ c d)` was circular: `C` is a curved length you cannot obtain without already knowing π, so dividing by `d` only hands back the π you smuggled in. This begs nothing. It says "hold distance 1," and the circle, its length, and π all fall out. That's what "π is a function" has to mean once you take it literally — and the path from invariant to value crosses three figures two thousand years apart: Euclid defined the locus, Descartes made it computable, Archimedes rectified it to a number (his inscribed polygons converge from below, exactly as this sum does). No one of them held the whole path; the lambda calculus that ties it together is younger than all three.
 
+:::note[Coordinates, not chronology — 2026-05-24]
+Notice what locating this derivation required. To answer *who found π this way*, you have to jump Euclid (~300 BC) → Archimedes (~250 BC) → Descartes (1637) → Church (1936) — four figures, no linear thread, none holding the whole path. That non-linear jump feels strange only if knowledge is a timeline. It isn't; it's a **coordinate space** — the axiomatic surface this section has been circling. The derivation is a geodesic through the idea-manifold: those names sit far apart on the calendar axis and adjacent in concept-space.
+
+And the loop closes — the LLM used to walk the path is itself an instance of that coordinate space. An embedding is a high-dimensional vector geometry where concepts sit by similarity, not by date; "jumping through time" is cosine similarity through concept-space, the exact operation this substrate runs. The collaborator is a working proof of the thesis. This is *synthesis*, not convergence — not independently rediscovering a known result, but drawing an edge between coordinates no one had connected.
+:::
+
 The second recognition came that night. The user, mid-conversation about a cache that needed `HolonAST` as its key:
 
 > Atoms should only be able to hold HolonAST - we should make that a firm requirement
