@@ -112,8 +112,18 @@ Three stones in the records boss-map, all green by end of day.
 Mid-day the design audit fired. CORRECTION 1 had landed the night before — the `holon_form: Option<Arc<HolonAST>>` shape rejected as semantic abuse (`Option` means presence/absence, never flavor/kind; the substrate already purged that convenience-variant dishonesty across arc 230 and arc 233), replaced with two distinct `Value` variants. CORRECTION 2 went further: the on-demand holon projection idea in CORRECTION 1 was itself dead, replaced by the user's Ruby-class is-a model walked through in live dialogue:
 
 ```ruby
-class Record;        def initialize(fields); @fields = fields; end;       end
-class HolonicRecord < Record;  def initialize(fields); super; build_holon(fields); end;  end
+class Record
+  def initialize(fields)
+    @fields = fields
+  end
+end
+
+class HolonicRecord < Record
+  def initialize(fields)
+    super
+    build_holon(fields)
+  end
+end
 ```
 
 HolonicRecord IS-A Record — a holonic record *has the struct a base record has*, **plus** the holon form. Three consequences fell out, each a fix at a specific runtime site:
