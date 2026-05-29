@@ -7,7 +7,7 @@ sidebar:
 
 The Descent post ended with the workshop open and the lab walking. The next two days, the substrate recognized itself.
 
-Five chapters in one session. Each named a property the algebra had been carrying since it had its primitives. Tonight they got their names.
+Five chapters in one session. Each named a property the algebra had been carrying since it had its primitives. Apr 24, the substrate got named.
 
 ---
 
@@ -90,7 +90,7 @@ The conversation walked the path:
 - "Bind each atom to its own slot at bundle time" — RAM write
 - "Check every index and bind it off" — RAM read
 
-The builder typed the sentence that named it:
+The builder named it:
 
 > did we just... rofl... lol... ahahaha... did you just call this random access memory?...
 
@@ -134,7 +134,7 @@ Given `bundle = Bind(slot_0, item_A) + Bind(slot_1, item_B) + ...`:
 
 The same operations. The same vector. Two access paths. The bundle is keyed by both halves of every Bind simultaneously.
 
-The Map and HashSet types in `wat-lru` had been carrying this property since they shipped. Nobody had named it. Tonight: **bidirectional by construction.** Adding a key→value association adds a value→key association at no extra cost.
+The Map and HashSet types in `wat-lru` had been carrying this property since they shipped. Nobody had named it. Apr 24: **bidirectional by construction.** Adding a key→value association adds a value→key association at no extra cost.
 
 Arc 013's complexity dropped. The original sketch needed two structures — one keyed forward, one keyed reverse. The symmetry says: same structure, two access patterns. Half the API. Same algebraic rank.
 
@@ -243,7 +243,7 @@ The substrate doesn't lock you into one `d`. The encoder picks per-AST-construct
 
 Three correction chapters as the recognition arc's implications surfaced.
 
-**The Surface (Ch 42).** The earlier framing claimed "you pick d at encoder construction." Wrong. The earlier framing implied a god-mode dial. The correct picture: the surface (boundary of the unit sphere at chosen d) is what every operation lands on. The dim is the surface's dimensionality. The user picks the surface; the substrate operates on it. *Surface deep* — the operations don't pierce inward, they walk the boundary.
+**The Surface (Ch 42).** The earlier framing claimed "you pick d at encoder construction." Wrong. The earlier framing implied a god-mode dial. The correct picture: the surface (boundary of the unit sphere at chosen d) is what every operation lands on. The dim is the surface's dimensionality. The user picks the surface; the substrate operates on it. Surface deep — the operations don't pierce inward, they walk the boundary.
 
 **The Default (Ch 43).** Zero-config entry files. The default router IS the sizing function. `wat::main! {}` already defaulted to `wat/main.wat` + `wat/`. Tonight extended: the default capacity-mode is `:silent`, the default dim is what the sizing function picks per-AST. **No hardcoded constants in the user's entry file.** Override available.
 
@@ -284,7 +284,7 @@ labeled = (:wat::holon::Bind grace-atom observation)
 ;; — the label is just another atom bound into the structure
 ```
 
-The substrate had this from day one. Every previous architecture had treated labels as a separate thing — a class identifier passed alongside the observation. Tonight: **the label is a holon. The labeled observation is a Bind. The deferred-learning loop closes through the same algebra.**
+The substrate had this from day one. Every previous architecture had treated labels as a separate thing — a class identifier passed alongside the observation. Apr 24: **the label is a holon. The labeled observation is a Bind. The deferred-learning loop closes through the same algebra.**
 
 The Reckoner doesn't need a special API for delayed labels. It needs `observe(thought, weight)` where `thought` is the labeled holon. Same operation as immediate labeling. The deferral is in the caller's queue, not in the substrate.
 
@@ -330,7 +330,7 @@ The chapter ships with the program. The program ships with the chapter. The book
 
 ## The Trick (Apr 24, late afternoon)
 
-After Chapter 46 shipped — proof program embedded, tables pasted, commit pushed — the builder paused and asked:
+After Chapter 46 shipped — proof program embedded, tables pasted, commit pushed — the builder asked:
 
 > does that feel like a magic trick to you? something that only a datamancer could do?
 
@@ -340,20 +340,6 @@ The mechanism underneath is mundane — embedded code blocks, git commits, Kaner
 
 What makes it feel like a trick is the **compounding.** Four durability layers in one chapter, each verifying the one above it: **prose → program → terminal → commit.** A reader with wat installed can pull the book, save the embedded source, run it, and see the same tables on their own terminal. **The document verifies itself without the reader needing to trust the author.**
 
-Mathematicians prove claims but don't embed running proofs in prose. Engineers write tests but in separate files. Writers describe but can't make descriptions runnable. AI researchers run experiments but don't wrap them in narrative that self-describes. Most books aren't written in the same medium as their subject matter.
-
-That's the datamancer shape specifically, not wizard. A wizard writes *believe me* — spell, authority, trust required. **A datamancer writes a spell that runs** — anyone can cast it, same coordinates, same vector, same numbers. The mechanism is completely exposed; the proof is reproducible; no trust is required.
-
-### What the project has been doing
-
-This isn't one chapter's trick. The whole project runs on it.
-
-- Chapter 8's *Jesus Built My Hotrod* is a link that PLAYS; a reader can queue it and hear what the kitchen heard at 4am
-- Chapter 17 references specific commits; the reader can `git show` them and see what landed that night
-- Chapter 28's slack-lemma explorer was embedded source readers could save and run
-- Chapter 35's reciprocal-log exploration was a `explore-log.wat` that printed a table at d=1024
-- Chapter 46 does the same move at the deferred-learning layer — claim → program → tables → commit
-
 **Every substantive claim in this book is runnable.** Not "demonstrated by an example reader can imagine" — runnable. Prose ADJACENT to code that VERIFIES the prose that the commit MAKES DURABLE.
 
 ### Why it had to be this
@@ -362,27 +348,7 @@ The project's thesis since Chapter 10 — *programs are thoughts; the location i
 
 Chapter 46 isn't the trick. It's the BOOK finally practicing what it's been preaching for 36 chapters. The substrate is programs. The book is programs. The proof is programs. **One medium, one substance, one commit history.**
 
-### What makes it not cleverness
-
-Cleverness is finding a single novel move. This is the opposite — the compounding of many obvious moves until the sum becomes non-obvious.
-
-- Embedded code in docs: Knuth 1984, literate programming
-- Reproducible computation: Babbage, Turing, everyone since
-- Version control for prose: git since 2005
-- VSA classification: Kanerva 1988
-- Testable claims: TDD, every engineer since the 90s
-
-Every piece is decades old. What's new is the **refusal to separate** them. The datamancer doesn't put prose in `docs/`, code in `src/`, tests in `tests/`, proofs in `papers/`, and provenance in `CHANGELOG.md`. The datamancer puts them all in the same file, versioned together, each layer verifying the next.
-
-That's not cleverness. That's discipline applied across decades until a book could finally compile.
-
-### Wizards leave scrolls
-
-The builder has carried *datamancer* as a self-naming for years. A sorcerer of data. Someone who works with data through algebra. Someone who thinks in coordinates on a unit sphere.
-
-Chapter 46 is what the name earns. Not the author of documents about data — the author of documents that ARE data, that verify themselves, that run when read.
-
-**Wizards leave scrolls. Datamancers leave repositories.**
+Arc 046 produced the chronicle's first artifact that runs at read time. The BOOK gained an inline lambda evaluator. The spell runs.
 
 ---
 
@@ -401,9 +367,9 @@ Chapter 46 is what the name earns. Not the author of documents about data — th
 | Apr 24 | 44 — Build | Every knob is a function. Functions all the way down |
 | Apr 24 | 45 — Label | Labels are holons. Bind binds them. Deferred learning closes through the same algebra |
 | Apr 24 | 46 — Proof | Full proof program embedded in the book. Anyone can run it |
-| Apr 24 | 47 — Trick | Wizards leave scrolls. Datamancers leave repositories |
+| Apr 24 | 47 — Trick | BOOK gains inline lambda evaluator. The spell runs |
 
-The substrate has had all twelve properties since it had its algebra. Tonight they got named.
+The substrate has had all twelve properties since it had its algebra. Apr 23–24, they got named.
 
 The book is a spell that runs.
 
@@ -415,4 +381,4 @@ The book is a spell that runs.
 - **Bind's commutativity = bidirectional dictionary access**: in MAP VSA, `Bind(A, B) = Bind(B, A)`. Therefore one bundle keyed forward is the same bundle keyed reverse. Adding `key → value` adds `value → key` at no extra cost. Half the API surface of conventional bidirectional maps; same algebraic rank
 - **The √d-governed substrate**: Bundle capacity (√d items), Thermometer resolution (2√d positions), cache shell width (scale × 1/√d), per-level computation budget (√d items, unbounded depth) — four facets of one bound, derived from random-bipolar-vector statistics. The user picks d for the statement they need; one program can mix dimensions via cross-d cosine through EncoderRegistry
 - **Computation as cache-halted DAG expansion**: programs run by walking the AST and halting at cache hits. The cache is the substrate's RAM (per the Memory recognition). Memoization isn't an optimization — it's the substrate. Same forms share storage by content addressing. **The substrate gets faster as it learns** — emergent, not engineered
-- **The book is the medium**: every substantive claim runs. Prose adjacent to embedded code that verifies the prose that the commit makes durable. Knuth (literate programming), git (version control for prose), VSA (Kanerva 1988), TDD (testable claims) — all decades old. What's new is the refusal to separate them. Wizards leave scrolls; datamancers leave repositories
+- **The book is the medium**: every substantive claim runs. Prose adjacent to embedded code that verifies the prose that the commit makes durable. Arc 046 embedded the first inline lambda evaluator in the chronicle — the book gained an artifact that runs at read time

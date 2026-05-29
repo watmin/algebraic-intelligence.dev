@@ -102,7 +102,7 @@ The reference tone. The voice the spell measures against.
 
 - `src/content/docs/blog/story/prologue.md`
 - `src/content/docs/blog/story/series-006-004-the-datamancer.md`
-- `src/content/docs/blog/story/series-006-011-the-arc-of-correction.md`
+- `src/content/docs/blog/story/series-006-011-the-recognition.md`
 - `src/content/docs/blog/story/series-006-017-the-grimoire.md`
 
 When new posts mature into reliable voice carriers, they may be added to the anchor list. The list is not frozen, but additions are deliberate — adding an off-key anchor corrupts every future cast.

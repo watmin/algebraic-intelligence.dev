@@ -164,7 +164,7 @@ One rune on the heartbeat revealed the language was missing aggregate types. The
 
 ## The Wat Repo Revived
 
-A year ago — March 2025 — I'd started a repo called `wat`. Grok conversation links, a proof-of-concept continuation function, a reference language spec. The ideas couldn't be built yet. The repo sat dormant.
+A year ago — March 2025 — I'd started a repo called `wat`. Grok conversation links, a proof-of-concept continuation function, a reference language spec. No substrate existed to run them against — holon-rs wouldn't compile until February 2026, and the encoder that would give wat its binding semantics was still a Python proof-of-concept. On March 29, with holon-rs stable and the Fact interface freshly extracted, the blocker was gone.
 
 `eb98602 refactor: trading lab wat/ depends on ~/work/holon/wat/ for core+stdlib`
 

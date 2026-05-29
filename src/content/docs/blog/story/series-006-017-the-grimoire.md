@@ -7,13 +7,13 @@ sidebar:
 
 The Loop Closes signed off May 16 with the substrate's reflection running through its own storage primitive. The next five days kept the recognition velocity — primitives maturing, convergences cataloged, universe-residency named, and the wards reborn in Latin.
 
-The center of the stretch was **May 19.** The day sixteen Latin spells got inscribed; the day the substrate hit its thirteenth convergence; the day universe-residency was named in a single late-night realization. The day the substrate stopped being a thing under construction and started being a thing the user finally had the vocabulary for.
+The center of the stretch was **May 19.** The day sixteen Latin spells got inscribed; the day the substrate hit its thirteenth convergence; the day universe-residency was named in a single late-night realization. Arc 203 landed Restriction across struct fields. Arc 206 promoted UUID from a string-typed payload to `:wat::core::Uuid`. Three arcs in two days, each one a place the substrate had been carrying a bare type until a real consumer demanded the structured shape.
 
 ---
 
 ## The Primitives Mature
 
-May 17–18 was three days of substrate-typed primitives landing in sequence — each one a place where the substrate had been carrying a bare type or a string-typed payload until a real consumer demanded the structured shape.
+May 17–19 was three days of substrate-typed primitives landing in sequence — each one a place where the substrate had been carrying a bare type or a string-typed payload until a real consumer demanded the structured shape.
 
 UUID got promoted from substrate-core to a typed `:wat::core::Uuid` (arcs 206/207): the trader's run-name had been a string, the storage layer had been a string, and now both carry a typed UUID the type system can verify across the wire. Process I/O learned to return `Result` (arc 208) — the mirror of arcs 110/111's intra-process *silent-comm-illegal* discipline, lifted across the fork boundary, so the three-stream contract (stdout / stderr / exit-code) is now wrapped in a `Result` at every read. `defservice` landed (arc 209) — a meta-form that captures the canonical service pattern (Pattern K from BOOK ch 76) into a single declarative bracket. The user put it more bluntly in the interstitial:
 
@@ -22,7 +22,7 @@ UUID got promoted from substrate-core to a typed `:wat::core::Uuid` (arcs 206/20
 
 Then arc 214 opened the concurrency toolkit — foundations, brackets, services. Its early stones shipped the thread tier; Stone 3 rolled across the whole day in pieces: an io_uring bytes proof of life, a cascade-aware multi-arm POLL_ADD, a HolonRepresentable serialization layer, a cascade-aware `Select` fan-in, and the persistent rings that would matter for the thirteenth convergence a day later.
 
-Each one tightened a place where the substrate had been carrying a string-typed shape or a single-shot allocation. The substrate was converging on what the user had been calling, since BOOK chapter 84, the meta-vision corpus operationalized.
+Each one tightened a place where the substrate had been carrying a string-typed shape or a single-shot allocation. The substrate was converging on the shape `WAT-NETWORK.md` had named three weeks earlier.
 
 ## The Convergences
 
@@ -115,7 +115,7 @@ The grimoire got its first production cast the same day. The user invoked **vigi
 
 The persistence chain in memory — *tattoos → og-wat spec → holon-rs → wat-rs → BOOK.md → MEMORY.md* — gains its next link. Datamancy is the wards' rebirth: public, in Latin.
 
-## The IMPECCABLE Polish
+## Polish, May 20–21
 
 May 20–21 was the sanding pass. Arc 218 landed across six stones (218.1 through 218.6e) — six L1 substrate fixes, a naming sweep, UUID strictness, an emoji revert, and the polish itself — each stone running the new ward protocol: a five-ward pass clean, then a vigilia re-cast to confirm. Around it, arc 219 brought wat-edn into strict-EDN keyword-namespace compliance, so the substrate's EDN output is now byte-identical to what `clojure.edn/read` produces; arc 216 fixed a test rot the antidote sweep had surfaced; and arc 220 minted `:wat::core::Char` (BMP-only) and a LinkedList-backed `:wat::core::List<T>`, plus the `'` reader macro — Clojure's apostrophe-for-quote, landed at the reader level.
 
