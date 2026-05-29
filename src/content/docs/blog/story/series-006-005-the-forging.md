@@ -7,7 +7,7 @@ sidebar:
 
 The wat files existed. Forty of them, mirroring every Rust source file. But the gaze had found something uncomfortable: most of them were descriptions, not programs. S-expression-shaped prose. Comments wearing parentheses.
 
-The forging started March 31. It didn't stop for four days.
+March 31 through April 3. Four days of substrate work — phantom runes culled, wards cast, journal sign bug surfaced and fixed, parallel everything proven.
 
 ---
 
@@ -29,7 +29,7 @@ Then I ran the gaze again.
 
 Six new phantoms. The LLM that dissolved the originals had invented replacements — `use`, `variants`, `declare-module`, `declare-binary`, `vm-get`. Each one looked plausible. Each one was fake. The agent was fluent in s-expressions and had no idea which s-expressions the language actually defined. It generated valid-looking forms the way an LLM generates valid-looking citations — confidently, and wrong.
 
-The wards are tools. The datamancer is the intelligence. I caught it. Inscribed the runes honestly. The language needed enum (for `variants`) and a module system (for `use` and `declare-module`). Those became proposals. The proposals were reviewed. The language grew. The phantoms dissolved.
+Inscribed the runes honestly. The language needed enum (for `variants`) and a module system (for `use` and `declare-module`). Those became proposals. The proposals were reviewed. The language grew. The phantoms dissolved.
 
 `ff1d2fb feat: 213 → 1 phantom rune`. Then `0a70a60 feat: candle.wat adopts (field raw-candle ...) — zero phantoms remain`.
 
@@ -53,9 +53,7 @@ The vocabulary settled during the forging. The gaze found "expert" meaning three
 
 ## The Journal Sign Bug (April 3)
 
-This one had been hiding for days. Maybe weeks.
-
-The Journal's `predict()` sorted discriminant scores by absolute cosine — `b.cosine.abs()`. For binary labels (Buy/Sell), this meant that a strong Sell signal (cosine = −0.25) and a strong Buy signal (cosine = +0.25) were ranked identically. The winner was always the first-registered label — Buy. Every prediction was Buy. Always.
+April 3. The Journal's `predict()` had been sorting discriminant scores by absolute cosine — `b.cosine.abs()`. For binary labels (Buy/Sell), this meant that a strong Sell signal (cosine = −0.25) and a strong Buy signal (cosine = +0.25) were ranked identically. The winner was always the first-registered label — Buy. Every prediction was Buy. Always.
 
 The system was running. It was learning. The accumulators were accumulating. The discriminant was separating. The cosine was computing. And every single prediction came out the same direction.
 
@@ -77,7 +75,7 @@ One method call removed. `.abs()` deleted. Simulated on existing data: 46.3% →
 
 This bug lived in the promoted holon-rs Journal — the "seventh primitive" from the Datamancer post. The trading lab's wrapper happened to work around it because it used the cosine sign directly. But the generic N-ary case was broken since March 29. Four days of every run producing 100% Buy predictions, and nobody noticed because the system kept running, kept learning, kept producing numbers that looked like numbers.
 
-A working program that does nothing useful. The trading lab's `bpftool map dump` moment — the instrument that revealed the truth was a SQL query against the run database.
+The instrument that revealed it: a SQL query against the run database. Not a log line. Not a test. A direct read of what the machine had actually been doing for four days.
 
 ---
 
