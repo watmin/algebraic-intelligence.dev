@@ -22,18 +22,32 @@ Four phases: **study the lair** → **perceive the traps** → **draw the strike
 The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.md`) is the DUNGEON-CRAWL doc's worked example. Eight slices, each a room with one boss, the bosses ordered so each unlocks the next: S0 gate probe → S-A is-a hierarchy → S-A1 the arg-boundary check → S-B records as TypeDefs → S-C the macro split (base vs holonic) → S-D migrate callers → S-E inscription folds. May 26 finished through S-B.2.
 
 ```mermaid
-graph TD
-    S0(("S0<br/>gate probe")):::cleared
-    SA(("S-A<br/>is-a hierarchy")):::cleared
-    SA1["<b>S-A1</b><br/>the choke point<br/><i>827/0 PASS</i>"]:::today
-    SB1["<b>S-B.1</b><br/>records become types<br/><i>recordtype + TypeDef::Record</i>"]:::today
-    SB2["<b>S-B.2</b><br/>defrecord wire<br/><i>5/5 PASS</i>"]:::today
-    SC{{"S-C<br/>the macro split<br/>(base vs holonic)"}}:::pending
-    SD{{"S-D<br/>migrate callers"}}:::pending
-    SE{{"S-E<br/>inscription folds"}}:::pending
+graph TB
+    subgraph cleared_grp ["Cleared — pre-May 26"]
+        direction LR
+        S0(("S0<br/>gate probe")):::cleared
+        SA(("S-A<br/>is-a hierarchy")):::cleared
+        S0 ==> SA
+    end
 
-    S0 ==> SA ==> SA1 ==> SB1 ==> SB2
-    SB2 -.-> SC -.-> SD -.-> SE
+    subgraph today_grp ["May 26 — three stones lifted"]
+        direction LR
+        SA1["<b>S-A1</b><br/>the choke point<br/><i>827/0 PASS</i>"]:::today
+        SB1["<b>S-B.1</b><br/>records become types<br/><i>recordtype + TypeDef::Record</i>"]:::today
+        SB2["<b>S-B.2</b><br/>defrecord wire<br/><i>5/5 PASS</i>"]:::today
+        SA1 ==> SB1 ==> SB2
+    end
+
+    subgraph pending_grp ["Pending — fog of war"]
+        direction LR
+        SC{{"S-C<br/>the macro split<br/>(base vs holonic)"}}:::pending
+        SD{{"S-D<br/>migrate callers"}}:::pending
+        SE{{"S-E<br/>inscription folds"}}:::pending
+        SC -.-> SD -.-> SE
+    end
+
+    SA ==> SA1
+    SB2 -.-> SC
 
     classDef cleared fill:#1f5e3a,stroke:#5fcc7a,color:#bff6cb,stroke-width:2px
     classDef today fill:#1e4a7d,stroke:#7fb3ff,color:#dde9ff,stroke-width:3px
