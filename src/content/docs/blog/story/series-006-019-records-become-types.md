@@ -55,7 +55,7 @@ today_grp --> pending_grp
 
 classDef cleared fill:#1f5e3a,stroke:#5fcc7a,color:#bff6cb
 classDef today fill:#1e4a7d,stroke:#7fb3ff,color:#dde9ff
-classDef pending fill:#2a2a2a,stroke:#666,color:#999
+classDef pending fill:#2a2a2a,stroke:#666,color:#999,stroke-dasharray:5 3
 
 class S0 cleared
 class SA cleared
