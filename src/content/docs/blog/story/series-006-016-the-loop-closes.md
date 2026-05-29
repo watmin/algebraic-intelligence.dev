@@ -47,6 +47,16 @@ The arc closed the same day. The inscription that sealed it:
 
 > Arc 057 minted HolonAST for VSA encoding. Arc 143 used it for signature reflection. Arc 201 uses it for type reflection. The substrate's own internals run on themselves.
 
+```mermaid
+graph TB
+    A057["arc 057 — Feb<br/>mints HolonAST<br/>(VSA storage)"]
+    A143["arc 143 — May 3<br/>signature reflection"]
+    A201["arc 201 — May 16<br/>type reflection"]
+    A057 -->|same primitive| A143
+    A143 -->|same primitive| A201
+    A201 -. "storage IS reflection<br/>(loop closes)" .-> A057
+```
+
 One primitive, three uses across three months. Each use was the next caller demanding what the substrate had been ready to provide since the algebra closed under itself. The substrate isn't a runtime that hides its work and then asks a separate reflection layer to describe it. Its storage primitive IS its reflection primitive.
 
 ## The Bracket

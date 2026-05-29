@@ -104,6 +104,25 @@ Small numbers — 0.0019 at D=10,000 means the prototypes differ by ~0.19 in L2 
 
 trader3.rs was 1,326 lines of interleaved concerns. The extraction happened module by module: `treasury.rs` (balances, swaps, costs), `portfolio.rs` (equity, drawdown, phases), `market/manager.rs` (reads expert opinions, encodes panel shape), `market/observer.rs` (Journal + WindowSampler + proof gate), `risk/mod.rs` (five OnlineSubspace branches), `sizing.rs` (Kelly from the curve), `ledger.rs` (SQLite, append-only).
 
+```mermaid
+graph TB
+    O1[structure] --> M[Manager<br/>encodes panel shape]
+    O2[narrative] --> M
+    O3[momentum] --> M
+    O4[regime] --> M
+    O5[volume] --> M
+    O6[ ... ] --> M
+    M --> R[Risk Tree<br/>5 OnlineSubspace branches]
+    R --> S[Sizing<br/>Kelly from curve]
+    S --> T[Treasury<br/>swaps + ledger]
+    PG[Proof Gates<br/>52%/50%] -.->|earn or lose voice| O1
+    PG -.-> O2
+    PG -.-> O3
+    PG -.-> O4
+    PG -.-> O5
+    PG -.-> O6
+```
+
 `ce470cb rename: Expert → Observer — they perceive, they don't decide`
 
 The manager's Journal doesn't see candle data. It sees the expert panel — each observer's conviction, encoded as a linear scalar bound to named action atoms. Panel shape facts: agreement, energy (mean conviction), divergence (variance), coherence (pairwise cosine between discriminants). Context: ATR regime, discriminant strength, circular time encoding. A journal over journals. The fractal repeats.
