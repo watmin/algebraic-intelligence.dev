@@ -5,7 +5,7 @@ sidebar:
   order: 17
 ---
 
-March 27, afternoon. The 652k validation and the 107-atom expansion had landed that morning. By evening, 80+ commits would reshape the system from a monolith into an organization.
+March 27, afternoon. The 652k validation and the 107-atom expansion had landed that morning. By evening, 80+ commits had reshaped the system from a monolith into an organization.
 
 ---
 
@@ -25,7 +25,7 @@ At candle 2,000: 376 candles per second. At candle 50,000: 83 candles per second
 
 The fix was three deletions. Remove the struct. Remove the loop. Remove the summary. Throughput returned to 251/s, flat from start to finish.
 
-A thought that produces no signal is not inert. It occupies space. It accumulates state. It steals cycles from the thoughts that predict.
+A thought that produces no signal is not inert. It occupies space. It accumulates state.
 
 ---
 
@@ -46,7 +46,7 @@ Four specialized observers, each with a named vocabulary profile:
 
 Plus a **generalist** with the full vocabulary — the null hypothesis.
 
-`8bb590a feat: 120 new atoms from underdog + quant expert research` and `8a056da research: esoteric/forgotten TA — 78 more atoms from DSP, fractals, RQA, info theory` — the vocabulary exploded from 107 to 200+ atoms across the specialized profiles. DeMark Sequential, Choppiness Index, DFA alpha, Variance Ratio, Aroon, Fractal Dimension, Spectral Slope, Shannon Entropy Rate.
+`8bb590a feat: 120 new atoms from underdog + quant expert research` and `8a056da research: esoteric/forgotten TA — 78 more atoms from DSP, fractals, RQA, info theory` — the vocabulary grew from 107 to 200+ atoms across the specialized profiles. DeMark Sequential, Choppiness Index, DFA alpha, Variance Ratio, Aroon, Fractal Dimension, Spectral Slope, Shannon Entropy Rate.
 
 ---
 
@@ -134,7 +134,7 @@ Once both bugs were fixed: 30 BUY runners at +1.80%, 753 stops at −1.39%. Frac
 
 80+ commits. The system went from a monolith with one journal to an enterprise with six observers, a manager, a risk tree, a treasury, managed positions with stop/TP/runner phases, and proof gates. The dead visual code killed throughput. The SELL P&L bug made every SELL position look catastrophic. The exit direction bug made BUY stops invisible. Each lie found by querying the database — the instrument that reveals truth.
 
-None of this changed the primitives. Atom, bind, bundle, cosine, journal, curve. The enterprise is a composition, not a new invention.
+Six observers, a manager, a risk tree, a treasury. The primitives didn't change.
 
 ---
 

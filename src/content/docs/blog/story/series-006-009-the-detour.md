@@ -5,7 +5,7 @@ sidebar:
   order: 23
 ---
 
-The XX post ended April 19 with the Inscription class minted and Bundle's capacity guard wired. The substrate refused its own physics now — not by panic, but by typed value.
+The XX post ended April 19 with the Inscription class minted and Bundle's capacity guard wired. The substrate now enforced its own physics — typed value, not panic.
 
 Three days followed. Each day a substrate arc the prior arcs had been quietly demanding. None of them planned. All of them earned by the work that came before.
 
@@ -79,13 +79,13 @@ Each worker is a tail-recursive wat program. Arc 003 was the prerequisite arc 00
 
 The arc surfaced two lessons. The book earned both.
 
-### Absence is signal
+### The typealias gap
 
 Implementation tripped on a type-check failure in `infer_positional_accessor`. Typealiases weren't expanding at unification. wat-rs had two half-passes — `apply_subst` for type variables, `expand_alias` for aliases — and every shape-inspection site had to chain them manually. Half did; half didn't.
 
 The cheap move was a one-site patch plus a BACKLOG note listing the other sites. The honest move was `reduce` — the single canonical type-normalization pass every mature type system has. The substrate had been missing it the whole time. The gap pointed at real substrate work, not at a patch.
 
-### Verbose is honest
+### The composer rejected
 
 The design doc sketched a `pipeline` composer — a macro that would wire source through stages without the `let*` threading. The composer would eliminate per-stage type annotations and named bindings.
 
@@ -139,7 +139,7 @@ The round-trip test proved the point:
 
 An outer wat program spawns a subprocess running inner wat code. The inner code prints a wat *expression* — source text — to its stdout. The outer captures the stdout string and hands it to `eval-edn!`. `eval-edn!` parses the expression and evaluates it in the outer runtime. **42 lands.**
 
-Programs generate programs. Programs run programs. Programs evaluate the output of programs. The *programs-are-thoughts* commitment from Chapter 10 — operational at the testing layer.
+Programs generate programs. Programs run programs. Programs evaluate the output of programs.
 
 **The macro that argued for the substrate.** Slice 3 shipped six `:wat::test::*` forms — `assert-eq`, `assert-contains`, `assert-stdout-is`, `assert-stderr-matches`, plus `:wat::kernel::assertion-failed!` that `panic_any`s with an `AssertionPayload` the sandbox downcasts.
 
@@ -260,7 +260,7 @@ The language can now verify itself through the harness it wrote. Programs genera
 
 The runtime is no longer coupled to its own filesystem location. The substrate shrank by 356 lines and became honester.
 
-The wat-rs grow-up arc.
+Every long-running program now runs in constant stack. The runtime severs from its own binary path. The language tests itself.
 
 ---
 

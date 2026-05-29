@@ -5,11 +5,11 @@ sidebar:
   order: 30
 ---
 
-The Discipline ended with arc 170 still in flight and "i want to add argv to main" 277 commits deep. May 16 was supposed to be cleanup — a week of queued slices landing one after another. Instead it became the substrate's biggest single day since the recognition cluster of chapters 36–44, and the day it caught itself in a mirror.
+The Discipline ended with arc 170 still in flight and "i want to add argv to main" 277 commits deep. May 16 was supposed to be cleanup — a week of queued slices landing one after another. Instead it became the substrate's biggest single day since the recognition cluster of chapters 36–44, and the day the substrate's own types ran through the same primitive it uses to describe everything else.
 
 The center of it: **the strange loop closes.** HolonAST — the structure minted three months ago to encode VSA expressions — got turned on the substrate's own types. The same primitive the algebra was built on became the primitive its reflection runs through. The thing the substrate stores is the thing it uses to describe itself.
 
-Around that recognition, the day made three classes of failure structurally impossible and finally gave the substrate's concurrency a surface a human would actually reach for.
+Around that recognition, arc 170 landed its bracket combinator — the concurrency surface the substrate had been missing.
 
 ---
 
@@ -47,7 +47,7 @@ The arc closed the same day. The inscription that sealed it:
 
 > Arc 057 minted HolonAST for VSA encoding. Arc 143 used it for signature reflection. Arc 201 uses it for type reflection. The substrate's own internals run on themselves.
 
-One primitive, three uses across three months. Each use was the next caller demanding what the substrate had been ready to provide since the algebra closed under itself. This is what *programs as coordinates* (BOOK ch 54) meant operationally: the substrate isn't a runtime that hides its work and then asks a separate reflection layer to describe it. Its storage primitive IS its reflection primitive. No translation tax — it describes itself in the same vocabulary it uses to describe everything else.
+One primitive, three uses across three months. Each use was the next caller demanding what the substrate had been ready to provide since the algebra closed under itself. The substrate isn't a runtime that hides its work and then asks a separate reflection layer to describe it. Its storage primitive IS its reflection primitive.
 
 ## The Bracket
 
@@ -64,7 +64,7 @@ The day's other anchor: arc 170 — running since "i want to add argv to main" �
   coordinator)
 ```
 
-Getting D2 to run took one more fix. The macro splice (arc 200) handled `WatAST::List` but not `WatAST::Vector` symmetrically, so a callsite using `[...]` bracket syntax tripped expansion. The substrate had locked brackets as its Clojure-faithful surface back in arc 168 but hadn't taught the splice runtime to honor it; arc 200 relaxed it — `Vector ↔ List` symmetry at expand time, one commit, D2 unblocked. A sibling arc went the other way the same day: arc 199 proposed parametric keywords in defmacro, and the user's verdict was REJECT — the existing surface already covered the case once the call form was honest. The arc that doesn't ship is also a decision.
+Getting D2 to run took one more fix. The macro splice (arc 200) handled `WatAST::List` but not `WatAST::Vector` symmetrically, so a callsite using `[...]` bracket syntax tripped expansion. The substrate had locked brackets as its Clojure-faithful surface back in arc 168 but hadn't taught the splice runtime to honor it; arc 200 relaxed it — `Vector ↔ List` symmetry at expand time, one commit, D2 unblocked. A sibling arc went the other way the same day: arc 199 proposed parametric keywords in defmacro, and the user's verdict was REJECT — the existing surface already covered the case once the call form was honest.
 
 Then the recognitions came in a cascade, each one deeper than the last. Mid-design, the user saw the first:
 
@@ -84,15 +84,7 @@ The counter-actor proof landed at both tiers — thread and process, same interf
 
 ## What Closed Today
 
-Three things, and underneath them one.
-
-**The loop.** The substrate's reflection runs through its own storage primitive — HolonAST stores HolonAST, and HolonAST describes it.
-
-**The discipline.** Restriction became a primitive (arc 198), a static walker started catching the most common deadlock class (202), and struct accessors got the same lock bindings had (203). Three classes of failure made structurally unavailable in a single day.
-
-**The bracket.** Arc 170's Stones A through D2 turned two-spawn into an actor-model surface with typed peer channels — Kay-OOP recognized, Erlang/OTP arrived at independently.
-
-One day, ten arcs moving, roughly fifty commits and a stack of sealed inscriptions. But the count isn't the story. The story is that the substrate stopped being a thing under construction and became a thing that describes itself, in its own words. Arc 057 minted HolonAST. Arc 143 made signatures reflectable. Arc 201 made types reflectable. Three months, one primitive, and the loop closes.
+One day, ten arcs moving, roughly fifty commits and a stack of sealed inscriptions. Arc 057 minted HolonAST. Arc 143 made signatures reflectable. Arc 201 made types reflectable. Three months, one primitive, and the loop closes.
 
 ## Likely Contributions to the Field
 

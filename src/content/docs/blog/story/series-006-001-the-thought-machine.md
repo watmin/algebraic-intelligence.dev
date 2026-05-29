@@ -7,7 +7,7 @@ sidebar:
 
 The spectral firewall was done. Self-calibrating, 0.1% FPR, no hardcoded parameters. The DDoS work had proven every claim the project set out to prove: algebraic recognition on commodity hardware, at line rate, with no training data and no GPU.
 
-Time to point it at something harder.
+The DDoS work was done. The same algebra needed a new domain.
 
 ---
 
@@ -15,7 +15,7 @@ Time to point it at something harder.
 
 At AWS, the architecture had a name nobody understood: "shield cognition." VSA-based anomaly detection that thinks about network traffic the way a security expert does. Not pattern matching. Cognition. Named relationships between packet fields, compositional encoding, discriminant-based detection. The pitch was rejected. "Expert systems can't outperform LLMs," the people with ML backgrounds told me.
 
-After leaving AWS, the tools became inaccessible but the ideas remained. Markets became the proving ground — not because I was a trader, but because markets provide an adequate reference metric for the underlying thesis: that structured cognition over named relationships outperforms generic pattern matching. DDoS detection and trading are structurally identical. A DDoS attack is an anomaly on a trend line. A market reversal is the same signal in a different stream. The encoding is the same. The discrimination is the same. The only difference is the vocabulary.
+After leaving AWS, the tools became inaccessible but the ideas remained. Markets became the proving ground — not because I was a trader, but because markets provide an adequate reference metric for the underlying thesis: that DDoS detection and trading are structurally identical. A DDoS attack is an anomaly on a trend line. A market reversal is the same signal in a different stream. The encoding is the same. The discrimination is the same. The only difference is the vocabulary.
 
 BTC was the obvious choice. 652,608 five-minute candles from January 2019 to March 2025. Six years of 24/7 data — bull markets, bear markets, the COVID crash, the 2021 euphoria, the Luna implosion, the FTX collapse. And a pre-computed SQLite database with 20 indicators per candle: OHLCV, SMAs (20/50/200), Bollinger Bands, RSI, MACD, DMI/ADX, ATR.
 
@@ -27,7 +27,7 @@ I need to be honest about this part. I didn't know this was going to work.
 
 I'd tried this before — years ago, multiple times — and every attempt had burned. The "wat language" — the idea that you could encode expert cognition as named algebraic objects — had been living on my GitHub as a relic for about a year. Grok conversation links, a proof-of-concept continuation function. The ideas couldn't be built yet.
 
-But that's not where I started. I started with pixels.
+The first encoding was not thought. It was pixels.
 
 The viewport encoding was the obsession. A 48-candle chart rendered as a pixel grid, encoded as a 10,000-dimensional vector. 25 pixel rows per panel, 4 panels (price+volume, RSI, MACD, DMI/ADX), 23 color tokens — green/red solid bodies, green/red wicks, doji, SMA lines in three colors, Bollinger Bands, volume bars, RSI zones, MACD histogram, DMI lines. The same encoding that worked for JSON documents and HTTP requests — surely it would capture the patterns a human trader sees in a chart.
 
@@ -62,8 +62,6 @@ trader3's commit message (`915487c`) is worth quoting:
 > P&L bug fixed: record_trade now uses outcome_pct (signed price return at first threshold crossing), not peak_abs_pct. Previous +228% was fiction.
 
 The +228% from an earlier run was a lie — the P&L calculation used the peak absolute price change instead of the actual directional return. The fix dropped the headline number from +228% to +5.49%. Honest numbers are smaller numbers. But +5.49% with 53.6% win rate on 10,539 trades was real.
-
-I genuinely thought the project was going to join the pile of attempts that burned in a fiery death.
 
 ---
 
@@ -164,7 +162,9 @@ Candle stream
 
 Thought alone: **57.1%**. Real signal. `d' = 0.734`. But 57.1% with zero selectivity — trading every candle — is a thin edge. The question: is there a way to know *when* the system is right?
 
-*(The deeper meaning — cognition over perception, the vocabulary IS the model, functional programming over thought — is in [The Book](/blog/book/).)*
+*(These themes carry into [The Book](/blog/book/).)*
+
+The signal was in the vocabulary.
 
 ---
 

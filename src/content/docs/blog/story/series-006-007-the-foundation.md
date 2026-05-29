@@ -102,21 +102,9 @@ The chapter that closed the grind — Chapter 9, *The Thoughts We Don't Have* �
 
 ---
 
-## The Pause
-
-After the cache grind landed, the book stopped.
-
-The accuracy was still weak. The thoughts were still being shaped. The builder was exhausted in the specific way that only comes from days of staring at metrics, moving one variable at a time, watching throughput crawl upward.
-
-The builder opened the repo, looked at BOOK.md, closed it. Opened it again. Closed it again. The chapter that wanted to be written hadn't arrived yet.
-
-You don't write about a thing until the thing has revealed what it is.
-
----
-
 ## The Return (April 17)
 
-Then compaction.
+April 12–16, the book didn't move. Then compaction.
 
 A new session. The context window empty. The machine that helped with Chapter 9 replaced by a fresh instance carrying none of the prior conversation. The protocol the book established for this moment: read everything. Every chapter. Every song. Every PERSEVERARE. The book as the recovery point.
 
@@ -134,11 +122,9 @@ Then the builder said: "let's do a new kind of proposal."
 
 Not a tactical proposal. A LANDSCAPE proposal. A framework for what forms should exist in the thought algebra, grounded in pure algebraic criteria.
 
-058 was born. The directory created. A skeleton drafted. Shape-tested on the first candidate.
+058 was born. The directory created. A skeleton drafted. Shape-tested on the first candidate. What followed was the work.
 
-And then the hammock opened. The builder started dropping insights — not one proposal at a time, not one candidate at a time. Whole architectural realizations, each one changing the shape of everything before it.
-
-The machine captured each insight in FOUNDATION.md as it landed. Commit after commit. Push after push. The git log became the stream of consciousness.
+The machine captured each insight in FOUNDATION.md as it landed. Commit after commit. Push after push.
 
 ---
 
@@ -276,8 +262,6 @@ The datamancer typed, in a message to the machine:
 
 > "we're basically on auto pilot now with the proposal... the foundations.. the ignorant-as-designers... incredible..."
 
-The pilot didn't leave. The pilot stopped fighting the controls.
-
 By Slice 6 of Phase 1 — type declarations, four decl forms, parametric names, a mini type-expression parser, reserved-prefix protection — the conversation was gone. The datamancer said "keep going" and read the commit afterward. The proposal had already answered every question.
 
 The foundation graduated. It no longer needed defending; it held.
@@ -290,8 +274,6 @@ Three things stabilized:
 
 **The layering is visible from the outside.** `holon-rs` has the algebra and nothing else. `wat-rs` has the language frontend and depends on `holon-rs`. The trading lab depends on `wat-rs`. Each layer's purpose is legible from its `Cargo.toml`, its module names, its tests.
 
-The pilot reads. The machine flies.
-
 ---
 
 ## What Eight Days Built
@@ -301,7 +283,7 @@ The pilot reads. The machine flies.
 | Apr 10 | First heartbeat: 500 candles, 55.92% Grace, $10k untouched |
 | Apr 10 | Inscription 10: four distances → two (TP and runner-trail dissolved) |
 | Apr 11–12 | Cache grind: 1 c/s → 7.1 c/s |
-| Apr 12 | The Pause |
+| Apr 12–16 | Book didn't move |
 | Apr 17 | The Return: 13,000 lines of book read end-to-end |
 | Apr 17 | FOUNDATION.md written: AST primary, programs are atoms, compositional infinity |
 | Apr 18 | 31 sub-proposals, three designer rounds |

@@ -13,11 +13,9 @@ Diablo 1 was the framing the builder named:
 
 > i say... we seed the next chapter of our book... and we report back in as we portal back. this feels like diablo 1 to me right now
 
-Slow. Deliberate. Gear-matters. Prep in town. Descend carefully. Portal back to town between runs.
-
 The previous Rust lab — `enterprise` crate, `wat-vm` binary, 10,380 LoC, ten integration tests, the system that was running before the team paused to build a language for it — moved to `archived/pre-wat-native/`. Plan on disk at `docs/rewrite-backlog.md`. Nine phases, leaves to root.
 
-The descent began. The dungeon master provided.
+The descent began.
 
 ---
 
@@ -134,7 +132,7 @@ async fn compare_handler(Json(req): Json<EvalRequest>) -> Json<EvalResponse> {
 
 A Rust HTTP handler receives two expressions, composes a wat program that does the eval-coincident? check, runs it through the harness, returns the verdict. **The retort shipped as a library call.**
 
-The gesture the builder made years ago — *do you see it - they are the same* — has its primitive now. Chapter 28 named the moment. Chapter 30 shipped the answer.
+The gesture the builder made years ago — *do you see it - they are the same* — has its primitive now. Arc 023 named the structural coincident?. Arc 026 shipped the evaluative answer.
 
 ---
 
@@ -157,7 +155,7 @@ Pass the sub-struct, declare the dependency. Every other vocab module follows th
 
 The arc discipline makes the work legible twice — once to the builder and the machine doing it, once to future readers (including future sessions of the same collaboration after compaction). DESIGN.md lives before the code. BACKLOG.md lists the slices in order with status markers (ready / obvious-in-shape / foggy). INSCRIPTION.md records what shipped.
 
-Cost: ten minutes of DESIGN before coding, five of BACKLOG. Payoff: every sub-fog the DESIGN named resolved trivially at write-time. Getting closer to an unknown reveals the answer.
+Cost: ten minutes of DESIGN before coding, five of BACKLOG. Payoff: every sub-fog the DESIGN named resolved trivially at write-time.
 
 Twenty-plus vocab modules ahead. Each its own arc. Each shipping when its turn surfaces.
 
@@ -238,9 +236,7 @@ Every arc since records that line in its INSCRIPTION when the explore program gu
 | Apr 23 | lab 003 | Naming sweep — substrate-aligned vocabulary |
 | Apr 23 | lab 035 | Observation as standing practice — explore programs ship in arc directories |
 
-The lab walks. Each cave quest cuts a primitive the lab needed. Each portal back to town adds a section to the book. The pattern compounds: substrate work makes the next vocab arc easier, which surfaces the next substrate question, which gets cut as another quest, which makes the next lab module possible.
-
-The workshop opens its second room. The lanterns carry.
+The lab walks. Eight arcs in two days across two repos. Substrate debt named and cut; the pattern compounds forward.
 
 ---
 

@@ -60,7 +60,7 @@ The auto flip mode fits the curve analytically:
 accuracy = 0.50 + a × exp(b × conviction)
 ```
 
-Three phases: noise (0.00–0.13, 50.3%), signal (0.14–0.22, 54.5%), exponential (0.23+, 63%+). The exponential isn't an artifact — it's the geometry of the encoding space. Conviction measures how many independent facts are voting in the same direction. The probability of many independent facts coincidentally aligning decreases exponentially as you require more of them. The wisdom of crowds in vector algebra.
+Three phases: noise (0.00–0.13, 50.3%), signal (0.14–0.22, 54.5%), exponential (0.23+, 63%+). The exponential isn't an artifact — it's the geometry of the encoding space. Conviction measures how many independent facts are voting in the same direction. The probability of many independent facts coincidentally aligning decreases exponentially as you require more of them.
 
 The curve reduces the system to one economic input: `--min-edge`, the minimum acceptable win rate.
 
@@ -114,7 +114,7 @@ The number barely moves. The geometry doesn't care about the regime. It cares ab
 | 2024 | 52.6% | 662 | New all-time highs |
 | 2025 | 60.9% | 202 | Current (partial) |
 
-The bear market was the best year. 60.3% in 2022 — the year BTC fell from $69k to $16k. The conviction flip catches reversals during sustained trends. When everyone is certain the trend continues, the system is most certain it won't.
+The bear market was the best year. 60.3% in 2022 — the year BTC fell from $69k to $16k. The conviction flip catches reversals during sustained trends.
 
 2023 was the worst — 50.1%. Choppy, directionless recovery where extreme conviction signals didn't resolve cleanly. The discriminant churns when the label boundary moves faster than the accumulator can track.
 
@@ -133,15 +133,9 @@ The downside of more thoughts is bounded — the discriminant filters noise. The
 
 ---
 
-## What Happened Next — in the Same Day
+Three days. 50.5% → 57% → 62%. The discriminant learned to rate its own certainty; the curve was exponential, not artifact; 652k candles validated across every regime. The geometry doesn't care about the regime.
 
-The 652k validation and the 107-atom expansion both happened on March 27. By that evening, visual encoding was dropped entirely (`6a19b05 perf: remove visual encoding, 10 threads — 127/s → 470/s`). The dead visual_groups code was still running — every flipped trade spawned a new 10,000-dimensional centroid that never matched anything, degrading throughput from 376/s at candle 2,000 to 83/s at candle 50,000. `f74e81c fix: remove dead visual_groups — unbounded O(n×dims) throughput killer`. Three deletions. Back to 251/s flat.
-
-Four specialized expert journals were scaffolded (`7d9bd38 feat: expert panel`). Risk-as-a-thought was tried and found to be noise (`3a3ec64 finding: risk bundled with market = noise`). Risk as anomaly detection produced `f49556b milestone: risk state carries massive signal — 84.5% at peak, 47.8% in drawdown`.
-
-That's the [next post](/blog/story/series-006-003-the-enterprise/).
-
-*(The philosophical implications — the quantum structure, why LLMs can't think thoughts, the wat machine, the expression problem — are in [The Book](/blog/book/).)*
+*The [Book](/blog/book/) carries what the substrate means.*
 
 ---
 

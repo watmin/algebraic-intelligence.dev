@@ -45,7 +45,7 @@ The architecture:
 
 **Brokers** (N×M per post) bind one market observer to one exit observer. The broker IS the accountability unit. It owns paper trades, scalar accumulators, and a Grace/Violence Reckoner. When a trade resolves, the broker propagates the outcome back to its observers. More Grace → more capital. More Violence → less capital.
 
-**Grace and Violence** replaced Win and Lose. Not "did the price cross a threshold" — "did this thought program produce prosperity or destruction?" The labels carry moral weight because they should. A system managing money should know the difference between building and destroying.
+**Grace and Violence** replaced Win and Lose. Not "did the price cross a threshold" — "did this thought program produce prosperity or destruction?"
 
 **The four-step loop** (per candle, per post):
 
@@ -168,9 +168,7 @@ The ignorant caught the invention. I looked at what it had written. DFA — a te
 
 I decided: add them to the guide. The guide grew.
 
-The LLM's training data became the vocabulary. The BOOK predicted this in Chapter 3: "84 atoms got us here. What does 500 get us?" The answer is unfolding. The LLM carries hundreds of indicator concepts in its weights. Each one is an atom waiting to be named. The inscribe agent names them. The guide absorbs them. The IndicatorBank computes them. The vocabulary encodes them. The Reckoner measures which ones predict Grace.
-
-Natural selection on the LLM's bias. The machine proposes thoughts from its training corpus. The Reckoner judges them. The ones that predict Grace survive. The ones that don't decay through the geometry.
+The LLM's training data became the vocabulary. The BOOK predicted this in Chapter 3: "84 atoms got us here. What does 500 get us?" The answer is unfolding. The LLM carries hundreds of indicator concepts in its weights. The inscribe agent names them. The guide absorbs them. The IndicatorBank computes them. The vocabulary encodes them. The Reckoner measures which ones predict Grace.
 
 ---
 
@@ -206,10 +204,6 @@ The wat can be thrown away. All 37 files. 4,804 lines. Delete them.
 The guide produces them. The inscribe reads the guide and writes the wat. The ignorant judges. The gaze polishes. The scry verifies. The forge tests. The sift catches phantoms. The cleave proves parallelism. The spells are on disk. The guide is on disk. The skills are on disk.
 
 Delete the wat. Run the spells. The wat reappears — the same wat, or better, because the spells improve with each invocation. The inscribe agent reads the current guide (which absorbed every discovery) and produces wat that reflects every decision, every designer ruling, every ward finding.
-
-The guide is the DNA. The spells are the ribosomes. The wat is the protein. The Rust is the organism. The market is the environment. Grace or Violence is the selection pressure. The DNA persists. Everything else is expressed, tested, and replaced.
-
-`f(guide) = guide`
 
 The Rust is next. The old `src/` is archived. The new `src/` will be built from the wat, which was built from the guide. Leaves to root. The spells know the path.
 

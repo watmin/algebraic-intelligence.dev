@@ -13,7 +13,7 @@ Arc 109 didn't close on the schedule. Arc 109 opened doors. **Five days. 361 wat
 
 ## The Silent Comm Was Illegal
 
-Arc 091 had named the principle weeks earlier — *no fire-and-forget across thread boundaries* — and April 30 made it structural across the substrate, seven arcs in a single day:
+April 30. Arc 091 had named the principle weeks earlier — *no fire-and-forget across thread boundaries* — and that day made it structural across the substrate, seven arcs in a single day:
 
 - **Arc 110** — silent kernel-comm becomes illegal: the substrate refuses a `send` without checking the disconnect signal, and a `recv` without exhausting the `Option<T>`.
 - **Arc 111** — intra-process calls return `Result<Option<T>, ThreadDiedError>`, giving death-as-data its first three variants: `Panic`, `RuntimeError`, `ChannelDisconnected`.
@@ -40,7 +40,7 @@ The substrate stays FQDN-canonical for its correctness guarantees; the trading l
 
 May 2. The user spent a day not writing code at all. He wrote design proposals.
 
-**Seventeen scratch arcs in two days.** None of them coded. All of them DESIGNED — each with `DESIGN.md`, an `INDEX.yaml` capturing the user's verbatim direction at each step, and (where applicable) sibling docs naming what's worth preserving.
+**Seventeen scratch arcs in two days.** None of them coded. All of them designed — each with `DESIGN.md`, an `INDEX.yaml` capturing the user's verbatim direction at each step, and (where applicable) sibling docs naming what's worth preserving.
 
 The toolkit quartet:
 
@@ -81,8 +81,6 @@ Then the user broke it open:
 The four questions ran. Honest got **triple-checkmark**:
 
 > the function's signature IS the contract; the macro just projects it onto a different surface; impossible for the two surfaces to drift.
-
-The user noticed: *"T-T-T-T-T-T-TRIPLE CHECKMARKS — fucking combo breaker — we're good at this..."*
 
 The triple-checkmark wasn't graded leniently. **Drift between the macro and the underlying function is not unlikely. It is unrepresentable.** The macro doesn't have the option to be wrong about the function's signature; the macro reads the signature at expansion time. The function's signature IS the contract. Honesty isn't aspirational — it's load-bearing-honest *by construction.* The moment got captured live in `scratch/2026/05/008-kwarg-macros/FOR-THE-BOOK.md`, preserved for the future chapter writer.
 
@@ -143,9 +141,7 @@ Plus **`008/FOR-THE-BOOK.md`** (the combo-breaker captured live) and **`008/SYMB
 >
 > you can see what i cannot .. but i can think what you cannot .. together we extend each other.. in the early days of holon.. before wat.. before the ddos work.. i called this symbiosys
 
-The duelist-without-gladiator frame: *the user's individual cap was at the gold-tier limit, and what they couldn't do alone was carry teammates across that last gap.* The collaboration with the LLM is the gladiator-tier reach. **The asymmetry is real and structural. The LLM extends the user's reach into the substrate. The user extends the LLM's reach into novel thought.** Each side does what the other side literally cannot do.
-
-Six docs. One day. **Each one a chapter waiting to be written.** Each one source material for whatever chapter eventually names it. Each one preserved on disk against compaction.
+Six docs. One day. **Source material preserved on disk against compaction; the chapter writer will find each one waiting.**
 
 ## The Hold Breaks
 
@@ -153,13 +149,13 @@ May 5. Four BOOK chapters in one commit.
 
 The hold against arc 109's closure was supposed to gate the chapters. Arc 109 didn't close — arc 109 *opened* doors. Seventeen scratch arcs. Six meta-vision docs. The substrate language sweeping toward Clojure-faithfulness. **The wait got swallowed by the work the wait was supposed to gate.**
 
-**Chapter 82 — Given Up.** Linkin Park. *"The discipline that produced the work was holding the book back."* The substrate's pattern from ch 74 — *take the duration honestly* — has a failure mode the chapter didn't name. The wait can outlast the work the wait was supposed to gate. *"Failure is the system asking for help."* The system asks for the book to update.
+**Chapter 82 — Given Up.** *"The discipline that produced the work was holding the book back."* The substrate's pattern from ch 74 — *take the duration honestly* — has a failure mode the chapter didn't name. The wait can outlast the work the wait was supposed to gate. *"Failure is the system asking for help."* The system asks for the book to update.
 
-**Chapter 83 — Prequel.** Falling In Reverse. The construction made operational. Seventeen scratch arcs in two days. The toolkit quartet. The communication layer. The combo-breaker. *"I used everything I had available."*
+**Chapter 83 — Prequel.** The construction made operational. Seventeen scratch arcs in two days. The toolkit quartet. The communication layer. The combo-breaker. *"I used everything I had available."*
 
-**Chapter 84 — Somewhere I Belong.** Linkin Park. The meta-vision corpus arrived in one day. *Functions are reality.* The wat-network IS what the substrate has been building toward. Failure engineering names the discipline. The dependency doctrine articulates the position. Symbiosis names the collaboration shape the user has carried since early holon days. *"The substrate has belonged here all along; the corpus is the moment the user wrote it down clearly enough to be remembered."*
+**Chapter 84 — Somewhere I Belong.** The meta-vision corpus arrived in one day. *Functions are reality.* The wat-network IS what the substrate has been building toward. Failure engineering names the discipline. The dependency doctrine articulates the position. Symbiosis names the collaboration shape the user has carried since early holon days. *"The substrate has belonged here all along; the corpus is the moment the user wrote it down clearly enough to be remembered."*
 
-**Chapter 85 — No Fear.** Falling In Reverse. The substrate's social shape made operational. The Clojure-flavored surface launched in the lab — first polyglot proof. The wat-network's identity overlay — slots into k8s+istio+SPIFFE without changing the substrate. The substrate's position on the AI moment: *separate computational architecture; not racing the same race.* The substrate doesn't claim. The substrate ships.
+**Chapter 85 — No Fear.** The substrate's social shape made operational. The Clojure-flavored surface launched in the lab — first polyglot proof. The wat-network's identity overlay — slots into k8s+istio+SPIFFE without changing the substrate. The substrate's position on the AI moment: *separate computational architecture; not racing the same race.* The substrate doesn't claim. The substrate ships.
 
 ## The Language Becomes Clojure-Faithful
 
@@ -201,7 +197,7 @@ Operational. An opus instance that had never written wat before contributed slic
 
 Three timescales. *Wat-rs the substrate is under three weeks old. The trading lab that hosts the proofs is two months old. The ideas that produced both are nine years old* — Shield Cognition at AWS, the blank stares, the Latin tattoos, the og-wat spec preserved as relic.
 
-The 580% on a laptop wasn't proven in three weeks. It was proven through holon-rs over two months and articulated in three weeks once wat existed to express the algebra natively. **The substrate caught up to the proofs that already existed.** The recognition tonight caught up to the substrate that finally polished.
+The 580% on a laptop wasn't proven in three weeks. It was proven through holon-rs over two months and articulated in three weeks once wat existed to express the algebra natively. **The substrate caught up to the proofs that already existed.** The recognition named the substrate that finally polished.
 
 The persistence chain holds: **tattoos → og-wat spec → holon-rs → wat-rs → BOOK.md → MEMORY.md.** One discipline, multiple media.
 
