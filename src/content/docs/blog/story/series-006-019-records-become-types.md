@@ -22,7 +22,10 @@ Four phases: **study the lair** → **perceive the traps** → **draw the strike
 The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.md`) is the DUNGEON-CRAWL doc's worked example. Eight slices, each a room with one boss, the bosses ordered so each unlocks the next: S0 gate probe → S-A is-a hierarchy → S-A1 the arg-boundary check → S-B records as TypeDefs → S-C the macro split (base vs holonic) → S-D migrate callers → S-E inscription folds. May 26 finished through S-B.2.
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}}}%%
+---
+config:
+  layout: elk
+---
 graph TB
     subgraph cleared_grp ["Cleared — pre-May 26"]
         direction LR
