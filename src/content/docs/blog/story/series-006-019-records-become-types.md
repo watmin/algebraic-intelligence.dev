@@ -5,27 +5,25 @@ sidebar:
   order: 33
 ---
 
-The First Intermission signed off May 25 with the records-aren't-types disease named, the typeunion-utilization shape locked, and arc 237's is-a hierarchy mechanism shipped late as Stone S-A. May 26 was the first day of the cure — three stones shipped (S-A1, S-B.1, S-B.2), one methodology inscribed at the substrate root, one mid-day design correction, one momentum-ordering doctrine, three songs catalogued, and the seventeenth convergence named.
+The First Intermission signed off May 25 with the records-aren't-types disease named, the typeunion-utilization shape locked, and arc 237's is-a hierarchy mechanism shipped late as Stone S-A. May 26 was the first day of the cure — three stones shipped (S-A1, S-B.1, S-B.2), one methodology inscribed at the substrate root, one mid-day design correction, one momentum-ordering doctrine, and the seventeenth convergence named.
 
 Eighteen commits landed across the day. The center of the work was the records boss-map — the slices arc 237 would carry to cure the disease, drawn before the slicing began. The DUNGEON-CRAWL methodology gave the substrate a way to plan an arc as a dungeon-crawl: each stone a room with one boss, the bosses ordered so the loot from each unlocks the next. The records-as-first-class-types boss-map named eight slices in sequence. May 26 finished the first three.
 
 ---
 
-## DUNGEON-CRAWL — the Methodology
+## May 26 — DUNGEON-CRAWL — the Methodology
 
-`docs/DUNGEON-CRAWL.md` landed at the substrate root mid-stretch — the distilled pattern for how the orchestrator (Inquisitor) and Sonnet (Shadowdancer) build the substrate, named after the framing the user had been using since arc 170: *"we've been in the 170 dungeon for a looooooonnggg time."* The doc is the method; the failure-mode catalog stays in the recovery doc. The creed at the top, the doctrine for everything that follows:
+`docs/DUNGEON-CRAWL.md` landed at the substrate root mid-stretch — the distilled pattern for how the orchestrator (Inquisitor) and Sonnet (Shadowdancer) build the substrate, named after the framing the user had been using since arc 170: *"we've been in the 170 dungeon for a looooooonnggg time."* The creed at the top, the doctrine for everything that follows:
 
 > Slow is smooth, smooth is fast. We study the enemy, their lair, their rooms, their traps — and we engineer the kill before we strike. The crawl IS the work; a ~15-minute probe is cheaper than a 50-minute failed flight. We strike to kill: a stone ships one-shot, green, load-bearing test proven.
 
-Four phases. **Phase 1 — study the lair:** read the disk before proposing; grep the backing structures before any claim; dig before you mint (the substrate is almost always sufficient already, ~17 self-convergences where a "new" primitive turned out to exist); map the rooms as exact `file:line` regions. **Phase 2 — perceive the traps:** the FM 2-bis probe, committed before the BRIEF, fails pre-stone on exactly the gap — everything around the gap type-checks cleanly, so the failure is unambiguous; if the probe can't isolate the gap, the substrate isn't ready and the substrate-extension stone files first. **Phase 3 — draw the strike:** five artifacts in order — sub-DESIGN (the room map with affirmative out-of-scope-equals-REJECTED, never "deferral"), FM 2-bis probe (committed), BRIEF (read-in-order with `file:line`, implementation sketch, numbered STOP triggers naming the correct path, prior SCORE cited for shape), EXPECTATIONS (independent scorecard + calibration band + trap-doors), SCORE (written after an independent local re-run, mirroring the prior stone's shape). **Phase 4 — the kill:** re-run the suite for touched modules before spawning, spawn `model:"sonnet"` background with `ScheduleWakeup` at 2× upper-bound, SCORE against the orchestrator's own re-run, commit on green.
+Four phases: **study the lair** → **perceive the traps** → **draw the strike** → **the kill**. Five stone artifacts per phase: sub-DESIGN, FM 2-bis probe, BRIEF, EXPECTATIONS, SCORE.
 
-The doctrines beneath the method got named in one block: the four-questions atomic YES/NO (Obvious+Simple+Honest gate before UX); failure-engineering as a ladder (convention → construction-time → type-system-impossible); entity-kind not type-system-feature (reach for defclause/dispatch/macro/hierarchy edge, not "we need generics"); HARD CUT (retire by deletion, no shims); one canonical path per task; convergence as validation. The spells from `~/work/holon/datamancy/` — intueri for naming, vigilia for the defensive pass — get named as cast-when-the-concern-surfaces.
-
-The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.md`) is the DUNGEON-CRAWL doc's worked example. Eight slices, each a room with one boss, the bosses ordered so each unlocks the next: S0 gate probe (macro-emitted type decls go first-class) → S-A is-a hierarchy (typesub + subtype? + is_subtype + roots) → S-A1 the arg-boundary check → S-B records as TypeDefs → S-C the macro split (base vs holonic) → S-D migrate callers → S-E inscription folds. May 26 finished through S-B.2.
+The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.md`) is the DUNGEON-CRAWL doc's worked example. Eight slices, each a room with one boss, the bosses ordered so each unlocks the next: S0 gate probe → S-A is-a hierarchy → S-A1 the arg-boundary check → S-B records as TypeDefs → S-C the macro split (base vs holonic) → S-D migrate callers → S-E inscription folds. May 26 finished through S-B.2.
 
 ---
 
-## Stone S-A1 — The Assignable Choke Point
+## May 26 — Stone S-A1 — The Assignable Choke Point
 
 Stone S-A had landed late May 25 with the is-a hierarchy mechanism — `typesub` + `subtype?` + `is_subtype` + the two root types — but the mechanism was just the machinery. Stone S-A1 put it to work at the place that mattered: subtyping checked at the arg boundary, where the type-system actually has the chance to honor or violate Liskov.
 
@@ -35,7 +33,7 @@ Stone S-A had landed late May 25 with the is-a hierarchy mechanism — `typesub`
 
 `val_type_path` deliberately stays collapsing records to `:wat::Record` for now (`runtime.rs:7513`); per-class defclause dispatch is reserved for later if a consumer surfaces. The discipline holds: minimal honest shape, defer affirmatively.
 
-## Stone S-B.1 — Records Become Types
+## May 26 — Stone S-B.1 — Records Become Types
 
 Then the move arc 237 had been building toward. `:wat::core::recordtype` minted as a substrate primitive at `types.rs`; `TypeDef::Record(RecordDef)` added as a variant alongside `Struct`, `Enum`, `Newtype`, `Alias`, and the May 25 `Union`. The `RecordDef` itself is minimal — `{ name: String, parent: String }` — the BRIEF-mandated honest shape, no `type_params` field (the field shape lives in the macro's emitted accessors; minting a `type_params: vec![]` field would be a lie).
 
@@ -61,9 +59,9 @@ S-B.1 shipped the substrate type-declaration form; S-B.2 wired the existing `def
 
 Five tests, five PASS at `probe_arc237_sB2_defrecord_recordtype`. Zero test-expectation updates needed — all seventeen-plus defrecord consumers in the test suite call `is-<Name>?` on record values; the synthesized ∀T form returns the same result the old narrowing form returned for those cases, and returns `false` (not a type error) for the non-record case the old form mis-rejected. `probe_arc234_stone2b_defrecord_macro` probe 4 — cross-class false on two record values — passed without change; `concrete_type_name_matches` returns `false` on FQDN mismatch identically to the old behavior.
 
-Three stones in the records boss-map, all green by end of day. The records dragon was no longer just named; it was being slain.
+Three stones in the records boss-map, all green by end of day.
 
-## Records S-C CORRECTION 2
+## May 26 — Records S-C CORRECTION 2
 
 Mid-day the design audit fired. CORRECTION 1 had landed the night before — the `holon_form: Option<Arc<HolonAST>>` shape rejected as semantic abuse (`Option` means presence/absence, never flavor/kind; the substrate already purged that convenience-variant dishonesty across arc 230 and arc 233), replaced with two distinct `Value` variants. CORRECTION 2 went further: the on-demand holon projection idea in CORRECTION 1 was itself dead, replaced by the user's Ruby-class is-a model walked through in live dialogue:
 
@@ -122,7 +120,7 @@ What makes #17 its own shape is the three-way arrival. The author (the LLM) wrot
 
 A numbering honesty: the raw INTERSTITIAL record has `## Convergence #13` twice (collapsed-declarations 5-18 and reflexive-autoscaling 5-19) and `#16` claimed twice (`apply` and defclause-graduation 5-25); the cliffnotes "16 convergences" is a reconciliation. #17 follows the reconciled master count and absorbs the informal "#17 = isa?/derive" the records DESIGN floated. Prior headers stay as shipped — inscription is immutable; a future reconciliation pass forward-corrects via a new entry, never by rewriting headers that shipped.
 
-Convergence #17 catalogued: Liskov substitution, by the same discipline. Convergence is gifted, not sold — the substrate walked both halves of the hologram into the room for free.
+Convergence #17 catalogued: Liskov substitution, by the same discipline.
 
 ---
 

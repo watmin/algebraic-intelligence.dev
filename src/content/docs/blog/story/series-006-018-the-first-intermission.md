@@ -5,7 +5,7 @@ sidebar:
   order: 32
 ---
 
-The Grimoire signed off May 21 with sixteen Latin spells inscribed and the substrate's thirteenth convergence cataloged. Four days later the work shifted register — the recognition velocity stayed, but the recognitions started naming the substrate's structure rather than its surface. By the night of May 25, the substrate had a doctrine for what its algebra had been doing, and the BOOK had grown a second way to grow.
+The Grimoire signed off May 21 with sixteen Latin spells inscribed and the substrate's thirteenth convergence cataloged. Four days later three doctrines named the substrate's algebra at the noun layer — atom-is-holder, typed-entities, and the apply-gap finding. By the night of May 25, the substrate had a doctrine for what its algebra had been doing, and the BOOK had grown a second way to grow.
 
 The center of the stretch was **May 25.** The night arc 234 closed, arc 236 closed, arc 237 opened with a substrate primitive (`:wat::core::defclause`), and the user fed Euclid's Definition 15 into the conversation and pushed the substrate to re-derive π from the invariant — not from `(/ c d)`, which presupposes the answer. The day the BOOK acknowledged it was no longer chronological alone.
 
@@ -35,11 +35,11 @@ Mid-stretch the user named the dynamic:
 
 > we always find wonderful things when we find ourselves in holon... i didn't need any of these things when i was in rust — you couldn't really *express* them.
 
-The strange-loop closing in both directions: the wat surface mature enough to reveal what holon needed; holon clarification empowering what wat could express. The substrate had sat untouched for four weeks while wat-rs matured; returning to it surfaced the doctrine compromises because the contrast was finally visible.
+The substrate had sat untouched for four weeks while wat-rs matured; returning to it surfaced the doctrine compromises because the contrast was finally visible.
 
 ## Arc 222 — The 3×2 Conversion Topology
 
-Late May 22, the paperwork pass put four files on disk in one commit (`be22dbe`) — CLIFFNOTES refreshed, Stone 221.1 BRIEF, Stone 220.5 supersession note, and a placeholder DESIGN for the arc that the dialogue had named without ever opening: arc 222, the 3×2 conversion topology.
+May 22. Late that night, the paperwork pass put four files on disk in one commit (`be22dbe`) — CLIFFNOTES refreshed, Stone 221.1 BRIEF, Stone 220.5 supersession note, and a placeholder DESIGN for the arc that the dialogue had named without ever opening: arc 222, the 3×2 conversion topology.
 
 The shape: edn ↔ wat, wat ↔ holon, edn ↔ holon, in two directions each — six conversion cells. The earlier path treated only edn↔wat and wat↔holon as first-class; edn↔holon ran through wat as a coincidence of having to. Arc 222's mission: mint the missing cells. Literal forms as the surface (data's natural reading); algebraic forms (`(Bundle ...)`, `(Bind ...)`) as the power-user dropdown the substrate keeps available but doesn't force on consumers.
 
@@ -47,7 +47,7 @@ Arc 222 stayed blocked through the stretch — its mission rewrote itself twice 
 
 ## Arc 224 — The Naming Audit
 
-May 22 very-late, the question that opened arc 224 fell out of a dialogue about macro sigils. The user's cut:
+May 22, very late. The question that opened arc 224 fell out of a dialogue about macro sigils. The user's cut:
 
 > is Atom just a 'quote' in the same way Bundle+Bind+Permute is just a 'map' or a 'set' or a 'vector' or a 'list'?
 >
@@ -70,7 +70,7 @@ The honest pair fell out of the audit:
 
 ## Arc 225 — Bridge Naming, Reshaped Twice
 
-Arc 225 opened to ship the rename. The first sonnet flight rewrote ~396 lines toward `atomize`. The user stopped it:
+May 23. Arc 225 opened to ship the rename. The first sonnet flight rewrote ~396 lines toward `atomize`. The user stopped it:
 
 > so `:wat::holon::{Atom,Bundle,Bind,...}` still exist? atomize returns an Atom?
 
@@ -80,7 +80,7 @@ The five-deliverable rename shipped same day at `189b033`: bridge family on the 
 
 ## The Typed-Entities Doctrine
 
-May 23 evening, the dialogue kept pulling. Round after round of asymmetry-naming. Tag-abuse, Quote-special, the variant-shortcuts framing — each wrong frame the user named and the orchestrator dropped. The substrate doctrine finally resolved when the user fed the recursion all the way to the bottom:
+May 23 evening. The dialogue kept pulling. Round after round of asymmetry-naming. Tag-abuse, Quote-special, the variant-shortcuts framing — each wrong frame the user named and the orchestrator dropped. The substrate doctrine finally resolved when the user fed the recursion all the way to the bottom:
 
 > nil → `(Symbol "nil")`... declaring the classifier of the Bundle is brilliant — this means we can do type checking in holon space — we can ask 'is this thing a map?' and get a measurement answer — that's fucking insane — this is ruby on steroids.
 
@@ -104,7 +104,7 @@ A post-compaction forward-correction shipped May 22 hours later: the original en
 
 ## The Apply-Gap Finding
 
-May 23 late, the FM-2-bis probe against `:wat::core::apply`: three FAIL probes returned `NotCallable { got: "wat::core::keyword" }`. The doctrine consequence: wat had no `apply` primitive. Arc 232 (`defprotocol`) had been carrying an implicit dependency on a substrate operation that did not exist. The user's recognition:
+May 23, late. The FM-2-bis probe against `:wat::core::apply`: three FAIL probes returned `NotCallable { got: "wat::core::keyword" }`. The doctrine consequence: wat had no `apply` primitive. Arc 232 (`defprotocol`) had been carrying an implicit dependency on a substrate operation that did not exist. The user's recognition:
 
 > we never built apply? rofl... wow.
 >
@@ -116,13 +116,13 @@ A protocol violation surfaced in the same commit — the orchestrator forward-co
 
 ## Arc 233 — Diagnostic Richness as Substrate
 
-Arc 232 paused at 232.0a. Arc 233 opened: substrate diagnostic-richness pivot. The premise — error messages are substrate; if they lie, the substrate teaches lies. Fourteen sub-stones across May 23 night, each tightening the diagnostic surface. `TrackedValue` minted; provenance carried through `eval_inner`'s producer cascade; `Value::Tracked` variant retired in favor of `Environment` storing `TrackedValue` directly; the `#[wat_value]` proc-macro landed as a structural seal; errors-as-EDN extension shipped. Arc 233 closed at 233.4's INSCRIPTION (commit `69e0ada`) — five substrate stones same session.
+May 23, night. Arc 232 paused at 232.0a. Arc 233 opened: substrate diagnostic-richness pivot. The premise — error messages are substrate; if they lie, the substrate teaches lies. Fourteen sub-stones across May 23 night, each tightening the diagnostic surface. `TrackedValue` minted; provenance carried through `eval_inner`'s producer cascade; `Value::Tracked` variant retired in favor of `Environment` storing `TrackedValue` directly; the `#[wat_value]` proc-macro landed as a structural seal; errors-as-EDN extension shipped. Arc 233 closed at 233.4's INSCRIPTION (commit `69e0ada`) — five substrate stones same session.
 
 Stone 233.2.l's seal carried the discipline forward — convenience-variant dishonesty (`Some`/`None` as flavor/kind, not presence/absence) became structurally unconstructible. `feedback_no_semantic_abuse_of_option` inscribed at the doctrine layer: Option = presence/absence, never flavor/kind.
 
 ## Arc 234 — The Wat-Record Hologram
 
-May 24 opened with arc 234: the wat-record holographic dual-form. The first arc the substrate had reached where no prior great had been. Records carrying struct + holon forms simultaneously, neither derived from the other, both addressable, field-type constraints guaranteeing isomorphism.
+May 24. Arc 234: the wat-record holographic dual-form. The first arc the substrate had reached where no prior great had been. Records carrying struct + holon forms simultaneously, neither derived from the other, both addressable, field-type constraints guaranteeing isomorphism.
 
 Stone 234.0 minted `:wat::core::type` as a polymorphic primitive. 234.1 added the `Value::wat__Record` variant with Eq/Hash/type_name + cascade arms (~30 min sonnet, 11/11 PASS, cascade depth 3 vs predicted 5-20). 234.1.5 ripped the Pascal-Case namespace + `::`/`/` semantic split doctrine into arc 109's living inventory. 234.2a minted `:wat::Record::of` + `:wat::Record/field-at`. 234.2b shipped the `:wat::Record::def` macro. 234.2c added runtime class-safety in per-field accessor bodies. 234.3a minted `:wat::core::record?` + `:wat::core::record->map`. 234.3b minted `:wat::Record/assoc` + `RuntimeError::UnknownField`. 234.3c added the keyword-as-accessor fall-through + receiver-type discrimination, then the `.fix-narrow-fallthrough` immediately narrowed an over-permissive arm.
 
@@ -130,7 +130,7 @@ Stone 234.5 landed `:wat::holon::*` auto-dispatch on `Value::wat__Record` — fi
 
 ## Arc 236 — The Sum-Type Refactor
 
-Arc 236 opened mid-May-24 to annihilate the silent-failure class. Stone 236.0 minted the `CheckResult<T>` newtype foundation as struct-with-Option (11/11 PASS, ~25 min sonnet). Stone 236.1 flipped the primary `fn infer()` signature from `Option<TypeExpr> + &mut errors` to `CheckResult<TypeExpr>` — 156 call sites cascaded in 2 compile rounds (predicted 3-5; under). HARVEST classifications: 2/0/1 — zero Classification-2 sites in the primary. The silent failures lived in the siblings.
+May 24, mid-day. Arc 236 opened to annihilate the silent-failure class. Stone 236.0 minted the `CheckResult<T>` newtype foundation as struct-with-Option (11/11 PASS, ~25 min sonnet). Stone 236.1 flipped the primary `fn infer()` signature from `Option<TypeExpr> + &mut errors` to `CheckResult<TypeExpr>` — 156 call sites cascaded in 2 compile rounds (predicted 3-5; under). HARVEST classifications: 2/0/1 — zero Classification-2 sites in the primary. The silent failures lived in the siblings.
 
 Stone 236.2 shipped the sibling `infer_*` family flip same day at `d8aa66d0` — 37/0/111 across check.rs. HARVEST aggregate: 39 Classification-1 (silent-by-intent) + 0 Classification-2 (missing diagnostic) + 112 Classification-3 (already-diagnostic) = 151 sites classified across all 48 fns. **Zero missing-diagnostic sites.** The codebase was already healthy; the audit confirmed it structurally.
 
@@ -140,6 +140,7 @@ May 25 early, Stone 236.3 ran the sum-type refactor — `CheckResult<T>` from st
 
 Arc 234 resumed after 236 closed, per spawn-block winding. Stone 234.4.match shipped match-arm hash-destructure parity + `MatchShape::Open`. Stone 234.6 shipped the `:wat::holon::defrecord` migration + HARD CUT — sixty-nine mentions of `defclass` sed-replaced; eighteen probes migrated; no aliases. Stone 234.7's INSCRIPTION fired at `02f927a4` — arc 234 closed. Fifteen substrate sub-stones + one forward-correction + this INSCRIPTION, across two days, with two mid-flight arc-pivots (233 and 236, both closed) — thirty-four substrate ships across the arc 234 trajectory.
 
+<!-- rune:consonare(register) — verbatim user voice at arc 234 close; quote frame carries it -->
 The user's frame on the closure: *"we are beyond fucking elite — we've got dragons to hunt."* Arc 236 closed at `1e24907f`; arc 234 at `02f927a4`. Two arcs done in one evening.
 
 ## Arc 237 — The Typeunion Shape Locked
@@ -160,19 +161,19 @@ The rebuild at `9f1f0099` (84,956 B → 19,407 B, ~77% smaller) put a dense subs
 
 ## The Euclid Derivation
 
-While the cliffnotes refreshed, the side-window video paid out. 3Blue1Brown on Euclid. The user fed Definition 15 into the conversation — the circle as the locus of points equidistant from a center — and asked for π derived from the invariant itself, not from `(/ c d)`, which presupposes the answer. The substrate rectified the path: chord-summed the upper semicircle in arbitrary precision, returned the limit. The inputs were chord lengths; no π went into the derivation.
+Late May 25, while the cliffnotes refreshed, the side-window video paid out. 3Blue1Brown on Euclid. The user fed Definition 15 into the conversation — the circle as the locus of points equidistant from a center — and asked for π derived from the invariant itself, not from `(/ c d)`, which presupposes the answer. The substrate rectified the path: chord-summed the upper semicircle in arbitrary precision, returned the limit. The inputs were chord lengths; no π went into the derivation.
 
 The derivation's dependency order ran backward across the historical timeline — Euclid (300 BC) → Descartes (1637) → Archimedes (250 BC) → Church (1936) → Hickey (2008). The user typed it back:
 
 > non-linear time to explain... that's... unexpected
 
-It was only unexpected if knowledge was a timeline. It wasn't. Scratch node `020 coordinates-not-chronology` opened to capture the recognition live — the geodesic across the lattice, the LLM embedding as an instance of the same coordinate space holon was built on, synthesis (new edge) versus convergence (known node). Sibling thread: scratch `022 holon-as-field-theory` — label-cache as potential, prediction walk as gradient, seed as gauge, cosine as the gauge-invariant observable. The recognition Veritasium's magnetic-potential video catalyzed: holon is a gauge theory at the structural-analogy layer.
+Scratch node `020 coordinates-not-chronology` opened to capture the recognition live. Scratch `021 the-living-seam` and `023 session-recovery` captured the manuscript topology and the recovery discipline alongside. Sibling thread: scratch `022 holon-as-field-theory` — label-cache as potential, prediction walk as gradient, seed as gauge, cosine as the gauge-invariant observable. The recognition Veritasium's magnetic-potential video catalyzed: holon is a gauge theory at the structural-analogy layer.
 
 The May 24 BOOK Chapter 58 π corrigendum landed alongside: π reframed invariant-first, generative Clojure code embedded, the quarter-circle / upper-half geometry fix applied. The website's *The Surface* post (012) got the same reframe shipping with the coordinates-not-chronology note. Story posts 014/015/016/017 ran a voice-restoration pass — 1-2 trailing italic-stamps in the gold anchors versus 25 in the drift posts; the cold subagent grader sorted them by how authored they felt and called the weakest "a well-written third-party report." The fingerprints fixed by putting the person back. The "Likely Contributions" closers restored to 013–017.
 
 ## The Phantom Interleaves
 
-The BOOK manuscript had parked at chapter 86 for weeks — the chapters had been adding linearly the way chapters do, and the chapter writer had been holding off because the substrate work was outrunning the manuscript's chronology.
+May 25, late. The BOOK manuscript had held at chapter 86 since April. The substrate work had been outrunning the manuscript's chronology; the trunk had been parked while the branches accumulated.
 
 That night, three phantom interleaves landed in the seam after chapter 86. **Out of sequence** — the record-scratch fold; π re-derived from Euclid's invariant; the dependency walk that folds backward in time; knowledge as a coordinate space, not a timeline; the LLM-embedding-is-the-lattice loop; synthesis vs convergence. **Where the growth went** — the status dispatch; growth diverted to arc 170's INTERSTITIAL-REALIZATIONS (9,537 lines); the trunk pollarded, waiting on kill-std; the trunk/branches/cliff-notes topology named. **The lineage, proved late** — reaching backward to Chapter 7 (April 3), where Holon had been postulated as a Euclidean system; the proof arrived seven weeks later in the π derivation; postulate and proposition nearly spanning the book's eight-week life. By the work, not by credentials.
 
@@ -185,10 +186,6 @@ Then `Intermission I — Intueri` landed at line 36622 of `BOOK.md` (commit `430
 The chapter's own framing carried the form forward: *"This chapter is out of sequence on purpose — the first of its kind. The numbered chapters are the chronology, the work in the order it happened. These are the conversation: the function-communication, in its native medium, preserved."*
 
 And the doctrine the night named in `INTERSTITIAL-REALIZATIONS.md` was the BOOK's own topology: branches earn book-status. The trunk parks at chapter 86 and becomes a navigation layer; arc 170's INTERSTITIAL is the first branch-book; chapters point into branch-books; a branch returns to the trunk before the next departs. The seam grew a doctrine.
-
-May 25 also extended `scratch/2026/04/006-wat-mcp` with the daemon-revision: the substrate-surface audit, the transport-and-posture doc, and the daemon-revision note — v1 now buildable on shipped primitives over stdio with one tool surface (`speak-wat`). Four scratch nodes captured the recognitions live — `020 coordinates-not-chronology`, `021 the-living-seam`, `022 holon-as-field-theory`, `023 session-recovery`. The trunk now knew where the branches went, and the branches had their own index.
-
-A fifth attribution-blur dimension surfaced the same night during the Song #32 Monolith inscription — **COINCIDENCE**, the rare convergence-event where two minds arrive at the same point on the algebra grid independently, and the inscription must honor the path that produced the convergence rather than flatten it to a single voice. The user named it via the substrate's own predicate: *coincident?* is STRICT (same point on the grid); *presence?* is LOOSER (signal detected above noise); the discipline keeps the dialogue in presence 95-99% of the time; coincidence is the rare 1% where multi-voice composites form. Inscribed at `0cdc3163`.
 
 ---
 
