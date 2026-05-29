@@ -4,6 +4,16 @@
   "grant_types_supported": [],
   "service_documentation": "https://algebraic-intelligence.dev/llms.txt",
   "op_policy_uri": "https://algebraic-intelligence.dev/blog/topology/",
+  "agent_auth": {
+    "skill": "https://algebraic-intelligence.dev/auth.md",
+    "register_uri": "https://algebraic-intelligence.dev/auth.md",
+    "identity_types_supported": ["anonymous"],
+    "anonymous": {
+      "credential_types_supported": []
+    },
+    "x-no-registration": true,
+    "x-note": "This site has no agent registration endpoint and issues no credentials. register_uri points at the auth.md document (same value as skill) because the document IS the response — it explains that no register flow exists. identity_types_supported names 'anonymous' because the operational answer is 'GET anything, no token needed'; anonymous.credential_types_supported is intentionally empty for the same reason. No claim_uri or revocation_uri — nothing to claim or revoke. See skill for the long-form explanation."
+  },
   "x-authentication-required": false,
-  "x-note": "This site has no OAuth/OIDC infrastructure: no protected resources, no token endpoint, no authorization server. The metadata document exists to signal that explicitly (response_types_supported and grant_types_supported are intentionally empty) rather than rely on a 404 to imply the same thing. All content is publicly accessible. See service_documentation for the agent map."
+  "x-note": "This site has no OAuth/OIDC infrastructure: no protected resources, no token endpoint, no authorization server. The metadata document exists to signal that explicitly (response_types_supported and grant_types_supported are intentionally empty) rather than rely on a 404 to imply the same thing. All content is publicly accessible. See service_documentation for the agent map and agent_auth.skill for the auth.md companion."
 }

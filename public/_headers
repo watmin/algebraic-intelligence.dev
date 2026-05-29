@@ -16,6 +16,14 @@
   Content-Type: text/markdown; charset=utf-8
   Cache-Control: public, max-age=300
 
+# auth.md per Cloudflare's isitagentready / WorkOS auth.md spec — site-root
+# companion to the agent_auth block in /.well-known/oauth-authorization-server.
+# Explicit "no agent registration" document; same doctrine as the OAuth empty-
+# grants stance. H1 contains "auth.md" as the SKILL.md spec requires.
+/auth.md
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=300
+
 # API Catalog per RFC 9727 — honest minimal entry: no JSON/REST API, but the
 # catalog points agents at our documentation surface (llms.txt + topology).
 /.well-known/api-catalog
