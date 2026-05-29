@@ -22,36 +22,36 @@ Four phases: **study the lair** → **perceive the traps** → **draw the strike
 The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.md`) is the DUNGEON-CRAWL doc's worked example. Eight slices, each a room with one boss, the bosses ordered so each unlocks the next: S0 gate probe → S-A is-a hierarchy → S-A1 the arg-boundary check → S-B records as TypeDefs → S-C the macro split (base vs holonic) → S-D migrate callers → S-E inscription folds. May 26 finished through S-B.2.
 
 ```mermaid
-block-beta
-columns 1
+stateDiagram-v2
+direction TB
 
-block:cleared_row
-    columns 3
-    S0["S0<br/>gate probe"] SA["S-A<br/>is-a hierarchy"] space
-end
+state "Cleared — pre-May 26" as cleared_grp {
+    direction LR
+    S0: S0<br/>gate probe
+    SA: S-A<br/>is-a hierarchy
+    S0 --> SA
+}
 
-space
+state "May 26 — three stones lifted" as today_grp {
+    direction LR
+    SA1: S-A1<br/>the choke point<br/>827/0 PASS
+    SB1: S-B.1<br/>records become types
+    SB2: S-B.2<br/>defrecord wire<br/>5/5 PASS
+    SA1 --> SB1
+    SB1 --> SB2
+}
 
-block:today_row
-    columns 3
-    SA1["S-A1<br/>the choke point<br/>827/0 PASS"] SB1["S-B.1<br/>records become types"] SB2["S-B.2<br/>defrecord wire<br/>5/5 PASS"]
-end
+state "Pending — fog of war" as pending_grp {
+    direction LR
+    SC: S-C<br/>the macro split
+    SD: S-D<br/>migrate callers
+    SE: S-E<br/>inscription folds
+    SC --> SD
+    SD --> SE
+}
 
-space
-
-block:pending_row
-    columns 3
-    SC["S-C<br/>the macro split"] SD["S-D<br/>migrate callers"] SE["S-E<br/>inscription folds"]
-end
-
-S0 --> SA
-SA1 --> SB1
-SB1 --> SB2
-SC --> SD
-SD --> SE
-
-cleared_row --> today_row
-today_row --> pending_row
+cleared_grp --> today_grp
+today_grp --> pending_grp
 
 classDef cleared fill:#1f5e3a,stroke:#5fcc7a,color:#bff6cb
 classDef today fill:#1e4a7d,stroke:#7fb3ff,color:#dde9ff
