@@ -21,10 +21,10 @@ Four phases: **study the lair** → **perceive the traps** → **draw the strike
 
 The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.md`) is the DUNGEON-CRAWL doc's worked example. Eight slices, each a room with one boss, the bosses ordered so each unlocks the next: S0 gate probe → S-A is-a hierarchy → S-A1 the arg-boundary check → S-B records as TypeDefs → S-C the macro split (base vs holonic) → S-D migrate callers → S-E inscription folds. May 26 finished through S-B.2.
 
-<div style="display: flex; flex-direction: column; gap: 0.8rem; margin: 1.5rem auto; max-width: 900px">
+<div style="display: flex; flex-direction: column; gap: 1.1rem; margin: 1.5rem 0; padding-left: 1.2rem; border-left: 3px solid #444">
 
 <div>
-<div style="font-size: 0.82em; color: #5fcc7a; margin-bottom: 0.4rem; font-weight: 600">Cleared — pre-May 26</div>
+<div style="font-size: 0.82em; color: #5fcc7a; margin-bottom: 0.45rem; font-weight: 600">▸ Cleared — pre-May 26</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap">
 <div style="background: #1f5e3a; border: 2px solid #5fcc7a; color: #bff6cb; padding: 0.55rem 1rem; border-radius: 50px; font-size: 0.85em; text-align: center; min-width: 120px">S0<br><strong>gate probe</strong></div>
 <span style="color: #5fcc7a; font-size: 1.4em; font-weight: bold">→</span>
@@ -32,10 +32,8 @@ The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.
 </div>
 </div>
 
-<div style="text-align: center; color: #5fcc7a; font-size: 1.3em; line-height: 1">↓</div>
-
 <div>
-<div style="font-size: 0.82em; color: #7fb3ff; margin-bottom: 0.4rem; font-weight: 600">May 26 — three stones lifted</div>
+<div style="font-size: 0.82em; color: #7fb3ff; margin-bottom: 0.45rem; font-weight: 600">▸ May 26 — three stones lifted</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap">
 <div style="background: #1e4a7d; border: 3px solid #7fb3ff; color: #dde9ff; padding: 0.55rem 0.9rem; border-radius: 4px; font-size: 0.85em; text-align: center; min-width: 140px"><strong>S-A1</strong><br>the choke point<br><em style="opacity: 0.8; font-size: 0.92em">827/0 PASS</em></div>
 <span style="color: #7fb3ff; font-size: 1.4em; font-weight: bold">→</span>
@@ -45,10 +43,8 @@ The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.
 </div>
 </div>
 
-<div style="text-align: center; color: #666; font-size: 1.3em; line-height: 1">⇣</div>
-
 <div>
-<div style="font-size: 0.82em; color: #888; margin-bottom: 0.4rem; font-weight: 600">Pending — fog of war</div>
+<div style="font-size: 0.82em; color: #888; margin-bottom: 0.45rem; font-weight: 600">▸ Pending — fog of war</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap">
 <div style="background: #2a2a2a; border: 2px dashed #666; color: #999; padding: 0.55rem 1rem; font-size: 0.85em; text-align: center; min-width: 140px">S-C<br><strong>the macro split</strong><br><span style="font-size: 0.88em">(base vs holonic)</span></div>
 <span style="color: #666; font-size: 1.3em">⇢</span>
