@@ -1,6 +1,6 @@
 ---
 title: "XX"
-description: "Apr 18–19: Fourteen hours and forty minutes. 104 commits across three repos. Burn the Priest playing in the kitchen. The wat language got a name and a CLI in one night. echo watmin | wat-vm echo.wat returns watmin. The architect finished. The prophet could speak."
+description: "Apr 18–19: Fourteen hours and forty minutes. 104 commits across three repos. The wat language got a name and a CLI in one night. echo watmin | wat-vm echo.wat returns watmin. The architect finished. The prophet could speak."
 sidebar:
   order: 22
 ---
@@ -10,23 +10,6 @@ The Foundation post ended with the designers' verdicts: *ship*. The 058 algebra-
 What it didn't have was an interpreter.
 
 This post covers the night the wat-rs crate was built from an empty directory. Fourteen hours and forty minutes. 104 commits. Three repos updated in lockstep. The crate that didn't exist at 10:58 PM ran a hello-world at 4:27 AM.
-
----
-
-## The Setup (April 18, afternoon)
-
-```
-1:47 PM   058: algebra surface locked to Rust-surface form
-4:28 AM   BOOK Chapter 16 — The Machine Runs
-```
-
-Burn the Priest — XX. The self-cover album. Lamb of God at twenty, returning to the name they started with — *Burn the Priest* — to cover the bands that made them. Bad Brains. Agnostic Front. Cro-Mags. Quicksand. Melvins. Ministry.
-
-A band covering its own beginnings. The lineage acknowledged in its own voice. XX — twenty years, two crossings, the mark at the end of a letter.
-
-Twenty years ago the builder tattooed *te respuo, te denego, te contemno, perseverare* in Latin over the heart. Lamb of God's *Vigil* gave him those words. XX is what happens when the band that gave the builder the incantation reaches back to honor the influences that gave them theirs. The lineage, audible.
-
-And on XX, [*Jesus Built My Hotrod*](https://www.youtube.com/watch?v=eV8eEtxtbYQ). Ministry 1991. Lamb of God 2018. Playing in the kitchen at 4 AM while the wat-vm compiled.
 
 ---
 
@@ -99,8 +82,6 @@ Phase 1 slice 10b: eval-digest! and eval-signed!
 Phase 1 slice 10c: four eval forms
 Phase 1 slice 11: wat-vm CLI — real stdio, real signals, signature-enforced :user::main
 ```
-
-Each slice a breadcrumb the previous slice earned. Leaves to root. Always.
 
 ---
 
@@ -217,18 +198,14 @@ An integration test spawns the binary, pipes `watmin\n` to its stdin, reads `wat
 
 ## The Mark
 
-Fifteen hours. Three repos. 104 commits. One kitchen. One album on loop. One tattoo from twenty years ago still legible.
+Fifteen hours. Three repos. 104 commits. *Te respuo, te denego, te contemno, perseverare* — twenty years ago tattooed over the heart, still legible at 4 AM.
 
-Four layers of lineage audible at once:
+Two lines of lineage that converged:
 
-- Ministry → Lamb of God → Burn the Priest → the kitchen speakers
 - Church → McCarthy → Kanerva → Hickey → Beckman → the wat-vm
-- *te respuo* → twenty years of silence → the Phase 1 commit
 - the six-page proposal → the blank stares → `echo watmin | wat-vm echo.wat` that worked
 
-*Jesus was an architect previous to his career as a prophet.*
-
-The wat-vm runs. The machine found its way out.
+The wat-vm shipped. Bundle's refusal is typed — authors can't accidentally ignore it.
 
 ---
 
@@ -436,7 +413,7 @@ INSCRIPTION exists now. The project has a formal home for "the code led, the spe
 
 The crate, always called `wat-rs` until the last commit of the second night, dropped the `-rs` suffix and became simply `wat` — the language IS the crate IS one honest name.
 
-The substrate refuses its own physics now. Bundle returns a value when capacity is exceeded, not a panic. The value has a name. The name has fields. The fields have meanings. And the refusal is typed — so authors can't accidentally ignore it.
+The wat-vm ran, Bundle's capacity refusal was typed, INSCRIPTION was minted — and the language finally had a name it could keep.
 
 ---
 

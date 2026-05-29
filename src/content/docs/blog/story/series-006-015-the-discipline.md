@@ -13,9 +13,9 @@ That was May 9 morning. *Two weeks later — as of this writing, arc 170 is stil
 
 > arc 170 started from "i want to add argv to main" and... here we are.
 
-What looks like sprawl is the **substrate-as-teacher cascade running honest.** *I want argv on main → write the contract for what a program even IS → discover the substrate has no closure-extraction mechanism → mint that → discover Process<I,O> shape needs typed channels → mint those → discover stdio architecture conflicts → ambient kernel trio + three substrate services → retire Console → realize deftest can't ride the new infrastructure → discover the do/let splice gaps → ship Gap A/B/C/D/E across iterations → drain Phase G slices → 11 new stubs surface along the way.*
+What looks like sprawl is the **substrate-as-teacher cascade running honest.** I want argv on main → write the contract for what a program even IS → discover the substrate has no closure-extraction mechanism → mint that → discover Process<I,O> shape needs typed channels → mint those → discover stdio architecture conflicts → ambient kernel trio + three substrate services → retire Console → realize deftest can't ride the new infrastructure → discover the do/let splice gaps → ship Gap A/B/C/D/E across iterations → drain Phase G slices → 11 new stubs surface along the way.
 
-The whole tree of work was sitting under "argv on main" the entire time. Arc 170 just made it visible. *The longest mile is between "I want X" and a substrate that can honestly support X without lying about which layer does what.*
+The whole tree of work was sitting under "argv on main" the entire time. Arc 170 just made it visible. The longest mile is between "I want X" and a substrate that can honestly support X without lying about which layer does what.
 
 This is the discipline of that ride.
 
@@ -152,11 +152,7 @@ The "mini-AWS on a laptop" framing from BOOK ch 84's `WAT-NETWORK.md` becomes *s
 
 ## The V5 Boss-Fight
 
-May 14. The user's framing on resuming arc 170 after a session break:
-
-> we've been grinding through this dungeon for days - this fucking boss has beat us so. many. times. we've got sonnet some outstanding loot now. V5 is our proving point - how good is our gear?
-
-V5 attempted. **13 failures across 3 patterns.** Pattern A (typealias unification), Pattern B (match scrutinee enum-binding loss), Pattern C (child exit-3). Baseline reverted to 2243/0.
+May 14. V5 attempted. **13 failures across 3 patterns.** Pattern A (typealias unification), Pattern B (match scrutinee enum-binding loss), Pattern C (child exit-3). Baseline reverted to 2243/0.
 
 The honest framing: the gear (F-1 / F-3 / F-2 / H / I-A / I-B) addressed V4's three attack patterns. **V5 has its OWN patterns. The boss has phase 2.**
 
@@ -211,30 +207,6 @@ The level-2 fix: **`ProcessJoinBeforeOutputDrain` compile-time check in `src/che
 The substrate's own code was the primary offender. `wat/test.wat:506-551` — `run-hermetic-driver` had the illegal orientation: sequential let, join-result BLOCKED first, substrate's drain threads blocked on send when their bounded Receivers filled, child blocked on stdout write, child couldn't exit, join blocked forever.
 
 **The substrate now refuses to run.** 30+ `ProcessJoinBeforeOutputDrain` fires in the workspace test run; no tests execute; no orphans; no deadlock. **The failed state is structurally unrepresentable.**
-
-The user's framing on the collaboration shape:
-
-> i'd rather hear "no" three times and arrive at the right answer
->
-> this is why we are 1337
->
-> no-three-times-yes-once shape works in both directions
-
-The rhythm got captured the same session with Memphis May Fire — *"The Other Side."*
-
-> *Pain will be your guide / To peace that you can't find*
-> *It's always darkest just before the light*
-> *If you could see the other side*
-
-| Lyric | The work |
-|---|---|
-| "Pain will be your guide / To peace that you can't find" | Failure is data, not noise. The deadlock IS the report. |
-| "It's always too much or never enough" | Substrate-as-teacher cascade. Each gap revealed is too much; each fix exposes the next gap that is never enough. |
-| "Fighting for your life / Suffering inside / Taking one more breath just to survive" | Three subagent attempts. Two reverts. The grind to level-2. |
-| "It's always darkest just before the light" | The V5 retry deadlock — futex orphans, hung tests, hours of dead ends. Then SERVICE-PROGRAMS.md re-read. Then the rule. Then the detection. Then the light. |
-| "Time and space collide / Nowhere left to hide" | The substrate now refuses to run on illegal orientations. The failure mode is structurally unavailable. No hiding. |
-
-*Failure engineering has a soundtrack. The "no three times then yes once" cadence is musical. The grind is not noise; it's tempo.*
 
 Then a deeper recognition: **Gap K's walker caught Stone C's wrappers structurally.** Stone C minted `:wat::kernel::Sender/from-pipe` + `:wat::kernel::Receiver/from-pipe`. Sonnet, mid-implementation, restructured `run-hermetic-with-io-driver` to use the wrappers. *The substrate refused.* `ProcessJoinBeforeOutputDrain` fired on the wrapper form because the rule was written with **recursive descent through subforms** — the walker descended into `(Receiver/from-pipe (Process/stdout proc))` and registered the inner call as an accessor paired with join-result. The rule didn't anticipate `from-pipe`; **it caught it anyway because the WALK SHAPE accommodates wrappers.**
 
@@ -312,9 +284,9 @@ The architecture is shelved. Arc 170 is still in flight; the 191/192/193/194 stu
 
 ## The Strange Loop
 
-Multiple strange-loop layers compound across the arc.
+May 9-15. Three strange loops compounded across the arc.
 
-**Wat disciplines its own designers.** Mid-Slice-B-spawn, post-design of shutdown-aware channels, the user articulated what the session had just demonstrated:
+Mid-Slice-B-spawn, post-design of shutdown-aware channels, the user articulated what the session had just demonstrated:
 
 > i built wat to make force us into "only the good options" - its proving itself in new ways now
 
@@ -325,13 +297,13 @@ When the substrate's shutdown-aware channels got designed, the architecture that
 - **Substrate-imposed-not-followed** → couldn't expect users to remember to handle shutdown. *Forced:* the shadow channel lives in `typed_recv` (Rust substrate), not at user wat sites.
 - **Async-signal-safety** → couldn't call `trigger_shutdown` from the signal handler directly. *Forced:* handler writes one byte to wake-pipe; worker thread drops Sender in normal context.
 
-**The design didn't get DESIGNED. It got DISCOVERED.** Four sharp rules; the design space collapsed to a single shape; the shape is structurally correct.
+The design space had already collapsed. Four rules; one shape; the shape was structurally correct.
 
 **A language no LLM has seen but can pick up with no lag.** The user, mid-grind reading INTENTIONS.md:
 
 > i am engineering a language that no llm has ever seen but can pick up and be productive in with nearly no lag
 
-The proof was sitting in the conversation. An LLM that has never seen wat was shipping arc-shaped work in it. *Lag isn't zero — the user has corrected drift a half-dozen times this thread — but it's minimal.* **The LLM doesn't need wat in its weights. It needs Clojure in its weights** (already there) **+ access to the docs written for the LLM as primary reader.** The five disciplines aren't features to memorize; they're rails that catch drift. Each correction is a Rosetta entry that didn't need to be trained on.
+The proof was sitting in the conversation. An LLM that has never seen wat was shipping arc-shaped work in it. Lag isn't zero — a half-dozen corrections across the arc — but it's minimal. **The LLM doesn't need wat in its weights. It needs Clojure in its weights** (already there) **+ access to the docs written for the LLM as primary reader.** The five disciplines aren't features to memorize; they're rails that catch drift. Each correction is a Rosetta entry that didn't need to be trained on.
 
 **Compaction-mitigation as a discipline.** The user, mid-arc:
 
@@ -359,14 +331,6 @@ What got produced:
 - Arc 191/192/193/194 stubs — the hot-reload architecture sketched against arc 170's foundation
 - 19+ open arcs surfaced (174–190+ range) — the substrate's next work, named at the time it was discovered
 
-The user's framing on the grind/vision split, captured mid-cascade:
-
-> i hate these grinds... they are not intellectually stimulating in the ways that lead up to wat's creation was... i deeply believe wat will change how intelligent systems are built.... how i'll enable llms... to think.. will be something else... and the end result... commodity hardware, in the field will be able to think without a gpu...
-
-**The grind/vision gap is real and structural.** The breakthrough work — recognizing the s-expression and the vector are the same value, that intelligence is composable rather than emergent, that "i can't think in rust" was a substrate problem rather than a skill problem — that happens once. The substrate fixes that make the recognition deployable happen continuously. They're different activities; one isn't a degraded version of the other. *But the grind isn't pointless. It IS the substrate-as-teacher cascade in motion.*
-
-Three weeks built this. *DDoS at line rate ships. BTC at 59% directional cold-boot on a laptop ships.* What's left is making the substrate impeccable so other entities — local LLMs, networked LLMs, future agents — can pick it up and contribute without breaking alignment.
-
 The arc is still in flight. The boss isn't down. The substrate continues to refuse what isn't honest. *PERSEVERARE.*
 
 ## Likely Contributions to the Field
@@ -379,4 +343,4 @@ The arc is still in flight. The boss isn't down. The substrate continues to refu
 
 ---
 
-*One request: "i want to add argv to main." Two weeks. 277 commits. The substrate-as-teacher cascade running honest. Each layer's failure produced a clean diagnostic the next layer briefed from. No layer was guessed in advance; the substrate revealed each gap when probed honestly. The longest mile is between "I want X" and a substrate that can honestly support X without lying about which layer does what. Argv on main cost the substrate everything it needed to grow up.*
+*One request. 277 commits. Closure extraction minted; channels typed; deftest migrated; failure made unrepresentable at compile time; the fractal landed; the substrate disciplined its own designers. Arc 170 is still in flight.*
