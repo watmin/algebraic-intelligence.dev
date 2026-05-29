@@ -44,6 +44,12 @@ block:pending_row
     SC["S-C<br/>the macro split"] SD["S-D<br/>migrate callers"] SE["S-E<br/>inscription folds"]
 end
 
+S0 --> SA
+SA1 --> SB1
+SB1 --> SB2
+SC --> SD
+SD --> SE
+
 cleared_row --> today_row
 today_row --> pending_row
 
