@@ -22,14 +22,14 @@ Four phases: **study the lair** → **perceive the traps** → **draw the strike
 The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.md`) is the DUNGEON-CRAWL doc's worked example. Eight slices, each a room with one boss, the bosses ordered so each unlocks the next: S0 gate probe → S-A is-a hierarchy → S-A1 the arg-boundary check → S-B records as TypeDefs → S-C the macro split (base vs holonic) → S-D migrate callers → S-E inscription folds. May 26 finished through S-B.2.
 
 ```mermaid
-graph LR
-    S0[S0<br/>gate probe] --> SA[S-A<br/>is-a hierarchy]
-    SA --> SA1[S-A1<br/>arg boundary]
-    SA1 --> SB1[S-B.1<br/>recordtype]
-    SB1 --> SB2[S-B.2<br/>defrecord wire]
-    SB2 --> SC[S-C<br/>macro split]
-    SC --> SD[S-D<br/>migrate callers]
-    SD --> SE[S-E<br/>inscription folds]
+graph TD
+    S0[S0 — gate probe] --> SA[S-A — is-a hierarchy]
+    SA --> SA1[S-A1 — arg boundary]
+    SA1 --> SB1[S-B.1 — recordtype]
+    SB1 --> SB2[S-B.2 — defrecord wire]
+    SB2 --> SC[S-C — macro split]
+    SC --> SD[S-D — migrate callers]
+    SD --> SE[S-E — inscription folds]
 
     classDef shipped fill:#9f9,stroke:#363,color:#000
     classDef may26 fill:#4a9eff,stroke:#236,color:#fff

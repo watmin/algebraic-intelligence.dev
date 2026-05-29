@@ -173,17 +173,11 @@ Nothing new is needed for this. L1 = `wat::lru::LocalCache` (per-observer hot, s
 
 ```mermaid
 graph TB
-    O1[Observer A] --> L1A[L1 LocalCache]
-    O2[Observer B] --> L1B[L1 LocalCache]
-    O3[Observer C] --> L1C[L1 LocalCache]
-    L1A -. miss .-> L2[L2 CacheService<br/>shared driver]
-    L1B -. miss .-> L2
-    L1C -. miss .-> L2
-    L2 -. miss .-> EX[expand one step<br/>recurse on branches]
+    O["Observer × N"] --> L1["L1 LocalCache<br/>per-observer hot"]
+    L1 -. miss .-> L2["L2 CacheService<br/>shared across observers"]
+    L2 -. miss .-> EX["expand one step<br/>recurse on branches"]
     EX -. install .-> L2
-    L2 -. install .-> L1A
-    L2 -. install .-> L1B
-    L2 -. install .-> L1C
+    L2 -. install .-> L1
 ```
 
 **The substrate gets faster as it learns.** Not an optimization. An emergent consequence of expansion + caching + observer sharing.
@@ -212,14 +206,20 @@ Chapter 39 had said "tree expansion." Chapter 40 corrected it.
 
 The infinity is correctly stated: not "10^N possible programs" (which would imply enumeration), but "an unbounded DAG over a finite set of cached nodes." Recursion is pointer-chase. Same name, same node, same vector — always.
 
-```
-Tree (wrong):     DAG (right):
-   A                 A
-  / \               / \
- B   C             B   C
- |   |              \ /
- D   D              D
-                (one D, two arrows to it)
+```mermaid
+graph TD
+    subgraph Tree["Tree (wrong)"]
+        A1[A] --> B1[B]
+        A1 --> C1[C]
+        B1 --> D1[D]
+        C1 --> D2[D]
+    end
+    subgraph DAG["DAG (right) — one D, shared"]
+        A2[A] --> B2[B]
+        A2 --> C2[C]
+        B2 --> D3[D]
+        C2 --> D3
+    end
 ```
 
 Memoization in the substrate isn't an optimization — it's the substrate. Every form has a deterministic vector. Every reference to that form lands at the same cache slot. The substrate is content-addressed by construction. Sharing is automatic.
