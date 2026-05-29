@@ -171,6 +171,21 @@ expand(form):
 
 Nothing new is needed for this. L1 = `wat::lru::LocalCache` (per-observer hot, shipped in arc 013). L2 = `wat::lru::CacheService` (shared driver). Cache keys = hashed AST vectors. "Close enough" = arc 012's geometric bucketing. Values within `scale × noise_floor` hash to the same cache entry.
 
+```mermaid
+graph TB
+    O1[Observer A] --> L1A[L1 LocalCache]
+    O2[Observer B] --> L1B[L1 LocalCache]
+    O3[Observer C] --> L1C[L1 LocalCache]
+    L1A -. miss .-> L2[L2 CacheService<br/>shared driver]
+    L1B -. miss .-> L2
+    L1C -. miss .-> L2
+    L2 -. miss .-> EX[expand one step<br/>recurse on branches]
+    EX -. install .-> L2
+    L2 -. install .-> L1A
+    L2 -. install .-> L1B
+    L2 -. install .-> L1C
+```
+
 **The substrate gets faster as it learns.** Not an optimization. An emergent consequence of expansion + caching + observer sharing.
 
 A fresh enterprise: every form is novel. Slow. A warm enterprise (hours later): common sub-forms cached. Most expansions hit cache within the first level or two. A mature enterprise (days later): cache saturated. Novel candles trigger expansion only at leaves that are genuinely new.

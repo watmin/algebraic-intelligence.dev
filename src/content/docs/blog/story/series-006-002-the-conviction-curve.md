@@ -46,6 +46,45 @@ The q99 finding came from binning the resolved predictions by conviction and com
 | q99 | 0.227 | **59.7%** | 870 |
 | q99.5 | 0.25 | 70.9% | 86 |
 
+<div style="max-width: 520px; margin: 1.5rem auto; font-size: 0.9em">
+
+<div style="font-weight: bold; text-align: center; margin-bottom: 0.8rem; font-size: 0.95em">Edge above 50% baseline, by selectivity</div>
+
+<div style="margin-bottom: 0.5rem">
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">q0</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 1.4%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em">50.3%</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">q50</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 7.2%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em">51.5%</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">q85</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 19.1%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em">54.0%</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">q95</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 33.5%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em">57.0%</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">q99</span>
+<div style="background: #4a9eff; height: 1.3rem; border-radius: 2px; width: 46.4%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em"><strong>59.7%</strong> ← discovery</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem">
+<span style="width: 3.5rem; text-align: right; flex-shrink: 0; font-size: 0.85em; color: var(--sl-color-gray-3)">q99.5</span>
+<div style="background: #ff6b6b; height: 1.3rem; border-radius: 2px; width: 100%"></div>
+<span style="flex-shrink: 0; font-size: 0.85em"><strong>70.9%</strong></span>
+</div>
+</div>
+
+</div>
+
 The relationship was monotonic. Every step up in selectivity produced proportionally better accuracy. This wasn't a lucky threshold — it was a curve.
 
 ---

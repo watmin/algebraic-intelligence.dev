@@ -43,6 +43,16 @@ May 22. Late that night, the paperwork pass put four files on disk in one commit
 
 The shape: edn ↔ wat, wat ↔ holon, edn ↔ holon, in two directions each — six conversion cells. The earlier path treated only edn↔wat and wat↔holon as first-class; edn↔holon ran through wat as a coincidence of having to. Arc 222's mission: mint the missing cells. Literal forms as the surface (data's natural reading); algebraic forms (`(Bundle ...)`, `(Bind ...)`) as the power-user dropdown the substrate keeps available but doesn't force on consumers.
 
+```mermaid
+graph LR
+    EDN((edn))
+    WAT((wat))
+    HOL((holon))
+    EDN <-->|read / write| WAT
+    WAT <-->|atomize / materialize| HOL
+    EDN <-.->|arc 222 — direct| HOL
+```
+
 Arc 222 stayed blocked through the stretch — its mission rewrote itself twice as the doctrine landed beneath it. May 23 evening expanded it: mint the EDN-form named constructors at wat-surface following the uniform `(Bind (Atom <ClassName>) (Atom <data>))` pattern. Every named type — `Int`, `Float`, `Map`, `Set`, `Vector`, `List`, `Quote`, `Quasiquote`, `Unquote`, `Splice`, `Tagged` — gets the same classifier-wrap. The 3×2 grid stayed; the cells inside it earned a uniform algebra.
 
 ## Arc 224 — The Naming Audit
