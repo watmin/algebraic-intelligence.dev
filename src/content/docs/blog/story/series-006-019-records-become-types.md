@@ -23,21 +23,21 @@ The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.
 
 ```mermaid
 graph TD
-    S0[S0 — gate probe] --> SA[S-A — is-a hierarchy]
-    SA --> SA1[S-A1 — arg boundary]
-    SA1 --> SB1[S-B.1 — recordtype]
-    SB1 --> SB2[S-B.2 — defrecord wire]
-    SB2 --> SC[S-C — macro split]
-    SC --> SD[S-D — migrate callers]
-    SD --> SE[S-E — inscription folds]
+    S0(("S0<br/>gate probe")):::cleared
+    SA(("S-A<br/>is-a hierarchy")):::cleared
+    SA1["<b>S-A1</b><br/>the choke point<br/><i>827/0 PASS</i>"]:::today
+    SB1["<b>S-B.1</b><br/>records become types<br/><i>recordtype + TypeDef::Record</i>"]:::today
+    SB2["<b>S-B.2</b><br/>defrecord wire<br/><i>5/5 PASS</i>"]:::today
+    SC{{"S-C<br/>the macro split<br/>(base vs holonic)"}}:::pending
+    SD{{"S-D<br/>migrate callers"}}:::pending
+    SE{{"S-E<br/>inscription folds"}}:::pending
 
-    classDef shipped fill:#9f9,stroke:#363,color:#000
-    classDef may26 fill:#4a9eff,stroke:#236,color:#fff
-    classDef pending fill:#eee,stroke:#999,color:#666
+    S0 ==> SA ==> SA1 ==> SB1 ==> SB2
+    SB2 -.-> SC -.-> SD -.-> SE
 
-    class S0,SA shipped
-    class SA1,SB1,SB2 may26
-    class SC,SD,SE pending
+    classDef cleared fill:#1f5e3a,stroke:#5fcc7a,color:#bff6cb,stroke-width:2px
+    classDef today fill:#1e4a7d,stroke:#7fb3ff,color:#dde9ff,stroke-width:3px
+    classDef pending fill:#2a2a2a,stroke:#666,color:#999,stroke-dasharray:6 4
 ```
 
 ---
