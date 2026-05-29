@@ -1,10 +1,10 @@
 {
   "resource": "https://algebraic-intelligence.dev",
   "authorization_servers": ["https://algebraic-intelligence.dev"],
-  "scopes_supported": [],
+  "scopes_supported": ["public"],
   "bearer_methods_supported": ["header"],
   "resource_documentation": "https://algebraic-intelligence.dev/llms.txt",
   "resource_policy_uri": "https://algebraic-intelligence.dev/blog/topology/",
   "x-authentication-required": false,
-  "x-note": "This site has no protected resources requiring authentication. authorization_servers names the issuer of our companion Authorization Server metadata at /.well-known/oauth-authorization-server (which carries the agent_auth block pointing at /auth.md for the long-form explanation); the AS itself declares response_types_supported and grant_types_supported as empty, since no protected flows exist. scopes_supported is empty because nothing here is gated. bearer_methods_supported lists 'header' as the canonical RFC 6750 method per the OPR spec — the site does not actually accept bearer tokens; a presented token is ignored and the request is served as anonymous GET. All content is publicly accessible without authentication. See resource_documentation for the agent map and resource_policy_uri for site organization."
+  "x-note": "This site has no protected resources requiring authentication. authorization_servers names the issuer of our companion Authorization Server metadata at /.well-known/oauth-authorization-server (which carries the agent_auth block pointing at /auth.md for the long-form explanation); the AS itself declares response_types_supported and grant_types_supported as empty, since no protected flows exist. scopes_supported lists 'public' as a single documented identifier for unrestricted access — every URL on this site is reachable without authorization, so 'public' is the only meaningful scope name; requesting it grants nothing because nothing is gated. bearer_methods_supported lists 'header' as the canonical RFC 6750 method per the OPR spec — the site does not actually accept bearer tokens; a presented token is ignored and the request is served as anonymous GET. All content is publicly accessible without authentication. See resource_documentation for the agent map and resource_policy_uri for site organization."
 }
