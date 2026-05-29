@@ -24,9 +24,9 @@ The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.
 ```mermaid
 block-beta
     columns 3
-    S0["S0\ngate probe"]:::cleared SA["S-A\nis-a hierarchy"]:::cleared space
-    SA1["S-A1\nthe choke point\n827/0 PASS"]:::today SB1["S-B.1\nrecords become types"]:::today SB2["S-B.2\ndefrecord wire\n5/5 PASS"]:::today
-    SC["S-C\nthe macro split"]:::pending SD["S-D\nmigrate callers"]:::pending SE["S-E\ninscription folds"]:::pending
+    S0["S0<br/>gate probe"] SA["S-A<br/>is-a hierarchy"] space
+    SA1["S-A1<br/>the choke point<br/>827/0 PASS"] SB1["S-B.1<br/>records become types"] SB2["S-B.2<br/>defrecord wire<br/>5/5 PASS"]
+    SC["S-C<br/>the macro split"] SD["S-D<br/>migrate callers"] SE["S-E<br/>inscription folds"]
 
     S0 --> SA
     SA --> SA1
@@ -39,6 +39,15 @@ block-beta
     classDef cleared fill:#1f5e3a,stroke:#5fcc7a,color:#bff6cb
     classDef today fill:#1e4a7d,stroke:#7fb3ff,color:#dde9ff
     classDef pending fill:#2a2a2a,stroke:#666,color:#999
+
+    class S0 cleared
+    class SA cleared
+    class SA1 today
+    class SB1 today
+    class SB2 today
+    class SC pending
+    class SD pending
+    class SE pending
 ```
 
 ---
