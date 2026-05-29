@@ -21,42 +21,44 @@ Four phases: **study the lair** → **perceive the traps** → **draw the strike
 
 The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.md`) is the DUNGEON-CRAWL doc's worked example. Eight slices, each a room with one boss, the bosses ordered so each unlocks the next: S0 gate probe → S-A is-a hierarchy → S-A1 the arg-boundary check → S-B records as TypeDefs → S-C the macro split (base vs holonic) → S-D migrate callers → S-E inscription folds. May 26 finished through S-B.2.
 
-```mermaid
----
-config:
-  layout: elk
----
-graph TB
-    subgraph cleared_grp ["Cleared — pre-May 26"]
-        direction LR
-        S0(("S0<br/>gate probe")):::cleared
-        SA(("S-A<br/>is-a hierarchy")):::cleared
-        S0 ==> SA
-    end
+<div style="display: flex; flex-direction: column; gap: 0.8rem; margin: 1.5rem auto; max-width: 900px">
 
-    subgraph today_grp ["May 26 — three stones lifted"]
-        direction LR
-        SA1["<b>S-A1</b><br/>the choke point<br/><i>827/0 PASS</i>"]:::today
-        SB1["<b>S-B.1</b><br/>records become types<br/><i>recordtype + TypeDef::Record</i>"]:::today
-        SB2["<b>S-B.2</b><br/>defrecord wire<br/><i>5/5 PASS</i>"]:::today
-        SA1 ==> SB1 ==> SB2
-    end
+<div>
+<div style="font-size: 0.82em; color: #5fcc7a; margin-bottom: 0.4rem; font-weight: 600">Cleared — pre-May 26</div>
+<div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap">
+<div style="background: #1f5e3a; border: 2px solid #5fcc7a; color: #bff6cb; padding: 0.55rem 1rem; border-radius: 50px; font-size: 0.85em; text-align: center; min-width: 120px">S0<br><strong>gate probe</strong></div>
+<span style="color: #5fcc7a; font-size: 1.4em; font-weight: bold">→</span>
+<div style="background: #1f5e3a; border: 2px solid #5fcc7a; color: #bff6cb; padding: 0.55rem 1rem; border-radius: 50px; font-size: 0.85em; text-align: center; min-width: 120px">S-A<br><strong>is-a hierarchy</strong></div>
+</div>
+</div>
 
-    subgraph pending_grp ["Pending — fog of war"]
-        direction LR
-        SC{{"S-C<br/>the macro split<br/>(base vs holonic)"}}:::pending
-        SD{{"S-D<br/>migrate callers"}}:::pending
-        SE{{"S-E<br/>inscription folds"}}:::pending
-        SC -.-> SD -.-> SE
-    end
+<div style="text-align: center; color: #5fcc7a; font-size: 1.3em; line-height: 1">↓</div>
 
-    SA ==> SA1
-    SB2 -.-> SC
+<div>
+<div style="font-size: 0.82em; color: #7fb3ff; margin-bottom: 0.4rem; font-weight: 600">May 26 — three stones lifted</div>
+<div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap">
+<div style="background: #1e4a7d; border: 3px solid #7fb3ff; color: #dde9ff; padding: 0.55rem 0.9rem; border-radius: 4px; font-size: 0.85em; text-align: center; min-width: 140px"><strong>S-A1</strong><br>the choke point<br><em style="opacity: 0.8; font-size: 0.92em">827/0 PASS</em></div>
+<span style="color: #7fb3ff; font-size: 1.4em; font-weight: bold">→</span>
+<div style="background: #1e4a7d; border: 3px solid #7fb3ff; color: #dde9ff; padding: 0.55rem 0.9rem; border-radius: 4px; font-size: 0.85em; text-align: center; min-width: 140px"><strong>S-B.1</strong><br>records become types<br><em style="opacity: 0.8; font-size: 0.92em">recordtype + TypeDef::Record</em></div>
+<span style="color: #7fb3ff; font-size: 1.4em; font-weight: bold">→</span>
+<div style="background: #1e4a7d; border: 3px solid #7fb3ff; color: #dde9ff; padding: 0.55rem 0.9rem; border-radius: 4px; font-size: 0.85em; text-align: center; min-width: 140px"><strong>S-B.2</strong><br>defrecord wire<br><em style="opacity: 0.8; font-size: 0.92em">5/5 PASS</em></div>
+</div>
+</div>
 
-    classDef cleared fill:#1f5e3a,stroke:#5fcc7a,color:#bff6cb,stroke-width:2px
-    classDef today fill:#1e4a7d,stroke:#7fb3ff,color:#dde9ff,stroke-width:3px
-    classDef pending fill:#2a2a2a,stroke:#666,color:#999,stroke-dasharray:6 4
-```
+<div style="text-align: center; color: #666; font-size: 1.3em; line-height: 1">⇣</div>
+
+<div>
+<div style="font-size: 0.82em; color: #888; margin-bottom: 0.4rem; font-weight: 600">Pending — fog of war</div>
+<div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap">
+<div style="background: #2a2a2a; border: 2px dashed #666; color: #999; padding: 0.55rem 1rem; font-size: 0.85em; text-align: center; min-width: 140px">S-C<br><strong>the macro split</strong><br><span style="font-size: 0.88em">(base vs holonic)</span></div>
+<span style="color: #666; font-size: 1.3em">⇢</span>
+<div style="background: #2a2a2a; border: 2px dashed #666; color: #999; padding: 0.55rem 1rem; font-size: 0.85em; text-align: center; min-width: 140px">S-D<br><strong>migrate callers</strong></div>
+<span style="color: #666; font-size: 1.3em">⇢</span>
+<div style="background: #2a2a2a; border: 2px dashed #666; color: #999; padding: 0.55rem 1rem; font-size: 0.85em; text-align: center; min-width: 140px">S-E<br><strong>inscription folds</strong></div>
+</div>
+</div>
+
+</div>
 
 ---
 
