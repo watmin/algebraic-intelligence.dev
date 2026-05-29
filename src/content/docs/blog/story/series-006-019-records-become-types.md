@@ -23,38 +23,42 @@ The records-as-first-class-types boss-map (`DESIGN-RECORDS-AS-FIRST-CLASS-TYPES.
 
 ```mermaid
 block-beta
+columns 1
+
+block:cleared_row
     columns 3
-    HD1["▸ Cleared — pre-May 26"]:3
     S0["S0<br/>gate probe"] SA["S-A<br/>is-a hierarchy"] space
-    HD2["▸ May 26 — three stones lifted"]:3
+end
+
+space
+
+block:today_row
+    columns 3
     SA1["S-A1<br/>the choke point<br/>827/0 PASS"] SB1["S-B.1<br/>records become types"] SB2["S-B.2<br/>defrecord wire<br/>5/5 PASS"]
-    HD3["▸ Pending — fog of war"]:3
+end
+
+space
+
+block:pending_row
+    columns 3
     SC["S-C<br/>the macro split"] SD["S-D<br/>migrate callers"] SE["S-E<br/>inscription folds"]
+end
 
-    S0 --> SA
-    SA1 --> SB1
-    SB1 --> SB2
-    SC --> SD
-    SD --> SE
+cleared_row --> today_row
+today_row --> pending_row
 
-    classDef cleared fill:#1f5e3a,stroke:#5fcc7a,color:#bff6cb
-    classDef today fill:#1e4a7d,stroke:#7fb3ff,color:#dde9ff
-    classDef pending fill:#2a2a2a,stroke:#666,color:#999
-    classDef hdrCleared fill:transparent,stroke:transparent,color:#5fcc7a,font-weight:600
-    classDef hdrToday fill:transparent,stroke:transparent,color:#7fb3ff,font-weight:600
-    classDef hdrPending fill:transparent,stroke:transparent,color:#888,font-weight:600
+classDef cleared fill:#1f5e3a,stroke:#5fcc7a,color:#bff6cb
+classDef today fill:#1e4a7d,stroke:#7fb3ff,color:#dde9ff
+classDef pending fill:#2a2a2a,stroke:#666,color:#999
 
-    class HD1 hdrCleared
-    class HD2 hdrToday
-    class HD3 hdrPending
-    class S0 cleared
-    class SA cleared
-    class SA1 today
-    class SB1 today
-    class SB2 today
-    class SC pending
-    class SD pending
-    class SE pending
+class S0 cleared
+class SA cleared
+class SA1 today
+class SB1 today
+class SB2 today
+class SC pending
+class SD pending
+class SE pending
 ```
 
 ---
