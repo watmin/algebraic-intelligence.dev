@@ -1,17 +1,28 @@
-# Static MCP for algebraic-intelligence.dev — DESIGN
+# Static MCP — DESIGN
 
-**Status**: Multi-arc plan. Master design captured 2026-05-30.
+**Status**: Multi-arc plan. Master design captured 2026-05-30. Updated
+2026-05-30 to reflect the three-domain split: `algebraic-intelligence.dev`
+(chronicle), `datamancer.dev` (identity), `datamancy.dev` (grimoire +
+MCP server).
 
 ## The idea
 
-A cryptographically verifiable static MCP server hosted as plain files on
-the website. The instruction set (datamancy spells, the consonare voice
-discipline, any future skills) becomes a **provably immutable, publicly
-auditable prompt distribution channel**.
+A cryptographically verifiable static MCP server hosted as plain
+markdown files on a dedicated domain (`datamancy.dev`). The instruction
+set (datamancy spells, the consonare voice discipline, any future
+skills) becomes a **provably immutable, publicly auditable prompt
+distribution channel**.
 
 Trust root = the SHA-256 of each file content, published in a manifest. A
 client adapter verifies every fetch against the manifest before any content
 reaches an LLM. Tampering = hash mismatch = rejection.
+
+The **raw-markdown end-to-end** decision matters: zero transformation
+between source and served means the SHA-256 of the file on disk = the
+SHA-256 of what's served = the SHA-256 of what the LLM consumes. No
+template engine, no Astro, no markdown processor, no `.md → .html`
+divergence. The file IS the artifact. Trust property collapses to "file
+bytes match the manifest's hash."
 
 ### Why this is novel
 
@@ -26,39 +37,71 @@ The user has been building this without naming it for a while: see
 `public/.well-known/agent-skills/index.json` (already has 16 datamancy
 spells with SHA-256 hashes against their GitHub source).
 
-## Architecture — three layers
+## Three-domain architecture
+
+Three distinct domains, each with a single purpose. All static. All
+Cloudflare Pages-hosted.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  Layer 1: Static content + manifest (website, Cloudflare)  │
-│                                                             │
-│  algebraic-intelligence.dev/                                │
-│    ├── mcp/skills/<name>.md         ← skill content         │
-│    ├── mcp/spells/<name>.md         ← grimoire content      │
-│    ├── .well-known/mcp/manifest.json  ← discovery + hashes  │
-│    └── mcp/manifest.json.sig        ← (Tier 2) signature    │
-└─────────────────────────────────────────────────────────────┘
-                          │ HTTP GET
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Layer 2: npm adapter (consumer machine)                    │
-│                                                             │
-│  npx -y @datamancy/mcp                                      │
-│    1. Fetch manifest                                        │
-│    2. (Tier 3) Verify manifest sha == hash pinned in src    │
-│    3. (Tier 2) Verify manifest.sig against pinned pubkey    │
-│    4. On any tool/resource request: fetch content, sha256,  │
-│       compare to manifest entry. Mismatch → REJECT.         │
-│    5. Match → expose via real MCP JSON-RPC stdio            │
-└─────────────────────────────────────────────────────────────┘
-                          │ MCP JSON-RPC stdio
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Layer 3: LLM consumer (Claude / Cursor / etc.)             │
-│                                                             │
-│  Standard MCP client. No knowledge of static backend or     │
-│  hashes — sees a normal MCP server.                         │
-└─────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│ algebraic-intelligence.dev — CHRONICLE                   │
+│ (Astro/Starlight, rendered, voice-disciplined story)     │
+│                                                          │
+│   - The build chronicle (series-006-*)                   │
+│   - Discovery card: .well-known/mcp/server-card.json     │
+│     (points at datamancer.dev as MCP server location)    │
+│   - agent-skills/index.json (mirrors datamancy.dev URLs) │
+└──────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────┐
+│ datamancer.dev — IDENTITY                                │
+│ (raw markdown, zero rendering, the practitioner's card)  │
+│                                                          │
+│   - index.md (who the datamancer is, what they do)       │
+│   - Pointers to algebraic-intelligence.dev (chronicle)   │
+│     and datamancy.dev (grimoire)                         │
+│   - Possibly contact, links, a short bio                 │
+└──────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────┐
+│ datamancy.dev — GRIMOIRE + MCP SERVER                    │
+│ (raw markdown, zero rendering, hash-verified)            │
+│                                                          │
+│   - <spell-name>.md per spell (or <spell-name>/SKILL.md) │
+│   - .well-known/mcp/manifest.json (THE manifest)         │
+│   - _headers (Content-Type: text/markdown for *.md)      │
+│   - scripts/generate-manifest.mjs (build-time hashing)   │
+└──────────────────────────────────────────────────────────┘
+```
+
+### MCP consumption flow
+
+```
+┌──────────────────────────────────────────────────────────┐
+│ datamancy.dev: static content + manifest                 │
+│ (Cloudflare Pages, raw markdown, no build framework)     │
+└──────────────────────────────────────────────────────────┘
+                       │ HTTP GET
+                       ▼
+┌──────────────────────────────────────────────────────────┐
+│ npm adapter (consumer machine)                           │
+│                                                          │
+│ npx -y @<scope>/datamancy-mcp                            │
+│   1. Fetch manifest                                      │
+│   2. (Tier 3) Verify manifest sha == hash pinned in src  │
+│   3. (Tier 2) Verify manifest.sig against pinned pubkey  │
+│   4. On any tool/resource request: fetch content,        │
+│      sha256, compare to manifest entry. Mismatch=REJECT. │
+│   5. Match → expose via real MCP JSON-RPC stdio          │
+└──────────────────────────────────────────────────────────┘
+                       │ MCP JSON-RPC stdio
+                       ▼
+┌──────────────────────────────────────────────────────────┐
+│ LLM consumer (Claude / Cursor / etc.)                    │
+│                                                          │
+│ Standard MCP client. No knowledge of static backend or   │
+│ hashes — sees a normal MCP server.                       │
+└──────────────────────────────────────────────────────────┘
 ```
 
 ## Trust tiers
@@ -94,74 +137,111 @@ model changes.
 
 ## Current state (2026-05-30)
 
-What's already in the repo:
+**Domains owned**: `algebraic-intelligence.dev` (chronicle, live);
+`datamancer.dev` (identity, registered, not yet published);
+`datamancy.dev` (grimoire, registered, not yet published).
 
-**`public/.well-known/agent-skills/index.json`** — 16 datamancy spells with
-SHA-256 hashes already computed. URLs currently point at
-`raw.githubusercontent.com` (bot-blockable). Schema:
-`https://agentskills.io/schema/v0.2.0.json`. Already implements T1 trust
-for the agent-skills.io ecosystem.
+**`github.com/watmin/datamancy`** — 16 datamancy spells already in
+`<name>/SKILL.md` structure. This repo is the source-of-truth for the
+grimoire content. Will be:
+- Connected to Cloudflare Pages
+- Published as `datamancy.dev`
+- Gain `_headers` for MIME types, `scripts/generate-manifest.mjs`, and
+  the generated `.well-known/mcp/manifest.json`
 
-**`public/.well-known/mcp/server-card.json`** — MCP discovery card,
-currently flagged `x-no-server: true` with `x-recommended-resources`
-pointing at `llms.txt`, blog `/topology/`, and a `github.com/watmin/scratch`
-future-mcp-design pointer. Will flip to `x-static-server: true` with
-`manifest_url` once Arc M1 ships.
+**`algebraic-intelligence.dev/public/.well-known/agent-skills/index.json`**
+— 16 datamancy spells with SHA-256 hashes already computed. URLs
+currently point at `raw.githubusercontent.com` (bot-blockable). In Arc M1
+these get repointed at `datamancy.dev/<spell>.md` URLs (unblock bots;
+same verifiable hashes since the content is the same files).
 
-**`public/auth.md`** — agent_auth metadata for the website (closed-vocabulary
-markers for no-registration, anonymous-api-key flow). Inscribed during the
-isitagentready spelunking.
+**`algebraic-intelligence.dev/public/.well-known/mcp/server-card.json`**
+— MCP discovery card, currently flagged `x-no-server: true`. In Arc M1
+flips to `x-static-server: true` with `x-server-url: "https://datamancy.dev"`
+and a pointer at the manifest hosted there.
 
-**`.claude/skills/consonare/SKILL.md`** — voice-discipline spell, lives in
-the website repo (scoped to website's story chronicle). Will be mirrored
-to `public/mcp/skills/consonare.md` in Arc M1.
+**`algebraic-intelligence.dev/public/auth.md`** — agent_auth metadata for
+the website. Stays as-is for the website; `datamancy.dev` may or may not
+need its own depending on whether it advertises any auth surface (it's
+fully public, so probably just a `_headers`-based `text/markdown` MIME
+config and no auth machinery).
 
-**Build chain** (`package.json` postbuild):
+**`algebraic-intelligence.dev/.claude/skills/consonare/SKILL.md`** —
+voice-discipline spell, lives in the website repo (scoped to website's
+story chronicle). Mirrored to `github.com/watmin/datamancy/consonare/SKILL.md`
+during Arc M1.
+
+**`algebraic-intelligence.dev` build chain** (`package.json` postbuild):
 `copy-markdown → generate-llms-companions → check-functions → check-pages`.
-Will gain `generate-mcp-manifest` step in Arc M1.
+Unchanged by Arc M1 (the manifest generation lives in the datamancy repo,
+not here).
 
-**Existing deps**: `@astrojs/starlight`, `astro`, `astro-mermaid`, `mermaid`,
-`@mermaid-js/layout-elk`, `rehype-external-links`, `sharp`. No dep changes
-needed for Arc M1 (Node `node:crypto` is built-in).
+**`algebraic-intelligence.dev` deps**: unchanged. Node `node:crypto`
+suffices for any hash-related work on either side.
+
+**`datamancer.dev`**: no repo yet. Will be a minimal new repo with just
+`index.md` + `_headers` + maybe a few related markdown files (about,
+links). Connected to Cloudflare Pages, published as `datamancer.dev`.
 
 ## Arcs
 
-### Arc M1 — Static manifest + build automation (server side, T1)
+### Arc M1 — Static manifest + datamancer.dev/datamancy.dev publishing (T1 server side)
 
 **Goal**: Ship the cryptographically verifiable static MCP, server-side
-complete. The site begins serving a real manifest; the consumer side is
-deferred to Arc M2.
+complete, across the three-domain split. Both new domains live; the
+existing chronicle site gains its discovery pointers updated. Consumer
+side deferred to Arc M2.
 
-**Deliverables**:
-- Mirror existing datamancy spells from `github.com/watmin/datamancy/` to
-  `public/mcp/skills/` (16 files, content matches what's in the existing
-  agent-skills index)
-- Mirror `consonare.md` from `.claude/skills/consonare/SKILL.md` to
-  `public/mcp/skills/consonare.md`
-- `scripts/generate-mcp-manifest.mjs` — postbuild script that:
-  - Reads every `.md` in `public/mcp/skills/` (and `public/mcp/spells/` if
-    added)
+**Deliverables — `github.com/watmin/datamancy` repo (→ datamancy.dev)**:
+- Mirror `consonare.md` from `algebraic-intelligence.dev/.claude/skills/consonare/SKILL.md`
+  to `consonare/SKILL.md` in this repo
+- `_headers` file (Cloudflare Pages format) setting
+  `Content-Type: text/markdown; charset=utf-8` for `*.md` and `*/SKILL.md`
+- `scripts/generate-manifest.mjs` — build-time script that:
+  - Walks `*/SKILL.md` (each spell's directory)
   - Computes SHA-256 + byte size per file
   - Captures `git rev-parse --short HEAD` as version
-  - Emits `public/.well-known/mcp/manifest.json`
-- Wire generate-mcp-manifest into `package.json` postbuild chain
-- Flip `public/.well-known/mcp/server-card.json`:
-  - `x-no-server: true` → `x-static-server: true`
-  - Add `x-manifest-url: "/.well-known/mcp/manifest.json"`
-  - Update `x-note` to describe the static-MCP model
-  - Update `x-recommended-resources` to point at the live manifest
-- Update `public/.well-known/agent-skills/index.json` to mirror datamancy
-  URLs from raw.githubusercontent.com → algebraic-intelligence.dev
-  (unblock bots, same verifiable hashes)
+  - Emits `.well-known/mcp/manifest.json`
+- Run generate-manifest as part of the publish flow (Cloudflare Pages
+  build command, or pre-commit hook, or GitHub Action — decision TBD)
+- Cloudflare Pages connection: repo → datamancy.dev with appropriate
+  build/publish config
 
-**Manifest schema (target)**:
+**Deliverables — new datamancer.dev repo**:
+- New repo at e.g. `github.com/watmin/datamancer.dev`
+- `index.md` — bare markdown, the practitioner's identity card. Three
+  pointers minimum:
+  - chronicle → `algebraic-intelligence.dev`
+  - grimoire → `datamancy.dev`
+  - source repos → github.com/watmin (or specific repos)
+- `_headers` file for MIME type (same as datamancy.dev)
+- Cloudflare Pages connection: repo → datamancer.dev
+
+**Deliverables — `algebraic-intelligence.dev` repo**:
+- Update `public/.well-known/agent-skills/index.json`: change each spell's
+  `url` field from `raw.githubusercontent.com/watmin/datamancy/main/<spell>/SKILL.md`
+  to `https://datamancy.dev/<spell>/SKILL.md` (or flat `https://datamancy.dev/<spell>.md`
+  depending on URL shape decision). Hashes don't change (same files).
+- Add consonare entry to `agent-skills/index.json` pointing at its new
+  datamancy.dev location
+- Update `public/.well-known/mcp/server-card.json`:
+  - Flip `x-no-server: true` → `x-static-server: true`
+  - Add `x-server-url: "https://datamancy.dev"`
+  - Add `x-manifest-url: "https://datamancy.dev/.well-known/mcp/manifest.json"`
+  - Update `x-note` to describe the static-MCP model + the
+    practitioner/grimoire/chronicle split
+  - Update `x-recommended-resources` to point at the live manifest
+    and the three domain entry points
+
+**Manifest schema (target — lives at `datamancy.dev/.well-known/mcp/manifest.json`)**:
 
 ```json
 {
   "serverInfo": {
-    "name": "algebraic-intelligence.dev/datamancy",
+    "name": "datamancy.dev",
     "version": "<git short SHA at build time>"
   },
+  "practitioner": "https://datamancer.dev",
   "trust": {
     "algorithm": "SHA-256",
     "tier": 1,
@@ -170,7 +250,7 @@ deferred to Arc M2.
   "resources": [
     {
       "name": "consonare",
-      "uri": "https://algebraic-intelligence.dev/mcp/skills/consonare.md",
+      "uri": "https://datamancy.dev/consonare/SKILL.md",
       "mimeType": "text/markdown",
       "sha256": "<hex>",
       "size": 14234,
@@ -180,11 +260,21 @@ deferred to Arc M2.
 }
 ```
 
-**Acceptance**: Cloudflare Pages serves `manifest.json`. Each `sha256`
-field matches the actual content of the URL it points at. A curl-based
-verification script can fetch + verify any single entry by hand.
+**Acceptance**:
+- `datamancy.dev/.well-known/mcp/manifest.json` resolves and is served as
+  `application/json`
+- Every spell URL in the manifest resolves and serves
+  `text/markdown; charset=utf-8`
+- Each `sha256` field matches the actual SHA-256 of the URL's content
+  (curl + sha256sum verifiable by hand)
+- `datamancer.dev/index.md` resolves and serves `text/markdown`
+- `algebraic-intelligence.dev/.well-known/mcp/server-card.json` advertises
+  datamancy.dev as the server and links manifest URL
+- `algebraic-intelligence.dev/.well-known/agent-skills/index.json` points
+  at datamancy.dev URLs with same hashes
 
-**Out of scope for M1**: signing, npm package, T3 pinning.
+**Out of scope for M1**: signing, npm package, T3 pinning, complex
+manifest features (versioning beyond git SHA, schemas, sub-categories).
 
 ### Arc M2 — npm adapter (`@datamancy/mcp`)
 
@@ -255,12 +345,65 @@ manifest is rejected.
 **Decision gate before M4 work begins**: is T1 + T3 sufficient for the
 project's threat model? If yes, skip M4 indefinitely.
 
+## Repo layout (confirmed 2026-05-30)
+
+Three repos, three artifacts:
+
+| Repo | Becomes | Published as |
+|---|---|---|
+| `github.com/watmin/datamancy.dev` (renamed from existing `datamancy`) | Published grimoire site, raw markdown spells, hash-verified manifest | `datamancy.dev` (Cloudflare Pages) |
+| `github.com/watmin/datamancy` (NEW after rename) | Node tooling — MCP adapter, T3 pinning, eventually T2 signing tooling | npm registry — name TBD (see Open Questions) |
+| `github.com/watmin/datamancer.dev` (NEW) | Published identity site, raw markdown | `datamancer.dev` (Cloudflare Pages) |
+
+Naming is self-documenting: repo name matches the artifact's primary
+identity. `datamancy.dev` repo → datamancy.dev site. `datamancer.dev`
+repo → datamancer.dev site. `datamancy` repo (no suffix) → canonical
+"datamancy as code," published to npm.
+
+### What's in `github.com/watmin/datamancy` (the node tooling repo)
+
+The MCP adapter package. Structure (target for Arc M2):
+
+```
+datamancy/                             ← the npm package source
+├── package.json                       ← @watmin/datamancy or plain `datamancy`
+├── src/
+│   ├── index.ts                       ← entry point; stdio MCP server boot
+│   ├── manifest.ts                    ← fetch + (T3) pin-verify manifest
+│   ├── resources.ts                   ← MCP resource handler; fetch + sha256 + verify
+│   ├── pinned-manifest-hash.ts        ← (T3, generated at publish time)
+│   └── errors.ts                      ← structured rejection errors
+├── tests/
+│   ├── manifest-fetch.test.ts
+│   ├── hash-verify.test.ts
+│   └── mismatch-rejection.test.ts     ← fixture: tampered content rejected
+├── scripts/
+│   └── pin-manifest.mjs               ← (T3, npm prepublish hook): fetch live
+│                                        manifest, SHA-256 it, write to
+│                                        pinned-manifest-hash.ts
+├── README.md                          ← how to add to Claude Code / Cursor MCP config
+└── LICENSE
+```
+
+Boot sequence (per design):
+
+1. Fetch `https://datamancy.dev/.well-known/mcp/manifest.json`
+2. (T3) SHA-256 the fetched manifest body; compare to value pinned in
+   `src/pinned-manifest-hash.ts`. Mismatch → fatal startup error.
+3. (T2 future) Verify `manifest.sig` against pinned public key.
+4. Parse manifest's `resources` array; register each as an MCP resource.
+5. On resource read: fetch the resource URL, SHA-256, compare to the
+   manifest entry's `sha256`. Mismatch → structured MCP error to consumer
+   ("resource X failed integrity verification"), do NOT pass content.
+6. Match → return content as MCP resource payload.
+
 ## Open questions
 
-1. **npm scope/org name**. Options:
-   - `@datamancy/mcp` (would need to claim `@datamancy` scope on npm)
-   - `@watmin/datamancy-mcp` (uses existing username scope)
-   - Unscoped `datamancy-mcp`
+1. **npm package name**. Options:
+   - Plain `datamancy` (clean: `npx -y datamancy`). Depends on name being
+     available on npm.
+   - `@watmin/datamancy` (uses username scope; guaranteed available).
+   - `@datamancer/mcp` (would need to claim `@datamancer` scope).
    - Other
 2. **Manifest schema versioning**. Add a top-level `schemaVersion` field?
    Use the existing agent-skills.io schema URL? Define our own at e.g.
@@ -296,6 +439,21 @@ project's threat model? If yes, skip M4 indefinitely.
   → optionally T2.
 - The npm adapter is a hard dependency for actually consuming this. T3
   pinning is cheap (~5 LOC in adapter source) once M2 is in place.
+- **2026-05-30 mid-session**: User bought `datamancer.dev`. Original plan
+  had the MCP server hosted under `algebraic-intelligence.dev/mcp/...`;
+  user pivoted to a dedicated domain.
+- **2026-05-30 mid-session**: User bought `datamancy.dev`. The plan now
+  splits across three domains: `algebraic-intelligence.dev` (chronicle —
+  unchanged role), `datamancer.dev` (identity card, raw markdown),
+  `datamancy.dev` (grimoire + MCP server, raw markdown, hash-verified).
+- **2026-05-30 mid-session**: User specified "datamancer.dev be another
+  markdown site who just points to datamancy" — datamancer.dev is the
+  practitioner's identity card; datamancy.dev is the spell library.
+  Separation of concerns: who-the-datamancer-is vs what-tools-they-cast.
+- **Raw markdown end-to-end** decision: both datamancer.dev and
+  datamancy.dev serve bare `.md` files with `Content-Type: text/markdown`.
+  No Astro, no Starlight, no rendering layer. The file IS the artifact.
+  Hash property is exact (no `.md → .html` transform divergence).
 
 ## Update protocol
 
