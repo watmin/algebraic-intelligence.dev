@@ -14,9 +14,14 @@ by dependency, the dependency wins.
 
 ## Now
 
+**M1 CLOSED — the static-MCP system is live end-to-end (2026-05-30).** Both
+domains serve on Cloudflare Pages, the trust chain is proven through a real
+MCP client, and the bare domains redirect to their raw artifacts. Next arc:
+**M3** (Tier 3 pinning) — see "Then" below.
+
 | ID | Item | Status | Notes |
 |---|---|---|---|
-| M1.E | DNS propagation + **Cloudflare Pages config (not Workers)** for `datamancy.dev` + `datamancer.dev` | 🔨 | **datamancy.dev DONE** — live + verified 2026-05-30: manifest serves `application/json` HTTP 200, version `59870ef`, 20 resources (grimoire included), live == local exactly; signature serves 64-byte `application/octet-stream`. **NOTE:** empty `gh api .../hooks` is NOT a failure signal — Cloudflare deploys current content regardless; that diagnostic was a dead end, ignore it. **datamancer.dev REMAINING** — user setting up now (Pages, not Workers). |
+| M1.E | DNS + **Cloudflare Pages (not Workers)** for both domains | ✅ | Both live. datamancy.dev serves manifest (`application/json` 200, 20 resources, live==local) + 64-byte sig. datamancer.dev serves `/index.md` (`text/markdown` 200, 1386 B). Bare-domain `_redirects` shipped: datamancer.dev `/`→`/index.md` (302), datamancy.dev `/`→`/grimoire/SKILL.md` (302), both verified landing on 200 content. **NOTE:** empty `gh api .../hooks` is NOT a failure signal — ignore it. |
 
 ## Up next (when M1.E unblocks)
 
@@ -24,7 +29,7 @@ by dependency, the dependency wins.
 |---|---|---|---|---|
 | M1.C | Cross-references on algebraic-intelligence.dev — repoint `agent-skills/index.json` URLs + flip `mcp/server-card.json` to `x-static-server: true` + add `consonare` entry | ✅ | shipped — see `INSCRIPTIONS.md` | (was unblocked, shipped during DNS prop) |
 | M1.D | Scaffold `datamancer.dev` identity site — `index.md` + `_headers` + Cloudflare Pages connection | ✅ | shipped — see `INSCRIPTIONS.md` | (repo + push done; Cloudflare Pages connection still waits for DNS — that's M1.E) |
-| M1.F | End-to-end smoke test once both domains are live (curl manifest, curl signature, `npx -y datamancy`) | 🔨 | **datamancy.dev MCP path PROVEN 2026-05-30** through Claude Code as a live MCP client consuming the *published* `npx -y datamancy`: boot `✓ Connected` (Ed25519 verified at boot), `resources/list` → 20, `resources/read grimoire` → SHA-256-verified content released, `resources/read evil/SKILL.md` → **rejected** `-32603 Not present in the verified manifest` (server is not an open proxy — the core thesis). Remaining: datamancer.dev identity page once it's live (M1.E). | M1.E + M1.D landed |
+| M1.F | End-to-end smoke test once both domains are live | ✅ | **PROVEN 2026-05-30.** MCP path through Claude Code as a live client consuming the *published* `npx -y datamancy`: boot `✓ Connected` (Ed25519 verified at boot), `resources/list` → 20, `resources/read grimoire` → SHA-256-verified content released, `resources/read evil/SKILL.md` → **rejected** `-32603 Not present in the verified manifest` (server is not an open proxy — the core thesis). datamancer.dev identity card live with resolving cross-domain pointers. Both bare domains redirect to raw artifacts. | M1.E + M1.D landed |
 
 ## Then (arc opens after M1 closes)
 

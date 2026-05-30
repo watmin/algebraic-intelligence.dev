@@ -8,6 +8,46 @@ notes the reversal; the original entry stays as it was.
 
 ---
 
+## 2026-05-30 — M1-CLOSED — both domains live, bare-domain redirects, arc complete
+
+**M1 is closed.** The cryptographically verifiable static-MCP system is live
+end-to-end across all three domains.
+
+**Commits**:
+- `github.com/watmin/datamancer.dev`: `131caf0` (`_redirects` → `/` redirects to `/index.md`)
+- `github.com/watmin/datamancy.dev`: `4f5d8c5` (`_redirects` → `/` redirects to `/grimoire/SKILL.md`)
+
+**What shipped — bare-domain redirects**:
+Cloudflare Pages serves no `index.html` (zero-rendering by design — the file
+IS the artifact), so the bare domains 404'd. Added Pages `_redirects`:
+- `datamancer.dev/` → 302 → `/index.md` (the identity card) — verified landing 200 `text/markdown` 1386 B
+- `datamancy.dev/` → 302 → `/grimoire/SKILL.md` (the index of the practice) — verified landing 200 `text/markdown` 5958 B
+
+No HTML, no renderer introduced — just a redirect to raw markdown. The
+zero-rendering doctrine holds.
+
+**Full system state at M1 close**:
+- **datamancy.dev** (grimoire) — 20 spells as raw markdown, signed MCP
+  manifest + 64-byte Ed25519 sig at `/.well-known/mcp/`, bare domain → grimoire
+- **datamancer.dev** (identity) — practitioner card, bare domain → index.md,
+  cross-domain pointers all resolve
+- **algebraic-intelligence.dev** (chronicle) — discovery artifacts advertise
+  datamancy.dev as the MCP server (`x-static-server: true`)
+- **`datamancy` npm** (adapter) — published v0.0.1, zero runtime deps, pins the
+  Ed25519 pubkey, proven through Claude Code as a real MCP client
+
+**Trust tiers**: T1 (per-resource SHA-256) ✅ + T2 (Ed25519 manifest signature)
+✅ both enforced and proven. T3 (pinned manifest hash in npm source) is the
+only remaining cell → next arc **M3**.
+
+**DNS note**: at M1 close, the local resolver still returned NXDOMAIN for
+datamancer.dev while Cloudflare's authoritative resolver (1.1.1.1) served the
+A records (`104.21.23.247` / `172.67.214.183`). Verified via
+`curl --resolve` against the Cloudflare IP — a local negative-cache artifact,
+not a real outage. Will clear as the local resolver TTL expires.
+
+---
+
 ## 2026-05-30 — M1.F-partial — the MCP proven live through a real client
 
 **The first end-to-end proof.** Claude Code itself acted as the MCP client,
