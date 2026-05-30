@@ -8,6 +8,28 @@ notes the reversal; the original entry stays as it was.
 
 ---
 
+## 2026-05-30 — M1.D-datamancer-dev-scaffold — practitioner identity site live on GitHub
+
+**Commit**: `4e8c553` (initial)
+
+**Repo**: `github.com/watmin/datamancer.dev` (created via `gh repo create`)
+
+**What shipped**:
+- `index.md` — the practitioner identity card. Three pointers (chronicle
+  / grimoire / source repos), trust-chain summary, bio + contact. Raw
+  markdown, no rendering.
+- `_headers` — Cloudflare Pages MIME types so `.md` files serve as
+  `text/markdown`.
+- `README.md` — explains the raw-markdown idiom and the three-domain
+  split for anyone browsing the source repo.
+- `.gitignore` — defensive against accidental `.pem` / `.key` commits.
+
+**Out of scope** (handled separately): Cloudflare Pages connection for
+the actual `datamancer.dev` custom domain. That's part of M1.E (DNS +
+Pages setup), user-side via dashboard.
+
+---
+
 ## 2026-05-30 — M1.C-chronicle-xrefs — algebraic-intelligence.dev points at datamancy.dev
 
 **Commit**: (this commit)
