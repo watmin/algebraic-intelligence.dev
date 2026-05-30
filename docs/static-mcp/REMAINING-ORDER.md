@@ -35,7 +35,7 @@ MCP client, and the bare domains redirect to their raw artifacts. Next arc:
 
 | ID | Item | Status | Brief | Dependency |
 |---|---|---|---|---|
-| M3 | Tier 3 — pin manifest SHA-256 in npm package source. Bump to `v0.0.2`. Trust matrix closes its last cell. | 📋 | [BRIEFS/C-tier3-pinning.md](BRIEFS/C-tier3-pinning.md) | M1.F (the manifest must be live + verified end-to-end first) |
+| M3 | Tier 3 — pin manifest SHA-256 in npm package source. Trust matrix closes its last cell. | ✅ | [BRIEFS/C-tier3-pinning.md](BRIEFS/C-tier3-pinning.md) | **CLOSED 2026-05-30.** Published `datamancy@0.0.3` (0.0.2 carried the pin but a version-drift bug; 0.0.3 fixes it structurally). Boot verifies pinned SHA-256 (`dedf60f…4dde`) BEFORE signature, fail-fast on mismatch with `npx datamancy@latest` message. `scripts/pin-current-manifest.mjs` re-pins at every publish via `prepublishOnly`. Negative test confirmed: corrupted pin rejects before the signature is even fetched. All three tiers proven in the published artifact. |
 
 ## Deferred (intentional)
 

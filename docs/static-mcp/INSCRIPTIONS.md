@@ -8,6 +8,69 @@ notes the reversal; the original entry stays as it was.
 
 ---
 
+## 2026-05-30 — M3-CLOSED — Tier 3 pinned manifest hash; trust matrix complete
+
+**The last cell of the trust matrix is filled.** The `datamancy` npm package
+now pins the manifest's SHA-256 in its own source and verifies it at boot
+before anything else.
+
+**Commits** (`github.com/watmin/datamancy`):
+- `583a4bd` — M3 Tier 3 implementation; `npm version` → v0.0.2
+- `2a594d6` — version-drift fix; `npm version` → v0.0.3
+
+**Published**: `datamancy@0.0.3` (`npm view datamancy dist-tags` → `latest: 0.0.3`,
+versions `0.0.1 0.0.2 0.0.3`). Still zero runtime deps.
+
+**What shipped — Tier 3**:
+- `src/pinned-manifest-hash.ts` — `PINNED_MANIFEST_SHA256 =
+  "dedf60f2e02bf047d409c83252533473f1e8c00e1b59111162d0fdef34aa4dde"`
+  (manifest version `59870ef`, 20 resources, 5429 bytes).
+- `src/index.ts` — boot hashes the fetched manifest bytes and compares to
+  the pinned constant **first**, before the signature fetch/verify. Strongest
+  gate first: defeating it requires compromising the npm publish chain, not
+  merely the website or the offline signing key. On mismatch it fails closed
+  with an actionable message (`npm update datamancy` / `npx -y datamancy@latest`)
+  and never fetches the signature.
+- `scripts/pin-current-manifest.mjs` — fetches the live manifest, computes
+  SHA-256, rewrites the pinned constant with current hash + version + date.
+  Wired into `package.json` `prepublishOnly` (`clean && pin && build`), so
+  every publish re-pins automatically. Drift is structurally impossible.
+
+**Verification**:
+- Positive: published 0.0.3 boots `tier 3` match → `tier 2` VERIFIED → 20
+  resources parsed → listening. Order correct.
+- Negative: corrupting the pinned hash in `dist` makes boot fail closed
+  **before** the signature is fetched (no `signature fetched` line) — proves
+  fail-fast on the strongest gate.
+- Fresh-install check: `npm install datamancy@0.0.3` in a clean temp dir;
+  pinned hash present in the tarball's `dist/`, boots correctly.
+
+**Version-drift fix (why 0.0.3, not 0.0.2)**: 0.0.2 carried the pin correctly
+but `PACKAGE_VERSION` was hand-hardcoded to `"0.0.1"` in `src/index.ts`, so
+0.0.2 reported itself as `0.0.1` to every MCP client (boot log +
+`serverInfo.version`). Caught it in the published-artifact boot log. Fixed
+structurally: the version is now read from `package.json` at runtime
+(`../package.json` relative to `dist/index.js`; npm always ships package.json
+in the tarball), so the reported version tracks the published one by
+construction. Republished as 0.0.3.
+
+**Trust matrix — now complete**:
+
+| Attack | T1 | T2 | T3 |
+|---|---|---|---|
+| Tamper one spell | ✓ | ✓ | ✓ |
+| Tamper manifest + spells | ✗ | ✓ | ✓ |
+| Website fully compromised | ✗ | ✓ | ✓ |
+| Website + private key both compromised | ✗ | ✗ | ✓ (npm pin holds) |
+| Website + key + npm publish all compromised | ✗ | ✗ | ✗ (game over) |
+
+**Versioning policy now in force**: each time the datamancy.dev manifest
+changes (spell added/edited), bump the npm package — `prepublishOnly` re-pins,
+so the published package and the live manifest stay coupled. Consumers track
+via `npx -y datamancy@latest`.
+
+---
+
 ## 2026-05-30 — M1-CLOSED — both domains live, bare-domain redirects, arc complete
 
 **M1 is closed.** The cryptographically verifiable static-MCP system is live
