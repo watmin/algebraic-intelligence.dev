@@ -1,17 +1,44 @@
 {
   "serverInfo": {
     "name": "algebraic-intelligence.dev",
-    "version": "0.0.0"
+    "version": "0.1.0"
   },
   "capabilities": {},
-  "x-no-server": true,
-  "x-note": "This site does not run an MCP server. The card exists to signal that explicitly (no transport field, capabilities is empty) rather than rely on a 404 to imply the same thing. All content is publicly accessible as documentation — fetch llms.txt for the agent map, or any /blog/<slug>.md for raw markdown source. A future MCP server (wat-mcp) is being designed in the scratch repo (see resources below) and is not yet running.",
+  "x-static-server": true,
+  "x-server-url": "https://datamancy.dev",
+  "x-manifest-url": "https://datamancy.dev/.well-known/mcp/manifest.json",
+  "x-trust": {
+    "algorithm": "SHA-256",
+    "signed": true,
+    "signature-url": "https://datamancy.dev/.well-known/mcp/manifest.json.sig",
+    "signature-algorithm": "Ed25519",
+    "pubkey-pinned-in": "https://www.npmjs.com/package/datamancy"
+  },
+  "x-note": "algebraic-intelligence.dev is the chronicle (story, polished, rendered). The actual MCP server is at datamancy.dev — a cryptographically verifiable static MCP serving the datamancy grimoire as raw markdown. Manifest is Ed25519-signed; the npm adapter at `npx -y datamancy` verifies the signature against a public key pinned in the package source, then verifies SHA-256 of each fetched spell against the signed manifest's entries. No content reaches the LLM unverified. The practitioner's identity card lives at https://datamancer.dev. Three domains, three purposes: chronicle / identity / grimoire.",
   "x-recommended-resources": [
+    {
+      "name": "datamancy-mcp-manifest",
+      "uri": "https://datamancy.dev/.well-known/mcp/manifest.json",
+      "mimeType": "application/json",
+      "description": "The signed MCP manifest — currently 18 spells, each with SHA-256 verifiable content. Verify against signature at /.well-known/mcp/manifest.json.sig."
+    },
+    {
+      "name": "datamancy-npm-package",
+      "uri": "https://www.npmjs.com/package/datamancy",
+      "mimeType": "text/html",
+      "description": "Zero-dep MCP adapter that consumes the manifest. Pin its public key in source. Invoke via `npx -y datamancy` in any MCP client config."
+    },
+    {
+      "name": "datamancer.dev",
+      "uri": "https://datamancer.dev",
+      "mimeType": "text/markdown",
+      "description": "Practitioner identity card. Raw markdown. Three pointers: chronicle / grimoire / source."
+    },
     {
       "name": "llms.txt",
       "uri": "https://algebraic-intelligence.dev/llms.txt",
       "mimeType": "text/markdown",
-      "description": "Agent map — start here. Structured pointer to every section of the site."
+      "description": "Agent map for this chronicle site."
     },
     {
       "name": "topology",
@@ -20,10 +47,10 @@
       "description": "How to read this site — trunk + branches + cliff notes."
     },
     {
-      "name": "future-mcp-design",
-      "uri": "https://github.com/watmin/scratch",
+      "name": "static-mcp-design",
+      "uri": "https://github.com/watmin/algebraic-intelligence.dev/blob/main/docs/static-mcp/DESIGN.md",
       "mimeType": "text/markdown",
-      "description": "wat-mcp design proposals — the MCP server intended for this substrate, not yet running."
+      "description": "Full design doc for the static MCP architecture — three-domain split, trust tiers, threat model, multi-arc plan."
     }
   ]
 }

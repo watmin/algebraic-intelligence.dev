@@ -1,9 +1,25 @@
 # Static MCP — DESIGN
 
-**Status**: Multi-arc plan. Master design captured 2026-05-30. Updated
-2026-05-30 to reflect the three-domain split: `algebraic-intelligence.dev`
-(chronicle), `datamancer.dev` (identity), `datamancy.dev` (grimoire +
-MCP server).
+**Status**: Multi-arc plan. Master design captured 2026-05-30.
+
+**Last update (2026-05-30)**: M1.A (datamancy.dev repo scaffold + signed
+manifest) shipped at `76a4434`. M1.B (`datamancy@0.0.1` npm package
+with zero deps, Tier 1 + Tier 2 verification) shipped to the npm
+registry at `c5e51f5`. M1.C (chronicle cross-references — flipping
+`server-card.json` from `x-no-server` to `x-static-server` + repointing
+`agent-skills/index.json` URLs to datamancy.dev) shipping now. M1.E
+(DNS propagation + Cloudflare Pages for both new domains) blocked on
+nameserver propagation — hours typical. M3 (Tier 3 pinning) opens
+after M1.F end-to-end smoke test. Per-arc detail in
+`docs/static-mcp/REMAINING-ORDER.md`, `INSCRIPTIONS.md`, and `BRIEFS/`.
+
+Original architecture remains correct (three domains, three trust
+tiers, four arcs). M2 (npm adapter) was shipped inline with M1 rather
+than as a separate arc. M4 (Tier 2 signing) was folded into M1 because
+Ed25519 via `node:crypto` came together cleanly without adding deps.
+
+Three-domain split: `algebraic-intelligence.dev` (chronicle),
+`datamancer.dev` (identity), `datamancy.dev` (grimoire + MCP server).
 
 ## The idea
 

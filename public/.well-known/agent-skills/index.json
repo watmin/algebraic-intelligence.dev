@@ -5,138 +5,159 @@
       "name": "cernere",
       "type": "tests-of-fidelity",
       "description": "Sift valid forms from phantom. The datamancer cernit the source — every form used must trace to the language spec. Forms that look valid but aren't defined are phantom; the spell catches them before they ship.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/cernere/SKILL.md",
+      "url": "https://datamancy.dev/cernere/SKILL.md",
       "sha256": "28357cd40895d670fcada6bfdc56e38c2da4ce6188dfb3823346389749f67fd0",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/cernere/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/cernere/SKILL.md"
     },
     {
       "name": "complectens",
       "type": "tests-of-surface",
       "description": "Weave together. The datamancer complectēns the tests — does each layer compose only from layers above it? Does each layer carry its own proof? Or did this test attempt to one-shot a hard problem?",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/complectens/SKILL.md",
-      "sha256": "f659cfa809ea5d1b7830dd0c32bdf7c65e6d2199022cd4bc978e4a3fb5d1a3cc",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/complectens/SKILL.md"
+      "url": "https://datamancy.dev/complectens/SKILL.md",
+      "sha256": "5b44c113fb7c4ad3ccd82be6824764d969726f3dfadd51bd5c6070d7c672c01e",
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/complectens/SKILL.md"
     },
     {
       "name": "conferre",
       "type": "tests-of-fidelity",
       "description": "Bring spec and code together to find divergence. The datamancer conferre the specification against the implementation — where they disagree, one of them is wrong.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/conferre/SKILL.md",
+      "url": "https://datamancy.dev/conferre/SKILL.md",
       "sha256": "3167d55b0ea9befdc0d91ba59481026e3fcf26062f43968a0a21427d9d9788de",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/conferre/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/conferre/SKILL.md"
+    },
+    {
+      "name": "consonare",
+      "type": "tests-of-voice",
+      "description": "Hear whether new prose rings in tune with the chronicle's voice. The datamancer consonat the draft against the gold anchors — does each line carry the substrate-event register? Does the close earn its verdict? Does recognition-voice stay in its lane?",
+      "url": "https://datamancy.dev/consonare/SKILL.md",
+      "sha256": "803fc2591532aaac047078e0f0a86daeb7c0fb029c8f25c23934d4652f3cc9b6",
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/consonare/SKILL.md"
+    },
+    {
+      "name": "exigere",
+      "type": "tests-of-craft",
+      "description": "Drive out deferred-work language. The datamancer exigit — what cannot ship in this stone either ships now or is bounded by a named arc; deferral-prose carries no other honest form. Substrate code does not promise future-work in comments; it ships present-work or names where the future-work tracks.",
+      "url": "https://datamancy.dev/exigere/SKILL.md",
+      "sha256": "e3ebaee49a9292c826faeb395e4566677203e906f54dfe58391858a78f74d83f",
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/exigere/SKILL.md"
     },
     {
       "name": "intueri",
       "type": "tests-of-craft",
       "description": "Contemplate whether the code speaks. The datamancer intuetur the file — does each name say what it is? Does the structure tell the story? Does the spark live?",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/intueri/SKILL.md",
+      "url": "https://datamancy.dev/intueri/SKILL.md",
       "sha256": "967a808cf5e25cfe0d0a81055941ae70bdb7564246b605cb4491dd04863b1749",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/intueri/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/intueri/SKILL.md"
     },
     {
       "name": "mora",
       "type": "tests-of-surface",
       "description": "Hunt the pause. The datamancer suffers no mora — every wait must arrive via the wire, not via mechanism. Sleep is a guess; guesses race. Time is I/O; it arrives as an fd-event or it doesn't arrive honestly.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/mora/SKILL.md",
+      "url": "https://datamancy.dev/mora/SKILL.md",
       "sha256": "cc50a6af8c2fccc8ef6e063503bee2ba08512baf013063a95b365507f6a8c439",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/mora/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/mora/SKILL.md"
     },
     {
       "name": "nesciens",
       "type": "solo-ward",
       "description": "The one who does not yet know. The datamancer summons the nesciens — a fresh reader who walks the document top-to-bottom, measuring what cannot be reached.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/nesciens/SKILL.md",
+      "url": "https://datamancy.dev/nesciens/SKILL.md",
       "sha256": "3d070093543d047838bca6850351a3fe19359107040ee709ef18541195ae5671",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/nesciens/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/nesciens/SKILL.md"
     },
     {
       "name": "perspicere",
       "type": "tests-of-surface",
       "description": "See through. The datamancer perspicere — pierces deeply-nested type expressions to find the noun the depth is hiding, and suggests a typealias that names it.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/perspicere/SKILL.md",
+      "url": "https://datamancy.dev/perspicere/SKILL.md",
       "sha256": "b1268fd029bbf1e0bb99e665eab5d8548560c06cdceecc0108797c64016c78c6",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/perspicere/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/perspicere/SKILL.md"
     },
     {
       "name": "probare",
       "type": "tests-of-fidelity",
       "description": "Test the substance. The datamancer probare the file — is this a program or a description? Comments tell the human; expressions tell the machine. The assayer crushes the rock and reports the fraction.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/probare/SKILL.md",
+      "url": "https://datamancy.dev/probare/SKILL.md",
       "sha256": "79addf814adf7e9d88b344a3afc29f7c68766e946eb01798080f8db6b41a8a3d",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/probare/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/probare/SKILL.md"
     },
     {
       "name": "purgare",
       "type": "tests-of-craft",
       "description": "Purge dead thoughts. The datamancer purgares the code — finds structs never imported, fields never read, collections never populated, branches never taken. The cost of a dead thought is compute.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/purgare/SKILL.md",
+      "url": "https://datamancy.dev/purgare/SKILL.md",
       "sha256": "49800061f40f6ff90a581f74e4664168dc1de1ad9087937cb343472e2497ae39",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/purgare/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/purgare/SKILL.md"
     },
     {
       "name": "secare",
       "type": "tests-of-craft",
       "description": "Cut cleanly along the grain. The datamancer secat the parallel boundary — verify that each parallel invocation writes to its own slot, never shares mutation, never races for state.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/secare/SKILL.md",
+      "url": "https://datamancy.dev/secare/SKILL.md",
       "sha256": "4c8596a047e5b33c827e23f506ac9e1df4ea4f334a6eb186602adc1b027a29d6",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/secare/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/secare/SKILL.md"
     },
     {
       "name": "sequi",
       "type": "tests-of-craft",
       "description": "Follow the state. The datamancer sequit the composition chain — state must follow through every transformation, visibly, through the types. Hidden state breaks composition; the spell catches the break.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/sequi/SKILL.md",
+      "url": "https://datamancy.dev/sequi/SKILL.md",
       "sha256": "673a3ba09272e8c0efa840603b67544299afe244da272ae4efb2c963af6996db",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/sequi/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/sequi/SKILL.md"
     },
     {
       "name": "solvere",
       "type": "tests-of-craft",
       "description": "Loosen what was wrongly bound. The datamancer solveres the code — finds braided concerns, misplaced logic, duplicated encoding. Hickey's decomplect, made operational.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/solvere/SKILL.md",
+      "url": "https://datamancy.dev/solvere/SKILL.md",
       "sha256": "553f73fa84e1f4e4efa0005e7b1079db1a5c1ad85db18f89d6347822994211c4",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/solvere/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/solvere/SKILL.md"
     },
     {
       "name": "struere",
       "type": "tests-of-craft",
       "description": "Test what is built. The datamancer struere the function — values flowing through, not mutating in place; composition that holds under load; abstractions at the right level.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/struere/SKILL.md",
+      "url": "https://datamancy.dev/struere/SKILL.md",
       "sha256": "d8314758716f3753e0032d32bd9f6d483cd0acc8b515940c87579fbe03cb4a74",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/struere/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/struere/SKILL.md"
     },
     {
       "name": "temperare",
       "type": "tests-of-craft",
       "description": "Mix computation in right proportion. The datamancer temperat the code — finds redundant calls, invariant work in loops, recomputation when nothing changed. Correct but hot.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/temperare/SKILL.md",
+      "url": "https://datamancy.dev/temperare/SKILL.md",
       "sha256": "591c6b79db488202ce5de51d80ccc6ac5802c097702c002db56ab7ebe048fb10",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/temperare/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/temperare/SKILL.md"
     },
     {
       "name": "vigilia",
       "type": "solo-ward",
       "description": "The watch. The datamancer summons the vigilia — every defensive spell in the grimoire cast against the target in parallel; one report per spell; the full guard standing.",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/vigilia/SKILL.md",
+      "url": "https://datamancy.dev/vigilia/SKILL.md",
       "sha256": "0219fda05c365c22bf0410e0e1cf05e5f5bf1e69e8958cdf7aa552ad0eb91bf5",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/vigilia/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/vigilia/SKILL.md"
     },
     {
       "name": "vocare",
       "type": "tests-of-surface",
       "description": "Call the test to its caller. The datamancer vocares the tests — does this verify what the caller sees, or has the test reached past the interface into the implementation?",
-      "url": "https://raw.githubusercontent.com/watmin/datamancy/main/vocare/SKILL.md",
+      "url": "https://datamancy.dev/vocare/SKILL.md",
       "sha256": "02083b991d7c3bcb1cfdb5231f922f8f4c84a4560940349a80e53c3afe8006cf",
-      "x-documentation": "https://github.com/watmin/datamancy/blob/main/vocare/SKILL.md"
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/vocare/SKILL.md"
     }
   ],
-  "x-source": "https://github.com/watmin/datamancy",
+  "x-source": "https://github.com/watmin/datamancy.dev",
   "x-source-version": "main",
-  "x-note": "These are the wards from the datamancy grimoire — Latin-named defensive spells, each a SKILL.md the datamancer casts as a subagent against a target file or tree. The grimoire is the practice's tools; each spell encodes one discipline; severity is L1 (blocks) / L2 (fix-now) / L3 (taste). Categories (`type` field): tests-of-craft (defensive against code quality — Hickey + Beckman lineage), tests-of-surface (defensive against test quality), tests-of-fidelity (defensive against spec/code drift), solo-ward (nesciens walks the docs as a fresh reader; vigilia casts every defensive spell in parallel). The sha256 lets agents verify content integrity against the raw GitHub URL. Regenerate via `npm run skills:regen` when the grimoire changes.",
+  "x-published-mcp-manifest": "https://datamancy.dev/.well-known/mcp/manifest.json",
+  "x-note": "The wards from the datamancy grimoire — Latin-named defensive spells, each a SKILL.md the datamancer casts as a subagent against a target file or tree. The grimoire is the practice's tools; each spell encodes one discipline; severity is L1 (blocks) / L2 (fix-now) / L3 (taste). Categories (`type` field): tests-of-craft (defensive against code quality — Hickey + Beckman lineage), tests-of-surface (defensive against test quality), tests-of-fidelity (defensive against spec/code drift), tests-of-voice (chronicle voice discipline — consonare measures prose against the gold anchors), solo-ward (nesciens walks the docs as a fresh reader; vigilia casts every defensive spell in parallel). The sha256 lets agents verify content integrity against the URL. Same hashes appear in the cryptographically-signed MCP manifest at https://datamancy.dev/.well-known/mcp/manifest.json — that manifest is Ed25519-signed and consumed by the `datamancy` npm package via `npx -y datamancy`.",
   "x-pointers": {
     "agent-map": "https://algebraic-intelligence.dev/llms.txt",
     "topology": "https://algebraic-intelligence.dev/blog/topology/",
     "mcp-card": "https://algebraic-intelligence.dev/.well-known/mcp/server-card.json",
+    "mcp-server": "https://datamancy.dev",
+    "mcp-manifest": "https://datamancy.dev/.well-known/mcp/manifest.json",
+    "practitioner": "https://datamancer.dev",
+    "npm-package": "https://www.npmjs.com/package/datamancy",
     "api-catalog": "https://algebraic-intelligence.dev/.well-known/api-catalog",
     "oauth-authorization-server": "https://algebraic-intelligence.dev/.well-known/oauth-authorization-server",
     "oauth-protected-resource": "https://algebraic-intelligence.dev/.well-known/oauth-protected-resource"

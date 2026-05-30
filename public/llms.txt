@@ -159,6 +159,10 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 - [https://algebraic-intelligence.dev/blog/story/series-006-015-the-discipline.md](https://algebraic-intelligence.dev/blog/story/series-006-015-the-discipline.md)
 - [https://algebraic-intelligence.dev/blog/story/series-006-016-the-loop-closes.md](https://algebraic-intelligence.dev/blog/story/series-006-016-the-loop-closes.md)
 - [https://algebraic-intelligence.dev/blog/story/series-006-017-the-grimoire.md](https://algebraic-intelligence.dev/blog/story/series-006-017-the-grimoire.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-018-the-first-intermission.md](https://algebraic-intelligence.dev/blog/story/series-006-018-the-first-intermission.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-019-records-become-types.md](https://algebraic-intelligence.dev/blog/story/series-006-019-records-become-types.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-020-the-closures-and-the-coincidence.md](https://algebraic-intelligence.dev/blog/story/series-006-020-the-closures-and-the-coincidence.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-021-cold-boot.md](https://algebraic-intelligence.dev/blog/story/series-006-021-cold-boot.md)
 
 <!-- END AUTO-GENERATED MD COMPANIONS -->
 

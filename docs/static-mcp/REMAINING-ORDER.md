@@ -22,9 +22,9 @@ by dependency, the dependency wins.
 
 | ID | Item | Status | Brief | Dependency |
 |---|---|---|---|---|
-| M1.C | Cross-references on algebraic-intelligence.dev — repoint `agent-skills/index.json` URLs + flip `mcp/server-card.json` to `x-static-server: true` + add `consonare` entry | 📋 | [BRIEFS/A-website-xrefs.md](BRIEFS/A-website-xrefs.md) | None — can ship now in parallel with DNS prop. URLs work the moment DNS resolves. |
+| M1.C | Cross-references on algebraic-intelligence.dev — repoint `agent-skills/index.json` URLs + flip `mcp/server-card.json` to `x-static-server: true` + add `consonare` entry | ✅ | shipped — see `INSCRIPTIONS.md` | (was unblocked, shipped during DNS prop) |
 | M1.D | Scaffold `datamancer.dev` identity site — `index.md` + `_headers` + Cloudflare Pages connection | 📋 | [BRIEFS/B-datamancer-dev.md](BRIEFS/B-datamancer-dev.md) | None — repo scaffold parallels DNS prop. Cloudflare Pages connection waits for DNS. |
-| M1.F | End-to-end smoke test once both domains are live (curl manifest, curl signature, `npx -y datamancy`) | 📋 | None yet (~5 min ad-hoc test) | M1.E + M1.C + M1.D all landed |
+| M1.F | End-to-end smoke test once both domains are live (curl manifest, curl signature, `npx -y datamancy`) | 📋 | None yet (~5 min ad-hoc test) | M1.E + M1.D landed |
 
 ## Then (arc opens after M1 closes)
 
