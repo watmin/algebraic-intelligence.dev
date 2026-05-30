@@ -42,6 +42,14 @@
       "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/consonare/SKILL.md"
     },
     {
+      "name": "grimoire",
+      "type": "grimoire-index",
+      "description": "The grimoire index — the datamancer opens this first; it lists every spell in the practice with one-line descriptions, so the reader may load only what the task demands.",
+      "url": "https://datamancy.dev/grimoire/SKILL.md",
+      "sha256": "071886eabd93df6e6a71e7fc26fb4c11714df82e1927d98968f6f89ee1d1749b",
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/grimoire/SKILL.md"
+    },
+    {
       "name": "exigere",
       "type": "tests-of-craft",
       "description": "Drive out deferred-work language. The datamancer exigit — what cannot ship in this stone either ships now or is bounded by a named arc; deferral-prose carries no other honest form. Substrate code does not promise future-work in comments; it ships present-work or names where the future-work tracks.",
