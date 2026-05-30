@@ -1,0 +1,109 @@
+# Static MCP — Inscriptions
+
+Append-only record of what shipped in the static-MCP arc. Newest at top.
+
+Per `feedback_inscription_immutable`: do NOT edit prior entries when
+plans change. If a decision is later reversed, add a new entry that
+notes the reversal; the original entry stays as it was.
+
+---
+
+## 2026-05-30 — M1.B-npm-zero-dep — datamancy npm package live on registry
+
+**Commits**: `abff50b` (initial scaffold), `98bc1c5` (Tier 1 + Tier 2 SDK
+version), `c5e51f5` (zero-dep rewrite, dropped `@modelcontextprotocol/sdk`)
+
+**Repo**: `github.com/watmin/datamancy`
+
+**Published**: `npm view datamancy` → `datamancy@0.0.1 | MIT | deps: none`
+| 52.4 kB unpacked | shasum b6a0a88...
+
+**What shipped**:
+- `package.json` with bin entry, files limited to `dist/`+README+LICENSE
+- `src/protocol.ts` (~180 LOC) — JSON-RPC 2.0 over newline-delimited
+  stdio, written from scratch. No SDK dependency.
+- `src/mcp.ts` (~120 LOC) — MCP-specific handlers: initialize, ping,
+  resources/list, resources/read. Protocol version negotiated to
+  `2024-11-05`.
+- `src/manifest.ts` — fetch raw bytes + parse + shape-validate
+- `src/signature.ts` — fetch + Ed25519 verify against pinned pubkey
+- `src/pinned-pubkey.ts` — public key constant
+  (`MCowBQYDK2VwAyEAUOdsKAfuFupyxDtO34QQh9xpgpXGlHSmAqZ2UUgod10=`)
+- `src/resources.ts` — per-resource fetch + SHA-256 + size verify
+
+**Trust narrative**: Tier 1 (per-resource hashes) + Tier 2 (Ed25519
+signature on manifest) both active in the published package. Tier 3
+(pinned manifest hash) remains as M3.
+
+**Build verification**:
+- `npm ls --production --depth=0` → `(empty)` — zero runtime deps
+- `tsc` → clean
+- `dist/` = 92K total
+
+**Boot sequence implemented**: fetch manifest bytes → fetch sig → verify
+sig against pinned pubkey → parse manifest → expose resources → on read,
+fetch + SHA-256 + size verify against manifest entry → return content
+only if all checks pass.
+
+**Private key location**: `~/.config/datamancy/private.pem` (mode 0600,
+dir 0700). NOT in any repo. NOT in any CI secret.
+
+---
+
+## 2026-05-30 — M1.A-datamancy-dev-scaffold — first signed manifest in datamancy.dev repo
+
+**Commit**: `76a4434`
+
+**Repo**: `github.com/watmin/datamancy.dev` (renamed from
+`github.com/watmin/datamancy` to make room for the npm package's repo)
+
+**What shipped**:
+- 18 spell directories with `SKILL.md` content (the 17 originals from
+  pre-rename + new `consonare/` mirrored from the chronicle's
+  `.claude/skills/consonare/SKILL.md`)
+- `_headers` for Cloudflare Pages (MIME types for `.md`, `SKILL.md`,
+  manifest, and signature)
+- `scripts/generate-manifest.mjs` — walks `*/SKILL.md`, SHA-256 + size,
+  emits `.well-known/mcp/manifest.json`. Deterministic ordering (sorted
+  by spell name) so manifest bytes are stable across regen.
+- `scripts/sign-manifest.mjs` — Ed25519 sign with offline private key
+  from `~/.config/datamancy/`. Safety: refuses if key path is inside
+  the repo.
+- `package.json` (private:true, just hosts the scripts)
+- `.gitignore` blocking `*.pem` and `*.key` defensively
+- `.well-known/mcp/manifest.json` (4903 bytes, 18 resources, version
+  `2a1bb6d`, trust tier 2, signed:true)
+- `.well-known/mcp/manifest.json.sig` (64-byte Ed25519 signature)
+
+**Round-trip verification** (locally before push): signature against
+pinned pubkey in the npm package source → `verify result: true`.
+Public key bytes confirmed identical between
+`~/.config/datamancy/public.pem` and `datamancy/src/pinned-pubkey.ts`.
+
+**Existing hash continuity**: e.g. `cernere` SHA-256 in the new manifest
+matches the SHA-256 that was already in
+`algebraic-intelligence.dev/.well-known/agent-skills/index.json` —
+content didn't drift across the rename.
+
+---
+
+## 2026-05-30 — M0-design — multi-arc DESIGN.md inscribed
+
+**Commits**: `b6d2afe` (initial), `26d0970` (three-domain + three-repo
+update after user bought datamancer.dev)
+
+**What shipped**: `docs/static-mcp/DESIGN.md` capturing:
+- Architecture (three-domain split: chronicle / identity / grimoire)
+- Three-tier trust model (T1 hashes, T2 signed manifest, T3 pinned
+  manifest hash in npm)
+- Threat model
+- Multi-arc plan (M1 server-side, M2 npm adapter, M3 T3, M4 T2)
+- Per-arc deliverables, acceptance criteria, scope-out
+- Repo layout (`datamancy.dev`, `datamancer.dev`, `datamancy`)
+- Open questions
+- Notes from the design session
+
+**Subsequent restructuring**: M2 (npm adapter) ended up being built
+inline with M1; M4 (Tier 2 signing) folded into M1 because the
+Ed25519 + Node crypto came together cleanly. M3 (Tier 3 pinning)
+remains as the next arc after M1 closes.
