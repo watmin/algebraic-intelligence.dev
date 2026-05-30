@@ -8,6 +8,48 @@ notes the reversal; the original entry stays as it was.
 
 ---
 
+## 2026-05-30 — M1.F-partial — the MCP proven live through a real client
+
+**The first end-to-end proof.** Claude Code itself acted as the MCP client,
+consuming the **published** npm artifact (`npx -y datamancy`, v0.0.1) against
+the **live** datamancy.dev. Not the local dist, not a hand-rolled driver —
+the genuine registry package talking to the genuine origin.
+
+**Registration**: `claude mcp add datamancy -- npx -y datamancy`
+→ `datamancy: npx -y datamancy - ✓ Connected`
+
+The `✓ Connected` is not a ping. Claude Code's health probe runs the entire
+trust boot before reporting healthy: pull package from registry → fetch
+`/.well-known/mcp/manifest.json` bytes → fetch `manifest.json.sig` → **Ed25519
+verify against the pinned public key** in the npm source → parse 20 resources
+→ open the stdio handshake. A bad signature exits non-zero → `✗ Failed`.
+
+**Four paths exercised through `ListMcpResourcesTool` / `ReadMcpResourceTool`:**
+
+| Path | Request | Result |
+|---|---|---|
+| Boot + signature | health check | Ed25519 verified at boot, 20 resources parsed |
+| List | `resources/list` | 20 spells, alphabetical, all `datamancy.dev/<spell>/SKILL.md` |
+| Verified read | `resources/read grimoire` | markdown released **only after SHA-256 matched the signed manifest** |
+| Rejection | `resources/read evil/SKILL.md` | `-32603 Unknown resource — Not present in the verified manifest` |
+
+**The rejection row is the whole thesis.** The server sits ON datamancy.dev
+and trusts that origin — yet it refused `https://datamancy.dev/evil/SKILL.md`
+**without making a network call**, because that path is absent from the
+*signed* manifest. The server is not a proxy for its own origin. The only
+bytes that can reach an LLM are bytes whose hash appears in a manifest signed
+by the offline key. Tamper the origin, tamper the manifest, MITM the wire —
+all three fail closed.
+
+**Trust tiers status**: T1 (per-resource SHA-256) ✅ enforced on every read.
+T2 (Ed25519 manifest signature) ✅ verified at boot. T3 (pinned manifest hash
+in npm) remains M3 — the last cell.
+
+**Remaining for full M1.F**: datamancer.dev identity page once it's live
+(M1.E, user-side Cloudflare Pages).
+
+---
+
 ## 2026-05-30 — M1.C-extended — grimoire spell + conformare + agent-skills sync
 
 **Commits**:

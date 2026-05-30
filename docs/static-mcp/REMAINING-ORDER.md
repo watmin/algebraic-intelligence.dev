@@ -16,7 +16,7 @@ by dependency, the dependency wins.
 
 | ID | Item | Status | Notes |
 |---|---|---|---|
-| M1.E | DNS propagation + **Cloudflare Pages config (not Workers)** for `datamancy.dev` + `datamancer.dev` | ⏸️ | User-side. DNS resolved for datamancy.dev (HTTP 200 from Cloudflare) BUT initial setup created a Workers project instead of a Pages project — built with `npx wrangler deploy` and failed to find static files. User aware; fixing by deleting + recreating as Pages type. Same check applies to datamancer.dev. Diagnostic: `gh api /repos/watmin/datamancy.dev/hooks` showed empty webhooks list — Cloudflare GitHub App may also need reinstalling/granting repo access. |
+| M1.E | DNS propagation + **Cloudflare Pages config (not Workers)** for `datamancy.dev` + `datamancer.dev` | 🔨 | **datamancy.dev DONE** — live + verified 2026-05-30: manifest serves `application/json` HTTP 200, version `59870ef`, 20 resources (grimoire included), live == local exactly; signature serves 64-byte `application/octet-stream`. **NOTE:** empty `gh api .../hooks` is NOT a failure signal — Cloudflare deploys current content regardless; that diagnostic was a dead end, ignore it. **datamancer.dev REMAINING** — user setting up now (Pages, not Workers). |
 
 ## Up next (when M1.E unblocks)
 
@@ -24,7 +24,7 @@ by dependency, the dependency wins.
 |---|---|---|---|---|
 | M1.C | Cross-references on algebraic-intelligence.dev — repoint `agent-skills/index.json` URLs + flip `mcp/server-card.json` to `x-static-server: true` + add `consonare` entry | ✅ | shipped — see `INSCRIPTIONS.md` | (was unblocked, shipped during DNS prop) |
 | M1.D | Scaffold `datamancer.dev` identity site — `index.md` + `_headers` + Cloudflare Pages connection | ✅ | shipped — see `INSCRIPTIONS.md` | (repo + push done; Cloudflare Pages connection still waits for DNS — that's M1.E) |
-| M1.F | End-to-end smoke test once both domains are live (curl manifest, curl signature, `npx -y datamancy`) | 📋 | None yet (~5 min ad-hoc test) | M1.E + M1.D landed |
+| M1.F | End-to-end smoke test once both domains are live (curl manifest, curl signature, `npx -y datamancy`) | 🔨 | **datamancy.dev MCP path PROVEN 2026-05-30** through Claude Code as a live MCP client consuming the *published* `npx -y datamancy`: boot `✓ Connected` (Ed25519 verified at boot), `resources/list` → 20, `resources/read grimoire` → SHA-256-verified content released, `resources/read evil/SKILL.md` → **rejected** `-32603 Not present in the verified manifest` (server is not an open proxy — the core thesis). Remaining: datamancer.dev identity page once it's live (M1.E). | M1.E + M1.D landed |
 
 ## Then (arc opens after M1 closes)
 
