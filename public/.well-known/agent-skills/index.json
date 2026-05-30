@@ -26,6 +26,14 @@
       "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/conferre/SKILL.md"
     },
     {
+      "name": "conformare",
+      "type": "tests-of-craft",
+      "description": "Shape error types together to a common standard. The datamancer conformat — every error variant must reach diagnostic completeness via structural guarantee, not hand-discipline. The wrong shape must be uncompilable.",
+      "url": "https://datamancy.dev/conformare/SKILL.md",
+      "sha256": "9b212cef9ea93737e0652094b728deac1c90e88370b22dc7fc448a9bafe7dca8",
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/conformare/SKILL.md"
+    },
+    {
       "name": "consonare",
       "type": "tests-of-voice",
       "description": "Hear whether new prose rings in tune with the chronicle's voice. The datamancer consonat the draft against the gold anchors — does each line carry the substrate-event register? Does the close earn its verdict? Does recognition-voice stay in its lane?",
