@@ -16,7 +16,7 @@ by dependency, the dependency wins.
 
 | ID | Item | Status | Notes |
 |---|---|---|---|
-| M1.E | DNS propagation + Cloudflare Pages setup for `datamancy.dev` + `datamancer.dev` | ⏸️ | User-side: nameserver delegation propagating. Hours typical. |
+| M1.E | DNS propagation + **Cloudflare Pages config (not Workers)** for `datamancy.dev` + `datamancer.dev` | ⏸️ | User-side. DNS resolved for datamancy.dev (HTTP 200 from Cloudflare) BUT initial setup created a Workers project instead of a Pages project — built with `npx wrangler deploy` and failed to find static files. User aware; fixing by deleting + recreating as Pages type. Same check applies to datamancer.dev. Diagnostic: `gh api /repos/watmin/datamancy.dev/hooks` showed empty webhooks list — Cloudflare GitHub App may also need reinstalling/granting repo access. |
 
 ## Up next (when M1.E unblocks)
 

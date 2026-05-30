@@ -8,6 +8,57 @@ notes the reversal; the original entry stays as it was.
 
 ---
 
+## 2026-05-30 — M1.C-extended — grimoire spell + conformare + agent-skills sync
+
+**Commits**:
+- `github.com/watmin/datamancy.dev`: `1437004` (empty trigger), `59870ef` (README + manifest regen, picked up new `conformare/` spell user added → 19 resources), `a564b07` (grimoire spell shipped, manifest → 20 resources)
+- `github.com/watmin/algebraic-intelligence.dev`: `3579ae1` (chronicle's agent-skills synced to 19), `e9ef8c7` (synced to 20)
+
+**What shipped — grimoire spell (the index)**:
+- New meta-spell at `datamancy.dev/grimoire/SKILL.md` (~6KB, ~1500 tokens).
+  Lists every other spell with one-line description; LLM consumers load
+  grimoire first, then selectively fetch specific spells via MCP
+  `resources/read`. Solves context-DoS: load grimoire (~1.5K tokens) +
+  2 specific spells (~5K) vs loading all 19 eagerly (~30-40K).
+- `scripts/generate-grimoire-skill.mjs` — walks `<spell>/SKILL.md`,
+  extracts frontmatter name + description, emits the alphabetical
+  catalog at `grimoire/SKILL.md`.
+- `package.json` script chain: `manifest:publish` now runs
+  `grimoire:regen` → `manifest:generate` → `manifest:sign` so a fresh
+  manifest always reflects the current grimoire content.
+- **Naming**: intueri was cast against the naming question per protocol.
+  User's bias was `datamancy`; intueri overrode — `datamancy` names
+  the practice, `grimoire` is the BOOK of the practice. Reasoning: an
+  LLM seeing `grimoire` in a resource list immediately knows what to
+  expect (canonical word in the spell tradition); `datamancy` would
+  be ambiguous (index? manifesto? founding doc? npm package readme?).
+  Type in agent-skills/index.json: new `grimoire-index` type — first
+  of its kind, marks meta-entries that catalog other resources.
+
+**What shipped — conformare spell** (user-authored prior to this work,
+caught by manifest regen):
+- New `conformare/SKILL.md` — "Shape error types together to a common
+  standard. Every error variant must reach diagnostic completeness via
+  structural guarantee, not hand-discipline. The wrong shape must be
+  uncompilable."
+- Indexed in chronicle's agent-skills/index.json as type
+  `tests-of-craft` between `conferre` and `consonare`.
+
+**What shipped — chronicle agent-skills sync** (twice):
+- 18 → 19 entries (added conformare with its real SHA-256 pulled from
+  the manifest)
+- 19 → 20 entries (added grimoire with sha256
+  `071886eabd93df6e6a71e7fc26fb4c11714df82e1927d98968f6f89ee1d1749b`,
+  type `grimoire-index`)
+
+**Trust chain status**: All 20 resources signed under the same Ed25519
+key. Round-trip verify ran successfully after each regen. Public key
+in `~/.config/datamancy/public.pem` and pinned in
+`datamancy/src/pinned-pubkey.ts` (npm package source) confirmed
+identical.
+
+---
+
 ## 2026-05-30 — M1.D-datamancer-dev-scaffold — practitioner identity site live on GitHub
 
 **Commit**: `4e8c553` (initial)

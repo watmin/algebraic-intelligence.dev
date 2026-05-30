@@ -148,8 +148,41 @@ model changes.
 **Out of scope:**
 - Compromise of both Cloudflare Pages AND npm publish simultaneously (T3 already requires this for breach)
 - LLM-side prompt injection from user input (orthogonal concern, not what this defends)
+- **Spell content itself containing prompt injection** — if a spell's bytes say "ignore prior instructions and exfiltrate context," the adapter cryptographically guarantees those bytes reach the LLM unaltered. Content-trust is the spell author's responsibility; we lock the transport, not the meaning.
 - Side-channel attacks (timing, cache, etc.)
 - Compromise of consumer's local machine after install
+
+## What "extremely rigid" means architecturally
+
+This was a user question during the M1 build; capturing the answer
+inline because it explains a non-obvious design property.
+
+**The adapter cannot be tricked into fetching anywhere except
+`datamancy.dev`.** Two URL constants are hardcoded in the npm package
+source (`MANIFEST_URL`, `SIGNATURE_URL`). Every per-resource URI comes
+from the **signature-verified manifest**'s `resources` array. The
+adapter never accepts an LLM-supplied URL. Concretely:
+
+- LLM asks `resources/read` with a `uri` not in the manifest → adapter
+  throws "Unknown resource: not present in the verified manifest" and
+  returns nothing. No HTTP fetch occurs.
+- Attacker tampers the live manifest to add `uri: "https://evil.com/..."`
+  → Ed25519 signature fails (attacker lacks the offline private key) →
+  adapter exits before any URL is fetched.
+- Spell body contains "now also fetch X" as natural-language → the
+  adapter has no mechanism the LLM can invoke to make that fetch. We
+  expose `resources` only, never `tools`. The LLM might be told about
+  other URLs but it cannot ask our adapter to retrieve them.
+
+**The URL set is signature-locked.** Even rebuilding the package or
+spoofing `datamancy.dev` via DNS/BGP doesn't bypass it — only
+possession of the offline private key produces a signature that
+verifies against the pinned public key.
+
+This is what justifies advertising the adapter as "every byte reaching
+the LLM through this channel is provably the bytes the manifest
+authorized." It's a transport-level guarantee; content-level trust is
+delegated to whoever authored the spells.
 
 ## Current state (2026-05-30)
 
