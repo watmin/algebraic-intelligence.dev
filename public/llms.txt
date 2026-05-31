@@ -163,6 +163,9 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 - [https://algebraic-intelligence.dev/blog/story/series-006-019-records-become-types.md](https://algebraic-intelligence.dev/blog/story/series-006-019-records-become-types.md)
 - [https://algebraic-intelligence.dev/blog/story/series-006-020-the-closures-and-the-coincidence.md](https://algebraic-intelligence.dev/blog/story/series-006-020-the-closures-and-the-coincidence.md)
 - [https://algebraic-intelligence.dev/blog/story/series-006-021-cold-boot.md](https://algebraic-intelligence.dev/blog/story/series-006-021-cold-boot.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-022-the-great-retirement.md](https://algebraic-intelligence.dev/blog/story/series-006-022-the-great-retirement.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-023-the-naming-law.md](https://algebraic-intelligence.dev/blog/story/series-006-023-the-naming-law.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-024-the-warding.md](https://algebraic-intelligence.dev/blog/story/series-006-024-the-warding.md)
 - [https://algebraic-intelligence.dev/blog/story/series-007-001-the-hinge.md](https://algebraic-intelligence.dev/blog/story/series-007-001-the-hinge.md)
 - [https://algebraic-intelligence.dev/blog/story/series-007-002-the-watch-learns.md](https://algebraic-intelligence.dev/blog/story/series-007-002-the-watch-learns.md)
 

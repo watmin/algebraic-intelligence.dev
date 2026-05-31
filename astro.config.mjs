@@ -203,6 +203,21 @@ export default defineConfig({
                 { slug: "blog/story/series-006-021-cold-boot" },
               ],
             },
+            // intueri (cast on the grouping, 2026-05-31) named this era for the
+            // one move shared by all three arcs — the substrate stops trusting
+            // convention and makes its discipline structural: one definer (241),
+            // shape-declares-role machine-checked (242), bad states uncompilable
+            // and modules warded (243). Not "The Retirement"/"The Warding" — those
+            // name a single arc; this names the domain all three hold.
+            {
+              label: "The Substrate Hardens",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-006-022-the-great-retirement" },
+                { slug: "blog/story/series-006-023-the-naming-law" },
+                { slug: "blog/story/series-006-024-the-warding" },
+              ],
+            },
             {
               label: "The Static MCP",
               collapsed: true,
