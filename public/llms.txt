@@ -78,14 +78,7 @@ The full philosophical book and the branches that grew alongside it.
 
 ## Agent skills — the wards
 
-The site advertises sixteen invokable agent skills via [/.well-known/agent-skills/index.json](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) per the Cloudflare Agent Skills Discovery RFC v0.2.0. These are the wards from the [datamancy grimoire](https://github.com/watmin/datamancy) — Latin-named defensive spells, each a `SKILL.md` the datamancer casts as a subagent against a target. Four categories:
-
-- **Tests of craft** (defensive against code quality, Hickey + Beckman lineage): `intueri`, `struere`, `solvere`, `purgare`, `temperare`, `secare`, `sequi`
-- **Tests of surface** (defensive against test quality): `perspicere`, `vocare`, `complectens`, `mora`
-- **Tests of fidelity** (defensive against spec/code drift): `conferre`, `probare`, `cernere`
-- **Solo wards**: `nesciens` (the fresh reader walking docs), `vigilia` (casts every defensive spell in parallel)
-
-Each entry in the index has a `sha256` digest agents can verify against the raw GitHub URL.
+The wards are the [datamancy grimoire](https://github.com/watmin/datamancy) — Latin-named defensive spells, each a `SKILL.md` the datamancer casts as a subagent against a target file or tree. This site keeps no copy: the authoritative, always-current, KMS-signed catalog lives at [datamancy.dev/.well-known/agent-skills/index.json](https://datamancy.dev/.well-known/agent-skills/index.json), verifiable against the signed manifest at [datamancy.dev/.well-known/mcp/manifest.json](https://datamancy.dev/.well-known/mcp/manifest.json) (ECDSA P-256 over SHA-256; public key pinned in the npm package source). This site's [/.well-known/agent-skills/index.json](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) is a pointer to that catalog — adding a spell never changes this site. The `type` field groups the wards: tests-of-craft (code quality, Hickey + Beckman lineage), tests-of-surface (test quality), tests-of-fidelity (spec/code drift + claim-vs-code honesty), solo-ward (a fresh-reader doc walk; the watch that casts every defensive spell in parallel).
 
 ## The Work — repositories
 
@@ -96,7 +89,7 @@ Each entry in the index has a `sha256` digest agents can verify against the raw 
 - [holon-lab-ddos](https://github.com/watmin/holon-lab-ddos): XDP + eBPF packet scrubber. 1.3M PPS; 1M rules at line rate. The spectral firewall.
 - [holon](https://github.com/watmin/holon): Python reference implementation. 18 challenge batches; F1=1.0 anomaly detection.
 - [holon-lab-baseline](https://github.com/watmin/holon-lab-baseline): LLM-driven traffic generation. Playwright + Ollama agents.
-- [datamancy](https://github.com/watmin/datamancy): The spell library. Sixteen Latin-named wards inscribed 2026-05-19.
+- [datamancy](https://github.com/watmin/datamancy): The spell library — Latin-named wards, first inscribed 2026-05-19; the live signed catalog is the authoritative count.
 - [algebraic-intelligence.dev](https://github.com/watmin/algebraic-intelligence.dev): This site.
 
 ## Markdown companions — for agents that prefer the source

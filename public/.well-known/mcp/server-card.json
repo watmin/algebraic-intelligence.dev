@@ -8,19 +8,20 @@
   "x-server-url": "https://datamancy.dev",
   "x-manifest-url": "https://datamancy.dev/.well-known/mcp/manifest.json",
   "x-trust": {
-    "algorithm": "SHA-256",
+    "content-hash": "SHA-256",
     "signed": true,
     "signature-url": "https://datamancy.dev/.well-known/mcp/manifest.json.sig",
-    "signature-algorithm": "Ed25519",
+    "signature-algorithm": "ECDSA-P256-SHA256",
+    "signing-key": "AWS KMS, non-exportable",
     "pubkey-pinned-in": "https://www.npmjs.com/package/datamancy"
   },
-  "x-note": "algebraic-intelligence.dev is the chronicle (story, polished, rendered). The actual MCP server is at datamancy.dev — a cryptographically verifiable static MCP serving the datamancy grimoire as raw markdown. Manifest is Ed25519-signed; the npm adapter at `npx -y datamancy` verifies the signature against a public key pinned in the package source, then verifies SHA-256 of each fetched spell against the signed manifest's entries. No content reaches the LLM unverified. The practitioner's identity card lives at https://datamancer.dev. Three domains, three purposes: chronicle / identity / grimoire.",
+  "x-note": "algebraic-intelligence.dev is the chronicle (story, polished, rendered). The actual MCP server is at datamancy.dev — a cryptographically verifiable static MCP serving the datamancy grimoire as raw markdown. The manifest is signed with ECDSA P-256 over SHA-256 by a key held non-exportably in AWS KMS; the npm adapter at `npx -y datamancy` verifies the signature against a public key pinned in the package source, then verifies SHA-256 of each fetched spell against the signed manifest's entries. No content reaches the LLM unverified. The signed manifest is the authoritative, always-current spell catalog — this card carries no spell list of its own (a copy drifts; the signed source cannot). The practitioner's identity card lives at https://datamancer.dev. Three domains, three purposes: chronicle / identity / grimoire.",
   "x-recommended-resources": [
     {
       "name": "datamancy-mcp-manifest",
       "uri": "https://datamancy.dev/.well-known/mcp/manifest.json",
       "mimeType": "application/json",
-      "description": "The signed MCP manifest — currently 18 spells, each with SHA-256 verifiable content. Verify against signature at /.well-known/mcp/manifest.json.sig."
+      "description": "The signed MCP manifest — the authoritative, always-current catalog of the grimoire's spells, each with SHA-256 verifiable content. Verify against signature at /.well-known/mcp/manifest.json.sig (ECDSA P-256, key pinned in the npm package source)."
     },
     {
       "name": "datamancy-npm-package",

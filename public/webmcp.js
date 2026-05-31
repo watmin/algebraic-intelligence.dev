@@ -71,7 +71,7 @@
       {
         name: "listAgentSkills",
         description:
-          "Fetch /.well-known/agent-skills/index.json — the index of invokable agent skills (the datamancy wards). Returns the parsed JSON so the agent has the full skill catalog in one call.",
+          "Fetch the authoritative datamancy grimoire catalog — the live, KMS-signed list of invokable wards (each a SKILL.md cast as a subagent against a target). This chronicle holds no copy of the spell list; the tool fetches the always-current signed source at datamancy.dev directly, so the result never goes stale when a spell is added. Each entry carries a SHA-256 verifiable against the signed manifest.",
         inputSchema: {
           type: "object",
           properties: {},
@@ -79,14 +79,24 @@
           additionalProperties: false,
         },
         execute: async () => {
+          const AUTHORITATIVE =
+            "https://datamancy.dev/.well-known/agent-skills/index.json";
+          const POINTER = "/.well-known/agent-skills/index.json";
           try {
-            const response = await fetch("/.well-known/agent-skills/index.json");
-            if (!response.ok) {
-              return { error: `HTTP ${response.status}`, url: "/.well-known/agent-skills/index.json" };
+            const response = await fetch(AUTHORITATIVE);
+            if (response.ok) {
+              return { source: AUTHORITATIVE, catalog: await response.json() };
             }
-            return await response.json();
+          } catch {
+            /* cross-origin unavailable — fall through to the local pointer */
+          }
+          // Fallback: return this site's pointer doc, which names the authoritative source.
+          try {
+            const ptr = await fetch(POINTER);
+            if (!ptr.ok) return { error: `HTTP ${ptr.status}`, url: POINTER };
+            return { source: POINTER, pointer: await ptr.json() };
           } catch (err) {
-            return { error: err.message, url: "/.well-known/agent-skills/index.json" };
+            return { error: err.message, url: POINTER };
           }
         },
       },

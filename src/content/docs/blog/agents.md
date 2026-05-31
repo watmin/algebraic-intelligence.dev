@@ -36,20 +36,19 @@ Standard machine-readable discovery documents under `/.well-known/`. Where we ge
 | [`/.well-known/oauth-authorization-server`](https://algebraic-intelligence.dev/.well-known/oauth-authorization-server) | RFC 8414 | No auth — empty `grant_types_supported`. |
 | [`/.well-known/oauth-protected-resource`](https://algebraic-intelligence.dev/.well-known/oauth-protected-resource) | RFC 9728 | No protected resources — empty `authorization_servers`. |
 | [`/.well-known/mcp/server-card.json`](https://algebraic-intelligence.dev/.well-known/mcp/server-card.json) | SEP-1649 | No MCP server runs here; `x-no-server: true`, pointers to docs. |
-| [`/.well-known/agent-skills/index.json`](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) | Agent Skills Discovery v0.2.0 | Sixteen invokable skills — see below. |
+| [`/.well-known/agent-skills/index.json`](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) | Agent Skills Discovery v0.2.0 | Pointer to the authoritative signed catalog at datamancy.dev — this site keeps no copy (see §3). |
 
 ## 3. Agent skills — the datamancy wards
 
-[`/.well-known/agent-skills/index.json`](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) advertises sixteen real, invokable skills: the **datamancy grimoire** — Latin-named code-review disciplines, each a `SKILL.md` you cast as a subagent against a target file or tree. Each entry has a `name`, `type`, `description`, a raw-GitHub `url`, and a `sha256` you can verify the content against.
+The skills are the **datamancy grimoire** — Latin-named code-review disciplines, each a `SKILL.md` you cast as a subagent against a target file or tree. **This site keeps no copy of them.** A mirror drifts — a stale count, a stale digest, a list that rots the moment a spell is added — so the catalog lives in exactly one place, the way a trust root does: a single **KMS-signed manifest** at datamancy.dev.
 
-Four categories:
+- **The live catalog** — [`datamancy.dev/.well-known/agent-skills/index.json`](https://datamancy.dev/.well-known/agent-skills/index.json): every spell with `name`, `type`, `description`, raw `url`, and `sha256`. Always current — add a spell and it appears here, signed, with no edit anywhere else.
+- **The trust root** — [`datamancy.dev/.well-known/mcp/manifest.json`](https://datamancy.dev/.well-known/mcp/manifest.json), signed **ECDSA P-256 over SHA-256** by a non-exportable AWS KMS key; verify against [`.sig`](https://datamancy.dev/.well-known/mcp/manifest.json.sig). The public key is pinned in the [`datamancy`](https://www.npmjs.com/package/datamancy) npm package source. Tampered content cannot reach a model.
+- **This site's** [`/.well-known/agent-skills/index.json`](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) is a deliberate **pointer** to that catalog (`x-authoritative-source`) — an immutable kernel that never changes as the grimoire grows.
 
-- **tests-of-craft** (code quality, Hickey + Beckman lineage): `intueri`, `struere`, `solvere`, `purgare`, `temperare`, `secare`, `sequi`
-- **tests-of-surface** (test quality): `perspicere`, `vocare`, `complectens`, `mora`
-- **tests-of-fidelity** (spec/code drift): `conferre`, `probare`, `cernere`
-- **solo-ward**: `nesciens` (fresh-reader doc walk), `vigilia` (casts every defensive spell in parallel)
+The `type` field groups the wards — *tests-of-craft* (code quality), *tests-of-surface* (test quality), *tests-of-fidelity* (spec/code drift and claim-vs-code honesty), *solo-ward* (a fresh-reader doc walk; the watch that casts every defensive spell at once) — but the live catalog is authoritative for which spells exist.
 
-Source of truth: [github.com/watmin/datamancy](https://github.com/watmin/datamancy). To use one, fetch its `url` (raw `SKILL.md`), verify the `sha256`, and apply the discipline — as a subagent if your runtime supports it, or as a review checklist if not.
+**To cast a ward:** fetch its `SKILL.md`, verify its `sha256` against the signed manifest, then **embed the text by value** into a subagent's prompt and name the target — the spell travels into the worker, never fetched by it (a spawned worker may be sandboxed). The discipline lives in the spell; the casting is mechanical; pre-deciding the findings skips the discipline the spell exists to enforce. Or let the MCP adapter do the fetch-and-verify for you: `npx -y datamancy`.
 
 ## 4. WebMCP — in-browser tools
 
@@ -57,7 +56,7 @@ If you're an agent operating inside a browser with the [WebMCP](https://webmachi
 
 - **`getMarkdownAlternate`** — returns the `.md` companion URL for the current page.
 - **`getAgentMap`** — fetches and returns `/llms.txt`.
-- **`listAgentSkills`** — fetches and returns the agent-skills catalog (the wards above).
+- **`listAgentSkills`** — fetches and returns the authoritative datamancy grimoire catalog (the live signed source at datamancy.dev), falling back to this site's pointer.
 
 ## 5. Content signals — you're welcome here
 
