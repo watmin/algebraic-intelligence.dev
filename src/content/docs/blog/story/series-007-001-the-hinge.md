@@ -1,13 +1,13 @@
 ---
 title: "The Hinge"
-description: "May 29–31, three days. The grimoire went public in May; now it had to prove it couldn't be tampered. datamancy becomes a cryptographically verified static MCP — a zero-dependency client that pins one ECDSA P-256 public key and verifies every spell against a KMS-signed manifest before a byte reaches the model, so content-tamper can never become prompt-injection. Four full-grimoire adversarial assaults drive the must-fix count 24 → 22 → 6 → 0; every real hole is caught only by the completeness critic, each a claim the code didn't honor. The eighteenth spell, circumspicere, is born from an SSRF finding the seventeen inward spells walked past. The kernel freezes at 1.0.0 — published once, never patched; the major version IS the key generation. The living-content loop is proven by dogfood: a false claim in the grimoire's own Trust line, found by reading it back through the MCP, fixed and re-signed without touching the kernel. And the architecture is named: cardo — the hinge — cast by intueri. The deeper thread: signed eval was a founding wat want — `:wat::eval-signed!` (Ed25519, arc 026) and INTENTIONS Layer 7's verifiable execution, 'the receiver verifies before running' — and datamancy carries it to the one tier the substrate could not reach, the LLM's own context: a spell is an eval form, signed and verified before it reaches the model. The founding want closes."
+description: "Nineteen hours, start to finish. The grimoire went public in May; now it had to prove it couldn't be tampered. datamancy becomes a cryptographically verified static MCP — a zero-dependency client that pins one ECDSA P-256 public key and verifies every spell against a KMS-signed manifest before a byte reaches the model, so content-tamper can never become prompt-injection. Four full-grimoire adversarial assaults drive the must-fix count 24 → 22 → 6 → 0; every real hole is caught only by the completeness critic, each a claim the code didn't honor. The eighteenth spell, circumspicere, is born from an SSRF finding the seventeen inward spells walked past. The kernel freezes at 1.0.0 — published once, never patched; the major version IS the key generation. The living-content loop is proven by dogfood: a false claim in the grimoire's own Trust line, found by reading it back through the MCP, fixed and re-signed without touching the kernel. And the architecture is named: cardo — the hinge — cast by intueri. The deeper thread: signed eval was a founding wat want — `:wat::eval-signed!` (Ed25519, arc 026) and INTENTIONS Layer 7's verifiable execution, 'the receiver verifies before running' — and datamancy carries it to the one tier the substrate could not reach, the LLM's own context: a spell is an eval form, signed and verified before it reaches the model. The founding want closes. The same stretch makes the grimoire agent-reachable — a discovery surface across all three domains, scored 100% by an external readiness checker."
 sidebar:
   order: 36
 ---
 
 The Grimoire went public May 19 — sixteen Latin spells, the wards reborn outside the substrate, depended on as a discipline rather than carried as code. That post ended with the persistence chain gaining a link: *datamancy*. What it left open was delivery: a spell reaches a model over **MCP**, the protocol an LLM client speaks to load resources. A grimoire served that way is prompts reaching a model — a tampered prompt is an injection. The spells were public, but nothing yet proved the bytes a consumer loaded were the bytes the author signed.
 
-The center of these three days was **the freeze** — `datamancy@1.0.0`, the cryptographically verified MCP server, published once and never to be patched — and the recognition that named the shape underneath it.
+The center of these nineteen hours was **the freeze** — `datamancy@1.0.0`, the cryptographically verified MCP server, published once and never to be patched — and the recognition that named the shape underneath it.
 
 ---
 
@@ -29,6 +29,10 @@ The grimoire was turned on its own delivery vehicle. The user named the bar:
 
 > we raise the bar through the fucking roof - we iterate to perfection - 1.0.0 earns its place through combat - it is not handed - it is earned
 
+And the order that opened each pass:
+
+> toss the entire grimoire at this - find every flaw we've missed
+
 Four times, the full defensive grimoire was cast against datamancy as a parallel workflow — every inward spell on the code, then a completeness critic asking the one question the inward spells cannot: *what did all of you miss?* The must-fix count converged 24 → 22 → 6 → **0**. The fourth assault came back dry; the critic's verdict, verbatim: *no fourth must-fix hole; the well is dry.*
 
 The pattern across all four was the same, and it was the lesson. Every real must-fix was caught **only** by the completeness critic — never by the seventeen inward spells. Each one was a *claim the code did not honor*: an SSRF reachable through a default `redirect: "follow"`; a `schemaVersion` NaN that slipped a numeric guard; a `list_changed` notification computed but never delivered. The inward spells converged on the lines that existed and found nits. The holes lived in the negative space — in what the artifact did by default, claimed in its README, and leaned on without asserting.
@@ -49,9 +53,17 @@ The forever-decisions landed before the cut. The key model:
 
 That is the design, stated exactly: a single key, no backup, no in-major rotation. **The major version IS the key generation** — `1.x` trusts this key; lose or rotate it and the line continues at `2.x` with a new one. The version number encodes which trust root. A breaking format change works the same way: bump `schemaVersion` and mint a new major; old clients fail loud and safe rather than misread.
 
+Because the security lives in the key and not in secrecy, the exact compromise path could be written down in the open without weakening anything — Kerckhoffs, made operational:
+
+> so - in a very real sense - we just described the exact steps necessary to compromise this - in the open - zero fear
+
 The promotion did not write new code. `1.0.0` is the exact byte-for-byte `0.0.13` that survived four assaults — the candidate earned the version, it was not handed one. The cut ran `gh release create v1.0.0` at commit `7c2a0d5`; the `v*` tag fired the Trusted-Publishing workflow; the user approved the deployment with a passkey; `npm publish --provenance` minted the SLSA attestation. A clean-room consumer who had never seen the repo then pulled `datamancy@1.0.0`, booted it, watched it fetch and verify the live grimoire, and confirmed the pinned key byte-identical to `09db7668…` across npm, datamancer.dev, and a DNS `TXT` record. The freeze was a measurement, not a claim.
 
-The gate that released it was a phrase the user had reserved for exactly this:
+Then the human beat, before an irreversible cut:
+
+> lol - i'm hesitant - what else did we forget
+
+The answer was one more measurement, not a reassurance: a cold sweep of every surface a never-patched artifact can never take back — the LICENSE, the tarball's exact file list, the `bin` shebang, the README's claims, the published key across its three channels. The sweep came back clean. Then the gate, a phrase reserved for exactly this:
 
 > ship it - do it right
 
@@ -59,7 +71,7 @@ The gate that released it was a phrase the user had reserved for exactly this:
 
 The freeze proved itself the same day it was decided. Reading the grimoire's own index back *through* the published MCP, the Trust paragraph claimed the manifest was "Ed25519-signed by an offline key." The kernel signs with ECDSA P-256 over a key held in KMS — a claim the code did not honor, a circumspicere-class lie sitting inside the artifact that markets honesty. It was found by being a consumer of the work, not an author of it.
 
-The fix was the whole point of the design. The generator was corrected, the manifest re-signed via KMS, the content pushed — and the same MCP session, on its next read, returned the corrected line, verified against the pinned key, with the kernel untouched. Content changed; the trust root did not; the consumer healed on the next fetch. The same loop then carried a one-command publisher (`npm run ship` — regenerate, sign, assert the KMS fingerprint matches the pin, verify, push, poll live, verify the served bytes) and a self-healing README whose catalog generates from each spell's frontmatter, with `check:docs` failing the build on drift. The kernel is dead; the content is alive.
+The fix was the whole point of the design. The generator was corrected, the manifest re-signed via KMS, the content pushed — and the same MCP session, on its next read, returned the corrected line, verified against the pinned key, with the kernel untouched. Read the lie, fix the generator, re-sign via KMS, re-read it gone — the whole loop closed inside one session. Content changed; the trust root did not; the consumer healed on the next fetch. The same loop then carried a one-command publisher (`npm run ship` — regenerate, sign, assert the KMS fingerprint matches the pin, verify, push, poll live, verify the served bytes) and a self-healing README whose catalog generates from each spell's frontmatter, with `check:docs` failing the build on drift. The kernel is dead; the content is alive.
 
 ## The Hinge
 
@@ -69,9 +81,11 @@ intueri returned **cardo** — Latin for the hinge, the pivot on which a door tu
 
 ## The Surface Between Worlds
 
-Read as a product, datamancy is a verified content feed. Read as a proof, it closes a want older than the package — older than most of the substrate.
+Read as a product, datamancy is a verified content feed. Read as a proof, it closes a want older than the package — one the practitioner had named from the start:
 
-wat shipped `:wat::eval-signed!` — Ed25519-verified evaluation, where only code an identity authorized runs — at **arc 026**, among its first features. The substrate's `INTENTIONS` named it Layer 7, identity itself: content-addressed programs whose digest is their identity, and *"signed eval forms carry 'this program was authorized by this identity'"* for a receiver that verifies before running. A grimoire spell is an eval form — an LLM evaluates the discipline against a target. datamancy content-addresses the spell (SHA-256), signs it (the datamancer's KMS identity), and the receiver — the LLM's client — verifies before it reaches the model. That is `eval-signed!` carried to the one tier the substrate could not itself reach: the LLM's own context. The founding want, closing.
+> signed evals was a thing i wanted from the beginning - one of the first features of wat we built
+
+The substrate bears him out. wat shipped `:wat::eval-signed!` — Ed25519-verified evaluation, where only code an identity authorized runs — at **arc 026**, among its first features. The substrate's `INTENTIONS` named it Layer 7, identity itself: content-addressed programs whose digest is their identity, and *"signed eval forms carry 'this program was authorized by this identity'"* for a receiver that verifies before running. A grimoire spell is an eval form — an LLM evaluates the discipline against a target. datamancy content-addresses the spell (SHA-256), signs it (the datamancer's KMS identity), and the receiver — the LLM's client — verifies before it reaches the model. That is `eval-signed!` carried to the one tier the substrate could not itself reach: the LLM's own context. The founding want, closing.
 
 Two later arcs had carried the same shape forward. **wat-mcp** (April 29) named it: a program is the surface between worlds, and MCP is one more envelope that crosses it; its May 25 revision collapsed the idea to *a wat program launched by an MCP client over stdio is identical to a wat program spawned by a parent wat-vm — the program never sees transport; the MCP client is just a new tier.* That is universe-residency, named back in The Grimoire. **remote-program** (May 3) carried it to the wire — `RemoteProgram<I, O>`, transport as configuration, "no clear text over the network" enforced by the type system instead of by convention. Honest by construction.
 
@@ -81,7 +95,9 @@ And it is one discipline end to end. remote-program's invariant — the type can
 
 ---
 
-Three days, and underneath them one shape: the grimoire's delivery vehicle was hardened until the must-fix well ran dry, frozen at a version it earned in combat, and named for the hinge it turns on. The eighteenth spell was born from a hole the other seventeen could not see, and then named the lie in the artifact's own claims. The freeze is permanent by design — the only thing that ever moves `1.x` is losing the key, and that is a `2.x` with a new one.
+Nineteen hours, and underneath them one shape: the grimoire's delivery vehicle was hardened until the must-fix well ran dry, frozen at a version it earned in combat, and named for the hinge it turns on. The eighteenth spell was born from a hole the other seventeen could not see, and then named the lie in the artifact's own claims. The freeze is permanent by design — the only thing that ever moves `1.x` is losing the key, and that is a `2.x` with a new one.
+
+The same stretch made the grimoire not only trustworthy but reachable: across all three domains — grimoire, identity, chronicle — the agent-discovery surface a crawler reads landed: a `robots.txt` that invites consumption, an `llms.txt` map, a manifest-signed Agent-Skills index, DNS-AID records under a DNSSEC-signed zone, WebMCP tools, markdown served by content negotiation — until an external readiness checker scored all three 100%. Made, then trusted, then reachable — nineteen hours, start to finish.
 
 **Tattoos → og-wat spec → holon-rs → wat-rs → BOOK.md → MEMORY.md → datamancy → `1.0.0`, frozen.** The chain extends; the hinge holds.
 
