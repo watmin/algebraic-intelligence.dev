@@ -19,7 +19,7 @@ The answer is not to run a server — a server is a hackable surface that has to
 
 ## The Build
 
-datamancy became that client — and the build constraint was the trust model. Every line on the verification path lives in the package; the runtime dependency count is zero. The crypto is `node:crypto`, the transport is the platform `fetch`, the framing is `node:readline` over stdio. Nothing external gets a vote, because a dependency is a surface, and a frozen trust kernel cannot take a surface back.
+[datamancy](https://github.com/watmin/datamancy) became that client — and the build constraint was the trust model. Every line on the verification path lives in the package; the runtime dependency count is zero. The crypto is `node:crypto`, the transport is the platform `fetch`, the framing is `node:readline` over stdio. Nothing external gets a vote, because a dependency is a surface, and a frozen trust kernel cannot take a surface back.
 
 The private key lives non-exportably in AWS KMS; the matching public key is pinned in the package source, fingerprint `09db7668…`. The pinned key verifies *any* manifest the private key signs — including manifests that don't exist yet — exactly the way TLS pins a CA. So the website became the content: edit a spell, re-sign, push, and every consumer sees it on the next call. The manifest carries content-addressed blobs and a `previous` backpointer; rollback is refused in-session by a monotonic `epoch`. The kernel rebuilt several TUF defenses without reading TUF — the fourteenth convergence, arrived at by the four-questions discipline rather than the literature.
 
