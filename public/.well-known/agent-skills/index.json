@@ -1,10 +1,20 @@
 {
   "$schema": "https://agentskills.io/schema/v0.2.0.json",
-  "skills": [],
+  "skills": [
+    {
+      "name": "datamancy-grimoire",
+      "type": "grimoire-index",
+      "description": "The datamancy grimoire — Latin-named code-review wards, each a SKILL.md you cast as a subagent against a target file or tree. This chronicle does not mirror the catalog; this one entry points you at the grimoire's index spell — load it to get the full, live, KMS-signed (ECDSA P-256 over SHA-256) list, then fetch and verify each ward you need. Start here. To cast a ward: fetch its SKILL.md, verify its sha256 against the signed manifest, then embed the text by value into a subagent's prompt and name the target — the spell is cast into the worker, never fetched by it.",
+      "url": "https://datamancy.dev/grimoire/SKILL.md",
+      "sha256": "9b08a6fe31fab219f64652e4dcb0558860b02d14d27d09cfbe578900190140aa",
+      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/grimoire/SKILL.md",
+      "x-authoritative-catalog": "https://datamancy.dev/.well-known/agent-skills/index.json"
+    }
+  ],
   "x-authoritative-source": "https://datamancy.dev/.well-known/agent-skills/index.json",
   "x-manifest": "https://datamancy.dev/.well-known/mcp/manifest.json",
   "x-manifest-signature": "https://datamancy.dev/.well-known/mcp/manifest.json.sig",
-  "x-note": "algebraic-intelligence.dev is the chronicle, not the grimoire. The skills — the datamancy wards, Latin-named code-review disciplines, each a SKILL.md you cast as a subagent against a target file or tree — live at datamancy.dev and are served from a single KMS-signed (ECDSA P-256 over SHA-256) manifest: the authoritative, always-current, content-addressed catalog. This site deliberately holds no copy. A mirror drifts (a stale count, a stale digest, a list that rots when a spell is added); the signed source cannot. Fetch the live catalog at x-authoritative-source, or the signed manifest at x-manifest (verify against x-manifest-signature; the public key is pinned in the npm package source at https://www.npmjs.com/package/datamancy). Adding a spell never changes this file. To use a ward: fetch its SKILL.md, verify its SHA-256 against the signed manifest, then embed it into a subagent's prompt and name the target — the spell is cast by value, never fetched by the worker.",
+  "x-note": "algebraic-intelligence.dev is the chronicle, not the grimoire. This index carries a single pointer to the datamancy grimoire (the wards' authoritative, KMS-signed home at datamancy.dev) plus any native chronicle skills. It deliberately does not mirror datamancy's catalog — a mirror drifts; the signed source cannot. For the full live ward list, follow the pointer skill or x-authoritative-source.",
   "x-pointers": {
     "agent-map": "https://algebraic-intelligence.dev/llms.txt",
     "topology": "https://algebraic-intelligence.dev/blog/topology/",
