@@ -4,17 +4,15 @@
     {
       "name": "datamancy-grimoire",
       "type": "grimoire-index",
-      "description": "The datamancy grimoire — Latin-named code-review wards, each a SKILL.md you cast as a subagent against a target file or tree. This chronicle does not mirror the catalog; this one entry points you at the grimoire's index spell — load it to get the full, live, KMS-signed (ECDSA P-256 over SHA-256) list, then fetch and verify each ward you need. Start here. To cast a ward: fetch its SKILL.md, verify its sha256 against the signed manifest, then embed the text by value into a subagent's prompt and name the target — the spell is cast into the worker, never fetched by it.",
-      "url": "https://datamancy.dev/grimoire/SKILL.md",
-      "sha256": "9b08a6fe31fab219f64652e4dcb0558860b02d14d27d09cfbe578900190140aa",
-      "x-documentation": "https://github.com/watmin/datamancy.dev/blob/main/grimoire/SKILL.md",
-      "x-authoritative-catalog": "https://datamancy.dev/.well-known/agent-skills/index.json"
+      "description": "Pointer to the datamancy grimoire — the authoritative, KMS-signed library of Latin-named code-review wards. Reach the live catalog at datamancy.dev, verify each ward against the signed manifest, and cast it by value into a subagent. This chronicle does not mirror the catalog; it points at it.",
+      "url": "https://algebraic-intelligence.dev/skills/datamancy-grimoire/SKILL.md",
+      "sha256": "ccbc36b3566abadeb69d5712b3586abaa3e6beba2a96a82a2fb1de775bcd6b98"
     }
   ],
-  "x-authoritative-source": "https://datamancy.dev/.well-known/agent-skills/index.json",
-  "x-manifest": "https://datamancy.dev/.well-known/mcp/manifest.json",
-  "x-manifest-signature": "https://datamancy.dev/.well-known/mcp/manifest.json.sig",
-  "x-note": "algebraic-intelligence.dev is the chronicle, not the grimoire. This index carries a single pointer to the datamancy grimoire (the wards' authoritative, KMS-signed home at datamancy.dev) plus any native chronicle skills. It deliberately does not mirror datamancy's catalog — a mirror drifts; the signed source cannot. For the full live ward list, follow the pointer skill or x-authoritative-source.",
+  "x-authoritative-grimoire": "https://datamancy.dev/.well-known/agent-skills/index.json",
+  "x-grimoire-manifest": "https://datamancy.dev/.well-known/mcp/manifest.json",
+  "x-grimoire-manifest-signature": "https://datamancy.dev/.well-known/mcp/manifest.json.sig",
+  "x-note": "algebraic-intelligence.dev is the chronicle, not the grimoire. These are this site's own skills, each with a sha256 over a SKILL.md this site hosts (self-certifying, drift-free). The `datamancy-grimoire` skill is a pointer that references the datamancy grimoire by URL — this site never mirrors datamancy's catalog nor pins datamancy's digest. The wards' authoritative, always-current, KMS-signed home is datamancy.dev (see x-authoritative-grimoire); verify each ward there against x-grimoire-manifest-signature.",
   "x-pointers": {
     "agent-map": "https://algebraic-intelligence.dev/llms.txt",
     "topology": "https://algebraic-intelligence.dev/blog/topology/",
