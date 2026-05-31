@@ -6,7 +6,7 @@
       "type": "grimoire-index",
       "description": "Pointer to the datamancy grimoire — the authoritative, KMS-signed library of Latin-named code-review wards. Reach the live catalog at datamancy.dev, verify each ward against the signed manifest, and cast it by value into a subagent. This chronicle does not mirror the catalog; it points at it.",
       "url": "https://algebraic-intelligence.dev/skills/datamancy-grimoire/SKILL.md",
-      "sha256": "ccbc36b3566abadeb69d5712b3586abaa3e6beba2a96a82a2fb1de775bcd6b98"
+      "sha256": "1361d4268ca4c08d3206b6c1937c4f76b3245e05d64a58740075336d64bfb580"
     }
   ],
   "x-authoritative-grimoire": "https://datamancy.dev/.well-known/agent-skills/index.json",
