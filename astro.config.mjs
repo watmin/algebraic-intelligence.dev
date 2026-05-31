@@ -92,7 +92,87 @@ export default defineConfig({
         {
           label: "The Story",
           collapsed: true,
-          autogenerate: { directory: "blog/story" },
+          // Grouped by series into collapsible sub-containers so the bar stays
+          // short (series-006 alone is 21 entries). Files stay flat in
+          // blog/story/ — slugs unchanged — so the _headers globs and markdown
+          // companions keep working; `slug:` items take their label from each
+          // post's own title. New post → add its slug to the right series group.
+          items: [
+            { slug: "blog/story/prologue" },
+            {
+              label: "Python: The Foundation",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-002-001-first-experiments" },
+                { slug: "blog/story/series-002-002-the-np-wall" },
+                { slug: "blog/story/series-002-003-scale-and-detection" },
+              ],
+            },
+            {
+              label: "The Rust Port",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-003-001-the-rust-port" },
+                { slug: "blog/story/series-003-002-the-labs" },
+                { slug: "blog/story/series-003-003-1-3m-pps" },
+                { slug: "blog/story/series-003-004-the-rule-engine" },
+                { slug: "blog/story/series-003-005-engrams" },
+              ],
+            },
+            {
+              label: "The L7 Lab",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-004-001-the-l7-lab" },
+                { slug: "blog/story/series-004-002-the-expression-tree" },
+              ],
+            },
+            {
+              label: "The Spectral Firewall",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-005-001-the-spectral-firewall" },
+                { slug: "blog/story/series-005-002-self-calibrating" },
+                { slug: "blog/story/series-005-003-the-residual-profile" },
+              ],
+            },
+            {
+              label: "The Datamancer",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-006-001-the-thought-machine" },
+                { slug: "blog/story/series-006-002-the-conviction-curve" },
+                { slug: "blog/story/series-006-003-the-enterprise" },
+                { slug: "blog/story/series-006-004-the-datamancer" },
+                { slug: "blog/story/series-006-005-the-forging" },
+                { slug: "blog/story/series-006-006-the-guide" },
+                { slug: "blog/story/series-006-007-the-foundation" },
+                { slug: "blog/story/series-006-008-xx" },
+                { slug: "blog/story/series-006-009-the-detour" },
+                { slug: "blog/story/series-006-010-the-descent" },
+                { slug: "blog/story/series-006-011-the-recognition" },
+                { slug: "blog/story/series-006-012-the-surface" },
+                { slug: "blog/story/series-006-013-the-resolve" },
+                { slug: "blog/story/series-006-014-the-language" },
+                { slug: "blog/story/series-006-015-the-discipline" },
+                { slug: "blog/story/series-006-016-the-loop-closes" },
+                { slug: "blog/story/series-006-017-the-grimoire" },
+                { slug: "blog/story/series-006-018-the-first-intermission" },
+                { slug: "blog/story/series-006-019-records-become-types" },
+                { slug: "blog/story/series-006-020-the-closures-and-the-coincidence" },
+                { slug: "blog/story/series-006-021-cold-boot" },
+              ],
+            },
+            {
+              label: "The Static MCP",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-007-001-the-hinge" },
+                { slug: "blog/story/series-007-002-the-watch-learns" },
+              ],
+            },
+            { slug: "blog/story/epilogue" },
+          ],
         },
         {
           // Using `link:` (URL) instead of `slug:` (content-collection lookup)
