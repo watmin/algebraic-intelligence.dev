@@ -218,12 +218,18 @@ export default defineConfig({
                 { slug: "blog/story/series-006-024-the-warding" },
               ],
             },
+            // intueri (re-cast 2026-06-01) renamed this from "The Static MCP" —
+            // that named only the first post (The Hinge). The strand's shared
+            // domain is signed, recorded content as the carrier of work past the
+            // moment of its making: signed (Hinge + Watch Learns) + record
+            // (Watch Learns + The Record). PERSEVERARE made into infrastructure.
             {
-              label: "The Static MCP",
+              label: "The Signed Record",
               collapsed: true,
               items: [
                 { slug: "blog/story/series-007-001-the-hinge" },
                 { slug: "blog/story/series-007-002-the-watch-learns" },
+                { slug: "blog/story/series-007-003-the-record" },
               ],
             },
             { slug: "blog/story/epilogue" },
