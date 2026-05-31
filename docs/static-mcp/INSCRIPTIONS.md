@@ -8,6 +8,176 @@ notes the reversal; the original entry stays as it was.
 
 ---
 
+## 2026-05-31 — ARC-CLOSED — the static-MCP arc is complete; `datamancy@1.0.0` frozen
+
+**The arc that opened at M0-design closed at a never-patched `1.0.0`, a named
+architecture (`cardo`), a published chronicle entry, and three agent-ready
+domains scoring 100% on the readiness checker. Nineteen hours, start to finish.**
+The entries below record the endgame the earlier log (which stopped at `0.0.3`)
+never reached. M4 (tests), M5 (chronicle), and M6 (trust model) all CLOSED — see
+`REMAINING-ORDER.md`.
+
+---
+
+## 2026-05-31 — AGENT-READY — three domains agent-discoverable; 100% on isitagentready
+
+**What shipped**: the agent-discovery layer across all three domains, taking each
+to 100% on Cloudflare's `isitagentready.com` checker (alg-int was the reference).
+The scored categories — Discoverability, Content Accessibility, Bot Access
+Control, Protocol Discovery — closed; Commerce is N/A (not commerce sites).
+
+**datamancy.dev** (the grimoire — and it shines here): `robots.txt` (+
+`Content-Signal`, sitemap), `llms.txt` (agent map), `auth.md` (no-auth doc),
+`_headers` RFC 8288 Link relations on every response, `webmcp.js`. Under
+`.well-known/`: `api-catalog` (RFC 9727), `oauth-authorization-server` (RFC 8414,
+empty-grants no-auth stub), `oauth-protected-resource` (RFC 9728),
+`mcp/server-card.json`, `agent-skills/index.json` (agentskills.io v0.2.0).
+- **Self-healing**: `scripts/generate-agent-ready.mjs` generates the
+  `agent-skills` index + `mcp/server-card` + `sitemap.xml` from the *signed
+  manifest*, wired into `ship` + `check:docs`. 21 skills incl `circumspicere`,
+  correct `ECDSA-P256` — better than the reference's hand-copied copies (stale:
+  Ed25519, missing circumspicere, "18 spells").
+- **WebMCP needed HTML**: the root served raw markdown (302→grimoire), so the
+  WebMCP crawler had no JS to run and timed out. Fix: a thin `index.html` landing
+  at `/` that loads `webmcp.js` (spells stay raw markdown); redirect removed.
+- **Markdown-for-Agents**: the HTML root then broke markdown content-negotiation.
+  Fix: `functions/_middleware.js` (free-plan Pages Function, mirrors alg-int's) —
+  `Accept: text/markdown` (q ≥ html) → serves `/llms.txt` as `text/markdown`;
+  HTML stays default for browsers/WebMCP. Both satisfied on the same `/`.
+
+**datamancer.dev** (identity card): the same discovery set; no skills of its own
+→ mirrors datamancy's `agent-skills` index (`x-mirror-of` names the source);
+`server-card` declares `x-no-server` → datamancy.dev and doubles as a pinned-key
+verification channel. HTML landing + middleware.
+
+**DNS (operator-side)**: DNS-AID `_index._agents.<domain>` **HTTPS** records
+(RFC 9460 SVCB-family, ServiceMode pri 1, `alpn="h2,h3" port=443
+mandatory=alpn,port`) for both; DNSSEC enabled (Cloudflare signs, Namecheap
+publishes the DS, algorithm 13 / ECDSA-P256). Verified resolving across
+1.1.1.1 / 8.8.8.8 / 9.9.9.9, DS at parent.
+
+**Commits**: datamancy.dev `a7c8f7d` (well-known + headers), `d41839b`
+(check-docs CI), `7dc80c1` (HTML landing), `941468d` (markdown middleware);
+datamancer.dev `d29120a`, `6ebc68f`, `4c32e6f`, `98a034c`; alg-int `ff0d37b`
+(deleted the local `.claude/skills/consonare/` copy — the website now consumes
+`consonare` from the frozen datamancy MCP; cardo dogfooded at the interaction
+layer).
+
+---
+
+## 2026-05-31 — M5-CLOSED — "The Hinge" chronicle entry published (series-007-001)
+
+**M5 shipped** (was 💤 DEFERRED). The story post is live at
+`/blog/story/series-007-001-the-hinge.md`, opening **series-007**.
+
+**What it tells**: the threat (tampered content = prompt-injection) → the build →
+four assaults to a dry well → circumspicere born → the freeze → the dogfood that
+found the Ed25519 lie → **cardo** → "The Surface Between Worlds" (signed eval as
+a founding wat want — `:wat::eval-signed!` arc 026, INTENTIONS Layer 7 — closing
+at the LLM tier; the wat-mcp + remote-program dual; universe-residency for trust)
+→ the agent-ready capstone. Frame: **nineteen hours, start to finish** (corrected
+from a wrong "three days").
+
+**Voice**: under the `/consonare` discipline; **six cold consonare casts** across
+its life, the last at **MATCHES / fidelity 9** with the lived dialogue + REPL-loop
+oomph (verbatim builder quotes as dated decision-events).
+
+**Commits** (alg-int): `8faf090` (post), `ebc3fdb` (Surface Between Worlds),
+`6b92a33` (repo link), `93d4c89` (declare MCP opener), `3cb5e02` (duration + oomph).
+
+---
+
+## 2026-05-31 — CARDO — the architecture named (cast by intueri)
+
+**What shipped**: the synthesis — a frozen, zero-dependency, key-pinned client
+that verifies arbitrary *future* content signed by a non-exportable key, where
+the major version IS the key generation — got its name. Cast, not narrated, per
+`intueri names all`: **`cardo`** — Latin for the hinge, the fixed pivot a door
+turns on (English *cardinal*). The key is the immovable hinge; the content is the
+door. intueri refused the obvious crypto words (*trust root* / *radix*) as
+too-familiar — a reader pattern-matches to a PKI root CA and misses the novel
+thing, a frozen client trusting an unwritten future. Runner-up *sigillum* (the
+seal) named a part, not the shape.
+
+**The deeper recognition** (user-surfaced): signed eval was a *founding* wat
+want, not a new idea — `:wat::eval-signed!` (Ed25519, **arc 026**) + INTENTIONS
+Layer 7 ("the receiver verifies before running"). cardo/datamancy carries it to
+the one tier the substrate couldn't reach: the LLM's own context (a grimoire
+spell IS an eval form). The static MCP is an origin thread closing. See
+`project_signed_eval_thread` in memory.
+
+---
+
+## 2026-05-31 — M6-DECIDED + 1.0.0-FROZEN — the never-patched freeze
+
+**M6 (living vs sealed trust model) — DECIDED: living.** Content flows on a
+frozen kernel; only kernel *code* changes bump the version. The reload-tool +
+verified-memo from the M6 brief are subsumed: every list/read re-fetches and
+re-verifies, last-known-good served on transport failure, loud log on
+verification failure.
+
+**`datamancy@1.0.0` is published, never to be patched.** The promotion wrote no
+new code — `1.0.0` is the exact byte-for-byte `0.0.13` that survived four
+assaults. Forever-decisions:
+- **The major version IS the key generation**: `1.x` trusts the pinned key;
+  lose/rotate it → `2.x` with a new one. Single key, NO backup ("fuck the
+  backups — if the key is lost then the key is lost"). `RECOVERY.md` documents
+  the compromise vs loss paths + the no-revocation truth.
+- A breaking format change = bump `schemaVersion` ≥ 2 + new major; old clients
+  fail loud-and-safe rather than misread.
+
+**The cut**: `gh release create v1.0.0` at commit `7c2a0d5` → `v*` tag fired the
+Trusted-Publishing workflow → user passkey-approved the `npm-publish` environment
+→ `npm publish --provenance` minted the SLSA attestation. `RELEASE_NOTES_v1.0.0.md`
+(repo-only) is the frozen-kernel statement. Gate phrase: "ship it - do it right".
+
+**Measured, not claimed**: a clean-room consumer (`npx datamancy@1.0.0` from an
+empty dir) booted, fetched + verified the live grimoire, and confirmed the pinned
+key (`09db7668…`) byte-identical across npm / datamancer.dev / DNS TXT. npm
+`latest` = 1.0.0, SLSA `provenance/v1` attested, registry-signed.
+
+**Commits** (datamancy): `f7cfc54` (release notes), `7c2a0d5` (1.0.0 promotion).
+
+---
+
+## 2026-05-30→31 — HARDENING — 0.0.4 → 0.0.13: four assaults, circumspicere, provenance
+
+**What shipped**: the kernel hardened from 0.0.4 to 0.0.13 through **four
+full-grimoire adversarial assaults** — the whole defensive grimoire cast as a
+parallel workflow plus a completeness critic asking "what did all of you miss".
+Must-fix convergence **24 → 22 → 6 → 0**; the fourth came back dry ("no fourth
+must-fix hole; the well is dry"). 1.0.0 certified by combat, not handed.
+
+**The pattern**: every real must-fix was caught ONLY by the completeness critic,
+never the inward spells — each a *claim the code did not honor*:
+- **SSRF** via default `redirect: "follow"` → `redirect: "error"` (0.0.10,
+  `ebf6751`). This birthed the **eighteenth spell, `circumspicere`** — the
+  around-gaze, the surround the seventeen inward spells turn their backs on.
+  Inscribed (`datamancy.dev@3b6ee79`), folded into `vigilia` as the closing cast.
+- **`schemaVersion` NaN/0 bypass** + **self-dependency regression** purged →
+  zero-dep guard incl. dist-import grep (0.0.11, `2d9a38f`).
+- **`list_changed` computed-but-never-delivered** + trust-check fix (0.0.12,
+  `0f749ae`).
+- **Rigidity** (`e58d7d9`): all manifest optionals made required (epoch /
+  schemaVersion / previous / blob); in-session monotonic-epoch rollback
+  protection; `id:null` deadlock fixed. Forward-compat **CONTRACT.md** + 115 tests.
+
+**Provenance pipeline (live & proven)**: GitHub Actions **Trusted Publishing**
+(tokenless OIDC → Sigstore → SLSA) + `npm-publish` GitHub Environment (v*-tag-only
++ passkey approval) + **SHA-pinned actions** + dependabot (`bcb922f`, `4de8989`,
+`918025c`, `e1d853c`). Frozen-doc review pass (README / CONTRACT / RECOVERY
+independently reviewed + fixed) → 0.0.13 (`fd8b4cd`).
+
+**The living-content loop, proven by dogfood**: reading the grimoire's own index
+back through the published MCP found a `circumspicere`-class lie — the Trust line
+claimed "Ed25519-signed by an offline key" while the kernel is ECDSA P-256 / KMS.
+Fixed at the generator, re-signed via KMS, re-read corrected **in the same
+session**, kernel untouched (`datamancy.dev@6e09382`). The loop then carried a
+one-command publisher (`npm run ship`, `9c2e922`) and a self-healing README
+(generated catalog + `check:docs`, `0029ae5`).
+
+---
+
 ## 2026-05-30 — M3-CLOSED — Tier 3 pinned manifest hash; trust matrix complete
 
 **The last cell of the trust matrix is filled.** The `datamancy` npm package

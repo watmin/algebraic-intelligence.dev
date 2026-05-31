@@ -14,48 +14,49 @@ by dependency, the dependency wins.
 
 ## Now
 
-**M1 CLOSED — the static-MCP system is live end-to-end (2026-05-30).** Both
-domains serve on Cloudflare Pages, the trust chain is proven through a real
-MCP client, and the bare domains redirect to their raw artifacts. Next arc:
-**M3** (Tier 3 pinning) — see "Then" below.
+**ARC CLOSED — 2026-05-31. Nothing remains.** The static-MCP arc ran from
+`M0-design` to a never-patched `datamancy@1.0.0`, a named architecture
+(**`cardo`**), a published chronicle entry, and three agent-ready domains at
+100% on Cloudflare's readiness checker — **nineteen hours, start to finish.**
+Full record in `INSCRIPTIONS.md` (newest at top).
 
-| ID | Item | Status | Notes |
-|---|---|---|---|
-| M1.E | DNS + **Cloudflare Pages (not Workers)** for both domains | ✅ | Both live. datamancy.dev serves manifest (`application/json` 200, 20 resources, live==local) + 64-byte sig. datamancer.dev serves `/index.md` (`text/markdown` 200, 1386 B). Bare-domain `_redirects` shipped: datamancer.dev `/`→`/index.md` (302), datamancy.dev `/`→`/grimoire/SKILL.md` (302), both verified landing on 200 content. **NOTE:** empty `gh api .../hooks` is NOT a failure signal — ignore it. |
+Live state, for the record:
+- `datamancy@1.0.0` on npm — `latest`, SLSA `provenance/v1` attested,
+  registry-signed, **never to be patched**. The major version IS the key
+  generation (`1.x` trusts the pinned key `09db7668…`; a new key = a new major).
+- **21 resources** in the ECDSA P-256-signed manifest (was 20 + the generated
+  `grimoire` index; `circumspicere` is the 18th spell).
+- Three domains agent-discoverable (robots / llms / `_headers` Link / `auth.md` /
+  WebMCP / `.well-known/{api-catalog, oauth-*, mcp/server-card, agent-skills}` /
+  DNS-AID under DNSSEC / markdown content-negotiation).
 
-## Up next (when M1.E unblocks)
+## Milestones — all closed
 
-| ID | Item | Status | Brief | Dependency |
+| ID | Item | Status | Closed | Detail |
 |---|---|---|---|---|
-| M1.C | Cross-references on algebraic-intelligence.dev — repoint `agent-skills/index.json` URLs + flip `mcp/server-card.json` to `x-static-server: true` + add `consonare` entry | ✅ | shipped — see `INSCRIPTIONS.md` | (was unblocked, shipped during DNS prop) |
-| M1.D | Scaffold `datamancer.dev` identity site — `index.md` + `_headers` + Cloudflare Pages connection | ✅ | shipped — see `INSCRIPTIONS.md` | (repo + push done; Cloudflare Pages connection still waits for DNS — that's M1.E) |
-| M1.F | End-to-end smoke test once both domains are live | ✅ | **PROVEN 2026-05-30.** MCP path through Claude Code as a live client consuming the *published* `npx -y datamancy`: boot `✓ Connected` (Ed25519 verified at boot), `resources/list` → 20, `resources/read grimoire` → SHA-256-verified content released, `resources/read evil/SKILL.md` → **rejected** `-32603 Not present in the verified manifest` (server is not an open proxy — the core thesis). datamancer.dev identity card live with resolving cross-domain pointers. Both bare domains redirect to raw artifacts. | M1.E + M1.D landed |
+| M0 | Multi-arc DESIGN.md | ✅ | 05-30 | `INSCRIPTIONS.md` |
+| M1 | Both domains live on Cloudflare Pages; MCP proven through a real client | ✅ | 05-30 | `INSCRIPTIONS.md` |
+| M2 | npm zero-dep adapter | ✅ | 05-30 | folded into M1 |
+| M3 | Tier 3 — pin manifest SHA-256 in package source; trust matrix complete | ✅ | 05-30 | superseded by the living model (M6) + 1.0.0 freeze |
+| M-hardening | 0.0.4 → 0.0.13: four full-grimoire assaults (24→22→6→0), `circumspicere` born, provenance pipeline, frozen-doc review | ✅ | 05-30→31 | `INSCRIPTIONS.md` |
+| M6 | **Living vs sealed trust model — DECIDED: living.** Content dynamic, kernel frozen; reload+memo subsumed (re-fetch+verify every call). | ✅ | 05-31 | [BRIEFS/F-living-reload-memo.md](BRIEFS/F-living-reload-memo.md) |
+| M-freeze | `1.0.0` frozen — promote byte-identical `0.0.13`; key model decided (single key, loss→new major); cold-room measured | ✅ | 05-31 | `INSCRIPTIONS.md` |
+| M-cardo | The architecture named by `intueri`: **`cardo`** — the hinge. Signed-eval founding thread recognized (`eval-signed!` arc 026). | ✅ | 05-31 | `INSCRIPTIONS.md`, memory `project_signed_eval_thread` |
+| M5 | Chronicle entry — "The Hinge" (`series-007-001`), 6× cold consonare MATCHES/9 | ✅ | 05-31 | `/blog/story/series-007-001-the-hinge.md` |
+| M4 | Test suite for the npm package — **115 tests** (T1 + T2 + rigidity + ssrf + rollback + zero-dep + …) | ✅ | 05-30→31 | gates the publish workflow |
+| M-agent-ready | Three domains agent-discoverable; 100% on isitagentready | ✅ | 05-31 | `INSCRIPTIONS.md` |
 
-## Then (arc opens after M1 closes)
+## Deferred (intentional, post-arc)
 
-| ID | Item | Status | Brief | Dependency |
-|---|---|---|---|---|
-| M3 | Tier 3 — pin manifest SHA-256 in npm package source. Trust matrix closes its last cell. | ✅ | [BRIEFS/C-tier3-pinning.md](BRIEFS/C-tier3-pinning.md) | **CLOSED 2026-05-30.** Published `datamancy@0.0.3` (0.0.2 carried the pin but a version-drift bug; 0.0.3 fixes it structurally). Boot verifies pinned SHA-256 (`dedf60f…4dde`) BEFORE signature, fail-fast on mismatch with `npx datamancy@latest` message. `scripts/pin-current-manifest.mjs` re-pins at every publish via `prepublishOnly`. Negative test confirmed: corrupted pin rejects before the signature is even fetched. All three tiers proven in the published artifact. |
+| Item | Status | Note |
+|---|---|---|
+| Publish a realizations/cliffnotes **branch** on the site (like arc-170) | 💤 | The story post (The Hinge) carries the public narrative; the build log lives in `docs/static-mcp/`. Publish only if the detailed journal is wanted live. |
+| Refresh the alg-int `.well-known` agent-skills/server-card (stale: Ed25519, missing circumspicere, "18 spells") | 💤 | The reference's own copies drifted; datamancy.dev's are generated + correct. Cosmetic for the reference's accuracy. |
 
-## Next design — runtime architecture (captured, not built)
+## Momentum-ordering notes (historical)
 
-| ID | Item | Status | Brief | Dependency |
-|---|---|---|---|---|
-| M6 | Living trust model (decision) + `reload` tool (the `load!` verb, an MCP **tool** not a masked resource) + write-only-on-verified in-memory memo (serve last-known-good on transport failure; LOUD log on verification failure — "scary event just happened"). | 📋 | [BRIEFS/F-living-reload-memo.md](BRIEFS/F-living-reload-memo.md) | **OPEN DECISION**: living (T1+T2, content dynamic, npm frozen) vs sealed (T1+T2+T3, current, republish-per-spell). User chewing on it — reload + memo shine in living, near-pointless in sealed, so decide trust model FIRST. Recommend living + signed-freshness monotonic guard. Don't build until decided. |
-
-## Deferred (intentional)
-
-| ID | Item | Status | Why deferred |
-|---|---|---|---|
-| M4 | Test suite for npm package — fixture-based tests for Tier 1 + Tier 2 verification | 💤 | Lower value-per-minute than shipping M1 + M3 first. The logic is small and testable; tests codify it but don't unblock anything. |
-| M5 | Chronicle entry — story post about static-MCP work | 💤 | Creative, requires `/consonare` voice pass. Best written once the dust settles and the user is in writing mode. Will probably land as `series-007-001-the-static-mcp.md` or similar (next series block). |
-
-## Momentum-ordering notes
-
-Per the doctrine: when multiple items are free of artifact-dependency,
-finish the path you're on. Current hot context: the chronicle's
-cross-reference layer (M1.C). Pick that first while DNS propagates.
-
-M1.D (datamancer.dev scaffold) can be done in parallel with M1.C since
-they touch disjoint repos. Either order is fine; momentum says do M1.C
-first because we're already in the chronicle repo's design.
+The arc closed on the path it was on: hardening → freeze → name → chronicle →
+agent-ready, each finishing before the next opened (the no-regression-until-arc-
+done discipline). The one branch was the agent-readiness sweep, which surfaced its
+own requirements (WebMCP needs HTML; HTML breaks markdown-negotiation) and was
+pivoted forward into rather than deferred.
