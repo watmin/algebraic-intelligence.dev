@@ -136,28 +136,68 @@ export default defineConfig({
                 { slug: "blog/story/series-005-003-the-residual-profile" },
               ],
             },
+            // series-006 was one flat "The Datamancer" group — a name that lied
+            // over 21 posts spanning the trading lab → the birth of wat → the
+            // BOOK → the grimoire. intueri (cast on the grouping) split it into
+            // seven honest groups, each named for the era it actually holds.
             {
-              label: "The Datamancer",
+              label: "The Trading Lab",
               collapsed: true,
               items: [
                 { slug: "blog/story/series-006-001-the-thought-machine" },
                 { slug: "blog/story/series-006-002-the-conviction-curve" },
                 { slug: "blog/story/series-006-003-the-enterprise" },
+              ],
+            },
+            {
+              label: "The Datamancer",
+              collapsed: true,
+              items: [
                 { slug: "blog/story/series-006-004-the-datamancer" },
                 { slug: "blog/story/series-006-005-the-forging" },
                 { slug: "blog/story/series-006-006-the-guide" },
                 { slug: "blog/story/series-006-007-the-foundation" },
+              ],
+            },
+            {
+              label: "The Birth of wat",
+              collapsed: true,
+              items: [
                 { slug: "blog/story/series-006-008-xx" },
                 { slug: "blog/story/series-006-009-the-detour" },
                 { slug: "blog/story/series-006-010-the-descent" },
+              ],
+            },
+            {
+              label: "The Book and the Recognition",
+              collapsed: true,
+              items: [
                 { slug: "blog/story/series-006-011-the-recognition" },
                 { slug: "blog/story/series-006-012-the-surface" },
                 { slug: "blog/story/series-006-013-the-resolve" },
+              ],
+            },
+            {
+              label: "The Language Matures",
+              collapsed: true,
+              items: [
                 { slug: "blog/story/series-006-014-the-language" },
                 { slug: "blog/story/series-006-015-the-discipline" },
                 { slug: "blog/story/series-006-016-the-loop-closes" },
+              ],
+            },
+            {
+              label: "The Grimoire",
+              collapsed: true,
+              items: [
                 { slug: "blog/story/series-006-017-the-grimoire" },
                 { slug: "blog/story/series-006-018-the-first-intermission" },
+              ],
+            },
+            {
+              label: "Records Become Types",
+              collapsed: true,
+              items: [
                 { slug: "blog/story/series-006-019-records-become-types" },
                 { slug: "blog/story/series-006-020-the-closures-and-the-coincidence" },
                 { slug: "blog/story/series-006-021-cold-boot" },
