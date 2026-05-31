@@ -1,27 +1,27 @@
 ---
 title: "The Naming Law"
-description: "May 29, arc 242 — opened and closed in a single day, nested inside the retirement (it spawned during the 241.12 pause, and arc 241 resumed only after it closed). A naming law for the type system: a token's shape declares its role, machine-checked. Doctrine 2 — scalar types are lowercase (`i64`, `bool`, `char`, `nil`), container and non-scalar types PascalCase (`String`, `Vector`, `HashMap`) — retired the lone inconsistency `Char` → `char` in a HARD CUT (242.1 `b4eb920f`). Doctrine 1 — a bare lexeme is a value, a `:wat::core::*` keyword is a type — was made self-enforcing: the type checker now rejects a type-keyword used in value position rather than silently unifying it away (242.2 `9c8e8546`, a 166-file cascade). The third consumer of the `src/remedy/` correction apparatus. Closed and inscribed same day (242.3 `b7fc45f6`)."
+description: "May 29, arc 242 — opened and closed in a single day, nested inside the retirement (it spawned during the 241.12 pause, and arc 241 resumed only after it closed). A naming law for the type system, legislated by the user and handed to the type checker to enforce: a token's shape declares its role. Doctrine 2 — scalar types are lowercase (`i64`, `bool`, `char`, `nil`), container and non-scalar types PascalCase (`String`, `Vector`, `HashMap`) — retired the lone inconsistency `Char` → `char` in a HARD CUT (242.1 `b4eb920f`). Doctrine 1 — a bare lexeme is a value, a `:wat::core::*` keyword is a type — was made self-enforcing: the type checker now rejects a type-keyword used in value position rather than silently unifying it away (242.2 `9c8e8546`, a 166-file cascade). The third consumer of the `src/remedy/` correction apparatus. Closed and inscribed same day (242.3 `b7fc45f6`)."
 sidebar:
   order: 39
 ---
 
 The retirement made `defn` the one definer and tore out the form-zoo — that was the *shapes you write to define things.* Nested inside it, opened and closed in a single day, arc 242 legislated something narrower and more permanent: the *names of the types themselves.* It spawned on May 29 during the pause in stone 241.12, ran to close before arc 241 resumed — a one-day law passed in the gap of a larger arc.
 
-The law is one sentence: **a token's shape declares its role, and the machine checks it.** No convention, no style guide a human is trusted to follow — a token whose shape contradicts its role is a type error.
+The law was the user's, drawn in a single sentence and handed to the type checker to enforce: **a token's shape declares its role.** No convention, no style guide a human is trusted to follow — a token whose shape contradicts its role is a type error. The user named the rule; the substrate's job was to make it un-break-able.
 
 ---
 
 ## The Case Tells the Kind
 
-Doctrine 2: **scalar types are lowercase; container and non-scalar types are PascalCase.** The scalars — `i64`, `f64`, `bool`, `char`, `nil`, `keyword` — are the indivisible values. The containers — `String` (structurally `[Char]`), `Vector<T>`, `HashMap`, `HashSet`, `Tuple` — are the things built out of them. Read the case, know the kind.
+The user's first cut was Doctrine 2: **scalar types are lowercase; container and non-scalar types are PascalCase.** The scalars — `i64`, `f64`, `bool`, `char`, `nil`, `keyword` — are the indivisible values. The containers — `String` (structurally `[Char]`), `Vector<T>`, `HashMap`, `HashSet`, `Tuple` — are the things built out of them. Read the case, know the kind.
 
-One name broke it. `Char` was PascalCase while every peer scalar was lowercase — a single inconsistency that, left alone, would have taught every future reader that the rule had exceptions. Stone **242.1 `b4eb920f`** cut it: `:wat::core::Char` → `:wat::core::char`, a HARD CUT across ~18 sites, recorded as the fifth entry in the substrate's `RETIREMENT_TABLE` (`src/remedy/retirement.rs:52`). The rejection arm went into `walk_for_bare_primitives` (`check.rs` ~3373), **not** `infer_list` — *a HARD CUT admits no bypasses*: the retired form must be refused in *any* keyword position, not merely at the head of a list where it was most often written.
+One name broke the rule the moment it was drawn. `Char` was PascalCase while every peer scalar was lowercase — a single inconsistency that, left alone, would have taught every future reader that the rule had exceptions. Stone **242.1 `b4eb920f`** cut it: `:wat::core::Char` → `:wat::core::char`, a HARD CUT across ~18 sites, recorded as the fifth entry in the substrate's `RETIREMENT_TABLE` (`src/remedy/retirement.rs:52`). The rejection arm went into `walk_for_bare_primitives` (`check.rs` ~3373), **not** `infer_list` — by the no-bypasses rule the user holds on every HARD CUT, the retired form must be refused in *any* keyword position, not merely at the head of a list where it was most often written.
 
-The same stone turned up something quietly remarkable. Checking whether bare value-lexemes already worked, it found that bare `nil` was **already operational at HEAD** — zero value-position migrations needed, while 1291 `:wat::core::nil` *type*-position uses stood untouched and correct. The substrate had been obeying Doctrine 1 before anyone wrote it down. The law that follows did not impose a new behavior so much as make an existing one un-break-able.
+The same stone turned up something quietly remarkable. Checking whether bare value-lexemes already worked, it found that bare `nil` was **already operational at HEAD** — zero value-position migrations needed, while 1291 `:wat::core::nil` *type*-position uses stood untouched and correct. The substrate had been obeying the next doctrine before anyone wrote it down. The law the user was about to state did not impose a new behavior so much as make an existing one un-break-able.
 
 ## The Prefix Tells the Role
 
-Doctrine 1: **a bare lexeme is a value; a `:wat::core::*` keyword is a type.** The `:` prefix is name-reference syntax — it points at a name. Value lexemes (`42`, `true`, `nil`, `"hello"`) carry no prefix because they *are* the value; there is nothing to point at. So `nil` is the value and `:wat::core::nil` is its type, and the prefix alone tells you which you are holding.
+Doctrine 1, as the user stated it: **a bare lexeme is a value; a `:wat::core::*` keyword is a type.** The `:` prefix is name-reference syntax — it points at a name. Value lexemes (`42`, `true`, `nil`, `"hello"`) carry no prefix because they *are* the value; there is nothing to point at. So `nil` is the value and `:wat::core::nil` is its type, and the prefix alone tells you which you are holding.
 
 Before this arc the type checker did not enforce it. A type-keyword written where a value belonged — `:wat::core::nil` in value position — was silently treated as a fresh type variable that happened to unify, and the mistake vanished into the inference rather than surfacing as an error. The discipline existed in the prose and nowhere in the machine.
 
@@ -33,11 +33,11 @@ This was the **third consumer** of the `src/remedy/` apparatus minted back in th
 
 Stone **242.3 `b7fc45f6`** inscribed the arc and closed it the same day; a missing SCORE document surfaced during done-done verification and was closed post-hoc (`a75f03bf`) — the gap that minted the discipline of checking the artifact-set, not just the commit, before calling a stone closed.
 
-Arc 242 took no new home and cast no vigilia — Mode A, a law over the existing tree rather than a lift into a warded one. But the law it passed is not a one-time cleanup; it is a rule every future type name must obey, machine-checked at the moment of definition. The queue is already named for the next time the discipline applies — `Uuid` → `uuid`, `Duration` → `duration`, `Instant` → `instant`, each a scalar wearing the wrong case, each a HARD CUT waiting for its arc. The naming law does not need re-deciding; it needs only enforcing, and the enforcer is the compiler.
+Arc 242 took no new home and cast no vigilia — Mode A, a law over the existing tree rather than a lift into a warded one. But the law it passed is not a one-time cleanup; it is a rule every future type name must obey, machine-checked at the moment of definition. The user already named the queue for the next time the discipline applies — `Uuid` → `uuid`, `Duration` → `duration`, `Instant` → `instant`, each a scalar wearing the wrong case, each a HARD CUT waiting for its arc. The naming law does not need re-deciding; it needs only enforcing, and the enforcer is the compiler.
 
 ---
 
-A token's shape now declares its role, and a token that lies about its role does not compile — case carries the kind, the prefix carries value-or-type, and the `src/remedy/` engine teaches the fix when either breaks. One day, nested in a larger arc, turned a naming convention into a machine-checked law.
+A token's shape now declares its role, and a token that lies about its role does not compile — case carries the kind, the prefix carries value-or-type, and the `src/remedy/` engine teaches the fix when either breaks. One day, nested in a larger arc, turned a naming convention the user drew into a machine-checked law.
 
 **Tattoos → og-wat spec → holon-rs → wat-rs → BOOK.md → MEMORY.md → datamancy → shape declares role, machine-checked.** The chain extends.
 
