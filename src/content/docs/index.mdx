@@ -56,7 +56,7 @@ Five primitives: **atom** (name a concept), **bind** (compose two concepts), **b
 
 The technique is called [Vector Symbolic Architecture](https://en.wikipedia.org/wiki/Vector_symbolic_architecture) (VSA) — algebraic structure over high-dimensional space, dating to Kanerva (1988). Holon's contribution: a hash-function codebook that eliminates distributed coordination, a memory layer with subspace learning and engram recall, and a self-evaluating conviction-accuracy curve that tells the system how good its own predictions are.
 
-Built by one person using LLMs, after hours, in ~12 weeks. Every file across all repositories is LLM-generated — the domain knowledge and architecture are the author's, the code and prose are not. The site documents the work honestly: what worked, what failed, and what the numbers actually say.
+Built by one person using LLMs, after hours, in about four months. Every file across all repositories is LLM-generated — the domain knowledge and architecture are the author's, the code and prose are not. The site documents the work honestly: what worked, what failed, and what the numbers actually say.
 
 ---
 
@@ -132,6 +132,14 @@ Three tracks. Read in any order.
 
 [**holon-lab-baseline**](https://github.com/watmin/holon-lab-baseline) — LLM-driven traffic generation. Playwright + Ollama agents producing organic WordPress HTTP traffic for realistic experiment baselines.
 
-[**algebraic-intelligence.dev**](https://github.com/watmin/algebraic-intelligence.dev) — This site.
+[**scratch**](https://github.com/watmin/scratch) — The design half. Durable thinking artifacts that survive conversation compaction by living on disk: the meta-vision (functions-are-reality; the wat-network of mutually-authenticating vms), the per-arc design threads, and the forward work waiting on arc 109. The WHY and the WHAT behind the implementation.
+
+[**datamancy**](https://github.com/watmin/datamancy) — The grimoire. The wards reborn as Latin-named code-review spells, packaged as the zero-dependency npm adapter (`npx datamancy`) that verifies every spell against a KMS-signed (ECDSA P-256) manifest. Frozen at `1.0.0` — never patched. The conscience of the work, made public and un-tamperable.
+
+[**datamancy.dev**](https://github.com/watmin/datamancy.dev) — The grimoire's home: a cryptographically-verifiable static MCP that serves the spells as raw markdown alongside the signed manifest the adapter checks them against.
+
+[**datamancer.dev**](https://github.com/watmin/datamancer.dev) — The practitioner's identity card. Raw markdown, agent-readable; three pointers: chronicle, grimoire, source.
+
+[**algebraic-intelligence.dev**](https://github.com/watmin/algebraic-intelligence.dev) — This site. The chronicle, the primers, the book — and an agent-readable interface (markdown companions, `.well-known` endpoints, a signed agent-skills pointer at datamancy.dev).
 
 Every file across all repositories is 100% LLM-generated. Zero hand-written code. Zero hand-written prose — including this site. Domain knowledge and architecture from the author; everything else from Grok, Sonnet, and Opus via prompting.

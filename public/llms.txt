@@ -1,6 +1,6 @@
 # Algebraic Intelligence
 
-> Holographic memory systems, algebraic encoders, and adaptive network defense. Ancient AI techniques (Vector Symbolic Architecture / Hyperdimensional Computing). Microsecond recognition. Commodity hardware. No GPU. Built by one person using LLMs after hours in ~12 weeks across six repositories.
+> Holographic memory systems, algebraic encoders, and adaptive network defense. Ancient AI techniques (Vector Symbolic Architecture / Hyperdimensional Computing). Microsecond recognition. Commodity hardware. No GPU. Built by one person using LLMs after hours, in about four months.
 
 This is the documentation site for Holon — a VSA/HDC substrate that encodes structured data into high-dimensional vectors, performs algebraic operations on them, and applies the same machinery across three domains: DDoS detection (1.3M PPS, kernel-level), a self-organizing BTC trading enterprise (62% directional accuracy), and a spectral firewall (41µs deny latency, 0.1% FPR). The substrate is implemented in Rust (`holon-rs`), built on a custom Lisp dialect called `wat` (`wat-rs`), and documented as it was built — chronologically, in three tracks: technical primers, a story-arc narrative, and a philosophical book.
 
@@ -89,7 +89,10 @@ The wards are the [datamancy grimoire](https://github.com/watmin/datamancy) — 
 - [holon-lab-ddos](https://github.com/watmin/holon-lab-ddos): XDP + eBPF packet scrubber. 1.3M PPS; 1M rules at line rate. The spectral firewall.
 - [holon](https://github.com/watmin/holon): Python reference implementation. 18 challenge batches; F1=1.0 anomaly detection.
 - [holon-lab-baseline](https://github.com/watmin/holon-lab-baseline): LLM-driven traffic generation. Playwright + Ollama agents.
+- [scratch](https://github.com/watmin/scratch): The design half. Meta-vision (functions-are-reality; the wat-network of mutually-authenticating vms), per-arc design threads, forward work pending arc 109.
 - [datamancy](https://github.com/watmin/datamancy): The spell library — Latin-named wards, first inscribed 2026-05-19; the live signed catalog is the authoritative count.
+- [datamancy.dev](https://github.com/watmin/datamancy.dev): The grimoire's home — a cryptographically-verifiable static MCP serving the spells as raw markdown + the KMS-signed manifest.
+- [datamancer.dev](https://github.com/watmin/datamancer.dev): The practitioner's identity card. Raw markdown; chronicle / grimoire / source.
 - [algebraic-intelligence.dev](https://github.com/watmin/algebraic-intelligence.dev): This site.
 
 ## Markdown companions — for agents that prefer the source
