@@ -5,9 +5,9 @@ sidebar:
   order: 36
 ---
 
-The Grimoire went public May 19 — sixteen Latin spells, the wards reborn outside the substrate, depended on as a discipline rather than carried as code. That post ended with the persistence chain gaining a link: *datamancy*. What it left open was delivery. A grimoire is prompts; prompts reach a model; a tampered prompt is an injection. The spells were public, but nothing yet proved the bytes a consumer loaded were the bytes the author signed.
+The Grimoire went public May 19 — sixteen Latin spells, the wards reborn outside the substrate, depended on as a discipline rather than carried as code. That post ended with the persistence chain gaining a link: *datamancy*. What it left open was delivery: a spell reaches a model over **MCP**, the protocol an LLM client speaks to load resources. A grimoire served that way is prompts reaching a model — a tampered prompt is an injection. The spells were public, but nothing yet proved the bytes a consumer loaded were the bytes the author signed.
 
-The center of these three days was **the freeze** — `datamancy@1.0.0`, published once and never to be patched — and the recognition that named the shape underneath it.
+The center of these three days was **the freeze** — `datamancy@1.0.0`, the cryptographically verified MCP server, published once and never to be patched — and the recognition that named the shape underneath it.
 
 ---
 
