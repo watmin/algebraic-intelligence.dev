@@ -231,6 +231,8 @@ export default defineConfig({
                 { slug: "blog/story/series-007-002-the-watch-learns" },
                 { slug: "blog/story/series-007-003-the-record" },
                 { slug: "blog/story/series-007-004-the-grain" },
+                { slug: "blog/story/series-007-005-the-grain-goes-all-the-way-down" },
+                { slug: "blog/story/series-007-006-come-join-me-at-the-top" },
               ],
             },
             { slug: "blog/story/epilogue" },
