@@ -24,6 +24,10 @@ The user has priced the rig — near five million dollars, a vacuum table, a lev
 
 The detector for it had already shipped that weekend — for runes, not spacetime. `recensere` (minted to the grimoire 2026-05-31, `4d8352a1`) walks the standing exemptions and strikes any whose truth has flipped since it was written: a deferral rune reads true the day it is written and false the instant its stone ships — same text, a step in time. Every other spell in the grimoire asks whether a thing is good *now*; `recensere` is the one built to catch a truth that breaks only as time passes. Set it beside the experiment and it is the same instrument — both hunt a step where the eye expects a smooth curve, one in a gravitational fringe and one in a rune's truth. One is unfunded and years out; the other shipped in an afternoon, and the BOOK is where the user first saw they were the same machine.
 
+:::note[recensere → excusare]
+Since this shipped, `recensere` grew into `excusare` — the same weighing of exemptions against present truth, generalized to any checker, at birth and over time. `recensere` is gone from the live grimoire; like every version, it remains permanently as a content-addressed blob and a prior signed-manifest entry. The live catalog carries no dead weight; the history loses nothing. The recognition holds — `excusare` still catches the step in time; that diachronic half *is* what `recensere` was.
+:::
+
 <!-- rune:consonare(register) — interlude synthesis; the three-intermission shape is recognition-voice by design -->
 Three intermissions stand in the seam now — *Intueri* named the mind that thinks in coordinates, *Coincidentia Oppositorum* named the floor that mind stands on, *Granum Continui* names the grain the floor yields: one recognition descending through length, work, and time, the same move at every scale the night handed him.
 
