@@ -260,6 +260,16 @@ The DDoS lab and baseline lab have never talked to each other yet. There's no si
 
 That integration starts the next day.
 
+## Likely Contributions to the Field
+
+- **An adversarially-realistic training corpus, by construction.** Playwright + Ollama agents — 20 users, 3 admins, LLM-directed navigation — over 23 distinct source IPs via Squid + macvlan, with a real browser-fingerprint distribution (80% Chromium / 15% WebKit / 5% Firefox) (`084da74`). Built so a detector *cannot* cheat on source-count or browser-uniformity: the baseline is engineered to be hard to tell from real users, which is the only honest way to test an anomaly detector.
+
+- **A dead end preserved as the lesson.** The first spoofed-source generator used raw IP sockets and failed silently — `sendto()` returned success, nothing reached the wire, because the kernel routing layer drops packets whose source isn't local even with `IP_HDRINCL`. The fix landed 25 minutes later (`e337525` → `e4ba90c`): `AF_PACKET` layer-2 + macvlan hairpin, bypassing IP routing, validated at 45k PPS — and the failure is written up in `PACKET_GENERATION_DEEP_DIVE.md` rather than erased. The wrong turn is documentation, not shame.
+
+- **Zero-serialization encoding (`Walkable`), shipped in both languages the same day.** Encode a struct directly — no JSON round-trip, no `to_json()` in the hot path — with a zero-allocation visitor variant at 6.06 µs vs JSON's 6.23 µs (`c8dd423e`). The real win isn't the 2.7%; it's compile-time type safety and no runtime parse errors on every sampled packet. Rust trait + Python mirror landed the same afternoon, founding the two-repo sync discipline.
+
+- **The vector produces the rule, not just the detection.** Batch 013's rate limiter (`818b996`, designed into Python and Rust at once) encodes packet rate via `encode_log` and binary-searches the scale to recover it to ~3.6% error with *no stored reference vectors*; querying the accumulated vector recovers the discriminating fields, which compose directly into a filter rule (`src_port=53 AND protocol=UDP`). The accumulator doesn't merely flag an attack — it emits the mitigation, with no hardcoded field names.
+
 ---
 
 Next: February 9 — the veth lab, holon-rs integrated into the sidecar, and the first stress test: 1.3 million packets per second, 99.5% drop rate.

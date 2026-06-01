@@ -123,6 +123,16 @@ The primitives were worth it. The NP-hard detour proper — probably not. This i
 
 We moved on. The batch 006 work came next: LLM memory augmentation and the multi-domain challenges that proved the same encoding worked across wildly different data shapes. The primitives forged in the NP wall followed us into everything that came after.
 
+## Likely Contributions to the Field
+
+- **The primitive algebra forged inside a failure.** `negate`, `amplify`, `prototype`, `difference`, `blend`, and `resonance` — the composable VSA toolkit the whole library runs on — were all born in the Sudoku attempt (commits `563890e` and `c02b12a`, January 30) and promoted into the kernel. `difference` in particular became load-bearing downstream: attack-minus-baseline rule synthesis at F1=1.000 (`56d24be`) and per-field explainability in the zero-hardcode detector. The boss that couldn't be beaten dropped the weapons used everywhere after it.
+
+- **A measured map of where VSA stops.** The boundary wasn't argued from theory alone — it was *measured*: a puzzle is more similar to a *wrong* solution (0.2521) than to the correct one (0.2118), so similarity points the wrong way by construction. That paradox, written up against the Yato–Seta NP-completeness result and inscribed in `ASSESSMENT.md` (`59a0a63`), is a contribution in its own right — naming a capability's edge precisely is rarer, and more useful, than claiming there isn't one.
+
+- **The geometric reason the heuristic can't work.** "Cluster toward valid" fails not for want of tuning but by construction: invalid states cluster *tighter* than valid ones (0.8843 vs 0.6094 pairwise), and the valid and violation manifolds collapse together in bundle space. The failure has a cause you can point at, not just an outcome.
+
+- **Encoding-abstraction as the lever on transferability.** Hierarchical set-membership encoding cut search backtracks 79% — 52 versus 249 (`19c5164`); abstract features cross-generalized across puzzles where a raw `(position, digit)` encoding could not (`364bc7e`). The finding is about *where the abstraction sits*, not about Sudoku — the level you encode at determines whether a learned heuristic transfers.
+
 ---
 
 Next: batches 006–012 — what VSA is actually good at, 5 million records, the accumulator breakthrough, and the throughput numbers that made the Rust port inevitable.

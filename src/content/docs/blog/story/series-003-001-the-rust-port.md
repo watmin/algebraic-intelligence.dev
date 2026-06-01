@@ -238,6 +238,16 @@ What it didn't have: the three-layer architecture (that's Feb 20), the memory la
 
 Those come next — and they don't arrive in sequence. The DDoS lab is already running by Feb 7. The baseline lab starts Feb 8. From here the work spreads across all four repos simultaneously, feeding back into each other: the lab exposes what the library needs, the library gains the capability, the lab uses it.
 
+## Likely Contributions to the Field
+
+- **An executable specification collapses a port to nearly one shot.** The Python library wasn't documentation — it was the spec, every primitive test-proven — and translating it to Rust was almost a single shot. The initial commit (`5e4a7a8`, February 6) landed all seven modules at ~2,500 lines, and the whole algebra — SIMD, benchmarks, a full detector port — was operational within about ninety minutes across six same-evening commits. A proven spec turns "rewrite" into "transcribe," and collapses translation risk close to zero.
+
+- **Behavioral parity, not byte-parity, as the validation.** The zero-hardcode detector ported the same day (`43e3bea`) and reproduced Python *exactly* — 100% recall, 4% false-positive across DNS / SYN / NTP — even though the two languages' RNGs generate different vectors. The point of the port was to confirm the *structure of the computation*, not the bytes. Two implementations in two type systems, two independent test suites, became a second tier of correctness: divergence means a bug; agreement means almost-certainly-right.
+
+- **Determinism that survives the language boundary.** `SHA-256(seed‖atom) → ChaCha8 → bipolar vector`, identical in design to Python from the first Rust commit (`5e4a7a8`): the same atom maps to the same *structure* in either language. The property that makes distributed consensus possible lives in the algorithm, not the runtime.
+
+- **A measured 10–15× — and a same-day SIMD bug caught before it shipped.** encode_json 10×, similarity 11×, bind 15×, full detection pipeline 15 s → 1.2 s (`d2e8fa6`). And honesty under speed: the first SIMD cosine had a precision bug producing *fast wrong answers*; it was found and fixed the same day (`02505e4`), detection corrected from 2.5% to 99.5% before the day was out. Fast was never allowed to mean wrong.
+
 ---
 
 Next: February 7–8 — the DDoS lab scaffold, the baseline lab, and the first week where everything is happening at once.

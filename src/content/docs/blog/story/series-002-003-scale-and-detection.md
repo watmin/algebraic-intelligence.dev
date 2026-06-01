@@ -273,6 +273,16 @@ By the end of challenge batch 012:
 
 The Rust port had already started by this point — the `holon-rs` initial commit landed February 6, during the batch 012 work. Both were running in parallel. The Python experiments were feeding the design decisions for the Rust implementation in real time.
 
+## Likely Contributions to the Field
+
+- **The accumulator — frequency-preserving streaming superposition.** The defect was precise: `prototype_add` thresholded after every update, destroying the frequency information that separates a benign baseline from an attack. The fix — a float64 running sum, normalized only at query time — took DDoS-detection F1 from ~0.23 to **1.000** (benign similarity 0.52–0.82, attack 0.21–0.41, no overlap) and promoted into the kernel as a first-class primitive (`ff60f3e`).
+
+- **Structural encoding as the discriminator — not a detail, the whole result.** The same data summed as naive atom bundles gave F1=0.368; encoded with role-filler binding over its nested structure, F1=1.000 — the separation gap widening from 0.19 to 0.77 (`33f6bec`). The finding generalizes past DDoS: *how* you encode structure is the signal, not a preprocessing choice.
+
+- **Zero-hardcode anomaly detection.** Per-field distribution shift, read via the `difference` primitive — concentration change plus divergence from a learned baseline — detected novel attacks with no hardcoded port meanings or protocol semantics: 100% recall at ~4% false-positive, holding clean across five consecutive attack-and-drain waves (`4109aa5`). Domain knowledge replaced by geometry.
+
+- **The Python ceiling, measured to the microsecond.** `encode_data` costs 182 µs per packet — about 3,100 packets/sec single-core, a 1:489 sampling ratio at 1 Gbps (`ffe494b`); 5M records classified in 7.5 minutes at 4096D was the scale ceiling (`5828c29`). The numbers named the wall exactly — "a Rust/C extension could likely achieve 10–50×" appears verbatim in the batch-012 learnings — and the Rust cross-reference commit landed the next day.
+
 ---
 
 Next: the Rust port, the DDoS lab, and what happened when both came together.

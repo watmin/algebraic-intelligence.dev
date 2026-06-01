@@ -220,6 +220,16 @@ Several things were established:
 
 **The foundation was ready for harder problems.** Batches 001–003 and 006 were proof the encoding worked. What we didn't know yet was whether it could do anomaly detection, whether it could scale to millions of records, or whether the performance ceiling would matter. Those questions drive the next two posts.
 
+## Likely Contributions to the Field
+
+- **Schema-free structural similarity search via role-filler binding.** The very first commit (`5dc8e9c`) shipped a complete system: JSON documents encoded as `bundle(bind(key, value)…)`, queried by cosine against a partial probe — and a probe with fewer fields finds its supersets, because the probe vector is geometrically *contained* in the document vector. Built over NumPy alone, day one. What made it a contribution rather than a demo: the same encoding solved four unrelated domains with no schema and no per-domain tuning.
+
+- **VSA superposition as a query operator.** `$or` expressed as a single bundled probe vector — one cosine scan instead of N separate searches merged — ran 23× faster (3,484 ms → 148 ms) and held to 10-way disjunction with no degradation (`cab1f30`). Superposition as *query semantics*: an item partially similar to several branches scores above one highly similar to a single branch — behavior a traditional engine would need explicit post-processing to reproduce.
+
+- **The 123× speedup located the real ceiling — Python overhead, not the math.** Brute-force search over 999 items dropped 737 ms → 6 ms (`fe8b8dd`); the vector arithmetic was never the bottleneck. It set the lesson the whole project ran on afterward: the algebra is cheap, the language around it is the wall — the finding that eventually *made the Rust port inevitable.*
+
+- **Rete-like forward chaining on the vector store — day two.** Facts as documents, rules as partial-document probes, derived facts re-inserted (`35ef0a1`, January 17): the early instinct that role-filler binding could drive pattern-match *inference*, not just retrieval. It resurfaced weeks later as the XDP/eBPF decision tree at the heart of the DDoS lab.
+
 ---
 
 Next: batch 004 — where we tried to make VSA do something it fundamentally cannot do, built the primitive algebra in the attempt, and learned exactly where approximate geometric reasoning ends and exact symbolic reasoning must begin. Batch 005 never happened. The wall was clear enough.
