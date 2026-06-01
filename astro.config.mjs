@@ -230,6 +230,7 @@ export default defineConfig({
                 { slug: "blog/story/series-007-001-the-hinge" },
                 { slug: "blog/story/series-007-002-the-watch-learns" },
                 { slug: "blog/story/series-007-003-the-record" },
+                { slug: "blog/story/series-007-004-the-grain" },
               ],
             },
             { slug: "blog/story/epilogue" },
