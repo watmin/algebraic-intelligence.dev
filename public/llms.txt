@@ -166,6 +166,8 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 - [https://algebraic-intelligence.dev/blog/story/series-007-002-the-watch-learns.md](https://algebraic-intelligence.dev/blog/story/series-007-002-the-watch-learns.md)
 - [https://algebraic-intelligence.dev/blog/story/series-007-003-the-record.md](https://algebraic-intelligence.dev/blog/story/series-007-003-the-record.md)
 - [https://algebraic-intelligence.dev/blog/story/series-007-004-the-grain.md](https://algebraic-intelligence.dev/blog/story/series-007-004-the-grain.md)
+- [https://algebraic-intelligence.dev/blog/story/series-007-005-the-grain-goes-all-the-way-down.md](https://algebraic-intelligence.dev/blog/story/series-007-005-the-grain-goes-all-the-way-down.md)
+- [https://algebraic-intelligence.dev/blog/story/series-007-006-come-join-me-at-the-top.md](https://algebraic-intelligence.dev/blog/story/series-007-006-come-join-me-at-the-top.md)
 
 <!-- END AUTO-GENERATED MD COMPANIONS -->
 
