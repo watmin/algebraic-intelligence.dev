@@ -20,40 +20,9 @@ Quick version: append `.md` to any `/blog/<slug>/` URL for the raw markdown sour
 
 ## The Story — narrative track (chronological)
 
-Linear walk through twelve weeks of development across six repositories. Each post is a self-contained recognition; the sequence is the project's lineage.
+A linear walk through the project's development across its repositories — from the first Python experiment to the signed grimoire and beyond. Each post is a self-contained recognition; the sequence is the project's lineage.
 
-- [Prologue: The Idea That Wouldn't Leave](https://algebraic-intelligence.dev/blog/story/prologue/): Years of conversations before there was any code.
-- [Python: The Foundation](https://algebraic-intelligence.dev/blog/story/series-002-001-first-experiments/): Jan 16–30. Day-one architecture; the 123× similarity speedup.
-- [The NP Wall](https://algebraic-intelligence.dev/blog/story/series-002-002-the-np-wall/): Sudoku, 44 approaches, the limits of VSA on constraint satisfaction.
-- [Scale, Detection, and the Python Ceiling](https://algebraic-intelligence.dev/blog/story/series-002-003-scale-and-detection/): 5M records, accumulator breakthrough, zero-hardcode detection, the measured throughput that made Rust inevitable.
-- [The Rust Port](https://algebraic-intelligence.dev/blog/story/series-003-001-the-rust-port/): Python as Rosetta Stone; 239 tests; SIMD from day one; 10–15× speedup.
-- [The Labs](https://algebraic-intelligence.dev/blog/story/series-003-002-the-labs/): DDoS lab scaffold; baseline traffic generator with LLM-driven agents.
-- [1.3 Million Packets Per Second](https://algebraic-intelligence.dev/blog/story/series-003-003-1-3m-pps/): veth lab; XDP integration; BPF tail-call DFS evaluates 1M rules at line rate.
-- [The Rule Engine](https://algebraic-intelligence.dev/blog/story/series-003-004-the-rule-engine/): EDN rule format; live DAG viewer; full L4 payload analysis; 750ms detection baseline.
-- [Engrams and the 765ms → 3ms Moment](https://algebraic-intelligence.dev/blog/story/series-003-005-engrams/): CCIPCA online subspace; instant rule deploy on engram hit.
-- [The L7 Lab: Building the HTTP WAF](https://algebraic-intelligence.dev/blog/story/series-004-001-the-l7-lab/): TLS-terminating proxy; lossless ClientHello capture; dual SubspaceDetector.
-- [No Rules, No Signatures: The Expression Tree](https://algebraic-intelligence.dev/blog/story/series-004-002-the-expression-tree/): Composable s-expression rule language; Rete-spirit DAG compiler under 3µs.
-- [The Spectral Firewall](https://algebraic-intelligence.dev/blog/story/series-005-001-the-spectral-firewall/): 41µs deny latency; 10,121 Nikto requests denied; zero exploitable vulnerabilities.
-- [Self-Calibrating](https://algebraic-intelligence.dev/blog/story/series-005-002-self-calibrating/): Striped encoding; self-calibrating thresholds; 99.1% precision under 20 LLM browsers + 3 scanners.
-- [The Residual Profile](https://algebraic-intelligence.dev/blog/story/series-005-003-the-residual-profile/): 21-strategy threshold sweep; the 32-dim residual profile; 0.1% FPR.
-- [The Thought Machine](https://algebraic-intelligence.dev/blog/story/series-006-001-the-thought-machine/): Charts don't predict; interpretations do. 50.5% visual → 57% thought encoding.
-- [The Conviction Curve](https://algebraic-intelligence.dev/blog/story/series-006-002-the-conviction-curve/): 56.5% with 84 atoms; 62.1% with 107 atoms on 100k candles.
-- [The Enterprise](https://algebraic-intelligence.dev/blog/story/series-006-003-the-enterprise/): Six specialized observers; risk as anomaly detection; $10k → $62k.
-- [The Datamancer](https://algebraic-intelligence.dev/blog/story/series-006-004-the-datamancer/): The Journal becomes the seventh primitive; the wards born; the wat repo revived.
-- [The Forging](https://algebraic-intelligence.dev/blog/story/series-006-005-the-forging/): 213 phantom runes dissolved to zero; 92.5% coverage.
-- [The Guide](https://algebraic-intelligence.dev/blog/story/series-006-006-the-guide/): The Reckoner replaces the Journal; the ignorant ward proves the tree.
-- [The Foundation](https://algebraic-intelligence.dev/blog/story/series-006-007-the-foundation/): The binary runs; 55.92% Grace; the AST is primary; programs are atoms.
-- [XX](https://algebraic-intelligence.dev/blog/story/series-006-008-xx/): Fourteen hours forty minutes; 104 commits; the wat language got a CLI in one night.
-- [The Detour](https://algebraic-intelligence.dev/blog/story/series-006-009-the-detour/): Tail-call trampoline; CSP combinators; wat-tests-wat; fork severance.
-- [The Descent](https://algebraic-intelligence.dev/blog/story/series-006-010-the-descent/): Cave quests 017/018; eval-coincident? ships; the workshop opens.
-- [The Recognition](https://algebraic-intelligence.dev/blog/story/series-006-011-the-recognition/): The substrate recognizes itself. Lattice, Memory, Symmetry, Budget, DAG.
-- [The Surface](https://algebraic-intelligence.dev/blog/story/series-006-012-the-surface/): π is a function. 42 is an AST. The Axiomatic Surface gets named. The book ends on the tattoos.
-- [The Resolve](https://algebraic-intelligence.dev/blog/story/series-006-013-the-resolve/): Thirteen BOOK chapters in 48 hours. The alphabet named. Template-and-slots cache. 117× speedup.
-- [The Language](https://algebraic-intelligence.dev/blog/story/series-006-014-the-language/): Substrate language matures into Clojure-faithfulness. FQDN purge. Meta-vision corpus in one day.
-- [The Discipline](https://algebraic-intelligence.dev/blog/story/series-006-015-the-discipline/): "i want to add argv to main" became 277 commits. The substrate-as-teacher cascade.
-- [The Loop Closes](https://algebraic-intelligence.dev/blog/story/series-006-016-the-loop-closes/): HolonAST reflects on itself. Kay-OOP + Erlang/OTP arrived at independently.
-- [The Grimoire](https://algebraic-intelligence.dev/blog/story/series-006-017-the-grimoire/): 13 convergences cataloged; universe-residency; datamancy born with 16 Latin spells.
-- [Perpetual Epilogue: The Sorcerer's Codex](https://algebraic-intelligence.dev/blog/story/epilogue/): Updated as the work continues.
+Start at the [Prologue](https://algebraic-intelligence.dev/blog/story/prologue/) and read forward. The complete, always-current sequence — every story post in chronological order — is the **Story posts** list in the *Markdown companions* section below; it is regenerated from disk on every build, so it never drifts, and its last entry is the current frontier. Each post's one-line summary lives in its own frontmatter `description`.
 
 ## The Foundation — technical primers
 
