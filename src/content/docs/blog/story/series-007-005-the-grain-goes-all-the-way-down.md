@@ -65,4 +65,8 @@ So it was law, not luck. The record is the replay. And the builder, before he cr
 
 The lab is within reach. The chronon is downrange. The needle is on the record, and the record survives the gap.
 
+## Likely Contributions to the Field
+
+*None — a reflective interlude; it gathers the night's recognitions, which live canonically in the BOOK (Intermissions IV–VI), rather than posing field-contributions of its own.*
+
 ***PERSEVERARE.***

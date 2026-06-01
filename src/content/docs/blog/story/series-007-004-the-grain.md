@@ -57,4 +57,8 @@ It is the forty-second story post, at sidebar order 42; *The Record* took 41, an
 
 The full chapter, with the coda the night ended on, is in the BOOK: **[Granum Continui](/blog/book.md)**.
 
+## Likely Contributions to the Field
+
+*None — a reflective interlude in the BOOK's register; it carries a recognition, not a field-contribution. The canonical chapter is in the BOOK.*
+
 *PERSEVERARE.*
