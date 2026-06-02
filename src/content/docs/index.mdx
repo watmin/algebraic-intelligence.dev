@@ -1,9 +1,9 @@
 ---
-title: Holon
-description: Ancient AI techniques. Microsecond recognition. Commodity hardware.
+title: Structure becomes geometry.
+description: One idea — structure becomes geometry — carried from an anomaly detector to a language, a signed practice, and an 86-chapter book. Every line of code and prose written by an LLM, from one person's architecture.
 template: splash
 hero:
-  tagline: Give it structured data. It turns it into a vector that captures the structure — which fields exist, how they nest, what values go with what keys. Similar structures produce similar vectors. Anomalies stand out geometrically. No GPU. No neural network. Just algebra — at microsecond speed on hardware you already have.
+  tagline: Hand it data nobody labeled — packets, price candles, JSON — and the thing that doesn't belong lands geometrically far from everything that does. No GPU, no training set, no black box. The same idea grew past the encoder into a language, a signed practice, and an 86-chapter book — every line of code and prose written by an LLM, from one person's architecture.
   image:
     file: ../../assets/logo.jpg
     alt: Holon
@@ -11,10 +11,6 @@ hero:
     - text: Read the Story
       link: /blog/story/prologue/
       icon: right-arrow
-    - text: Technical Primers
-      link: /blog/primers/series-001-000-vsa-primer/
-      icon: open-book
-      variant: secondary
     - text: GitHub
       link: https://github.com/watmin
       icon: external
@@ -24,41 +20,44 @@ hero:
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid>
-  <Card title="Structure, not semantics" icon="puzzle">
-    Encode `{"dst_port": 80}` and `{"src_port": 80}` — same value, different
-    structure, different vectors. The encoding captures which fields exist and
-    how they relate. Two records with the same shape are geometrically close.
-    An anomaly is geometrically far. One cosine to measure.
+  <Card title="The seed — structure into geometry" icon="puzzle">
+    Hand Holon a JSON record, a packet, a candle; it binds each field to its
+    role and folds them into one 4096-dim vector. Similar shapes land close;
+    an anomaly lands far. And it's no black box: subtract what its learned model
+    of "normal" can reconstruct, and what's left is exactly the part that didn't
+    belong — per field, deterministically.
   </Card>
-  <Card title="Transparent vectors" icon="magnifier">
-    Not a black box. Every vector is algebraically decomposable — unbind a
-    field's role vector and recover how much that field contributed to an
-    anomaly. Full explainability from the algebra, not a post-hoc approximation.
+  <Card title="It became a language" icon="open-book">
+    `wat` — a Lisp hosted on Rust the way Clojure is hosted on the JVM:
+    `defn`, `defrecord`, EDN, borrowing Rust's type system; it interprets your
+    code. Young and moving fast — Scheme at the root, Clojure on the surface.
   </Card>
-  <Card title="No GPU, no training data" icon="laptop">
-    Microsecond encode/bind/bundle/cosine on commodity x86 and ARM. The Rust
-    implementation runs 12x faster than the Python prototype. Learns online
-    from the stream — no labeled dataset, no batch retraining.
+  <Card title="It became a signed practice" icon="magnifier">
+    `datamancy` — review disciplines served as a signed, content-addressed
+    manifest. The datamancer signs with a key that never leaves AWS KMS; your
+    agent verifies the bytes against a pinned public key before reading them. It
+    proves provenance — these are the exact bytes the datamancer signed — not
+    that any instruction is safe to obey.
   </Card>
-  <Card title="Three domains, same algebra" icon="rocket">
-    DDoS detection at 1.3M packets/sec. A spectral firewall at 41µs deny
-    latency. A BTC trading system at 62% directional accuracy. Same five
-    primitives. Different vocabulary. The algebra doesn't care what domain
-    you point it at.
+  <Card title="It works — without signatures or training data" icon="rocket">
+    Same algebra, two layers: a kernel scrubber (XDP/eBPF) that absorbed an
+    uncapped ~1.3M-packet/sec flood at 99.5% drop and 52ms detection, and an L7
+    firewall that learns "normal" HTTP in ~6 seconds and shuts out a live Nikto
+    scan of DVWA at zero false positives. No CVE database. No GPU.
   </Card>
 </CardGrid>
 
 ## What this is
 
-Holon turns structured data into high-dimensional vectors that preserve the data's *structure* — not its meaning, its shape. A JSON document, a network packet, a candle on a price chart — each becomes a point in a 4096-dimensional space where similar structures are geometrically close and anomalies are geometrically far. One cosine measures similarity. One cosine detects anomalies. One cosine predicts.
+Everything here is one idea — *structure becomes geometry* — carried until it ran out of places to apply. Built by one person, after hours, by prompting LLMs: every file in every repository, code and prose including this page, was written by a machine. The architecture is human; not a line of the implementation is.
 
-Five primitives: **atom** (name a concept), **bind** (compose two concepts), **bundle** (superimpose many), **cosine** (measure similarity), **reckoner** (learn which patterns separate classes). Everything else — DDoS detection, firewall rules, trading signals — composes from these five operations on commodity hardware without a GPU.
+It starts as an encoder. Hand Holon any structured data and it turns the shape into a point in 4096-dimensional space — which fields exist, how they nest, what binds to what. Similar structures land close; an anomaly lands far. The explanation is built in: subtract what a learned model of "normal" reconstructs, and the remainder is the anomalous component — a deterministic, per-field account of what didn't belong, with striped encoding keeping fields from bleeding into each other. The technique is [Vector Symbolic Architecture](https://en.wikipedia.org/wiki/Vector_symbolic_architecture), dating to Kanerva (1988).
 
-The technique is called [Vector Symbolic Architecture](https://en.wikipedia.org/wiki/Vector_symbolic_architecture) (VSA) — algebraic structure over high-dimensional space, dating to Kanerva (1988). Holon's contribution: a hash-function codebook that eliminates distributed coordination, a memory layer with subspace learning and engram recall, and a self-evaluating conviction-accuracy curve that tells the system how good its own predictions are.
+It outgrew a library. So it became **wat** — a Lisp-family language hosted on Rust the same way Clojure is hosted on the JVM: it borrows Rust's type system, speaks EDN, and interprets your code rather than compiling it. Built so the vector algebra is something you write, not a library you call. Young and moving fast — the substrate everything else now runs on.
 
-What started as an anomaly detector grew into a substrate, a language, and a practice. The Rust kernel is written in **wat** — a Lisp dialect shaped for algebraic cognition that compiles to Rust. The discipline that keeps the work honest is **datamancy** — a library of code-review spells served as a zero-dependency, cryptographically signed MCP, so an agent can verify every instruction against a KMS-held key before a byte reaches its context. DDoS detection, a spectral firewall, and a self-organizing trading enterprise are where the same algebra is proven — not the whole of it.
+Code that keeps other code honest is only as trustworthy as its source. So it became **datamancy** — review disciplines served as a content-addressed manifest signed by a key that never leaves AWS KMS; an agent verifies the bytes against a pinned public key before it reads them. It proves provenance, not safety: that these are the exact bytes the datamancer signed, not that an authentic instruction is safe to obey.
 
-Built by one person using LLMs, after hours, in about four months. Every file across all repositories is LLM-generated — the domain knowledge and architecture are the author's, the code and prose are not. The site documents the work honestly: what worked, what failed, and what the numbers actually say.
+And it works without the usual machinery. At the kernel boundary, an XDP/eBPF scrubber absorbed an uncapped ~1.3M-packet/sec flood at a 99.5% drop rate and 52ms detection. At the application layer, a spectral firewall learns "normal" from ~6 seconds of traffic and shuts out a live Nikto scan at zero false positives — no signatures, no CVE database. The whole thing was worked out in the open: an 86-chapter book, written in the moment.
 
 ---
 
@@ -76,7 +75,7 @@ Three tracks, read in any order. These are the doors in — the full, current ta
 
 [**holon-rs**](https://github.com/watmin/holon-rs) — The kernel. Five primitives: atom, bind, bundle, cosine, reckoner. SIMD-accelerated. f64 pipeline for scalar extraction. The Reckoner unifies discrete classification and continuous regression in one struct with a self-evaluating conviction-accuracy curve.
 
-[**wat**](https://github.com/watmin/wat) — The language. S-expressions shaped for algebraic cognition. Two algebras (vector + reckoner), three structural forms (struct, enum, protocol), pipes/processes/select for concurrency, a host language that compiles to Rust.
+[**wat**](https://github.com/watmin/wat) — The language. S-expressions shaped for algebraic cognition. Two algebras (vector + reckoner), three structural forms (struct, enum, protocol), pipes/processes/select for concurrency. Hosted on Rust the way Clojure is on the JVM — it interprets, it doesn't compile.
 
 [**wat-rs**](https://github.com/watmin/wat-rs) — The implementation. Parser, type checker, macro expander, runtime. `#[wat_dispatch]` proc-macro surfaces Rust crates under the `:rust::` namespace. The wat machine is real.
 
