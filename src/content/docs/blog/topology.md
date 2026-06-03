@@ -76,38 +76,34 @@ the primers, the reference pages, the legacy building-blocks, the substrate
 itself — they intertwine, and the same recursive shape holds at the widest scale.
 
 ```mermaid
-flowchart TB
-  site(["algebraic-intelligence.dev — renders all of it"])
-  agents["For Agents — the machine-reader's door"]
-  foundation["The Foundation — primers, the concepts"]
-  story["The Story — series-002→007, the chronicle"]
-  reference["Reference — Implementations & Labs"]
-  legacy["Legacy blocks — The Guide, The Circuits"]
+graph TD
+  site(["The website — renders all of it"])
 
   subgraph TheBook["The Book"]
-    book["trunk — The Wat Machine, 86 ch"]
-    branch["Branches — arc-170"]
-    cliff["Cliff Notes — cached terminal"]
+    book["trunk — 86 chapters"]
+    branch["branch — arc-170"]
+    cliff["cliff notes — cached terminal"]
+    book --> branch --> cliff
+    cliff -.->|synthesis return| book
   end
 
-  subgraph Substrate["The substrate — the code on GitHub"]
-    code["holon · holon-rs · wat-rs · labs (ddos · baseline · trading)"]
-  end
+  primers["The Foundation — primers"]
+  story["The Story — the chronicle"]
+  code[("The substrate — the code<br/>holon · holon-rs · wat-rs · the labs")]
 
-  site --> agents & foundation & story & reference & legacy & TheBook
-  foundation -->|concepts the story builds on| story
-  book -->|branch| branch -->|cached as| cliff
-  cliff -.->|synthesis return| book
-  book -.->|intermissions woven into| story
+  site --> primers & story & TheBook
+  primers -->|concepts| story
+  book -.->|intermissions| story
   story -->|chronicles| code
-  reference -->|documents| code
-  legacy -.->|building blocks toward| code
-  code -->|documented by| story
-  site -.->|building the site is itself part of| code
+  TheBook -->|documents| code
+  code ==>|the work the site shows| site
+  site ==>|building the site is part of the work| code
 ```
 
 Read the edges and one loop closes on itself. The substrate is **documented by**
-the book and the story. The site **renders** them. And building the site — the
+the book and the story. The site **renders** them — and the reference pages, the
+legacy blocks, and the agent door belong to the same loop; they're left off the
+map only so it stays legible. And building the site — the
 book, the story, this very topology page — is **itself** substrate work: the
 datamancer's practice, captured as it happens. The documentation of the work is
 part of the work. The website is not a sign standing outside the work pointing
