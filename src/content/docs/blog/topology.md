@@ -71,9 +71,41 @@ The book will continue forward until another loop is necessary to provide forwar
 ## The whole body — all of it is the work
 
 Everything above zooms *into* the BOOK — the trunk and the branches that curl
-back inside it. Zoom out, and the BOOK is one organ in a larger body. Rather than
-draw it all at once, walk it the way [The Circuits](/blog/circuit/) walks the
-machine — one small diagram at a time, each a single move, building to the whole.
+back inside it. Zoom out, and the BOOK is one organ in a larger body — the story,
+the primers, the reference pages, the substrate itself, all intertwined. Here is
+the whole of it in one frame; then, the way [The Circuits](/blog/circuit/) walks
+the machine, we take it one move at a time.
+
+### All at once
+
+```mermaid
+graph TD
+  site(["The website — renders all of it"])
+
+  subgraph TheBook["The Book"]
+    book["trunk — 86 chapters"]
+    branch["branch — arc-170"]
+    cliff["cliff notes — cached terminal"]
+    book --> branch --> cliff
+    cliff -.->|synthesis return| book
+  end
+
+  primers["The Foundation — primers"]
+  story["The Story — the chronicle"]
+  code[("The substrate — the code<br/>holon · holon-rs · wat-rs · the labs")]
+
+  site --> primers & story & TheBook
+  primers -->|concepts| story
+  book -.->|intermissions| story
+  story -->|chronicles| code
+  TheBook -->|documents| code
+  code ==>|the work the site shows| site
+  site ==>|building the site is part of the work| code
+```
+
+The reference pages, the legacy blocks, and the agent door belong to the same
+loop; they're left off this overview only so it stays legible. The four moves
+below walk this same shape one edge at a time.
 
 ### 1. The trunk and its branches
 
