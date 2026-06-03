@@ -257,8 +257,8 @@ export default defineConfig({
                 { link: "/blog/arc-170-realizations/", label: "Arc 170 — Full Realizations" },
               ],
             },
-            { link: "/blog/guide/", label: "The Guide" },
-            { link: "/blog/circuit/", label: "The Circuits" },
+            { link: "/blog/guide/", label: "The Guide (legacy)" },
+            { link: "/blog/circuit/", label: "The Circuits (legacy)" },
           ],
         },
         {

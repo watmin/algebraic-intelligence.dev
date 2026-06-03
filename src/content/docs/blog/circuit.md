@@ -3,6 +3,14 @@ title: "The Circuits"
 description: "The machine as signal flow diagrams. The four-step loop. The data that flows through the wires."
 ---
 
+:::note[Legacy]
+This was a building block in manifesting the **wat** language — the machine's
+signal-flow diagrams, drawn for human eyes while the enterprise was taking
+shape. It documents an early construction, not the current substrate. We'll
+likely recreate it once trading-lab development resumes — but wat must be
+complete first, so it'll be a minute. Kept as historical record.
+:::
+
 *The machine as signal flow diagrams. For humans.*
 
 Each circuit is a mermaid graph definition. GitHub renders them natively.

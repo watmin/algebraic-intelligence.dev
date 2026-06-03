@@ -3,6 +3,14 @@ title: "The Guide"
 description: "The 007 blueprint. Every struct, every interface, every dependency, every construction order. The coordinates to where the machine is."
 ---
 
+:::note[Legacy]
+This was a building block in manifesting the **wat** language — the 007
+blueprint for the thought-machine, written leaves-to-root from the trading
+enterprise's proposals. It documents an early construction, not the current
+substrate. We'll likely recreate it once trading-lab development resumes — but
+wat must be complete first, so it'll be a minute. Kept as historical record.
+:::
+
 *The coordinates to where the machine is.*
 
 A machine that measures thoughts against reality. (A "thought" is a
