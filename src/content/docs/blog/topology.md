@@ -71,48 +71,81 @@ The book will continue forward until another loop is necessary to provide forwar
 ## The whole body — all of it is the work
 
 Everything above zooms *into* the BOOK — the trunk and the branches that curl
-back inside it. Zoom out, and the BOOK is one organ in a larger body. The story,
-the primers, the reference pages, the legacy building-blocks, the substrate
-itself — they intertwine, and the same recursive shape holds at the widest scale.
+back inside it. Zoom out, and the BOOK is one organ in a larger body. Rather than
+draw it all at once, walk it the way [The Circuits](/blog/circuit/) walks the
+machine — one small diagram at a time, each a single move, building to the whole.
+
+### 1. The trunk and its branches
+
+The BOOK is a linear trunk. When a stretch of work gets too dense for the trunk's
+cadence, it grows a branch — an arc's own interstitial journal — that curls back
+in. The branch's cliff notes are its cached terminal; the synthesis return is the
+next chapter the trunk can write *because* the branch walked the depth.
 
 ```mermaid
 graph TD
-  site(["The website — renders all of it"])
-
-  subgraph TheBook["The Book"]
-    book["trunk — 86 chapters"]
-    branch["branch — arc-170"]
-    cliff["cliff notes — cached terminal"]
-    book --> branch --> cliff
-    cliff -.->|synthesis return| book
-  end
-
-  primers["The Foundation — primers"]
-  story["The Story — the chronicle"]
-  code[("The substrate — the code<br/>holon · holon-rs · wat-rs · the labs")]
-
-  site --> primers & story & TheBook
-  primers -->|concepts| story
-  book -.->|intermissions| story
-  story -->|chronicles| code
-  TheBook -->|documents| code
-  code ==>|the work the site shows| site
-  site ==>|building the site is part of the work| code
+  book["The Book — the trunk<br/>86 chapters, written in the moment"]
+  branch["A branch<br/>arc-170 interstitial"]
+  cliff["Cliff notes<br/>the cached terminal"]
+  book --> branch --> cliff
+  cliff -.->|synthesis return| book
 ```
 
-Read the edges and one loop closes on itself. The substrate is **documented by**
-the book and the story. The site **renders** them — and the reference pages, the
-legacy blocks, and the agent door belong to the same loop; they're left off the
-map only so it stays legible. And building the site — the
-book, the story, this very topology page — is **itself** substrate work: the
-datamancer's practice, captured as it happens. The documentation of the work is
-part of the work. The website is not a sign standing outside the work pointing
-in; it is another face of the same holon — whole on its own, and a part of the
-thing it describes.
+### 2. The two tellings
 
-That is what *all of it is the body of work* means. The trail doesn't end at the
-code, and it doesn't end at the page that renders the code. It closes the loop
-and keeps walking.
+The BOOK is the real-time recognition trail. The Story is the retrospective —
+written weeks later, walking the same journey from the outside. They cross: the
+BOOK's intermissions are woven directly into the Story. The primers sit beneath,
+the concepts every post builds on.
+
+```mermaid
+graph TD
+  primers["The Foundation — primers, the concepts"]
+  book["The Book — real-time trail"]
+  story["The Story — retrospective chronicle"]
+  primers -->|concepts the story builds on| story
+  book -.->|intermissions woven in| story
+```
+
+### 3. The work points at the substrate
+
+Both tellings are *about* something: the actual code. Every era of the Story is a
+real repository; the reference pages and demos point straight at the repos. The
+chronicle documents the substrate.
+
+```mermaid
+graph TD
+  book["The Book"]
+  story["The Story"]
+  reference["Reference &amp; demos"]
+  code[("The substrate — the code<br/>holon · holon-rs · wat-rs · the labs")]
+  book -->|documents| code
+  story -->|chronicles| code
+  reference -->|point at the repos| code
+```
+
+### 4. The loop closes
+
+Here is the move only this project can draw. The substrate is documented by the
+chronicle; the chronicle is rendered by the website; and **building the website —
+the book, the story, this very page — is itself substrate work.** The arrow comes
+back around.
+
+```mermaid
+graph TD
+  code["The substrate — the work itself"]
+  chronicle["The chronicle — book + story"]
+  site["The website — renders all of it"]
+  code -->|documented by| chronicle
+  chronicle -->|rendered by| site
+  site ==>|building it is itself part of the work| code
+```
+
+That is what *all of it is the body of work* means. The documentation of the work
+is part of the work; the website is not a sign standing outside it, pointing in —
+it is another face of the same holon, whole on its own and a part of the thing it
+describes. The trail doesn't end at the code, and it doesn't end at the page that
+renders the code. It closes the loop and keeps walking.
 
 ---
 
