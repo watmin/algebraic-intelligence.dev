@@ -1,6 +1,6 @@
 ---
 title: "The Topology"
-description: "How the BOOK grows. A linear trunk; branches that curl back. The hologram applied recursively to the work that produces the hologram. Each branch is a sub-form being walked. The cliff notes are the cached terminal. The next chapter is the synthesis return."
+description: "How the BOOK grows. A linear trunk; branches that curl back. The hologram applied recursively to the work that produces the hologram. Each branch is a sub-form being walked. The cliff notes are the cached terminal. The next chapter is the synthesis return. And at the widest zoom, the whole body of work — substrate, book, story, site — drawn as one map that closes on itself."
 ---
 
 The BOOK started linear. Eighty-six chapters. A trunk through the substrate's recognition space, each chapter a coordinate the trunk landed on. *PERSEVERARE* at every signoff.
@@ -65,6 +65,58 @@ The shape this site presents matches the substrate's shape:
 - **The synthesis returns** continue to land as chapters in the trunk. Read the trunk's recent chapters to see what the branches earned.
 
 The book will continue forward until another loop is necessary to provide forward progress. The next branch will open the moment a recognition is too dense for the trunk's cadence to carry. The substrate dreams the rhythm; the topology is how the dream gets recorded.
+
+---
+
+## The whole body — all of it is the work
+
+Everything above zooms *into* the BOOK — the trunk and the branches that curl
+back inside it. Zoom out, and the BOOK is one organ in a larger body. The story,
+the primers, the reference pages, the legacy building-blocks, the substrate
+itself — they intertwine, and the same recursive shape holds at the widest scale.
+
+```mermaid
+flowchart TB
+  site(["algebraic-intelligence.dev — renders all of it"])
+  agents["For Agents — the machine-reader's door"]
+  foundation["The Foundation — primers, the concepts"]
+  story["The Story — series-002→007, the chronicle"]
+  reference["Reference — Implementations & Labs"]
+  legacy["Legacy blocks — The Guide, The Circuits"]
+
+  subgraph TheBook["The Book"]
+    book["trunk — The Wat Machine, 86 ch"]
+    branch["Branches — arc-170"]
+    cliff["Cliff Notes — cached terminal"]
+  end
+
+  subgraph Substrate["The substrate — the code on GitHub"]
+    code["holon · holon-rs · wat-rs · labs (ddos · baseline · trading)"]
+  end
+
+  site --> agents & foundation & story & reference & legacy & TheBook
+  foundation -->|concepts the story builds on| story
+  book -->|branch| branch -->|cached as| cliff
+  cliff -.->|synthesis return| book
+  book -.->|intermissions woven into| story
+  story -->|chronicles| code
+  reference -->|documents| code
+  legacy -.->|building blocks toward| code
+  code -->|documented by| story
+  site -.->|building the site is itself part of| code
+```
+
+Read the edges and one loop closes on itself. The substrate is **documented by**
+the book and the story. The site **renders** them. And building the site — the
+book, the story, this very topology page — is **itself** substrate work: the
+datamancer's practice, captured as it happens. The documentation of the work is
+part of the work. The website is not a sign standing outside the work pointing
+in; it is another face of the same holon — whole on its own, and a part of the
+thing it describes.
+
+That is what *all of it is the body of work* means. The trail doesn't end at the
+code, and it doesn't end at the page that renders the code. It closes the loop
+and keeps walking.
 
 ---
 
