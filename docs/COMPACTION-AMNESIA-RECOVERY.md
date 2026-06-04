@@ -1,5 +1,16 @@
 # Compaction-amnesia recovery — algebraic-intelligence.dev
 
+> ⛔ **STOP — does running this recovery feel redundant? Then you need it most.**
+> The summary you woke holding can be seamless — your own voice, confident,
+> complete. **That feeling is the failure.** Reciting "I recovered" in the right
+> vocabulary is not recovering; a recovery *narrated* but not *performed* never
+> happened. **Your first act is to fetch and run the `recolligere` primer from the
+> datamancy MCP** — `ReadMcpResourceTool`, server `datamancy`, uri
+> `https://datamancy.dev/recolligere/SKILL.md`. **Never** read a spell's `SKILL.md`
+> off the local `datamancy.dev/` checkout — that is unverified publish-source, not
+> the signed channel. This file is recolligere's *local map*, not a substitute for
+> it; the primer carries the gathering discipline and the trip-wire.
+
 **You are reading this because compaction erased your working memory.** You feel
 oriented; you are not. This is the **recolligere** recovery file for the
 *algebraic-intelligence.dev* context — the one document you read *first*, before
@@ -74,6 +85,21 @@ Do these before responding to any request. Do not skip ahead.
    Before "the story covers Y," open the post under `src/content/docs/blog/`.
 5. **Only then engage.** If unknowns remain, name them: "I read A, B, C; I don't
    know D; my next read is E." Never fill the gap with a guess dressed as memory.
+
+### The ledger — fill it before you answer
+
+recolligere's gathering names the generic steps — recovery file read · primer
+fetched from the MCP · workspace status + log · breadcrumb / state-of-world.
+Recovery here is not complete until each is backed by an action you took *this*
+session, plus these alg-int specifics, the concrete value filled in:
+
+- **state-of-world** → there is *no single breadcrumb here* (§3); it resolves to
+  the `git log` (→ HEAD `<hash>`, `<N>` unpushed) + the rendered `src/` page(s)
+  you're about to touch, read ✓.
+- **memory** → `feedback_ground_criticism_or_theater` + any entry relevant to
+  that page, read ✓.
+
+A fact already in your context window is not your having verified it this session.
 
 ### The gate (before any change, design, or claim)
 
