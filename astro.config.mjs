@@ -236,6 +236,19 @@ export default defineConfig({
                 { slug: "blog/story/series-007-007-impressive-to-be-us" },
               ],
             },
+            // The era after The Signed Record: the grimoire stops being a catalog
+            // members browse and becomes a command channel that installs the
+            // practice on connect, signed end to end — the anti-botnet recognition.
+            // intueri (cast on the domain, 2026-06-04) named the era for the
+            // architecture the defender severed and the builder lit; the song
+            // ("Hive Mind") is the enemy's anthem the opening post reclaims.
+            {
+              label: "The Command Channel",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-008-001-we-are-hive-mind" },
+              ],
+            },
             { slug: "blog/story/epilogue" },
           ],
         },
