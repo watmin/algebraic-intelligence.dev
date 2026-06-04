@@ -62,7 +62,7 @@ Do these before responding to any request. Do not skip ahead.
    git -C . log --oneline -15           # what shipped, most recent first
    ```
    The recent log is the **authoritative "what just happened"** — far more
-   trustworthy than the `doc/` trackers (see §3). Uncommitted files are
+   trustworthy than anything in `docs/archived/` (see §3). Uncommitted files are
    mid-flight work; read each to learn where a prior self stopped.
 3. **Read the relevant memory.** `MEMORY.md` is auto-loaded (Claude Code loads
    the memory files into context at session start); the cross-session
@@ -91,7 +91,7 @@ citation → it's a guess → stop, read, then proceed.
 **There is no single always-current breadcrumb file here** (unlike wat-rs's
 CLIFFNOTES). A website's state-of-world *is* its deployed content. So the
 authoritative present is, in order: **the git log → the rendered `src/` content →
-the memory system.** Trust those. Everything in `doc/` is a planning / structure
+the memory system.** Trust those. Everything in `docs/` is a planning / structure
 aid that **lags** — useful for the *shape* of the work, never for "is this done."
 
 **The content (the truth — under `src/content/docs/`):**
@@ -109,24 +109,24 @@ aid that **lags** — useful for the *shape* of the work, never for "is this don
 | `scripts/check-*.mjs` | The drift gates (run by `npm run build` postbuild — §4). |
 | `public/_headers`, `functions/_middleware.ts` | Cloudflare Pages deploy config. |
 
-**The `doc/` planning aids (lagging — cross-check against git before trusting):**
+**Active reference docs (kept, current):**
 
-- `doc/PROGRESS.md` — the narrative-arc tracker (per-post status). **Known to
-  lag**: it marks the series-001 primers `[~]` though they're published, and
-  omits `series-001-005` entirely. Good for *what the story's structure is*; not
-  for *current state*.
-- `doc/TIMELINE.md` — cross-repo commit-level timeline. Best for "when did X
-  happen" history.
-- `doc/CONTENT-TRACKER.md` — **stale** (lists blog/demos as "placeholder" though
-  the site is full). Treat as historical intent only.
-- `doc/PLAN.md` — original site plan (explicitly "not deployed").
-- `doc/WRITING-GUIDE.md` — **the voice anchor. Read before drafting any prose.**
+- `docs/WRITING-GUIDE.md` — **the voice anchor. Read before drafting any prose.**
   Core rule: *go into the weeds* — precise, technical, real numbers and dead
   ends; never the summary that sounds like understanding without conveying it.
 
+**`docs/static-mcp/`** — a *closed* build-arc record (the datamancy static-MCP
+build: DESIGN / BRIEFS / INSCRIPTIONS). Complete and correct — a finished record,
+not a live tracker.
+
+**`docs/archived/`** — superseded planning trackers (PROGRESS, TIMELINE,
+CONTENT-TRACKER, PLAN), kept for history, **not maintained**. They drifted from the
+live site; the dir path and its `README.md` declare them inactive. Do not trust
+them as current — the live state is git + `src/` (see §3), not these.
+
 > When you finish a meaningful change, **add to the trail** before you go: a true
-> git commit message is the minimum; if you shift the site's shape, reconcile the
-> `doc/` tracker you invalidated rather than leaving the next self a stale map.
+> git commit message is the minimum. There are no hand-trackers to reconcile — the
+> deployed `src/` and the git log are the record.
 
 ---
 
@@ -149,8 +149,8 @@ Push ships to the public. Before `git push`:
    grep -ric defcon src public | grep -v ':0$'   # expect: no output
    ```
    The DEF CON talk stays out of public view. Scope is `src public` — *what
-   actually deploys* — only. (`doc/` is internal notes, never built, and
-   necessarily names the gate to describe it; greping `doc/` self-triggers a
+   actually deploys* — only. (`docs/` is internal notes, never built, and
+   necessarily names the gate to describe it; greping `docs/` self-triggers a
    false positive. Do not add it back.) This must come back clean before any
    push. (As of this writing: clean.)
 3. **Push = deploy.** `git push origin` → Cloudflare Pages builds & serves. There
@@ -202,17 +202,19 @@ headline number (the front-door rebuild, `1c66b56`).
 
 ### FM-6 — Prose that drifts from the chronicle's voice
 New story/blog prose must ring in tune with the gold-anchor voice. Read
-`doc/WRITING-GUIDE.md` first; when warding prose, the **consonare** gate measures
+`docs/WRITING-GUIDE.md` first; when warding prose, the **consonare** gate measures
 tune (MATCHES vs DRIFTED) and **declared-close** forbids silent truncation — a
 section ends because it's done, never because it was cut. The `check-contributions`
 guard makes the declared-close *heading* mechanical (build fails without it);
 populated-vs-None stays consonare's soft call. Don't ship prose you haven't
 measured against the anchor.
 
-### FM-7 — Trusting `doc/` trackers as the current state
-`CONTENT-TRACKER.md` / `PROGRESS.md` lag the live site (§3). They are intent and
-structure, not truth. The current state is **git log + rendered `src/` + memory**.
-Cross-check before you repeat a tracker's claim.
+### FM-7 — Citing an archived tracker as the current state
+The old planning trackers live in `docs/archived/` (PROGRESS, TIMELINE,
+CONTENT-TRACKER, PLAN) — historical, **not maintained** (the dir's `README.md`
+says so). They are intent and structure, not truth; they drifted from the live
+site. The current state is **git log + rendered `src/` + memory**. Never cite an
+archived tracker as current — its path already tells you it isn't.
 
 ---
 

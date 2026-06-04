@@ -139,12 +139,16 @@ Code snippets, commit message quotes, s-expression rules, and short
 inline sequences (`A → B → C`) don't need Mermaid — keep those as
 plain fenced code blocks.
 
-### Keep the landing page in sync
+### Wiring a new post in
 
-When a new post is added, update `src/content/docs/index.mdx` to
-include it in the Story or Primers listing. Also mark it complete in
-`doc/PROGRESS.md`. Both files must stay in parity with the actual
-published posts.
+When you add a story post, wire it into the nav in `astro.config.mjs` (the
+`check-nav` build guard fails the build if you forget) and give it a
+`## Likely Contributions to the Field` close (the `check-contributions`
+guard enforces it). That is the whole checklist — the nav *is* the post
+listing, and the guards keep it honest. There is no hand-maintained index
+or progress tracker to update: the old `index.mdx` table-of-contents and
+`docs/PROGRESS.md` are retired (the latter in `docs/archived/`); the
+deployed `src/` plus the git log are the record.
 
 ---
 

@@ -5,7 +5,7 @@ Written ~5–7 weeks after the work started, as a detailed audit log of the
 journey. Retrospective commentary is expected and honest. Post boundaries
 emerge from natural narrative breaks, not rigid structure.
 
-**Cross-repo timeline with commit-level detail:** see `doc/TIMELINE.md`
+**Cross-repo timeline with commit-level detail:** see `docs/TIMELINE.md`
 
 ---
 
@@ -194,7 +194,7 @@ hardcoded thresholds — it calibrates itself from observed data.*
 
 | Source | Location |
 |--------|----------|
-| **Cross-repo timeline** | `doc/TIMELINE.md` |
+| **Cross-repo timeline** | `docs/TIMELINE.md` |
 | Python README | `/holon/README.md` |
 | Python docs (83 files) | `/holon/docs/` |
 | Challenge learnings | `/holon/docs/` (batches 002–017) |
