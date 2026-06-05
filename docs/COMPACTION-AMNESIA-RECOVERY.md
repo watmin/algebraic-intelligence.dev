@@ -140,6 +140,13 @@ aid that **lags** — useful for the *shape* of the work, never for "is this don
 - `docs/WRITING-GUIDE.md` — **the voice anchor. Read before drafting any prose.**
   Core rule: *go into the weeds* — precise, technical, real numbers and dead
   ends; never the summary that sounds like understanding without conveying it.
+- `docs/CHRONICLE-COVERAGE.md` — **the coverage pointer. Read before drafting any
+  substrate post** (and to answer "when did we last cover repo X?"). One
+  hash-stamped row per holonic repo: its current HEAD vs the story's narration
+  frontier, so the uncovered gap is visible without re-deriving it from a
+  thousand commits. The row points at `git log`; if they disagree, git wins and
+  the file is stale — fix it. Update a row whenever a post ships that narrates
+  that repo.
 
 **`docs/static-mcp/`** — a *closed* build-arc record (the datamancy static-MCP
 build: DESIGN / BRIEFS / INSCRIPTIONS). Complete and correct — a finished record,
