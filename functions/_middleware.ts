@@ -1,8 +1,15 @@
-// Cloudflare Pages middleware — content negotiation for markdown.
+// Cloudflare Pages middleware — markdown content negotiation + alternate links.
 //
-// When a request comes in with `Accept: text/markdown` preferred, and the URL
-// has a `.md` companion in our static assets, serve the companion instead of
-// the HTML page. Same URL, exact source markdown, no HTML round-trip.
+// Two jobs, one convention:
+// 1. When a request prefers `Accept: text/markdown` and the URL has a `.md`
+//    companion in our static assets, serve the companion instead of the HTML
+//    page. Same URL, exact source markdown, no HTML round-trip.
+// 2. When the same URL is served as HTML, append
+//    `Link: <companion>; rel="alternate"; type="text/markdown"` — computed from
+//    the slug, so EVERY companion-bearing page advertises its markdown twin.
+//    Static `_headers` globs can't interpolate the slug, so this layer owns the
+//    alternate rel as its single source; a new post gets the link with no edit
+//    anywhere.
 //
 // The `.md` companions are mirrored from `src/content/docs/blog/` during the
 // build (see `scripts/copy-markdown.mjs`). They live at predictable paths:
@@ -91,22 +98,40 @@ function markdownCompanionPath(pathname: string): string | null {
   return `${base}.md`;
 }
 
+// Version marker — bump on every middleware change so curl can prove which
+// version is live. Cloudflare Pages should pick up function changes on push.
+const VERSION = "2026-06-05-alternate-links";
+
 export const onRequest: PagesFunction<Env> = async (context) => {
   const { request, env, next } = context;
   const url = new URL(request.url);
   const accept = request.headers.get("Accept") || "";
 
-  // Fast path: not a GET/HEAD, or doesn't want markdown — fall through
+  // Not a GET/HEAD, or no markdown companion under our convention — fall through
   if (request.method !== "GET" && request.method !== "HEAD") {
     return next();
   }
-  if (!prefersMarkdown(accept)) {
-    return next();
-  }
-
   const mdPath = markdownCompanionPath(url.pathname);
   if (!mdPath) {
     return next();
+  }
+
+  // HTML path: the page has a companion but the client didn't ask for markdown.
+  // Serve the HTML as normal, with an alternate-link advertising the companion —
+  // computed per-slug, the single source for rel="alternate" on these pages.
+  if (!prefersMarkdown(accept)) {
+    const response = await next();
+    if (!response.ok) {
+      return response;
+    }
+    const headers = new Headers(response.headers);
+    headers.append("Link", `<${mdPath}>; rel="alternate"; type="text/markdown"`);
+    headers.set("X-Middleware-Version", VERSION);
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
   }
 
   // Fetch the .md companion from static assets
@@ -127,9 +152,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   headers.set("Content-Type", "text/markdown; charset=utf-8");
   headers.set("Vary", "Accept");
   headers.set("X-Markdown-Source", mdPath);
-  // Version marker — bump on every middleware change so curl can prove which
-  // version is live. Cloudflare Pages should pick up function changes on push.
-  headers.set("X-Middleware-Version", "2026-05-23-no-stars");
+  headers.set("X-Middleware-Version", VERSION);
 
   return new Response(response.body, {
     status: response.status,

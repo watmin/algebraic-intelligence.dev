@@ -26,16 +26,21 @@ account creation. Agents access content with anonymous GET requests; the same
 
 The same `anonymous` identity type is advertised in
 [`/.well-known/oauth-authorization-server`](/.well-known/oauth-authorization-server)
-under `agent_auth.identity_types_supported`. The `anonymous.credential_types_supported`
-array is intentionally empty there — no credentials issued, by design.
+under `agent_auth.identity_types_supported`. Its
+`anonymous.credential_types_supported` lists `api_key` as a spec-vocabulary
+placeholder only — the `x-note` there spells out that no credential is actually
+issued, and `register_uri`/`claim_uri` both serve this document, because the
+document **is** the response.
 
 ## Credentials issued
 
 **None.** This site issues no API keys, no access tokens, no bearer credentials.
 Nothing to claim. Nothing to revoke. The companion
 [`/.well-known/oauth-protected-resource`](/.well-known/oauth-protected-resource)
-declares the same shape: empty `authorization_servers`, `scopes_supported`, and
-`bearer_methods_supported`.
+declares the same doctrine: `x-authentication-required: false`, with
+spec-vocabulary placeholders (`scopes_supported: ["public"]`,
+`bearer_methods_supported: ["header"]`) whose `x-note` spells out that nothing
+is gated and a presented token is ignored.
 
 ## Why this file exists
 

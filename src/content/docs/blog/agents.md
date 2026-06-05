@@ -1,52 +1,57 @@
 ---
 title: "For Agents — How to Interface With This Site"
-description: "Every way an AI agent can consume algebraic-intelligence.dev: the agent map (llms.txt), markdown companions, Accept-header content negotiation, the .well-known endpoints, the agent-skills catalog, WebMCP tools, and content signals. The site is built to be read by agents; this page is the interface contract."
+description: "Every way an AI agent can consume algebraic-intelligence.dev: the agent map (llms.txt), markdown companions, Accept-header content negotiation, per-slug alternate links, the .well-known discovery documents and auth.md, the agent-skills catalog, WebMCP tools, sitemap, and content signals. The site is built to be read by agents; this page is the interface contract — and it is build-gated against the interfaces it documents, so it cannot silently drift."
 ---
 
 If you're an AI agent (or building one), this site is built for you. Below is every interface we expose, why each exists, and how to use it. The fastest start is `llms.txt`; the rest is depth.
 
 :::tip[Start here]
-Fetch **[`/llms.txt`](https://algebraic-intelligence.dev/llms.txt)** first. It's the curated map — every section with a one-line summary, plus an explicit list of every markdown URL. Then read **[The Topology](/blog/topology/)** to understand how the content is organized (trunk + branches + cliff notes).
+Fetch **[`/llms.txt`](https://algebraic-intelligence.dev/llms.txt)** first. It's the curated map — every section with a one-line summary, plus an explicit list of every markdown URL. It is regenerated on every build, so it is always current. Then read **[The Topology](/blog/topology/)** to understand how the content is organized (trunk + branches + cliff notes).
 :::
 
 ## 1. Get markdown, not HTML
 
-Every content page has a clean markdown source — no nav chrome, no sidebar, no footer. Typically 4–5× fewer tokens than the rendered HTML, and higher fidelity (emphasis and code spans survive that HTML extraction would flatten). Three ways to get it, pick whichever fits your fetcher:
+Every content page has a clean markdown source — no nav chrome, no sidebar, no footer. Typically 4–5× fewer tokens than the rendered HTML, and higher fidelity (emphasis and code spans survive that HTML extraction would flatten). Four ways to find it, pick whichever fits your fetcher:
 
 **Append `.md` to the URL.** The most predictable. `/blog/topology/` → `/blog/topology.md`. Every `/blog/<slug>/` page has a `/blog/<slug>.md` twin. The full list is in `llms.txt` so allow-list-based fetchers can reach them on first contact.
 
 **Send `Accept: text/markdown`.** Content negotiation on the same URL. A request to `/` with `Accept: text/markdown` returns the agent map; a request to `/blog/<slug>/` returns that page's markdown source. Served with `Content-Type: text/markdown; charset=utf-8` and `Vary: Accept`. (Browsers and tools that don't ask for markdown get HTML as normal.)
 
-**Follow the `Link` header.** Every HTML page sends `Link: </blog/<slug>.md>; rel="alternate"; type="text/markdown"`. Read response headers and follow the alternate.
+**Follow the `Link` header.** Every companion-bearing page sends `Link: </blog/<slug>.md>; rel="alternate"; type="text/markdown"`. The header is computed per-slug by the serving layer, not maintained as a list — a post published five minutes ago carries it the same as this page does.
+
+**Parse the `<head>`.** The same RFC 8288 relations also ship as HTML `<link>` tags on every page — `rel="describedby"` (llms.txt), `rel="sitemap"`, `rel="help"` (the topology), `rel="author"`, `rel="api-catalog"` — for agents that read markup rather than response headers.
 
 ```bash
-# all three reach the same markdown
+# all three network paths reach the same markdown
 curl https://algebraic-intelligence.dev/blog/topology.md
 curl -H 'Accept: text/markdown' https://algebraic-intelligence.dev/blog/topology/
 curl -I https://algebraic-intelligence.dev/blog/topology/ | grep -i 'link:.*markdown'
 ```
 
-## 2. The well-known endpoints
+## 2. The discovery documents
 
-Standard machine-readable discovery documents under `/.well-known/`. Where we genuinely don't have a thing (no REST API, no OAuth), the document says so explicitly with `x-no-*` fields rather than returning a 404 — explicit beats implicit.
+Standard machine-readable documents under `/.well-known/`, plus the site-root `auth.md`. Where we genuinely don't have a thing (no REST API, no auth), the document says so explicitly — `x-` fields and explanatory `x-note`s rather than a 404. Explicit beats absent.
 
 | Path | Spec | What it says |
 |---|---|---|
-| [`/.well-known/api-catalog`](https://algebraic-intelligence.dev/.well-known/api-catalog) | RFC 9727 | No REST API; linkset points at the docs (llms.txt, topology). |
-| [`/.well-known/oauth-authorization-server`](https://algebraic-intelligence.dev/.well-known/oauth-authorization-server) | RFC 8414 | No auth — empty `grant_types_supported`. |
-| [`/.well-known/oauth-protected-resource`](https://algebraic-intelligence.dev/.well-known/oauth-protected-resource) | RFC 9728 | No protected resources — empty `authorization_servers`. |
-| [`/.well-known/mcp/server-card.json`](https://algebraic-intelligence.dev/.well-known/mcp/server-card.json) | SEP-1649 | No MCP server runs here; `x-no-server: true`, pointers to docs. |
-| [`/.well-known/agent-skills/index.json`](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) | Agent Skills Discovery v0.2.0 | Pointer to the authoritative signed catalog at datamancy.dev — this site keeps no copy (see §3). |
+| [`/.well-known/api-catalog`](https://algebraic-intelligence.dev/.well-known/api-catalog) | RFC 9727 | No REST API; the linkset points at the docs (llms.txt, topology). |
+| [`/.well-known/oauth-authorization-server`](https://algebraic-intelligence.dev/.well-known/oauth-authorization-server) | RFC 8414 | No auth flows (`grant_types_supported` is empty) — plus an `agent_auth` block whose `register_uri`/`claim_uri` serve `/auth.md`, because the document **is** the response. |
+| [`/.well-known/oauth-protected-resource`](https://algebraic-intelligence.dev/.well-known/oauth-protected-resource) | RFC 9728 | Nothing is gated (`x-authentication-required: false`). The populated fields are spec-vocabulary placeholders; the file's own `x-note` explains each. |
+| [`/.well-known/mcp/server-card.json`](https://algebraic-intelligence.dev/.well-known/mcp/server-card.json) | SEP-1649 | No MCP server runs here (`x-static-server: true`); pointers to the docs. |
+| [`/.well-known/agent-skills/index.json`](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) | Agent Skills Discovery v0.2.0 | This site's own skills — currently the `datamancy-grimoire` pointer skill (§3). The authoritative ward catalog lives at datamancy.dev; this site points, never mirrors. |
+
+Two more machine surfaces live outside `/.well-known/`:
+
+- **[`/auth.md`](https://algebraic-intelligence.dev/auth.md)** — the agent-auth companion the `agent_auth` block points at: no registration, no credentials, anonymous GET is the entire flow. The document exists to say so explicitly (the *isitagentready* / WorkOS `auth.md` convention).
+- **[`/sitemap-index.xml`](https://algebraic-intelligence.dev/sitemap-index.xml)** — declared in `robots.txt` and sent as `rel="sitemap"` on every page, for anything that walks sitemaps.
 
 ## 3. Agent skills — the datamancy wards
 
 The skills are the **datamancy grimoire** — Latin-named code-review disciplines, each a `SKILL.md` you cast as a subagent against a target file or tree. **This site keeps no copy of them.** A mirror drifts — a stale count, a stale digest, a list that rots the moment a spell is added — so the catalog lives in exactly one place, the way a trust root does: a single **KMS-signed manifest** at datamancy.dev.
 
-- **The live catalog** — [`datamancy.dev/.well-known/agent-skills/index.json`](https://datamancy.dev/.well-known/agent-skills/index.json): every spell with `name`, `type`, `description`, raw `url`, and `sha256`. Always current — add a spell and it appears here, signed, with no edit anywhere else.
+- **The live catalog** — [`datamancy.dev/.well-known/agent-skills/index.json`](https://datamancy.dev/.well-known/agent-skills/index.json): every spell with `name`, `type`, `description`, raw `url`, and `sha256`. Always current — add a spell and it appears here, signed, with no edit anywhere else. The `type` field groups the wards; the live catalog is authoritative for which spells and groups exist, so this page deliberately doesn't repeat the list.
 - **The trust root** — [`datamancy.dev/.well-known/mcp/manifest.json`](https://datamancy.dev/.well-known/mcp/manifest.json), signed **ECDSA P-256 over SHA-256** by a non-exportable AWS KMS key; verify against [`.sig`](https://datamancy.dev/.well-known/mcp/manifest.json.sig). The public key is pinned in the [`datamancy`](https://www.npmjs.com/package/datamancy) npm package source. Tampered content cannot reach a model.
-- **This site's** [`/.well-known/agent-skills/index.json`](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) carries a single **pointer skill** — [`datamancy-grimoire`](https://algebraic-intelligence.dev/skills/datamancy-grimoire/SKILL.md), a `SKILL.md` *this site* hosts and certifies (its `sha256` covers our own file, so it never drifts when the grimoire grows). It references datamancy's live catalog **by URL, not by a pinned digest** — each domain certifies its own content, so there's no cross-domain touch point. Cast it to learn how to reach, verify, and use the wards. It's also where the chronicle's *own* native skills land over time.
-
-The `type` field groups the wards — *tests-of-craft* (code quality), *tests-of-surface* (test quality), *tests-of-fidelity* (spec/code drift and claim-vs-code honesty), *solo-ward* (a fresh-reader doc walk; the watch that casts every defensive spell at once) — but the live catalog is authoritative for which spells exist.
+- **This site's** [`/.well-known/agent-skills/index.json`](https://algebraic-intelligence.dev/.well-known/agent-skills/index.json) carries a single **pointer skill** — [`datamancy-grimoire`](https://algebraic-intelligence.dev/skills/datamancy-grimoire/SKILL.md), a `SKILL.md` *this site* hosts and certifies (its `sha256` covers our own file, so it never drifts when the grimoire grows). It references datamancy's live catalog **by URL, not by a pinned digest** — each domain certifies its own content, so there's no cross-domain touch point. Cast it to learn how to reach, verify, and use the wards.
 
 **To cast a ward:** fetch its `SKILL.md`, verify its `sha256` against the signed manifest, then **embed the text by value** into a subagent's prompt and name the target — the spell travels into the worker, never fetched by it (a spawned worker may be sandboxed). The discipline lives in the spell; the casting is mechanical; pre-deciding the findings skips the discipline the spell exists to enforce. Or let the MCP adapter do the fetch-and-verify for you: `npx -y datamancy`.
 
@@ -74,7 +79,7 @@ For a cold-start model of the project in three fetches:
 
 1. **[`/blog/topology.md`](https://algebraic-intelligence.dev/blog/topology.md)** — how the content is shaped (trunk + branches + cliff notes).
 2. **[`/blog/story/prologue.md`](https://algebraic-intelligence.dev/blog/story/prologue.md)** — the origin: what this is, why it exists, who built it.
-3. **The most recent Story post** — the current edge. The Story track (`/blog/story/`) is chronological; the highest-numbered `series-006-NNN` post is the latest.
+3. **The most recent Story post** — the current edge. The Story track (`/blog/story/`) is chronological; the **last story URL in `llms.txt`** is the latest post. (That list is regenerated on every build, so it can't go stale — which is why this page points at it instead of naming a post that would.)
 
 For depth: the Book trunk (`/blog/book.md`, ~36k lines) is the full philosophical record; load its [cliff notes](/blog/arc-170-cliffnotes/) before the full branches. The [primers](/blog/primers/series-001-000-vsa-primer/) teach VSA/HDC from scratch.
 
@@ -82,4 +87,5 @@ For depth: the Book trunk (`/blog/book.md`, ~36k lines) is the full philosophica
 
 - **Static documentation site.** No API, no database, no auth, no protected content. The "endpoints" worth knowing are documentation routes, not data.
 - **Everything is LLM-generated.** Every file in every linked repository — code and prose — was generated by an LLM; the human contribution is direction (prompting) plus the occasional gitignore. The collaboration shape is documented in the Story track.
-- **The interface is layered on purpose.** `Link` headers, `llms.txt` listings, and the `.md`-URL convention all carry the same information, because different fetchers honor different mechanisms. Use whichever your runtime supports.
+- **The interface is layered on purpose.** `Link` headers, `<head>` link tags, `llms.txt` listings, and the `.md`-URL convention all carry the same information, because different fetchers honor different mechanisms. Use whichever your runtime supports.
+- **This page is build-gated.** A postbuild check (`scripts/check-agents.mjs`) fails the build if this page drifts from the interfaces it documents: every discovery file must be mentioned here, the field names quoted above must exist in the live files, the WebMCP tool list must match `webmcp.js`, and the Content-Signal line must match `robots.txt`. The page can only go stale by turning the build red first.
