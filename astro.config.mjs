@@ -247,6 +247,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { slug: "blog/story/series-008-001-we-are-hive-mind" },
+                { slug: "blog/story/series-008-002-vigil" },
               ],
             },
             { slug: "blog/story/epilogue" },
