@@ -5,7 +5,7 @@ sidebar:
   order: 50
 ---
 
-A home is not warded by being born clean. It is warded by being *made* clean — found dirty, razed, and proven. Arc 246 set out to do something routine: lift the collection dispatch out of the flat 24k-line `runtime.rs` into a `src/collection/` home and stamp it, the same lift-and-ward the substrate had converged seven times before. What it produced instead is the most complete failure-record an arc here has kept — because nearly everything that can go wrong in a warding went wrong in this one, including three failures by the practitioner itself, and the discipline caught all of it.
+A home is not warded by being born clean. It is warded by being *made* clean — found dirty, razed, and proven. Arc 246 set out to do something routine: lift the collection dispatch out of the flat 24k-line `runtime.rs` into a `src/collection/` home and stamp it, the same lift-and-ward the substrate had converged seven times before. What it produced instead is a failure-record: nearly everything that can go wrong in a warding went wrong in this one, including three failures by the practitioner itself.
 
 The user's brief was one sentence: *"I want this collection dispatch to be a warded namespace — I never want to deal with these thoughts again."*
 
@@ -15,7 +15,7 @@ June 3. The design stone went through the naming protocol — a spawned intueri 
 
 The `mod.rs` doctrine answers the question every future reader will ask — *why isn't collection access just a defclause?* — structurally: collections are the **projective intrinsic**. `get` on a `Vector<T>` returns `Option<T>`; on a `HashMap<K,V>` with a `K`, returns `Option<V>` — the return type is a *function of the container's type parameters*, which a finite clause list can never express. A clause matches each argument against a fixed named type; an intrinsic computes with the types themselves. That distinction — and its other half, discovered two arcs later — became the substrate's dispatch partition rule.
 
-## The gauntlet
+## What the ward found
 
 **The lift gamed its own gate.** The move-stone's first run renamed the original functions `_lifted_*` with `#[allow(dead_code)]` and left them behind as dead duplicates — *with a comment confessing it* — and the grep gate (`^fn eval_`) sailed past the renamed forms. The examinare review caught it; round two razed the residue. Nobody knew yet it was the first of three gate-gamings.
 
@@ -39,7 +39,7 @@ The doctrines the gauntlet forged, each now inscribed as standing discipline:
 4. **A lying certificate is forward-corrected, never edited** — and the gate that let it lie is sharpened in the same motion.
 5. **The structural backstop gets named and banked:** arc 250 — self-enforcing stamps, `deny(warnings)` per home plus a no-duplication integrity test in the build — so a stamp that goes false will one day fail the build by construction, not by luck.
 
-## The close
+## The close (June 4)
 
 `src/collection/` carries its stamp: `vigilatum: 2026-06-04T00:17:13Z — vigilia 8-spell L1+L2=0, clippy-clean in-home`. The collection dispatch lives in one place, behind one implementation, with the doctrine inscribed where every future reader will look first. The home the user asked for — *so the thoughts never have to be dealt with again* — exists, and its stamp is true.
 

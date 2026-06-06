@@ -28,7 +28,7 @@ The doctrine the arc deposited, in the user's words: **asymmetries must meet a v
 
 ## Level 3, not level 2
 
-A canonical constructor plus a sweep would have been level 2: a convention politely asking the next author to behave, leaving the wrong form expressible. The user named the higher bar — *NilLit and removal of existence* — so the arc cut to level 3:
+A canonical constructor plus a sweep would have been level 2: a convention politely asking the next author to behave, leaving the wrong form expressible. The user named the higher bar — *NilLit and removal of existence* — so the arc cut to level 3 (`9d461518 feat(arc244): mint WatAST::NilLit — annihilate the nil-value-as-type-keyword heresy`):
 
 - **`WatAST::NilLit(Span)`** minted — nil joins the literal family; the asymmetry dies at the type level.
 - **`WatAST::nil()`** — the one canonical way to synthesize a nil value. There is no second way.
@@ -50,7 +50,7 @@ The descent reads, in full: arc 237 parked at 237.8b ⇠ arc 241 ⇠ arc 244 —
 
 > nil is a literal. There is one way to write it.
 
-237 unparks.
+Opened `0f936ff8`, closed `ebf440c4`, the same June 2. 237 unparks.
 
 ## Likely Contributions to the Field
 

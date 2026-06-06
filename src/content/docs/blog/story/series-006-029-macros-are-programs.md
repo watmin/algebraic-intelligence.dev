@@ -11,7 +11,7 @@ The arc lifted the ceiling, and it did so in the only register this substrate ac
 
 > **A wat macro body is a total, pure program over forms.** Expansion always terminates (combinators, no open recursion — totality is free), and is a deterministic, effect-free function `forms → forms` (the kernel namespace is the effect boundary; the engine's default-deny allow-list enforces it). Same source → same expansion → same canonical hash, on any machine, always.
 
-The axis-framing is the user's, recorded in the arc's design the day the scope revealed itself:
+The day the scope revealed itself, the user named the axis in the arc's design:
 
 > we already deviate from clojure on type strictness — this is another axis of rigidity
 
@@ -39,7 +39,7 @@ The perimeter lens earned its place at every single home — an unwitnessed subs
 
 ## The trilogy closes
 
-Same source → same expansion → same canonical hash, on any machine, always. That sentence is the whole arc. wat's macros gained the power Clojure's have — real programs over forms — and paid for it in the only currency this substrate accepts: totality free by construction, purity enforced by default-deny, hygiene closed as a class and gated, identity reduced to a hash any machine can verify. The macro layer is no longer the ceiling on the clojure-on-rust claim. It is the proof of it.
+June 6. Same source → same expansion → same canonical hash, on any machine, always. That sentence is the whole arc. wat's macros gained the power Clojure's have — real programs over forms — and paid for it in the only currency this substrate accepts: totality free by construction, purity enforced by default-deny, hygiene closed as a class and gated, identity reduced to a hash any machine can verify. The macro layer is no longer the ceiling on the clojure-on-rust claim. It is the proof of it.
 
 ## Likely Contributions to the Field
 

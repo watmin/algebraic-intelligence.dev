@@ -9,29 +9,29 @@ Arc 244 closed on a doctrine — an asymmetry in a family is a defect, not a qui
 
 What it discovered is that the bar didn't exist yet, and the act of building it caught a class of lie present in every single file.
 
-## The instrument
+## The instrument (June 2)
 
 The arc's first move was a spawned intueri cast on the question *what instrument wards a wat file?* — and the cast returned a flat **REUSE** verdict: don't mint a "wat-ward." The vigilia — the substrate's standing spell-battery — is already kind-adaptive; it names `cernere` for wat/DSL conformance, and the working set for a wat file is intueri, cernere, conferre, plus circumspicere on the perimeter. The stamp stays `vigilatum`; the discipline is the same one the Rust homes earned. The only genuinely new question was the L2 floor: clippy has no wat analog, so the bar was first written `checker-clean + suite-green`.
 
 That guess did not survive contact with the first file.
 
-## The bar, forged honest
+## The bar, forged honest (June 2–3)
 
-`list.wat` — the first ward, stone 245.1 — refined the bar twice before its stamp could be true:
+`list.wat` — the first ward, stone 245.1 (`f3bf37df`, the first warded wat file) — refined the bar twice before its stamp could be true:
 
 1. **Teeth.** Circumspicere, the perimeter lens, pointed at the gap inward lenses can't see: `suite-green` is toothless. A file passes the suite while its own forms are never executed by anything — the suite is green *around* it, not *through* it. The bar had to demand that the file's own forms be exercised by a passing test.
 2. **Honesty.** Grounding the revised bar against `green-gate.sh` found the deeper lie: there *is* no green integration suite. It is excluded by design — the arc-170 concurrency leaks keep it out of the gate. `suite-green` was not a weak bar; it was a claim about a thing that did not exist.
 
-The bar that survived: **`checker-clean + deftest-green(<name>)`** — a *named*, deterministic, currently-green deftest that exercises the file's own forms, self-verifiable at source. The stamp carries the test's name, so the claim cannot go false without that specific test going red. Routine gating-against-rot — making the build re-verify every stamp automatically — is deliberately *not* claimed by the stamp; it is arc 250's work, named and banked, not smuggled in as an assumption.
+The bar that survived: **`checker-clean + deftest-green(<name>)`** — a *named*, deterministic, currently-green deftest that exercises the file's own forms, self-verifiable at source. The stamp carries the test's name, so the claim cannot go false without that specific test going red. Routine gating-against-rot — making the build re-verify every stamp automatically — is deliberately *not* claimed by the stamp; it is arc 250's work, named and banked.
 
 That bar is the arc's central deposit. Every later file proved why it had to exist.
 
-## The territory marked
+## The territory marked (June 3–4)
 
 **Sixteen stdlib files warded** to L1+L2=0, each deftest-green. The shape of what the guard found, file by file:
 
 - **`list.wat`** (245.1) — the bar's birthplace.
-- **`core.wat`** (245.2) — the most important file in the corpus, taken as a three-front stone: 135 lines of arc-archaeology cut from the prose, the `=`/ordering/arithmetic deftests minted, and a stale RED graveyard retired.
+- **`core.wat`** (245.2, `6b6def52`) — the most important file in the corpus, taken as a three-front stone: 135 lines of arc-archaeology cut from the prose, the `=`/ordering/arithmetic deftests minted, and a stale RED graveyard retired.
 - **`edn.wat`** (245.3b) — the Tagged/NoTag newtypes. Circumspicere caught that `roundtrip.wat` was testing the *shim*, not the newtypes — the guard forced a real in-band tag-drop deftest.
 - **`Record.wat`** (245.3c) — the defrecord macros. Conferre caught a documented lie: a "class-safety OUT OF SCOPE" disclaimer on a macro that *emits* the class-safety guard. The doc said the work wasn't done; the code had done it.
 - **The holon family** (245.4) — `holon.wat` plus eleven leaf encoders, the biggest batch. Conferre fixed `holon.wat`'s stale 4-argument Hologram/get API examples; circumspicere forced three new deftests — Amplify, Bigram, and Ngram had shipped with no test touching them.
@@ -54,7 +54,7 @@ Three patterns came out of sixteen files, and they generalize:
 
 **The guard drags adjacent debt into the light.** Warding sixteen files cleared a mixed-promotion graveyard from arc 237, struct-form rot from arc 241, a rename arc 242 had missed, a 3/18-red record probe, redefinition conflicts, and roughly five encoder coverage gaps — none of which was the arc's target, all of which fell because the guard walked past them.
 
-## The close
+## The close (June 4, `7c6093f5`)
 
 The wat stdlib's deterministic surface is warded and *means it*; the concurrency layer waits for its named arcs, labeled rather than lied about. The bar that started as a guess was forced honest by the first file it touched: a stamp that attests only what the build can re-verify, carrying the name of the test that keeps it true. A bar that doesn't bite is not a bar — and the corpus now has one with teeth.
 
