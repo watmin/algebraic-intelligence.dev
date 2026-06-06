@@ -18,19 +18,19 @@ that repo's row (frontier post + the source commit/arc it reaches) and re-stamp
 the date. There is nothing else to maintain — the row points at git; git is the
 truth.
 
-**Last reconciled:** 2026-06-05 (post-compaction recovery session).
+**Last reconciled:** 2026-06-05, late (curare rites after the Vigil publish + the agents-page warding).
 
 ## The coverage table
 
 | Repo | Role vs the chronicle | Source HEAD @ reconcile | Chronicle frontier | Gap |
 |---|---|---|---|---|
-| `algebraic-intelligence.dev` | **The chronicle itself** | `6e4e72f` (06-05) | — (it *is* the record) | — |
-| `wat-rs` | Substrate — the live edge | `d35a84eb` (06-05, arc 249, **dirty**) | **arc 243** · `series-006-024 The Warding` (in-flight snapshot) | **arcs 244 → 249** (see below) |
+| `algebraic-intelligence.dev` | **The chronicle itself** | `62d735d` (06-05) | — (it *is* the record) | — |
+| `wat-rs` | Substrate — the live edge | `78a066c1` (06-05, arc 249.5 in flight — at the ArgSpec-ROOT-FIX juncture) | **arc 243** · `series-006-024 The Warding` (in-flight snapshot) | **arcs 244 → 249** (see below) |
 | `holon-rs` | The Rust port | `530650c` (05-22, arc 230) | series-003 (`the-rust-port` → `engrams`) + Implementations/Rust | commit-frontier not pinned; repo quiet since 05-22 |
 | `holon-lab-ddos` | DDoS / XDP scrubber | `b4eed24` (03-08) | series-004 (L7) + series-005 (spectral firewall) + Labs/DDoS | none active; repo quiet since 03-08 |
 | `holon-lab-trading` | Trading lab | `8541201` (06-01, BOOK Interm. VIII) | series-006-001/002/003 | story covers the lab; the BOOK/intermissions are a separate artifact, not chronicle-narrated |
 | `datamancy` | Signed **MCP kernel** (frozen) | `7c2a0d5` (05-30, **1.0.0 frozen forever**) | series-007 (The Signed Record) | none — frozen by design |
-| `datamancy.dev` | Grimoire publish source | `8c15d22` (06-04) | series-007 + **series-008-001** (through the 06-04 command-channel publish) | ~current |
+| `datamancy.dev` | Grimoire publish source | `f9e7e88` (06-05, publish `2026-06-05T11-26-13Z`) | series-007 + **series-008-001** + **series-008-002 "Vigil"** (through the 06-05 warded-watch publish) | ~current |
 | `datamancer.dev` | Pinned-key trust domain | `98a034c` (05-30) | series-007-001 (`the-hinge`) + index.mdx | ~current |
 | `scratch` | **Drafting source** (arcs / songs / intermissions) | `1bbe746` (scratch 024) | not a narrated subject — its arcs *become* posts | n/a (source, not subject) |
 
