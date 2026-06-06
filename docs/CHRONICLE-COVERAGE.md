@@ -18,14 +18,14 @@ that repo's row (frontier post + the source commit/arc it reaches) and re-stamp
 the date. There is nothing else to maintain — the row points at git; git is the
 truth.
 
-**Last reconciled:** 2026-06-05, late (curare rites after the Vigil publish + the agents-page warding).
+**Last reconciled:** 2026-06-05, post-compaction recolligere rites — divergence caught and repaired: wat-rs had moved `78a066c1` → `cb59d79a`; arc 249 closed + inscribed since the prior stamp.
 
 ## The coverage table
 
 | Repo | Role vs the chronicle | Source HEAD @ reconcile | Chronicle frontier | Gap |
 |---|---|---|---|---|
 | `algebraic-intelligence.dev` | **The chronicle itself** | `62d735d` (06-05) | — (it *is* the record) | — |
-| `wat-rs` | Substrate — the live edge | `78a066c1` (06-05, arc 249.5 in flight — at the ArgSpec-ROOT-FIX juncture) | **arc 243** · `series-006-024 The Warding` (in-flight snapshot) | **arcs 244 → 249** (see below) |
+| `wat-rs` | Substrate — the live edge | `cb59d79a` (06-05, **arc 249 CLOSED + INSCRIBED** `2054ec3e` — see below; now in the 245-reopen triage, Stone 245.8 strike-ready) | **arc 243** · `series-006-024 The Warding` (in-flight snapshot) | **arcs 244 → 249, all closed** (see below) |
 | `holon-rs` | The Rust port | `530650c` (05-22, arc 230) | series-003 (`the-rust-port` → `engrams`) + Implementations/Rust | commit-frontier not pinned; repo quiet since 05-22 |
 | `holon-lab-ddos` | DDoS / XDP scrubber | `b4eed24` (03-08) | series-004 (L7) + series-005 (spectral firewall) + Labs/DDoS | none active; repo quiet since 03-08 |
 | `holon-lab-trading` | Trading lab | `8541201` (06-01, BOOK Interm. VIII) | series-006-001/002/003 | story covers the lab; the BOOK/intermissions are a separate artifact, not chronicle-narrated |
@@ -57,19 +57,22 @@ six arcs. Grounded survey (2026-06-05) — post-worthy, with primary sources und
 - **248 — macro-comprehension** *(closed, inscribed)*. `for` in templates; the
   discovery that equality is a *relational intrinsic*, not a clause (the plan
   that reversed — the tool survives, the need dissolves).
-- **249 — total-pure-macros** ⚠️ **HELD — too fresh to narrate.** Substantive
-  work done (the macro engine: macros are total-pure *programs* over forms,
-  default-deny fence; threading / `keyword/of` / `for` hard-cut from Rust and
-  reborn as wat macros), but the tree is **dirty**, the `src/macros/`
-  `vigilatum` stamp is unapplied, and **no INSCRIPTION exists yet**. Narrate it
-  as a *closed* arc once the re-ward + inscription land.
+- **249 — total-pure-macros** *(closed, inscribed — narratable as of 06-05)*.
+  The hold's conditions landed: INSCRIPTION at
+  `wat-rs/docs/arc/2026/06/249-total-pure-macros/INSCRIPTION.md`, the close
+  inscribed (`2054ec3e` "macros are total, pure programs over forms"), the
+  re-wards re-stamped (`5ce98e0b` core.wat perimeter, `330e4a6c`
+  `src/collection/` against the updated vigilia). The macro engine: macros are
+  total-pure *programs* over forms, default-deny fence; threading /
+  `keyword/of` / `for` hard-cut from Rust and reborn as wat macros. The
+  "macros are programs" capstone — third rigidity axis (237 type-strictness →
+  247 dialect-honesty → 249 macro-purity).
 
 Candidate post groupings (2026-06-05 survey): **247+248 "The Dialect Reckoning"**
 (richest, ready) · **244 "Nil Is a Literal"** (tight, ready) · **245 "The Corpus
 Warding"** (sequel to the existing warding posts) · **246 "What Warded Actually
-Costs"** (the discipline post) · **249** once it closes — the "macros are
-programs" capstone, the third rigidity axis (237 type-strictness → 247
-dialect-honesty → 249 macro-purity).
+Costs"** (the discipline post) · **249 "Macros Are Programs"** (closed + inscribed
+06-05 — now ready; the capstone).
 
 ## How to update this file
 
