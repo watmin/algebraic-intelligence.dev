@@ -250,6 +250,23 @@ export default defineConfig({
                 { slug: "blog/story/series-008-002-vigil" },
               ],
             },
+            // intueri (cast on the six arcs, 2026-06-05) named this era for the
+            // one move all six share: the substrate being made to keep declared
+            // properties it had written but not enforced — nil's symmetry (244),
+            // a bar with teeth (245), a stamp with a guard behind it (246),
+            // dialect honesty (247+248), macro purity by enforcement (249).
+            // Every name is a promise; this era is the promises being kept.
+            {
+              label: "The Shape Keeps Its Promise",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-006-025-one-way-to-write-nil" },
+                { slug: "blog/story/series-006-026-the-bar-that-had-to-mean-it" },
+                { slug: "blog/story/series-006-027-what-warded-actually-costs" },
+                { slug: "blog/story/series-006-028-the-dialect-reckoning" },
+                { slug: "blog/story/series-006-029-macros-are-programs" },
+              ],
+            },
             { slug: "blog/story/epilogue" },
           ],
         },
