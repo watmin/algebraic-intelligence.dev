@@ -5,7 +5,11 @@ sidebar:
   order: 53
 ---
 
-[The Bar That Had to Mean It](/blog/story/series-006-026-the-bar-that-had-to-mean-it/) ended on a correction: stone 245.6 had skipped `wat-tests/` as "coverage/scaffolding, not the warded surface," and the user struck the framing — the tests are the demos, the most imitated surface in the language. That sentence reopened arc 245 against its own close. This post is what the reopen found, and the bar's blind spot turned out to be two layers deep: the surface it skipped, and underneath that, a tier running red in the dark.
+[The Bar That Had to Mean It](/blog/story/series-006-026-the-bar-that-had-to-mean-it/) ended on a correction: stone 245.6 had skipped `wat-tests/` as "coverage/scaffolding, not the warded surface," and the user struck the framing:
+
+> that's like the most important thing to ward - the tests are our demos of how to use wat /well/
+
+That sentence reopened arc 245 against its own close. This post is what the reopen found, and the bar's blind spot turned out to be two layers deep: the surface it skipped, and underneath that, a tier running red in the dark.
 
 ## The tier that ran dark (June 6)
 
@@ -39,7 +43,7 @@ Mid-stone, an interim `#[ignore]`'d "red contract for a future stone" went onto 
 
 ## The debt, paid
 
-Then the reopen's original cause: task #181, the test-surface ward. The test-kind guard ran its **first full muster** — cernere, intueri, probare, vocare, exigere, complectens, with circumspicere last on the perimeter — and the findings vindicated the corrective that opened the debt. The standout class: **15 latent bombs** — live retired forms hiding inside `#[ignore]`'d proof files, invisible to every routine gate, set to detonate at startup the day arc 170 lifts the ignores — the inscription names the class: *the dark corner inside the dark corner.* All 15 defused (`096237e2`), the trickiest two verified by contained un-ignore — the panic moved from startup to the run phase, check clean, exactly as the fix predicted. `wat/test.wat` — the framework the entire corpus stands on — took its stamp, and the drifted stamps from the campaign's own fixes were re-earned the same day (`1d229c89`, five fresh-eyes reviews, the fence's seven-attempt adversarial ledger all held).
+Same day. Then the reopen's original cause: task #181, the test-surface ward. The test-kind guard ran its **first full muster** — cernere, intueri, probare, vocare, exigere, complectens, with circumspicere last on the perimeter — and the findings vindicated the corrective that opened the debt. The standout class: **15 latent bombs** — live retired forms hiding inside `#[ignore]`'d proof files, invisible to every routine gate, set to detonate at startup the day arc 170 lifts the ignores — the inscription names the class: *the dark corner inside the dark corner.* All 15 defused (`096237e2`), the trickiest two verified by contained un-ignore — the panic moved from startup to the run phase, check clean, exactly as the fix predicted. `wat/test.wat` — the framework the entire corpus stands on — took its stamp, and the drifted stamps from the campaign's own fixes were re-earned the same day (`1d229c89`, five fresh-eyes reviews, the fence's seven-attempt adversarial ledger all held).
 
 The corpus is warded **as the demos it is** — which is what the corrective said it was all along. The bar from arc 245 v1 was sound; what it missed was never the bar's height but its perimeter, and the perimeter is now drawn where the user drew it: around everything a reader will imitate.
 
