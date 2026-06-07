@@ -28,7 +28,7 @@ truth.
 | `wat-rs` | Substrate — the live edge | `cb59d79a` (06-05, arc 249 closed + inscribed `2054ec3e`; now in the 245-reopen triage, Stone 245.8 strike-ready) | **arc 249** · era **"The Shape Keeps Its Promise"** (`series-006-025`…`029`, shipped `9d76734`) | the 245-reopen triage + arc 250 — in flight, not yet narratable |
 | `holon-rs` | The Rust port | `530650c` (05-22, arc 230) | series-003 (`the-rust-port` → `engrams`) + Implementations/Rust | commit-frontier not pinned; repo quiet since 05-22 |
 | `holon-lab-ddos` | DDoS / XDP scrubber | `b4eed24` (03-08) | series-004 (L7) + series-005 (spectral firewall) + Labs/DDoS | none active; repo quiet since 03-08 |
-| `holon-lab-trading` | Trading lab | `8541201` (06-01, BOOK Interm. VIII) | series-006-001/002/003 | story covers the lab; the BOOK/intermissions are a separate artifact, not chronicle-narrated |
+| `holon-lab-trading` | Trading lab + **BOOK true source** | `5e00339` (06-06, BOOK Interm. IX "Visus Alter") | series-006-001/002/003; the BOOK serves via `public/blog/book.md` (synced at IX) | story covers the lab; the BOOK/intermissions serve raw, not chronicle-narrated |
 | `datamancy` | Signed **MCP kernel** (frozen) | `7c2a0d5` (05-30, **1.0.0 frozen forever**) | series-007 (The Signed Record) | none — frozen by design |
 | `datamancy.dev` | Grimoire publish source | `f9e7e88` (06-05, publish `2026-06-05T11-26-13Z`) | series-007 + **series-008-001** + **series-008-002 "Vigil"** (through the 06-05 warded-watch publish) | ~current |
 | `datamancer.dev` | Pinned-key trust domain | `98a034c` (05-30) | series-007-001 (`the-hinge`) + index.mdx | ~current |
