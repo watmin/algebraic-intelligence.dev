@@ -265,6 +265,11 @@ export default defineConfig({
                 { slug: "blog/story/series-006-027-what-warded-actually-costs" },
                 { slug: "blog/story/series-006-028-the-dialect-reckoning" },
                 { slug: "blog/story/series-006-029-macros-are-programs" },
+                // intueri (cast 2026-06-06): the era's coda — arc 245's second
+                // close pays the debt 026 named; one arc told in two sessions
+                // stays in one group. "What the Bar Missed" names the perimeter
+                // blind spot, not the bar's height.
+                { slug: "blog/story/series-006-030-what-the-bar-missed" },
               ],
             },
             { slug: "blog/story/epilogue" },

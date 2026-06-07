@@ -25,7 +25,7 @@ truth.
 | Repo | Role vs the chronicle | Source HEAD @ reconcile | Chronicle frontier | Gap |
 |---|---|---|---|---|
 | `algebraic-intelligence.dev` | **The chronicle itself** | `9d76734` (06-05) | — (it *is* the record) | — |
-| `wat-rs` | Substrate — the live edge | `cb59d79a` (06-05, arc 249 closed + inscribed `2054ec3e`; now in the 245-reopen triage, Stone 245.8 strike-ready) | **arc 249** · era **"The Shape Keeps Its Promise"** (`series-006-025`…`029`, shipped `9d76734`) | the 245-reopen triage + arc 250 — in flight, not yet narratable |
+| `wat-rs` | Substrate — the live edge | `524bf9a9` (06-06, arc 251 in flight — the great migration, `src/value/` lifts) | **arc 245-reopen** · era **"The Shape Keeps Its Promise"** (`series-006-025`…`030`; the coda "What the Bar Missed" narrates the full clear + INSCRIPTION-II) | arc 251 (the migration) — in flight, not yet narratable |
 | `holon-rs` | The Rust port | `530650c` (05-22, arc 230) | series-003 (`the-rust-port` → `engrams`) + Implementations/Rust | commit-frontier not pinned; repo quiet since 05-22 |
 | `holon-lab-ddos` | DDoS / XDP scrubber | `b4eed24` (03-08) | series-004 (L7) + series-005 (spectral firewall) + Labs/DDoS | none active; repo quiet since 03-08 |
 | `holon-lab-trading` | Trading lab + **BOOK true source** | `5e00339` (06-06, BOOK Interm. IX "Visus Alter") | series-006-001/002/003; the BOOK serves via `public/blog/book.md` (synced at IX) | story covers the lab; the BOOK/intermissions serve raw, not chronicle-narrated |
