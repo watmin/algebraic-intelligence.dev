@@ -89,19 +89,47 @@ function indexLabel(heading) {
   return beforeFacets.length > 90 ? beforeFacets.slice(0, 88) + "…" : beforeFacets;
 }
 
+// --check: a freshness probe instead of a write. Because this script can only
+// run where the sibling source repos exist (NOT on Cloudflare's build runner —
+// it checks out only this repo), the served copies in public/blog/ are committed
+// by hand. This mode rides the build loop to catch a stale serve before it ships:
+//   - sibling sources ABSENT (CF/CI) → skip silently, exit 0 (never breaks the build)
+//   - sibling sources PRESENT + served copy matches → "fresh", exit 0
+//   - PRESENT + served copy behind source → loud "run `npm run mirror`", still exit 0
+//     (a reminder, not a blocker — local mid-substrate-work builds must not wedge)
+const CHECK = process.argv.includes("--check");
+
 let problems = 0;
 let touched = 0;
+let drift = 0;
+let absent = 0;
 
 for (const m of MONOLITHS) {
   if (m.protected) {
-    console.error(`  ~ ${m.name}: PROTECTED — ${m.note}`);
+    if (!CHECK) console.error(`  ~ ${m.name}: PROTECTED — ${m.note}`);
     continue;
   }
   if (!existsSync(m.src)) {
+    if (CHECK) {
+      absent++;
+      continue;
+    }
     console.error(`  ✗ ${m.name}: canonical source missing: ${m.src} (is the sibling repo checked out at the expected path?)`);
     problems++;
     continue;
   }
+
+  if (CHECK) {
+    const served = existsSync(m.whole) ? await readFile(m.whole, "utf-8") : "";
+    const source = await readFile(m.src, "utf-8");
+    if (served !== source) {
+      const d = source.split("\n").length - (served ? served.split("\n").length : 0);
+      console.error(`  ⚠ ${m.name}: served copy is STALE vs source (${d >= 0 ? "+" : ""}${d} lines) — run \`npm run mirror\` before pushing`);
+      drift++;
+    }
+    continue;
+  }
+
   if (!existsSync(m.landing)) {
     console.error(`  ✗ ${m.name}: landing page missing: ${m.landing} (its hand-written context isn't templatable — author it once; src/content/docs/blog/book.mdx is the model)`);
     problems++;
@@ -176,6 +204,19 @@ for (const m of MONOLITHS) {
   console.error(
     `  ✓ ${m.name}: ${bounds.length} chunks, ${lines.length} lines (${delta >= 0 ? "+" : ""}${delta}) — newest: ${newest}`
   );
+}
+
+if (CHECK) {
+  if (absent) {
+    // Cloudflare / CI: no sibling repos to compare against. Not our job here.
+    process.exit(0);
+  }
+  if (drift) {
+    console.error(`\n[mirror-monoliths] ⚠ ${drift} monolith(s) drifted from source — run \`npm run mirror\`, then commit the refreshed public/blog/**.`);
+  } else {
+    console.error(`[mirror-monoliths] ✓ served monoliths are fresh vs source.`);
+  }
+  process.exit(0);
 }
 
 if (problems) {

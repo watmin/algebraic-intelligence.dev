@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "node scripts/generate-agent-skills.mjs && rm -rf .astro && astro build",
     "skills:resolve": "node scripts/generate-agent-skills.mjs",
-    "postbuild": "node scripts/copy-markdown.mjs && node scripts/generate-llms-companions.mjs && node scripts/check-functions.mjs && node scripts/check-pages.mjs && node scripts/check-nav.mjs && node scripts/check-contributions.mjs && node scripts/check-agents.mjs",
+    "postbuild": "node scripts/copy-markdown.mjs && node scripts/generate-llms-companions.mjs && node scripts/check-functions.mjs && node scripts/check-pages.mjs && node scripts/check-nav.mjs && node scripts/check-contributions.mjs && node scripts/check-agents.mjs && node scripts/mirror-monoliths.mjs --check",
     "preview": "astro preview",
     "astro": "astro",
     "mirror": "node scripts/mirror-monoliths.mjs"
