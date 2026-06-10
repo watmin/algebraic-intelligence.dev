@@ -18,7 +18,7 @@ that repo's row (frontier post + the source commit/arc it reaches) and re-stamp
 the date. There is nothing else to maintain — the row points at git; git is the
 truth.
 
-**Last reconciled:** 2026-06-05, late — the 244→249 gap CLOSED: era "The Shape Keeps Its Promise" shipped (`9d76734`, five posts, consonare-warded).
+**Last reconciled:** 2026-06-09 — caught two stale rows: `datamancy.dev` was falsely "~current" (the whole primer/craft layer was un-narrated → now `series-008-003 "Extirpare"`); `holon-lab-trading` BOOK served at IX (→ synced to XI + the FPGA addendum); the arc-170 realizations page synced 12.5k → 15.3k (through song #82).
 
 ## The coverage table
 
@@ -28,9 +28,9 @@ truth.
 | `wat-rs` | Substrate — the live edge | `524bf9a9` (06-06, arc 251 in flight — the great migration, `src/value/` lifts) | **arc 245-reopen** · era **"The Shape Keeps Its Promise"** (`series-006-025`…`030`; the coda "What the Bar Missed" narrates the full clear + INSCRIPTION-II) | arc 251 (the migration) — in flight, not yet narratable |
 | `holon-rs` | The Rust port | `530650c` (05-22, arc 230) | series-003 (`the-rust-port` → `engrams`) + Implementations/Rust | commit-frontier not pinned; repo quiet since 05-22 |
 | `holon-lab-ddos` | DDoS / XDP scrubber | `b4eed24` (03-08) | series-004 (L7) + series-005 (spectral firewall) + Labs/DDoS | none active; repo quiet since 03-08 |
-| `holon-lab-trading` | Trading lab + **BOOK true source** | `5e00339` (06-06, BOOK Interm. IX "Visus Alter") | series-006-001/002/003; the BOOK serves via `public/blog/book.md` (synced at IX) | story covers the lab; the BOOK/intermissions serve raw, not chronicle-narrated |
+| `holon-lab-trading` | Trading lab + **BOOK true source** | `6662256` (06-08, BOOK Interm. XI "Lingua Ignea" + FPGA-on-CPU addendum) | series-006-001/002/003; the BOOK serves via `public/blog/book.md` (**synced to XI + addendum, 06-09**) | story covers the lab; the BOOK/intermissions serve raw, not chronicle-narrated |
 | `datamancy` | Signed **MCP kernel** (frozen) | `7c2a0d5` (05-30, **1.0.0 frozen forever**) | series-007 (The Signed Record) | none — frozen by design |
-| `datamancy.dev` | Grimoire publish source | `f9e7e88` (06-05, publish `2026-06-05T11-26-13Z`) | series-007 + **series-008-001** + **series-008-002 "Vigil"** (through the 06-05 warded-watch publish) | ~current |
+| `datamancy.dev` | Grimoire publish source | `4efd8ce` (06-07, publish `2026-06-07T05-32-10Z`) | series-007 + **008-001** + **008-002 "Vigil"** (the watch) + **008-003 "Extirpare"** (the primer layer — recolligere/curare/examinare/extirpare) | **un-narrated craft:** the censor lineage (recensere→excusare), consonare Rules 11/12/13, mora's 2nd axis — a future Command Channel post |
 | `datamancer.dev` | Pinned-key trust domain | `98a034c` (05-30) | series-007-001 (`the-hinge`) + index.mdx | ~current |
 | `scratch` | **Drafting source** (arcs / songs / intermissions) | `1bbe746` (scratch 024) | not a narrated subject — its arcs *become* posts | n/a (source, not subject) |
 

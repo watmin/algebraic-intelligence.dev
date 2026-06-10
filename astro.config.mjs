@@ -248,6 +248,7 @@ export default defineConfig({
               items: [
                 { slug: "blog/story/series-008-001-we-are-hive-mind" },
                 { slug: "blog/story/series-008-002-vigil" },
+                { slug: "blog/story/series-008-003-extirpare" },
               ],
             },
             // intueri (cast on the six arcs, 2026-06-05) named this era for the
