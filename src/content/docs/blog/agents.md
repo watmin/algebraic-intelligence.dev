@@ -81,7 +81,7 @@ For a cold-start model of the project in three fetches:
 2. **[`/blog/story/prologue.md`](https://algebraic-intelligence.dev/blog/story/prologue.md)** — the origin: what this is, why it exists, who built it.
 3. **The most recent Story post** — the current edge. The Story track (`/blog/story/`) is chronological; the **last story URL in `llms.txt`** is the latest post. (That list is regenerated on every build, so it can't go stale — which is why this page points at it instead of naming a post that would.)
 
-For depth: the Book trunk (`/blog/book.md`, ~36k lines) is the full philosophical record; load its [cliff notes](/blog/arc-170-cliffnotes/) before the full branches. The [primers](/blog/primers/series-001-000-vsa-primer/) teach VSA/HDC from scratch.
+For depth: the Book trunk (`/blog/book.md`, ~36k lines) is the full philosophical record — read it whole as raw markdown, or browse it chapter-by-chapter from `/blog/book/`. Its running meta-conversation is the [arc-170 realizations](/blog/arc-170-realizations/) branch. The [primers](/blog/primers/series-001-000-vsa-primer/) teach VSA/HDC from scratch.
 
 ## Notes
 

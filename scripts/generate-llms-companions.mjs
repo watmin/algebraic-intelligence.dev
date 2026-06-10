@@ -27,7 +27,6 @@ const END = "<!-- END AUTO-GENERATED MD COMPANIONS -->";
 const TOP_LEVEL_LABELS = {
   "topology.md": "The Topology",
   "book.md": "The Book (trunk; ~36k lines)",
-  "arc-170-cliffnotes.md": "Arc 170 Cliff Notes (load first)",
   "arc-170-realizations.md": "Arc 170 Full Realizations",
   "guide.md": "The Guide",
   "circuit.md": "The Circuits",
