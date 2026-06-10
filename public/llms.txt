@@ -75,9 +75,9 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 ### Trunk and branches
 
 - [https://algebraic-intelligence.dev/blog/book.md](https://algebraic-intelligence.dev/blog/book.md) — The Book (trunk; ~36k lines)
+- [https://algebraic-intelligence.dev/blog/arc-170-realizations.md](https://algebraic-intelligence.dev/blog/arc-170-realizations.md) — Arc 170 Full Realizations (the branch; raw)
 - [https://algebraic-intelligence.dev/blog/agents.md](https://algebraic-intelligence.dev/blog/agents.md)
 - [https://algebraic-intelligence.dev/blog/arc-170-cliffnotes.md](https://algebraic-intelligence.dev/blog/arc-170-cliffnotes.md) — Arc 170 Cliff Notes (load first)
-- [https://algebraic-intelligence.dev/blog/arc-170-realizations.md](https://algebraic-intelligence.dev/blog/arc-170-realizations.md) — Arc 170 Full Realizations
 - [https://algebraic-intelligence.dev/blog/circuit.md](https://algebraic-intelligence.dev/blog/circuit.md) — The Circuits
 - [https://algebraic-intelligence.dev/blog/guide.md](https://algebraic-intelligence.dev/blog/guide.md) — The Guide
 - [https://algebraic-intelligence.dev/blog/topology.md](https://algebraic-intelligence.dev/blog/topology.md) — The Topology

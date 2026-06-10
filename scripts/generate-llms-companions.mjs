@@ -73,6 +73,12 @@ sections.push("");
 // content collection — its 36k-line HTML render was OOMing the build), so the
 // src walker above doesn't see it. Add it explicitly at the top of the trunk.
 sections.push(formatEntry(`${SITE}/blog/book.md`, "The Book (trunk; ~36k lines)"));
+// The arc-170 realizations branch is also a static raw serve (public/blog/
+// arc-170-realizations.md) with a thin .mdx landing — not a content-collection
+// .md — so the src walker doesn't see it either. Add it explicitly. Both wholes
+// are mirrored by scripts/mirror-monoliths.mjs; their per-segment chunks live
+// under /blog/<name>/ and are reachable from each landing's index.
+sections.push(formatEntry(`${SITE}/blog/arc-170-realizations.md`, "Arc 170 Full Realizations (the branch; raw)"));
 for (const f of topLevel) {
   if (f === "book.md") continue; // handled above; would otherwise duplicate
   const url = `${SITE}/blog/${f}`;
