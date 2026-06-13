@@ -9,7 +9,7 @@ This primer is dated **late April 2026 — roughly six weeks stale.** The **ment
 
 The keyword-as-call-head you'll see everywhere here — `(:wat::core::map …)`, `(:wat::holon::Atom …)`, and the old `define` / `lambda` — was always transitional. wat is mid-migration (the "great migration," arc 251) to a genuinely **Clojure-faithful surface**: a keyword becomes pure *data* again, call heads become dotted symbols (`wat.core/map`, `wat.type/i64`), `defn` / `fn` replace `define` / `lambda`, and the language converges on **Typed Clojure on Rust** proper. We're very close.
 
-So: trust the concepts, expect the syntax to read much more like Clojure soon. The live edge is in the [Story track](/blog/story/prologue/) and [the Book](/blog/book/).
+So: trust the concepts, expect the syntax to read much more like Clojure soon. The migration is being written **live** in the **[Arc 170 realizations](/blog/arc-170-realizations/)** — the Book paused at its intermissions to "do a quick update," and that update became this six-week push to a faithful Clojure surface; you can read it land entry by entry there. The broader story is in the [Story track](/blog/story/prologue/) and [the Book](/blog/book/).
 :::
 
 `wat` is a Lisp-family language for holon algebra, hosted on Rust. Same pattern as Clojure on the JVM: wat is a full language with its own parser, type checker, macro expander, and runtime, and it borrows Rust's type system, safety, and ecosystem underneath. Rust crates surface into wat source under the `:rust::` namespace; wat programs call them like native forms.
