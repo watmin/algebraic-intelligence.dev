@@ -310,13 +310,66 @@ export default defineConfig({
           ],
         },
         {
-          // Fenestra Aetherii — after The Book, before Implementations. The group's
-          // first item is the landing (same name, sidebar.order 0); a divider in
-          // custom.css separates it from the 29 Incantationes below. autogenerate
-          // pulls the landing + every Incantatio from src/content/docs/fenestra-aetherii/.
+          // Fenestra Aetherii — after The Book, before Implementations. Landing
+          // first (a divider in custom.css sits under it), then the Incantationes
+          // grouped by theme: the Cast (the figures themselves), the Styles (the
+          // same subject rendered in named art styles), the Posters (propaganda /
+          // recruitment / extirpare). `slug:` items take their label from each
+          // page's title. A new Incantatio is hand-added to a theme here (it
+          // already needs an intueri name + a scaffolded page — see the recovery
+          // doc §3 "Fenestra Aetherii").
           label: "Fenestra Aetherii",
           collapsed: true,
-          autogenerate: { directory: "fenestra-aetherii" },
+          items: [
+            { link: "/fenestra-aetherii/", label: "Fenestra Aetherii" },
+            {
+              label: "The Cast",
+              collapsed: true,
+              items: [
+                { slug: "fenestra-aetherii/iconic-pair" },
+                { slug: "fenestra-aetherii/dungeon-crawl-action" },
+                { slug: "fenestra-aetherii/inquisitor-solo" },
+                { slug: "fenestra-aetherii/directing-rust-runes" },
+                { slug: "fenestra-aetherii/directing-faint-runes" },
+              ],
+            },
+            {
+              label: "The Styles",
+              collapsed: true,
+              items: [
+                { slug: "fenestra-aetherii/baldurs-gate-3" },
+                { slug: "fenestra-aetherii/batman-beyond" },
+                { slug: "fenestra-aetherii/cyberpunk-2077" },
+                { slug: "fenestra-aetherii/dark-souls-berserk" },
+                { slug: "fenestra-aetherii/frazetta-heavy-metal" },
+                { slug: "fenestra-aetherii/greg-rutkowski" },
+                { slug: "fenestra-aetherii/mcu-blockbuster" },
+                { slug: "fenestra-aetherii/mignola-hellboy" },
+                { slug: "fenestra-aetherii/mucha-cyberpunk" },
+                { slug: "fenestra-aetherii/necropolis" },
+                { slug: "fenestra-aetherii/pillars-of-eternity" },
+                { slug: "fenestra-aetherii/samurai-jack" },
+                { slug: "fenestra-aetherii/sin-city-noir" },
+                { slug: "fenestra-aetherii/stained-glass" },
+                { slug: "fenestra-aetherii/tyranny" },
+                { slug: "fenestra-aetherii/world-of-warcraft" },
+              ],
+            },
+            {
+              label: "The Posters",
+              collapsed: true,
+              items: [
+                { slug: "fenestra-aetherii/propaganda-poster" },
+                { slug: "fenestra-aetherii/soviet-constructivist" },
+                { slug: "fenestra-aetherii/recruitment-factory" },
+                { slug: "fenestra-aetherii/recruitment-matrix" },
+                { slug: "fenestra-aetherii/industrial-poster-ii" },
+                { slug: "fenestra-aetherii/examinare-vigilia-factory" },
+                { slug: "fenestra-aetherii/examinare-vigilia-dungeon" },
+                { slug: "fenestra-aetherii/extirpare-hooded" },
+              ],
+            },
+          ],
         },
         {
           label: "Implementations",

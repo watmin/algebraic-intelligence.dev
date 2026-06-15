@@ -174,6 +174,40 @@ whole at `/blog/book.md`.
   hand-curated distillation that lagged the realizations; deleted, the realizations
   branch is the content now. Do not resurrect it.
 
+**Fenestra Aetherii — the R2-backed image gallery (added 2026-06-15).** A window
+into the *Aetherium Datavatum*: ~492 Grok Imagine images of the Inquisitor /
+Shadowdancer / datamancer mythos, filed by the **prompt** that conjured them (each
+prompt-group = an *Incantatio*). Lives at `/fenestra-aetherii/`, a sidebar group
+after The Book (landing first, divider under it, then themed sub-groups The Cast /
+The Styles / The Posters in `astro.config.mjs`).
+
+- **Images live in Cloudflare R2, NOT the repo.** Bucket `fenestra-aetherii`,
+  served at `https://img.algebraic-intelligence.dev/<slug>/<id>.jpg` (custom domain
+  on R2). The repo carries only **`src/gallery-manifest.json`** (`{ slug: { prompt,
+  images:[url] } }`, ~50KB) — never image bytes. `src/components/Gallery.astro`
+  imports it and renders each Incantatio's full prompt (a plain `<pre class=
+  "incantatio-prompt">`, wraps to fit — NOT an Expressive Code fence, which fought
+  the no-wrap) + its images, over a centered `<dialog>` lightbox.
+- **The pages are minimal** (`src/content/docs/fenestra-aetherii/<slug>.mdx` =
+  frontmatter + `<Gallery group="<slug>"/>`). The prompt is NOT in the page; it
+  comes from the manifest. So the manifest is the source of truth for slug↔prompt.
+- **The pipeline (`scripts/`), and the per-batch loop:**
+  `grok-sync.sh` (paste a browser "Copy as cURL" → refresh `~/grok-imagine/auth.json`
+  via `grok-auth-from-curl.mjs` → `grok-fetch.mjs` pulls only NEW liked images +
+  prompts from `grok.com/rest/media/post/list`, incremental via a manifest
+  checkpoint) → `gallery-sync.sh` (= `grok-organize.mjs` filter datamancy + group
+  by prompt → `r2-upload.sh` → `gallery-manifest.mjs`) → `npm run build && git push`.
+  `scaffold-/extract-incantationes.mjs` scaffold pages from a prompt batch.
+- **⚠ SECRETS LIVE OUTSIDE THE REPO** in `~/grok-imagine/` (`auth.json` = the X/Grok
+  session cookie; `r2.env` = R2 keys; `curl.txt`; `media/`, `by-prompt/`,
+  `manifest.json`). NEVER commit these. The grok-* scripts only *reference* cookie
+  names in comments (false-positive on a naive secret grep) — the *values* are never
+  in the repo. Before pushing gallery changes, the §4 gate still holds.
+- **New prompts:** a fetched image whose prompt matches no existing slug is reported
+  by `grok-organize` as unmatched — it needs an intueri-named slug + a scaffolded
+  page + a hand-add to a theme group in `astro.config.mjs`. Existing-prompt batches
+  are fully automated by the loop above.
+
 **Active reference docs (kept, current):**
 
 - `docs/WRITING-GUIDE.md` — **the voice anchor. Read before drafting any prose.**
