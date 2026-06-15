@@ -27,9 +27,12 @@ EP="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
 SRC="${1:-$ROOT/by-prompt}"
 
 echo "syncing $SRC  →  s3://$R2_BUCKET/  (R2 @ $EP)"
+# Images are content-addressed (<slug>/<uuid>.jpg) — the bytes at a URL never
+# change — so they're safe to cache forever (browser + Cloudflare edge).
 aws s3 sync "$SRC" "s3://$R2_BUCKET/" \
   --endpoint-url "$EP" \
   --exclude "*_prompt.txt" \
+  --cache-control "public, max-age=31536000, immutable" \
   --size-only \
   --no-progress
 echo "done — images live under $R2_PUBLIC_BASE/<slug>/"
