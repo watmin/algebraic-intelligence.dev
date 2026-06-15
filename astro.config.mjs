@@ -310,6 +310,15 @@ export default defineConfig({
           ],
         },
         {
+          // Fenestra Aetherii — after The Book, before Implementations. The group's
+          // first item is the landing (same name, sidebar.order 0); a divider in
+          // custom.css separates it from the 29 Incantationes below. autogenerate
+          // pulls the landing + every Incantatio from src/content/docs/fenestra-aetherii/.
+          label: "Fenestra Aetherii",
+          collapsed: true,
+          autogenerate: { directory: "fenestra-aetherii" },
+        },
+        {
           label: "Implementations",
           collapsed: true,
           items: [

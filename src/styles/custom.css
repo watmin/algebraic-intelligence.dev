@@ -2,3 +2,13 @@
   --sl-content-width: 860px;
   --sl-sidebar-width: 22rem;
 }
+
+/* Inside the Fenestra Aetherii group: a horizontal divider under the landing
+   item ("Fenestra Aetherii", sidebar.order 0), separating it from the
+   Incantationes below. Targets the <li> that holds the landing link only. */
+.sidebar-content li:has(> a[href="/fenestra-aetherii/"]),
+.sidebar-content li:has(> a[href="/fenestra-aetherii"]) {
+  border-bottom: 1px solid var(--sl-color-gray-5);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+}
