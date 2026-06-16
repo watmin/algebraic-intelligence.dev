@@ -175,11 +175,14 @@ whole at `/blog/book.md`.
   branch is the content now. Do not resurrect it.
 
 **Fenestra Aetherii — the R2-backed image gallery (added 2026-06-15).** A window
-into the *Aetherium Datavatum*: ~492 Grok Imagine images of the Inquisitor /
-Shadowdancer / datamancer mythos, filed by the **prompt** that conjured them (each
-prompt-group = an *Incantatio*). Lives at `/fenestra-aetherii/`, a sidebar group
-after The Book (landing first, divider under it, then themed sub-groups The Cast /
-The Styles / The Posters in `astro.config.mjs`).
+into the *Aetherium Datavatum*: hundreds of Grok Imagine images of the Inquisitor /
+Shadowdancer / datamancer mythos (grows every batch), filed by the **prompt** that
+conjured them (each prompt-group = an *Incantatio*). Lives at `/fenestra-aetherii/`,
+a sidebar group after The Book (landing first, divider under it, then **themed
+sub-groups** — the exact set lives in `astro.config.mjs` and grows as new prompt
+kinds arrive; as of 2026-06-15: The Cast, The Boss Kills, Game Worlds, The Masters,
+The Eras, The Old World, The Posters). Counts drift per batch — trust the manifest
++ config, not a number written here.
 
 - **Images live in Cloudflare R2, NOT the repo.** Bucket `fenestra-aetherii`,
   served at `https://img.algebraic-intelligence.dev/<slug>/<id>.jpg` (custom domain
