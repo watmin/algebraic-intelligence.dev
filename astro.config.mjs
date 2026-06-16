@@ -312,12 +312,12 @@ export default defineConfig({
         {
           // Fenestra Aetherii — after The Book, before Implementations. Landing
           // first (a divider in custom.css sits under it), then the Incantationes
-          // grouped by theme: the Cast (the figures themselves), the Styles (the
-          // same subject rendered in named art styles), the Posters (propaganda /
-          // recruitment / extirpare). `slug:` items take their label from each
-          // page's title. A new Incantatio is hand-added to a theme here (it
-          // already needs an intueri name + a scaffolded page — see the recovery
-          // doc §3 "Fenestra Aetherii").
+          // grouped by theme: the Cast (the figures), the Boss Kills (victory
+          // scenes), and the art-styles split by their shared move — Game Worlds
+          // (named game IPs), the Masters (named artists/properties), the Eras
+          // (decade aesthetics), the Old World (classical/antique), the Posters.
+          // `slug:` items take their label from each page's title. A new Incantatio
+          // is hand-added to a theme here (see the recovery doc §3 "Fenestra Aetherii").
           label: "Fenestra Aetherii",
           collapsed: true,
           items: [
@@ -329,30 +329,71 @@ export default defineConfig({
                 { slug: "fenestra-aetherii/iconic-pair" },
                 { slug: "fenestra-aetherii/dungeon-crawl-action" },
                 { slug: "fenestra-aetherii/inquisitor-solo" },
+                { slug: "fenestra-aetherii/inquisitor-portrait" },
+                { slug: "fenestra-aetherii/back-to-back-duo" },
+                { slug: "fenestra-aetherii/the-college" },
                 { slug: "fenestra-aetherii/directing-rust-runes" },
                 { slug: "fenestra-aetherii/directing-faint-runes" },
               ],
             },
             {
-              label: "The Styles",
+              label: "The Boss Kills",
+              collapsed: true,
+              items: [
+                { slug: "fenestra-aetherii/dragon-boss-kill" },
+                { slug: "fenestra-aetherii/shadowdancer-strike" },
+                { slug: "fenestra-aetherii/boss-kill" },
+              ],
+            },
+            {
+              label: "Game Worlds",
               collapsed: true,
               items: [
                 { slug: "fenestra-aetherii/baldurs-gate-3" },
-                { slug: "fenestra-aetherii/batman-beyond" },
-                { slug: "fenestra-aetherii/cyberpunk-2077" },
+                { slug: "fenestra-aetherii/world-of-warcraft" },
+                { slug: "fenestra-aetherii/pillars-of-eternity" },
+                { slug: "fenestra-aetherii/tyranny" },
+                { slug: "fenestra-aetherii/necropolis" },
                 { slug: "fenestra-aetherii/dark-souls-berserk" },
+                { slug: "fenestra-aetherii/cyberpunk-2077" },
+                { slug: "fenestra-aetherii/magic-the-gathering" },
+                { slug: "fenestra-aetherii/everquest" },
+                { slug: "fenestra-aetherii/diablo" },
+                { slug: "fenestra-aetherii/warhammer-40k" },
+              ],
+            },
+            {
+              label: "The Masters",
+              collapsed: true,
+              items: [
                 { slug: "fenestra-aetherii/frazetta-heavy-metal" },
                 { slug: "fenestra-aetherii/greg-rutkowski" },
-                { slug: "fenestra-aetherii/mcu-blockbuster" },
                 { slug: "fenestra-aetherii/mignola-hellboy" },
                 { slug: "fenestra-aetherii/mucha-cyberpunk" },
-                { slug: "fenestra-aetherii/necropolis" },
-                { slug: "fenestra-aetherii/pillars-of-eternity" },
                 { slug: "fenestra-aetherii/samurai-jack" },
+                { slug: "fenestra-aetherii/batman-beyond" },
+                { slug: "fenestra-aetherii/conan-frazetta" },
+                { slug: "fenestra-aetherii/heavy-metal-1981" },
+                { slug: "fenestra-aetherii/mcu-blockbuster" },
+              ],
+            },
+            {
+              label: "The Eras",
+              collapsed: true,
+              items: [
                 { slug: "fenestra-aetherii/sin-city-noir" },
+                { slug: "fenestra-aetherii/the-fifties" },
+                { slug: "fenestra-aetherii/the-sixties" },
+                { slug: "fenestra-aetherii/the-seventies" },
+              ],
+            },
+            {
+              label: "The Old World",
+              collapsed: true,
+              items: [
                 { slug: "fenestra-aetherii/stained-glass" },
-                { slug: "fenestra-aetherii/tyranny" },
-                { slug: "fenestra-aetherii/world-of-warcraft" },
+                { slug: "fenestra-aetherii/roman-forum" },
+                { slug: "fenestra-aetherii/hellenic-marble" },
               ],
             },
             {
@@ -363,6 +404,7 @@ export default defineConfig({
                 { slug: "fenestra-aetherii/soviet-constructivist" },
                 { slug: "fenestra-aetherii/recruitment-factory" },
                 { slug: "fenestra-aetherii/recruitment-matrix" },
+                { slug: "fenestra-aetherii/recruitment-examinare" },
                 { slug: "fenestra-aetherii/industrial-poster-ii" },
                 { slug: "fenestra-aetherii/examinare-vigilia-factory" },
                 { slug: "fenestra-aetherii/examinare-vigilia-dungeon" },

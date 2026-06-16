@@ -1,4 +1,17 @@
 {
+  "back-to-back-duo": {
+    "prompt": "A cinematic dark fantasy cyber-magic duo: the Inquisitor and the Shadowdancer standing back-to-back in a glowing neon-lit ancient code dungeon. The Inquisitor is a tall, commanding datamancer with a sharp, analytical face partially shadowed by his hood, piercing glowing emerald eyes, wearing elaborate ornate black-and-crimson robes embroidered with cryptographic runes, Latin incantations, and datamancy sigils. He holds a floating SHA-256 verified crystalline grimoire tablet in one hand that projects holographic spell matrices and Rust code structures, while the other gestures powerfully. The Shadowdancer is a lithe, agile feminine silhouette in flowing shadowsilk cloak and tactical leather, dual-wielding glowing Rust-powered daggers that leave trails of vector symbolic architecture particles. Dramatic volumetric lighting, emerald and crimson accents, solemn and powerful atmosphere, intricate details, high detail, epic composition, in the style of Alphonse Mucha meets Blade Runner 2049 and Dark Souls.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/back-to-back-duo/287b0962-42a2-4f3d-a3b8-6fe9dd8264af.jpg",
+      "https://img.algebraic-intelligence.dev/back-to-back-duo/55be51a0-5a73-4845-aea5-d2547265fa29.jpg",
+      "https://img.algebraic-intelligence.dev/back-to-back-duo/6f668a74-67dd-4064-bfc1-e3d42af1b4e9.jpg",
+      "https://img.algebraic-intelligence.dev/back-to-back-duo/75fa9dea-b466-42dc-b2ec-671a8b2f765f.jpg",
+      "https://img.algebraic-intelligence.dev/back-to-back-duo/a87cb2ba-497e-461b-9231-0b1097373eb0.jpg",
+      "https://img.algebraic-intelligence.dev/back-to-back-duo/b3cf9706-f068-43f5-8451-2091f3301323.jpg",
+      "https://img.algebraic-intelligence.dev/back-to-back-duo/c16b793c-c075-458f-8e3a-ae9b3cf40032.jpg",
+      "https://img.algebraic-intelligence.dev/back-to-back-duo/efdec424-459c-40d7-ac62-bff7eb524b75.jpg"
+    ]
+  },
   "baldurs-gate-3": {
     "prompt": "A dramatic scene in the highly detailed, immersive dark fantasy art style of Baldur's Gate 3 by Larian Studios: the Inquisitor and the Shadowdancer working in perfect sync deep inside a vast, atmospheric ancient code dungeon filled with ruined stone, magical ambient lighting, and rich environmental storytelling.\n\nThe Inquisitor is a tall, commanding hooded figure with a sharp analytical face partially shadowed by his hood, intense glowing emerald eyes, wearing ornate but battle-worn black-and-crimson tactical robes embroidered with glowing Latin runes and cryptographic sigils. He stands like a master tactician, one hand holding a floating crystalline grimoire that projects subtle holographic s-expression maps and precise strike plans, the other gesturing with calm authority as he issues exact instructions.\n\nThe Shadowdancer is a lithe, deadly agile operative in a flowing high-tech shadowsilk cloak and tactical gear with glowing emerald accents, dual energy daggers drawn but held low in perfect ready stance. She listens with lethal focus, faint emerald shadow tendrils swirling gently around her as she prepares the flawless execution.\n\nSubtle emerald s-expressions and Clojure-style nested parentheses glow faintly like arcane runes etched into the dungeon walls. Rich painterly textures, moody volumetric lighting with god rays and deep shadows, cinematic composition, high detail, solemn and powerful atmosphere, in the exact visual style of Baldur's Gate 3.",
     "images": [
@@ -44,6 +57,21 @@
       "https://img.algebraic-intelligence.dev/batman-beyond/e7409c54-7a81-49a3-a26f-10af2fe1ca70.jpg"
     ]
   },
+  "boss-kill": {
+    "prompt": "An epic, cinematic \"boss kill\" moment in a dramatic dark fantasy / cyber-mystic style: the Inquisitor and Shadowdancer executing a perfect dungeon boss kill deep inside a massive ancient code-dungeon.\nThe Inquisitor (the Orchestrator) stands on high ground, hooded in ornate black-and-crimson runed robes, sharp analytical face partially shadowed, piercing glowing emerald eyes locked in deep focus. He holds a glowing crystalline grimoire open, one hand gesturing with precise authority as he finishes mapping the lair and issues the final strike command — holographic s-expression maps and disconfirming probes floating around him.\nIn the foreground, the Shadowdancer (the Executor) delivers the killing blow — a lithe, deadly feminine assassin in dark flowing shadowsilk cloak and tactical gear, leaping forward in perfect motion with dual glowing energy daggers plunged into the heart of a colossal, crumbling \"boss\" entity made of tangled corrupted code, failing structures, and shadowy bug manifestations. The boss is shattering into emerald-green particles and collapsing as the clean strike lands.\nThe scene captures the exact moment of the engineered kill: \"study the lair → perceive the traps → draw the strike → prove the kill.\" Subtle emerald s-expressions and Clojure-style parentheses glow across the dungeon walls and the collapsing boss. Dramatic volumetric lighting with strong god rays, deep shadows, rich crimsons and vibrant emerald accents. Powerful, solemn, and triumphant atmosphere of disciplined mastery — slow is smooth, smooth is fast.\nIn the exact high-detail epic fantasy illustration style with cyberpunk elements.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/boss-kill/09cb807a-2e4d-4270-a537-41f5efa91ec0.jpg"
+    ]
+  },
+  "conan-frazetta": {
+    "prompt": "A raw, muscular 80s sword & sorcery scene in the style of Conan the Barbarian (1982) and Frank Frazetta paintings: the Inquisitor and Shadowdancer in a torch-lit ancient code-dungeon.\nThe Inquisitor, a tall powerful hooded figure in black-and-crimson robes with glowing runes, holds a glowing grimoire and gestures with commanding presence. The Shadowdancer, a fierce agile assassin in dark flowing garbs, stands ready with dual glowing daggers, shadows swirling.\nSubtle emerald arcane symbols on the stone. Dramatic fire-lit atmosphere, rich earthy tones with crimson and emerald highlights, dynamic and heroic 80s fantasy mood.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/conan-frazetta/1f87942b-f726-41b4-abf7-f3605df0e658.jpg",
+      "https://img.algebraic-intelligence.dev/conan-frazetta/7ebb3f45-b6e0-48de-8e86-93a24f78fc5a.jpg",
+      "https://img.algebraic-intelligence.dev/conan-frazetta/f2678233-dd41-4d1b-99d9-7416d4805aa8.jpg",
+      "https://img.algebraic-intelligence.dev/conan-frazetta/f758c46e-79cb-4b91-9f82-a5b17410babb.jpg"
+    ]
+  },
   "cyberpunk-2077": {
     "prompt": "Hyper-detailed cyberpunk concept art in the style of Cyberpunk 2077 by CD Projekt Red: the Inquisitor and Shadowdancer in a neon-drenched, rainy futuristic code dungeon.\n\nThe Inquisitor in tactical robes with glowing runes, holding a holographic grimoire while giving commands. The Shadowdancer in high-tech shadow gear with energy daggers, ready to strike. Rain, reflections, dense atmosphere, subtle emerald s-expr holograms.\n\nCinematic lighting, ultra-realistic textures, neon emerald and crimson accents, in the style of Cyberpunk 2077 concept art.",
     "images": [
@@ -65,6 +93,27 @@
     "prompt": "A grimdark scene in the ultra-detailed concept art style of Dark Souls and Berserk: the Inquisitor and the Shadowdancer deep inside a decaying, hopeless ancient code dungeon with ruined gothic-cyber architecture.\n\nThe Inquisitor stands tall and commanding, sharp analytical face hooded with piercing glowing emerald eyes, wearing dark battle-worn robes with glowing runes. He holds a floating grimoire and gestures decisively while giving precise instructions. The Shadowdancer is a lithe lethal figure in tattered shadow cloak, dual glowing daggers ready, faint emerald particles swirling.\n\nSubtle emerald s-expressions etched like cursed runes into the crumbling walls. Heavy atmosphere, muted palette with emerald highlights, dramatic rim lighting, crushing sense of scale and weight, in the style of Dark Souls and Berserk concept art, grim and solemn.",
     "images": [
       "https://img.algebraic-intelligence.dev/dark-souls-berserk/9b980197-6fe3-4e92-b3b3-65eaea3bb6b0.jpg"
+    ]
+  },
+  "diablo": {
+    "prompt": "Epic dark fantasy illustration in the grim, hellish painterly style of classic Diablo games: the Inquisitor and Shadowdancer deep in a gothic ancient code-dungeon.\nThe Inquisitor, a tall hooded commander in ornate black-and-crimson runed robes, sharp analytical face partially shadowed, glowing emerald eyes, holds a glowing grimoire and gestures decisively while issuing commands. Beside him the Shadowdancer, a deadly lithe assassin in dark flowing shadowsilk garbs, stands in perfect ready stance with dual glowing energy daggers, dark tendrils swirling.\nSubtle emerald s-expressions and Clojure parentheses glow like cursed runes on the blood-stained stone walls. Heavy atmosphere, deep shadows, fiery crimson and emerald accents, highly detailed, dark and ominous mood, in the exact style of Diablo classic game art.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/diablo/124b8669-fff5-49c5-a33c-5dc5db95ea70.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/12a2e0b3-942d-47e0-8d92-9016eda692fd.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/1aaecce7-1676-4975-8dc1-c0ab06beec18.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/2b1bcfff-686a-4d93-b55f-68c8a8c18688.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/36c0776b-31d1-4c40-8711-d6deca06e764.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/39d82a1e-0f48-458e-889a-58e766048586.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/3be77887-a968-4d6c-9ecb-5662cc03b417.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/5098ab94-aa29-4adc-a42a-4eb6a5bf2335.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/554bbfff-b976-4271-94e1-63fd7e6f8f55.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/77808932-73ab-4159-b934-61381faf4725.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/7949ade8-2a5e-43b5-a76d-fae7bc2c8eb7.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/7ea207ed-bc87-40f7-a895-409d437b6890.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/9ee6d494-2fc1-43ab-a748-007b74248a49.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/b655b6c5-bfae-4583-9cbf-6a3b83fc1807.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/e7041484-6ef7-4078-ae00-8a9d9060f44e.jpg",
+      "https://img.algebraic-intelligence.dev/diablo/e9d95601-11c2-4f4e-b174-ca31be28decc.jpg"
     ]
   },
   "directing-faint-runes": {
@@ -187,6 +236,23 @@
       "https://img.algebraic-intelligence.dev/directing-rust-runes/ffdfdde4-d2c1-4853-a904-c681ee3e34c6.jpg"
     ]
   },
+  "dragon-boss-kill": {
+    "prompt": "An epic, cinematic dragon boss kill scene in a dramatic dark fantasy style with cyber-mystic elements: the Inquisitor and Shadowdancer standing victorious over a massive defeated dragon in its ancient code-dungeon hoard.\nThe Inquisitor stands tall on a pile of treasure, hooded in ornate black-and-crimson runed robes, sharp analytical face partially shadowed, piercing glowing emerald eyes. He holds his glowing crystalline grimoire open, calmly reviewing holographic s-expression maps of the dragon's defeat patterns.\nBeside him, the Shadowdancer — a lithe, deadly feminine assassin in dark flowing shadowsilk cloak and tactical gear — stands with dual glowing energy daggers still drawn, one foot planted triumphantly on the dragon's head as faint emerald shadow tendrils swirl around her.\nThe dragon is a colossal, ancient beast with shimmering scales, now slain and collapsing, its body dissolving into glowing emerald code particles and corrupted s-expressions. A massive, glittering loot pile surrounds them — overflowing with ancient gold coins, glowing artifacts, magical tomes, crystalline data shards, scattered runes, and datamancy relics piled high in the cavernous dragon's hoard.\nDramatic volumetric lighting with god rays cutting through dust and treasure sparkle, deep shadows, rich crimson and vibrant emerald accents. Powerful, solemn, and triumphant atmosphere of a perfectly executed dungeon boss kill — slow is smooth, smooth is fast.\nHighly detailed epic fantasy illustration with cyberpunk and arcane code elements.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/20b61955-cc0d-4f3f-8cf3-e32202a62d56.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/2c9961e1-b1a7-4693-9d0b-f5aa2cde22b1.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/2d04c74b-3bdd-442f-b92a-505339ae50a0.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/3e447b77-b5b5-4353-b47a-3af172c13304.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/519e45c6-bbd6-45cd-b496-9e1d7319c2c3.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/5af4b378-b8bf-4d40-b595-da2ed42118b7.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/5eb8de9b-3e8d-43e9-ab40-f9792af28819.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/7d968398-08dd-4a51-8345-6eacf920e65b.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/849aa018-2e0a-493e-8710-5cd0512f06c1.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/9a1a6994-b120-4eb8-913f-14700e25731f.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/9aa56ba1-c65a-4595-ba0e-2198d3d65882.jpg",
+      "https://img.algebraic-intelligence.dev/dragon-boss-kill/cab3f0a7-08bb-4bc1-b5db-de7d2841c844.jpg"
+    ]
+  },
   "dungeon-crawl-action": {
     "prompt": "Dynamic action shot of the Inquisitor and Shadowdancer deep in a vast digital-code dungeon. The Inquisitor (robed datamancer with glowing eyes) stands at a stone lectern, casting a bright verification spell from an open grimoire while pointing at a massive glowing bug in the codebase walls. The Shadowdancer (stealthy assassin in dark tactical gear with shadow tendrils) leaps forward from the shadows, striking the bug with precise dagger thrusts that leave clean green commit trails. Floating Latin spell names like \"vigilia\", \"examinare\", \"curare\" in the air, Rust logos and vector bindings in the background, dramatic rim lighting, ultra-detailed, cinematic, cyber-fantasy style.",
     "images": [
@@ -199,6 +265,34 @@
       "https://img.algebraic-intelligence.dev/dungeon-crawl-action/5e19d051-c618-4769-9c1c-ef0db39ba4c9.jpg",
       "https://img.algebraic-intelligence.dev/dungeon-crawl-action/fd7a5c4c-f249-47d9-acfa-32642ee81741.jpg",
       "https://img.algebraic-intelligence.dev/dungeon-crawl-action/ff5ed37d-73c8-405b-80fc-bc0856dd525d.jpg"
+    ]
+  },
+  "everquest": {
+    "prompt": "A dramatic scene in the exact classic 1999-2001 art style of original EverQuest (EverQuest Classic): the Inquisitor and the Shadowdancer standing together deep inside a dark, atmospheric ancient code-dungeon with stone walls, glowing runes, and that signature early 3D fantasy feel.\nThe Inquisitor is a tall, imposing hooded high-level enchanter/wizard figure in ornate black-and-crimson runed robes, sharp analytical face partially shadowed by his hood, piercing glowing emerald eyes. He holds a glowing crystalline grimoire in one hand while gesturing decisively with the other as he issues precise tactical instructions.\nBeside him stands the Shadowdancer, a lithe, deadly rogue/assassin in dark flowing shadowsilk cloak and leather tactical gear, dual glowing energy daggers held low in perfect ready stance, faint emerald shadow tendrils swirling around her.\nSubtle emerald s-expressions and Clojure-style parentheses glow like arcane runes etched into the dungeon stone. Classic EverQuest lighting with strong contrast, rich saturated colors, detailed painted textures on armor and stone, atmospheric fog and depth, heroic but grounded fantasy mood, in the exact visual style of original EverQuest zone and character art.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/everquest/047ff4eb-c75a-4203-938b-b4f08a0fc3df.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/0b300d19-bed3-4def-bb12-db50b4387332.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/171f3308-80fe-4889-85c8-b1cc7ed41725.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/29095627-36cb-4922-874c-df18fb0c089d.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/36d049e7-e627-46f4-9129-47f7fed2bf95.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/39ac91e9-89e1-46b9-95dc-5330d757c7a3.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/467a6232-146e-41df-a610-f1eb9841ebdd.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/4995f5d7-081f-4302-a6dc-25da158071be.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/5faa6298-1479-458c-8fce-a680fcb54a7c.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/620d60e8-b8a6-4078-8e61-884ce5886fa0.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/7e343ca2-146c-4b6d-a61c-4e47b31b5752.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/7f82542d-427d-46e9-9ee5-465fe2ade1cf.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/a7eb834a-026d-49aa-998d-0d3a4b0cb843.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/a9b24c97-c7b2-4c9d-b974-da475ebbf724.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/b1216ab2-593b-4ca3-950c-5230feab7ccb.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/b9f12c58-7e74-4af1-bded-da1cc8b031c1.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/bbefb76c-fb23-4387-a967-00d48cb9902d.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/bed442a1-8965-4643-a767-bbb5f9f7f17f.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/c8eb37b3-3c19-47a2-b60b-4db5bc4f7eed.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/cc7fb5e2-75c6-49f7-b05a-7f0b0d2e8521.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/ccd538af-31c5-4dc4-b32e-0222f80f5d0a.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/da221a0c-81f3-4562-9602-92a9adc35132.jpg",
+      "https://img.algebraic-intelligence.dev/everquest/e4f3e9bb-b765-4bdf-a955-567f6edc5e36.jpg"
     ]
   },
   "examinare-vigilia-dungeon": {
@@ -250,37 +344,60 @@
       "https://img.algebraic-intelligence.dev/greg-rutkowski/c74f7774-1c61-4cb4-abe8-f5a30525735a.jpg"
     ]
   },
+  "heavy-metal-1981": {
+    "prompt": "A bold, adult 80s fantasy scene in the sexy, gritty, painted style of the Heavy Metal 1981 animated movie: the Inquisitor and Shadowdancer in a neon-tinged ancient code-dungeon.\nThe Inquisitor in black-and-crimson runed robes, hooded and commanding with glowing emerald eyes, grimoire in hand. The Shadowdancer as a deadly seductive assassin in dark flowing shadowsilk, dual glowing daggers ready.\nSubtle emerald code runes floating in the air. Dramatic painted lighting, rich saturated colors, powerful and atmospheric 80s heavy metal fantasy vibe.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/heavy-metal-1981/cbe407bd-1079-4611-b4e2-5e2d47636aa5.jpg",
+      "https://img.algebraic-intelligence.dev/heavy-metal-1981/d7962f2f-1cdf-4ffc-b62a-3a867244d1d2.jpg",
+      "https://img.algebraic-intelligence.dev/heavy-metal-1981/da53fb17-bbd6-4780-8df0-4460466e64c3.jpg"
+    ]
+  },
+  "hellenic-marble": {
+    "prompt": "A dramatic scene rendered in the majestic classical Greek masonry and ancient Hellenic art style — think Parthenon friezes, marble temple architecture, and epic mythological illustration.\nThe Inquisitor stands as a tall, commanding hooded oracle-like tactician carved from living marble and shadow, wearing flowing black-and-crimson robes embroidered with glowing golden runes and sigils, sharp analytical face partially shadowed by his deep hood, piercing glowing emerald eyes. He holds a glowing crystalline grimoire inscribed with arcane symbols while gesturing with precise, god-like authority as he issues commands.\nBeside him, the Shadowdancer is a lithe, deadly graceful feminine assassin in dark flowing shadowsilk cloak that resembles living marble drapery, dual glowing energy daggers held low in perfect ready stance, faint emerald shadow tendrils swirling like sacred smoke.\nThey stand inside a vast ancient code-dungeon temple with towering Doric and Ionic columns, intricate carved marble friezes, and massive stone masonry. Subtle emerald s-expressions and Clojure-style parentheses glow like sacred Greek inscriptions and golden ratio patterns etched into the marble walls. Dramatic volumetric lighting with strong contrasts, rich white marble, deep crimson accents, glowing emerald highlights, and golden details. Epic, solemn, and mythological atmosphere, in the grand classical Greek art style with painted marble sculpture and temple relief aesthetics.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/hellenic-marble/1f214d37-aa15-41a9-9258-d548efa0a1c2.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/2254b962-2b84-4de8-b36f-aa036ddfc3bd.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/25762f6f-cddc-49dd-a54d-2335fde6fa52.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/27ac55f4-9320-4471-951f-116c0c340636.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/2c12eb00-06fc-478d-937b-c1f953580c9c.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/3c79b3ad-b68b-41df-aedf-03a7aaf8043a.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/3e1e3b01-bda9-409a-beb1-231111321b3f.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/4934efde-d1fa-41f4-af71-ce1de75dea5e.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/5549074d-305c-4a83-8f2f-19ed16d3efcf.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/57fb73fe-4f4c-455f-b38e-8691fc5f6ef3.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/8e7f2d4f-8224-436a-8db5-25afb7030281.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/a5f7f51c-b183-456a-95a7-922b0e9f0fd7.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/af2d3213-94bd-42d3-a8f3-11b60b9a34ab.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/b3e05136-2807-4cb6-b5d0-2cf66d59dc19.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/c4f05b6a-1ecb-4479-89ed-9f8104b5a9ef.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/d6c34e30-b46f-4133-a8c3-dab9733c9b24.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/e7d12545-a6fd-4635-81a7-0c67637b369b.jpg",
+      "https://img.algebraic-intelligence.dev/hellenic-marble/efdf5989-e269-4513-9a54-fd88c1bcc1d5.jpg"
+    ]
+  },
   "iconic-pair": {
     "prompt": "A cinematic dark fantasy cyber-magic duo: the Inquisitor and the Shadowdancer standing back-to-back in a glowing neon-lit ancient code dungeon. The Inquisitor is a tall, stern hooded figure in ornate black-and-crimson robes with glowing Latin runes and datamancy sigils, holding a crystalline grimoire tablet that projects holographic spell matrices and SHA-256 manifests. The Shadowdancer is a lithe, agile feminine silhouette in flowing shadowsilk cloak and tactical leather, dual-wielding glowing Rust-powered daggers that leave trails of vector symbolic architecture particles. Dramatic volumetric lighting, emerald and crimson accents, high detail, epic atmosphere, in the style of Alphonse Mucha meets Blade Runner 2049 and Dark Souls.",
     "images": [
       "https://img.algebraic-intelligence.dev/iconic-pair/00ab68d3-93a3-4409-9836-98c3b234e823.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/0c853206-3598-40b5-843b-c141d9a95ec5.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/23a1de7e-dddf-49ec-ae65-8a41425c95aa.jpg",
-      "https://img.algebraic-intelligence.dev/iconic-pair/287b0962-42a2-4f3d-a3b8-6fe9dd8264af.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/3da0fac7-5fd0-4d7f-a30e-4f96afeab087.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/496c82d4-2d9b-4c67-8554-32856ea256df.jpg",
-      "https://img.algebraic-intelligence.dev/iconic-pair/55be51a0-5a73-4845-aea5-d2547265fa29.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/6925c024-532e-4d92-a0de-39b4606f1a79.jpg",
-      "https://img.algebraic-intelligence.dev/iconic-pair/6f668a74-67dd-4064-bfc1-e3d42af1b4e9.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/7191843a-2188-40ce-8b17-d8759b671818.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/71a5044f-e1da-4f45-af02-338622e6168d.jpg",
-      "https://img.algebraic-intelligence.dev/iconic-pair/75fa9dea-b466-42dc-b2ec-671a8b2f765f.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/90e03abc-c0aa-4240-aa96-2fcae28f7d66.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/957c4174-ec16-47a7-a145-da29bb44d273.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/9b0fdd86-80e8-4816-99d4-a337c09d543e.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/a74cebbe-271a-4855-812e-cd55c1023ea1.jpg",
-      "https://img.algebraic-intelligence.dev/iconic-pair/a87cb2ba-497e-461b-9231-0b1097373eb0.jpg",
-      "https://img.algebraic-intelligence.dev/iconic-pair/b3cf9706-f068-43f5-8451-2091f3301323.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/bcacf1e1-1033-4cea-965c-bd9abd001360.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/bdd65c4b-47b7-4dda-ac56-e089d3982860.jpg",
-      "https://img.algebraic-intelligence.dev/iconic-pair/c16b793c-c075-458f-8e3a-ae9b3cf40032.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/c44f5de1-e001-4d21-8eb1-8cff567c4ad4.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/ccbc9b28-65b8-41c6-9051-aab27f1f2407.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/d28e8025-8e60-4428-8037-abdd5a146741.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/df55aafd-cac3-4c93-988e-43cc2ee1f8fb.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/e3343cbf-efa6-4214-a6c2-2b69addd00d9.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/ee47ad0b-5bd8-48ea-9e3e-53dee480c39d.jpg",
-      "https://img.algebraic-intelligence.dev/iconic-pair/efdec424-459c-40d7-ac62-bff7eb524b75.jpg",
       "https://img.algebraic-intelligence.dev/iconic-pair/f3fa8483-1381-4ab8-aa14-10cae6b6492b.jpg"
     ]
   },
@@ -291,22 +408,113 @@
       "https://img.algebraic-intelligence.dev/industrial-poster-ii/de097b07-3c9d-4282-a74a-cc34413dc90c.jpg"
     ]
   },
+  "inquisitor-portrait": {
+    "prompt": "Portrait of the Inquisitor, a commanding datamancer in elaborate dark robes embroidered with cryptographic runes and Latin incantations. Hood partially shadowing a sharp, analytical face with glowing emerald eyes. One hand holds an open floating SHA-256 verified grimoire displaying a spell, the other hand gestures a holographic dungeon map of Rust code structures floating in front of it. Standing in a grand library-archive carved into living code, ancient tomes and glowing terminals, solemn and powerful atmosphere, intricate details, dark fantasy cyberpunk aesthetic, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/04fcb8cf-64a2-4f4a-b3d8-834c53f6ef41.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/19f18fa9-d45d-477f-9252-5e16d8be2e10.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/1d51b1f3-1d3b-4c95-ba19-ff83e66b046e.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/1e73317a-fef0-4795-b6e0-2a0c0dca813a.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/4c069072-0d3d-4972-a425-bf86647bca16.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/611210e9-82a2-4f65-b6c0-b4671d0cadba.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/644e4256-4b28-4b74-9313-c346397a0e65.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/83fc85c0-312d-43dd-b1ee-4197c256631d.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/8919c005-6dea-4a8c-b546-7f57d1e28137.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/9ea7d0c3-e2ad-4262-b3c5-e65fa5962f7d.jpg",
+      "https://img.algebraic-intelligence.dev/inquisitor-portrait/a82fc630-9d89-400e-ae98-bd4d40393129.jpg"
+    ]
+  },
   "inquisitor-solo": {
     "prompt": "Portrait of the Inquisitor, a commanding datamancer in elaborate dark robes embroidered with cryptographic runes and Latin incantations. Hood partially shadowing a sharp, analytical face with glowing emerald eyes. One hand holds a floating SHA-256 verified grimoire, the other gestures a holographic dungeon map of Rust code structures. Standing in a grand library-archive carved into living code, ancient tomes and glowing terminals, solemn and powerful atmosphere, intricate details, dark fantasy cyberpunk aesthetic, dramatic lighting.",
     "images": [
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/04fcb8cf-64a2-4f4a-b3d8-834c53f6ef41.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/19f18fa9-d45d-477f-9252-5e16d8be2e10.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/1d51b1f3-1d3b-4c95-ba19-ff83e66b046e.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/1e73317a-fef0-4795-b6e0-2a0c0dca813a.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/4c069072-0d3d-4972-a425-bf86647bca16.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/611210e9-82a2-4f65-b6c0-b4671d0cadba.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/644e4256-4b28-4b74-9313-c346397a0e65.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/83fc85c0-312d-43dd-b1ee-4197c256631d.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/8919c005-6dea-4a8c-b546-7f57d1e28137.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/9ea7d0c3-e2ad-4262-b3c5-e65fa5962f7d.jpg",
-      "https://img.algebraic-intelligence.dev/inquisitor-solo/a82fc630-9d89-400e-ae98-bd4d40393129.jpg",
       "https://img.algebraic-intelligence.dev/inquisitor-solo/d2365df2-eaa8-4c98-91f2-f4f26383c62d.jpg",
       "https://img.algebraic-intelligence.dev/inquisitor-solo/d33f1cf1-0d9a-40f7-95ec-0d15e0aef6c4.jpg"
+    ]
+  },
+  "magic-the-gathering": {
+    "prompt": "Epic Magic: The Gathering card art in the highly detailed painterly style of modern MTG illustrations.\nA powerful blue-infused scene inside a vast ancient code-dungeon filled with flowing arcane knowledge and shadow. The Inquisitor stands as a hooded commander in ornate black-and-crimson tactical robes embroidered with glowing runes and sigils, sharp analytical face partially shadowed by his hood, piercing glowing emerald-cyan eyes. He holds a glowing crystalline grimoire projecting holographic s-expression maps and strike plans while gesturing decisively with authority, radiating control and precision.\nBeside him, the Shadowdancer appears as a deadly dark assassin — a lithe, agile feminine figure in deep flowing shadowsilk garbs and tactical gear, dual glowing energy daggers held low in perfect ready stance, dark tendrils of shadow energy swirling aggressively around her with lethal focus.\nDominant cool blue color palette with rich crimson accents from the Inquisitor and deep blacks from the Shadowdancer. Floating subtle s-expressions and Clojure-style parentheses glow like arcane blue code runes in the air. Dramatic volumetric lighting with strong blue tones, cyan highlights, and contrasting crimson-black shadows, intricate details, solemn and powerful mood, in the exact style of Magic: The Gathering card art.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/05f4e7dd-71d1-4f24-96f4-2ecdf56270a3.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/070e5532-f98d-4f62-bb87-503a473a2a1d.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/0aa92c52-baac-4ffe-9e1e-6d3b9b725e2f.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/14ab3f6a-ae22-411f-af44-6cb45a2174f5.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/184ee491-b7fa-4b1d-bea3-196065c489ec.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/1a645a42-09fa-456b-aa8e-2c788cfc5549.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/1ab7c168-abbd-4494-80d0-a3153d9dce12.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/2017288e-a566-4ed7-83b9-90aa0f4fa41c.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/23d44c4b-4177-4a0e-a7b0-4ed34d6238f2.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/25b279f4-55f9-4775-9a18-df53ad115b03.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/2613dd18-2d4f-4dd3-a0ca-1a8b8ad9af50.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/28bcc945-6c3f-4144-bae4-632bc12ea6a7.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/29616fd0-2bb8-49cb-ab85-326ba3f52733.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/29c920e7-ba61-45cc-b2d9-89b0fe1b3edd.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/2ba419b0-22a4-4d32-85c4-dc119af38b00.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/2da48335-f324-42ff-b2f3-be70029824da.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/2f33d4e1-8c1f-46dd-bd87-9eda94d4fdda.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/34969088-ae55-49cb-9784-f8938e393682.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/3bf524d7-4299-4f67-97d5-017bf99e70be.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/3c4412e5-b931-463a-945d-069b50733f4f.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/44b70a03-423f-424f-8393-5d154e5b3fae.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/44f786a7-d68a-4afe-8ad4-0e9a777b89b8.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/4996d44b-464c-441e-94f6-75fbd91b2b21.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/49cdb144-cd90-41ae-ac44-4ba88641db9b.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/4a6b9c6b-95fd-4d15-8471-0df1bcd415e5.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/4db90d19-d1e7-4e3c-a1b3-23ded26516e0.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/53d6dc6c-a9b3-43bd-8a55-9050e7c2e4b8.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/583753c7-dbb2-4643-8e8f-85e1c4a73c9d.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/5b4ca91c-5d15-4723-878c-6b452b73333e.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/5e2c5499-2686-4b84-ae8c-efbc76e7fe3d.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/6351b7e2-a0b5-454f-b689-b273230840c5.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/63571154-56ff-4988-b143-ac9108a3dc19.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/645ad56c-ca04-45c6-84f5-92d7bfae74d7.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/66ca2be8-02aa-4ab7-9460-6c035689e9c9.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/6b938ba4-2575-4cb9-ab72-5a84ec8c7542.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/6bb62085-a135-4134-8ce5-3f210bbd5a05.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/7233952b-e24b-4dff-8f49-312e13d97ae9.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/7545f189-f889-4abd-9e65-1b55e25cb9b5.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/75a2deb4-7c8b-4001-b41e-6562ae2da1f9.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/77efb296-d954-4a83-8c64-a7abf32c31be.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/7ab3b70a-2050-4bc1-9970-090d5fb01062.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/7dcdc653-21e8-4863-914a-42278d97d27b.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/7e4f4b4d-e606-4692-b980-7b49ff6e1d6b.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/7ed43eac-1e2e-4590-8bc3-f3c17bcf0a77.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/7fcb3714-b352-42a3-99ca-6734d07b3a10.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/7fe25f1b-253d-4477-89b3-c353e4a38e34.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/849144cf-65e3-49b7-bb85-3cabf35bf439.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/84f2304d-46e6-4f25-ac2a-913c13693843.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/86f99e79-b8bf-4fe1-86be-497554021722.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/88e5eeff-8f9b-46f1-8534-d2326e1cf43b.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/8b2698bd-3e86-4ed3-8236-7b49fe188dda.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/8bc41a32-f782-4778-ac29-e5108b2650ef.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/91592cea-74c5-42ed-b7a4-cdf604e1ab55.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/92f3ba83-599a-462b-b5a3-bd2d6a2c8831.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/962b4ed1-1eb8-4290-b324-606b47979c45.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/96db6182-3ca9-4367-8f73-e9391deae7ab.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/97897f96-c2da-4c95-900b-984f0ef9f36b.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/9f58a4ae-2026-419d-b387-b9d682f5355d.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/a46be949-0f4f-46dc-813f-10a3de08e433.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/a486692b-dafe-4377-98c9-90ab5cf4c11c.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/a4a85405-bb72-480d-982b-9ef0f2de83b6.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/a5febda8-3587-44ad-9583-4eb813d51daf.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/a7e266ba-cd1e-44b2-97a0-4d72ca883dfe.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/b66f0b76-9b96-4244-800a-42b20ae896fd.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/bc770c67-be94-4aa7-9b70-74dd41ab43b5.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/c42d7722-8842-47c2-962b-319f42a98dfb.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/c50a53ba-2893-4d67-b465-9e0bfc51eada.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/c609fd8a-adc4-4764-97cb-a3c09572695f.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/cb02d066-ede2-482c-9009-9197a65007d4.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/cf0487dc-3e2a-4f18-99bf-c9acdbbe7c74.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/cfe907e8-105c-4e2b-a24b-70fa708d7de3.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/d1dee952-1293-4b97-88e9-468a7d757d7b.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/d3786706-0de0-4292-8e55-9b0bb68316cb.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/d7ac6e16-d825-4d8e-9516-ca3ae5cbdc28.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/dd8291ad-76c8-44ea-9fd3-cbb496b1bf8d.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/de73fabd-e3fa-44c8-bc81-b7f3fe508998.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/e8ffda96-7bd7-47be-863e-89ba1c59c04d.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/e9b374ac-3941-443b-9d7a-b74fe06747aa.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/f30150ab-20fc-4978-b83a-0eda8abce32f.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/f4eba7d4-8ff2-47bc-97b9-d44a19951ae3.jpg",
+      "https://img.algebraic-intelligence.dev/magic-the-gathering/f747da89-85bd-4c35-8214-da201609dc64.jpg"
     ]
   },
   "mcu-blockbuster": {
@@ -432,43 +640,48 @@
       "https://img.algebraic-intelligence.dev/propaganda-poster/fdb407af-c6d9-46f0-aea0-041d1d2997ba.jpg"
     ]
   },
+  "recruitment-examinare": {
+    "prompt": "A powerful yet inviting 1940s/1950s recruitment propaganda poster with strong US wartime and Soviet constructivist influences, rendered in a vintage Detroit/Gotham industrial aesthetic.\nHeroic but approachable composition with dramatic yet warm chiaroscuro lighting. The Inquisitor stands as a wise, commanding mentor figure — sharp analytical face partially hooded, piercing glowing emerald eyes full of focused intelligence, wearing dark tactical robes with glowing runes and sigils. He extends one hand in a welcoming gesture while holding a glowing crystalline grimoire in the other, projecting subtle holographic s-expression maps.\nBeside him stands the Shadowdancer — a lithe, agile and lethally capable feminine operative in sleek shadowsilk cloak and tactical gear, dual glowing energy daggers held at rest, faint emerald shadow tendrils flowing gracefully. She looks forward with confident readiness, inviting the viewer to join.\nBackground swapped to a vast, mysterious ancient code-dungeon interior with towering carved stone arches, glowing rune-etched pillars, and deep atmospheric shadows — faint emerald s-expressions and Clojure-style parentheses glowing like sacred inscriptions on the ancient walls.\nBold crimson, deep black, metallic silver, and emerald color palette. Strong geometric shapes, heroic but approachable silhouettes, high-contrast lighting with warm highlights, illustrated propaganda style with textured paper grain and slight vintage wear.\nText at the top in bold authoritative yet inspiring lettering: \"EXAMINARE • VIGILIA\"\nText at the bottom in strong sans-serif: \"THE INQUISITOR AND THE SHADOWDANCER • MASTER THE DUNGEON • CURARE THE RECORD\"\nIn the style of classic 1940s-1950s American and Soviet recruitment propaganda posters, with dark vintage Detroit/Gotham industrial noir atmosphere, powerful yet aspirational mood.A powerful yet inviting 1940s/1950s recruitment propaganda poster with strong US wartime and Soviet constructivist influences, rendered in a vintage Detroit/Gotham industrial aesthetic.\nHeroic but approachable composition with dramatic yet warm chiaroscuro lighting. The Inquisitor stands as a wise, commanding mentor figure — sharp analytical face partially hooded, piercing glowing emerald eyes full of focused intelligence, wearing dark tactical robes with glowing runes and sigils. He extends one hand in a welcoming gesture while holding a glowing crystalline grimoire in the other, projecting subtle holographic s-expression maps.\nBeside him stands the Shadowdancer — a lithe, agile and lethally capable feminine operative in sleek shadowsilk cloak and tactical gear, dual glowing energy daggers held at rest, faint emerald shadow tendrils flowing gracefully. She looks forward with confident readiness, inviting the viewer to join.\nBackground swapped to a vast, mysterious ancient code-dungeon interior with towering carved stone arches, glowing rune-etched pillars, and deep atmospheric shadows — faint emerald s-expressions and Clojure-style parentheses glowing like sacred inscriptions on the ancient walls.\nBold crimson, deep black, metallic silver, and emerald color palette. Strong geometric shapes, heroic but approachable silhouettes, high-contrast lighting with warm highlights, illustrated propaganda style with textured paper grain and slight vintage wear.\nText at the top in bold authoritative yet inspiring lettering: \"EXAMINARE • VIGILIA\"\nText at the bottom in strong sans-serif: \"THE INQUISITOR AND THE SHADOWDANCER • MASTER THE DUNGEON • CURARE THE RECORD\"\nIn the style of classic 1940s-1950s American and Soviet recruitment propaganda posters, with dark vintage Detroit/Gotham industrial noir atmosphere, powerful yet aspirational mood.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/0a765df6-0cc1-4f2b-8b17-54a8f31216e1.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/1298e4ac-5a11-4082-8301-153b8435841e.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/149eea43-fe4c-42f3-bad5-df3c2110a2b7.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/1ae6b439-99c0-4e78-8abb-a309d3572571.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/1be16d76-45a9-4fd6-9252-66bc0def5971.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/477ad8fb-d390-431f-b1fd-9c7c89ba1ce6.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/51509d8b-df3c-4dfd-8773-efab35c438e6.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/5f419270-9a16-472e-a804-3ac02e130d51.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/619c3bc8-5065-4739-b9ee-6814d9eb2e5a.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/7474ab40-532c-48f0-96a3-6eda12adc5d6.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/778a090e-ea00-49ac-84e2-66fd2eae2f7c.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/8027ed93-b8ba-4c5b-84a1-144aab5a4b62.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/96a14665-3199-4e37-8135-b506789bfb22.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/a362adac-1d68-4f2b-bc63-c9ddede422fb.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/a68ae9e0-d111-454a-a6f7-2648027520de.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/bb201cb9-e7b2-4cb4-bb3c-a1a2f14687aa.jpg",
+      "https://img.algebraic-intelligence.dev/recruitment-examinare/e90ee5df-20d1-438a-8fdc-ea06461d0556.jpg"
+    ]
+  },
   "recruitment-factory": {
     "prompt": "A powerful yet inviting 1940s/1950s recruitment propaganda poster with strong US wartime and Soviet constructivist influences, rendered in a vintage Detroit/Gotham industrial aesthetic.\n\nHeroic but approachable composition with dramatic yet warm chiaroscuro lighting. The Inquisitor stands as a wise, commanding mentor figure — sharp analytical face partially hooded, piercing glowing emerald eyes full of focused intelligence, wearing dark tactical robes with glowing runes and sigils. He extends one hand in a welcoming gesture while holding a glowing crystalline grimoire in the other, projecting subtle holographic s-expression maps.\n\nBeside him stands the Shadowdancer — a lithe, agile and lethally capable feminine operative in sleek shadowsilk cloak and tactical gear, dual glowing energy daggers held at rest, faint emerald shadow tendrils flowing gracefully. She looks forward with confident readiness, inviting the viewer to join.\n\nBackground shows a vast, atmospheric ancient code-dungeon with monumental angular steel and concrete architecture, faint emerald s-expressions glowing like riveted runes on the walls. Bold crimson, deep black, metallic silver, and emerald color palette. Strong geometric shapes, heroic but approachable silhouettes, high-contrast lighting with warm highlights, illustrated propaganda style with textured paper grain and slight vintage wear.\n\nText at the top in bold authoritative yet inspiring lettering: \"EXAMINARE • VIGILIA\"\nText at the bottom in strong sans-serif: \"THE INQUISITOR AND THE SHADOWDANCER • CURARE THE RECORD • JOIN THE CRAFT\"\n\nIn the style of classic 1940s-1950s American and Soviet recruitment propaganda posters, with dark vintage Detroit/Gotham industrial noir atmosphere, powerful yet aspirational mood.",
     "images": [
-      "https://img.algebraic-intelligence.dev/recruitment-factory/0a765df6-0cc1-4f2b-8b17-54a8f31216e1.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/1298e4ac-5a11-4082-8301-153b8435841e.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/149eea43-fe4c-42f3-bad5-df3c2110a2b7.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/1a0bd4f4-3d90-4b0a-99f9-3363e385558f.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/1ae6b439-99c0-4e78-8abb-a309d3572571.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/1be16d76-45a9-4fd6-9252-66bc0def5971.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/253cc4a7-7c39-432b-b934-a8b6b3ac51a5.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/384aef0a-a3ca-42b0-8f0a-08a134f44fc7.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/4595bead-36ff-4ebb-968c-01fcdb841260.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/477ad8fb-d390-431f-b1fd-9c7c89ba1ce6.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/4b020d98-b423-4141-8a1b-ffb0c5d6415f.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/51509d8b-df3c-4dfd-8773-efab35c438e6.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/5dcfbde7-f1f5-47cb-b82b-6bd7191a6c3b.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/5f419270-9a16-472e-a804-3ac02e130d51.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/617ee63b-061f-4533-bca4-f68b77a056e9.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/619c3bc8-5065-4739-b9ee-6814d9eb2e5a.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/73baf431-98bf-456c-a7c2-35a03d1c15da.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/7474ab40-532c-48f0-96a3-6eda12adc5d6.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/778a090e-ea00-49ac-84e2-66fd2eae2f7c.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/8027ed93-b8ba-4c5b-84a1-144aab5a4b62.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/819cc441-513a-4595-931f-700bd7346a28.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/824a1b24-f056-4dbf-9b23-c6e79319c8cd.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/8e252fa6-6346-47a8-b564-9b0864b60a10.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/96a14665-3199-4e37-8135-b506789bfb22.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/9dcb5e7f-c287-4223-9936-a7da0c76da57.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/a362adac-1d68-4f2b-bc63-c9ddede422fb.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/a68ae9e0-d111-454a-a6f7-2648027520de.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/acae37a8-737f-4733-a17f-f3f2f9ac2cf0.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/bb201cb9-e7b2-4cb4-bb3c-a1a2f14687aa.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/c5e507ab-9b37-4626-85fe-385b137124c6.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/c8ff1ce4-a164-4758-bc05-1f42b1c6e0a3.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/dcb0965b-d6d8-45f2-8fbd-68548257403f.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/e7cc9875-4785-4061-9488-bd06f6cb8aee.jpg",
-      "https://img.algebraic-intelligence.dev/recruitment-factory/e90ee5df-20d1-438a-8fdc-ea06461d0556.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/ed5d0825-dfae-4262-8995-fcc2257a30df.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/f35e1843-704b-4f19-b483-1e4f4b4316b6.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-factory/f783456a-a9ca-477b-a6cd-c83e0f13a897.jpg"
@@ -490,6 +703,51 @@
       "https://img.algebraic-intelligence.dev/recruitment-matrix/d6c9ce2d-02e7-490c-83db-d46efcff5c62.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-matrix/d8e9321e-18d1-4ca9-afdf-61e3ebb586b8.jpg",
       "https://img.algebraic-intelligence.dev/recruitment-matrix/fdce77b1-2c67-4cfe-93e1-94897530e248.jpg"
+    ]
+  },
+  "roman-forum": {
+    "prompt": "A dramatic scene rendered in the majestic, realistic classical Greco-Roman mythological art style — epic ancient frescoes and heroic temple reliefs.\nThe Inquisitor and the Shadowdancer stand together in the heart of the ancient Roman Forum at twilight. The Inquisitor is a tall, imposing hooded oracle-tactician in flowing black-and-crimson robes richly embroidered with glowing golden runes and sigils, sharp analytical face partially shadowed by his deep hood, piercing glowing emerald eyes full of divine intellect. He holds a glowing crystalline grimoire while gesturing with commanding authority as he issues precise instructions.\nBeside him, the Shadowdancer is a lithe, deadly graceful feminine warrior-assassin in dark flowing shadowsilk drapery that echoes classical marble folds, dual glowing energy daggers held low in perfect ready stance, faint emerald shadow tendrils swirling like sacred incense.\nThey stand amid the monumental ruins of the Roman Forum — towering columns of the Temple of Saturn, the Arch of Septimius Severus, the Basilica Julia, and ancient stone pavement under a dramatic twilight sky. Subtle emerald s-expressions and Clojure-style parentheses glow like sacred Latin inscriptions carved into the marble architecture and friezes. Dramatic chiaroscuro lighting with strong volumetric god rays breaking through clouds, rich white marble tones, deep crimsons, glowing emerald accents, and golden highlights. Epic, solemn, and powerfully mythological atmosphere, in the grand classical Roman historical painting style.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/roman-forum/055047c0-e7ef-4a65-ad06-7b311a651ba3.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/05ef1f3f-c7b8-4dfb-adb9-24eb0a6eb828.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/060b521c-b4b7-4071-880b-0de0dd3755f0.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/0769c7a3-2b17-4af1-b86a-03e2ed0f7d92.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/141c07c4-b8ea-46d7-af74-14705ea3c5ab.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/18dde43f-d28b-48d4-9dd5-f60f95958956.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/1e2ccca8-a27c-4b3b-97d8-6dbfe1575662.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/2267894d-17c1-4197-b7cc-726c4fc798c1.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/2517d2e8-c32e-481e-980d-7839a9452b05.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/26202f74-9aa2-4d41-ba8c-0a20c1b5e923.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/27a5f0d2-a525-4529-b174-07765801af1b.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/2830d34f-32eb-4cff-ae2e-d9499d23afb2.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/38567c2e-0b3d-48ec-8d12-9cdc444266bb.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/3aad35a1-6260-46f3-bffa-582164e4bf07.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/3cae982e-bf6a-4ce2-9c28-774c572f32fb.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/3d4244d8-1b49-41ad-b070-21c5ffe91ff3.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/40b2b38f-f372-4d6e-b62b-0f3eec5ed982.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/4798fffe-7600-4be1-963c-878ef56425da.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/47e301dd-aec0-4557-9633-791eae05e16b.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/4df5b13e-5f42-4018-90b6-54c11a7a779b.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/51e49b0f-6302-40fb-98c3-c78147cd2465.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/54c1b39f-6377-4bcd-9080-a6e2109ddac0.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/5bd35bf6-aaa8-4c51-b91a-8df934b3c788.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/5eadac00-ef67-4821-b28e-0f1a7780efff.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/6679772d-be61-4f96-9e0b-1c5004756930.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/721d1529-4d5c-4ef9-b33d-31b0e6f2b612.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/7f8739c1-d639-4e8c-85e1-ab5418c46b21.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/8007d392-aad0-42f3-822e-11b0dccf814c.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/833bcaee-3997-4e6e-bde4-3b09ec2c6c05.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/995c7a24-9d85-49b0-a567-bb6515fbbdfb.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/9a32bed7-3377-42d9-9206-7383d0c3f91d.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/9e82c5d2-9abd-4283-9af1-ebbfd6e9939d.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/a68e26a4-9385-4d4c-ab73-d10ef84fd7e8.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/b6905c48-14c5-4443-9f10-fa0cfb88bd03.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/bdfea6c6-3fbb-4bce-94a1-8e88eb68a339.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/c57d5c74-de5a-440a-a06f-859cc60f384c.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/c6497840-e119-4ebe-aeb7-d736012c2593.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/cbf3e8ef-ccc6-45b7-b147-46e64ffb234a.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/d5dba315-b77b-4ee8-bc8b-14c8dcaf46df.jpg",
+      "https://img.algebraic-intelligence.dev/roman-forum/f041942c-3337-4281-8cf7-df2647fdadea.jpg"
     ]
   },
   "samurai-jack": {
@@ -525,6 +783,15 @@
       "https://img.algebraic-intelligence.dev/samurai-jack/f1acd2a7-52ce-4c8c-b74d-2ac2d4af052f.jpg",
       "https://img.algebraic-intelligence.dev/samurai-jack/f87a1666-6411-4231-8ed9-e399884ea528.jpg",
       "https://img.algebraic-intelligence.dev/samurai-jack/fc82c478-5ad3-491d-b4ad-f5e04d59318a.jpg"
+    ]
+  },
+  "shadowdancer-strike": {
+    "prompt": "An epic, cinematic moment in a dramatic dark fantasy / cyber-mystic style: the Inquisitor (Datamancer) standing back and watching with intense focus as the Shadowdancer lands the perfect killing blow.\nThe Inquisitor stands on slightly elevated ground in the background, tall and commanding, hooded in ornate black-and-crimson runed robes, sharp analytical face partially shadowed by his deep hood, piercing glowing emerald eyes locked on the strike with absolute concentration. He holds his glowing crystalline grimoire open, holographic s-expression maps and dungeon probes still floating around him as he observes and confirms the kill.\nIn the foreground and mid-ground, the Shadowdancer — a lithe, deadly feminine assassin in flowing dark shadowsilk cloak and tactical gear — is captured mid-strike, leaping with graceful lethality, dual glowing energy daggers plunged deep into the heart of a massive collapsing boss entity (made of corrupted code, tangled failures, and shadowy manifestations). The boss is shattering dramatically into emerald-green particles and dissolving.\nThe scene powerfully conveys the datamancy principle: the Inquisitor has done the heavy mapping and planning work, now calmly watching the Shadowdancer execute the flawless kill. Dramatic volumetric lighting with strong god rays, deep dramatic shadows, rich crimson and vibrant emerald particle effects. Highly detailed, solemn, and triumphant atmosphere — \"slow is smooth, smooth is fast.\"\nEpic fantasy illustration with cyberpunk and arcane code elements, cinematic composition.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/shadowdancer-strike/99201a91-b8db-43f7-9be7-d3dd0e3f54f0.jpg",
+      "https://img.algebraic-intelligence.dev/shadowdancer-strike/b808e9bd-5d4e-465c-9ab8-8c915a34ed99.jpg",
+      "https://img.algebraic-intelligence.dev/shadowdancer-strike/c0ffe74a-7e2c-43b6-a495-29d3612f05e0.jpg",
+      "https://img.algebraic-intelligence.dev/shadowdancer-strike/d2cdcb73-1152-4b03-8a2a-c7e0f9100394.jpg"
     ]
   },
   "sin-city-noir": {
@@ -588,6 +855,91 @@
       "https://img.algebraic-intelligence.dev/stained-glass/f45eee45-ba42-424f-bff7-d7022a3fb86f.jpg"
     ]
   },
+  "the-college": {
+    "prompt": "A majestic, epic scene rendered in a grand classical-fantasy illustration style: the Inquisitor and the Shadowdancer standing together on the steps of the Aetherium Datavatum — the ancient and illustrious College of the Datamancers.\nThe Aetherium Datavatum is a towering, monumental academy-temple carved from glowing marble and dark stone, with massive columns covered in intricate glowing runes, vast libraries visible through arched windows, floating holographic s-expressions drifting in the air, and ethereal emerald energy flowing through its architecture like living knowledge.\nThe Inquisitor stands tall and commanding as a master datamancer — hooded in ornate black-and-crimson robes richly embroidered with glowing golden runes and sigils, sharp analytical face partially shadowed by his deep hood, piercing glowing emerald eyes. He holds a glowing crystalline grimoire open while gesturing with authoritative wisdom as he instructs.\nBeside him, the Shadowdancer is a lithe, deadly graceful feminine operative in dark flowing shadowsilk cloak and tactical gear, dual glowing energy daggers held low in perfect ready stance, faint emerald shadow tendrils swirling elegantly around her.\nDramatic volumetric lighting with god rays piercing through the grand arches, rich marble textures, deep crimsons, glowing emeralds, and golden accents. Floating subtle s-expressions and Clojure-style parentheses drift like sacred academic wards and spells throughout the scene. Solemn, powerful, and awe-inspiring atmosphere of ancient arcane scholarship and disciplined mastery.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/the-college/0606e0e7-80ca-419b-aa86-a42a2061a609.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/0f5ed95d-b5b1-464b-abb5-9c4bfa55c0ba.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/206e0551-2bf2-4a49-ade1-9789c7269367.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/3545b427-a7f7-46ed-afbb-461092ff5669.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/3d6b34e5-f24f-45e4-beb5-099e57e1e771.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/5db69104-34a8-441c-ab24-e867086e1723.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/5f673bc9-3d2c-446c-894b-49c46569562c.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/677fecc8-0582-48b7-b5a0-805f84f0750e.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/6d16ddd6-33fe-4369-9087-f5cef2a6e982.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/795ebd95-b10f-4fe2-8539-ac18a0d2b41c.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/8505fc14-3f19-4c8a-9408-4d7c9cb5e92f.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/8f66d701-9748-43e3-9a72-f8de3c3df179.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/92bda452-46b8-45c5-84eb-12601fe32599.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/9330ebbd-d18f-4e73-88c2-4fa20a7d006f.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/9dda0487-9e8c-42b0-b998-08bcc6659874.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/a154b7d2-ef1e-4795-9bba-fb343cdc5650.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/be119e49-f28d-4b76-8c2a-126de686592a.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/c7633eac-dfa6-4af3-8607-4c812afced5c.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/ca9f9be8-48ea-40cd-862d-27d18ff550f2.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/d353fc56-313d-4bb8-86a2-43f8002176c9.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/d7eda82d-ef07-4f4d-961e-73e7141c8fe6.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/f34098cd-2b3b-417c-8d37-d772620211b3.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/f6487e08-94c0-4fbe-a4d6-99c00745c0d0.jpg",
+      "https://img.algebraic-intelligence.dev/the-college/f72e9767-f905-4024-9802-a337f960aa4d.jpg"
+    ]
+  },
+  "the-fifties": {
+    "prompt": "A dramatic scene rendered in the bold, iconic 1950s illustration style — mid-century modern sci-fi, atomic age, and vintage pulp magazine aesthetics.\nThe Inquisitor stands tall and commanding as a hooded master tactician in sharp black-and-crimson tailored robes embroidered with glowing esoteric runes, sharp analytical face partially shadowed by his hood, intense piercing emerald eyes. He holds a sleek crystalline grimoire while gesturing decisively with precise authority.\nBeside him, the Shadowdancer is a lithe, lethally elegant feminine assassin in sleek dark shadowsilk cloak and tailored tactical gear, dual glowing energy daggers held low in perfect ready stance, faint emerald shadow tendrils swirling.\nThey are positioned inside a vast, geometric ancient code-dungeon with clean atomic-age brutalist stone architecture and subtle glowing emerald s-expressions / Clojure parentheses floating like futuristic diagrams. Bold graphic lines, strong dramatic lighting with heavy shadows and bright highlights, rich limited color palette of deep blacks, crimsons, emeralds, and metallic silvers. Stylized yet realistic 1950s illustration aesthetic with atomic-age power and mystery, solemn and commanding mood.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/the-fifties/15b495e4-159a-417b-882e-b4f692fb6753.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/3930e941-7cc1-40f7-b355-f394690a681b.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/4c58d3f4-468c-4222-8f75-724db44be41e.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/4ed6d79a-2eff-49ff-9692-11130ed0e646.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/5cc38012-34b0-46ff-a58b-5a99d67e607e.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/6d1d48d9-7d85-4cd9-bef0-6c0677dc6b00.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/b4b7a229-dd8b-4d47-b4c0-ab576a4d4180.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/d4716535-c64e-424e-b350-6270b6cdbac4.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/dbd7a1f0-de4e-48e0-91dd-a1b411c3b504.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/f1b40c7b-70ba-4c57-b66b-39c6792b3d12.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/f6d33bf4-8c85-4502-852f-76051424faa2.jpg",
+      "https://img.algebraic-intelligence.dev/the-fifties/fcf66741-86b5-4dbe-916a-63810121c399.jpg"
+    ]
+  },
+  "the-seventies": {
+    "prompt": "A dramatic scene rendered in the groovy, cinematic 1970s style — blending gritty 70s fantasy, blaxploitation edge, psychedelic rock poster art, and early cyberpunk vibes.\nThe Inquisitor stands as a tall, commanding hooded figure in ornate but worn black-and-crimson robes with glowing runes and sigils, sharp analytical face partially shadowed, piercing glowing emerald eyes. He holds a glowing crystalline grimoire and gestures with intense, deliberate authority.\nBeside him, the Shadowdancer is a fierce, lithe feminine assassin in dark flowing shadowsilk cloak and stylish 70s tactical gear, dual glowing energy daggers held low in perfect ready stance, thick emerald shadow tendrils swirling with dangerous energy.\nThey stand deep inside a vast, moody ancient code-dungeon with textured stone, warm neon-like emerald glows, and subtle s-expressions / Clojure parentheses drifting like psychedelic smoke. Rich saturated 70s color palette with deep blacks, crimsons, vibrant emeralds, and warm golds. Dramatic cinematic lighting, slight film grain, powerful and atmospheric 1970s fantasy/sci-fi mood.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/the-seventies/28d76aa4-85ba-4261-b916-490235234bc9.jpg",
+      "https://img.algebraic-intelligence.dev/the-seventies/4217f05f-f9b8-4ac1-9a12-84a0fbd79105.jpg",
+      "https://img.algebraic-intelligence.dev/the-seventies/6ea9d702-9db8-4466-ac4d-ad578aaec5cb.jpg",
+      "https://img.algebraic-intelligence.dev/the-seventies/78be0738-e20e-47d4-ae46-1935035204c5.jpg",
+      "https://img.algebraic-intelligence.dev/the-seventies/948ac8c3-1037-4244-97ca-f2f29e3cec4c.jpg",
+      "https://img.algebraic-intelligence.dev/the-seventies/dabce50e-5d7a-4fb6-b7a6-ce3eb8cf636c.jpg",
+      "https://img.algebraic-intelligence.dev/the-seventies/e308d0dc-0a2f-4849-aec1-0d628f02ffa3.jpg"
+    ]
+  },
+  "the-sixties": {
+    "prompt": "A dramatic scene rendered in the bold, stylish 1960s contemporary illustration style — think mid-century modern meets psychedelic sci-fi and vintage spy thriller aesthetics.\nThe Inquisitor stands as a tall, commanding hooded figure in sharp black-and-crimson tailored robes with glowing esoteric runes, sharp analytical face partially shadowed by his hood, intense piercing emerald eyes. He holds a sleek crystalline grimoire tablet while gesturing decisively with authority, radiating calculated intellect.\nBeside him, the Shadowdancer is a lithe, deadly elegant feminine assassin in sleek dark shadowsilk cloak and tactical gear with mod 60s tailoring, dual glowing energy daggers held low in perfect ready stance, faint emerald shadow tendrils swirling with lethal grace.\nThey stand together inside a vast, geometric ancient code-dungeon with clean brutalist-inspired stone architecture and subtle glowing emerald s-expressions / Clojure parentheses floating like cosmic diagrams. Bold graphic lines, high-contrast dramatic lighting with strong shadows and vibrant accents, rich but limited color palette of deep blacks, crimsons, emeralds, and metallic golds. Stylized yet realistic 1960s illustration aesthetic with slight psychedelic edge, powerful and mysterious mood.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/the-sixties/1952477b-58e6-4839-9a5b-cdea70fc9a22.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/204c9b4c-058e-4c03-a99a-6ad0c18379ea.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/2b512384-5373-463e-99c3-26984aa62ff3.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/2bd5c931-66f6-4300-9e01-1c0f56b31f54.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/30c0e1d8-aae4-4966-8e69-0ca2e2a77b6d.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/316f6375-4bf2-4e4d-80e5-3d66fdecf402.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/69cdffd6-371c-4f48-b48c-d3d93076d7a7.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/69f7120c-1ba8-4184-997f-ca08fa9892dc.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/908eace4-4e67-4169-9e17-ff5be6740a79.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/9d95dfe5-2beb-494e-b0c4-7f2d9f90492c.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/ac28ddc8-8b94-417f-90a5-673098aa4c66.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/b2dfcd70-5ef0-4463-82f9-6191f7af71e1.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/b74f3b94-5c4f-4232-9fbf-80f94394163e.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/bd48ea26-b9f8-409c-9dd5-5d6a57c87ea2.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/d40850f3-4992-41e5-82f3-44abc0f9bcac.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/d69d5e8e-969f-4036-9118-534a7a303aca.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/e38dd36b-2ebd-45f9-8e2e-fd95d918dec8.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/f1051dfa-6e18-411a-b9ad-037b6b65778f.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/f1828ed7-d914-4d1a-be32-0b610a74e6b1.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/f6dfcc75-2956-44fe-9199-55065a3d0972.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/f894e0e0-4385-4881-ba4f-3e54d9bd732b.jpg",
+      "https://img.algebraic-intelligence.dev/the-sixties/fa00ffc9-87ce-475d-8fee-64e83b1f5cda.jpg"
+    ]
+  },
   "tyranny": {
     "prompt": "A dramatic scene in the exact painterly stylized art style of Obsidian's Tyranny (2016): the Inquisitor and the Shadowdancer working in perfect sync deep inside a vast, war-torn ancient code dungeon with monumental ruined architecture, cracked stone, and faint magical glows.\n\nThe Inquisitor is a tall, commanding Fatebinder-like figure — sharp analytical face partially shadowed by a deep hood, intense glowing emerald eyes, wearing ornate but battle-worn black-and-crimson tactical robes with glowing Latin runes and cryptographic sigils, every surface showing dents, nicks, and age. He stands like a master enforcer, one hand holding a floating crystalline grimoire projecting subtle holographic s-expression maps and precise strike plans, the other gesturing with calm authority as he issues exact instructions.\n\nThe Shadowdancer is a lithe, deadly agile operative in a flowing high-tech shadowsilk cloak and tactical gear with glowing emerald accents, dual energy daggers drawn but held low in perfect ready stance. She listens with lethal focus, faint emerald shadow tendrils swirling as she prepares the flawless execution.\n\nSubtle emerald s-expressions and Clojure-style parentheses glow faintly like arcane runes etched into the war-torn walls. Painterly textures, sharp stylized lines, rich but muted color palette with deep shadows and dramatic rim lighting, high detail, solemn and powerful atmosphere, in the exact visual style of Tyranny by Obsidian — surreal grimdark fantasy with painted illustrative quality, war-weary details, and artistic elegance.",
     "images": [
@@ -618,6 +970,21 @@
       "https://img.algebraic-intelligence.dev/tyranny/ed461a92-251e-4fae-a8a4-067c519d93da.jpg",
       "https://img.algebraic-intelligence.dev/tyranny/fd5ed7c6-b129-49d1-b862-1317324827c6.jpg",
       "https://img.algebraic-intelligence.dev/tyranny/fdec15bb-6797-426d-93bb-3b644b5a770b.jpg"
+    ]
+  },
+  "warhammer-40k": {
+    "prompt": "A dramatic scene in the dark, gothic sci-fantasy style of Warhammer 40,000: the Inquisitor and Shadowdancer in a vast decaying code-dungeon cathedral.\nThe Inquisitor in ornate black-and-crimson inquisitorial robes with glowing runes and purity seals, hooded sharp face, glowing emerald eyes, holding a grimoire and pointing commandingly. The Shadowdancer as a deadly rogue operative in dark tactical shadowsilk, dual glowing daggers ready.\nSubtle emerald s-expr glyphs in the gothic architecture. Dramatic low-key lighting, heavy gothic ornamentation, crimson and emerald accents, grim and oppressive atmosphere, in the style of Warhammer 40k artwork.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/warhammer-40k/4bb95a31-4912-4118-809b-ee8e9f4bca88.jpg",
+      "https://img.algebraic-intelligence.dev/warhammer-40k/515bb663-75ac-4e98-af84-e062b7af057d.jpg",
+      "https://img.algebraic-intelligence.dev/warhammer-40k/62f28f7a-af7c-40fe-be3d-a7bf39f32d4b.jpg",
+      "https://img.algebraic-intelligence.dev/warhammer-40k/6b206d23-6ed5-4aa2-bb08-3ccca453a958.jpg",
+      "https://img.algebraic-intelligence.dev/warhammer-40k/73c12266-fd85-4259-8939-ce1d900961fc.jpg",
+      "https://img.algebraic-intelligence.dev/warhammer-40k/a8fc9e82-52e8-4a9b-84e5-33a06aaedbe9.jpg",
+      "https://img.algebraic-intelligence.dev/warhammer-40k/b6c69720-c6d8-41a9-b665-cfa724441921.jpg",
+      "https://img.algebraic-intelligence.dev/warhammer-40k/be8d62d3-ff96-46aa-ab7c-70c8dc7050b0.jpg",
+      "https://img.algebraic-intelligence.dev/warhammer-40k/cd64343c-de02-4987-8c9d-1c07a998c02b.jpg",
+      "https://img.algebraic-intelligence.dev/warhammer-40k/dae8349f-d2db-44e8-a4df-e68b3145c34b.jpg"
     ]
   },
   "world-of-warcraft": {
