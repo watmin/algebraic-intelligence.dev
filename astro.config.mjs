@@ -297,6 +297,18 @@ export default defineConfig({
                 { slug: "blog/story/series-006-032-rendezvous-is-a-capability" },
               ],
             },
+            // Coherence as the engine: keyword arguments turn out to be a record
+            // the substrate already had — defn mints it, and it inherits the whole
+            // record surface for free. The same legibility makes the language
+            // writable cold by a model: correct code as the path of least
+            // resistance, for carbon and silicon alike (arc 260).
+            {
+              label: "Coherence Is the Engine",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-006-033-the-arguments-were-a-record" },
+              ],
+            },
             { slug: "blog/story/epilogue" },
           ],
         },
