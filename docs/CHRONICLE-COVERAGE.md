@@ -18,21 +18,77 @@ that repo's row (frontier post + the source commit/arc it reaches) and re-stamp
 the date. There is nothing else to maintain — the row points at git; git is the
 truth.
 
-**Last reconciled:** 2026-06-09 — caught two stale rows: `datamancy.dev` was falsely "~current" (the whole primer/craft layer was un-narrated → now `series-008-003 "Extirpare"`); `holon-lab-trading` BOOK served at IX (→ synced to XI + the FPGA addendum); the arc-170 realizations page synced 12.5k → 15.3k (through song #82).
+**Last reconciled:** 2026-06-17 — the big one. (1) **wat-rs: an entire post-249
+era (arcs 250→285) is uncovered** (the migration, arc 251, is mid-era and still in flight) — the chronicle's wat-rs frontier is still
+`series-006-030` / arc 249; series-007/008 narrate *datamancy*, not these arcs. Source
+HEAD `524bf9a9` (06-06) → `26b088b5` (06-17). This is the next era to narrate (see the
+gap section below for the post slate). (2) **BOOK** served through XII → now **XIV
+"Crucibulum"** (mirror refreshed). (3) **arc-170 realizations** synced through song #82 →
+**#97 "Misery"** (16.4k lines). (4) all repos took an **Apache-2.0** relicense commit
+(06-17); `datamancy` stays **frozen MIT 1.0.0**. (5) **scratch** grew the `2026/06`
+verification-market thread (001 metered-eval → 004 VM-attestation) — drafting source, not
+yet a narrated subject.
+
+*Prior (2026-06-09):* caught `datamancy.dev` un-narrated craft → `series-008-003
+"Extirpare"`; BOOK IX → XI; realizations 12.5k → 15.3k (song #82).
 
 ## The coverage table
 
 | Repo | Role vs the chronicle | Source HEAD @ reconcile | Chronicle frontier | Gap |
 |---|---|---|---|---|
-| `algebraic-intelligence.dev` | **The chronicle itself** | `9d76734` (06-05) | — (it *is* the record) | — |
-| `wat-rs` | Substrate — the live edge | `524bf9a9` (06-06, arc 251 in flight — the great migration, `src/value/` lifts) | **arc 245-reopen** · era **"The Shape Keeps Its Promise"** (`series-006-025`…`030`; the coda "What the Bar Missed" narrates the full clear + INSCRIPTION-II) | arc 251 (the migration) — in flight, not yet narratable |
+| `algebraic-intelligence.dev` | **The chronicle itself** | `6cba90d` (06-17) | — (it *is* the record) | — |
+| `wat-rs` | Substrate — the live edge | `26b088b5` (06-17) | **arc 245-reopen** · era **"The Shape Keeps Its Promise"** (`series-006-025`…`030`; the coda "What the Bar Missed" narrates the full clear + INSCRIPTION-II) | **WIDE OPEN — the post-migration era, arcs 250→285** (see gap section). Shipped + narratable: 260 kwargs-are-macros · 272 rendezvous-as-capability · 277 the self-fixing toolchain (THE SWEEP) · 279/281/284 format+span+interpolate · 282/283 wat-fix-over-Rust. **In flight (NOT yet narratable):** 251 the great migration (a few syntax fixes remain) · 278/285 the rete engine |
 | `holon-rs` | The Rust port | `530650c` (05-22, arc 230) | series-003 (`the-rust-port` → `engrams`) + Implementations/Rust | commit-frontier not pinned; repo quiet since 05-22 |
 | `holon-lab-ddos` | DDoS / XDP scrubber | `b4eed24` (03-08) | series-004 (L7) + series-005 (spectral firewall) + Labs/DDoS | none active; repo quiet since 03-08 |
-| `holon-lab-trading` | Trading lab + **BOOK true source** | `923eb62` (06-10, BOOK Interm. XII "Contumacia") | series-006-001/002/003; the BOOK serves via `mirror-monoliths` → raw whole `/blog/book.md` + **rendered per-chapter pages** in the sidebar (**through XII, 06-10**) | story covers the lab; the BOOK/intermissions serve raw + rendered, not chronicle-narrated |
+| `holon-lab-trading` | Trading lab + **BOOK true source** | `55e8c90` (06-17; BOOK Interm. **XIV "Crucibulum"**, `ef9f28b`) | series-006-001/002/003; the BOOK serves via `mirror-monoliths` → raw whole `/blog/book.md` + **rendered per-chapter pages** in the sidebar (**through XIV, 06-17** — 100 chunks) | story covers the lab; the BOOK/intermissions serve raw + rendered, not chronicle-narrated |
 | `datamancy` | Signed **MCP kernel** (frozen) | `7c2a0d5` (05-30, **1.0.0 frozen forever**) | series-007 (The Signed Record) | none — frozen by design |
 | `datamancy.dev` | Grimoire publish source | `4efd8ce` (06-07, publish `2026-06-07T05-32-10Z`) | series-007 + **008-001** + **008-002 "Vigil"** (the watch) + **008-003 "Extirpare"** (the primer layer — recolligere/curare/examinare/extirpare) | **un-narrated craft:** the censor lineage (recensere→excusare), consonare Rules 11/12/13, mora's 2nd axis — a future Command Channel post |
 | `datamancer.dev` | Pinned-key trust domain | `98a034c` (05-30) | series-007-001 (`the-hinge`) + index.mdx | ~current |
-| `scratch` | **Drafting source** (arcs / songs / intermissions) | `1bbe746` (scratch 024) | not a narrated subject — its arcs *become* posts | n/a (source, not subject) |
+| `scratch` | **Drafting source** (arcs / songs / intermissions) | `b89bb66` (06-17; `2026/06/001`→`004` verification-market thread) | not a narrated subject — its arcs *become* posts | n/a (source, not subject) |
+
+## The next era — arcs 250→285 (the wide-open gap, surveyed 2026-06-17)
+
+The chronicle's wat-rs narration stops at arc 249 (`series-006-030`). Everything since
+is unnarrated — a full era, almost all of it shipped in the 06-11→06-17 burst. Candidate
+posts, **shipped-first** (each is hash-checkable in `wat-rs/docs/arc/2026/06/`). NB the
+migration itself (arc 251) is **NOT done — in flight, a few syntax fixes remain** — so it
+is *not* in the shippable batch; it's the era's spine, narratable only once it lands (see
+the in-flight list at the end).
+
+- **B — Kwargs Are a Macro (arc 260).** *"If you want kwargs, you don't — you write a
+  macro."* kwargs as compile-time sugar over a lean positional primitive, zero runtime
+  cost; intrinsic-native kwargs annihilated, not deferred. Tight, one-principle post.
+  Source: `260-keyword-args/REALIZATIONS.md`.
+- **C — Rendezvous Is a Capability (arc 272).** The `c0b3bb` "flake" (two tests racing one
+  fixed abstract-UDS name) → the recognition that a fixed name is collidable + forgeable →
+  the pivot: all rendezvous is inherited parent→child lineage (a capability, never a
+  name); mutual `SO_PEERCRED` pid+uid trust. The security spine. Source:
+  `272-rendezvous-inherited-capability/REALIZATIONS.md`.
+- **D — The Self-Fixing Toolchain / THE SWEEP (arc 277).** `wat-lint → wat-fix → wat-fmt`,
+  all wat, run on wat; the gap→tool→rule loop; the proof is the git diff from gross to
+  clean, *by the toolchain the code is part of* (the linter's first catch is its own
+  author's hand). Today's headline. Source: `277-wat-lint-fix-fmt/SELF-FIXING-TOOLCHAIN.md`.
+- **E — Borrowed Eyes (arcs 281→283).** `ast-end-span` (the keystone for any auto-fix) →
+  `wat-fix` reaching into its own **Rust** substrate (borrowed `rustc_lexer` eyes + wat
+  rules) → the `SourceFile → :wat::source::File` dogfood rename. The toolchain turning on
+  its own floor. Pairs with D or stands alone.
+**Still in flight — narratable only when they land (NOT this batch):**
+
+- **arc 251 — The Great Migration.** Typed Clojure on Rust: the surface-syntax flip, the
+  `src/value/` lifts, the on-demand comment-faithful syntax fixers (`fix-text`). The era's
+  spine, but **not done — a few syntax fixes remain** (builder, 06-17). The biggest story;
+  hold it until the flip lands.
+- **arcs 278/285 — The Rete Engine.** Clara as a *functionality* reference (not
+  parity-with-flaws); `rpds` persistent map/vector; the pure-RHS doctrine (IO in the
+  bookends only). Stones 0a/0b/1a shipped, 1b strike-ready — "the engine being built," not
+  done. The era's *next* post once it completes.
+
+Likely first batch (the "3–6 pages"), all **shipped + self-contained**: **D** (the
+self-fixing toolchain — shipped today, strongest) · **C** (rendezvous-as-capability — the
+security pivot) · **B** (kwargs-are-a-macro — the tight principle) · **E** (borrowed eyes —
+the toolchain over its own Rust). Each chronicle post still owes its `## Likely
+Contributions to the Field` close + a nav wire-in + (per process) a consonare cold-read
+MATCHES before it's done.
 
 ## The gap — CLOSED 2026-06-05 (`9d76734`)
 
