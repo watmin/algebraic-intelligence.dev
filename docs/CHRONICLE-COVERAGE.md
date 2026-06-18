@@ -37,7 +37,7 @@ yet a narrated subject.
 | Repo | Role vs the chronicle | Source HEAD @ reconcile | Chronicle frontier | Gap |
 |---|---|---|---|---|
 | `algebraic-intelligence.dev` | **The chronicle itself** | `6cba90d` (06-17) | — (it *is* the record) | — |
-| `wat-rs` | Substrate — the live edge | `26b088b5` (06-17) | **arc 245-reopen** · era **"The Shape Keeps Its Promise"** (`series-006-025`…`030`; the coda "What the Bar Missed" narrates the full clear + INSCRIPTION-II) | **WIDE OPEN — the post-migration era, arcs 250→285** (see gap section). Shipped + narratable: 260 kwargs-are-macros · 272 rendezvous-as-capability · 277 the self-fixing toolchain (THE SWEEP) · 279/281/284 format+span+interpolate · 282/283 wat-fix-over-Rust. **In flight (NOT yet narratable):** 251 the great migration (a few syntax fixes remain) · 278/285 the rete engine |
+| `wat-rs` | Substrate — the live edge | `26b088b5` (06-17) | era **"The Self-Fixing Toolchain"** (`series-006-031` "The Tools That Fix Themselves" — arcs **275, 277, 279, 281, 284**: deporder's strange loop → format → ast-end-span → the surgical fix → the dead end → interpolate + the sweep) | **Still open: 260** kwargs-are-macros · **272** rendezvous-as-capability · **282/283** wat-fix-over-Rust (borrowed eyes). **In flight (NOT yet narratable):** 251 the great migration (a few syntax fixes remain) · 278/285 the rete engine |
 | `holon-rs` | The Rust port | `530650c` (05-22, arc 230) | series-003 (`the-rust-port` → `engrams`) + Implementations/Rust | commit-frontier not pinned; repo quiet since 05-22 |
 | `holon-lab-ddos` | DDoS / XDP scrubber | `b4eed24` (03-08) | series-004 (L7) + series-005 (spectral firewall) + Labs/DDoS | none active; repo quiet since 03-08 |
 | `holon-lab-trading` | Trading lab + **BOOK true source** | `55e8c90` (06-17; BOOK Interm. **XIV "Crucibulum"**, `ef9f28b`) | series-006-001/002/003; the BOOK serves via `mirror-monoliths` → raw whole `/blog/book.md` + **rendered per-chapter pages** in the sidebar (**through XIV, 06-17** — 100 chunks) | story covers the lab; the BOOK/intermissions serve raw + rendered, not chronicle-narrated |
@@ -64,10 +64,12 @@ the in-flight list at the end).
   the pivot: all rendezvous is inherited parent→child lineage (a capability, never a
   name); mutual `SO_PEERCRED` pid+uid trust. The security spine. Source:
   `272-rendezvous-inherited-capability/REALIZATIONS.md`.
-- **D — The Self-Fixing Toolchain / THE SWEEP (arc 277).** `wat-lint → wat-fix → wat-fmt`,
-  all wat, run on wat; the gap→tool→rule loop; the proof is the git diff from gross to
-  clean, *by the toolchain the code is part of* (the linter's first catch is its own
-  author's hand). Today's headline. Source: `277-wat-lint-fix-fmt/SELF-FIXING-TOOLCHAIN.md`.
+- **D — The Self-Fixing Toolchain / THE SWEEP (arcs 275, 277, 279, 281, 284). ✅ SHIPPED
+  2026-06-17** as `series-006-031` "The Tools That Fix Themselves" (era "The Self-Fixing
+  Toolchain") — consonare MATCHES @ 9. `wat-lint → wat-fix → wat-fmt`, all wat, run on wat;
+  the strange loop at birth (deporder); the gap→tool→rule loop; the proof is the git diff
+  from gross to clean, *by the toolchain the code is part of*. Folded in the whole lineage
+  (275 strange loop · 279 format · 281 ast-end-span · 284 interpolate), not just 277.
 - **E — Borrowed Eyes (arcs 281→283).** `ast-end-span` (the keystone for any auto-fix) →
   `wat-fix` reaching into its own **Rust** substrate (borrowed `rustc_lexer` eyes + wat
   rules) → the `SourceFile → :wat::source::File` dogfood rename. The toolchain turning on
@@ -83,12 +85,13 @@ the in-flight list at the end).
   bookends only). Stones 0a/0b/1a shipped, 1b strike-ready — "the engine being built," not
   done. The era's *next* post once it completes.
 
-Likely first batch (the "3–6 pages"), all **shipped + self-contained**: **D** (the
-self-fixing toolchain — shipped today, strongest) · **C** (rendezvous-as-capability — the
-security pivot) · **B** (kwargs-are-a-macro — the tight principle) · **E** (borrowed eyes —
-the toolchain over its own Rust). Each chronicle post still owes its `## Likely
-Contributions to the Field` close + a nav wire-in + (per process) a consonare cold-read
-MATCHES before it's done.
+First batch (the "3–6 pages"), all **shipped + self-contained**: ~~D~~ ✅ (the self-fixing
+toolchain — shipped 06-17, consonare 9) · **C** (rendezvous-as-capability — the security
+pivot) · **B** (kwargs-are-a-macro — the tight principle) · **E** (borrowed eyes — the
+toolchain over its own Rust, arcs 282/283). **Remaining: C, B, E.** Each owes its `## Likely
+Contributions to the Field` close + a nav wire-in + a consonare cold-read MATCHES before
+it's done — and each should **harvest its arcs' REALIZATIONS.md**, not just the headline
+(D folded in 5 arcs' findings; the realizations are the substance the strip-test demands).
 
 ## The gap — CLOSED 2026-06-05 (`9d76734`)
 
