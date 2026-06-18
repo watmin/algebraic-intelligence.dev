@@ -273,6 +273,18 @@ export default defineConfig({
                 { slug: "blog/story/series-006-030-what-the-bar-missed" },
               ],
             },
+            // The era after The Shape Keeps Its Promise: the wards stop being
+            // hand-cast and become a toolchain — wat-lint/fix/fmt, in wat, run on
+            // wat — that finds bad forms and rewrites them. The proof is the diff
+            // of the toolchain cleaning its own source (arcs 275→284); the strange
+            // loop closed at birth (deporder flagging its own author).
+            {
+              label: "The Self-Fixing Toolchain",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-006-031-the-tools-that-fix-themselves" },
+              ],
+            },
             { slug: "blog/story/epilogue" },
           ],
         },
