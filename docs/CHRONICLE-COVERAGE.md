@@ -37,7 +37,7 @@ yet a narrated subject.
 | Repo | Role vs the chronicle | Source HEAD @ reconcile | Chronicle frontier | Gap |
 |---|---|---|---|---|
 | `algebraic-intelligence.dev` | **The chronicle itself** | `6cba90d` (06-17) | — (it *is* the record) | — |
-| `wat-rs` | Substrate — the live edge | `26b088b5` (06-17) | era **"The Self-Fixing Toolchain"** (`series-006-031` "The Tools That Fix Themselves" — arcs **275, 277, 279, 281, 284**: deporder's strange loop → format → ast-end-span → the surgical fix → the dead end → interpolate + the sweep) | **Still open: 260** kwargs-are-macros · **272** rendezvous-as-capability · **282/283** wat-fix-over-Rust (borrowed eyes). **In flight (NOT yet narratable):** 251 the great migration (a few syntax fixes remain) · 278/285 the rete engine |
+| `wat-rs` | Substrate — the live edge | `26b088b5` (06-17) | era **"The Self-Fixing Toolchain"** (`series-006-031` — arcs **275/277/279/281/284**) · era **"The Unforgeable Reference"** (`series-006-032` "Rendezvous Is a Capability" — arc **272**: forgeable name → annihilate → ocap → the immune-system catch → the honest retraction) | **Still open: 260** kwargs-are-macros · **282/283** wat-fix-over-Rust (borrowed eyes). **In flight (NOT yet narratable):** 251 the great migration (a few syntax fixes remain) · 278/285 the rete engine |
 | `holon-rs` | The Rust port | `530650c` (05-22, arc 230) | series-003 (`the-rust-port` → `engrams`) + Implementations/Rust | commit-frontier not pinned; repo quiet since 05-22 |
 | `holon-lab-ddos` | DDoS / XDP scrubber | `b4eed24` (03-08) | series-004 (L7) + series-005 (spectral firewall) + Labs/DDoS | none active; repo quiet since 03-08 |
 | `holon-lab-trading` | Trading lab + **BOOK true source** | `55e8c90` (06-17; BOOK Interm. **XIV "Crucibulum"**, `ef9f28b`) | series-006-001/002/003; the BOOK serves via `mirror-monoliths` → raw whole `/blog/book.md` + **rendered per-chapter pages** in the sidebar (**through XIV, 06-17** — 100 chunks) | story covers the lab; the BOOK/intermissions serve raw + rendered, not chronicle-narrated |
@@ -86,9 +86,9 @@ the in-flight list at the end).
   done. The era's *next* post once it completes.
 
 First batch (the "3–6 pages"), all **shipped + self-contained**: ~~D~~ ✅ (the self-fixing
-toolchain — shipped 06-17, consonare 9) · **C** (rendezvous-as-capability — the security
-pivot) · **B** (kwargs-are-a-macro — the tight principle) · **E** (borrowed eyes — the
-toolchain over its own Rust, arcs 282/283). **Remaining: C, B, E.** Each owes its `## Likely
+toolchain — `series-006-031`, consonare 9) · ~~C~~ ✅ (rendezvous-as-capability —
+`series-006-032`, consonare 9) · **B** (kwargs-are-a-macro — the tight principle) · **E**
+(borrowed eyes — the toolchain over its own Rust, arcs 282/283). **Remaining: B, E.** Each owes its `## Likely
 Contributions to the Field` close + a nav wire-in + a consonare cold-read MATCHES before
 it's done — and each should **harvest its arcs' REALIZATIONS.md**, not just the headline
 (D folded in 5 arcs' findings; the realizations are the substance the strip-test demands).
