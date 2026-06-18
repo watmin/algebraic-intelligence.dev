@@ -63,6 +63,72 @@
       "https://img.algebraic-intelligence.dev/boss-kill/09cb807a-2e4d-4270-a537-41f5efa91ec0.jpg"
     ]
   },
+  "cernere": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nFocused, precise composition. The Inquisitor, a tall hooded figure in ornate black-and-crimson runed robes with sharp analytical face partially shadowed by his deep hood and piercing glowing emerald eyes, holds a glowing crystalline grimoire that projects clean valid forms while phantom corrupted structures dissolve. The Shadowdancer, a lithe deadly feminine assassin in dark flowing shadowsilk cloak and tactical gear, stands ready with dual glowing daggers, guarding the boundary.\nBold text at the top: \"CERNERE\"\nBottom text: \"SIFT VALID FORMS FROM PHANTOM • TRACE EVERYTHING TO THE SPEC • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/cernere/160856b0-e206-466f-8545-d810dd2817b7.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/172abd35-38a3-40e7-a17f-6c8c0a90c0c3.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/1a24162a-7867-4c7f-b97c-5fff46f949d3.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/2649100f-a31e-4c4c-a4c3-bc4bf8c964e4.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/29e91212-8daa-447d-900f-c8942ef5aac7.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/2b18f7b6-101c-456b-845a-f3b6cbcaad69.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/675b8ede-d6ad-4b82-bcaa-cf794578e9a7.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/7211a916-12c4-4cac-acb5-e3dd226c7fdf.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/8e51c6bb-e592-4fa6-b207-298b11a01e1e.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/c85fa631-a2de-4cd2-ac13-a8514d0a2801.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/cff658f5-b207-47f9-b5bc-2ef73a158044.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/d4bb6948-9e34-46d7-bbfc-e5fa2a7b8b32.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/dea4bd58-bcdc-4c37-9c18-50b4e6e56804.jpg",
+      "https://img.algebraic-intelligence.dev/cernere/eab68b09-a255-4a9d-a6e2-858262dae09c.jpg"
+    ]
+  },
+  "cernere-ii": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nFocused, precise composition. The Inquisitor stands hooded in black-and-crimson runed robes, holding a glowing grimoire that projects clean valid forms while corrupted phantom structures dissolve around him. The Shadowdancer stands ready with daggers, guarding the boundary between real and phantom.\nBold text at the top: \"CERNERE\"\nBottom text: \"SIFT VALID FORMS FROM PHANTOM • TRACE EVERYTHING TO THE SPEC • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/cernere-ii/1bd429cd-41f7-4565-86b4-cbcd176c51a3.jpg",
+      "https://img.algebraic-intelligence.dev/cernere-ii/222f8648-6eec-43d3-a84e-85af8c77facc.jpg"
+    ]
+  },
+  "circumspicere": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nWide, sweeping composition. The Inquisitor, hooded in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, stands on high ground projecting a broad holographic survey of the battlefield. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, moves through the shadows below with dual glowing daggers ready.\nBold text at the top: \"CIRCUMSPICERE\"\nBottom text: \"LOOK AROUND • SEE WHAT THE INWARD LENSES MISS • CAST LAST • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/circumspicere/2c23e282-0c16-4986-b9c5-ca381a740161.jpg",
+      "https://img.algebraic-intelligence.dev/circumspicere/4772af8b-80f7-428e-a375-49c98d6e638e.jpg",
+      "https://img.algebraic-intelligence.dev/circumspicere/4a29888e-a24b-4a7c-bae5-c5f5a0e6f015.jpg",
+      "https://img.algebraic-intelligence.dev/circumspicere/6a6eb1c6-afa5-4dff-a08a-5cd764930696.jpg",
+      "https://img.algebraic-intelligence.dev/circumspicere/b717f4ed-a4dc-4788-93db-ad17dae54120.jpg",
+      "https://img.algebraic-intelligence.dev/circumspicere/d564e099-4f83-4298-95dd-f5efe1d4a4b0.jpg",
+      "https://img.algebraic-intelligence.dev/circumspicere/d9b6957b-15b8-4379-a80e-af5147adde82.jpg",
+      "https://img.algebraic-intelligence.dev/circumspicere/db4c06b2-876d-472d-b51c-9f7cf029e12c.jpg",
+      "https://img.algebraic-intelligence.dev/circumspicere/f3f44c15-094e-4e98-b18e-f6b27f86f3bb.jpg"
+    ]
+  },
+  "complectens": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nWeaving, layering composition. The Inquisitor, a tall imposing hooded man in ornate black-and-crimson runed robes with sharp stern features partially shadowed by his deep hood and piercing glowing emerald eyes, carefully weaves test layers together while holding his glowing grimoire, ensuring each layer builds only on what is proven above it. The Shadowdancer, a lithe deadly feminine assassin in dark flowing shadowsilk cloak and tactical gear, stands ready with dual glowing daggers to cut any test that tries to one-shot a hard problem.\nBold text at the top: \"COMPLECTENS\"\nBottom text: \"WEAVE TESTS TOGETHER • EACH LAYER PROVEN BY THE ONE ABOVE • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/complectens/0b5d86c5-01f8-428d-a779-c4ab90918958.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/0ea9ff59-a12e-49cb-ba1a-28ebce6d8a4c.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/13a92564-3bee-4492-83e7-552a7512153d.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/510130a7-0110-4209-a15c-f107e271d058.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/65da4a0a-e6a5-45f5-86b0-9077853a957f.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/83493443-6e8c-4425-b810-cd5a49e48224.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/86b942bd-9617-48a7-909b-757ee9586385.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/9a55f4e7-57c3-4e6f-b7fe-c3c7f839a8e6.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/b3964a0b-e739-4ac2-8477-1728c53dcce6.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/c43b6833-b15a-4e72-bb92-1a396a62ddd2.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/c9a1808e-bb01-4d64-9f67-ef8ddc827ca9.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/cc7e69f6-4524-4c08-b83c-ca6d52e174bb.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/ccd2e68d-d415-456f-86d4-2279564abd9b.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/d0380b63-0bc9-481a-a868-d7277c087e0e.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/d5440165-2567-45c2-a921-b9b98488f51d.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/d76af5bf-4a73-4dcd-b186-cd9b8a902bb7.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/d7ed225f-e38a-4dea-8ff1-3ad4a25cbb14.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/ddd122bb-948e-4762-915a-fffef3656914.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/e4c44f68-1b5a-4466-8600-0efc0307309c.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/e561e505-9562-44b1-bcc4-4e18df126e94.jpg",
+      "https://img.algebraic-intelligence.dev/complectens/ebf18662-a0fc-4e59-9e20-ca7ff06fd05f.jpg"
+    ]
+  },
   "conan-frazetta": {
     "prompt": "A raw, muscular 80s sword & sorcery scene in the style of Conan the Barbarian (1982) and Frank Frazetta paintings: the Inquisitor and Shadowdancer in a torch-lit ancient code-dungeon.\nThe Inquisitor, a tall powerful hooded figure in black-and-crimson robes with glowing runes, holds a glowing grimoire and gestures with commanding presence. The Shadowdancer, a fierce agile assassin in dark flowing garbs, stands ready with dual glowing daggers, shadows swirling.\nSubtle emerald arcane symbols on the stone. Dramatic fire-lit atmosphere, rich earthy tones with crimson and emerald highlights, dynamic and heroic 80s fantasy mood.",
     "images": [
@@ -70,6 +136,50 @@
       "https://img.algebraic-intelligence.dev/conan-frazetta/7ebb3f45-b6e0-48de-8e86-93a24f78fc5a.jpg",
       "https://img.algebraic-intelligence.dev/conan-frazetta/f2678233-dd41-4d1b-99d9-7416d4805aa8.jpg",
       "https://img.algebraic-intelligence.dev/conan-frazetta/f758c46e-79cb-4b91-9f82-a5b17410babb.jpg"
+    ]
+  },
+  "conferre": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nConfrontational composition. The Inquisitor in black-and-crimson hooded robes holds the glowing specification in one hand and the implementation in the other, forcing them together as cracks form where they diverge. The Shadowdancer, lithe feminine assassin in dark shadowsilk, stands ready to strike the divergence.\nBold text at the top: \"CONFERRE\"\nBottom text: \"BRING SPEC AND CODE TOGETHER • FIND THE LIES • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/conferre/0bb36680-3804-447c-8708-bbec13390227.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/1849fa75-d242-40d7-b7bc-f4a83701dae5.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/276fcf87-f54c-476b-8136-a5384ceb2b04.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/348b5fb7-7b6c-4276-8723-70d8a36d3a9f.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/51665deb-2de2-4d84-80d9-4502dbe857fa.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/57980a41-980b-4338-a147-26d1f423995d.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/6bc32df1-b2c0-4d04-acdb-d9dfb0677410.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/8dbaa93a-dcd0-4990-8dc4-793270c44bc2.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/9db8fb6b-9481-46c9-b5ce-49d960e1a11e.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/a0f0fb74-8281-4736-8c4a-6c8f901b1e78.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/fb056423-63cd-4e7d-b777-262d836805b4.jpg",
+      "https://img.algebraic-intelligence.dev/conferre/ff15d958-567c-4eba-ae69-e321ede949bf.jpg"
+    ]
+  },
+  "conformare": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nShaping, forging composition. The Inquisitor, a tall hooded figure in ornate black-and-crimson runed robes with sharp analytical face partially shadowed by his deep hood and piercing glowing emerald eyes, stands at an anvil of code, forcefully reshaping error types into a single unbreakable standard while holding his glowing grimoire. The Shadowdancer, a lithe deadly feminine assassin in dark flowing shadowsilk cloak and tactical gear, stands guard with dual glowing daggers.\nBold text at the top: \"CONFORMARE\"\nBottom text: \"SHAPE ERROR TYPES TO A COMMON STANDARD • MAKE THE WRONG SHAPE UNCOMPILABLE • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/conformare/1f0049c4-448b-4510-a106-e9d089d4282f.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/283fec4d-fd84-4ab5-845c-86e93ebf17ef.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/32c1e3fe-3004-49cf-a919-a01ad883ebb4.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/58bc271b-6edf-4a68-87c8-565e5a346c7d.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/70832778-2090-4dc8-a73f-bd09281e2e70.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/7722f71c-3e25-4ee2-ac5d-116606decf96.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/7c733325-3de7-4b8f-8d7b-5cab1c317bab.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/7e648bbc-1406-47b9-ac00-2eb4a2b4a64b.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/86ff76ea-c69f-4ac3-9fbe-fb5dbab47ce4.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/92be97c9-4954-4c96-b35e-719147fd32fa.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/9a6a4ecc-143f-40f5-9e71-2a4897ae50eb.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/a2b4af3d-2e04-4311-98c6-6c43f0d386e7.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/a5bcb3b7-aab3-4c6f-bdb0-18e792483910.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/b032c1fb-fc09-4f11-8dff-45b6a863f8a4.jpg",
+      "https://img.algebraic-intelligence.dev/conformare/b160d838-6571-4ebc-a161-7c709b16b211.jpg"
+    ]
+  },
+  "curare": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nSolemn, wise composition. The Inquisitor tends an ancient glowing chronicle-stone in the archive wing of the Aetherium Datavatum, inscribing hard-won lessons while the Shadowdancer stands guard with daggers ready. Floating emerald s-expressions and subtle Clojure parentheses drift like sacred records.\nBold text at the top: \"CURARE\"\nBottom text: \"TEND THE RECORD • KEEP ONE TRUE BREADCRUMB • PROMOTE THE HARD-WON LESSONS • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting, powerful and aspirational mood.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/curare/1d082ae1-e1d6-467e-85b9-d6a5b0df2b0a.jpg",
+      "https://img.algebraic-intelligence.dev/curare/2e6f982f-a133-41bc-bf85-2b35542a3bdf.jpg"
     ]
   },
   "cyberpunk-2077": {
@@ -295,6 +405,17 @@
       "https://img.algebraic-intelligence.dev/everquest/e4f3e9bb-b765-4bdf-a955-567f6edc5e36.jpg"
     ]
   },
+  "examinare": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nHeroic low-angle composition. The Inquisitor stands as the master mapper — tall hooded figure in black-and-crimson runed robes, sharp analytical face partially shadowed, glowing emerald eyes, holding a glowing grimoire projecting a massive holographic dungeon map. The Shadowdancer sprints forward toward a colossal boss, daggers ready.\nBackground: vast ancient code-dungeon interior with glowing rune pillars and faint falling emerald code. Bold text at the top: \"EXAMINARE\"\nBottom text: \"STUDY THE LAIR • DRAW THE STRIKE • PROVE THE KILL • SLOW IS SMOOTH • SMOOTH IS FAST • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting, powerful and aspirational mood.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/examinare/421fd50e-ebf1-4681-b8fe-e21b352643b1.jpg",
+      "https://img.algebraic-intelligence.dev/examinare/50765143-6556-444c-9603-2d13189dbc6b.jpg",
+      "https://img.algebraic-intelligence.dev/examinare/599f2a0d-af77-4e72-a808-c9c5862a18bd.jpg",
+      "https://img.algebraic-intelligence.dev/examinare/6c7e81c8-c118-4634-8e13-4adacf6b6dc0.jpg",
+      "https://img.algebraic-intelligence.dev/examinare/83be4c25-761b-406b-8a1a-cf0b1ca962f0.jpg",
+      "https://img.algebraic-intelligence.dev/examinare/f89533d7-7b50-4bef-b28e-d28747514355.jpg"
+    ]
+  },
   "examinare-vigilia-dungeon": {
     "prompt": "A powerful 1940s/1950s style propaganda poster with strong US wartime and Soviet constructivist influences, rendered in a vintage Detroit/Gotham industrial aesthetic.\n\nMonumental low-angle composition with dramatic chiaroscuro lighting. The Inquisitor towers as a commanding industrial tactician — sharp analytical face partially hooded, piercing glowing emerald eyes, wearing dark tactical robes with glowing runes and sigils. He points decisively with one powerful hand while holding a glowing crystalline grimoire in the other, projecting subtle holographic s-expression maps and strike plans.\n\nBeside him stands the Shadowdancer — a lithe, lethally focused feminine operative in sleek shadowsilk cloak and tactical gear, dual glowing energy daggers held low in perfect ready stance, faint emerald shadow tendrils swirling.\n\nBackground shows a vast, gritty ancient code-dungeon with massive angular steel and concrete architecture, and faint emerald s-expressions glowing like riveted runes on the monumental walls. Bold crimson, deep black, metallic silver, and emerald color palette. Strong geometric shapes, heroic silhouettes, high-contrast dramatic lighting, illustrated propaganda style with textured paper grain and slight vintage wear.\n\nText at the top in authoritative lettering: \"EXAMINARE • VIGILIA\"\nText at the bottom in strong sans-serif: \"THE INQUISITOR AND THE SHADOWDANCER • CURARE THE RECORD\".\n\nIn the style of classic 1940s-1950s American and Soviet propaganda posters, with dark vintage Detroit/Gotham industrial noir atmosphere, powerful and solemn mood.",
     "images": [
@@ -311,6 +432,53 @@
     "prompt": "A powerful 1940s/1950s style propaganda poster with strong US wartime and Soviet constructivist influences, rendered in a vintage Detroit/Gotham industrial aesthetic.\n\nMonumental low-angle composition with dramatic chiaroscuro lighting. The Inquisitor towers as a commanding industrial tactician — sharp analytical face partially hooded, piercing glowing emerald eyes, wearing dark tactical robes with glowing runes and sigils. He points decisively with one powerful hand while holding a glowing crystalline grimoire in the other, projecting subtle holographic s-expression maps and strike plans.\n\nBeside him stands the Shadowdancer — a lithe, lethally focused feminine operative in sleek shadowsilk cloak and tactical gear, dual glowing energy daggers held low in perfect ready stance, faint emerald shadow tendrils swirling.\n\nBackground shows a vast, gritty code-dungeon factory complex with towering smokestacks, angular steel architecture, and faint emerald s-expressions glowing like riveted runes on massive concrete walls. Bold crimson, deep black, metallic silver, and emerald color palette. Strong geometric shapes, heroic silhouettes, high-contrast dramatic lighting, illustrated propaganda style with textured paper grain and slight vintage wear.\n\nText at the top in authoritative lettering: \"EXAMINARE • VIGILIA\"\nText at the bottom in strong sans-serif: \"THE INQUISITOR AND THE SHADOWDANCER • ONE SHOT • GREEN STONES • CURARE THE RECORD\".\n\nIn the style of classic 1940s-1950s American and Soviet propaganda posters, with dark vintage Detroit/Gotham industrial noir atmosphere, powerful and solemn mood.",
     "images": [
       "https://img.algebraic-intelligence.dev/examinare-vigilia-factory/82e869f9-fff1-4803-aff9-dc47dd50a8a1.jpg"
+    ]
+  },
+  "excusare": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nJudgmental, weighing composition. The Inquisitor in black-and-crimson hooded robes holds a glowing scale, weighing an exemption against present truth. The Shadowdancer, lithe feminine assassin in dark shadowsilk, stands ready to strike weak justifications.\nBold text at the top: \"EXCUSARE\"\nBottom text: \"WEIGH EVERY EXEMPTION • STRIKE WHAT NO LONGER HOLDS • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/excusare/1058c8d4-8c2b-49fb-907c-459e8bdfb93a.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/2ac0b4f1-6035-4d9a-9b32-34bce33cda51.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/2ceb948b-517e-42b7-b3f6-f11f3df3d8ec.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/2e36fa83-e5b3-4fc2-b5a9-ec371223477f.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/4075f541-87c8-404c-97be-154c0fb61229.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/6afbc9eb-6f07-4b3f-a8d9-d69bf667035c.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/738acac4-2447-48a4-8081-4bdd46967931.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/805683c1-ce25-495f-a865-0e6a7720299e.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/8fa72079-c843-451d-b5b1-e197f16cbd13.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/9811a330-9145-4fce-9ed8-73ccb9b86571.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/a011d861-d7ab-43bf-8154-79bce93952ea.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/dcdb020e-3c66-4586-8d51-fd5307bf8abb.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/e1e798eb-5441-492b-89c9-428c62bf6659.jpg",
+      "https://img.algebraic-intelligence.dev/excusare/f6e39cd4-6793-42f6-adde-dac924234f1d.jpg"
+    ]
+  },
+  "exigere": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nDriving, purging composition. The Inquisitor in black-and-crimson hooded robes forcefully expels deferred-work language and TODOs from the code. The Shadowdancer, lithe feminine assassin in dark shadowsilk, stands ready to cut anything that tries to return.\nBold text at the top: \"EXIGERE\"\nBottom text: \"DRIVE OUT DEFERRED-WORK LANGUAGE • SHIP NOW OR BOUND IT • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/exigere/04c9e485-491b-4049-aa1b-a74cede0c0f0.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/0df1b10c-f089-49b5-b842-d26ae4790582.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/1ed85eaf-3d43-4c6a-be3c-40b6d9957583.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/2e6e7dbe-cd4a-484a-8d41-44972640bf53.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/363cea8b-7d4a-4cd2-b9a0-e001e3d3d175.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/480276e3-056e-4333-a384-137d07a718a2.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/533a3415-9f75-45ba-8893-f1348b84a2bc.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/64564a66-6fc6-4d3e-9720-ccc9cafe7af2.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/766c0165-ba12-4a92-b79c-e6827b8d717d.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/7eaf956f-9290-4c4a-9d82-7135aac5a9a4.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/99019844-33bb-4fc2-b07b-5c7e058997cc.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/a3d905f9-4185-4156-933f-41ea02c07acd.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/ac9172c4-bacf-40d4-90f0-44f91d9374ff.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/b502449a-9740-430a-9bba-fe5ea280fe39.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/bca926a9-03e1-4e34-812e-39134437a333.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/becb149f-ad1e-49c8-8a65-b9f89b8a0280.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/c03358da-2053-44d2-b4b9-3cf6bc3985bc.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/d0f55dfc-3b23-4d67-82be-7d67ca8fd175.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/e094811d-c07d-4cb2-a550-6fe2110045eb.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/f0c5740f-44b3-4574-b845-f543c073ebbb.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/f2153d0e-dabf-4dcf-8e84-928947bd9ee3.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/f6e7b20b-055c-4996-9f7c-d7ba449f580a.jpg",
+      "https://img.algebraic-intelligence.dev/exigere/f8730bfd-bb9d-4da4-87e8-fa61170def71.jpg"
     ]
   },
   "extirpare-hooded": {
@@ -429,6 +597,24 @@
     "images": [
       "https://img.algebraic-intelligence.dev/inquisitor-solo/d2365df2-eaa8-4c98-91f2-f4f26383c62d.jpg",
       "https://img.algebraic-intelligence.dev/inquisitor-solo/d33f1cf1-0d9a-40f7-95ec-0d15e0aef6c4.jpg"
+    ]
+  },
+  "intueri": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nContemplative yet intense composition. The Inquisitor, hooded in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, stares deeply into glowing code as if it were alive, seeking whether it speaks truth while holding his grimoire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, stands silently beside him.\nBold text at the top: \"INTUERI\"\nBottom text: \"CONTEMPLATE WHETHER THE CODE SPEAKS • DOES EACH NAME SAY WHAT IT IS? • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/intueri/0d245fac-4305-4934-abc0-761af952cdbd.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/2a898535-8aad-4833-9a60-5a23a63a740f.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/2d448031-45d4-4cb5-8f25-ae1ceebaface.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/2d620098-b11d-4c3d-92c4-ea7fd572f050.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/3099d28e-dd0a-46c6-ba00-dbdc8c9f208b.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/387053d8-d3a0-4711-a6ca-e5693281b15e.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/51d18b19-4408-43e0-aa03-2349bf0ba439.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/56cebfe1-c154-4fb3-91b7-db60e0160a9d.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/5912acb0-0fd1-4a98-9463-9870aceca216.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/77fb3292-93c4-44a0-80b7-0435cb1de044.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/a30b593e-0851-4764-b391-7e8205155702.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/dc387697-85aa-41ab-8ffc-15d57f71c57c.jpg",
+      "https://img.algebraic-intelligence.dev/intueri/f65fc650-6a8a-476d-b0af-074999170de1.jpg"
     ]
   },
   "magic-the-gathering": {
@@ -560,6 +746,19 @@
       "https://img.algebraic-intelligence.dev/mignola-hellboy/d9216f99-08f4-4769-89f2-ba8d93c766c9.jpg"
     ]
   },
+  "mora": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nHunting, patient composition. The Inquisitor, a tall hooded man in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, hunts every pause and wait in the system while holding his grimoire, ensuring nothing sleeps without arriving honestly via the wire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, moves like a predator through the timing gaps with dual glowing daggers.\nBold text at the top: \"MORA\"\nBottom text: \"HUNT THE PAUSE • NO SLEEP WITHOUT THE WIRE • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/mora/231f4653-257c-4da4-b095-2e484a5dee96.jpg",
+      "https://img.algebraic-intelligence.dev/mora/77b0b74a-42b4-4387-8f3e-5ab72bf59d81.jpg",
+      "https://img.algebraic-intelligence.dev/mora/79bf9e36-f975-4ce0-9c66-ef099c7f4ffc.jpg",
+      "https://img.algebraic-intelligence.dev/mora/8254a73b-1e56-4c3c-9d67-2175ee32564f.jpg",
+      "https://img.algebraic-intelligence.dev/mora/85768213-e388-4697-8944-a792db7153f0.jpg",
+      "https://img.algebraic-intelligence.dev/mora/b2e2da14-f833-4129-8214-db2eb94ca243.jpg",
+      "https://img.algebraic-intelligence.dev/mora/d36d91cc-f7ae-4384-a609-aaa3d19a03ac.jpg",
+      "https://img.algebraic-intelligence.dev/mora/f360a857-b941-44ce-85e4-aeb71d85f505.jpg"
+    ]
+  },
   "mucha-cyberpunk": {
     "prompt": "An elegant dark Art Nouveau cyberpunk scene in the ornate flowing style of Alphonse Mucha fused with Blade Runner aesthetics: the Inquisitor and Shadowdancer in a glowing code dungeon.\n\nThe Inquisitor, commanding and analytical with hooded face and emerald eyes, holds a crystalline grimoire and gestures decisively. The Shadowdancer poised elegantly with dual daggers and shadow tendrils. Ornate decorative borders and flowing lines merge with cyber runes.\n\nSubtle emerald s-expressions woven like decorative motifs. Rich jewel tones, dramatic lighting, intricate detail, in the style of Alphonse Mucha meets cyberpunk.",
     "images": [
@@ -596,6 +795,55 @@
       "https://img.algebraic-intelligence.dev/necropolis/fce3ed46-16b4-4f55-9786-656127f2d49f.jpg"
     ]
   },
+  "nesciens": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nSummoning, questioning composition. The Inquisitor, a tall hooded man in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, summons the Nesciens — the one who does not yet know — while holding his grimoire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, stands beside this summoned presence with dual glowing daggers ready to protect the honest reading.\nBold text at the top: \"NESCIENS\"\nBottom text: \"SUMMON THE ONE WHO DOES NOT YET KNOW • MEASURE WHAT CANNOT BE REACHED • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/nesciens/1abab729-f1f6-4bd4-850f-ecd073c77c6b.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/303f7771-303d-4556-a994-fa3ca3e21694.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/3072a9f2-1f72-44b6-a071-1fec86617ea4.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/33951df0-85e8-4b04-8200-70f708eba8c7.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/347e6185-55f4-48c4-a337-6630d8715131.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/3d9133e8-184f-4ae8-b92f-65113912edf2.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/478bd0d9-1e54-4706-aaa3-9cc4ce346ff0.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/5e032f8e-fe28-4fcc-b503-415d40f091bf.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/68219ec4-e0c6-47bb-b4bb-4300d9948317.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/9ca72c33-3b7d-43af-b946-c0a1c7275939.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/9f2c246d-1a51-4025-9354-8ed430235f75.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/a3797906-6a5c-4a6d-b82b-39fd1ecdc91d.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/b668e330-5916-4f3e-b49a-35eb88a9616b.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/bb4f962a-2b33-4fd3-9c62-a6108df1e882.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/be99c511-02b0-493d-86cc-eb483ac46f09.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/d5f886f0-5b4e-406f-bdfe-cf743686b573.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/e64db919-561e-405c-a959-1c3c73c6faea.jpg",
+      "https://img.algebraic-intelligence.dev/nesciens/e9e871f7-3f38-4345-bd81-e0b500ecdbb5.jpg"
+    ]
+  },
+  "perspicere": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nPiercing, clarifying composition. The Inquisitor, a tall hooded man in black-and-crimson runed robes with sharp stern features partially shadowed and glowing emerald eyes, cuts through deeply nested type expressions with a glowing blade of clarity while holding his grimoire, revealing the true noun hidden inside. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, stands ready beside the simplified truth.\nBold text at the top: \"PERSPICERE\"\nBottom text: \"SEE THROUGH • NAME WHAT THE DEPTH IS HIDING • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/perspicere/07a703f2-634a-417d-9e41-a50e0d1e9529.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/25b0e045-65c2-41ef-b72b-c42347e71a31.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/35d43a36-4847-4851-a7a2-d503f02c3c48.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/3dd304c2-5151-4b96-8ea3-daeb459af916.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/6a0d8a39-fdb9-45fc-9f03-977916771105.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/9332377a-8109-4322-8ebc-ac5e69f6951d.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/98b4b3a6-f3af-4e8b-84d0-23ce8a6475b8.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/c1972468-37e4-42eb-b457-06f80e3bbd2e.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/eeeab866-0ab2-4926-a0ee-c65f00359050.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/f6df98b3-a578-45b4-b6d5-60f80ac0ee8b.jpg",
+      "https://img.algebraic-intelligence.dev/perspicere/fd91543d-9062-4f55-b849-3237298b7d4a.jpg"
+    ]
+  },
+  "pillars-boss-kill": {
+    "prompt": "An epic isometric perspective scene in the rich, detailed dark fantasy style of Pillars of Eternity by Obsidian Entertainment: the Inquisitor and Shadowdancer working as a perfectly coordinated team to kill a powerful boss and claim its hoard.\nHigh isometric view looking down on the battlefield inside a vast ancient code-dungeon chamber. The Inquisitor stands back on elevated ground as the ranged sorcerer/tactician — tall hooded figure in ornate black-and-crimson runed robes, sharp analytical face partially shadowed, glowing emerald eyes focused. He holds a glowing crystalline grimoire while projecting a large holographic s-expression map and targeting overlays, calmly directing the fight and supporting with precision spells.\nIn the mid-ground, the Shadowdancer — a lithe, deadly rogue/assassin in dark flowing shadowsilk cloak and tactical gear — sprints aggressively toward the boss, dual glowing energy daggers drawn and ready, emerald shadow tendrils streaming behind her as she closes in to land the killing blow.\nThe massive boss stands in the center, a towering corrupted entity made of tangled failing code and shadowy manifestations, guarding a glittering pile of loot (glowing artifacts, data shards, ancient tomes, gold, and runes). The team is working in perfect sync to bring it down. Richly detailed isometric environment with intricate stone architecture, glowing runes, atmospheric fog, and scattered treasure. Dramatic lighting with strong volumetric god rays and deep shadows, rich painterly textures, deep crimsons and vibrant emeralds. Powerful, tactical, and immersive atmosphere of masterful cooperation — slow is smooth, smooth is fast.\nIn the exact visual style of Pillars of Eternity combat scenes.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pillars-boss-kill/10e193cc-a5b1-4252-9255-72f86ac32e4f.jpg",
+      "https://img.algebraic-intelligence.dev/pillars-boss-kill/88d19173-bf14-4b2e-99bb-d92d0febb713.jpg",
+      "https://img.algebraic-intelligence.dev/pillars-boss-kill/b42e342d-60ac-478a-a707-9373e5d5e66c.jpg",
+      "https://img.algebraic-intelligence.dev/pillars-boss-kill/c20cc4dd-ac93-4a00-8fbe-3241666063a3.jpg",
+      "https://img.algebraic-intelligence.dev/pillars-boss-kill/d3107f48-67b0-4040-9a3b-2a5d34b402c7.jpg"
+    ]
+  },
   "pillars-of-eternity": {
     "prompt": "A dramatic scene in the rich painterly stylized art style of Obsidian's Pillars of Eternity series: the Inquisitor and the Shadowdancer working in perfect sync deep inside a vast, ancient ruined code dungeon with monumental weathered architecture and atmospheric lighting.\n\nThe Inquisitor is a tall, commanding Fatebinder-like figure with a sharp analytical face partially shadowed by his hood, intense glowing emerald eyes, wearing ornate but battle-worn black-and-crimson tactical robes with glowing Latin runes and sigils. He stands like a master tactician, one hand holding a floating crystalline grimoire projecting subtle holographic s-expression maps, the other gesturing with calm authority as he issues exact instructions.\n\nThe Shadowdancer is a lithe, deadly agile operative in flowing shadowsilk cloak and tactical gear, dual glowing energy daggers held low in perfect ready stance, faint emerald shadow tendrils swirling as she prepares flawless execution.\n\nSubtle emerald s-expressions and Clojure-style parentheses glow faintly like arcane runes in the stone walls. Rich painterly textures, moody atmospheric lighting, detailed grim elegance, solemn and powerful atmosphere, in the exact visual style of Pillars of Eternity by Obsidian.",
     "images": [
@@ -622,6 +870,20 @@
       "https://img.algebraic-intelligence.dev/pillars-of-eternity/f33deab3-ac09-47a2-89fb-a8bc86469e42.jpg"
     ]
   },
+  "probare": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nTesting, crushing composition. The Inquisitor in black-and-crimson hooded robes holds a glowing mortar and pestle, crushing a program to reveal what is real versus mere description. The Shadowdancer, lithe feminine assassin in dark shadowsilk, stands ready beside the results.\nBold text at the top: \"PROBARE\"\nBottom text: \"TEST THE SUBSTANCE • CRUSH THE ROCK • REPORT THE FRACTION • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/probare/044e58b8-e2cd-4d82-b91a-2a40487bd7e5.jpg",
+      "https://img.algebraic-intelligence.dev/probare/4c4208ad-1b4d-42b9-adad-10a45d6c9778.jpg",
+      "https://img.algebraic-intelligence.dev/probare/749bae53-0113-4c8a-a7c5-1f5c3203a00a.jpg",
+      "https://img.algebraic-intelligence.dev/probare/7b746dcb-db6b-464c-80a1-243d427bea6a.jpg",
+      "https://img.algebraic-intelligence.dev/probare/971c6832-af8f-4b44-b974-9184199c8899.jpg",
+      "https://img.algebraic-intelligence.dev/probare/97a74e67-adfd-481a-ae72-94094ce1193a.jpg",
+      "https://img.algebraic-intelligence.dev/probare/9aa5cd52-baa1-41a8-93bd-4827b2420237.jpg",
+      "https://img.algebraic-intelligence.dev/probare/9e64d279-787a-4788-951b-f39d3358fd8e.jpg",
+      "https://img.algebraic-intelligence.dev/probare/bcc6c312-142a-4379-90b9-5038d5fd926a.jpg"
+    ]
+  },
   "propaganda-poster": {
     "prompt": "A powerful early Soviet-style revolutionary propaganda poster in brutally realistic style: \"The Inquisitor and the Shadowdancer — Slow is Smooth, Smooth is Fast.\"\n\nHeroic monumental composition with strong diagonal lines and dramatic low-angle perspective. The Inquisitor stands tall and commanding as a towering figure of authority, sharp analytical face partially hooded with piercing glowing emerald eyes, wearing ornate black-and-crimson robes with Latin runes and sigils. He holds a glowing grimoire in one hand while pointing decisively with the other, issuing precise instructions.\n\nBeside him, the Shadowdancer in perfect poised stance — lithe, agile, and lethally focused — dual glowing daggers held low, shadow tendrils swirling, ready for flawless execution.\n\nFaint emerald s-expressions and Clojure-style parentheses subtly etched into the monumental background architecture like revolutionary inscriptions on concrete and steel. Bold crimson, black, gold, and deep emerald color palette. Dramatic chiaroscuro lighting, high contrast, powerful solemn atmosphere. Text at the bottom in strong sans-serif revolutionary lettering: \"SLOW IS SMOOTH • SMOOTH IS FAST\" and smaller \"DATAMANCY • WAT-RS\".\n\nIn the style of classic Soviet propaganda posters meets constructivism, high detail, cinematic realism, epic and authoritative mood, no cartoonish elements.",
     "images": [
@@ -638,6 +900,44 @@
       "https://img.algebraic-intelligence.dev/propaganda-poster/c81c4aac-2f86-47b1-bdcc-3278fc24b682.jpg",
       "https://img.algebraic-intelligence.dev/propaganda-poster/e7cfc7a1-e69a-41bd-a9ab-b08f71874720.jpg",
       "https://img.algebraic-intelligence.dev/propaganda-poster/fdb407af-c6d9-46f0-aea0-041d1d2997ba.jpg"
+    ]
+  },
+  "purgare": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nPurging, cleansing composition. The Inquisitor in black-and-crimson hooded robes burns away dead code, unused structs, and unreachable branches like purifying fire while holding his glowing grimoire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, stands ready to strike anything that tries to regrow.\nBold text at the top: \"PURGARE\"\nBottom text: \"PURGE DEAD THOUGHTS • THE COST OF A DEAD THOUGHT IS COMPUTE • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/purgare/15f2eb41-80b2-4afe-bc26-640bdea0367b.jpg",
+      "https://img.algebraic-intelligence.dev/purgare/5f100751-6010-4b6a-91e1-234c8c8ebd49.jpg",
+      "https://img.algebraic-intelligence.dev/purgare/a5990f1d-e208-4665-9c13-841c5b2c893d.jpg",
+      "https://img.algebraic-intelligence.dev/purgare/b6359103-3e64-46e1-b729-874524ebc5c6.jpg",
+      "https://img.algebraic-intelligence.dev/purgare/c506eb54-a7b9-471d-82a8-63b128f7dd88.jpg",
+      "https://img.algebraic-intelligence.dev/purgare/cc19da39-dda7-4973-a725-870f81fab890.jpg",
+      "https://img.algebraic-intelligence.dev/purgare/da32dde5-95ed-4950-87b9-a99cf0474440.jpg",
+      "https://img.algebraic-intelligence.dev/purgare/e84c3035-0f91-49d9-b088-2c12515c5cf6.jpg",
+      "https://img.algebraic-intelligence.dev/purgare/f34763c0-6a63-43a6-b134-fbb5b1442fae.jpg",
+      "https://img.algebraic-intelligence.dev/purgare/fb2a66df-8a48-4ebb-a861-a905c3e70580.jpg"
+    ]
+  },
+  "recolligere": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nPowerful, grounding composition. The Inquisitor stands tall and commanding in the archive wing of the Aetherium Datavatum, hooded in black-and-crimson runed robes, sharp analytical face partially shadowed, glowing emerald eyes focused. He holds a glowing crystalline grimoire while channeling and reconstituting scattered emerald data fragments and holographic records that swirl and reassemble around him like living memory. The Shadowdancer stands guard beside him in dark flowing shadowsilk cloak and tactical gear, dual glowing daggers ready, faint emerald shadow tendrils swirling protectively.\nBold text at the top: \"RECOLLIGERE\"\nBottom text: \"GATHER THE SCATTERED SELF • CRAWL THE DURABLE RECORD • RECONSTITUTE BEFORE YOU MOVE • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting, powerful and resolute mood.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/recolligere/3d074aee-6e40-4bf3-8831-1af047c50a30.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere/4fff80a5-6d7e-4987-b357-9306986a113c.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere/58c45b89-888d-49e8-b48e-2f36fcd574e6.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere/769f4807-c012-44b0-918e-5271ad8b2a87.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere/76ecb84a-2d4b-4e35-b7a1-b95aecf49de8.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere/846bc6f7-fba4-45d2-872e-b573ec14df7b.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere/afcf5b64-e7a2-4d18-9d50-2209af7f121e.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere/d46b2377-83a3-4257-a194-9fe62b6937a8.jpg"
+    ]
+  },
+  "recolligere-ii": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nPowerful, grounding composition. The Inquisitor crawls through a vast archive of glowing records and code fragments, carefully gathering and reconstituting orientation while the Shadowdancer stands watch. Emerald s-expressions and floating data fragments swirl around them.\nBold text at the top: \"RECOLLIGERE\"\nBottom text: \"GATHER THE SCATTERED SELF • CRAWL THE DURABLE RECORD • RECONSTITUTE BEFORE YOU MOVE • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting, powerful and resolute mood.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/recolligere-ii/15af33b8-f0b8-4b37-b1e2-b241b88f7d24.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere-ii/4d19c494-ef9c-4e56-8fc8-0b4ad73c0003.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere-ii/54ab1e12-1608-4576-8cdb-c9cbf842e475.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere-ii/82d865c9-be99-4314-86d4-0b3108216ac0.jpg",
+      "https://img.algebraic-intelligence.dev/recolligere-ii/b3453945-62a5-4e5f-8e31-045b210d4472.jpg"
     ]
   },
   "recruitment-examinare": {
@@ -785,6 +1085,42 @@
       "https://img.algebraic-intelligence.dev/samurai-jack/fc82c478-5ad3-491d-b4ad-f5e04d59318a.jpg"
     ]
   },
+  "secare": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nCutting, dividing composition. The Inquisitor in black-and-crimson hooded robes cleanly severs parallel boundaries with a glowing blade of logic while holding his grimoire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, enforces the cut with her dual glowing daggers.\nBold text at the top: \"SECARE\"\nBottom text: \"CUT CLEANLY ALONG THE GRAIN • NO SHARED MUTATION • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/secare/00e7bfb6-83c2-4101-a8e7-0739f378721e.jpg",
+      "https://img.algebraic-intelligence.dev/secare/08f5617a-5e6b-4d14-b96b-30388d4dab9f.jpg",
+      "https://img.algebraic-intelligence.dev/secare/0f4790d7-20ef-408a-a625-b556973be3b2.jpg",
+      "https://img.algebraic-intelligence.dev/secare/4d98b38c-3338-4773-baca-f52341a4dc65.jpg",
+      "https://img.algebraic-intelligence.dev/secare/6697e955-0cdb-4794-90e1-afddc8617e09.jpg",
+      "https://img.algebraic-intelligence.dev/secare/72527303-574c-4b63-8015-fd26ee9e953b.jpg",
+      "https://img.algebraic-intelligence.dev/secare/a57a2f68-0261-4bb1-a6cb-18a95705ab3c.jpg",
+      "https://img.algebraic-intelligence.dev/secare/b82189ca-7439-4cd8-917f-b09cf84d8aeb.jpg",
+      "https://img.algebraic-intelligence.dev/secare/dc5f223e-cce9-41db-91f0-d414d81fa9be.jpg",
+      "https://img.algebraic-intelligence.dev/secare/f848ee98-daeb-4934-886a-cc00959312c9.jpg"
+    ]
+  },
+  "sequi": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nFollowing, tracing composition. The Inquisitor in black-and-crimson hooded robes follows the flow of state through every transformation with glowing threads while holding his grimoire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, moves alongside the visible chain.\nBold text at the top: \"SEQUI\"\nBottom text: \"FOLLOW THE STATE • STATE MUST REMAIN VISIBLE THROUGH EVERY TRANSFORMATION • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/sequi/12c3fc3d-3896-4d6b-94ed-c13aa335b74c.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/18f0e394-aca5-49a2-9381-7fc2df321c65.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/235c3364-bd01-47c1-8686-25cd8a71207f.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/439e7bff-c302-4283-acd0-a311ef7251f6.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/715dedfa-5ef4-46c9-bc81-0cb5269d89a2.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/7438d0fd-02bc-46f2-b8ad-518f712766c1.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/87bc62ad-7ae0-4724-b149-c49b2422427d.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/8fc6787a-8bf1-4913-a6b7-f6c52e8e2ad1.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/9e597f47-fa2c-442d-b8a8-00ff432cbe13.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/9efc9831-20d8-4b9e-a9b7-6a620a0a93f6.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/b839ee29-657b-427d-959f-304222bf1fd4.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/ba55da75-7ae4-40e7-aea6-0da20207ba7a.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/cb78db2d-8a83-4f3f-be30-153bdaa671bb.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/ddd4ed60-4b04-4c95-99a7-2a2d425a116b.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/e4b52144-d711-465e-9a59-83132657649b.jpg",
+      "https://img.algebraic-intelligence.dev/sequi/e9cf5f40-758e-4591-bc81-023658b58e05.jpg"
+    ]
+  },
   "shadowdancer-strike": {
     "prompt": "An epic, cinematic moment in a dramatic dark fantasy / cyber-mystic style: the Inquisitor (Datamancer) standing back and watching with intense focus as the Shadowdancer lands the perfect killing blow.\nThe Inquisitor stands on slightly elevated ground in the background, tall and commanding, hooded in ornate black-and-crimson runed robes, sharp analytical face partially shadowed by his deep hood, piercing glowing emerald eyes locked on the strike with absolute concentration. He holds his glowing crystalline grimoire open, holographic s-expression maps and dungeon probes still floating around him as he observes and confirms the kill.\nIn the foreground and mid-ground, the Shadowdancer — a lithe, deadly feminine assassin in flowing dark shadowsilk cloak and tactical gear — is captured mid-strike, leaping with graceful lethality, dual glowing energy daggers plunged deep into the heart of a massive collapsing boss entity (made of corrupted code, tangled failures, and shadowy manifestations). The boss is shattering dramatically into emerald-green particles and dissolving.\nThe scene powerfully conveys the datamancy principle: the Inquisitor has done the heavy mapping and planning work, now calmly watching the Shadowdancer execute the flawless kill. Dramatic volumetric lighting with strong god rays, deep dramatic shadows, rich crimson and vibrant emerald particle effects. Highly detailed, solemn, and triumphant atmosphere — \"slow is smooth, smooth is fast.\"\nEpic fantasy illustration with cyberpunk and arcane code elements, cinematic composition.",
     "images": [
@@ -811,6 +1147,22 @@
       "https://img.algebraic-intelligence.dev/sin-city-noir/d2071f07-ecca-450c-a849-99503317de74.jpg",
       "https://img.algebraic-intelligence.dev/sin-city-noir/f293b151-364d-4bca-a1ae-333d8cd317fd.jpg",
       "https://img.algebraic-intelligence.dev/sin-city-noir/f720dd28-5436-4b1c-b1d5-9f041f48ad5a.jpg"
+    ]
+  },
+  "solvere": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nForceful, decisive composition. The Inquisitor, a tall imposing hooded man in ornate black-and-crimson runed robes with sharp stern features partially shadowed by his deep hood and piercing glowing emerald eyes, cuts apart wrongly bound logic and duplicated encoding with precise glowing force while holding his grimoire. The Shadowdancer, a lithe deadly feminine assassin in dark flowing shadowsilk cloak and tactical gear, stands ready with dual glowing daggers to finish what he starts.\nBold text at the top: \"SOLVERE\"\nBottom text: \"LOOSEN WHAT WAS WRONGLY BOUND • CUT APART DUPLICATED LOGIC • DECOMPLECT • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/solvere/158313ab-2e22-4c5f-9950-44167d7bcf02.jpg",
+      "https://img.algebraic-intelligence.dev/solvere/a544c240-48b9-4720-b55f-7ee15c1af121.jpg",
+      "https://img.algebraic-intelligence.dev/solvere/a5eff42e-93c2-4224-b87d-d1948910f94c.jpg",
+      "https://img.algebraic-intelligence.dev/solvere/d786b5f8-ddf4-46ec-bdb4-859a8a2547c2.jpg",
+      "https://img.algebraic-intelligence.dev/solvere/e0a0a8ff-e889-4a32-ac09-5c8e85352f7d.jpg"
+    ]
+  },
+  "solvere-ii": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nUntangling, loosening composition. The Inquisitor in black-and-crimson hooded robes carefully unravels braided concerns and duplicated logic with precise glowing tools while holding his grimoire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, stands ready to cut anything that resists being properly decomposed.\nBold text at the top: \"SOLVERE\"\nBottom text: \"LOOSEN WHAT WAS WRONGLY BOUND • DECOMPLECT • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/solvere-ii/4dd179fd-1a80-4032-a6e2-6567569be436.jpg"
     ]
   },
   "soviet-constructivist": {
@@ -853,6 +1205,43 @@
       "https://img.algebraic-intelligence.dev/stained-glass/a229e4ab-8a56-4f6c-a6ca-34ed0886e66b.jpg",
       "https://img.algebraic-intelligence.dev/stained-glass/bcedd1af-8160-4cb8-a9bb-37c17d7422d2.jpg",
       "https://img.algebraic-intelligence.dev/stained-glass/f45eee45-ba42-424f-bff7-d7022a3fb86f.jpg"
+    ]
+  },
+  "struere": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nBuilding, testing composition. The Inquisitor in black-and-crimson hooded robes constructs and immediately tests what is built while holding his glowing grimoire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, stands ready to strike any structural weakness.\nBold text at the top: \"STRUERE\"\nBottom text: \"TEST WHAT IS BUILT • VALUES FLOW, THEY DO NOT MUTATE • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/struere/01bafffa-fd48-4533-9f23-5a6527d735fd.jpg",
+      "https://img.algebraic-intelligence.dev/struere/02cfa1b9-da38-42f1-9ffb-49af4ae34c77.jpg",
+      "https://img.algebraic-intelligence.dev/struere/0e896c25-2019-4fa7-b109-84ba04cfe51f.jpg",
+      "https://img.algebraic-intelligence.dev/struere/2ff45332-0dc8-41b4-9209-478114022e16.jpg",
+      "https://img.algebraic-intelligence.dev/struere/392b431c-e54e-4c6d-8bca-c2607a0d971d.jpg",
+      "https://img.algebraic-intelligence.dev/struere/42078bf2-ddd9-4072-8c2d-e567f50d9e43.jpg",
+      "https://img.algebraic-intelligence.dev/struere/79bda3be-90ef-4ce1-a971-80c5d4080300.jpg",
+      "https://img.algebraic-intelligence.dev/struere/9ac49f51-16e6-48f3-973d-06330c89a8f0.jpg",
+      "https://img.algebraic-intelligence.dev/struere/ad308504-b043-4b86-aa3d-749fd2360b3d.jpg",
+      "https://img.algebraic-intelligence.dev/struere/c2d65c81-2bdb-49f8-8bd8-007cb1c4786d.jpg",
+      "https://img.algebraic-intelligence.dev/struere/c7ae2350-5d22-497a-8861-ddc113502520.jpg",
+      "https://img.algebraic-intelligence.dev/struere/d33600c9-2408-475f-ad3e-b9df50825698.jpg",
+      "https://img.algebraic-intelligence.dev/struere/dbe62411-e635-4012-ab78-d57f1edaf4e2.jpg",
+      "https://img.algebraic-intelligence.dev/struere/dd8da6ac-7370-422e-be80-4af447b5fc19.jpg"
+    ]
+  },
+  "temperare": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nBalancing, proportioning composition. The Inquisitor in black-and-crimson hooded robes carefully mixes computation, removing redundant calls and unnecessary work while holding his grimoire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, stands ready to cut anything that runs hot without reason.\nBold text at the top: \"TEMPERARE\"\nBottom text: \"MIX COMPUTATION IN RIGHT PROPORTION • CORRECT BUT HOT IS STILL A FAILURE • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/temperare/0ee09747-6328-4aea-888b-aaeff3b1c76e.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/3a484f7d-425f-4379-9438-153adae323bc.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/3edafce7-030e-4ccf-89d9-00f5cde9d4ba.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/4b1cfe1f-bc06-4270-b3a4-eab95de894fd.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/71a256d5-6216-4ec3-878a-39febfc9b5df.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/78640f6f-3a60-450f-8da7-0cce2cb580ea.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/7d8d6b37-2958-4ebc-8f06-18d20da3fa73.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/b1fb97d6-2d6d-49ae-86c2-5f0dbeccf918.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/b39d8348-5180-4430-9555-e59736747341.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/d0420aad-3aaa-41f5-8b0d-c3e047a43966.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/d0e990c8-af01-4cc7-8114-b19abee5ce0f.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/d57b91cd-6b1f-4bc5-8538-ab96f138a8ba.jpg",
+      "https://img.algebraic-intelligence.dev/temperare/f64153e9-7155-4af2-a8cb-fe7300075218.jpg"
     ]
   },
   "the-college": {
@@ -899,6 +1288,30 @@
       "https://img.algebraic-intelligence.dev/the-fifties/f1b40c7b-70ba-4c57-b66b-39c6792b3d12.jpg",
       "https://img.algebraic-intelligence.dev/the-fifties/f6d33bf4-8c85-4502-852f-76051424faa2.jpg",
       "https://img.algebraic-intelligence.dev/the-fifties/fcf66741-86b5-4dbe-916a-63810121c399.jpg"
+    ]
+  },
+  "the-living-grimoire": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nHeroic, monumental composition centered on the living Datamancy Grimoire. The massive tome hovers and pulses with life, its dark leather cover shifting with glowing crimson and emerald runes that constantly rewrite themselves. Fresh pages turn and new glowing s-expressions, Latin names, and disciplines visibly appear and settle into the parchment as the book grows and evolves. Subtle emerald code roots extend from the spine into the stone, anchoring its expansion.\nThe Inquisitor stands to one side in black-and-crimson hooded robes, holding his own smaller grimoire and watching the living book with focused reverence. The Shadowdancer stands guard on the other side in dark shadowsilk, dual glowing daggers ready.\nBold text at the top in authoritative lettering: \"THE GRIMOIRE\"\nBottom text in strong sans-serif: \"THE BOOK THAT GROWS • NEW FAILURES FORGE NEW DISCIPLINES • THE CRAFT EVOLVES • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic volumetric lighting, powerful and living atmosphere.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/012ba284-8e5f-4258-ad93-4d520b36a155.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/1753a1f1-f5ba-4351-af7b-7f2f6250cc09.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/305eda31-aee9-47f9-8ae8-8af40a7f56af.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/37804daf-e6f3-4ed8-94dc-a5db50d95e73.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/43c445e1-f9f7-4a2a-9805-30b035b5dcf9.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/4660b87e-a57d-41bf-b462-ccefde5d9f34.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/52f9ebd8-6617-4a1d-a8c3-fb242bf242a1.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/6104c89d-5284-48b8-b032-671b4ec2d1ee.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/76d72bd5-8ae6-441f-be70-dddcaf05e3c5.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/7e73ef2c-a4c3-4ba5-8c9c-c3a7149941aa.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/881df8c2-f52b-41a3-9809-763989fec9d3.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/a23439f2-36a8-4c80-a242-f977eaba3ea8.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/b61ba913-e568-4624-a0e0-d7351b545301.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/bea594e7-20be-4af1-a694-61104cc61989.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/beef9b12-47d3-4984-b119-b2fef9b962af.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/e46a4161-9bc8-4df8-a789-aedfac155e63.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/e6248c9c-ebfa-4281-8fe7-5bae731ae74c.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/f8a07741-62f8-4f6a-8b12-eae43cd613cf.jpg",
+      "https://img.algebraic-intelligence.dev/the-living-grimoire/ffd61f68-a884-4dff-8d30-b80f336473a7.jpg"
     ]
   },
   "the-seventies": {
@@ -970,6 +1383,21 @@
       "https://img.algebraic-intelligence.dev/tyranny/ed461a92-251e-4fae-a8a4-067c519d93da.jpg",
       "https://img.algebraic-intelligence.dev/tyranny/fd5ed7c6-b129-49d1-b862-1317324827c6.jpg",
       "https://img.algebraic-intelligence.dev/tyranny/fdec15bb-6797-426d-93bb-3b644b5a770b.jpg"
+    ]
+  },
+  "vigilia": {
+    "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nWatchful, full-guard composition. The Inquisitor, a tall hooded man in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, summons the full Vigilia — every defensive spell standing together in parallel — while holding his grimoire. The Shadowdancer, a lithe feminine assassin in dark shadowsilk cloak and tactical gear, moves among them with dual glowing daggers as the final circumspicere.\nBold text at the top: \"VIGILIA\"\nBottom text: \"THE WATCH • EVERY INWARD SPELL IN PARALLEL • NOTHING ESCAPES THE FULL GUARD • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/vigilia/1641bc1b-16e5-4491-9c24-172af37003ba.jpg",
+      "https://img.algebraic-intelligence.dev/vigilia/226f3469-e0aa-418c-9af0-28a9d0ba7c0b.jpg",
+      "https://img.algebraic-intelligence.dev/vigilia/43ba8bae-dffe-4faa-948b-b07992b08772.jpg",
+      "https://img.algebraic-intelligence.dev/vigilia/61e10170-a22d-4d4f-83b0-68d25d213c74.jpg",
+      "https://img.algebraic-intelligence.dev/vigilia/7313b6f8-8962-48c9-bed5-6a206aea1e19.jpg",
+      "https://img.algebraic-intelligence.dev/vigilia/84cc4dc7-3b26-47d7-8028-f3b2819059cf.jpg",
+      "https://img.algebraic-intelligence.dev/vigilia/a9878968-504f-4c34-8aa0-615783f41572.jpg",
+      "https://img.algebraic-intelligence.dev/vigilia/c637afc9-11d4-418c-a959-be90a3b00b43.jpg",
+      "https://img.algebraic-intelligence.dev/vigilia/d38388d7-2a7f-46b0-85e1-77b199cb3545.jpg",
+      "https://img.algebraic-intelligence.dev/vigilia/fff39082-97de-4c64-8bde-3197a25ef2bb.jpg"
     ]
   },
   "warhammer-40k": {
