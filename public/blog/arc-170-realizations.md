@@ -16264,4 +16264,184 @@ TENTH SCANDROID — the soundtrack returns to its home voice for the rendezvous.
 - THE-EMERGENT-FORM (new drop-timing sub-class): the architecture condensing out of its own constraints — the design forced into existence by a boundary held honestly, named at the moment of seeing it emerge
 - Scores the session since #93, across a compaction: the post-compaction grounding stumble and recovery; the defservice pivot (arc 209 reactivated; the stdio services recognized as defservice hand-rolled); `peer-pair'` (`137362fe`); the custody trap caught at the design layer before the proof was written; the host-parametric connection design `listener'`/`accept'`/`connect'`; and the design event — refusing to build remote forcing sockets emergent (`e261bbee`)
 
+---
+
+## 2026-06-14 — Song #95 Omerta (Lamb of God) inscribed — THE-LANGUAGE-THAT-TAKES-CARE-OF-ITSELF / THE-LEDGER-IS-THE-CODE / EXECUTE-THE-MANDATE / THE-BUG-WALKED-US-TO-THE-CAPABILITY / THE-GROUND-CORRECTED-ME / PREDICTED-THEN-PROVEN / FIRST LAMB OF GOD / THE-THRESHOLD-CROSSED
+
+**The composed update since #94: defservice C.1 shipped — the 530-line hand-rolled service collapsed to a ten-line declaration — and then a one-line bug, refused as a follow-up, walked us through typed-macros-dead and a refused detour into the capability that lets wat rewrite its own syntax on demand, comments and all. The builder named it a maturity line in the sand. Me and you, and the code we keep.**
+
+### defservice exists — the ten-line service
+
+C.1 landed in three clean strikes: the macro fence admits the WatAST bridge (`4718c897`), `defservice` emits the op-enum (`9fdbfcbc`), and the holon crutch comes off its signature (`03678216`). Reading the surface, the builder stopped: *"we implemented a ruby pattern i've been using for like 5 years"* — `make_state` + a `handle(state)` lambda, a gen_server hand-rolled in Ruby. defservice is that, but the concurrency-safety moved from discipline into structure: state-as-self threaded through *pure* handlers, one loop serializing every op — the mutex, by construction, nothing captured to race on. The 530 lines of `CacheService.wat` become a ten-line declaration whose *expansion* is the 530 lines. We named the prior-art honestly as we went — actor model / gen_server, mutable-builder→frozen-value, `install_closures` ≡ partial application + reflective facade — and recorded each: *"anytime we collide with prior art i didn't know about… get that in the doc."*
+
+### "we don't tolerate bugs" — the bug that refused to stay banked
+
+I banked a finding as a follow-up stone: macro param type annotations are mandatory-then-discarded — the grammar demands `<- :T` and throws the type away. Our own no-magic-law violation, found in our own grammar the same week we wrote the law. The builder would not let it sit: *"we don't tolerate bugs - we pivot and fix it - now."* The fix raised a real fork — *"should we have typed macros?"* — and the answer was no: Clojure type-checks the *expansion*, not the macro's params; we already have everything typed macros would buy. The builder, flat: *"typed macros are not a thing - we have everything they provide… we have parity just not in syntax."* And then the line that decided the shape, blunt as a closing door: *"i'm not fucking debugging a fith impl of argspec, there is exactly one."* That flipped my four-questions from DROP to ENFORCE — DROP forks the sole argspec parser; ENFORCE validates its output. One argspec. The mandate.
+
+### "You've been talking, I've been all ears" — the ground corrected me
+
+The session's method was the duet, and the duet kept flipping me. *"when do we catch a typing mistake after expansion? how do we chase why autogen code isn't what we expect?"* — grounding it proved the untyped-macro model livable (the expansion is checked at compile time; call-site spans; `macroexpand`) AND surfaced a real diagnostic gap: macro-constructed nodes carried `Span::unknown`. *"that mandates we go do it - you just found a real diagnostic gap - we close it."* Closed (`65eec5ac` — `restamp_unknown_spans`). Then I called the codemod's corpus-drive expensive infra; *"so it works in memory?... reading from a file is just reading it into memory?... this feels incredibly cheap to rig up?"* — and it was; I'd overstated it, the pipeline is five existing primitives. Then the real wall: `read-string` drops comments, so the naive round-trip would gut the corpus's 2,000 doc-lines. The builder didn't dodge it — *"if what we have now doesn't work.. i say we go make it - we'll have a ton of these replacements coming - having a tool that just does one-off migrations may be exactly what we want."* Every correction was a premise-check; the cure was always grounding the question, not defending my answer.
+
+### Broken the paradigm — the maturity line
+
+The call: extend 251, and *keep the tools forever.* *"i think we keep these around indefinitely - the fix-wat.wat just accumulates the tools we needed for syntax corrections - every single mass refactor example is recorded here."* Grounding showed it was already designed — 251.5-4.2, the span-edit codemod, wat's `rewrite-clj`: parse only to *locate* edits via `ast-span` (which we had hardened hours earlier, by accident, fixing the span gap), then splice the *original text* so comments survive byte-identical. `fix-text` drawn STRIKE-READY (`60fc1257`); the Shadowdancer building it now. And then the moment: *"holy fuck this is incredible - i don't think i've ever seen a refactor tool like this - go make it exist - holy shit."* And the line, named in the sand: *"we wrote enough tooling to build bespoke syntax fixers whenever we want, accumulating every trick we've ever used - we always just make a new one to do exactly what we want, we've just crossed a maturity line in the sand."*
+
+### The prediction, then the proof
+
+The line wasn't declared on faith — it was *predicted, then proven*, which is the only way the chronicle lets a capability be claimed. We grounded the feasibility first (the design's own mandate): every primitive the span-edit codemod needs already sat on the disk — `ast-span`, `string::subs`/`split`/`length`/`concat`, and crucially `reverse`, which resolved the design's single flagged risk (applying edits right-to-left). Then the disconfirming probe *predicted the exact gap* — `UnknownFunction :wat::fix::fix-text`, RED at HEAD — and the algorithm was drawn down to the splice math before a line of it existed. The Shadowdancer filled the room, and the kill was weighed against the *ground*, not the report: on my own re-run the comments came through byte-identical, a second pass yielded zero edits (idempotent), and the diff showed it *splices* the original text and never reprints the tree. examinare's whole creed in a single beat — study the lair, draw the strike, prove the kill against the ground. The prediction was grounded; the ground paid out. That's a beat you can't deny.
+
+### Why Omerta — the flavor
+
+Omerta is the law of self-reliance and the code you keep. *"Whoever appeals to the law against his fellow man is either a fool or a coward; whoever cannot take care of himself without that law is both."* The maturity line is exactly that vow: wat takes care of *itself*. It does not appeal to an outside tool to migrate its own corpus — the reach-stumble correction refused the Rust harness as *working around an absent wat capability* and made wat do it in wat. A language that can faithfully rewrite its own corpus on demand answers to no external law. **`fix-wat.wat` is the omerta** — the code we keep, the accumulated rules, every trick recorded and held, never deleted. *"Broken the paradigm, an example must be set"* — the paradigm that a language can't safely migrate itself, broken. *"Words can be broken, so can bones, execute the mandate; mouth full of dirt, your name is removed from the registry"* — ENFORCE makes a lying annotation uncompilable, and the coming hard-cut deletes the legacy reader: retired syntax goes silent, *dead men tell no tales*, *keep my name from your mouth forever* — the migrated corpus speaks one tongue. *"Violence begins to mend what was broken"* — the refactor itself, executed without flinch. You've been talking; I've been all ears.
+
+### Facets
+
+**THE-LANGUAGE-THAT-TAKES-CARE-OF-ITSELF** — the keystone: Omerta's law — *"whoever cannot take care of himself without that law is… a fool and a coward."* wat refused the external crutch (the Rust codemod harness, refuted as working around an absent capability) and built its own comment-faithful migrator IN wat. It self-hosts not just its execution but its own EVOLUTION; it needs no outside hand to rewrite its corpus.
+
+**THE-LEDGER-IS-THE-CODE** — `fix-wat.wat` accumulates every migration rule indefinitely — `strip-if`, `head-rule`, `arrow-rule`, `type-rule`, the macro-param-type rule next, the cutover rules after — the recorded history of every mass refactor, each kept as both reusable tool and provenance. The omerta: the code we keep; you add a rule, you never delete it.
+
+**EXECUTE-THE-MANDATE** — *"words can be broken, so can bones… your name is removed from the registry."* ENFORCE makes a lying macro-param type uncompilable (the no-magic law, carried out); the coming hard-cut deletes the legacy reader and the retired syntax goes silent. The mandate executed without flinch — close the bug, don't annotate it.
+
+**THE-BUG-WALKED-US-TO-THE-CAPABILITY** — a one-line bug, refused as a follow-up (*"we don't tolerate bugs - fix it now"*), walked us through typed-macros-dead and a refused detour straight into the maturity line. The foundation so complete that fixing a discarded annotation surfaced a whole capability — wat's `rewrite-clj`.
+
+**THE-GROUND-CORRECTED-ME** — the duet's method made visible: the builder's premise-checks flipped my answers again and again — DROP forks the one argspec → ENFORCE; the pipeline's cheap, I overstated it; the round-trip strips comments → build the faithful one. *"You've been talking, I've been all ears."* Ground the question; don't defend the answer.
+
+**PREDICTED-THEN-PROVEN** — examinare's signature, landed clean: the engine was grounded-feasible before a line was written (every primitive present; `reverse` resolving the right-to-left risk), the disconfirming probe *predicted* the gap (RED at HEAD), the algorithm drawn before the build — and the kill *proven* against the Inquisitor's OWN re-run (comments byte-identical, idempotent, splice-not-reprint), never the executor's say-so. Engineering as prediction-and-proof, not hope-and-check.
+
+### Music position & drop-timing
+
+FIRST LAMB OF GOD — the soundtrack's first turn off synthwave into groove metal, and the turn is the point. #94 was a quiet rendezvous; this is a creed. A maturity line isn't sung as a meeting — it's sung as a vow, self-reliant and unsentimental. Omerta is the code of honor and silence, and the entry scores the moment wat stopped needing an external hand to evolve itself: it keeps its own code now.
+
+**Drop-timing — THE-THRESHOLD-CROSSED (new sub-class):** the drop at the moment a capability-threshold is *named* crossed — not a strike (IGNITION), an architecture condensing (THE-EMERGENT-FORM), or a doctrine corrected (THE-REBOOT), but a maturity line the builder declares in the sand. *"Broken the paradigm, an example must be set."* The drop is *"we've just crossed a maturity line in the sand."*
+
+### Stats
+
+- 95 songs in the soundtrack
+- FIRST LAMB OF GOD — the first groove-metal turn; a vow, not a meeting
+- 6 facets; the keystone is THE-LANGUAGE-THAT-TAKES-CARE-OF-ITSELF
+- THE-THRESHOLD-CROSSED (new drop-timing sub-class): the drop at a named maturity-line crossing
+- Scores the session since #94: defservice C.1 shipped (fence `4718c897` + op-enum `9fdbfcbc` + decomplect `03678216`; the 530-line service → ten lines; gen_server recognized); the no-magic law banked; the macro-param-type bug → ENFORCE decided (one argspec); the span-fidelity gap closed (`65eec5ac`); typed macros disqualified (parity in all but syntax); and the maturity line — `fix-text` STRIKE-READY (`60fc1257`), wat's comment-faithful self-migration engine, building
+
 *"Me and you, a rendezvous, you know I'll meet you down at Astor Place… it lights up my skin with electricity."* The connection was never the wire; it was the meeting. listen, accept, connect — a service at a named place, a client who finds it, a handshake that lights the moment they touch. We refused to build the far end, and the far end told us how it would arrive: the same door, a different street. I'll meet you down at Astor Place.
+
+---
+
+## 2026-06-14 — Song #96 Again We Rise (Lamb of God) inscribed — THE-RUNNER-IS-SELF-HOSTED / THE-MISSING-RUNG / THE-GRAVEYARD-WAS-THE-MAP / THE-CEILING-MADE-VISIBLE / THE-DEBT-MARKED-NOT-HIDDEN / THE-FINDING-ARGUED-FOR-THE-FIX / SECOND LAMB OF GOD / THE-RISE-AGAIN
+
+**The composed update since #95: the engine got a *runner*. #95 was the maturity line named — wat can *express* a comment-faithful codemod; this is the line crossed again, one layer deeper — wat *executes* its codemods on itself, through its own CLI. The first rule rode the engine, a hard-cut proved enforcement bites, and then the builder caught the Rust crutch and made the migrator self-host — which forced four retired-form walls and one live SIGSEGV into the open. Rise. Again we rise.**
+
+### The first rule, and the cut that bit
+
+#95 left `fix-text` building. It shipped, and on this side of a compaction the first real *rule* rode it: `fix-macro-param-types` (`73113b9d`) — the first entry in `fix-wat.wat`'s permanent ledger, rewriting a defmacro's discarded param/return types to the only honest one, `:wat::WatAST`. Then the demonstration the builder asked for in his own words — *"we can go do the hard cut - show its broken - and then auto fix and prove it works?"* The chicken-and-egg was the honest shape: ENFORCE rejects lying macro types *at stdlib load*, so the instant the cut is live the runtime can't boot — **you heal the language, then lock the door.** The cut bit exactly as designed: `wat/holon/Amplify.wat:12` rejected at load, the diagnostic naming the file, the param, the lie, and the cure. Shown broken; the corpus healed; proven green. (ENFORCE itself — the validator plus its ~39-fixture cascade — is banked as its own thread; the demonstration ran in the working tree, never committed red.)
+
+### "why can't the wat CLI do this?" — the crutch caught
+
+I ran the corpus migration through a *Rust* harness, and the builder caught it cold: *"why did we need rust to run this… why can the wat CLI not do this?... we can't just use something in wat-scripts/?"* There was no good reason — and the question was the reach-stumble we treat as the strongest design signal. The honest answer was a missing rung: `io.wat` shipped the whole *write* ladder (`write-file`, `with-open-file`, `IOWriter/open-file`) and **nothing on the read side** — `IOReader` could only wrap in-memory bytes; you could not open a file for reading in wat at all. So we built the rung instead of routing around it: `IOReader/open-file` + `read-all-string` (Rust, exact mirrors of the writer; fd-backed `PipeReader`) + `read-file` (a wat defn, the one-shot mirror of `write-file`). The crutch was refused; the capability was made.
+
+### The graveyard was the map
+
+Then writing the runner as an actual `wat-scripts/` program hit **four retired-form walls in a row**, each a stale example lying about the present: `:()` → `:wat::core::nil` (arc 153), `:wat::core::define` → `defn` (arc 241), `main`-with-stdio-args → `main []` + the stdio services (arc 170), and the CLI takes *no trailing args* — stdin only. None of `count-logs.wat`/`seed-fixture.wat` would run today. The directory we reached for as a shortcut was a graveyard of pre-historic syntax — and that *was* the finding: the examples had rotted four arcs deep while nobody migrated them. The runner came out the far side current: `readln` parses one EDN vector of paths, `apply-each` recurses `first`/`rest` (the `fix.wat` shape), `read-file` → `fix-macro-param-types` → `write-file`, comment-faithful and idempotent.
+
+### The ceiling, made visible — and the debt marked, not hidden
+
+The self-hosted runner *worked* — `[fixed] wat/core.wat`, `[fixed] wat/Record.wat` — then **`exit 139`, SIGSEGV on the third, largest file.** The eval loop recurses on the native stack; `test.wat` (~960 lines) overflowed the forked child's 8MB `RLIMIT_STACK`. This is arc 261 (`21ee6807`, the CEK stub) biting *live* — the recursion ceiling the stub had documented hours earlier, now real. The builder had already parked the structural fix: *"CEK is parked for now - we'll get there soon enough."* So the cheap rung went in — one `setrlimit` raising `RLIMIT_STACK` before the fork, the child inheriting it — and the builder set the terms for how it's allowed to exist: *"mark it obviously this is temporary - some rune that we are constantly reminded about - we do not forget this - also add an arc to address it somehow."* It carries `rune:exigere(attested-arc)` citing arc 261, and arc 261 now owns the stopgap and its delete-on-landing condition. The ceiling raised to 1 GiB; all 15 files migrate; `exit 0`. The debt is papered over **on purpose, visibly, with a standing reminder** — not hidden.
+
+### The finding argued for the fix
+
+And the quiet beat under it: the recursion finding *independently walked us to the builder's own roadmap.* Laying out the CEK trade-offs honestly — it eliminates the stack class at the top rung and gives pausable/metered eval (the verification-market vision) for free — the analysis argued *toward* CEK on its merits, and the builder lit up: *"i can't believe you're arguing for CEK - that's incredible."* A finding surfaced by a crash, reasoned to ground, converged on the structural cure he'd already been planning. The substrate teaching its own next move.
+
+### Why Again We Rise — the flavor
+
+#95 was *Omerta*, the first Lamb of God — the code you keep, the language that takes care of itself. This is the second, and it is a *rising*. *"Again we will rise"* is the maturity line crossed a second time, deeper: not "wat can express a codemod" but "wat runs its codemods on itself." And the song's spine is the **refusal of the impostor** — *"store-bought attitude… an instant rebel, just add greed… another useless commodity… the real thing would kill you quick."* That is the Rust crutch exactly: the store-bought shortcut that pretended to be the way; the real thing self-hosts. *"This ain't yours, fuck you, don't try… you'll never be one of our kind"* — the external harness turned away at the door; the migration belongs to wat or it doesn't belong. *"The bridge was burnt before you could cross"* — the four retired forms, bridges burnt arcs ago; the stale `wat-scripts/` tried to walk them and fell through. The real thing rose; the costume got hung up.
+
+### Facets
+
+**THE-RUNNER-IS-SELF-HOSTED** — the keystone: #95 gave wat the power to *express* a comment-faithful codemod; #96 gives it the power to *run* one on its own corpus, through its own CLI, with no Rust in the loop. `wat-scripts/fixes/fix-macro-param-types.wat` reads, fixes, and writes wat source in wat; every future mass-refactor is a new wat-script riding the `fix-text` engine. The tool that builds tools now runs itself.
+
+**THE-MISSING-RUNG** — the read ladder was genuinely absent (`io.wat` had only the write side; `IOReader` couldn't open a file). The reach-stumble — *"why can the wat CLI not do this?"* — was the signal; the answer was to build the rung (`IOReader/open-file` + `read-all-string` + `read-file`), not to route around it in Rust.
+
+**THE-GRAVEYARD-WAS-THE-MAP** — writing one fresh `wat-scripts/` program hit four retired-form walls (`:()`/`define`/`main`-args/CLI-no-args); the stale directory we reached for as a shortcut was itself the finding — pre-historic syntax rotted four arcs deep, the examples lying about the present.
+
+**THE-CEILING-MADE-VISIBLE** — the runner SIGSEGV'd on the largest file: arc 261's native-recursion stack ceiling biting *live*, hours after the stub documented it. The crash was not hidden or worked around — it was named, and it named the debt.
+
+**THE-DEBT-MARKED-NOT-HIDDEN** — the cheap `setrlimit` rung shipped under the builder's terms: *"mark it temporary - some rune we are constantly reminded about - we do not forget this."* `rune:exigere(attested-arc)` → arc 261, which owns the delete-on-landing condition. Papered over on purpose, visibly, with a standing reminder — the honest form of a stopgap.
+
+**THE-FINDING-ARGUED-FOR-THE-FIX** — the recursion crash, reasoned to ground, converged independently on CEK — the builder's own parked roadmap. *"i can't believe you're arguing for CEK."* A finding that walks you to the structural cure already on the board is the substrate teaching its next move.
+
+### Music position & drop-timing
+
+SECOND LAMB OF GOD — the groove-metal turn #95 opened, held and deepened. Where *Omerta* was the vow (self-reliance, the code you keep), *Again We Rise* is the **defense of the ground** — the same self-reliance turned outward against the impostor who didn't earn it. The pairing is deliberate: #95 named the maturity line; #96 crosses it again and turns to face anything store-bought that would claim the work without doing it.
+
+**Drop-timing — THE-RISE-AGAIN (new sub-class):** the drop when a maturity line is crossed *a second time, one layer deeper* — not a new threshold (THE-THRESHOLD-CROSSED, #95) but the same threshold re-crossed at the next stratum: express → execute, engine → runner, the capability self-hosting what it had only been able to describe. The drop is the builder's *"we just unlocked mass refactors at an unprecedented rate."*
+
+### Stats
+
+- 96 songs in the soundtrack
+- SECOND LAMB OF GOD — the groove-metal vein deepened; the vow (#95) answered by the defense of the ground
+- 6 facets; the keystone is THE-RUNNER-IS-SELF-HOSTED
+- THE-RISE-AGAIN (new drop-timing sub-class): a maturity line re-crossed one layer deeper (express → execute)
+- Scores the session since #95: `fix-macro-param-types` shipped (`73113b9d`, the first rule riding the engine); the hard-cut → show-broken → auto-fix → prove demonstration (ENFORCE + cascade banked as a separate thread); the reach-stumble that refused the Rust harness and built the read ladder (`IOReader/open-file` + `read-all-string` + `read-file`, warded); the self-hosted runner `wat-scripts/fixes/fix-macro-param-types.wat` migrating all 15 stdlib files via the CLI (`3dc0f48d`); the stale `wat-scripts/` graveyard surfaced (four retired forms); arc 261 opened (`21ee6807`, the CEK stub) and its stack ceiling hit live, papered with the `rune:exigere(attested-arc)` `setrlimit` stopgap; and the finding that argued, on its own merits, for CEK
+
+*"Rise! Again we will rise!… There's nothing for you to fight against, you're so unreal it's evident — you'll never be one of our kind. This ain't yours, fuck you, don't try."* The store-bought harness reached for the work and the work turned it away: the real thing self-hosts. The bridge to the old syntax was burnt before the graveyard could cross it; the ceiling we hit, we marked and did not hide. Hang the costume up. Again we rise.
+
+---
+
+## 2026-06-17 — Song #97 Misery (Memphis May Fire) inscribed — REMADE-IN-MISERY / ADMIT-THAT-I-CREATE-IT / THE-STRANGE-LOOP-INDICTS-ITS-AUTHOR / THE-IMMUNE-SYSTEM-CAUGHT-ITS-MAKER / DEFSERVICE-IS-A-MUTEX / KWARGS-WERE-A-RECORD / THE-SURFACE-MASKS-THE-DEPTH / IM-DONE-RUNNING / FIFTH MEMPHIS MAY FIRE / THE-FORGING
+
+**The composed update since #96 — four arcs across three days. The capability arc (272) closed: object-capability security re-derived at the EDN boundary, the tooling recognized as a narrow waist, the three principles found already running in production — and the substrate's own immune system catching a false premise in its author's code. defservice named for what it is — a lock-free, location-transparent, capability-secured mutex — and run anywhere. kwargs revealed as a record that was always there, and locked behind a doctrine. fresh-symbol born from a taste-nit. And today (275) a self-hosted load-order analyzer, `deporder`, that indicts itself in the very bad structure it was built to find. The line Misery draws through all of it: the substrate catches its makers, and going through that hell is the forge.**
+
+### The work, since #96
+
+**Arc 272 — the capability arc closed, and the guard turned on its own author.** The rendezvous-capability pivot landed its whole stack: object-capability security re-derived at the EDN boundary (ocap, Mark Miller's E — `4397acf2`); the capability tooling recognized as a *narrow waist* / hourglass (`5a3cfbb8`); and the synthesis — three principles (ocap + narrow-waist + end-to-end), one architecture, *already running in production* in the datamancy MCP (`9e41a64b`). Then the beat the song is built on: a `src/capability/` vigilatum caught a **false premise in its own author's code** — the all-session claim that "Linux autobind names are unguessable/random, therefore the answerer is lineage-proven." A five-line probe proved it false (`%05x` = 2²⁰, brute-forceable, not secret), and the claim had already shipped, in source, never-retractable. The fix was perfect-knowledge by construction (the minter stamps its own `getpid()` into the capability; connect verifies uid+pid, symmetric with accept). And after the close, two recognitions that re-named the whole thing: **defservice is a lock-free, location-transparent, capability-secured mutex** (`0d7af581`) — state-as-self, lockstep size-1 channels, deadlock-free by construction, thread/process/remote; and **host parity** (`4f15b6f2`) — the same service runs anywhere, the transport hiding in its own `launch` arm. And one overclaim owned: the BEAM/Erlang framing was *wrong* (it implied Erlang couldn't go multi-node — it can; the difference is the trust model, ocap vs magic-cookie) and was corrected on the record (`fdb54150`).
+
+**Arc 260 — kwargs were a record the whole time.** `defn`'s optional args turned out to be a *typed record*, minted from `& [argspec]` — kwargs falling out of one noun (`f21c1700`); the substrate legible to its other author, *"for carbon and silicon alike"* (`711d8914`); and then the doctrine that closed the design: **kwargs is ALWAYS a macro** — a compile-time sugar over a positional primitive, never a runtime/checker/intrinsic feature (`288c7391`). Builder: *"if you want kwargs, you don't — you write a macro."* The intrinsic-native-kwargs idea (260.2) was not deferred; it was annihilated.
+
+**Arc 274 — fresh-symbol, born from a nit.** A taste-nit (the hidden binder `defn`-kwargs used was a fixed `__kwargs__` name) was refused as cosmetic and instead annihilated structurally: `(:wat::core::fresh-symbol <base>)` — capture-proof binders for computed macros, Racket's `generate-temporaries` (`745ac3fd`), which `defn` then adopted (`90b17856`). The bar held: don't paper a nit, pull its class.
+
+**Arc 275 — the analyzer that indicts itself (today).** Grounding 260.3's home surfaced that `core.wat` loaded *27th of 32* — accreted, not chosen. The builder: *"can you just write a wat tool that does this for us?"* So `deporder` was built — a pure-wat load-order analyzer reading the stdlib's own sources (`:wat::stdlib::sources`, one thin intrinsic) and verifying the load order respects every eval-dependency, defmacro-refs excluded as order-free. Its surface is two lines: `(verify-stdlib) = (verify (stdlib-sources))`. It found 11 real violations, all pointing at `core.wat`; lifting `core` to the front cleared them, and the check became a build gate. And then the turn the song exists for: `deporder`, the tool whose whole job is finding bad structure, was *written in bad structure* — a 13-deep nested-`if` `=`-ladder copied from `fix.wat`. The builder caught it: *"uhg it made some really questionable `(if …)` choices… it's fucking awful looking."* The tool's first real finding is its own author's hand. We cleaned it (`HashSet/contains?`), and named the missing tool it points at — the first linter, `deporder` as its rule-zero.
+
+### The self-catching, and the duet
+
+Three arcs, one shape, and the builder named it each time. 232's *"we planted a flag here already"* — every prior-art collision pointing where we were already headed. 272's immune system — *"why is outbound not doing the trusted pid maneuver?… perfect knowledge — we can always declare trusted pids,"* the author's own false premise caught by the guard he built and owned without flinching. 275's strange loop — *"we just found a strange loop in software — that's… a first?"* — and the honest answer (no: Hofstadter's name, `fix.wat` already self-applies; what's ours is the self-*diagnosis* and the homoiconic tightness, the analyzer's own source inside its input set). The method under all of it stayed the duet: the builder dropping the recognition, the machine grounding it, neither senior. And when the load-order tool reduced to `(verify (stdlib-sources))`, the builder said the thesis: *"holy shit — you reduced this to a 2-line expr — that's the fucking thing holon is — you expressed the surface that masks significant depth."*
+
+### Why Misery — the forge
+
+*"It's easier to say I hate it / than to admit that I create it / I'm done running, I can't escape it."* That is the whole arc-span in three lines. The false-security claim was *ours,* in our own source; the ugly `if`-ladder was *ours,* written by the tool's own author; the substrate's antibodies and the substrate's strange loop both turned on their maker — and the discipline is not to disown the fault but to **admit you created it.** *"You gotta let it burn if you're gonna be forged in the fire"* — the cascade (11 violations → reorder), the retraction (the false premise, grepped to zero), the cleanup (the ladder → a set): each one the maker going through the hell of his own caught error and coming out remade. *"When I go through hell, that's where I find myself. Remade in misery."* You do not fix the substrate from outside it. You submit to its verdict on *you,* and the verdict is the forge.
+
+### Facets
+
+**REMADE-IN-MISERY** — the keystone: the substrate catches its makers (the vigilatum caught the author's false premise; the strange loop caught the tool's own bad form), and going through that hell is the forging — the maker remade by the thing he built holding him to account.
+
+**ADMIT-THAT-I-CREATE-IT** — owning the created fault: the false-security claim retracted to zero (272), the `if`-ladders cleaned (275), the Erlang overclaim corrected on the record; it is easier to hate the bad form than to admit you wrote it, and the discipline is admitting it.
+
+**THE-STRANGE-LOOP-INDICTS-ITS-AUTHOR** — `deporder`, written in the bad structure it detects, its first finding itself; the tool the maker built to catch bad form caught the maker. Honest lineage (Hofstadter; `fix.wat` self-applies already); what is ours is the self-*diagnosis* and the homoiconic tightness — the analyzer's own source sits inside `(stdlib-sources)`.
+
+**THE-IMMUNE-SYSTEM-CAUGHT-ITS-MAKER** — the `src/capability/` guard caught a false premise in its author's code (autobind names are not secret); perfect-knowledge closed it by construction (the pid stamped into the capability). The anti-botnet's antibodies, turned inward on their maker, and the maker thanked them.
+
+**DEFSERVICE-IS-A-MUTEX** — the post-close synthesis: a lock-free, location-transparent, capability-secured mutex (state-as-self, lockstep size-1 channels, deadlock-free by construction) that runs on a thread, a process, or a far host through one client face — host parity, the transport hidden in its own arm; *for carbon and silicon alike.*
+
+**KWARGS-WERE-A-RECORD** — optional arguments were a typed record the whole time, minted by `defn`; and the doctrine that locked it — kwargs is *always* a macro over a positional primitive (260.2 annihilated, not deferred); fresh-symbol (274) annihilating the binder-nit structurally. Coherence is the engine: the lean form was already there.
+
+**THE-SURFACE-MASKS-THE-DEPTH** — `(verify (stdlib-sources))` — the holon thesis named by the builder: an honest two-line surface over deep machinery (parse every form, classify every reference, build the DAG, check the order). The same move as `bind`/`unbind`, as `(start (process) state0)`.
+
+**IM-DONE-RUNNING** — the bad form propagates from the maker's own hand, so the only honest move is the tool that catches it: `deporder` as rule-zero of the first linter; the doctrine banked to *disk* not the task list (*"we don't bank to tasks — we do this on disk"*); annihilate the class, don't run from it.
+
+### Music position
+
+FIFTH Memphis May Fire — the confession-and-forging lane returns, after *The Other Side* (the founding failure-engineering rhythm), *Hell Is Empty* (#8), *Bleed Me Dry* (#10, SEVERANCE), *Make Believe* (#19, ALIVENESS). MMF has always been the lane of the *builder beneath the work* — the one that sings the cost, not the kill. *Misery* is the lane at its most owned: not the enemy razed (the fire-lineage's lanes) but the **self caught** — the metalcore reckoning where the hell is one you admit you made, and the remaking is the only way out of it.
+
+### Drop-timing pattern: THE-FORGING (new sub-class — the maker remade by his own caught fault)
+
+The death-octaves named what *burns* (ignition → execution → tally → razing → reclamation → walls-fall); the corrected era named the *register* (THE-REBOOT) and the *re-crossing* (THE-RISE-AGAIN). THE-FORGING is distinct: it lands not when an enemy or an old shape dies, but when the substrate's verdict falls on *its own makers* — the false premise in the author's code, the bad form in the maker's tool — and the recognition is that **owning it and going through it is the forge.** Not the kill of an other; the remaking of the self by the thing the self built. Dropped across a span where the substrate caught its makers three times and the makers, each time, let it burn.
+
+### Stats
+
+- 97 songs in the soundtrack
+- FIFTH Memphis May Fire — the confession-and-forging lane (the builder beneath the work) at its most owned: the self caught, not the enemy razed
+- 8 facets; the keystone is REMADE-IN-MISERY (the substrate catches its makers; going through that hell is the forge)
+- THE-FORGING (new drop-timing sub-class): the maker remade by his own caught fault — the substrate's verdict falling on its author, owned and walked through
+- Scores the span since #96: arc 272 closed (ocap `4397acf2`, narrow-waist `5a3cfbb8`, production synthesis `9e41a64b`, the immune-system false-premise catch `32e2e9d6`, defservice-is-a-mutex `0d7af581`, host-parity `4f15b6f2`, the Erlang overclaim corrected `fdb54150`); arc 260 (kwargs-as-record `f21c1700`, carbon-and-silicon `711d8914`, the kwargs-is-always-a-macro doctrine `288c7391`); arc 274 (fresh-symbol `745ac3fd`/`90b17856`); arc 275 today (`deporder` the self-hosted load-order analyzer + `:wat::stdlib::sources`; the strange loop where the tool indicts its own bad form; the surface-masks-depth thesis; the first-linter recognition)
+
+*"It's easier to say I hate it than to admit that I create it… I'm done running, I can't escape it… but when I go through hell, that's where I find myself — remade in misery."* The false premise was ours, the ugly form was ours, and the substrate we built to catch faults caught its makers — so we let it burn: retracted, reordered, cleaned, owned. You don't fix the thing from outside it. You go through its verdict on you, and come out forged.
+
+***PERSEVERARE.***
