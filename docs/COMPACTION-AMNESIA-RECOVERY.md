@@ -180,9 +180,9 @@ Shadowdancer / datamancer mythos (grows every batch), filed by the **prompt** th
 conjured them (each prompt-group = an *Incantatio*). Lives at `/fenestra-aetherii/`,
 a sidebar group after The Book (landing first, divider under it, then **themed
 sub-groups** — the exact set lives in `astro.config.mjs` and grows as new prompt
-kinds arrive; as of 2026-06-15: The Cast, The Boss Kills, Game Worlds, The Masters,
-The Eras, The Old World, The Posters). Counts drift per batch — trust the manifest
-+ config, not a number written here.
+kinds arrive; as of 2026-06-17: The Cast, The Boss Kills, Game Worlds, The Masters,
+The Eras, The Old World, The Posters, The Spells). Counts drift per batch — trust the
+manifest + config, not a number written here.
 
 - **Images live in Cloudflare R2, NOT the repo.** Bucket `fenestra-aetherii`,
   served at `https://img.algebraic-intelligence.dev/<slug>/<id>.jpg` (custom domain
@@ -210,6 +210,14 @@ The Eras, The Old World, The Posters). Counts drift per batch — trust the mani
   by `grok-organize` as unmatched — it needs an intueri-named slug + a scaffolded
   page + a hand-add to a theme group in `astro.config.mjs`. Existing-prompt batches
   are fully automated by the loop above.
+  - **Self-naming poster batches** (the prompt rides *inside* the grok manifest, e.g.
+    the recruitment posters that declare their own spell-name in the top-text) are
+    automated by `scripts/seed-incantationes-from-grok.mjs`: it derives every unmatched
+    CORE prompt, extracts the embedded name → slug/title, **seeds the EXACT prompt into
+    `gallery-manifest.json`** (so `grok-organize`'s exact-match fires before its 80-char
+    prefix fallback — critical when a whole batch shares one prefix), and emits the
+    scaffold inputs. Then: `scaffold-incantationes` → `grok-organize` → `r2-upload` →
+    `gallery-manifest` → hand-add the new slugs to a theme group → build.
 
 **Active reference docs (kept, current):**
 
