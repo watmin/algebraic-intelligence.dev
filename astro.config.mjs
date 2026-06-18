@@ -285,6 +285,18 @@ export default defineConfig({
                 { slug: "blog/story/series-006-031-the-tools-that-fix-themselves" },
               ],
             },
+            // The capability era: rendezvous stops being a name anyone can claim
+            // and becomes an unforgeable reference handed down the spawn lineage —
+            // object-capability security (Dennis & Van Horn 1966) rediscovered at
+            // the EDN boundary; the vigilatum catching the authors' own false
+            // "unguessable names" premise (arc 272).
+            {
+              label: "The Unforgeable Reference",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-006-032-rendezvous-is-a-capability" },
+              ],
+            },
             { slug: "blog/story/epilogue" },
           ],
         },
