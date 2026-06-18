@@ -37,7 +37,7 @@ yet a narrated subject.
 | Repo | Role vs the chronicle | Source HEAD @ reconcile | Chronicle frontier | Gap |
 |---|---|---|---|---|
 | `algebraic-intelligence.dev` | **The chronicle itself** | `6cba90d` (06-17) | — (it *is* the record) | — |
-| `wat-rs` | Substrate — the live edge | `26b088b5` (06-17) | era **"The Self-Fixing Toolchain"** (`series-006-031` — arcs **275/277/279/281/284**) · era **"The Unforgeable Reference"** (`series-006-032` "Rendezvous Is a Capability" — arc **272**: forgeable name → annihilate → ocap → the immune-system catch → the honest retraction) | **Still open: 260** kwargs-are-macros · **282/283** wat-fix-over-Rust (borrowed eyes). **In flight (NOT yet narratable):** 251 the great migration (a few syntax fixes remain) · 278/285 the rete engine |
+| `wat-rs` | Substrate — the live edge | `26b088b5` (06-17) | era **"The Self-Fixing Toolchain"** (`series-006-031` — arcs **275/277/279/281/284**) · era **"The Unforgeable Reference"** (`series-006-032` — arc **272**) · era **"Coherence Is the Engine"** (`series-006-033` "The Arguments Were a Record" — arc **260**: kwargs are a record `defn` mints; "kwargs is always a macro"; for carbon and silicon alike) | **283** shipped (SourceFile→`:wat::source::File` dogfood rename) — minor, folds into the self-fixing-toolchain doctrine, optional future short post. **HORIZON / NOT yet narratable:** 282 wat-fix-over-Rust ("borrowed eyes" — a STUB + dep attestation, not built) · 251 the great migration (syntax fixes remain) · 278/285 the rete engine |
 | `holon-rs` | The Rust port | `530650c` (05-22, arc 230) | series-003 (`the-rust-port` → `engrams`) + Implementations/Rust | commit-frontier not pinned; repo quiet since 05-22 |
 | `holon-lab-ddos` | DDoS / XDP scrubber | `b4eed24` (03-08) | series-004 (L7) + series-005 (spectral firewall) + Labs/DDoS | none active; repo quiet since 03-08 |
 | `holon-lab-trading` | Trading lab + **BOOK true source** | `55e8c90` (06-17; BOOK Interm. **XIV "Crucibulum"**, `ef9f28b`) | series-006-001/002/003; the BOOK serves via `mirror-monoliths` → raw whole `/blog/book.md` + **rendered per-chapter pages** in the sidebar (**through XIV, 06-17** — 100 chunks) | story covers the lab; the BOOK/intermissions serve raw + rendered, not chronicle-narrated |
@@ -70,10 +70,15 @@ the in-flight list at the end).
   the strange loop at birth (deporder); the gap→tool→rule loop; the proof is the git diff
   from gross to clean, *by the toolchain the code is part of*. Folded in the whole lineage
   (275 strange loop · 279 format · 281 ast-end-span · 284 interpolate), not just 277.
-- **E — Borrowed Eyes (arcs 281→283).** `ast-end-span` (the keystone for any auto-fix) →
-  `wat-fix` reaching into its own **Rust** substrate (borrowed `rustc_lexer` eyes + wat
-  rules) → the `SourceFile → :wat::source::File` dogfood rename. The toolchain turning on
-  its own floor. Pairs with D or stands alone.
+- **E — Borrowed Eyes (arc 282). HORIZON, NOT shipped — grounded 2026-06-17.** The
+  compelling frame (`wat-fix` reaching into its own **Rust** substrate with borrowed
+  `rustc_lexer` eyes + wat rules) is arc 282, which is a **STUB/HORIZON + a dep-decision
+  attestation**, not built. Narrate it when it ships — same rule as 251/278. (`ast-end-span`
+  is arc 281, already folded into D.) The *shipped* sibling is **arc 283** — the
+  `SourceFile → :wat::source::File` dogfood rename via the wat codemod (283.1 hardened
+  rename-keyword-prefix to reach type-args). Real but minor; another instance of the
+  self-fixing-toolchain doctrine D already carries, not its own era. Optional short post or
+  a realization footnote; not a fourth headline.
 **Still in flight — narratable only when they land (NOT this batch):**
 
 - **arc 251 — The Great Migration.** Typed Clojure on Rust: the surface-syntax flip, the
@@ -87,8 +92,11 @@ the in-flight list at the end).
 
 First batch (the "3–6 pages"), all **shipped + self-contained**: ~~D~~ ✅ (the self-fixing
 toolchain — `series-006-031`, consonare 9) · ~~C~~ ✅ (rendezvous-as-capability —
-`series-006-032`, consonare 9) · **B** (kwargs-are-a-macro — the tight principle) · **E**
-(borrowed eyes — the toolchain over its own Rust, arcs 282/283). **Remaining: B, E.** Each owes its `## Likely
+`series-006-032`, consonare 9) · ~~B~~ ✅ (kwargs-are-a-record — `series-006-033`,
+consonare 9). **Batch complete: three posts (D, C, B), each shipped + consonare-9.** The
+planned fourth (E, "borrowed eyes") was **grounded to a horizon** — arc 282 is a STUB, not
+built — so it is held until it ships (its shipped sibling 283 is a minor dogfood, not a
+headline). Three strong posts satisfies the "3–6 pages"; quality over count. Each owes its `## Likely
 Contributions to the Field` close + a nav wire-in + a consonare cold-read MATCHES before
 it's done — and each should **harvest its arcs' REALIZATIONS.md**, not just the headline
 (D folded in 5 arcs' findings; the realizations are the substance the strip-test demands).
