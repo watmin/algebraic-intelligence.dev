@@ -273,39 +273,23 @@ export default defineConfig({
                 { slug: "blog/story/series-006-030-what-the-bar-missed" },
               ],
             },
-            // The era after The Shape Keeps Its Promise: the wards stop being
-            // hand-cast and become a toolchain — wat-lint/fix/fmt, in wat, run on
-            // wat — that finds bad forms and rewrites them. The proof is the diff
-            // of the toolchain cleaning its own source (arcs 275→284); the strange
-            // loop closed at birth (deporder flagging its own author).
-            {
-              label: "The Self-Fixing Toolchain",
-              collapsed: true,
-              items: [
-                { slug: "blog/story/series-006-031-the-tools-that-fix-themselves" },
-              ],
-            },
-            // The capability era: rendezvous stops being a name anyone can claim
-            // and becomes an unforgeable reference handed down the spawn lineage —
-            // object-capability security (Dennis & Van Horn 1966) rediscovered at
-            // the EDN boundary; the vigilatum catching the authors' own false
-            // "unguessable names" premise (arc 272).
-            {
-              label: "The Unforgeable Reference",
-              collapsed: true,
-              items: [
-                { slug: "blog/story/series-006-032-rendezvous-is-a-capability" },
-              ],
-            },
-            // Coherence as the engine: keyword arguments turn out to be a record
-            // the substrate already had — defn mints it, and it inherits the whole
-            // record surface for free. The same legibility makes the language
-            // writable cold by a model: correct code as the path of least
-            // resistance, for carbon and silicon alike (arc 260).
+            // The era after The Shape Keeps Its Promise: with the migration's
+            // foundation laid, new power is RECOGNIZED as already present in the
+            // coherent substrate, not bolted on — and each landing rediscovers a
+            // textbook idea from first principles. The toolchain turns on its own
+            // source, the strange loop closed at birth (arcs 275→284); rendezvous
+            // was already a capability once the forgeable name is annihilated —
+            // object-capability security, Dennis & Van Horn 1966 (arc 272);
+            // keyword args were already a record defn mints (arc 260). "Coherence
+            // is the engine; richness is the dividend" — the one move all three
+            // share, named in the kwargs post. (One era over three posts, not
+            // three single-post eras — the chronicle groups; it does not go 1:1.)
             {
               label: "Coherence Is the Engine",
               collapsed: true,
               items: [
+                { slug: "blog/story/series-006-031-the-tools-that-fix-themselves" },
+                { slug: "blog/story/series-006-032-rendezvous-is-a-capability" },
                 { slug: "blog/story/series-006-033-the-arguments-were-a-record" },
               ],
             },
