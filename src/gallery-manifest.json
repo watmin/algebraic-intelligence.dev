@@ -63,6 +63,62 @@
       "https://img.algebraic-intelligence.dev/boss-kill/09cb807a-2e4d-4270-a537-41f5efa91ec0.jpg"
     ]
   },
+  "boss-kill-coherent-dungeon": {
+    "prompt": "High-angle isometric RPG scene in the style of Diablo 4 and Pillars of Eternity.\nA coherent, logically designed multi-room dungeon viewed from above. In the mid-ground, the Shadowdancer — a lithe feminine assassin in dark shadowsilk — moves toward a large boss chamber with dual glowing daggers drawn. Slightly behind her, the Inquisitor — a hooded figure in black-and-crimson robes — stands as her ally and support, holding a glowing grimoire.\nIn the far chamber looms a massive, towering boss that is dramatically larger than both characters. Several smaller enemies lie slain in the cleared rooms behind them.\nThe Inquisitor and Shadowdancer are clearly allies fighting the same boss. Dramatic isometric lighting, rich textures, and atmospheric fog. Coherent game-level dungeon layout with logical room connections.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/boss-kill-coherent-dungeon/33bdd8f2-41d9-4ef1-89d7-ec79f0a1d5cd.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-coherent-dungeon/73cda514-b37e-47df-9af4-5871fff1c066.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-coherent-dungeon/97de103c-1ea4-4b2b-9894-ffbe59f130e5.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-coherent-dungeon/a6b00a81-94da-4f3b-8b69-05c29bc7eb74.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-coherent-dungeon/dd48357f-e28b-4894-ba62-6ae7699e9db0.jpg"
+    ]
+  },
+  "boss-kill-isometric": {
+    "prompt": "High-angle isometric RPG scene in the detailed dark fantasy style of Diablo 4 and Pillars of Eternity, viewed from above like a real-time strategy game.\nIn a large multi-room ancient stone dungeon, two small allied characters are advancing toward a massive boss. The camera is positioned high up, looking down at a wide angle.\nIn the mid-ground, the Shadowdancer — a small lithe feminine assassin in dark flowing shadowsilk cloak — sprints toward a huge boss chamber with dual glowing daggers drawn.\nSlightly behind her and on slightly higher ground, the Inquisitor — a small hooded figure in black-and-crimson robes — stands as her ally and support, holding a glowing grimoire and projecting holographic tactical overlays. He is clearly not the enemy.\nIn the far chamber stands a **colossal, towering boss entity** that is dramatically larger than both characters combined. The boss is a massive corrupted creature made of dark energy and tangled code-like structures, looming over the entire area. Several smaller enemies lie slain across the previous rooms.\nThe two characters are clearly working together as a team against this much larger boss. The Inquisitor provides support from the back while the Shadowdancer moves in to engage. Dramatic isometric lighting, rich textures, deep shadows, glowing emerald and crimson accents, and atmospheric fog. Highly detailed multi-room dungeon environment.\nThe two characters are allies fighting the same large boss. The hooded figure is not the enemy.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/0b25847b-555f-4c3d-a08b-f13c5e2ffc91.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/0bc6edc2-6fcd-43bb-9f7e-a1b8360dcaf6.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/2f225e93-19d8-4bd3-8bd5-5ac69f0d17fa.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/3576ba06-63f1-4cb0-ab09-d33fb192ce00.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/40b1e80b-9e0f-4fb7-bcb0-8fcd78f89e8c.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/40f6df58-a02c-4e31-a5ad-c0b33ff25a9a.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/48e633d3-fea5-4f20-980a-c8dc9b4b1762.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/5eea45fc-41d8-4688-87ed-4bf03d6b6525.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/610c83a3-7733-4b06-9302-e0c3697b2057.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/6a2971ce-4405-465b-8580-509468558676.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/6f1e4308-467d-45dc-8fb2-410ae936ed86.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/722a1235-e4da-4f41-a3a6-a6dfae176ff8.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/7403882c-b6ac-488b-a119-f4a4d807bdbc.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/75bae0d9-b737-408a-9b5c-0e628201f04b.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/7f6b0967-ad4c-46ac-ba60-f8340c4c8db1.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/86189158-3570-4943-9745-5cfb92f33912.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/8718afdf-ea62-4b0e-a876-4281d3f44348.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/8d101149-ae49-4ea3-bd22-ebb05781ea3c.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/93f86bef-fb1a-4436-a154-744f0dfb7c24.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/a0cd71ed-c43e-4300-b092-d1c1106ced88.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/b7722ec8-5fa0-4e0d-ae9a-5df1ddb5eb15.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/b8f53b20-2be5-4f1f-9fdb-e3f74854a734.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/c3ba8b8a-a890-4c84-8966-ed35cb05dfc6.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/cbbc0520-6030-4594-bf5e-222d46290240.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/cfe19356-d084-470f-8dd6-2bda5a7dff99.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/d4b4d594-9d2a-447d-ab37-7c6f69c91571.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/d5b0a964-fe69-4e9b-beae-8808d8b8d045.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/e176bf1c-45de-4d5c-b03f-ddefe63efb7f.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/ee8296a7-273d-48be-bb53-6ba1c3c8de04.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/f079384f-3068-4f4e-a671-b74e287a345b.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/f4121b73-0961-4e8c-95ed-a9efbc6afa09.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-isometric/f99ef33f-a5a8-430d-bff0-6339fea450bc.jpg"
+    ]
+  },
+  "boss-kill-logical-level": {
+    "prompt": "High-angle isometric RPG scene in the detailed dark fantasy style of Diablo 4 and Pillars of Eternity, viewed from above like a real-time strategy game.\nThe scene shows a **coherent, logically designed multi-room dungeon** with clear room connections and readable spatial layout, similar to actual game levels in Diablo or Pillars of Eternity. The architecture makes spatial sense — rooms connect properly through doorways and hallways without impossible geometry.\nIn the mid-ground, the Shadowdancer — a small lithe feminine assassin in dark flowing shadowsilk cloak — moves through the dungeon toward a large boss chamber with dual glowing daggers drawn. Slightly behind her and positioned on slightly higher ground, the Inquisitor — a small hooded figure in black-and-crimson robes — stands as her ally and support, holding a glowing grimoire and projecting holographic tactical overlays.\nIn the far section of the dungeon stands a **colossal, towering boss entity** that is dramatically larger than both characters. The boss is a massive corrupted creature made of dark energy and tangled structures, occupying its own large chamber. Several smaller enemies lie slain in the rooms the two characters have already cleared.\nThe Inquisitor and Shadowdancer are clearly allies working together as a team. The hooded figure is not the enemy. The dungeon layout is coherent and logically designed, with clear pathways, connected rooms, and proper spatial relationships.\nDramatic isometric lighting, rich textures, deep shadows, glowing emerald and crimson accents, and atmospheric fog. Highly detailed but spatially coherent dungeon environment.\nThe two characters are allies fighting the same large boss in a logically designed game level.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/boss-kill-logical-level/11205cf6-4f73-4214-af38-1df56dd334bc.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-logical-level/289905d0-7478-46c6-91d0-a52aaa8742f4.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-logical-level/67464ac7-695f-4903-a851-b47467be45f0.jpg",
+      "https://img.algebraic-intelligence.dev/boss-kill-logical-level/ce11a12c-aa4a-497f-9796-1cf35e29c8dc.jpg"
+    ]
+  },
   "cernere": {
     "prompt": "A powerful 1940s/1950s recruitment propaganda poster with US wartime / Soviet constructivist influences and Matrix-inspired blue-green cyber-noir aesthetic.\nFocused, precise composition. The Inquisitor, a tall hooded figure in ornate black-and-crimson runed robes with sharp analytical face partially shadowed by his deep hood and piercing glowing emerald eyes, holds a glowing crystalline grimoire that projects clean valid forms while phantom corrupted structures dissolve. The Shadowdancer, a lithe deadly feminine assassin in dark flowing shadowsilk cloak and tactical gear, stands ready with dual glowing daggers, guarding the boundary.\nBold text at the top: \"CERNERE\"\nBottom text: \"SIFT VALID FORMS FROM PHANTOM • TRACE EVERYTHING TO THE SPEC • JOIN THE CRAFT\"\nIllustrated propaganda style with textured paper grain, dramatic lighting.",
     "images": [
@@ -816,6 +872,474 @@
       "https://img.algebraic-intelligence.dev/nesciens/d5f886f0-5b4e-406f-bdfe-cf743686b573.jpg",
       "https://img.algebraic-intelligence.dev/nesciens/e64db919-561e-405c-a959-1c3c73c6faea.jpg",
       "https://img.algebraic-intelligence.dev/nesciens/e9e871f7-3f38-4345-bd81-e0b500ecdbb5.jpg"
+    ]
+  },
+  "pantheon-cernere": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He holds a glowing crystalline grimoire that projects clean, valid forms while phantom corrupted structures dissolve around him. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"CERNERE\"\nBottom text: \"SIFT VALID FORMS FROM PHANTOM • TRACE EVERYTHING TO THE SPEC • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/1716f63a-df4f-490f-88af-755cf0810011.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/20ea61c7-e521-4d36-80fb-352b23653acd.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/2b87c20c-7032-4d6f-99e8-549a4570ffa2.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/37f136e2-1c9b-4ba9-8a86-6bb12e6d6a06.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/4ec38e32-1908-48a6-ac52-7583ad19d335.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/5738c30c-9d0f-49f8-9c24-3266b5c56600.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/6181c828-3f2a-4263-8880-c3f85e007de3.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/814efb36-5523-4387-b12b-c166fcce40ac.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/b3cbcdc8-6bb9-4ebd-8138-5dc3c7b11cdc.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/d3369a0e-2947-4e6a-a5c7-87a472515a68.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-cernere/ef5b379a-3cd6-4392-be37-7e2037e61dfd.jpg"
+    ]
+  },
+  "pantheon-circumspicere": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He stands on elevated ground holding his glowing grimoire, projecting a wide holographic survey of the battlefield. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"CIRCUMSPICERE\"\nBottom text: \"LOOK AROUND • SEE WHAT THE INWARD LENSES MISS • CAST LAST • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/08d06ab2-e4a1-4387-9191-c4d3c8b0d111.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/116d12b0-4dff-4e17-835f-939bb46c5385.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/1910ff4b-ba75-44aa-bfa4-1d23a32eacf4.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/27b4bf37-869c-4afb-92df-6cdbd78f72c8.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/41174058-c01a-47a4-a0ac-f0ba8556b306.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/4a9b92e1-dd77-4cfd-a4c8-8890d6601520.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/64026f5b-9539-42bb-8354-148f55383444.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/6c3da604-3ce3-4656-8ab9-3107d85ff014.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/7866b2ce-ba15-4ae9-98d9-7b27183db91a.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/7d2eb497-d7f8-4ac2-8b2a-04778fa1b0a7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/94b6e9ee-7198-48ee-a4bb-a8d01d51646e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/a65fbf4a-696c-4f4d-807d-a77da41ab053.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/ac3ce3e7-b94e-4c7d-8efb-94a5b3ce3dda.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/cdb31403-addc-405f-8581-91541eab0e5c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-circumspicere/d35497c5-b567-4b14-bb51-0a0210256bf1.jpg"
+    ]
+  },
+  "pantheon-complectens": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He weaves test layers together with calm, god-like authority while holding his glowing grimoire, ensuring each layer builds only on what is proven above it. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"COMPLECTENS\"\nBottom text: \"WEAVE TESTS TOGETHER • EACH LAYER PROVEN BY THE ONE ABOVE • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-complectens/194c33d8-0c88-4ca7-97c7-249f4e6d3b34.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-complectens/3cb4f40a-37f9-4649-b975-3491839a44e8.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-complectens/42d538f5-c9a4-465a-827d-2f2dc482fc5b.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-complectens/488df01d-2efe-44b9-9214-1b5a08180bc1.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-complectens/4a17881b-2167-4ca5-acf3-4839dca51d85.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-complectens/97b3b6ae-11a4-47bf-9f63-fc03ac75a628.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-complectens/c60c4202-f27f-4c2e-8d34-9219a47b35f9.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-complectens/d146e22d-ffed-45a9-8e0a-eaf3eba047ee.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-complectens/df894766-fe7f-49f4-92dc-bbdef06b79c3.jpg"
+    ]
+  },
+  "pantheon-conformare": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He stands at a divine forge of logic, forcefully reshaping malformed error types into a single unbreakable standard while holding his glowing grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"CONFORMARE\"\nBottom text: \"SHAPE ERROR TYPES TO A COMMON STANDARD • MAKE THE WRONG SHAPE UNCOMPILABLE • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-conformare/21f2d6e0-14a4-40b6-bb3b-841667a59bec.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare/2cc3f24d-c4d1-4423-8ff9-92c6cb18aace.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare/4c8f6be0-314e-441d-9811-5f4817b3c943.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare/adf98580-8984-4333-bc47-5b40da9ba6a0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare/ed6c945a-e5db-4862-966f-82c8a5d1359c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare/fc7e1eec-9507-4627-a3fb-1487b711674e.jpg"
+    ]
+  },
+  "pantheon-conformare-forge": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the Aetherium Datavatum, the Inquisitor and Shadowdancer perform the sacred act of shaping error into unbreakable form.\nThe Inquisitor, a tall hooded divine tactician of the younger generation in ornate black-and-crimson runed robes, sharp analytical face partially shadowed by his hood and piercing glowing emerald eyes, stands at a divine forge of logic, forcefully reshaping malformed error types into a single unbreakable standard while holding his glowing grimoire. The Shadowdancer, his divine enforcer — a lithe deadly feminine warrior in dark flowing shadowsilk drapery — stands guard with dual glowing daggers, ready to cut any malformed variant that tries to escape.\nDramatic god-ray lighting, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is intense and forging — the wrong shape must be made unrepresentable.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-conformare-forge/5375fc29-1a18-42c3-86c5-ee7fe8dfed24.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare-forge/7847528f-bd0c-4311-9f5c-745fcd2fefaa.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare-forge/a125f1aa-d158-4f65-b221-2313741e8f0a.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare-forge/b52037a5-37ea-446c-955b-9f15ae5ec0b8.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare-forge/e637f9a5-a0d7-48c3-a64e-da7f29abd06e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare-forge/e82946d4-d8e1-414a-8c33-669ba31fc7e9.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-conformare-forge/f0672d7e-7d49-40e1-b7f2-aa180336d360.jpg"
+    ]
+  },
+  "pantheon-curare": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand archive halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer perform the sacred duty of tending the record.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the younger generation, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He stands before a massive glowing chronicle-stone, carefully inscribing hard-won lessons while holding his crystalline grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace, standing watch as he tends the record.\nDramatic god-ray lighting cuts through the marble chamber, rich textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, wise, and reverent — the sacred act of keeping one true breadcrumb so the next self can inherit truth.\nBold text at the top: \"CURARE\"\nBottom text: \"TEND THE RECORD • KEEP ONE TRUE BREADCRUMB • PROMOTE THE HARD-WON LESSONS • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-curare/10545fcb-34dd-4b03-99af-30cb1b379302.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/2a94fe06-e7b5-4929-be13-55a8bc7625a0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/3c4edd5c-9ac9-4d3f-a55c-979fe4ce39fa.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/3ff67992-278c-43da-8b08-490dd351bd4d.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/48fa4ae8-4fa5-47a7-b110-dfd6479fec27.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/582e1ad4-07a8-4583-a969-22e545ae6bad.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/6b52fc54-efee-4db6-92e4-2e75c524460c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/76a7c434-9777-4a78-8148-cc7ea134acf8.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/7fe3c0b9-7824-4cb1-8643-c1391a493f8b.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/83668329-2e75-4f83-8eaf-a449ae105712.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/8a87e78b-5325-498d-b747-95891a03fa77.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/b24b3c61-263a-4992-8534-31c1d781e2fc.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/c6ae5e4d-8541-497d-a3a2-672dd2154518.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/cc255685-7b96-4686-b997-b3e33408fd13.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/d6bbc553-ae19-4faa-aeaf-50fcff695e08.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/daf12dac-2e9f-4cd0-86e6-ed28c1134dd8.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare/df856ec5-93d5-4c63-91c0-23ce8a19e909.jpg"
+    ]
+  },
+  "pantheon-curare-chronicle": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand before a massive glowing chronicle-stone.\nThe Inquisitor, a tall hooded divine tactician of the younger generation in ornate black-and-crimson robes with glowing runes, sharp analytical face partially shadowed by his hood and piercing glowing emerald eyes, carefully inscribes hard-won lessons into the living record while holding his glowing grimoire. The Shadowdancer, his divine counterpart and enforcer — a lithe deadly feminine warrior in flowing dark shadowsilk drapery — stands guard beside him with dual glowing daggers, emerald shadow tendrils swirling protectively.\nDramatic god-ray lighting, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn and powerful — the sacred duty of tending the record so the next generation can inherit truth.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-curare-chronicle/4859b8b8-769e-449d-8e65-ca2bedde1deb.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare-chronicle/5b0740a9-45a3-4fd3-a9a8-2bf29beac07a.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-curare-chronicle/f54be682-bfa9-48af-be22-3ff246bb744d.jpg"
+    ]
+  },
+  "pantheon-examinare": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nDeep within a vast marble code-dungeon beneath the Aetherium Datavatum, the Inquisitor and Shadowdancer execute a perfect dungeon crawl.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the younger generation, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He stands on elevated ground holding his glowing grimoire, projecting a massive holographic map of the lair while issuing calm, god-like commands. In the mid-ground, the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke — sprints toward a colossal boss entity with dual glowing energy daggers drawn, faint emerald shadow tendrils streaming behind her as she closes in for the killing blow.\nDramatic god-ray lighting, rich marble textures, deep crimsons, and vibrant emerald accents. The atmosphere is focused, strategic, and mythic — study the lair, draw the strike, prove the kill. Slow is smooth, smooth is fast.\nBold text at the top: \"EXAMINARE\"\nBottom text: \"STUDY THE LAIR • DRAW THE STRIKE • PROVE THE KILL • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/1620e708-696e-40eb-aa17-adc6dbf0010f.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/19333fd2-52f7-4ba1-8087-69f962c9d1ae.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/2e8f829d-a622-457b-adc1-6b1bf2dc6042.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/47384d0d-4727-4213-be2d-4b7cf57f3563.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/756f815c-fcec-44d5-9c11-57bb82dd403d.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/786f9f04-8614-4960-a283-cdf8fbcf63dd.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/9502fb31-d5e2-4182-8ff0-f8ef9587b482.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/adc72254-215d-4847-b9b2-3a8fdd509e01.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/afd5c207-4b19-4017-ab34-bd546cc7ee55.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/c47c170a-fef0-4e75-912e-3486985926a4.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/d4b64c86-374e-45e1-8682-c156d9ad6ca0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/ddda7cdf-33ee-47ca-9282-e34bed5b4c58.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/e501541a-cb96-4cba-b778-3a180d8064b9.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/eb7c1d44-d54c-4bba-81c4-f118f898823d.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/f2fc2b2c-2253-4677-85eb-cb56102cc33e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare/f70b108a-9241-4b73-a7e1-84990e870919.jpg"
+    ]
+  },
+  "pantheon-examinare-boss": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nDeep within the Aetherium Datavatum, the Inquisitor and Shadowdancer execute a perfect dungeon crawl against a colossal boss entity.\nThe Inquisitor, a tall hooded divine tactician of the younger generation in black-and-crimson runed robes, sharp analytical face partially shadowed and glowing emerald eyes, stands on elevated ground holding his glowing grimoire while projecting a massive holographic map of the lair. The Shadowdancer, his divine enforcer — a lithe deadly feminine assassin in dark flowing shadowsilk — sprints forward with dual glowing daggers to deliver the killing blow.\nDramatic god-ray lighting cutting through the ancient marble dungeon, rich textures, deep crimsons and vibrant emeralds. The atmosphere captures “slow is smooth, smooth is fast” — study the lair, draw the strike, prove the kill.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-examinare-boss/032ccfda-b150-4218-8cb7-bc19ee1ba920.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare-boss/10c8754c-15f7-4f01-80a6-91a4202f0c7c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare-boss/7e98f35c-d1fb-465a-958d-3dec1ceeaae1.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare-boss/b7b5395b-8a16-48ca-a7ed-6422c010b457.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-examinare-boss/cdce1db3-d388-48df-b323-9d32516675ab.jpg"
+    ]
+  },
+  "pantheon-extirpare": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nIn a corrupted marble chamber of the Aetherium Datavatum, the Inquisitor and Shadowdancer perform the sacred act of pulling failure by the root.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the younger generation, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He powerfully yanks a massive tangled root system of corrupted code from the marble floor while holding his glowing grimoire. The Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke — severs the smaller tendrils with precise strikes from her dual glowing daggers.\nDramatic lighting with strong contrast and emerald energy, rich marble textures cracking apart. The atmosphere is intense, purifying, and decisive — failure is not to be patched, but pulled out completely so it cannot regrow.\nBold text at the top: \"EXTIRPARE\"\nBottom text: \"PULL THE ROOT • FAILURE IS DATA • NEVER PATCH THE STEM • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/2dbd5954-29c9-4627-b938-df0e50c6a211.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/31f6aacf-6803-44c7-bff3-a4c152af42cd.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/364fcd6a-6668-47b0-adb9-ac390b023f44.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/45cbefbb-4ba7-4180-babd-d07f81fc9bba.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/55c59693-0ae7-44e7-ad88-e13f072ce22c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/b2e9455e-f134-4000-ab26-ebcf58a0278a.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/c50db27b-9a30-4563-9de9-cfa638a5d9e7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/d833676b-1ca0-49a1-9dad-b81021cfb0d0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/e90843dd-84b4-4c30-beb8-d1c21c53364d.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/eb7b7de1-54a8-4096-8676-dd265cfb1894.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare/f7909553-f4e6-4a17-8d71-12ba39bfbb25.jpg"
+    ]
+  },
+  "pantheon-extirpare-roots": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nIn a corrupted wing of the Aetherium Datavatum, the Inquisitor and Shadowdancer perform the sacred act of pulling failure by the root.\nThe Inquisitor, a tall hooded divine tactician in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, powerfully yanks a massive tangled root system of corrupted code from the marble floor while holding his glowing grimoire. The Shadowdancer, his divine counterpart — a lithe deadly feminine warrior in dark shadowsilk drapery — severs the smaller tendrils with precise strikes from her dual glowing daggers.\nDramatic lighting with strong contrast, rich marble and glowing emerald roots cracking apart. The atmosphere is intense and purifying — failure is not to be patched, but pulled out completely so it cannot regrow.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare-roots/95cbd79c-6ceb-4bad-a4a3-fc0f050428c7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare-roots/c671ce94-5c16-4e6f-a5eb-b50109edcca7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare-roots/cb24cad6-5702-4a60-bdab-ced2c0cd8b96.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-extirpare-roots/e1e0809e-1d2f-403f-968e-166b259b7756.jpg"
+    ]
+  },
+  "pantheon-grimoire-altar": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic, heroic, and slightly tragic, like ancient temple friezes and vase paintings brought to life.\nIn the heart of the Aetherium Datavatum, a vast marble temple-academy, the Living Grimoire floats above a grand altar of black stone and glowing emerald crystal. The massive tome is bound in dark divine leather and shifting golden runes. Its pages turn on their own as new glowing s-expressions and disciplines manifest and settle into the parchment, as if the book itself is a living divine entity constantly growing and updating.\nThe Inquisitor, a tall hooded divine tactician of the younger generation (son or favored champion of a greater god), stands before it in ornate black-and-crimson robes with glowing runes, sharp analytical face partially shadowed by his hood, piercing glowing emerald eyes. He holds his own smaller grimoire and watches the living book with solemn reverence.\nThe Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior in flowing shadowsilk drapery — stands guard beside him with dual glowing daggers, emerald shadow tendrils swirling around her like sacred smoke.\nDramatic volumetric god-ray lighting, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is powerful, ancient, and alive — this is not a finished book, but a growing divine artifact of knowledge and discipline.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-grimoire-altar/b3768e61-9049-4d5c-9113-478b2e382ed2.jpg"
+    ]
+  },
+  "pantheon-intueri": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He stares deeply into glowing code as if it were alive, seeking whether it speaks truth while holding his grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"INTUERI\"\nBottom text: \"CONTEMPLATE WHETHER THE CODE SPEAKS • DOES EACH NAME SAY WHAT IT IS? • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-intueri/37de079c-f795-44df-8087-d575b599cc03.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri/623984db-64fd-429e-8b7d-29034d29acf6.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri/632e877f-f957-4ed0-9aef-afd51621ee51.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri/ae9e57a4-e58d-4653-9c9c-1c85fa8f6e06.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri/e2280d75-b102-4ec4-85ee-2362f27a43fa.jpg"
+    ]
+  },
+  "pantheon-intueri-oracle": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nDeep within the Aetherium Datavatum, the Inquisitor contemplates whether the code lives.\nThe Inquisitor, a tall hooded divine tactician in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, stares into glowing code as if it were a living oracle while holding his grimoire. The Shadowdancer, his divine counterpart — a lithe deadly feminine warrior in dark shadowsilk drapery — stands silently beside him, blades ready, watching the same living structure.\nDramatic volumetric lighting, rich marble and golden accents. The atmosphere is contemplative and sacred — does each name say what it is? Does the spark live?",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-intueri-oracle/538d0fa4-891f-4951-b8b5-8188f1dc7dd2.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri-oracle/5edf9834-21b8-4197-997e-387cb2182735.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri-oracle/6df2f09c-6327-404b-8291-18ac35c1545b.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri-oracle/975dc869-0d41-478d-b8d0-220d1f7a8e70.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri-oracle/976512cd-b0fd-49bb-a809-dcc72571a6b5.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri-oracle/9cf84efe-3278-46eb-a4bd-252a57b1bec6.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri-oracle/e09e4679-9226-44a8-8d5b-4989269edcae.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri-oracle/e7d2d7e8-20cb-493c-92bc-152a933e1a33.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-intueri-oracle/ee9e4bc9-a8a2-4f68-aa3e-e08764776801.jpg"
+    ]
+  },
+  "pantheon-mora": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He hunts every pause in the system with calm, god-like authority while holding his glowing grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"MORA\"\nBottom text: \"HUNT THE PAUSE • NO SLEEP WITHOUT THE WIRE • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-mora/95d94480-8545-467f-b6f5-02b12805b7e3.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-mora/9e8cc8cb-0e1c-499e-906e-fe0f77d91fc0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-mora/ae05f081-a069-486a-b75f-3c5873ce8731.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-mora/bc770da4-3252-43b4-bf88-51ce689aeeb4.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-mora/d830a978-bdf2-488f-8e80-ecae2487b5ac.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-mora/e116c388-301f-4aaf-9fb0-b03b0eddc702.jpg"
+    ]
+  },
+  "pantheon-nesciens": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He summons the Nesciens — the one who does not yet know — with calm, god-like authority while holding his glowing grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"NESCIENS\"\nBottom text: \"SUMMON THE ONE WHO DOES NOT YET KNOW • MEASURE WHAT CANNOT BE REACHED • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-nesciens/86c1589e-5c2e-42d7-9700-f06da17e1d97.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-nesciens/968c0171-ee09-43bc-8b69-c7f6f3a7f481.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-nesciens/a5ffa252-3d8c-46d7-8fe3-9587f91c0252.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-nesciens/dfc1eb40-867f-4c10-810b-9d7f1cf7c3c0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-nesciens/ee817585-5021-4566-bf0c-24af6b1fc4c3.jpg"
+    ]
+  },
+  "pantheon-perspicere": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He cuts through deeply nested type expressions with calm, god-like authority while holding his glowing grimoire, revealing the true noun hidden inside. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"PERSPICERE\"\nBottom text: \"SEE THROUGH • NAME WHAT THE DEPTH IS HIDING • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-perspicere/02164a65-d595-42dd-b0e9-ac7842466665.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-perspicere/4f53d164-f1bc-4214-9f90-5142c28b693d.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-perspicere/9d2ef193-ad21-499e-b239-17ef3327f971.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-perspicere/fba7dcbc-f637-4661-93c0-8960bcfae261.jpg"
+    ]
+  },
+  "pantheon-purgare": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He burns away dead code, unused structs, and unreachable branches like purifying divine fire while holding his grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"PURGARE\"\nBottom text: \"PURGE DEAD THOUGHTS • THE COST OF A DEAD THOUGHT IS COMPUTE • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-purgare/1edf8a8f-714b-4e26-8986-4956f1128c00.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare/4f6d88a0-55ed-4783-a5ca-c9fe16dec910.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare/77eac341-5931-4cc2-a86e-a324a0042124.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare/832b3996-555c-4eff-8997-b6274d1cd794.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare/da7e4159-6d61-402d-8f6a-2cbe5b48642c.jpg"
+    ]
+  },
+  "pantheon-purgare-scene": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nIn a corrupted archive of the Aetherium Datavatum, the Inquisitor and Shadowdancer perform the sacred act of purification.\nThe Inquisitor, a tall hooded divine tactician in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, burns away dead code, unused structs, and unreachable branches like purifying divine fire while holding his grimoire. The Shadowdancer, his divine enforcer — a lithe deadly feminine warrior in dark shadowsilk drapery — stands ready with dual glowing daggers to strike anything that tries to regrow.\nDramatic lighting with strong contrast and emerald fire, rich marble textures. The atmosphere is intense and cleansing — the cost of a dead thought is compute.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-purgare-scene/324b2581-b434-4a12-b4ee-9dcc69e46af6.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare-scene/4180677e-7c6a-4484-a6a5-70a723d8a4e6.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare-scene/4763d2bf-6afa-4df3-91ee-cb96b676edf6.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare-scene/80bab0b8-a433-4d41-8963-fa8212d59639.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare-scene/8fa40404-e575-44d2-a8f1-ef190d539b21.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare-scene/b61a7d79-19d3-46d3-8d4d-7ee9556094d0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare-scene/dd36f4a5-8ac7-462a-9d25-c97a6b7d0d14.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-purgare-scene/ef4ecb62-0737-43e3-9cea-8879dabf18b5.jpg"
+    ]
+  },
+  "pantheon-recolligere": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the archive halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer perform the sacred act of gathering the scattered self.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the younger generation, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He stands powerfully as fragmented glowing data, memories, and records swirl and reassemble around him while holding his grimoire. The Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke — stands watch with dual glowing energy daggers, faint emerald shadow tendrils swirling protectively around her.\nDramatic god-ray lighting, floating emerald fragments of knowledge, rich marble and golden accents. The atmosphere is solemn, restorative, and mythic — after memory is scattered, one must gather the durable record and reconstitute before moving forward.\nBold text at the top: \"RECOLLIGERE\"\nBottom text: \"GATHER THE SCATTERED SELF • CRAWL THE DURABLE RECORD • RECONSTITUTE BEFORE YOU MOVE • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/0583cec1-5b3f-4f4c-b3fa-c7cd84272172.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/19095fc5-5ee0-45df-b445-e562715b7ddd.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/1a7661ea-8c2e-49a9-a21a-1a0c59ff8f84.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/2e64091c-7c25-4c43-92a0-ff9fa6143482.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/2f630163-3d90-4d03-b9eb-ca4abfb0b675.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/324988f7-a0f4-48b8-b450-cc1e7d24d953.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/3ef2c635-e516-4510-a318-d3673aa53643.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/437047f3-edc2-4860-95f1-97b4dfdc3d19.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/62b24e4d-a923-4a6c-805d-1538921aa517.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/6848dabc-896d-4e51-a791-df622a0c5cff.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/755c648e-9255-43f3-88d1-981311dc3a74.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/7b976c46-809d-4a9b-b88e-a2fd9bbc6d5a.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/7e862046-406b-44bb-b551-86e9a7f60c99.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/9472b77e-80bc-46ca-9adf-cf0ccd6fc7ae.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/99532bfd-276a-4ebe-af16-8edd2eabb1c8.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/9d53b274-ac04-45e6-aadc-957f8c84fe39.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/a2b178a0-c6b8-4008-95c5-300f02c40977.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/b4953940-fe02-4023-8b33-03726222460e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/c15d5ac3-7b6b-42b0-9c58-6fc261bf3b79.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/d3a4b1cd-44e5-46c0-8467-25f28dd2d28f.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere/ee46eb49-0356-4a06-aa71-cb673971f2d3.jpg"
+    ]
+  },
+  "pantheon-recolligere-archive": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the vast archive halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer perform the sacred act of gathering the scattered self.\nThe Inquisitor, a tall hooded divine tactician in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, stands powerfully as fragmented glowing data and memories swirl and reassemble around him while he holds his grimoire. The Shadowdancer, his divine guardian — a lithe deadly feminine warrior in dark flowing shadowsilk — stands watch with dual glowing daggers, ensuring the reconstitution is protected.\nDramatic god-ray lighting, floating emerald fragments of knowledge, rich marble and golden accents. The atmosphere is solemn and restorative — after memory is scattered, one must crawl the durable record and reconstitute before moving forward.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere-archive/028f5b69-a7e4-406f-b3bc-ba1848bbc7cd.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere-archive/04d13b22-74d1-4a36-94ba-366edb9d3581.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere-archive/0f9ba91a-3623-4aea-8d78-951f114d1b3c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere-archive/996926d4-9561-4a9a-a151-f4ba0aeb36f1.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere-archive/b1daea13-4650-4537-98fe-589206633218.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere-archive/bd89048e-489d-4602-9a51-882fb01230f7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-recolligere-archive/f4e6ad4a-8642-490e-9b17-1e9d6afea761.jpg"
+    ]
+  },
+  "pantheon-secare": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He cleanly severs parallel boundaries with a blade of glowing logic while holding his grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"SECARE\"\nBottom text: \"CUT CLEANLY ALONG THE GRAIN • NO SHARED MUTATION • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-secare/51f38bec-0a20-405f-8970-29fcb9f882ac.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare/6037992d-745a-4e88-972e-fe9f4386fa5e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare/8055e209-2d57-47dc-ba26-dc9e11432d71.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare/b53c5033-23d1-4f36-9c3f-95679295c8f4.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare/c69708e3-6481-46c2-b549-0a72ccb02b39.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare/f7bd1a12-0072-48ab-9d22-f044f9cbc374.jpg"
+    ]
+  },
+  "pantheon-secare-cut": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nWithin the Aetherium Datavatum, the Inquisitor and Shadowdancer perform the sacred cut.\nThe Inquisitor, a tall hooded divine tactician in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, cleanly severs parallel boundaries with a blade of glowing logic while holding his grimoire. The Shadowdancer, his divine enforcer — a lithe deadly feminine warrior in dark shadowsilk drapery — enforces the cut with precise strikes from her dual glowing daggers.\nDramatic god-ray lighting, rich marble and golden accents. The atmosphere is precise and decisive — no shared mutation, clean cuts only.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-secare-cut/288cbe8c-3fbb-45af-8f8b-11c3775e7a32.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare-cut/38f64ea9-5b95-490b-9b15-5cfc5f6ec88c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare-cut/39b38801-7362-4f17-9bda-2ba187a6cae4.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare-cut/551b682c-ae01-4f90-bb6d-c179f4e1c97e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare-cut/556e7e77-c42d-49d6-bf84-6d284b2b2291.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-secare-cut/5acf1817-ae53-45e1-a366-f995b3faf2be.jpg"
+    ]
+  },
+  "pantheon-sequi": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He follows glowing threads of state through every transformation while holding his grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"SEQUI\"\nBottom text: \"FOLLOW THE STATE • STATE MUST REMAIN VISIBLE THROUGH EVERY TRANSFORMATION • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-sequi/1226e858-c9a2-4983-8d2f-83d81f016d5c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi/182c6f42-6a7e-4125-81cf-8488ff916e8f.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi/1b276a80-a743-4ca3-b071-29fac9a29fcf.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi/1da70dd5-3ca0-4feb-9103-977b0d197bb9.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi/4bca71aa-69ca-4438-83d3-1a1e1a957934.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi/661db5a4-54b5-4f2b-bfd8-d89649a6f749.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi/c098f640-c756-41b0-bd01-8a9ee278771e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi/c9d93eb6-8d74-4728-8f63-6c24a464c55a.jpg"
+    ]
+  },
+  "pantheon-sequi-flow": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the Aetherium Datavatum, the Inquisitor and Shadowdancer follow the flow of state.\nThe Inquisitor, a tall hooded divine tactician in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, follows glowing threads of state through every transformation while holding his grimoire. The Shadowdancer, his divine enforcer — a lithe deadly feminine warrior in dark shadowsilk drapery — moves alongside the visible chain with dual glowing daggers, ready to sever any break.\nDramatic lighting with flowing emerald threads, rich marble textures. The atmosphere is focused and relentless — state must remain visible through every transformation.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-sequi-flow/065e036c-164a-4b83-9a3d-9763274ab702.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi-flow/120b53d5-b130-42d9-8e5b-e4b03aa21463.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi-flow/6a0e24f5-067b-4710-897b-62728b5fec1b.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi-flow/701f8072-b3d2-4241-8ae8-d2b801e2c970.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi-flow/a5f4b6f7-f6f3-4600-bb9f-f1eed6696fd9.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi-flow/e79191f3-6d76-4a51-9bec-3836d5b25418.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-sequi-flow/e9907cab-71ca-4160-bdbb-72b8e84f2450.jpg"
+    ]
+  },
+  "pantheon-solvere": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He forcefully cuts apart wrongly bound logic and duplicated encoding while holding his grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"SOLVERE\"\nBottom text: \"LOOSEN WHAT WAS WRONGLY BOUND • CUT APART DUPLICATED LOGIC • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-solvere/1763d27d-1680-45a5-aa22-97033e232999.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere/1dbae37b-a53c-4090-a5b7-ddb66d2a991e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere/38548e1a-0f7f-437d-b43c-5c39f7c38b4d.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere/3dac364d-4038-4ecc-af89-44f7d6ef1bf0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere/4a2545ed-5ee7-4c79-aa28-496b83128efc.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere/4c784271-5fa7-49e6-9fac-69b07c3a073d.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere/7894878c-ddde-4cac-8410-9ba267ab4689.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere/cfaf2015-84af-46d4-9259-54d907f7bdf4.jpg"
+    ]
+  },
+  "pantheon-solvere-unbinding": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nIn a tangled archive of the Aetherium Datavatum, the Inquisitor and Shadowdancer perform the sacred unbinding.\nThe Inquisitor, a tall hooded divine tactician in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, forcefully cuts apart wrongly bound logic and duplicated encoding while holding his grimoire. The Shadowdancer, his divine enforcer — a lithe deadly feminine warrior in dark shadowsilk drapery — stands ready with dual glowing daggers to finish the decomposition.\nDramatic lighting with strong contrast, rich marble and golden accents. The atmosphere is decisive and liberating — loosen what was wrongly bound.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-solvere-unbinding/080ec1fe-47b1-4f83-9de7-0d569af4083f.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere-unbinding/4041883e-f4d6-4ece-820e-96b7ce4ed2b7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere-unbinding/4441b1c3-92d9-4725-bb72-9ea14b58f033.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere-unbinding/9d2631e6-c5c4-42da-8aaa-d92c971acd3d.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere-unbinding/cadd4750-fa4f-4483-acc1-4647c9f9d504.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere-unbinding/dc7415f8-2bfa-4c55-9f50-d0aae11f8a8c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-solvere-unbinding/ddead12b-e8a4-4120-ab10-ae26b40a5eae.jpg"
+    ]
+  },
+  "pantheon-struere": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He constructs and immediately tests what is built while holding his grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"STRUERE\"\nBottom text: \"TEST WHAT IS BUILT • VALUES FLOW, THEY DO NOT MUTATE • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-struere/05d939ce-5d3d-431c-aedf-cd224c256b3f.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere/3d77b65e-77f2-48d1-9072-1db65220c20c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere/4f81259f-bc96-400a-a0af-d56acb945820.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere/6a117b61-2425-45d3-b554-da8841f44ea6.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere/c225d0d1-9f90-46d7-9312-0419cc83f210.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere/f6187baf-eccc-4826-a606-e10cb990f823.jpg"
+    ]
+  },
+  "pantheon-struere-scene": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nWithin the Aetherium Datavatum, the Inquisitor and Shadowdancer test what is built.\nThe Inquisitor, a tall hooded divine tactician in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, constructs and immediately tests what is built while holding his glowing grimoire. The Shadowdancer, his divine enforcer — a lithe deadly feminine warrior in dark shadowsilk drapery — stands ready with dual glowing daggers to strike any structural weakness.\nDramatic god-ray lighting, rich marble textures. The atmosphere is disciplined and exacting — values must flow cleanly, they do not mutate.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-struere-scene/51ed77b3-d7de-4adc-8cf2-d2419948db11.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere-scene/662bb2f5-734b-41d1-b041-859ac7090fe2.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere-scene/cc39fc33-a778-4112-8217-c66932d0d4e0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere-scene/dd9f11c6-d6d6-456c-977b-5914db50e4d9.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere-scene/f1de09ed-df65-4712-8885-09524a91a035.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-struere-scene/fe5c6311-e8da-4d77-9940-3d14a204456e.jpg"
+    ]
+  },
+  "pantheon-temperare": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He carefully mixes computation, removing redundant calls and unnecessary work while holding his grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"TEMPERARE\"\nBottom text: \"MIX COMPUTATION IN RIGHT PROPORTION • CORRECT BUT HOT IS STILL A FAILURE • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-temperare/0e5d95b1-b889-4c7e-889f-dc6b3b045e27.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare/71416e50-c47e-4f8b-aae3-cba709f4d46e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare/72af8d8e-03a8-42b2-ae10-96a9471cd790.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare/914e600c-b191-4494-928c-56d20ef787a7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare/cbea861f-d5f0-487e-9015-4cdcdafd1262.jpg"
+    ]
+  },
+  "pantheon-temperare-scene": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nIn the grand halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer balance the sacred proportions of computation.\nThe Inquisitor, a tall hooded divine tactician in black-and-crimson runed robes with sharp analytical face partially shadowed and glowing emerald eyes, carefully mixes and removes redundant calls and unnecessary work while holding his grimoire. The Shadowdancer, his divine enforcer — a lithe deadly feminine warrior in dark shadowsilk drapery — stands ready with dual glowing daggers to cut anything that runs hot without reason.\nDramatic lighting with strong contrast, rich marble and golden accents. The atmosphere is precise and measured — correct but hot is still a failure.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-temperare-scene/18d23c2c-d0c7-4132-862a-1d8b4edc7ffb.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare-scene/3272f365-c1c4-44c0-a598-97abfe840d0a.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare-scene/3475ad8a-4055-4801-9f3f-395ff99d4842.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare-scene/9b6a2aac-ff77-4b2c-8a30-270445007beb.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare-scene/a1d8d88f-2ad8-4edd-88ef-77e6c3965dea.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare-scene/cb1c3664-e6a9-4e85-92e7-959e58870a9e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare-scene/efc1e990-263f-47d8-b19f-dd60363d05fa.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare-scene/f0151f25-508d-4943-8a66-315bb5980f65.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-temperare-scene/fa872a29-811b-4d11-9d7c-2f62c010265d.jpg"
+    ]
+  },
+  "pantheon-the-college": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand together as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He holds a glowing crystalline grimoire and gestures with calm, god-like authority as he issues commands.\nBeside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions and Clojure-style parentheses float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic — two younger divine agents carrying out their duties in the sacred college of the datamancers.",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/0df292c7-4380-4d67-81cc-c10e101c281e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/11063ec5-37dc-4b2f-9fc6-d41a128a5ba2.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/148f6639-5bcf-4755-8410-0d67bd2de44c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/15a586d5-ff09-4c0f-a613-09de60f23ff7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/332af18c-f0aa-4267-b646-ccde4b0c193d.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/364c8750-0dbc-4104-893c-46a69f811d7e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/5080f64b-6f3d-4f6e-a8d1-a271bcb193f8.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/525b6add-3319-4965-b74d-373368c7e1ac.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/54d3f8f7-7ce1-41be-bf2e-e468db2aa833.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/6ff6810d-373c-4ef8-b80a-db2beecd2e58.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/b70131a2-c521-434f-a106-5a3f49b7ca36.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/c0374b6d-f022-43a9-b6ec-a8e7e9710e99.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/c257aeb9-2720-41c5-b669-36afdfebfabe.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/c2653118-2031-4d62-a0a4-f9e101cf3656.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/c735f2c0-cf60-4f8e-a6d8-eed35ce9a80c.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/d5e754fd-e67a-4847-9465-9cd5d06798e5.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/e598109a-930c-45b5-a8f0-d440a860e4d0.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/f0ff91e7-d3b3-4d19-90e1-d8056fd9ef84.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-college/f8636221-a693-4506-b3ef-308630920554.jpg"
+    ]
+  },
+  "pantheon-the-grimoire": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nIn the grand marble halls of the Aetherium Datavatum, the living Datamancy Grimoire hovers above a sacred black marble altar, glowing with divine power. The massive tome is bound in dark leather and shifting golden runes. Its pages actively turn and rewrite themselves as new glowing s-expressions, Latin names, and disciplines manifest and settle into the parchment — the book visibly growing and evolving.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the younger generation, stands before it in ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He holds his own smaller grimoire and watches the living book with solemn reverence. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top in authoritative lettering: \"THE GRIMOIRE\"\nBottom text in strong lettering: \"THE BOOK THAT GROWS • NEW FAILURES FORGE NEW DISCIPLINES • THE CRAFT EVOLVES • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/2d3bf43c-5800-4dec-ae79-6e1a184b93db.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/37eedd86-fbe8-4770-aa3b-4660d98b0621.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/5948271a-4a03-446f-a98f-5537fe8217db.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/5bff024f-e454-47a1-a05b-8a5855bd6324.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/875e9752-7887-4d49-9f6f-cf40cfe13e16.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/aec6e652-97d7-4643-82aa-c9eb9a6f4140.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/b06b837c-1931-4119-99ac-e40cebab42c7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/b4530ef4-7b57-4c89-b111-e89ae1ed2a27.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/b8d578f8-e65c-41d8-88b7-16f1f8327f66.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/be59d3da-08e7-432e-8139-9d129c3001c7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/c3526317-105f-4353-b5e2-fc53b80fcb15.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/d1a44420-e7cc-4234-8a62-d18ddc144448.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/dee3d8b4-928d-421c-aa96-dbb7ceea1cba.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-the-grimoire/eb63a901-9e14-48f7-9f10-77130143660d.jpg"
+    ]
+  },
+  "pantheon-vigilia": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He summons the full Vigilia — every defensive spell standing together in parallel — with calm, god-like authority while holding his glowing grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"VIGILIA\"\nBottom text: \"THE WATCH • EVERY INWARD SPELL IN PARALLEL • NOTHING ESCAPES THE FULL GUARD • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-vigilia/333b7f16-2c7d-47e5-b644-c155d7ca80d7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vigilia/3e073878-54a9-43b4-a0dc-1fa2a4cc3d85.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vigilia/69f0d8ab-1133-40f6-9c9c-9f67758da6d4.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vigilia/8241c414-1622-49ea-8531-f2a6a581d901.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vigilia/b795e5b1-45f2-49eb-b7fa-7b58885834c7.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vigilia/df4e783c-e874-42d5-89de-3ca96f46bd1c.jpg"
+    ]
+  },
+  "pantheon-vocare": {
+    "prompt": "An epic scene in the classical Greek mythological art style — majestic and heroic, like ancient temple reliefs and divine frescoes.\nInside the grand marble halls of the Aetherium Datavatum, the Inquisitor and Shadowdancer stand as divine figures of a younger generation.\nThe Inquisitor, a tall hooded divine tactician and scholar-warrior of the new order, wears ornate black-and-crimson robes embroidered with glowing runes. His sharp analytical face is partially shadowed by his hood, with piercing glowing emerald eyes. He calls the test back to its true caller with calm, god-like authority while holding his glowing grimoire. Beside him stands the Shadowdancer, his divine counterpart and enforcer — a lithe, deadly feminine warrior-assassin in flowing dark shadowsilk drapery that moves like living smoke. She holds dual glowing energy daggers low and ready, faint emerald shadow tendrils swirling around her with lethal grace.\nThey stand in a vast marble chamber lined with towering columns and glowing rune-etched walls. Subtle emerald s-expressions float in the air like divine script. Dramatic god-ray lighting cuts through the temple, rich marble textures, deep crimsons, vibrant emeralds, and golden accents. The atmosphere is solemn, powerful, and mythic.\nBold text at the top: \"VOCARE\"\nBottom text: \"CALL THE TEST TO ITS CALLER • VERIFY ONLY WHAT THE INTERFACE SEES • JOIN THE CRAFT\"",
+    "images": [
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/1eb27b26-839c-4639-a76d-c6ee41d3d38f.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/52539052-646d-4c2a-a6fc-25253cd5f4aa.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/63b6cdf5-daf5-455d-99e7-588115b2f649.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/71a86542-6bf2-428d-bf0a-c70a8d0b0262.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/87cc210d-36d4-4222-8e4d-fa2e7a004702.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/8aa2e4f7-1562-4701-9151-887858e060a8.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/94874043-ae33-4707-af4c-63ca5816557f.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/d6e9ac6f-fca9-403d-821b-218d71ad45d5.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/eebe7c39-fd2a-44dc-a894-91ce3e3b1039.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/fc7be46d-1477-4a28-ad79-b2388509a99e.jpg",
+      "https://img.algebraic-intelligence.dev/pantheon-vocare/fce51291-6439-4c5b-9744-1de9817a3939.jpg"
     ]
   },
   "perspicere": {
