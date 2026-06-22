@@ -51,9 +51,15 @@ const MONOLITHS = [
     src: "../wat-rs/docs/arc/2026/05/170-program-entry-points/INTERSTITIAL-REALIZATIONS.md",
     whole: "public/blog/arc-170-realizations.md",
     chunks: "src/content/docs/blog/arc-170-realizations",
-    // No trailing space: a few entries carry a suffixed date (e.g. `2026-05-21b`)
-    // or an immediate parenthetical; match the date prefix, not a space after it.
-    segment: /^## 2026-\d\d-\d\d/,
+    // Split on EVERY level-2 heading, not just `## <date>`: each `##` starts a
+    // page and everything under it (until the next `##`) belongs to it. This
+    // captures the dated song/realization entries AND the standing sections
+    // (`## Standing convention`, `## Cross-references`) AND non-conforming entry
+    // headings (the `§`-prefixed Song #23) — all of which a date-only regex
+    // silently absorbed into a neighbor. Safe because the source has no `## `
+    // subheadings inside an entry body (verified): every `## ` is a top-level
+    // entry or section, so nothing fragments.
+    segment: /^## /,
   },
 ];
 
