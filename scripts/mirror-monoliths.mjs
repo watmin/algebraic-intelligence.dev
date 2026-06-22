@@ -44,7 +44,13 @@ const MONOLITHS = [
     src: "../holon-lab-trading/BOOK.md",
     whole: "public/blog/book.md",
     chunks: "src/content/docs/blog/book",
-    segment: /^## (?:Chapter|Intermission) /,
+    // Split on EVERY level-2 heading (same rule as arc-170). Verified: all 100
+    // `## ` headings in the BOOK are `## Chapter`/`## Intermission` — there are
+    // NO in-chapter `## ` subheadings (chapters use `###`/bold), so this yields
+    // the identical page set today AND future-proofs against a non-conforming
+    // heading (`## Prologue`, `## Coda`, a `§`-prefix) the specific regex would
+    // have silently absorbed into a neighbor.
+    segment: /^## /,
   },
   {
     name: "Arc 170 — Full Realizations",
