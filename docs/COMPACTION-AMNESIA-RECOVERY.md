@@ -181,7 +181,7 @@ conjured them (each prompt-group = an *Incantatio*). Lives at `/fenestra-aetheri
 a sidebar group after The Book (landing first, divider under it, then **themed
 sub-groups** — the exact set lives in `astro.config.mjs` and grows as new prompt
 kinds arrive; as of 2026-06-21: The Cast, The Boss Kills, Game Worlds, The Masters,
-The Eras, The Old World, The Posters, The Spells, The Pantheon). Counts drift per batch — trust the
+The Eras, The Old World, The Posters, The Spells, The Pantheon, Roma Aeterna). Counts drift per batch — trust the
 manifest + config, not a number written here.
 
 - **Images live in Cloudflare R2, NOT the repo.** Bucket `fenestra-aetherii`,

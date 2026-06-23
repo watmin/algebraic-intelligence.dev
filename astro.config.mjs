@@ -529,6 +529,20 @@ export default defineConfig({
                 { slug: "fenestra-aetherii/pantheon-grimoire-altar" },
               ],
             },
+            {
+              // Roma Aeterna — a futuristic Greco-Roman cyberpunk world where Rome
+              // never fell: neon-lit marble streets, the Aetherium Datavatum as a
+              // cyber-temple academy, the Inquisitor & Shadowdancer moving through
+              // it. Hand-named scenes (no poster text). Seeded by
+              // scripts/seed-roma-batch.mjs.
+              label: "Roma Aeterna",
+              collapsed: true,
+              items: [
+                { slug: "fenestra-aetherii/roma-aeterna-neon-street" },
+                { slug: "fenestra-aetherii/roma-aeterna-temple-steps" },
+                { slug: "fenestra-aetherii/roma-aeterna-terrace" },
+              ],
+            },
           ],
         },
         {
