@@ -293,6 +293,19 @@ export default defineConfig({
                 { slug: "blog/story/series-006-033-the-arguments-were-a-record" },
               ],
             },
+            // The substrate brings a canonical systems-programming capability
+            // home into wat and surpasses the reference it was modelled on: the
+            // rete rules engine past the Clara engine its author ran at AWS
+            // (278), and a tier-fusing typed timer past Erlang/Go/Akka (292).
+            // WE-LAND-ON-THE-GREATS-WITHOUT-REPLICATING-THEM, in the systems layer.
+            {
+              label: "Landing on the Greats",
+              collapsed: true,
+              items: [
+                { slug: "blog/story/series-006-034-the-slow-engine-is-the-spec" },
+                { slug: "blog/story/series-006-035-time-is-a-select" },
+              ],
+            },
             { slug: "blog/story/epilogue" },
           ],
         },
