@@ -17,6 +17,7 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 109 | [Kill Std](/blog/realizations/109-kill-std/) | 172 |
 | 111 | [Result Option Recv](/blog/realizations/111-result-option-recv/) | 337 |
 | 112 | [Inter Process Result Shape](/blog/realizations/112-inter-process-result-shape/) | 184 |
+| 118 | [Lazy Seqs Vs Threaded Streams](/blog/realizations/118-lazy-seqs-vs-threaded-streams/) | 61 |
 
 ## May 2026
 
@@ -43,4 +44,8 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 277 | [Wat Lint Fix Fmt](/blog/realizations/277-wat-lint-fix-fmt/) | 118 |
 | 278 | [Rules Engine](/blog/realizations/278-rules-engine/) | 974 |
 | 279 | [Format](/blog/realizations/279-format/) | 58 |
+| 291 | [Defservice Durable State](/blog/realizations/291-defservice-durable-state/) | 1096 |
 | 292 | [Timer Peer Time As Select](/blog/realizations/292-timer-peer-time-as-select/) | 401 |
+| 293 | [Struct Record Symmetry](/blog/realizations/293-struct-record-symmetry/) | 673 |
+| 294 | [Holon Returns To Vsa](/blog/realizations/294-holon-returns-to-vsa/) | 571 |
+| 295 | [Signed Code Only](/blog/realizations/295-signed-code-only/) | 260 |
