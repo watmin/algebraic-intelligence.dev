@@ -51,14 +51,19 @@ const manifest = JSON.parse(await readFile(join(ROOT, "manifest.json"), "utf-8")
 if (existsSync(OUT)) await rm(OUT, { recursive: true });
 await mkdir(OUT, { recursive: true });
 
+const SHOW_UNMATCHED = process.argv.includes("--show-unmatched");
 const counts = {};
 let unmatched = 0;
+const unmatchedByPrompt = new Map(); // norm(prompt) -> { prompt, n } — the same grouping the seed scripts' `news` uses
 for (const id in manifest) {
   const p = manifest[id].prompt || "";
   if (!CORE.test(p)) continue;
   const slug = slugFor(p);
   if (!slug) {
     unmatched++;
+    const k = norm(p);
+    if (!unmatchedByPrompt.has(k)) unmatchedByPrompt.set(k, { prompt: p, n: 0 });
+    unmatchedByPrompt.get(k).n++;
     continue;
   }
   const dir = join(OUT, slug);
@@ -81,6 +86,19 @@ const total = Object.values(counts).reduce((a, b) => a + b, 0);
 console.log(`staged ${total} CORE images into ${slugs.length} prompt folders under:`);
 console.log(`  ${OUT}/\n`);
 for (const s of slugs) console.log(`  ${String(counts[s]).padStart(3)}  ${s}`);
-if (unmatched) console.log(`\n${unmatched} CORE image(s) didn't match a page prompt (skipped — tell me and I'll widen the match).`);
+if (unmatched) {
+  console.log(`\n${unmatched} CORE image(s) didn't match a page prompt (skipped — tell me and I'll widen the match).`);
+  if (SHOW_UNMATCHED) {
+    // index order matches the seed scripts' `news` (same manifest insertion order → same stable tie order),
+    // so the printed #i IS the index a seed-batch NAMES row must sit at.
+    const news = [...unmatchedByPrompt.values()].sort((a, b) => b.n - a.n);
+    console.log(`\n${news.length} distinct unmatched prompt(s) — verbatim, in seed-script \`news\` index order (count desc):\n`);
+    news.forEach((e, i) => {
+      console.log(`#${String(i).padStart(2)}  [${String(e.n).padStart(2)} img]  ${e.prompt.replace(/\s+/g, " ").trim()}\n`);
+    });
+  } else {
+    console.log(`(re-run with --show-unmatched to print the distinct unmatched prompts verbatim, for naming a seed-batch.)`);
+  }
+}
 console.log(`\nCull:  open ${OUT}/ in a file manager → delete rejects → keep favorites.`);
 console.log(`Then I upload the survivors to R2 and build the gallery manifest.`);
