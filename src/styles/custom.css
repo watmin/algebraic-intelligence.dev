@@ -13,28 +13,16 @@
   margin-bottom: 0.4rem;
 }
 
-/* Brand accent — red/black, to match the wat+holon gravastar-lambda mark.
-   Overrides Starlight's default periwinkle: links, the primary CTA button,
-   active sidebar states, search highlight, and focus rings all key off these
-   three accent levels. text-accent (links) derives from accent-high (dark) /
-   accent (light), so overriding the three handles the whole palette. */
-:root {
-  --sl-color-accent-low: #4a0d15;
-  --sl-color-accent: #c30421; /* SVG deep core — hover/border accents */
-  --sl-color-accent-high: #f10126; /* SVG bright PURE scarlet — links + CTA button */
-}
-:root[data-theme="light"] {
-  --sl-color-accent-low: #ffd5d8;
-  --sl-color-accent: #c2041e; /* SVG deep core — readable on white */
-  --sl-color-accent-high: #741923; /* SVG deepest brick — strong text */
-}
+/* Links / accent stay on Starlight's default blue. Red text links — especially
+   the inline-code ones — were hard to parse on the dark surfaces; blue is the
+   conventional, readable link signal. The brand red lives in the logo, favicon,
+   and og mark, not the link color. */
 
-/* Warm the dark neutrals to match the red. Starlight's default gray ramp is
-   hsl(224, …) — a cool/blue undertone that harmonized with the old blue accent
-   but clashes with scarlet. Same lightness values as upstream; only the hue
-   shifts 224° → ~350° (the accent's family) at low saturation, so the surfaces
-   read as warm charcoal/ember rather than blue-gray. Text grays stay near-
-   neutral (low S) so body copy doesn't go pink. */
+/* Warm-charcoal dark neutrals. Starlight's default gray ramp is hsl(224, …) — a
+   cool/blue undertone; we shift the hue 224° → ~350° at low saturation (same
+   lightness as upstream) so the dark surfaces read as a warm charcoal rather
+   than blue-gray. Subtle, and kept independent of the link color. Text grays
+   stay near-neutral (low S) so body copy doesn't go pink. */
 :root {
   --sl-color-gray-1: hsl(345, 10%, 94%);
   --sl-color-gray-2: hsl(345, 6%, 77%);
