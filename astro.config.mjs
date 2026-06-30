@@ -426,9 +426,11 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { slug: "fenestra-aetherii/baldurs-gate-3" },
+                { slug: "fenestra-aetherii/baldurs-gate-3-code-dungeon" },
                 { slug: "fenestra-aetherii/world-of-warcraft" },
                 { slug: "fenestra-aetherii/pillars-of-eternity" },
                 { slug: "fenestra-aetherii/pillars-boss-kill" },
+                { slug: "fenestra-aetherii/pillars-code-dungeon" },
                 { slug: "fenestra-aetherii/tyranny" },
                 { slug: "fenestra-aetherii/necropolis" },
                 { slug: "fenestra-aetherii/dark-souls-berserk" },
@@ -436,6 +438,8 @@ export default defineConfig({
                 { slug: "fenestra-aetherii/magic-the-gathering" },
                 { slug: "fenestra-aetherii/everquest" },
                 { slug: "fenestra-aetherii/diablo" },
+                { slug: "fenestra-aetherii/diablo-code-dungeon" },
+                { slug: "fenestra-aetherii/diablo-datavatum" },
                 { slug: "fenestra-aetherii/warhammer-40k" },
                 { slug: "fenestra-aetherii/warhammer-40k-datavatum" },
                 { slug: "fenestra-aetherii/warhammer-40k-techno-dungeon" },
@@ -460,6 +464,7 @@ export default defineConfig({
                 { slug: "fenestra-aetherii/mcu-blockbuster" },
                 { slug: "fenestra-aetherii/judge-dredd" },
                 { slug: "fenestra-aetherii/lord-of-the-rings" },
+                { slug: "fenestra-aetherii/alan-lee-john-howe" },
               ],
             },
             {
