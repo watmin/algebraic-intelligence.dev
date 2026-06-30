@@ -13,10 +13,15 @@
   margin-bottom: 0.4rem;
 }
 
-/* Links / accent stay on Starlight's default blue. Red text links — especially
-   the inline-code ones — were hard to parse on the dark surfaces; blue is the
-   conventional, readable link signal. The brand red lives in the logo, favicon,
-   and og mark, not the link color. */
+/* Brand accent — scarlet. Drives the chrome that signals "wat/holon": the site
+   title, the active sidebar item, the active TOC item, the hero CTA, the search
+   highlight. Body reading-links are the ONE thing pulled back off this onto blue
+   (below) — Starlight ties links to the accent by default, which is the coupling. */
+:root {
+  --sl-color-accent-low: #4a0d15;
+  --sl-color-accent: #c30421; /* SVG deep core */
+  --sl-color-accent-high: #f10126; /* SVG bright scarlet — title, active nav, CTA */
+}
 
 /* Warm-charcoal dark neutrals. Starlight's default gray ramp is hsl(224, …) — a
    cool/blue undertone; we shift the hue 224° → ~350° at low saturation (same
@@ -33,11 +38,12 @@
   --sl-color-black: hsl(350, 14%, 10%);
 }
 
-/* The hero CTA keeps the brand scarlet — the one red pop in the chrome. Links
-   stay blue: Starlight ties the button background AND the body-link color to the
-   same --sl-color-text-accent, so this overrides ONLY the button (unlayered, so
-   it beats Starlight's @layer default). Black text on the scarlet, as before. */
-.sl-link-button.primary {
-  background: #f10126;
-  border-color: #f10126;
+/* Body reading-links → Starlight's default blue, the ONE thing pulled off the
+   red accent. Red link text (especially the inline-code links) was hard to parse
+   on the dark surfaces; blue is the conventional, readable signal. Chrome (title,
+   nav, TOC, CTA) stays red via the accent above. The `a code` rule recolors the
+   inline-code links; standalone inline code keeps its normal color. */
+.sl-markdown-content a,
+.sl-markdown-content a code {
+  color: hsl(224, 100%, 85%);
 }
