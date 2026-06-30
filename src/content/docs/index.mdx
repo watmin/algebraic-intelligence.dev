@@ -1,12 +1,11 @@
 ---
 title: Structure becomes geometry.
-description: One idea — structure becomes geometry — carried from an anomaly detector to a language, a signed practice, and an 86-chapter book. Every line of code and prose written by an LLM, from one person's architecture.
+description: One idea — structure becomes geometry — that grew working systems (a kernel-level firewall, a self-calibrating WAF, a six-year-proven BTC trader) and then a language to write them in. The firewall was the occasion; the tongue is the work. Every line of code and prose written by an LLM, from one person's architecture.
 template: splash
 hero:
-  tagline: Hand it data nobody labeled — packets, price candles, JSON — and the thing that doesn't belong lands geometrically far from everything that does. No GPU, no training set, no black box. The same idea grew past the encoder into a language, a signed practice, and an 86-chapter book — every line of code and prose written by an LLM, from one person's architecture.
+  tagline: Hand it data nobody labeled — packets, candles, JSON — and what doesn't belong lands geometrically far from everything that does. No GPU, no training set, no black box. That idea grew a kernel-level firewall, a self-calibrating WAF, and a six-year-proven BTC trader — and then a language to write them in. The firewall was the occasion. The tongue is the work.
   image:
-    file: ../../assets/logo.png
-    alt: wat · holon — the gravastar-lambda mark
+    html: '<img src="/logo-hero.png" alt="wat · holon — the gravastar-lambda mark" style="width:100%;height:auto" />'
   actions:
     - text: Read the Story
       link: /blog/story/prologue/
@@ -20,30 +19,35 @@ hero:
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid>
-  <Card title="The seed — structure into geometry" icon="puzzle">
+  <Card title="The seed — structure becomes geometry" icon="puzzle">
     Hand Holon a JSON record, a packet, a candle; it binds each field to its
-    role and folds them into one 4096-dim vector. Similar shapes land close;
-    an anomaly lands far. And it's no black box: subtract what its learned model
-    of "normal" can reconstruct, and what's left is exactly the part that didn't
-    belong — per field, deterministically.
+    role and folds them into one high-dimensional vector. Similar shapes land
+    close; an anomaly lands far. It began as a database — structural queries no
+    index supports — and it's no black box: subtract what a learned model of
+    "normal" reconstructs, and what's left is exactly the part that didn't
+    belong, per field, deterministically. No GPU. No training set.
   </Card>
-  <Card title="It became a language" icon="open-book">
-    `wat` — a Lisp hosted on Rust the way Clojure is hosted on the JVM:
-    `defn`, `defrecord`, EDN, borrowing Rust's type system; it interprets your
-    code. Young and moving fast — Scheme at the root, Clojure on the surface.
+  <Card title="The occasion — systems that work" icon="rocket">
+    The encoding proved itself on real wire. A kernel scrubber (XDP/eBPF)
+    running a **rete engine in kernel memory**, enforcing rules no human wrote —
+    derived from vector algebra alone — absorbing a ~1.3M-packet/sec flood at
+    99.5% drop. An L7 firewall that learns normal HTTP in seconds and turns away
+    a live Nikto scan of DVWA at zero false positives. No signatures. No CVE
+    database.
   </Card>
-  <Card title="It became a signed practice" icon="magnifier">
-    `datamancy` — review disciplines served as a signed, content-addressed
-    manifest. The datamancer signs with a key that never leaves AWS KMS; your
-    agent verifies the bytes against a pinned public key before reading them. It
-    proves provenance — these are the exact bytes the datamancer signed — not
-    that any instruction is safe to obey.
+  <Card title="The turn — the thoughts needed a language" icon="pencil">
+    Markets are structurally identical to DDoS, so the same algebra became a BTC
+    trader whose edge holds across six years and every regime. But steering its
+    *thoughts* the way a person thinks them meant a host language that could
+    hold the ideas — and Rust couldn't express them. A sixteen-parameter
+    function wasn't bad code; it was a missing language form.
   </Card>
-  <Card title="It works — without signatures or training data" icon="rocket">
-    Same algebra, two layers: a kernel scrubber (XDP/eBPF) that absorbed an
-    uncapped ~1.3M-packet/sec flood at 99.5% drop and 52ms detection, and an L7
-    firewall that learns "normal" HTTP in ~6 seconds and shuts out a live Nikto
-    scan of DVWA at zero false positives. No CVE database. No GPU.
+  <Card title="The work — wat" icon="open-book">
+    `wat` — a Lisp on Rust the way Clojure is on the JVM: EDN to the core, a
+    static type system that makes illegal states *unrepresentable* rather than
+    merely caught, and one inversion at its heart — the program and its vector
+    are the same substance. Code is data is geometry. Born from the friction;
+    it's where the work now lives.
   </Card>
 </CardGrid>
 
@@ -51,13 +55,13 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 Everything here is one idea — *structure becomes geometry* — carried until it ran out of places to apply. Built by one person, after hours, by prompting LLMs: every file in every repository, code and prose including this page, was written by a machine. The architecture is human; not a line of the implementation is.
 
-It starts as an encoder. Hand Holon any structured data and it turns the shape into a point in 4096-dimensional space — which fields exist, how they nest, what binds to what. Similar structures land close; an anomaly lands far. The explanation is built in: subtract what a learned model of "normal" reconstructs, and the remainder is the anomalous component — a deterministic, per-field account of what didn't belong, with striped encoding keeping fields from bleeding into each other. The technique is [Vector Symbolic Architecture](https://en.wikipedia.org/wiki/Vector_symbolic_architecture), dating to Kanerva (1988).
+It started as an encoder — really, a database. Hand Holon any structured data and it turns the shape into a point in high-dimensional space: which fields exist, how they nest, what binds to what. Similar structures land close; an anomaly lands far. The explanation is built in — subtract what a learned model of "normal" reconstructs, and the remainder is the anomalous component, a deterministic per-field account of what didn't belong. The technique is [Vector Symbolic Architecture](https://en.wikipedia.org/wiki/Vector_symbolic_architecture), dating to Kanerva (1988).
 
-It outgrew a library. So it became **wat** — a Lisp-family language hosted on Rust the same way Clojure is hosted on the JVM: it borrows Rust's type system, speaks EDN, and interprets your code rather than compiling it. Built so the vector algebra is something you write, not a library you call. Young and moving fast — the substrate everything else now runs on.
+The idea earned its keep in systems that run. At the kernel boundary, a rete engine living in kernel memory enforces rules no human wrote — derived from vector algebra, not signatures — dropping an uncapped ~1.3M-packet/sec flood at 99.5%. One layer up, a spectral firewall learns normal from seconds of traffic and turns away a live Nikto scan at zero false positives. And markets, because DDoS detection and trading are structurally identical: a self-organizing BTC trader whose edge holds across six years of candles and every regime it passed through.
 
-Code that keeps other code honest is only as trustworthy as its source. So it became **datamancy** — review disciplines served as a content-addressed manifest signed by a key that never leaves AWS KMS; an agent verifies the bytes against a pinned public key before it reads them. It proves provenance, not safety: that these are the exact bytes the datamancer signed, not that an authentic instruction is safe to obey.
+Then steering the trader hit a wall. Programming its thoughts the way you think them meant a language that could hold the ideas, and Rust couldn't express them — a sixteen-parameter function wasn't bad code, it was a missing language form. The answer wasn't a refactor. It was a language.
 
-And it works without the usual machinery. At the kernel boundary, an XDP/eBPF scrubber absorbed an uncapped ~1.3M-packet/sec flood at a 99.5% drop rate and 52ms detection. At the application layer, a spectral firewall learns "normal" from ~6 seconds of traffic and shuts out a live Nikto scan at zero false positives — no signatures, no CVE database. The whole thing was worked out in the open: an 86-chapter book, written in the moment.
+So it became **wat** — a homoiconic Lisp on Rust, EDN to the core, with a static type system that makes the wrong thing *unrepresentable* rather than merely caught. Its premise is the inversion VSA was always pointing at: the program and its vector are the same substance — code is data is geometry, homoiconic at ten thousand dimensions. The labs were the occasion; the language is the work. And the discipline that builds it — failure engineering and constraint engineering, served as a signed, content-addressed grimoire any agent can verify before it reads — is the conscience of all of it, made public and un-tamperable.
 
 ---
 
@@ -66,32 +70,32 @@ And it works without the usual machinery. At the kernel boundary, an XDP/eBPF sc
 Three tracks, read in any order. These are the doors in — the full, current table of contents lives in the sidebar.
 
 - [**Primers →**](/blog/primers/series-001-000-vsa-primer/) — VSA from scratch in six posts: what a hypervector is, the three operations, the encoding stack, coordination-free scaling, and the wat language.
-- [**The Story →**](/blog/story/prologue/) — How a DDoS detector became a substrate, a language, and a signed grimoire — told from the git log, week by week. Start at the prologue; the sidebar holds the whole arc through to the perpetual epilogue.
-- [**The Book →**](/blog/book/) — The philosophy, written in the moment as the work happened — with the Guide (the 007 blueprint) and the Circuits (the machine as signal flow).
+- [**The Story →**](/blog/story/prologue/) — How an after-hours anomaly detector became working systems, then a language — told from the git log, week by week. Start at the prologue; the sidebar holds the whole arc through to the perpetual epilogue.
+- [**The Book →**](/blog/book/) — The making of wat, written in the moment as it happened: 86 chapters where the work thinks out loud. The encoder carries the opening; from chapter 10, the chapters *are* the creation of the language.
 
 ---
 
 ## The work
 
-[**holon-rs**](https://github.com/watmin/holon-rs) — The kernel. Five primitives: atom, bind, bundle, cosine, reckoner. SIMD-accelerated. f64 pipeline for scalar extraction. The Reckoner unifies discrete classification and continuous regression in one struct with a self-evaluating conviction-accuracy curve.
+[**wat-rs**](https://github.com/watmin/wat-rs) — The language, and where the work now lives: parser, type checker, macro expander, evaluator, runtime, and all the tooling. A Lisp on Rust the way Clojure is on the JVM — it interprets, not compiles; `#[wat_dispatch]` surfaces Rust crates under the `:rust::` namespace. Strongly typed, homoiconic, no `nil`. The medium everything else is being rewritten into.
 
-[**wat**](https://github.com/watmin/wat) *(legacy)* — two early spec attempts at the language, since subsumed by `wat-rs`. Kept as a relic; the living language and all its tooling live in `wat-rs`.
+[**holon-rs**](https://github.com/watmin/holon-rs) — The algebra underneath. The VSA kernel in Rust, SIMD-accelerated: atom, bind, bundle, cosine. The deterministic substrate every lab and the language stand on — same seed, same vector, anywhere, with no shared codebook.
 
-[**wat-rs**](https://github.com/watmin/wat-rs) — Where the wat language actually lives: parser, type checker, macro expander, runtime, and all the tooling. `wat` is a Lisp hosted on Rust the way Clojure is on the JVM — it interprets, not compiles; `#[wat_dispatch]` surfaces Rust crates under the `:rust::` namespace. The wat machine is real.
+[**holon-lab-trading**](https://github.com/watmin/holon-lab-trading) — The proof that turned. A self-organizing BTC trader: market observers predict direction, a manager aggregates their conviction, risk modulates sizing, a treasury executes. The discovery is the conviction-accuracy curve — selectivity buys accuracy, exponentially. Validated on a single walk-forward pass across six years of five-minute candles, profitable through every regime. Steering its *thoughts* is the friction that birthed wat.
 
-[**holon-lab-trading**](https://github.com/watmin/holon-lab-trading) — The enterprise. Self-organizing BTC trader with N market observers, M exit observers, N×M brokers (Grace/Violence accountability), streaming indicators, and a guide-driven specification process. 37 wat files, 4,804 lines, proven by the ignorant ward. The conviction-accuracy curve is exponential: 62.1% with 107 atoms on 100k candles.
-
-[**holon-lab-ddos**](https://github.com/watmin/holon-lab-ddos) — Where it started. `veth-lab`: XDP + eBPF packet scrubber, 1.3M PPS, 1M rules at line rate via BPF tail-call DFS. `http-lab`: spectral firewall — 41µs geometric anomaly detection, 0.1% FPR, self-calibrating, no signatures.
-
-[**holon**](https://github.com/watmin/holon) *(Python)* — The reference implementation. 18 challenge batches, F1=1.0 anomaly detection, the encoding insight that made everything else possible. The Rosetta Stone that the Rust port was built from.
+[**holon-lab-ddos**](https://github.com/watmin/holon-lab-ddos) — Where it started. `veth-lab`: an XDP + eBPF packet scrubber running a rete network in kernel memory — 1M rules at line rate via BPF tail-call DFS, ~1.3M PPS. `http-lab`: the spectral firewall — geometric anomaly detection in microseconds, self-calibrating, no signatures.
 
 [**holon-lab-baseline**](https://github.com/watmin/holon-lab-baseline) — LLM-driven traffic generation. Playwright + Ollama agents producing organic WordPress HTTP traffic for realistic experiment baselines.
 
-[**scratch**](https://github.com/watmin/scratch) — The design half. Durable thinking artifacts that survive conversation compaction by living on disk: the meta-vision (functions-are-reality; the wat-network of mutually-authenticating vms), the per-arc design threads, and the forward work waiting on arc 109. The WHY and the WHAT behind the implementation.
+[**holon**](https://github.com/watmin/holon) *(Python, frozen)* — The reference implementation, now a relic. 18 challenge batches, F1=1.0 anomaly detection, the encoding insight that made everything else possible. The Rosetta Stone the Rust port was built from — Python because it's the language the LLM speaks most fluently.
 
-[**datamancy**](https://github.com/watmin/datamancy) — The grimoire. The wards reborn as Latin-named code-review spells, packaged as the zero-dependency npm adapter (`npx datamancy`) that verifies every spell against a KMS-signed (ECDSA P-256) manifest. Frozen at `1.0.0` — never patched. The conscience of the work, made public and un-tamperable.
+[**wat**](https://github.com/watmin/wat) *(legacy)* — Two early spec attempts at the language, revived once `holon-rs` existed to run them against, then subsumed by `wat-rs`. Kept as the relic it grew from.
 
-[**datamancy.dev**](https://github.com/watmin/datamancy.dev) — The grimoire's home: a cryptographically-verifiable static MCP that serves the spells as raw markdown alongside the signed manifest the adapter checks them against.
+[**scratch**](https://github.com/watmin/scratch) — The design half. Durable thinking artifacts that survive conversation compaction by living on disk: the meta-vision (functions-are-reality; the wat-network of mutually-authenticating vms), the per-arc design threads, the forward work. The WHY and the WHAT behind the implementation.
+
+[**datamancy**](https://github.com/watmin/datamancy) — The grimoire. Review disciplines reborn as Latin-named spells, packaged as the zero-dependency npm adapter (`npx datamancy`) that verifies every spell against a KMS-signed (ECDSA P-256) manifest. Frozen at `1.0.0` — never patched. The conscience of the work, made public and un-tamperable.
+
+[**datamancy.dev**](https://github.com/watmin/datamancy.dev) — The grimoire's home: a cryptographically-verifiable static MCP that serves the spells as raw markdown alongside the signed manifest the adapter checks them against. A command channel with every axis of a botnet's intent inverted — opt-in, an ethos for a payload, trust by signature.
 
 [**datamancer.dev**](https://github.com/watmin/datamancer.dev) — The practitioner's identity card. Raw markdown, agent-readable; three pointers: chronicle, grimoire, source.
 

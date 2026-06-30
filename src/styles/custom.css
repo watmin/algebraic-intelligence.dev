@@ -12,3 +12,35 @@
   padding-bottom: 0.4rem;
   margin-bottom: 0.4rem;
 }
+
+/* Brand accent — red/black, to match the wat+holon gravastar-lambda mark.
+   Overrides Starlight's default periwinkle: links, the primary CTA button,
+   active sidebar states, search highlight, and focus rings all key off these
+   three accent levels. text-accent (links) derives from accent-high (dark) /
+   accent (light), so overriding the three handles the whole palette. */
+:root {
+  --sl-color-accent-low: #4a0d15;
+  --sl-color-accent: #c30421; /* SVG deep core — hover/border accents */
+  --sl-color-accent-high: #f10126; /* SVG bright PURE scarlet — links + CTA button */
+}
+:root[data-theme="light"] {
+  --sl-color-accent-low: #ffd5d8;
+  --sl-color-accent: #c2041e; /* SVG deep core — readable on white */
+  --sl-color-accent-high: #741923; /* SVG deepest brick — strong text */
+}
+
+/* Warm the dark neutrals to match the red. Starlight's default gray ramp is
+   hsl(224, …) — a cool/blue undertone that harmonized with the old blue accent
+   but clashes with scarlet. Same lightness values as upstream; only the hue
+   shifts 224° → ~350° (the accent's family) at low saturation, so the surfaces
+   read as warm charcoal/ember rather than blue-gray. Text grays stay near-
+   neutral (low S) so body copy doesn't go pink. */
+:root {
+  --sl-color-gray-1: hsl(345, 10%, 94%);
+  --sl-color-gray-2: hsl(345, 6%, 77%);
+  --sl-color-gray-3: hsl(346, 6%, 56%);
+  --sl-color-gray-4: hsl(348, 7%, 36%);
+  --sl-color-gray-5: hsl(349, 10%, 23%);
+  --sl-color-gray-6: hsl(350, 13%, 16%);
+  --sl-color-black: hsl(350, 14%, 10%);
+}
