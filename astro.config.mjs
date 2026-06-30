@@ -18,6 +18,13 @@ export default defineConfig({
       description:
         "Holographic memory systems, algebraic encoders, and adaptive network defense.",
       customCss: ["./src/styles/custom.css"],
+      // Dark-only: remove the theme toggle and force the dark theme. Light mode
+      // is retired (the warm/red palette is tuned for dark); these overrides
+      // keep a stale localStorage or light-OS visitor from landing in it.
+      components: {
+        ThemeSelect: "./src/components/ThemeSelect.astro",
+        ThemeProvider: "./src/components/ThemeProvider.astro",
+      },
       head: [
         // brand icons + social card
         {

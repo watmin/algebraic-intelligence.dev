@@ -1,0 +1,15 @@
+---
+/* Dark-only site: force the theme, drop the light path entirely.
+
+   Replaces Starlight's stock ThemeProvider, which picks `light` whenever
+   localStorage or the OS prefers it. We force dark unconditionally, so a
+   stale `starlight-theme=light` in a returning visitor's storage — or a
+   light-mode OS — can't land them in the (retired) light theme. Inlined so it
+   runs before first paint = no flash. StarlightThemeProvider is stubbed so any
+   internal `updatePickers()` call no-ops (the toggle is removed too). */
+---
+
+<script is:inline>
+	window.StarlightThemeProvider = { updatePickers() {} };
+	document.documentElement.dataset.theme = 'dark';
+</script>
