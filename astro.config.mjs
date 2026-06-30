@@ -13,7 +13,7 @@ export default defineConfig({
   integrations: [
     mermaid(),
     starlight({
-      favicon: "/favicon.jpg",
+      favicon: "/favicon.ico",
       title: "Algebraic Intelligence",
       description:
         "Holographic memory systems, algebraic encoders, and adaptive network defense.",
