@@ -32,3 +32,12 @@
   --sl-color-gray-6: hsl(350, 13%, 16%);
   --sl-color-black: hsl(350, 14%, 10%);
 }
+
+/* The hero CTA keeps the brand scarlet — the one red pop in the chrome. Links
+   stay blue: Starlight ties the button background AND the body-link color to the
+   same --sl-color-text-accent, so this overrides ONLY the button (unlayered, so
+   it beats Starlight's @layer default). Black text on the scarlet, as before. */
+.sl-link-button.primary {
+  background: #f10126;
+  border-color: #f10126;
+}
