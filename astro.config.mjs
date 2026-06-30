@@ -19,6 +19,29 @@ export default defineConfig({
         "Holographic memory systems, algebraic encoders, and adaptive network defense.",
       customCss: ["./src/styles/custom.css"],
       head: [
+        // brand icons + social card
+        {
+          tag: "link",
+          attrs: { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image",
+            content: "https://algebraic-intelligence.dev/og-image.png",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: { name: "twitter:card", content: "summary_large_image" },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:image",
+            content: "https://algebraic-intelligence.dev/og-image.png",
+          },
+        },
         // RFC 8288 Link relations for agent discovery (HTML equivalent of the HTTP Link headers in public/_headers)
         {
           tag: "link",
