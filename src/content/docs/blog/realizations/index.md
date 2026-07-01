@@ -46,6 +46,13 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 279 | [Format](/blog/realizations/279-format/) | 58 |
 | 291 | [Defservice Durable State](/blog/realizations/291-defservice-durable-state/) | 1096 |
 | 292 | [Timer Peer Time As Select](/blog/realizations/292-timer-peer-time-as-select/) | 401 |
-| 293 | [Struct Record Symmetry](/blog/realizations/293-struct-record-symmetry/) | 1326 |
+| 293 | [Struct Record Symmetry](/blog/realizations/293-struct-record-symmetry/) | 1432 |
 | 294 | [Holon Returns To Vsa](/blog/realizations/294-holon-returns-to-vsa/) | 571 |
 | 295 | [Signed Code Only](/blog/realizations/295-signed-code-only/) | 260 |
+| 296 | [Diagnostics Fully Edn](/blog/realizations/296-diagnostics-fully-edn/) | 738 |
+
+## July 2026
+
+| Arc | Realizations | Lines |
+|---|---|---|
+| 298 | [Honest Optionality](/blog/realizations/298-honest-optionality/) | 374 |
