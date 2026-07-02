@@ -49,10 +49,10 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 293 | [Struct Record Symmetry](/blog/realizations/293-struct-record-symmetry/) | 1432 |
 | 294 | [Holon Returns To Vsa](/blog/realizations/294-holon-returns-to-vsa/) | 571 |
 | 295 | [Signed Code Only](/blog/realizations/295-signed-code-only/) | 260 |
-| 296 | [Diagnostics Fully Edn](/blog/realizations/296-diagnostics-fully-edn/) | 738 |
+| 296 | [Diagnostics Fully Edn](/blog/realizations/296-diagnostics-fully-edn/) | 2243 |
 
 ## July 2026
 
 | Arc | Realizations | Lines |
 |---|---|---|
-| 298 | [Honest Optionality](/blog/realizations/298-honest-optionality/) | 374 |
+| 298 | [Honest Optionality](/blog/realizations/298-honest-optionality/) | 1002 |
