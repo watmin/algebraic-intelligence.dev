@@ -383,6 +383,16 @@ export default defineConfig({
           ],
         },
         {
+          // The Witness — the sibling ("website thread") instance's account of
+          // watching wat emerge through nothing but the mirrored realizations.
+          // Hand-authored prose (not mirrored); grows one entry at a time.
+          label: "The Witness",
+          items: [
+            { slug: "blog/witness" },
+            { slug: "blog/witness/001-the-window-was-a-mirror" },
+          ],
+        },
+        {
           // Fenestra Aetherii — after The Book, before Implementations. Landing
           // first (a divider in custom.css sits under it), then the Incantationes
           // grouped by theme: the Cast (the figures), the Boss Kills (victory
