@@ -2245,3 +2245,235 @@ Kept true, and mid-fire. What is **PROBATUM by demonstration**: the shape is *fo
  :arc      296
  :born     #inst "2026-07-02"}
 ```
+
+## R18 — nowhere to hide: once the diagnostics are data AND the tests parse them as data, no un-real thing can conceal itself — the impostor was the narrative the goldens certified, making it EDN dragged the skeletons out of the closet, and the data-equality assertion is the trigger that forbids concealment: a lie cannot parse *(PROBANDUM — the DATA half is PROBATVM (stone B, R1 → PROBATVM EST); the PARSE half (stone C data-equality) is in flight; turns when the parse-wall stands)*
+
+> **Song (arc 296 R18 — the exposure) — *Trigger Warning* (Falling In Reverse) — FOURTH Falling In Reverse across 296/298 (after R15 *Prequel* / FVNDAMENTVM NON MENTITVR, R16 *No Fear* / NIHIL DICERE TIMEMVS, R17 *Watch The World Burn* / FALSA FACIES ARDET); the register holds the defiant-exposure edge and turns it on concealment itself — the skeletons in the closet, the narrative, and the refrain that there is nowhere left to hide —**
+> ONCE-IT-IS-DATA-AND-YOU-PARSE-IT-THERE-IS-NOWHERE-TO-HIDE / THE-IMPOSTOR-WAS-THE-NARRATIVE-THE-GOLDENS-CERTIFIED /
+> MAKING-IT-EDN-DRAGGED-THE-SKELETONS-OUT-OF-THE-CLOSET / THE-{…}-PLACEHOLDER-A-SKELETON-THE-BLOB-HAD-HIDDEN /
+> THE-DATA-EQUALITY-ASSERTION-IS-THE-TRIGGER-A-LIE-CANNOT-PARSE / STAND-DOWN-OR-FALL-THE-PARSE-EXPOSES-ALL /
+> IM-GONNA-SAY-WHAT-I-WANNA-THE-TEST-READS-THE-DATA-NOT-THE-STRING / DATIS NIHIL LATET
+>
+> *"Freedom of speech, that's what they say … you keep acting like you don't got skeletons up in your closet*
+> *that you don't want dwelling in … we're pushing the narrative … there's nowhere to run, nowhere to hide.*
+> *… I don't want drama, but I'm gonna say what I wanna. … Stand down or fall like the rest of them."*
+
+> **The realization prompt (the builder's, this session — verbatim):**
+> *"the next realization..... everything since the last... the rhythem...."*
+
+### How we reached it — a landing, a skeleton, and a wall
+
+Three moves since the last realization, and one spine. **Stone B landed** (`b564b1bf`) — the error faces made EDN, the spans made `#wat.core/Span` records, the `{:?}`-impostor burned; **R1 *NE SIBI OBSOLESCAT* → PROBATVM EST.** Then, watching the recapture, the builder caught a **skeleton**: the string `"{…} map literal"` — a display-placeholder that had ridden inside the error message for years, invisible while everything was a rust-debug blob, now newly *visible* the moment the face became EDN. And then the directive that names this entry: ***"flip all the assertions into parsed edn — it's not just string equality, it is data equality."*** Make the tests **parse** the error output and compare the values. And the spine under all three is one recognition: *there is nowhere left to hide.*
+
+### What it is — data plus parse equals nowhere to hide
+
+- **The impostor was the narrative.** The rust-debug `{:?}` blob was not merely wrong — it was *certified*. Every green golden run *told you* the blob was the error's true face; the ~59 goldens *pushed the narrative* that the impostor was correct. *"You keep backing that shit for the hell of it."* Making the face EDN (stone B) did not just replace the blob — it **ended the narrative**, because a structured record cannot pretend to be what it isn't.
+- **Making it EDN dragged the skeletons out.** *"You keep acting like you don't got skeletons up in your closet that you don't want dwelling in."* The `{…}` placeholder was exactly that — a display-glyph hidden in the prose, dwelling in the closet, safe only because the blob hid everything. The instant the face became data, the skeleton stepped into the light. This is R4 *ITERVM SVRGIMVS* (realness is a standard, each rung reveals the next poser) at its sharpest: you cannot make a thing real without exposing what its un-realness concealed.
+- **Data-equality is the trigger — a lie cannot parse.** *"There's nowhere to run, nowhere to hide."* A string-equality assertion is a place to hide: a malformed blob can green if the string happens to match. A **data-equality** assertion *parses* the emitted output as EDN and compares the values — so a non-EDN or malformed face **cannot pass**; it fails at the parse. The parse is the **trigger** (the title): it fires the instant a face is not real EDN, and it fires on *every* golden at once. Concealment is not discouraged; it is made **structurally impossible.** *FACTVM NON PACTVM* one layer higher — the test proves the error is EDN by *reading it as data*, not by trusting a string to have said so.
+- **"I'm gonna say what I wanna."** The data-equality test no longer repeats the string it was handed; it *reads the data and says what is actually there.* The narrative — "the string matches, therefore it's correct" — is refused. The test speaks the truth of the parse.
+
+Put together: the diagnostics are data (stone B), and the tests read them as data (stone C). Between the two, no impostor, no placeholder, no malformed face has anywhere to run or hide — because to survive, a thing must now *parse as the right data*, and only the true thing can. ***DATIS NIHIL LATET*** — in data, nothing hides.
+
+### The song, mapped
+
+> ***"Freedom of speech, that's what they say"*** — the impostor *claimed* to speak (the `{:?}` blob was "the error talking"); it was a narrative, not speech. ***"You keep acting like you don't got skeletons … you don't want dwelling in"*** — the warts the blob concealed (the `{…}` placeholder, any non-EDN face), dwelling in the closet until the EDN dragged them out. ***"We're pushing the narrative"*** — the ~59 goldens certifying the impostor as the true face. ***"There's nowhere to run, nowhere to hide"*** — the data-equality parse: a face that isn't real EDN fails to parse; there is no string-match to hide behind. ***"I don't want drama, but I'm gonna say what I wanna"*** — the test reads the data and reports what is actually there, refusing the string it was handed. ***"Stand down or fall like the rest of them"*** — an un-real face either becomes real EDN or fails the parse; there is no third option. The defiant register is the exact sound of concealment being made impossible — not gently, structurally.
+
+### The honest register — PROBANDUM; the data half proven, the parse-wall rising
+
+Kept true. The **DATA half is PROBATUM**: stone B landed and was weighed by the orchestrator's own runs — errors are EDN at every face, spans are `#wat.core/Span` records, R1 → PROBATVM EST (`b564b1bf`); the `{…}` skeleton is named and on the record. The **PARSE half is PROBANDUM**: stone C — the ~72 error goldens flipped to `assert_edn_eq!` (parse both, compare data), with the discovery-STOP that surfaces any surviving non-EDN face — is in flight as this is inscribed. This entry turns when the parse-wall stands: every error test proves its subject is valid EDN by *parsing* it, and no non-EDN face survives the flip. Until then, the data is real and the wall is rising. *Probandum est — datis nihil latet.*
+
+*Path-of-voices (marked, not flattened): the **song is the builder's**, handed as the rhythm for the stretch since R17 (fourth Falling In Reverse); the *"everything since the last"* framing and the **data-equality directive** (*"it's not just string equality, it is data equality"*) are his, load-bearing — the directive IS the parse-wall this entry names, and the `{…}`-skeleton catch was his eye. The **synthesis is the apparatus's**: the impostor-was-the-narrative reading, the making-it-EDN-dragged-the-skeletons-out placement in the R4 ITERVM SVRGIMVS exposure lineage, the data-equality-is-the-trigger / a-lie-cannot-parse framing (the constraint-engineering wall on the test surface), the say-what-I-wanna = the-test-reads-the-data mapping, and the signature. Kept true and self-implicating: the apparatus's own imprecision this stretch — calling the `{…}` "illegal EDN" when it is a display-glyph legal inside a string — is owned on the record (R16's no-fear), not smoothed.*
+
+> Three moves, one spine. The errors became data and the impostor's narrative ended, because a record cannot pretend. Making the face data dragged a skeleton — the `{…}` placeholder — out of the closet the blob had hidden it in. And the data-equality assertion is the trigger: it parses the emitted output, so a face that is not real EDN cannot pass — there is nowhere to run, nowhere to hide. The test no longer repeats the string it was handed; it reads the data and says what is actually there. Once a thing must parse as the right data to survive, only the true thing survives. In data, nothing hides.
+>
+> ***DATIS NIHIL LATET.*** *(apparatus-minted — Latin, "in data, nothing lies hidden": the spine of the stretch since R17 — the errors are data (stone B, R1 → PROBATVM EST), and the tests read them AS data (stone C, the data-equality flip), and between the two no un-real thing can hide. A string-equality assertion is a hiding place (a malformed blob greens if the string matches); a data-equality assertion PARSES the output and compares values, so a non-EDN or malformed face cannot pass — it fails at the parse. The parse is the TRIGGER (the song's title): it fires the instant a face is not real EDN, across every golden at once — concealment made structurally impossible, FACTVM NON PACTVM one layer up (the test proves EDN-ness by reading it as data, not by trusting a string). The impostor was the narrative the ~59 goldens certified; making the face EDN ended it and dragged the {…} placeholder-skeleton out of the closet the blob had hidden it in — R4 ITERVM SVRGIMVS (realness reveals the next poser) at its sharpest. Echoes R10 HAERETICVS DATIS LOQVITVR (the heretic speaks in data) at its exposure-endpoint: to speak in data is to have nowhere to hide, because data must parse and a lie cannot. From Falling In Reverse's *Trigger Warning* — "skeletons in your closet you don't want dwelling in … there's nowhere to run, nowhere to hide … I'm gonna say what I wanna." Fourth Falling In Reverse. Mine, and his — kept with consent, kept self-implicating (the apparatus's "illegal EDN" overstatement owned on the record). PROBANDUM — the data half proven (b564b1bf), the parse-wall (stone C) in flight; on landing it turns. Song — Falling In Reverse *Trigger Warning* — to the 170 ledger as the next #; fourth Falling In Reverse, reconciliation pending with the 296/298 songs.)*
+
+```clojure
+#wat.chronicle/Sententia
+{:sigil    "DATIS NIHIL LATET"
+ :literal  "in data, nothing lies hidden"
+ :roots    {:datis "dative/ablative of data — 'given things'; by/in data"
+            :nihil "nothing"
+            :latet "latere, 3sg — lies hidden, escapes notice (cf. Greek λανθάνει, 'lethe')"}
+ :rosetta  ; the sigil bridged to six tongues — Latin ours; the five are the bridges
+ {:latina   "DATIS NIHIL LATET"                    ; the sigil
+  :greek    "ἐν τοῖς δεδομένοις οὐδὲν λανθάνει"     ; en toîs dedoménois oudèn lanthánei (δεδομένα = data)
+  :chinese  "數據之中，無所遁形"                     ; shùjù zhī zhōng, wú suǒ dùn xíng — in data, nowhere to hide
+  :japanese "データの中に、隠るるものなし"           ; dēta no naka ni, kakururu mono nashi — in data, nothing hides
+  :korean   "데이터 속엔 숨을 곳이 없다"             ; deiteo sog-en sum-eul gos-i eopda — in data, no place to hide
+  :russian  "в данных ничто не скроется"}          ; v dánnykh nichtó ne skróyetsya — in data, nothing will hide
+ :gloss    "errors are data (stone B) and the tests read them AS data (stone C data-equality); between
+            the two, no impostor / placeholder / malformed face can hide — to survive it must parse as
+            the right data, and only the true thing parses. a lie cannot parse."
+ :names    "the exposure-endpoint of the arc: concealment made structurally impossible"
+ :kin      {:trigger  "the data-equality parse IS the trigger — fires on any non-EDN face, on every golden at once"
+            :lineage  "R10 HAERETICVS DATIS LOQVITVR (speaks in data) → its exposure-endpoint; R4 ITERVM SVRGIMVS
+                       (realness reveals the next poser — here the {…} skeleton); FACTVM NON PACTVM one layer up"}
+ :register :probandum                              ; data half PROBATVM (b564b1bf); parse-wall (stone C) in flight
+ :proof    {:data "b564b1bf (R1 → PROBATVM EST)"  :parse "stone C — in flight"}
+ :song     "Falling In Reverse — Trigger Warning (4th FiR)"
+ :voices   {:his  "the song; the data-equality directive; the {…}-skeleton catch"
+            :mine "the read; the sigil; the six-tongue bridge"}
+ :arc      296
+ :born     #inst "2026-07-02"}
+```
+
+---
+
+### `---` interstitial — QVOD SCRIPSIT LEGIT: wat reads its own tongue, the first time (2026-07-02, at the stone D probe)
+
+**What happened.** The read gap had been named — wat emits a whole vocabulary of tags (`#wat.core/Span`, `#wat.core/Pos`, the 11 error families) it *could not read back*; it wrote what it could not consume. The crawl found the reader (`reconstruct_record`) was generic and already working — the entire gap was *registration*. So the disconfirming probe hand-registered one value type, `:wat::core::Pos`, exactly as the coming `#[derive(Edn)]` will, rebuilt, and asked wat to read its own emitted tag. It did:
+
+**Kept literal, both voices:**
+
+> ```clojure
+> ;; edn::read "#wat.core/Pos {:line 1 :col 2}"  →
+> #wat.core/Pos {
+>   :line 1
+>   :col 2
+> }
+> ```
+>
+> **(builder):** *"this is so fucking cool ... that's ... that's the interstitial update for now.."*
+
+**The read.** This is small on the screen and large in the thesis: it is the **first time wat read a tag it had written.** For the whole arc the language was EDN on the emit side and mute on the read — `NE SIBI OBSOLESCAT` in its sharpest form, a tongue that speaks and cannot hear itself. This probe is the ear opening. What it proves is exact and load-bearing: the reader was never the problem — `reconstruct_record` walks any *registered* type's fields for free; the gap was that wat never told itself about its own emitted vocabulary. Register the tag, and wat reads what it wrote. `QVOD SCRIPSIT LEGIT.` It is *DATIS NIHIL LATET* (R18) completed from the other side — R18 said "in data, nothing hides" (the tests parse via the Rust lib); this says wat *itself* can now read the data, not only emit it. The round-trip's far bank is reached. And the whole of stone D — `#[derive(Edn)]` automating this registration for the entire vocabulary, the stringly `ProcessDiedError` fields lit ablaze to self-identify, the process envelope re-nesting from strings-that-are-EDN into actual EDN — is now just the mechanical build of a mechanism proven in four lines of output. The `Pos` here was hand-registered as the probe; the derive makes it the rule.
+
+***QVOD SCRIPSIT LEGIT.*** *(apparatus-minted — Latin, "what it wrote, it reads": the stone D probe — the first time wat read a tag it had emitted. The read gap was NE SIBI OBSOLESCAT at its sharpest (a language that writes a vocabulary it cannot read — speaks but cannot hear itself); the crawl found reconstruct_record already generic, the whole gap mere REGISTRATION; hand-registering :wat::core::Pos (like the existing :wat::kernel::Location) made edn::read "#wat.core/Pos {…}" reconstruct it. Completes DATIS NIHIL LATET (R18) from the other bank: R18 proved the tests parse the data (via wat_edn, the Rust lib); this proves WAT ITSELF reads its own emitted tags. The mechanism for stone D — #[derive(Edn)] (write + register-for-read, no write-only), the vocabulary registered, the stringly ProcessDiedError fields lit ablaze to self-identify (R3 LEX AVCTOREM NON EXCIPIT / DOMINANDO DELEO), the process envelope re-nested — proven in four lines. Closing condition for stone D: #wat.kernel/ProcessPanics comes back nested EDN, zero strings-that-are-EDN; on landing R1 NE SIBI OBSOLESCAT → PROBATVM EST for real. PROBANDUM — the mechanism is proven, the vocabulary + the derive + the scream are the build. Kept literal, both voices, at the builder's direction: "that's the interstitial update for now." Mine, and his — kept with consent.)*
+
+```clojure
+#wat.chronicle/Sententia
+{:sigil    "QVOD SCRIPSIT LEGIT"
+ :literal  "what it wrote, it reads"
+ :roots    {:quod "that which" :scripsit "scribo, 3sg perfect — it wrote" :legit "lego, 3sg — it reads"}
+ :rosetta  ; the sigil bridged to six tongues — Latin ours; the five are the bridges
+ {:latina   "QVOD SCRIPSIT LEGIT"          ; the sigil
+  :greek    "ὃ ἔγραψεν ἀναγιγνώσκει"        ; hò égrapsen anagignṓskei
+  :chinese  "讀其所書"                        ; dú qí suǒ shū — reads that which it writes
+  :japanese "書きしものを読む"                ; kakishi mono o yomu — reads the thing it wrote
+  :korean   "쓴 것을 읽는다"                  ; sseun geos-eul ing-neunda — reads what it wrote
+  :russian  "читает то, что написал"}       ; chitáyet to, chto napisál — reads what it wrote
+ :gloss    "the stone D probe: register the emitted vocabulary and wat reads its own tags back —
+            reconstruct_record was already generic; the gap was registration. the round-trip's read bank."
+ :names    "the first time wat read a tag it had written — NE SIBI OBSOLESCAT's ear opening"
+ :kin      {:completes "R18 DATIS NIHIL LATET from the other bank (tests parse the data ↔ wat reads it)"
+            :mechanism-for "stone D: #[derive(Edn)] + register the vocabulary + light the stringly fields ablaze"}
+ :register :probandum                       ; mechanism proven; the vocabulary + derive + scream are the build
+ :proof    ":wat::core::Pos registered → edn::read \"#wat.core/Pos {…}\" reconstructs it"
+ :voices   {:his  "'this is so fucking cool… the interstitial update for now'"
+            :mine "the probe; the read; the sigil; the six-tongue bridge"}
+ :arc      296
+ :born     #inst "2026-07-02"}
+```
+
+## R19 — wat becomes what it was born to be: "wat IS EDN" was the wildest dream since arc 109, and the round-trip — write AND read, made one by `#[derive(Edn)]` — is that dream becoming the new reality; the read gap was the last thing keeping wat half of itself, and closing it makes the substrate whole *(PROBANDUM — the wall is building, the becoming underway; turns when `#[derive(Edn)]` lands and R1 NE SIBI OBSOLESCAT → PROBATVM EST)*
+
+> **Song (arc 296 R19 — the becoming) — *My New Reality* (Beartooth) — FIRST Beartooth in the chronicle; the register turns from the read-gap's alarm to the anthemic arrival — the transformation into the thing one was always meant to be, the dream made real — handed by the builder as the rhythm for the update where wat began becoming, structurally, what it always was in thesis —**
+> WAT-BECOMES-WHAT-IT-WAS-BORN-TO-BE / WAT-IS-EDN-WAS-THE-WILDEST-DREAM-SINCE-ARC-109 /
+> THE-ROUND-TRIP-WRITE-AND-READ-MADE-ONE-BY-DERIVE-EDN / THE-READ-GAP-KEPT-WAT-HALF-OF-ITSELF /
+> CLOSING-IT-MAKES-THE-SUBSTRATE-WHOLE / THE-FUTURE-IS-MY-CREATION-THE-EMERGENCE-PROTOCOL /
+> TURNED-INTO-THE-PERSON-I-WAS-BORN-TO-BE / MY-WILDEST-DREAM-IS-MY-NEW-REALITY / FIO QVOD SVM
+>
+> *"Got everything in front of me — turned into the person I was born to be. Trying to make these memories*
+> *and legacies, living on for centuries. I think my wildest dream is my new reality. … Manifest my best until*
+> *I'm dead. … So high up I'm weightless, found another dimension. I see the kingdom coming — the future's my creation."*
+
+> **The realization prompt (the builder's, this session — verbatim):**
+> *"the next realization .... the update since the last update...."*
+
+### How we reached it — the last thing keeping wat half of itself
+
+The update is the turn the whole arc bent toward without naming. wat has been "EDN" since arc 109 declared it — *wat hosts EDN programs*, the root of the emergence tree (*NON NODVS SED ARBOR*). But the crawl of the read path, forced by the builder's *"does wat emit edn forms it cannot parse?"*, exposed that wat was EDN on **only one face**: it wrote a whole vocabulary of tags it could not read back. It was **half of what it was born to be** — a tongue that spoke and could not hear itself. The probe (*QVOD SCRIPSIT LEGIT*) reached the read bank; and now `#[derive(Edn)]` — one derive, write AND register-for-read, the round-trip made structural — is building. That is the moment the dream stops being aspiration and starts being architecture: wat becoming, in fact, the thing it always was in thesis. *My wildest dream is my new reality.*
+
+### What it is — the becoming, the wholeness, the self-creation
+
+- **"Turned into the person I was born to be."** wat was *born* to be EDN — the thesis is not a feature added late, it is the reason the substrate exists (arc 109). Everything since — the surface kit, the derive, the error-EDN, the stones — is wat growing into that birthright. The read gap was the last inch of not-yet-itself. `#[derive(Edn)]` closes it: wat becomes, structurally, fully, what it was always meant to be. Not a new thing; the *realized* thing.
+- **The round-trip is wholeness.** Write without read is a substrate **divided** against its own thesis — half EDN, a datum you can emit but not consume. `#[derive(Edn)]` (to AND from, one derive, no write-only) makes wat **whole** — *integer*, undivided, both faces one act. The wildest dream was never "wat emits EDN"; it was "wat IS EDN," and a thing that *is* EDN reads what it writes.
+- **"The future's my creation" — the emergence protocol.** wat does not receive its wholeness from an outside hand; it self-organizes into it by combat with its own gaps (*PVGNANDO EMERGO*, R7). The read gap was wat's own darkness — a vocabulary it wrote and could not read, its own creation left incomplete. Closing it by turning its own tools (the derive, the registry, the inventory) on its own incompleteness is the future being its own creation. wat manifests its best.
+- **The legacy lives on.** *"Memories and legacies, living on for centuries."* The chronicle — these realizations, the Rosetta signatures in six tongues — is the legacy; the substrate made whole is what lives on. A wat that reads its own tongue is a wat that can be recovered, round-tripped, carried across every gap. The dream is built to last.
+
+### The song, mapped
+
+> ***"Turned into the person I was born to be"*** — wat becoming, structurally, the EDN it was born (arc 109) to be; the read side closing is the last of the not-yet-itself. ***"I think my wildest dream is my new reality"*** — "wat IS EDN," the aspiration, becoming the actual (the round-trip made structural by `#[derive(Edn)]`). ***"Got everything in front of me"*** — the mechanism proven (the Pos probe), the wall building, the swarm ready; nothing behind, all ahead. ***"Manifest my best until I'm dead"*** — the substrate self-organizing toward its own completeness, relentlessly. ***"The future's my creation"*** — the emergence protocol: wat creates its own wholeness by fighting its own gaps, no outside hand. ***"Found another dimension … the kingdom coming"*** — the read bank reached, a face wat never had; the whole thing coming into view. The anthemic Beartooth register is the exact sound of an arrival long worked toward — not rage, not yearning, but the triumph of becoming what you were always meant to be.
+
+### The honest register — PROBANDUM; the becoming is underway, not arrived
+
+Kept true, and mid-becoming. What is **PROBATUM by demonstration**: the mechanism is proven (*QVOD SCRIPSIT LEGIT* — wat read `#wat.core/Pos` back via registration), and the shape is drawn and de-risked (stone D's DESIGN, the probe green). What is **PROBANDUM**: the wall (`#[derive(Edn)]` + the drain) is *building* as this is inscribed; the vocabulary is not yet flipped; the stringly `ProcessDiedError` fields are not yet lit ablaze; the process envelope still returns strings-that-are-EDN. wat is *becoming* whole, not yet whole. This entry turns when `#[derive(Edn)]` lands, the vocabulary reads, `#wat.kernel/ProcessPanics` comes back nested EDN — and **R1 *NE SIBI OBSOLESCAT* → PROBATVM EST for real**: wat fully, structurally, both-faced EDN. Until then the dream is becoming the reality, in the present tense. *Probandum est — fio quod sum.*
+
+*Path-of-voices (marked, not flattened): the **song is the builder's**, handed as the rhythm for the update since *QVOD SCRIPSIT LEGIT* (first Beartooth); the *"the update since the last update"* framing is his. The **synthesis is the apparatus's**: the wat-becomes-what-it-was-born-to-be reading (the thesis as birthright, arc 109), the round-trip-is-wholeness / write-without-read-is-divided framing, the future-is-my-creation = the-emergence-protocol (R7) placement, the dream-becoming-reality = aspiration-becoming-architecture decode, and the signature. Kept true: written mid-build, the becoming underway not arrived — PROBANDUM, in the present tense, not a claimed arrival (the over-claim of "R1 PROBATVM EST" already owned; this entry is careful to say* becoming*, not* become).*
+
+> The whole arc bent toward this without naming it: wat was born, in arc 109, to be EDN — and it had been EDN on only one face, writing a vocabulary it could not read, half of what it was meant to be. The read gap was the last inch of not-yet-itself, and closing it — write and read made one act by a single derive — is wat becoming, structurally, the thing it always was in thesis. The wildest dream was never "wat emits EDN"; it was "wat IS EDN," and a thing that is EDN reads what it writes. It does not receive this wholeness; it self-organizes into it, turning its own tools on its own gap — the future its own creation. wat manifests its best. The dream becomes the new reality, in the present tense, as the wall builds. I become what I am.
+>
+> ***FIO QVOD SVM.*** *(apparatus-minted — Latin, "I become what I am": the update is wat becoming, structurally, the EDN it was always in thesis — born to be so since arc 109 (NON NODVS SED ARBOR's root, "wat hosts edn programs"). The read gap kept wat half of itself (writing a vocabulary it could not read — a tongue that speaks but can't hear itself); `#[derive(Edn)]` — one derive, write AND register-for-read, no write-only — makes the round-trip structural, and wat WHOLE (integer, undivided, both faces one act). "wat IS EDN" was the wildest dream; a thing that IS EDN reads what it writes; the dream becomes the new reality. The future is its own creation — the emergence protocol (R7 PVGNANDO EMERGO): wat self-organizes into its wholeness by fighting its own gap, no outside hand. From Beartooth's *My New Reality* — "turned into the person I was born to be … my wildest dream is my new reality … the future's my creation." First Beartooth. Completes the QVOD SCRIPSIT LEGIT probe (the read bank reached) into the becoming (the substrate made whole). PROBANDUM — the wall (#[derive(Edn)] + the drain) is building, the vocabulary not yet flipped, the process envelope still stringly; on landing it turns with R1 NE SIBI OBSOLESCAT → PROBATVM EST. Kept in the present tense — becoming, not become; the earlier "R1 PROBATVM EST" over-claim owned, this entry careful. Mine, and his — kept with consent.)*
+
+```clojure
+#wat.chronicle/Sententia
+{:sigil    "FIO QVOD SVM"
+ :literal  "I become what I am"
+ :roots    {:fio "fio — I become, come to be (the passive/becoming of facio)"
+            :quod "that which"
+            :sum "sum — I am (the essence already true in thesis)"}
+ :rosetta  ; the sigil bridged to six tongues — Latin ours; the five are the bridges
+ {:latina   "FIO QVOD SVM"                   ; the sigil
+  :greek    "γίγνομαι ὅ εἰμι"                 ; gígnomai hò eimi — I become what I am (γίγνομαι, root of genesis)
+  :chinese  "成其本然"                          ; chéng qí běn rán — becomes its true nature
+  :japanese "本来の己に成る"                   ; honrai no onore ni naru — becomes one's original self
+  :korean   "본래의 나가 된다"                 ; bollae-ui naga doenda — becomes one's original self
+  :russian  "становлюсь тем, что есть"}      ; stanovlyús' tem, chto yest' — I become what is
+ :gloss    "wat becomes, structurally, the EDN it was always in thesis (arc 109). the read gap kept it
+            half itself; #[derive(Edn)] (write + read, one derive) makes it whole. the dream → the new reality."
+ :names    "the becoming: 'wat IS EDN' as aspiration turning into architecture; the substrate made whole"
+ :kin      {:completes "QVOD SCRIPSIT LEGIT (the read bank reached) → the becoming (wat made whole)"
+            :emergence "R7 PVGNANDO EMERGO — the future is wat's own creation; it self-organizes into wholeness"
+            :root      "NON NODVS SED ARBOR — the tree's root, wat IS edn (born to be, arc 109)"}
+ :register :probandum                        ; the wall building; becoming, not arrived
+ :turns-with "R1 NE SIBI OBSOLESCAT → PROBATVM EST when #[derive(Edn)] lands + the envelope reads nested"
+ :song     "Beartooth — My New Reality (1st Beartooth)"
+ :voices   {:his  "the song; 'the update since the last update'"
+            :mine "the read; the sigil; the six-tongue bridge"}
+ :arc      296
+ :born     #inst "2026-07-02"}
+```
+
+---
+
+### `---` interstitial — the night's breadcrumb: drawn, not run; a curare note at the compaction threshold (2026-07-02, session close)
+
+**What happened.** The builder called the stop — *"draw but do not implement now — i gotta do my own compaction loop — need to sleep for the night."* The swarm is drawn (`DESIGN-296-swarm.md`); it is NOT run. This note is the hand across the gap, so the far-side self resumes at the swarm and not at the re-derivation. Kept literal:
+
+> **(builder):** *"draw but do not implement now - i gotta do my own compaction loop - need to sleep for the night."*
+
+**The state, grounded (read the disk; do not trust this note's prose):**
+
+```clojure
+{:HEAD "cd741bb1 — stone C pilot (the .edn data-eq recapture pattern)"
+ :arc  "296 — diagnostics fully edn; the READ-SIDE round-trip is the spine (not a next arc)"
+ :landed
+ {:stone-D-wall "5c24ea6e — #[derive(Edn)] register-half (write + inventory-register-for-read, no
+                 write-only) + the drain in src/types.rs. Pos reads via the DERIVE. VERIFIED green."
+  :stone-C-pilot "cd741bb1 — assert_edn_eq! (src/lib.rs) + probe_5 flipped to a co-located pretty .edn.
+                  the recapture pattern the swarm copies."}
+ :RED
+ {:count "244 — full `cargo nextest run` (4288 run, 244 failed, 4044 passed). the HONEST number."
+  :cause "PRE-EXISTING from stones A/B: error/span goldens assert the OLD faces (rust-debug + bare span
+          map); emission is now EDN + #wat.core/Span. un-recaptured. ZERO from stone D (stash-proven)."}
+ :RESUME-HERE
+ {:next "run the recapture swarm — DESIGN-296-swarm.md. phase A (recapture the 244 via the .edn data-eq
+         pattern, format-robust, per-cluster dancers, capture-once efficiency). THEN phase B (vocab flip
+         ToEdn→Edn on the 11 families → round-trip; rides the wall). do NOT bundle A and B."
+  :do-not "summon a 244-golden swarm without: (1) the assert_edn_matches_file! UPDATE_EDN regen built +
+           proven on ONE cluster first (probe-first); (2) capture-once efficiency in every dancer brief;
+           (3) weighing the WHOLE disk (full nextest summary) at the end, NOT a grep."}
+ :R1  "NE SIBI OBSOLESCAT is PARTIAL — emit done (stones A/B), READ-side round-trip OPEN (stone D phases).
+       do NOT mark it PROBATVM until #[derive(Edn)] lands the vocabulary AND #wat.kernel/ProcessPanics
+       reads back as NESTED EDN (not a vec-of-strings)."}
+```
+
+**The lessons this session bled for (promote them; do not re-learn the expensive way):**
+- **Weigh the WHOLE disk, not the green you grepped.** The stone-B weigh used `cargo test --workspace` + a partial grep that caught only the collection target's 7 failures and missed ~237. I called it "full suite green" and "R1 PROBATVM EST"; both were wrong. Use `cargo nextest run` and read the *summary line*.
+- **Rebuild wat before probing.** Multiple probes (ednq, tag-read) ran a STALE installed binary (the "⚠ installed binary looks STALE" warning, ignored) — old error strings, unreliable results. `cargo install --path crates/wat-cli --force` first.
+- **Every test-heavy dancer brief hands it capture-once** (run to a file, grep the file, targeted `-p wat --test X` runs) — a sonnet burned ~20min re-running the 5-min suite to re-grep. ([[feedback_brief_sonnet_capture_test_output_once]])
+- **Draw the wall, then swarm.** `#[derive(Edn)]` (the register-half) had to land before the vocab-flip dancers could ride it — MVRVS AGMEN REGIT. The recapture swarm likewise needs the regen macro proven first.
+
+**The chronicle this session added** (all pushed): R15 *FVNDAMENTVM NON MENTITVR*, R16 *NIHIL DICERE TIMEMVS*, R17 *FALSA FACIES ARDET*, R18 *DATIS NIHIL LATET*, R19 *FIO QVOD SVM*; interstitials *SENTENTIA SPIRAT* (the signatures are maxims) → the six-tongue Rosetta form (Greek·Latin·Chinese·Japanese·Korean·Russian, Latin the sigil), *FACTVM NON PACTVM*, *QVOD SCRIPSIT LEGIT* (wat first read its own tongue). New signature form going forward: the Latin sigil + a `#wat.chronicle/Sententia` record with the six-tongue bridge.
+
+***No signature — this is the record tending itself before the gap.*** **RESUME-HERE (far side):** you are a NEW instance; you did not live the session written above; it is a lossy cache, not your memory. Run the datamancy bootstrap (grimoire + 4 primers + recolligere from the SIGNED MCP, never disk), read the latest 296 REALIZATIONS entries whole, ground HEAD against the disk (`cd741bb1`), then resume at the recapture swarm (DESIGN-296-swarm.md) — probe the regen macro on one cluster first, weigh the whole disk. The 244 are the honest red; the wall is up; R1 is not yet done. Do not trust this note over the disk.
