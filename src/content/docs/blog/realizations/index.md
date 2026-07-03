@@ -42,7 +42,7 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 272 | [Rendezvous Inherited Capability](/blog/realizations/272-rendezvous-inherited-capability/) | 387 |
 | 275 | [Stdlib Load Order](/blog/realizations/275-stdlib-load-order/) | 72 |
 | 277 | [Wat Lint Fix Fmt](/blog/realizations/277-wat-lint-fix-fmt/) | 118 |
-| 278 | [Rules Engine](/blog/realizations/278-rules-engine/) | 974 |
+| 278 | [Rules Engine](/blog/realizations/278-rules-engine/) | 1761 |
 | 279 | [Format](/blog/realizations/279-format/) | 58 |
 | 291 | [Defservice Durable State](/blog/realizations/291-defservice-durable-state/) | 1096 |
 | 292 | [Timer Peer Time As Select](/blog/realizations/292-timer-peer-time-as-select/) | 401 |
@@ -57,4 +57,4 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 |---|---|---|
 | 298 | [Honest Optionality](/blog/realizations/298-honest-optionality/) | 1002 |
 | 299 | [Entropic Values](/blog/realizations/299-entropic-values/) | 508 |
-| 300 | [Wat Source Is Edn](/blog/realizations/300-wat-source-is-edn/) | 854 |
+| 300 | [Wat Source Is Edn](/blog/realizations/300-wat-source-is-edn/) | 1002 |
