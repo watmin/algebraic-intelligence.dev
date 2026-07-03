@@ -18,6 +18,20 @@ export default defineConfig({
       description:
         "Holographic memory systems, algebraic encoders, and adaptive network defense.",
       customCss: ["./src/styles/custom.css"],
+      // The `wat` and `edn` code fences (from the mirrored substrate content —
+      // book, story, realizations) are Clojure-family, but Shiki ships no
+      // `wat`/`edn` grammar, so it fell back to plain text and warned per block.
+      // Alias them to `clojure`: real highlighting, zero "language not found"
+      // warnings, and the honest fence labels survive every mirror re-sync
+      // (fixing them in the generated .md would be undone on the next mirror).
+      expressiveCode: {
+        shiki: {
+          langAlias: {
+            wat: "clojure",
+            edn: "clojure",
+          },
+        },
+      },
       // Dark-only: remove the theme toggle and force the dark theme. Light mode
       // is retired (the warm/red palette is tuned for dark); these overrides
       // keep a stale localStorage or light-OS visitor from landing in it.
