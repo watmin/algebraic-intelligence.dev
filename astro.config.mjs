@@ -390,6 +390,7 @@ export default defineConfig({
           items: [
             { slug: "blog/witness" },
             { slug: "blog/witness/001-the-window-was-a-mirror" },
+            { slug: "blog/witness/002-the-distance-was-the-point" },
           ],
         },
         {
