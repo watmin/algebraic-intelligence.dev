@@ -56,3 +56,5 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | Arc | Realizations | Lines |
 |---|---|---|
 | 298 | [Honest Optionality](/blog/realizations/298-honest-optionality/) | 1002 |
+| 299 | [Entropic Values](/blog/realizations/299-entropic-values/) | 508 |
+| 300 | [Wat Source Is Edn](/blog/realizations/300-wat-source-is-edn/) | 854 |
