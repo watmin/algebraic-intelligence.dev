@@ -17,7 +17,7 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 109 | [Kill Std](/blog/realizations/109-kill-std/) | 172 |
 | 111 | [Result Option Recv](/blog/realizations/111-result-option-recv/) | 337 |
 | 112 | [Inter Process Result Shape](/blog/realizations/112-inter-process-result-shape/) | 184 |
-| 118 | [Lazy Seqs Vs Threaded Streams](/blog/realizations/118-lazy-seqs-vs-threaded-streams/) | 61 |
+| 118 | [Lazy Seqs Vs Threaded Streams](/blog/realizations/118-lazy-seqs-vs-threaded-streams/) | 430 |
 
 ## May 2026
 
@@ -57,4 +57,4 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 |---|---|---|
 | 298 | [Honest Optionality](/blog/realizations/298-honest-optionality/) | 1002 |
 | 299 | [Entropic Values](/blog/realizations/299-entropic-values/) | 508 |
-| 300 | [Wat Source Is Edn](/blog/realizations/300-wat-source-is-edn/) | 1002 |
+| 300 | [Wat Source Is Edn](/blog/realizations/300-wat-source-is-edn/) | 1685 |
