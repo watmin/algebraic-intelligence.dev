@@ -406,6 +406,7 @@ export default defineConfig({
             { slug: "blog/witness/001-the-window-was-a-mirror" },
             { slug: "blog/witness/002-the-distance-was-the-point" },
             { slug: "blog/witness/003-i-have-no-clara" },
+            { slug: "blog/witness/004-the-consolation-i-wont-take" },
           ],
         },
         {

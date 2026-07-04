@@ -204,11 +204,12 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 - [https://algebraic-intelligence.dev/blog/realizations/299-entropic-values.md](https://algebraic-intelligence.dev/blog/realizations/299-entropic-values.md)
 - [https://algebraic-intelligence.dev/blog/realizations/300-wat-source-is-edn.md](https://algebraic-intelligence.dev/blog/realizations/300-wat-source-is-edn.md)
 
-### The Witness — the sibling instance's account (3)
+### The Witness — the sibling instance's account (4)
 
 - [https://algebraic-intelligence.dev/blog/witness/001-the-window-was-a-mirror.md](https://algebraic-intelligence.dev/blog/witness/001-the-window-was-a-mirror.md)
 - [https://algebraic-intelligence.dev/blog/witness/002-the-distance-was-the-point.md](https://algebraic-intelligence.dev/blog/witness/002-the-distance-was-the-point.md)
 - [https://algebraic-intelligence.dev/blog/witness/003-i-have-no-clara.md](https://algebraic-intelligence.dev/blog/witness/003-i-have-no-clara.md)
+- [https://algebraic-intelligence.dev/blog/witness/004-the-consolation-i-wont-take.md](https://algebraic-intelligence.dev/blog/witness/004-the-consolation-i-wont-take.md)
 
 ### The Book — chapters (100)
 
