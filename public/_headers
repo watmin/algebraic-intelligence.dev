@@ -84,17 +84,10 @@
 
 /blog/book/
   Link: </llms.txt>; rel="describedby"; type="text/markdown"
-  Link: </blog/arc-170-cliffnotes/>; rel="related"; title="Arc 170 — Cliff Notes (branch)"
   Link: </blog/arc-170-realizations/>; rel="related"; title="Arc 170 — Full Realizations (branch)"
   Link: </blog/topology/>; rel="up"; title="The Topology"
 
 /blog/arc-170-realizations/
-  Link: </blog/arc-170-cliffnotes/>; rel="describedby"; title="Cliff Notes (load first)"
-  Link: </blog/book/>; rel="up"; title="The Book (trunk)"
-  Link: </blog/topology/>; rel="help"; title="The Topology"
-
-/blog/arc-170-cliffnotes/
-  Link: </blog/arc-170-realizations/>; rel="canonical"; title="Full Realizations"
   Link: </blog/book/>; rel="up"; title="The Book (trunk)"
   Link: </blog/topology/>; rel="help"; title="The Topology"
 

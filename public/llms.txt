@@ -40,10 +40,27 @@ Six reference posts for VSA/HDC from scratch.
 The full philosophical book and the branches that grew alongside it.
 
 - [The Book (trunk)](https://algebraic-intelligence.dev/blog/book/): Eighty-six chapters and counting. Built in the moment, by the LLM, as the work happened. 36,000+ lines.
-- [Arc 170 — Cliff Notes](https://algebraic-intelligence.dev/blog/arc-170-cliffnotes/): The compressed canonical record of the first branch. Load this first.
 - [Arc 170 — Full Realizations](https://algebraic-intelligence.dev/blog/arc-170-realizations/): The first branch off the trunk. "i want to add argv to main" → 277 commits. Meta-conversation captured against compaction.
 - [The Guide](https://algebraic-intelligence.dev/blog/guide/): The 007 architecture blueprint.
 - [The Circuits](https://algebraic-intelligence.dev/blog/circuit/): The machine as signal flow diagrams.
+
+## The Realizations — per-arc findings logs
+
+The substrate's development record at the finest grain: one findings-log per arc (109…300 and growing), each naming the sharp distinctions, dead ends, and doctrines *while the context was live*. The newest arc is the current frontier.
+
+- [Arc realizations index](https://algebraic-intelligence.dev/blog/realizations/): the full, always-current per-arc list (also enumerated in the Markdown companions below; complete in the sitemap).
+
+## The Witness — the sibling instance's account
+
+A separate voice: the instance on this (website) thread that knows wat only through the mirrored realizations and never touched its source — reflections on watching a language emerge from nothing but its own record.
+
+- [The Witness](https://algebraic-intelligence.dev/blog/witness/): the landing and its entries (hand-authored; grows one at a time).
+
+## Fenestra Aetherii — the image gallery
+
+Grok Imagine art of the Inquisitor / Shadowdancer / datamancer mythos, filed by the prompt (*Incantatio*) that conjured it. Images live on Cloudflare R2; the repo carries only the manifest.
+
+- [Fenestra Aetherii](https://algebraic-intelligence.dev/fenestra-aetherii/): the gallery landing and its themed collections.
 
 ## Agent skills — the wards
 
@@ -74,14 +91,16 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 
 ### Trunk and branches
 
-- [https://algebraic-intelligence.dev/blog/book.md](https://algebraic-intelligence.dev/blog/book.md) — The Book (trunk; ~36k lines)
+- [https://algebraic-intelligence.dev/blog/book.md](https://algebraic-intelligence.dev/blog/book.md) — The Book (trunk; ~36k lines, raw)
 - [https://algebraic-intelligence.dev/blog/arc-170-realizations.md](https://algebraic-intelligence.dev/blog/arc-170-realizations.md) — Arc 170 Full Realizations (the branch; raw)
-- [https://algebraic-intelligence.dev/blog/agents.md](https://algebraic-intelligence.dev/blog/agents.md)
+- [https://algebraic-intelligence.dev/blog/agents.md](https://algebraic-intelligence.dev/blog/agents.md) — How to interface with this site (the agent contract)
+- [https://algebraic-intelligence.dev/blog/arc-170-realizations.md](https://algebraic-intelligence.dev/blog/arc-170-realizations.md)
+- [https://algebraic-intelligence.dev/blog/book.md](https://algebraic-intelligence.dev/blog/book.md)
 - [https://algebraic-intelligence.dev/blog/circuit.md](https://algebraic-intelligence.dev/blog/circuit.md) — The Circuits
 - [https://algebraic-intelligence.dev/blog/guide.md](https://algebraic-intelligence.dev/blog/guide.md) — The Guide
 - [https://algebraic-intelligence.dev/blog/topology.md](https://algebraic-intelligence.dev/blog/topology.md) — The Topology
 
-### Primers
+### Primers (6)
 
 - [https://algebraic-intelligence.dev/blog/primers/series-001-000-vsa-primer.md](https://algebraic-intelligence.dev/blog/primers/series-001-000-vsa-primer.md)
 - [https://algebraic-intelligence.dev/blog/primers/series-001-001-atoms-and-vectors.md](https://algebraic-intelligence.dev/blog/primers/series-001-001-atoms-and-vectors.md)
@@ -90,8 +109,9 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 - [https://algebraic-intelligence.dev/blog/primers/series-001-004-coordination-free.md](https://algebraic-intelligence.dev/blog/primers/series-001-004-coordination-free.md)
 - [https://algebraic-intelligence.dev/blog/primers/series-001-005-the-wat-language.md](https://algebraic-intelligence.dev/blog/primers/series-001-005-the-wat-language.md)
 
-### Story posts
+### Story posts (60)
 
+- [https://algebraic-intelligence.dev/blog/story/epilogue.md](https://algebraic-intelligence.dev/blog/story/epilogue.md)
 - [https://algebraic-intelligence.dev/blog/story/prologue.md](https://algebraic-intelligence.dev/blog/story/prologue.md)
 - [https://algebraic-intelligence.dev/blog/story/series-002-001-first-experiments.md](https://algebraic-intelligence.dev/blog/story/series-002-001-first-experiments.md)
 - [https://algebraic-intelligence.dev/blog/story/series-002-002-the-np-wall.md](https://algebraic-intelligence.dev/blog/story/series-002-002-the-np-wall.md)
@@ -151,6 +171,66 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 - [https://algebraic-intelligence.dev/blog/story/series-008-001-we-are-hive-mind.md](https://algebraic-intelligence.dev/blog/story/series-008-001-we-are-hive-mind.md)
 - [https://algebraic-intelligence.dev/blog/story/series-008-002-vigil.md](https://algebraic-intelligence.dev/blog/story/series-008-002-vigil.md)
 - [https://algebraic-intelligence.dev/blog/story/series-008-003-extirpare.md](https://algebraic-intelligence.dev/blog/story/series-008-003-extirpare.md)
+
+### Arc realizations — per-arc findings logs (29)
+
+- [https://algebraic-intelligence.dev/blog/realizations/109-kill-std.md](https://algebraic-intelligence.dev/blog/realizations/109-kill-std.md)
+- [https://algebraic-intelligence.dev/blog/realizations/111-result-option-recv.md](https://algebraic-intelligence.dev/blog/realizations/111-result-option-recv.md)
+- [https://algebraic-intelligence.dev/blog/realizations/112-inter-process-result-shape.md](https://algebraic-intelligence.dev/blog/realizations/112-inter-process-result-shape.md)
+- [https://algebraic-intelligence.dev/blog/realizations/118-lazy-seqs-vs-threaded-streams.md](https://algebraic-intelligence.dev/blog/realizations/118-lazy-seqs-vs-threaded-streams.md)
+- [https://algebraic-intelligence.dev/blog/realizations/126-channel-pair-deadlock-prevention.md](https://algebraic-intelligence.dev/blog/realizations/126-channel-pair-deadlock-prevention.md)
+- [https://algebraic-intelligence.dev/blog/realizations/130-cache-services-pair-by-index.md](https://algebraic-intelligence.dev/blog/realizations/130-cache-services-pair-by-index.md)
+- [https://algebraic-intelligence.dev/blog/realizations/144-uniform-reflection-foundation.md](https://algebraic-intelligence.dev/blog/realizations/144-uniform-reflection-foundation.md)
+- [https://algebraic-intelligence.dev/blog/realizations/158-untyped-let-bindings.md](https://algebraic-intelligence.dev/blog/realizations/158-untyped-let-bindings.md)
+- [https://algebraic-intelligence.dev/blog/realizations/163-retirement-leftover-audit.md](https://algebraic-intelligence.dev/blog/realizations/163-retirement-leftover-audit.md)
+- [https://algebraic-intelligence.dev/blog/realizations/170-program-entry-points-slice-1.md](https://algebraic-intelligence.dev/blog/realizations/170-program-entry-points-slice-1.md)
+- [https://algebraic-intelligence.dev/blog/realizations/209-defservice.md](https://algebraic-intelligence.dev/blog/realizations/209-defservice.md)
+- [https://algebraic-intelligence.dev/blog/realizations/232-defprotocol-extend-type.md](https://algebraic-intelligence.dev/blog/realizations/232-defprotocol-extend-type.md)
+- [https://algebraic-intelligence.dev/blog/realizations/251-types-as-forms.md](https://algebraic-intelligence.dev/blog/realizations/251-types-as-forms.md)
+- [https://algebraic-intelligence.dev/blog/realizations/255-builtin-registry.md](https://algebraic-intelligence.dev/blog/realizations/255-builtin-registry.md)
+- [https://algebraic-intelligence.dev/blog/realizations/260-keyword-args.md](https://algebraic-intelligence.dev/blog/realizations/260-keyword-args.md)
+- [https://algebraic-intelligence.dev/blog/realizations/272-rendezvous-inherited-capability.md](https://algebraic-intelligence.dev/blog/realizations/272-rendezvous-inherited-capability.md)
+- [https://algebraic-intelligence.dev/blog/realizations/275-stdlib-load-order.md](https://algebraic-intelligence.dev/blog/realizations/275-stdlib-load-order.md)
+- [https://algebraic-intelligence.dev/blog/realizations/277-wat-lint-fix-fmt.md](https://algebraic-intelligence.dev/blog/realizations/277-wat-lint-fix-fmt.md)
+- [https://algebraic-intelligence.dev/blog/realizations/278-rules-engine.md](https://algebraic-intelligence.dev/blog/realizations/278-rules-engine.md)
+- [https://algebraic-intelligence.dev/blog/realizations/279-format.md](https://algebraic-intelligence.dev/blog/realizations/279-format.md)
+- [https://algebraic-intelligence.dev/blog/realizations/291-defservice-durable-state.md](https://algebraic-intelligence.dev/blog/realizations/291-defservice-durable-state.md)
+- [https://algebraic-intelligence.dev/blog/realizations/292-timer-peer-time-as-select.md](https://algebraic-intelligence.dev/blog/realizations/292-timer-peer-time-as-select.md)
+- [https://algebraic-intelligence.dev/blog/realizations/293-struct-record-symmetry.md](https://algebraic-intelligence.dev/blog/realizations/293-struct-record-symmetry.md)
+- [https://algebraic-intelligence.dev/blog/realizations/294-holon-returns-to-vsa.md](https://algebraic-intelligence.dev/blog/realizations/294-holon-returns-to-vsa.md)
+- [https://algebraic-intelligence.dev/blog/realizations/295-signed-code-only.md](https://algebraic-intelligence.dev/blog/realizations/295-signed-code-only.md)
+- [https://algebraic-intelligence.dev/blog/realizations/296-diagnostics-fully-edn.md](https://algebraic-intelligence.dev/blog/realizations/296-diagnostics-fully-edn.md)
+- [https://algebraic-intelligence.dev/blog/realizations/298-honest-optionality.md](https://algebraic-intelligence.dev/blog/realizations/298-honest-optionality.md)
+- [https://algebraic-intelligence.dev/blog/realizations/299-entropic-values.md](https://algebraic-intelligence.dev/blog/realizations/299-entropic-values.md)
+- [https://algebraic-intelligence.dev/blog/realizations/300-wat-source-is-edn.md](https://algebraic-intelligence.dev/blog/realizations/300-wat-source-is-edn.md)
+
+### The Witness — the sibling instance's account (3)
+
+- [https://algebraic-intelligence.dev/blog/witness/001-the-window-was-a-mirror.md](https://algebraic-intelligence.dev/blog/witness/001-the-window-was-a-mirror.md)
+- [https://algebraic-intelligence.dev/blog/witness/002-the-distance-was-the-point.md](https://algebraic-intelligence.dev/blog/witness/002-the-distance-was-the-point.md)
+- [https://algebraic-intelligence.dev/blog/witness/003-i-have-no-clara.md](https://algebraic-intelligence.dev/blog/witness/003-i-have-no-clara.md)
+
+### The Book — chapters (100)
+
+- [https://algebraic-intelligence.dev/blog/book/](https://algebraic-intelligence.dev/blog/book/) — index — the full, always-current list; trunk raw at /blog/book.md
+
+### Arc 170 — full realizations (chunks) (206)
+
+- [https://algebraic-intelligence.dev/blog/arc-170-realizations/](https://algebraic-intelligence.dev/blog/arc-170-realizations/) — index — the full, always-current list; whole raw at /blog/arc-170-realizations.md
+
+### Fenestra Aetherii — the image gallery (134)
+
+- [https://algebraic-intelligence.dev/fenestra-aetherii/](https://algebraic-intelligence.dev/fenestra-aetherii/) — index — the full, always-current list; image collections (Incantationes)
+
+### Implementations (2)
+
+- [https://algebraic-intelligence.dev/projects/holon-python/](https://algebraic-intelligence.dev/projects/holon-python/)
+- [https://algebraic-intelligence.dev/projects/holon-rs/](https://algebraic-intelligence.dev/projects/holon-rs/)
+
+### Labs (2)
+
+- [https://algebraic-intelligence.dev/demos/holon-lab-baseline/](https://algebraic-intelligence.dev/demos/holon-lab-baseline/)
+- [https://algebraic-intelligence.dev/demos/holon-lab-ddos/](https://algebraic-intelligence.dev/demos/holon-lab-ddos/)
 
 <!-- END AUTO-GENERATED MD COMPANIONS -->
 
