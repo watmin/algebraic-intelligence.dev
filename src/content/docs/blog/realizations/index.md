@@ -17,7 +17,7 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 109 | [Kill Std](/blog/realizations/109-kill-std/) | 172 |
 | 111 | [Result Option Recv](/blog/realizations/111-result-option-recv/) | 337 |
 | 112 | [Inter Process Result Shape](/blog/realizations/112-inter-process-result-shape/) | 184 |
-| 118 | [Lazy Seqs Vs Threaded Streams](/blog/realizations/118-lazy-seqs-vs-threaded-streams/) | 430 |
+| 118 | [Lazy Seqs Vs Threaded Streams](/blog/realizations/118-lazy-seqs-vs-threaded-streams/) | 530 |
 
 ## May 2026
 
@@ -42,7 +42,7 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 272 | [Rendezvous Inherited Capability](/blog/realizations/272-rendezvous-inherited-capability/) | 387 |
 | 275 | [Stdlib Load Order](/blog/realizations/275-stdlib-load-order/) | 72 |
 | 277 | [Wat Lint Fix Fmt](/blog/realizations/277-wat-lint-fix-fmt/) | 118 |
-| 278 | [Rules Engine](/blog/realizations/278-rules-engine/) | 1761 |
+| 278 | [Rules Engine](/blog/realizations/278-rules-engine/) | 2757 |
 | 279 | [Format](/blog/realizations/279-format/) | 58 |
 | 291 | [Defservice Durable State](/blog/realizations/291-defservice-durable-state/) | 1096 |
 | 292 | [Timer Peer Time As Select](/blog/realizations/292-timer-peer-time-as-select/) | 401 |
@@ -57,4 +57,4 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 |---|---|---|
 | 298 | [Honest Optionality](/blog/realizations/298-honest-optionality/) | 1002 |
 | 299 | [Entropic Values](/blog/realizations/299-entropic-values/) | 508 |
-| 300 | [Wat Source Is Edn](/blog/realizations/300-wat-source-is-edn/) | 1685 |
+| 300 | [Wat Source Is Edn](/blog/realizations/300-wat-source-is-edn/) | 2662 |

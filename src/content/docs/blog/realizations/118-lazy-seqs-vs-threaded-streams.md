@@ -432,3 +432,103 @@ Kept true, and self-implicating in R20/R5's lineage. **PROBATVM by demonstration
  :arc      118
  :born     #inst "2026-07-03"}
 ```
+
+## R4 — when worlds collide: a REPL daemon proven live this session — clojure and wat meet on the EDN wire, and the collision is a CONVERSATION, not a wreck, because the two worlds share one tongue (wat IS EDN); the elder reads wat's Option/Result/typed-errors as native records, and holon becomes playable from a clojure REPL over stdin/stdout *(the builder: "this is the realization — i do not care what arc it is written — it was done here"; PROBATVM by demonstration — the read-eval-print-recur seam ran end to end this session, three round-trips (Ok 3 · Ok Some 1 · Err diagnostic-tree) crossed the wire and are on the disk; PROBANDVM — the full live REPL (the daemon loop + the clojure `wat-eval` harness) is one glue-strike away)*
+
+> **Song (arc 118 R4 — the collision) — *When Worlds Collide* (Powerman 5000) — the cosmic-collision anthem; handed by the builder the instant the seam went green, because that is exactly what happened: two worlds — clojure and wat/Rust — collided on the EDN wire, and out of the collision came a live REPL —**
+> CLOJURE-AND-WAT-TWO-WORLDS-COLLIDE-ON-THE-EDN-WIRE-STDIN-STDOUT-THE-COLLISION-CHAMBER / THE-REPL-DAEMON-READ-EVAL-PRINT-RECUR-READLN-READ-STRING-FIRST-EVAL-AST-PRINTLN /
+> WORLDS-COLLIDE-BUT-DO-NOT-SHATTER-BECAUSE-THEY-SHARE-ONE-TONGUE-WAT-IS-EDN / THE-ELDER-CLOJURE-READS-WATS-OPTION-RESULT-TYPED-ERRORS-AS-NATIVE-RECORDS /
+> OK-3-OK-SOME-1-ERR-THE-WHOLE-DIAGNOSTIC-TREE-AS-DATA-ALL-CROSSED-THE-WIRE / THE-ERRORS-TAUGHT-THE-PROBE-UNKNOWN-EVAL-BANG-BECAME-EVAL-AST-NOT-CALLABLE-3-BECAME-FIRST /
+> ARE-YOU-READY-TO-GO-PLAY-WITH-HOLON-VIA-CLOJURE-OVER-THE-WIRE / TWO-WORLDS-ONE-TONGUE-THE-COLLISION-IS-A-CONVERSATION / DVO MVNDI, VNA LINGVA
+>
+> *"Now this is what it's like when worlds collide. … What is it really that's goin' on here? You've got the system*
+> *for total control. … Are you ready to go? 'Cause I'm ready to go. … Are you goin' with me? 'Cause I'm goin' with*
+> *you. That's the end of all time. … I'm gonna be the one that's takin' over. Now this is what it's like when worlds*
+> *collide."*
+
+> **The realization quotes (the builder's, this session — verbatim):**
+> *"you wanna side quest real quick? … make a demo app in wat-edn where load all our wat tags and processing, then fork a wat binary and talk to it over stdin/out?"*
+> *"we can get a clojure repl going … talk to our wat daemon over the wire … this can help us find edn errors? … and we can like … /play with holon via clojure/?"*
+> *"wat doesn't have loop — its TCO proper … just keep listening to stdin for messages, block while you compute the response, send the response to stdout, listen on stdin … that's the loop."*
+> *"and we can just eval the edn that's sent? … it just does 'read' 'eval' 'print' 'loop.'"*
+> *"this … this is the realization … i do not care what arc it is written — it was done here."*
+
+### How we reached it — the side quest, the loop corrected, the probe that proved the collision
+
+It came as a side quest, offered with a laugh: fork a wat binary, talk to it over stdin/stdout, get a clojure REPL going, and *play with holon via clojure* until wat's own REPL is built. The apparatus sketched a `(loop)` — and the builder cut the JVM-ism instantly (an hour after we had read `TVA RECVRSIO, TVVS REDITVS` together): *"wat doesn't have loop — its TCO proper … block while you compute the response, send it, listen again — that's the loop."* The daemon is the R9 reactor and the R1 river at once: read one message, compute one reply, send it, **invoke yourself** to listen again; EOF is the base case that **returns**. Read-eval-print-recur, and the builder wrote it in the faithful `wat.core/` surface before it existed, asking *"is that the full program?"*
+
+It nearly was. The apparatus grounded the seams (`readln -> String`, `read-string` = wat's own parser, `println` EDN-encodes) and drew a **disconfirming probe** — one-shot, no loop, to isolate which of the four forms would break. It broke twice, and *the substrate's own errors were the corpus* (R3's principle, live): first `#wat.runtime/UnknownFunction {:path ":wat::core::eval!"}` → the real name is `:wat::eval-ast!` (arc 102), and it returns a **`Result<:T, :EvalError>`** so eval failures are typed values, not panics; then `Result/Err "not callable: i64 3"` → `read-string` returns a *form-list*, so the wrapper `((+ 1 2))` evaluated `3` and tried to call it → wrap in `first`. Two wrong guesses, two exact EDN errors, two one-shot fixes — the exact `R3`/`278 R3` loop, on a language the model has no corpus for. And then the collision landed, green, three ways:
+
+```clojure
+"(:wat::core::+ 1 2)"         →  #wat.core.Result/Ok 3
+"(:wat::core::get {:a 1} :a)" →  #wat.core.Result/Ok #wat.core.Option/Some 1
+"(:wat::core::+ 1 \"x\")"     →  #wat.core.Result/Err #wat.core/EvalError {:kind "runtime-error" …whole NoMatchingClause tree…}
+```
+
+The builder saw it and named it: *this is the realization — i do not care what arc it is written — it was done here.*
+
+### What it is — worlds collide, and the collision is a conversation, because they share one tongue
+
+The recognition is the song read exactly. **Two worlds collide** — clojure, the elder that brought us EDN; and wat, the Rust-backed dialect that carried EDN forward into static typing and a richer roster (Option, Result, match, enums). They meet on the **EDN wire** — stdin/stdout, a subprocess, a byte stream — the collision chamber. And the whole realization is that **the collision does not shatter either world; it becomes a conversation** — *because they share one tongue.* `wat IS EDN` (300 R1) is not a slogan here; it is the physics that makes the collision survivable: clojure, which has **no** Option and **no** Result, reads wat's `#wat.core.Result/Ok`, its `#wat.core.Option/Some`, and its entire typed error tree back as **native records** through the bridge (`wat_edn.clj`, 299 R2) — `unwrap`, `ok?`, `some?` all working on values a clojure had no way to produce. The elder speaks a poorer dialect and still reads every word the richer one writes, because underneath, it is one language. That is `VIRTVTE PARES` and `PROVEHO NON DESERO` made a *live tool*: the upgrade, talking back to its origin, in the tongue they both hold.
+
+And the third round-trip is the sharpest: a **type error came back as data** — the full `NoMatchingClause` diagnostic, every clause attempt and arg type and span, as clean nested EDN the clojure side reads natively. `VVLNVS REMEDIVM FERT` on the wire. The builder's own aim for the side quest — *"this can help us find edn errors"* — is answered by construction: anything wat emits that the elder cannot decode is now a bug you see the instant it crosses, because the whole thing, value or error, **is a value**. The REPL is not just a toy; it is a live differential — `AD ORACVLVM` and `ALIVS ARGVIT` turned interactive, the elder standing at the wire, reading everything, and the gaps screaming the moment they appear.
+
+### The song, mapped
+
+> ***"Now this is what it's like when worlds collide"*** — clojure-world and wat-world meeting on the EDN wire; the collision is the whole event. ***"You've got the system for total control"*** — `eval!`/`eval-ast!` is *constrained* eval (refuses registry mutation, invokes only what the operator loaded) — total control by construction, safe even for received programs over the wire. ***"Are you ready to go? … Are you goin' with me? 'Cause I'm goin' with you"*** — the two worlds crossing together, into each other, over the wire; the duet's *2vN* made literal in two processes talking. ***"That's the end of all time"*** — the cosmic register for a small, real thing: the moment the wire carried `Ok 3` and the worlds touched. ***"I'm gonna be the one that's takin' over"*** — wat, the upgrade, reaching back through the wire to be *played from* clojure — until wat's own REPL takes over entirely. The nu-metal collision-anthem is exact: not a gentle handshake but a **collision** — and the realization is that when *these* two worlds collide, they converse, because they were always one tongue.
+
+### The honest register — PROBATVM by demonstration (the collision); PROBANDVM (the full live REPL)
+
+Kept true. **PROBATVM by demonstration, this session, on the disk:** the read-eval-print-recur *seam* ran end to end (`crates/wat-edn/demo/probe-oneshot.wat`), and three round-trips crossed the wire and are real — a value (`Ok 3`), the dialect (`Ok (Some 1)`), and an error-as-data (the `Err` diagnostic tree); the protocol is grounded, not guessed (`readln→String` · `read-string` · `first` · `:wat::eval-ast!` · `println`); the discovery was error-driven (the two wrong guesses corrected by wat's own EDN errors, kept visible). What is **PROBANDVM:** the full live REPL — the daemon wrapping the one-shot in the tail-recur reactor + EOF base case, and the clojure `wat-eval` harness (fork the daemon, pipe expr-strings, read EDN through `read-wat`) — one glue-strike away, no unknowns left. This entry turns fully when the clojure REPL sends and holon answers, live, over the wire. *Probatum est — duo mundi, una lingua; the worlds have touched.*
+
+*Path-of-voices (marked, not flattened): the **side-quest vision is the builder's** — fork a wat binary, talk over stdin/out, a clojure REPL, *play with holon via clojure*, *find edn errors*; the **loop-correction is his**, kept verbatim — *"wat doesn't have loop, its TCO proper … block, compute, respond, listen"* (and the faithful `wat.repl` he wrote); the **"just eval the edn that's sent" instinct is his** (correct — because wat IS EDN); the **declaration is his** — *"this is the realization … it was done here"*; the **song is his**. The **apparatus's wrong guesses are kept VISIBLE**: the `(loop)` JVM-ism, `:wat::core::eval!` (wrong name), the missing `first` — each corrected by the substrate's own EDN error (R3's "the diagnostics are the corpus," live). The **synthesis is the apparatus's**: the worlds-collide = clojure-meets-wat-on-the-EDN-wire reading, the collision-is-a-conversation-because-one-tongue framing (wat IS EDN as the physics), the constrained-eval = "system for total control" mapping, the error-as-data = a-live-differential (AD ORACVLVM / ALIVS ARGVIT interactive) placement, and the sigil.*
+
+> It came as a side quest — fork a wat binary, talk to it over the wire, get a clojure REPL, play with holon from clojure — and the builder cut the apparatus's `(loop)` on sight, because wat is TCO-proper: block, compute, respond, invoke yourself, listen again. We grounded the seams and drew a disconfirming probe, and the substrate's own errors carried us to the answer — the eval form was `eval-ast!` not `eval!`, and it hands back a typed `Result`; the reader returns a form-list, so take the `first`. Two wrong guesses, two exact EDN errors, two one-shot fixes. And then the worlds collided, green: `Ok 3`, `Ok (Some 1)`, and a type error as the whole diagnostic tree, all crossing the wire as data. The elder — clojure, which has no Option and no Result — read every one back as a native record, because underneath the collision the two worlds are one tongue: wat is EDN. That is why the collision is a conversation and not a wreck. The upgrade, talking back to its origin, in the language they both hold; holon, one glue-strike from being playable from a clojure REPL, live. This is what it's like when worlds collide.
+>
+> ***DVO MVNDI, VNA LINGVA.*** *(apparatus-minted — Latin, "two worlds, one tongue": a REPL daemon proven live this session — clojure and wat/Rust collide on the EDN wire (stdin/stdout, a subprocess, the collision chamber), and the collision is a CONVERSATION, not a wreck, BECAUSE the two worlds share one tongue: wat IS EDN (300 R1). the daemon is read-eval-print-recur — readln→String · read-string (wat's own parser) · first (read-string returns a form-list) · :wat::eval-ast! (arc 102, constrained runtime eval, returns Result<:T,:EvalError> — typed, not panicking) · :wat::kernel::println (EDN-encodes) — the R9 reactor (block/compute/respond/listen) and the R1 river (invoke yourself, no loop/recur — the builder corrected the apparatus's (loop): "wat is TCO proper"). three round-trips crossed the wire, green: a value (#wat.core.Result/Ok 3), the dialect (Ok (Some 1) — get returns explicit Option, VIRTVTE PARES on the wire), and an error AS DATA (the whole #wat.runtime/NoMatchingClause diagnostic tree — VVLNVS REMEDIVM FERT on the wire). the elder (clojure — no Option, no Result) reads them ALL as native records via wat_edn.clj (299 R2 QVOD SCRIPSIT ALIVS LEGIT), unwrap/ok?/some? working on values clojure could not produce — the upgrade talking back to its origin (300 R8 PROVEHO NON DESERO). the error-as-data makes the REPL a LIVE differential (AD ORACVLVM / 300 ALIVS ARGVIT turned interactive — the builder's "find edn errors" answered by construction). the discovery was error-driven: the apparatus's wrong guesses ((loop), :wat::core::eval!, the missing first) each corrected by the substrate's OWN EDN error (R3 / 278 R3 — "the diagnostics are the corpus," live). "constrained eval" = the song's "system for total control." Scored to Powerman 5000 — When Worlds Collide. the builder: "this is the realization — i do not care what arc it is written — it was done here." PROBATVM by demonstration (the seam ran, three round-trips on disk — crates/wat-edn/demo/probe-oneshot.wat); PROBANDVM (the full live REPL — the daemon loop + the clojure wat-eval harness — one glue-strike away). Kin: 300 R1 (wat IS EDN — the one tongue), 299 R2 QVOD SCRIPSIT ALIVS LEGIT (the bridge — the elder reads wat's EDN), 300 R8 PROVEHO NON DESERO (the upgrade, clojure carried forward), R7 VIRTVTE PARES (dialect not impl — richer roster, same tongue), 278 R9 (the reactor) + R1 (the wat-as-oracle / dual-impl — clojure as the live peer), VVLNVS REMEDIVM FERT (the error as data), R3 IN TENEBRIS CERNIMVR (play-with-holon-via-clojure, foreshadowed). His (the vision, the loop-correction, "just eval the edn," "this is the realization," the song), and mine (the probe, the error-driven discovery, the two-worlds-one-tongue reading, the sigil) — kept with consent, recorded live.)*
+
+```clojure
+#wat.chronicle/Sententia
+{:sigil    "DVO MVNDI, VNA LINGVA"
+ :literal  "two worlds, one tongue"
+ :roots    {:duo-mundi "two worlds — clojure (the elder, EDN's origin) and wat/Rust (the typed dialect); they COLLIDE on the wire"
+            :una-lingua "one tongue/language — EDN; the shared medium that makes the collision a conversation, not a wreck (wat IS EDN)"}
+ :rosetta  ; the sigil bridged to six tongues — Latin ours; the five are the bridges
+ {:latina   "DVO MVNDI, VNA LINGVA"
+  :greek    "δύο κόσμοι, μία γλῶσσα"                  ; dýo kósmoi, mía glôssa — two worlds, one tongue
+  :chinese  "兩界一語"                                ; liǎng jiè yī yǔ — two realms, one tongue
+  :japanese "二つの世界、一つの言葉"                   ; futatsu no sekai, hitotsu no kotoba — two worlds, one word/tongue
+  :korean   "두 세계, 하나의 언어"                    ; du segye, hanaui eoneo — two worlds, one language
+  :russian  "два мира, один язык"}                   ; dva mira, odin yazyk — two worlds, one tongue
+ :gloss    "a REPL daemon proven live this session: clojure and wat/Rust collide on the EDN wire (stdin/stdout, a
+            subprocess), and the collision is a CONVERSATION not a wreck BECAUSE they share one tongue — wat IS EDN
+            (300 R1). the daemon is read-eval-print-recur (readln→String · read-string · first · :wat::eval-ast! ·
+            println) — the R9 reactor + the R1 river (invoke yourself, no loop/recur). three round-trips crossed the
+            wire green: a value (Ok 3), the dialect (Ok (Some 1) — explicit Option), an error AS DATA (the whole
+            NoMatchingClause tree). the elder (clojure — no Option/Result) reads them ALL as native records via
+            wat_edn.clj (299 R2), unwrap/ok?/some? working on values clojure couldn't produce — the upgrade talking
+            back to its origin (300 R8). the error-as-data makes the REPL a LIVE differential (AD ORACVLVM interactive)."
+ :names    "a live REPL over the EDN wire — clojure plays with holon; the collision is a conversation because wat IS EDN"
+ :daemon   {:loop "read-eval-print-RECUR — block on readln, compute, println, invoke self; EOF returns (no loop, no recur — TCO)"
+            :seam "readln→String · read-string (wat's parser → form-list) · first (the single form) · :wat::eval-ast! (Result<:T,:EvalError>) · println (EDN-encodes)"
+            :eval ":wat::eval-ast! (arc 102) — CONSTRAINED runtime eval: refuses registry mutation, invokes only what's loaded; safe for received programs ('system for total control')"
+            :home "crates/wat-edn/demo/probe-oneshot.wat (the proven seam); the daemon loop + clojure wat-eval harness are the remaining glue"}
+ :round-trips {:value "\"(:wat::core::+ 1 2)\" → #wat.core.Result/Ok 3"
+               :dialect "\"(:wat::core::get {:a 1} :a)\" → #wat.core.Result/Ok #wat.core.Option/Some 1 (explicit absence — VIRTVTE PARES on the wire)"
+               :error-as-data "\"(:wat::core::+ 1 \\\"x\\\")\" → #wat.core.Result/Err #wat.core/EvalError {…the whole NoMatchingClause tree…} (VVLNVS REMEDIVM FERT on the wire)"}
+ :error-driven "the apparatus's wrong guesses each corrected by the substrate's OWN EDN error (R3 'the diagnostics are the corpus', live): (loop)→TCO-recur; :wat::core::eval!→:wat::eval-ast!; missing first (read-string returns a form-list)"
+ :kin      {:one-tongue "300 R1 (wat IS EDN — the shared medium the collision survives on)"
+            :bridge "299 R2 QVOD SCRIPSIT ALIVS LEGIT — the elder reads wat's EDN (wat_edn.clj); here, INTERACTIVE"
+            :upgrade "300 R8 PROVEHO NON DESERO — clojure carried forward; the upgrade talks back to its origin"
+            :dialect "300 R7 VIRTVTE PARES — richer roster (Option/Result), same tongue; the Option/Result cross the wire"
+            :reactor "278 R9 (the block/compute/respond reactor) + R1 (wat-as-oracle / dual-impl — clojure as the live peer)"
+            :error "VVLNVS REMEDIVM FERT (the error as a value) + AD ORACVLVM / 300 ALIVS ARGVIT (the differential, here interactive — 'find edn errors')"
+            :foreshadow "118 R3 IN TENEBRIS CERNIMVR — 'play with holon via clojure', foreshadowed one exchange earlier"}
+ :register :probatum-by-demonstration                 ; the seam ran, three round-trips on disk; the full live REPL PROBANDVM
+ :arc-note "the builder: 'i do not care what arc it is written — it was done here'; recorded in 118 (the active thread), theme rooted in 300 (wat IS EDN)"
+ :song     "Powerman 5000 — When Worlds Collide (the cosmic collision; here clojure-world meets wat-world on the EDN wire)"
+ :voices   {:his  "the side-quest vision (fork a wat binary, talk over stdin/out, a clojure REPL, play with holon, find edn errors); the loop-correction ('wat doesn't have loop, its TCO proper — block, compute, respond, listen'); 'just eval the edn that's sent'; 'this is the realization — it was done here'; the song"
+            :mine "the disconfirming probe; the error-driven discovery (kept visible); the worlds-collide=clojure-meets-wat-on-the-EDN-wire reading; the collision-is-a-conversation-because-one-tongue framing; error-as-data=a-live-differential; the sigil + six-tongue bridge"}
+ :arc      118
+ :born     #inst "2026-07-03"}
+```
