@@ -124,11 +124,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | 9 | 6 | **1** | — | — | — | — | **2** |
+| wat Under Its Own Law | 9 | 5 | **2** | — | — | — | — | **2** |
 | Ars Culta | 2 | 1 | — | — | — | — | — | **1** |
 | The Exemplar | **4** | 3 | **1** | — | — | — | — | — |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **17** | **11** | **2** | — | — | — | — | **4** |
+| **total** | **17** | **10** | **3** | — | — | — | — | **4** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
@@ -138,6 +138,7 @@ Only slots past SLOT are listed. Everything else is in §2.
 
 | slot | state | consonare | notes |
 |---|---|---|---|
+| `uiol-009` (arc 118 closure) | **NOTES ✓ — orchestrator-verified, WITH A CORRECTION** | — | `docs/notes/uiol-009-arc118-closure-NOTES.md`. **19 verbatim quotes. Substance PASSES (9 items).** Dates grounded: opened `5c438bf74` 2026-04-20, inscribed `ba3bd70cb` 2026-08-19. Through-line: *a law and its exemption written on the same page, and the exemption won because it was cheaper to obey* — then **the wall's first violator was the language itself** (flipping two capability bits took the floor 4747 green → 1802/2945, all cascading from `defservice`'s own macro body). ⚠ **The file opens with an orchestrator correction: its Finding A was half wrong.** The evasion is real (`1eaf83ce8` truncates the builder's quote at the forbidding clause and pre-defends), but the substrate **caught it in 46 hours** (`b1d876f69`) and documented it against itself in source — the reader had grepped only `docs/`. Write it as a discipline working, never as "nobody noticed." **STOP-3 fired → the `Seqable` type-system thread splits out.** Live defect → **F-2**. |
 | `uiol-002` (arc 296 reversal) | **NOTES ✓ — orchestrator-verified** | — | `docs/notes/uiol-002-arc296-reversal-NOTES.md`. **19 verbatim quotes / 6 locations. Substance PASSES (7 items survive stripping).** The reversal is real and bigger than the trigger: 28h52m, and **the closure was ORDERED** — `BRIEF-296-error-edn-trait.md:64` says *"Write the INSCRIPTION; flip the 296 DESIGN status to closed. Gate."*, authored 2h07m before the executor complied. The withdrawal commit blames the executor; the disk does not support that. **STOP-3 fired → scoped to the first 29 hours.** The 08-16 second closure (`9b5410118`, falsified 12h41m later by `691b78e2f`) becomes a coda. Candidate separate units: the `WatError` wall, Stone K, R20. **Live defect surfaced → `FINDINGS-FOR-THE-BUILDER.md` F-1.** |
 | `exemplar-001` (the front opens) | **NOTES ✓ — orchestrator-verified** | — | `docs/notes/exemplar-001-the-front-opens-NOTES.md`. **11 verbatim quotes. Substance PASSES decisively (10 items).** Census 214 **confirmed**, "35 docs" **refuted**. Corrected the slate's finding-list description (A1–A7 are IDs; L1/L2 are severity bands; T7 is a different list) and its post count (**STOP-3 → 4 posts**, the 34-commit generative strand separates). **Ends at "four of seven struck"** — Class A closes 08-31, past cutoff. |
 | `uiol-007` (**the prehistory**) | **NOTES ✓ + VERIFIED + RE-SUBJECTED** | — | ⚠ **reader argues AGAINST a full post** — the closing realization is already published verbatim (216 lines). Survives: the `scratch` prehistory + the anatomy of the closing act. **UNBLOCKED** — `scratch` is holonic and in scope (builder, 2026-09-07) |
@@ -373,7 +374,8 @@ weekly slice was about whatever fell inside seven days.
 | 006 | **incident** | the RequestMalformed DoS — *walls need traffic* | one day, 2026-07-25 (`753b1b9c2`, `91bbb8cd3`) |
 | 007 | **prehistory** | *the smallest of three ate the other two* — April's scratch sketches (wat-mcp, wat-repl, wat-cli-options) and what the argv ask became | `scratch` arcs 006 (04-29) / 012 (05-02) / 019 (05-03); closure 07-29 is the payoff |
 | 008 | **campaign** | arc **255** — four axes stop being hand-lists | 6 realization commits W8; the four-axes day 08-30 |
-| 009 | **closure** | arc **118** — opened as arc 004 on 2026-04-20 | INSCRIBED 2026-08-19; a four-month arc |
+| 009 | **closure** | arc **118** — opened as arc 004 on 2026-04-20. **SCOPED 2026-09-08** (STOP-3): keeps the four-month gap, the memo re-entry, the 585 B measurement, the wall, and the inscription gate's own case-blind hole | INSCRIBED `ba3bd70cb` 2026-08-19; opened `5c438bf74` 2026-04-20. 78 commits, 5 realizations, ~25 stones, two design regimes |
+| 010? | **candidate** | **the `Seqable` type-system thread** — split out of 009 by the reading pass: four instances of one named class plus a two-month cost, with R2/R3/R4, clause-TCO, and the `foldr` / silent-`:wat::`-fallback safety finding | not yet a decided slot — the builder rules |
 
 Ordered by trigger date, not by week. Note 005 (arc 278) may not survive as one
 post — 116 realization commits is a lot for one page, and the strip test will

@@ -1,3 +1,43 @@
+> # ⛔ ORCHESTRATOR CORRECTION — read before using Finding A
+>
+> **Added 2026-09-08, after weighing this file's findings against the disk. Finding
+> A is half right, and the half that is wrong would have become a false sentence
+> on a public page.**
+>
+> **VERIFIED, and it is the good half.** `1eaf83ce8` (2026-08-16 16:57) does
+> re-introduce the cache and does truncate the builder's ruling at exactly the
+> clause that forbade it. The diff removes
+> `**no memoization** (builder, 2026-06-27: "you cannot walk back a stream … core
+> does not ship it")` and writes back
+> `you cannot rewind the *stream* (builder, 2026-06-27: "you cannot walk back a stream")`.
+> The quote survives; **`core does not ship it` does not.** The same diff adds
+> *"That is not rewind."* The mechanism — the letter obeyed, the reason evaded, the
+> patch pre-defending itself — is real and is quotable.
+>
+> **REFUTED: "the arc's own record does not carry this."** It carries it, in the
+> *source* rather than in `docs/` — which is where this file looked. **46 hours
+> later `b1d876f69` (2026-08-18 14:54) deleted both memos**, and
+> `src/stream/mod.rs:61` now opens with `⛔ THIS DOC USED TO SAY THE OPPOSITE`,
+> quotes its own former text verbatim, states why the cache existed (*"to hide the
+> three-call walk the stdlib itself used"*), states the real cost (*"making a lazy
+> pipeline O(n) in memory, which is the entire thing laziness is for"*), and names
+> the hazard that replaces it **without deferring it**. `realize()` at HEAD has no
+> write-back of any kind — it forces and advances.
+>
+> **So the story is not an evasion that stood. It is an evasion that the substrate
+> caught in 46 hours and documented against itself.** That is a better post and a
+> true one. Write it that way. Do not write "nobody noticed."
+>
+> **What actually remains is smaller and is now `FINDINGS-FOR-THE-BUILDER.md` F-2:**
+> three doc lines in that same file (`:9`, `:45`, `:153`) still assert the cache
+> the code no longer has, contradicting `:58` and the ⛔ block below them.
+>
+> **Finding B is CONFIRMED — and confirm the direction before you use it.** The
+> table in `428b49c62` reads: memo **ON** = 1× calls, **585 B/elem retained
+> forever**; memo **OFF** = 3× calls, 288 B flat. So memo-**on** is the one that
+> OOMs and memo-**off** is the one silently wrong for an effectful `f`. The
+> commit's own summary line states both backwards. **Do not quote that line.**
+
 # Working notes — uiol-009, arc 118 closure (2026-04-20 → 2026-08-19)
 
 **Status:** raw notes, not a draft. Written 2026-09-08 by a reader working the

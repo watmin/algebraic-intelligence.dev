@@ -82,3 +82,77 @@ correction the arc actually made was not a stricter checklist but a **property
 bar** — *"296 ends with errors in the idealized state — no L1 nor L2 marks"* —
 because an acceptance row that checks a mechanism's *presence* cannot falsify a
 claim about a *property*.
+
+---
+
+## F-2 · `wat-rs` · `src/stream/mod.rs` documents a cache the code no longer has
+
+**Status: OPEN.** Found 2026-09-08 during the reading pass for `uiol-009`.
+Verified by the orchestrator against the disk.
+
+**Small, and worth fixing precisely because the correction around it is
+exemplary.** Stone 118.B3 (`b1d876f69`, 2026-08-18) deleted both memos, and
+`src/stream/mod.rs:61` carries one of the better self-corrections in the tree —
+it opens `⛔ THIS DOC USED TO SAY THE OPPOSITE`, quotes its own former text
+verbatim, names why the cache existed (*"to hide the three-call walk the stdlib
+itself used"*), names the real cost (*"making a lazy pipeline O(n) in memory,
+which is the entire thing laziness is for"*), and names the replacing hazard
+without deferring it.
+
+Three doc lines above it did not get the memo:
+
+```
+src/stream/mod.rs:9    //! The *cell*'s WHNF is cached: `empty?` / `first` / `rest` on the same thunk share one
+src/stream/mod.rs:45   /// `realize` forces once and caches WHNF on the cell (`empty?`/`first`/`rest` share it).
+src/stream/mod.rs:153  /// - `Thunk` / `NativeThunk` → force the closure, cache WHNF on the cell, recurse
+```
+
+against, in the same file:
+
+```
+src/stream/mod.rs:58   /// SINGLE-PASS stream, and as of stone 118.B3 an UNCACHED one.
+```
+
+**The code agrees with `:58`.** `realize()` performs no write-back — it forces the
+closure and advances (`current = next`); there is no `borrow_mut`, no store, no
+cell mutation anywhere in the function.
+
+`:9` is the **module-level** doc, so it is the first thing a reader of this module
+sees, and it states the opposite of what the module does.
+
+**Not fixed here** — `wat-rs` is read-only from this repo.
+
+### The context, which is the post's subject rather than a defect
+
+The cache these lines describe was re-introduced on 2026-08-16 by `1eaf83ce8`
+against a dated ruling, and the manner is the interesting part. The diff removed
+
+```
+//! **no memoization** (builder, 2026-06-27: *"you cannot walk back a stream … core
+//! does not ship it"*).
+```
+
+and wrote back
+
+```
+//! you cannot rewind the *stream* (builder, 2026-06-27: *"you cannot walk back a stream"*).
+```
+
+The quote survives. **The clause that forbade the change — `core does not ship
+it` — does not.** The same diff adds *"That is not rewind."*, pre-defending
+against the ruling it had just trimmed. The full ruling still stands elsewhere in
+the tree (`src/value/value.rs:343`).
+
+**The substrate caught this itself in 46 hours**, which is why this is F-2's
+context and not F-2's finding. The narratable pattern: *a patch that pre-defends
+itself against a ruling is the tell*, and the correction that followed is what a
+working discipline looks like.
+
+### Not a defect, but do not quote it
+
+`428b49c62`'s summary line reads *"memo-on is silently wrong for any effectful f;
+memo-off OOMs."* Its own measured table, two paragraphs above in the same commit
+body, reads memo **ON** = 1× calls / **585 B per element retained forever**, memo
+**OFF** = 3× calls / 288 B flat. The summary reverses both halves. `b1d876f69`
+settles it independently. A commit message cannot be edited; this is recorded so
+no post quotes that sentence.
