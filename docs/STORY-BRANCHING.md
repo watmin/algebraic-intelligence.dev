@@ -75,7 +75,7 @@ The three live fronts:
 
 | front | purpose | branches | host |
 |---|---|---|---|
-| language maturity | the tongue comes of age — the registry, diagnostics-as-EDN, the decomposition | `main` | johndesktop |
+| **wat Under Its Own Law** | the language is made subject to the discipline it imposes on its users — every law wat enforces outward, turned on wat's own body | `main` | johndesktop |
 | the exemplar | one reference implementation all of wat measures against, as the other subsystems mature | `grok-rete` | reason |
 | services in anger | where services are flawed and deficient; the repeatable patterns for using wat in real use | `claude-compute` + `sns-sqs` | compute |
 
@@ -179,7 +179,7 @@ src/content/docs/blog/
                                   and points forward
   fronts/                         THE FRONTS — the perpetual present. Max 3 live.
     index.md                      overview + branch-topology diagram (dates)
-    language/  001-*.md …         language maturity        (main)
+    under-its-own-law/  001-*.md …  wat Under Its Own Law   (main)
     exemplar/  001-*.md …         the exemplar             (grok-rete)
     services/  001-*.md …         services in anger        (claude-compute+sns-sqs)
   story/epilogue.mdx              THE EPILOGUE — eternal, order 999, hoisted out
@@ -203,13 +203,79 @@ than an actual file move.
   body; it is a live workstream. It must not claim a Story sequence number it
   does not hold.
 - **Front names come from intueri** — the name must say what the work IS, never
-  where it runs. **Not yet cast.** Candidates only:
+  where it runs.
   - `exemplar` — **"The Exemplar."** Says exactly what it is.
   - `services` — **"Services in Anger."** The builder's phrase; "in anger" carries
     the whole meaning (real use, not a demo).
-  - `language` — **[OPEN]**, and the one that genuinely needs the ward:
-    *"The Language Matures"* (006-014..016) and *"The Substrate Hardens"*
-    (006-022..024) are both already taken as era labels.
+  - `under-its-own-law` — **"wat Under Its Own Law."** SETTLED — intueri cast
+    2026-09-07, ruled by the builder. See §3.4.
+
+### 3.4 The `main` front's name — the cast and its record
+
+The builder's shorthand was *"language maturity."* intueri (cast 2026-09-07,
+against the R1 blocks of arcs 255 / 296 / 300 / 294 / 293 / 251 / 109) graded it
+**Level 2 — it mumbles**, on three counts:
+
+1. **Referent collision, not label collision.** `series-006-014` is titled *"The
+   Language"* and its description already reads *"The substrate language
+   **matures** into Clojure-faithfulness. **Arc 109** sweeps every primitive
+   type…"* — the May era spent *maturation*, *Clojure-faithfulness*, and arc 109
+   by name. A "language maturity" front inherits an exhausted promise.
+2. **It names the location, not the work.** It was the residual after two
+   purposes were carved out — the name for *whatever happens on `main`*. That is
+   `utils.rs` wearing a domain's clothes, and it violates §3.3's own rule. The
+   other two front names would survive their branches moving hosts; this one
+   would not.
+3. **"Maturity" is a completion verb on a perpetual thing.** Eras are past and
+   may take completion verbs (*Matures*, *Hardens*, *Become*). A front runs "as
+   long as it must" (§9); naming it for a stage predicts a finish line the
+   doctrine refuses.
+
+**The substantive finding: the front's subject is not growth, it is
+self-subjection.** The arcs' own keys say so — `WAT-MUST-OBEY-ITS-OWN-LAW` (296)
+· `THE-LAW-SPARES-NO-ONE-NOT-EVEN-WAT-ITSELF` and `AGENT-SMITH-IS-MR-ANDERSON`
+(300) · `NE-SIBI-OBSOLESCAT` (298) · `A-STRINGLY-ERROR-IN-AN-EDN-LANGUAGE-IS-SELF-BETRAYAL`
+(296) · `THE-NAME-WAS-LYING-SINCE-THE-BOOTSTRAP` (294). Maturity is the
+flattering outside view; from inside, the language is being made to submit to the
+law it enforces on everyone else. All keys verified present on disk 2026-09-07.
+
+Runner-up, recorded in case the name is ever re-cast: **"No Second Spelling"** —
+and note "second spelling" is live builder vocabulary, 20 occurrences across 18
+files under `wat-rs/docs/arc/2026/`, not a coinage.
+
+**Two cautions carried forward, both ruled acceptable:**
+
+- **`The Naming Law`** is an existing post title (`series-006-023`, arc 242 — *"a
+  naming law for the type system, legislated by the user and handed to the type
+  checker to enforce"*). Adjacent vocabulary, different law — and arguably
+  supportive: that post established that wat legislates and mechanically
+  enforces; this front is that machinery turned inward.
+- **A label beginning with lowercase `wat` is a first.** Only `"The Birth of wat"`
+  uses it, mid-label. Deliberate — `wat` is the language's name and the site
+  writes it lowercase everywhere.
+
+**Correction on the record:** the brief handed to the ward summarized arc 109 as
+*"decomposition of the megafile; runtime.rs below 30,000 lines."* That was drawn
+from a single commit message and is wrong about a 198-commit arc. 109's stones
+are `annihilate-the-angle-bracket` (+ wave 2) · `set-the-angle-form-ablaze` ·
+`angle-brackets-are-illegal` · `the-comma-dies-in-the-reader` ·
+`the-turbofish-dies-too` · `the-heresy-stops-being-taught` ·
+`the-prose-stops-teaching-a-dead-syntax` · `reap-the-angle-machinery` ·
+`edn-only-rust-stdio-enforcement`. **109 is surface annihilation, and belongs
+with 300, not with housekeeping.** Judged as decomposition it drags every
+candidate toward "tidying."
+
+### 3.5 Naming precedent — the nav records its own casts
+
+`astro.config.mjs` already carries five dated intueri comments above era labels,
+e.g. *"intueri (cast on the six arcs, 2026-06-05) named this era for the one move
+all six share…"*, and one **re-cast**: *"intueri (re-cast 2026-06-01) renamed this
+from 'The Static MCP' — that named only the first post."*
+
+Era naming here is an established, documented, ward-driven practice. **A front
+label landing in the sidebar owes the same comment** — the cast, its date, and
+the one move the name holds. That is a required part of the nav wiring, not a
+nicety.
 
 ## 4 — The nav
 
@@ -238,7 +304,7 @@ The Fronts                       ← the perpetual present, max 3 live
   Overview                         branch topology + real dates (mermaid)
   The Exemplar                     live      (grok-rete)
   Services in Anger                live      (claude-compute + sns-sqs)
-  <language front>                 live      (main)
+  wat Under Its Own Law            live      (main)
 
 The Epilogue                     ← eternal, order 999, last
 ```
@@ -302,6 +368,24 @@ reopening* · arc **255**'s four-axes day (08-30) · arc **109**'s revival
 
 Do not treat that list as a slate. It is a reading list.
 
+**One beat already surfaced, and it is the strongest hook found so far.** This
+site published `series-006-016 "The Loop Closes"` — *"the strange loop closes:
+HolonAST — minted three months ago to encode VSA expressions — gets turned on the
+substrate's own types."* Arc 294's R1 keys are `HOLONAST-WAS-A-COAT` and
+`THE-NAME-WAS-LYING-SINCE-THE-BOOTSTRAP`. **The front repudiates something the
+chronicle narrated as a triumph.** Both verified on disk 2026-09-07. The register
+across these arcs is not growth but reckoning — "self-betrayal", "why are we
+defending bad choices", "the apparatus defended the obsolescence" — and the
+front's opening post owes that inversion.
+
+**What no name captures.** The migration machinery is the front's real
+capability: 251's *"wat builds its own bespoke, comment-faithful syntax fixers on
+demand"*, `wat-revival`'s 1675 sites across 386 files, 300's conversion expressed
+as rete `defrule`s. The reason wat *can* be put under its own law is that it can
+rewrite its whole body in one motion. Every candidate named the law; none named
+the arm that swings it. If the front's posts turn out to be mostly codemod
+substrate, the name is worth re-casting.
+
 ---
 
 ## 7 — Required work items
@@ -330,8 +414,8 @@ Do not treat that list as a slate. It is a reading list.
 
 ## 8 — Open decisions
 
-- **[OPEN]** The `language` front's name — intueri, not yet cast; the two obvious
-  names are taken as era labels. §3.3
+- ~~The `language` front's name~~ — **SETTLED 2026-09-07: "wat Under Its Own Law."**
+  intueri cast; builder ruled. §3.4
 - **[OPEN]** Whether a front post owes the `## Likely Contributions` close, or
   whether that is a Story-only obligation (consonare Rule 13's scope). Decides
   whether the guard extension enforces the heading or only nav-wiring.
