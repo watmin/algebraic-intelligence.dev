@@ -27,12 +27,29 @@
 
 import { readdir, readFile, writeFile, mkdir, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
+import { splitSafety, chunkPages } from "./lib/chunk.mjs";
 
 const SRC_ROOT = "../wat-rs/docs/arc";
 const OUT_DIR = "src/content/docs/blog/realizations";
 const CHRONICLE_LINK = "/blog/arc-170-realizations/";
 const CHECK = process.argv.includes("--check");
+
+// FRAGMENTATION. A per-arc log that renders past ~1 MB is a build-memory hazard
+// of exactly the kind that forced the arc-170 chunking (~3.5 MB) and moved the
+// BOOK out of the collection (4.2 MB). Rendered/source measures ~3.3-4.6x on
+// this corpus, so 250 KB of source is ~1 MB rendered — the line.
+//
+// Today that is three files: 278-rules-engine (1,469 KB source -> ~5.9 MB
+// rendered), 296-diagnostics-fully-edn (331 KB), 300-wat-source-is-edn (328 KB).
+//
+// A fragmented arc becomes <slug>/index.md (the landing) + <slug>/NNN-*.md, so
+// the landing's URL is UNCHANGED (/blog/realizations/<slug>/) and no existing
+// link breaks. The sidebar autogenerates the nested group with zero nav edits.
+//
+// check-page-size.mjs is the backstop: if this threshold is ever wrong, the wall
+// fails the build rather than shipping a hog.
+const FRAGMENT_BYTES = 250 * 1024;
 
 const titleCase = (s) =>
   s.split("-").filter(Boolean).map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
@@ -62,17 +79,68 @@ async function discover() {
     .sort((a, b) => a.arcNum - b.arcNum || a.slug.localeCompare(b.slug));
 }
 
-// One focused-doc → one page. Drop the source's leading `# H1` (the frontmatter
-// title becomes the rendered H1; keeping the source H1 duplicates it).
-function pageFor(doc, body) {
+// One focused-doc → the set of files it produces, as relPath -> content.
+//
+// ONE producer, consumed by BOTH the writer and --check. When check computed its
+// own expected shape separately, it could pass while the writer emitted something
+// else; sharing this function makes that class unrepresentable.
+//
+// Small doc  -> { "<slug>.md": page }
+// Large doc  -> { "<slug>/index.md": landing, "<slug>/NNN-x.md": chunk, ... }
+function filesFor(doc, body) {
   const stripped = body.replace(/^\s*#\s+.*\n+/, "");
-  const desc = `Realizations — the findings log for ${doc.title}.`;
-  const fm = `---\ntitle: ${JSON.stringify(doc.title)}\ndescription: ${JSON.stringify(desc)}\nsidebar:\n  order: ${doc.arcNum}\n---\n\n`;
-  return fm + stripped.replace(/\s+$/, "") + "\n";
+  const files = new Map();
+  const bytes = Buffer.byteLength(body, "utf8");
+
+  if (bytes <= FRAGMENT_BYTES) {
+    const desc = `Realizations — the findings log for ${doc.title}.`;
+    const fm = `---\ntitle: ${JSON.stringify(doc.title)}\ndescription: ${JSON.stringify(desc)}\nsidebar:\n  order: ${doc.arcNum}\n---\n\n`;
+    files.set(`${doc.slug}.md`, fm + stripped.replace(/\s+$/, "") + "\n");
+    return { files, chunks: 0, refused: "" };
+  }
+
+  // Too large to render whole. Split only if the document is genuinely segmented;
+  // a source whose `## ` is doing double duty would be torn in half SILENTLY —
+  // the chunks would build, render, and be wrong. Refuse instead, and let the
+  // size wall fail the build so a human decides.
+  const lines = stripped.split("\n");
+  const { safe, bounds, why } = splitSafety(lines);
+  if (!safe) {
+    const desc = `Realizations — the findings log for ${doc.title}.`;
+    const fm = `---\ntitle: ${JSON.stringify(doc.title)}\ndescription: ${JSON.stringify(desc)}\nsidebar:\n  order: ${doc.arcNum}\n---\n\n`;
+    files.set(`${doc.slug}.md`, fm + stripped.replace(/\s+$/, "") + "\n");
+    return { files, chunks: 0, refused: why };
+  }
+
+  const pages = chunkPages(lines, bounds);
+  const kb = Math.round(bytes / 1024);
+  const landing = [
+    "---",
+    `title: ${JSON.stringify(doc.title)}`,
+    `description: ${JSON.stringify(`Realizations — the findings log for ${doc.title}, served in ${pages.length} parts.`)}`,
+    "tableOfContents: false",
+    "sidebar:",
+    `  order: ${doc.arcNum}`,
+    "---",
+    "",
+    `This arc's findings log is **${kb} KB** across **${pages.length}** entries — too large to render as one page, so it is served one page per entry, the same way the [arc-170 chronicle](${CHRONICLE_LINK}) is.`,
+    "",
+    "| # | Entry |",
+    "|---|---|",
+    ...pages.map((c) => `| ${c.order} | [${c.title.replace(/\|/g, "\\|")}](/blog/realizations/${doc.slug}/${c.num}-${c.slug}/) |`),
+    "",
+  ].join("\n");
+  files.set(`${doc.slug}/index.md`, landing);
+
+  for (const c of pages) {
+    const fm = `---\ntitle: ${JSON.stringify(c.title)}\nsidebar:\n  order: ${c.order}\n---\n\n`;
+    files.set(`${doc.slug}/${c.num}-${c.slug}.md`, fm + c.body);
+  }
+  return { files, chunks: pages.length, refused: "" };
 }
 
 // The index landing: a table per month + a pointer to the chronicle.
-function indexPage(docs, lineCounts) {
+function indexPage(docs, lineCounts, chunkCounts) {
   const byMonth = new Map();
   for (const d of docs) {
     if (!byMonth.has(d.month)) byMonth.set(d.month, []);
@@ -101,11 +169,25 @@ function indexPage(docs, lineCounts) {
     lines.push(`## ${monthLabel(month)}`, "");
     lines.push("| Arc | Realizations | Lines |", "|---|---|---|");
     for (const d of ds) {
-      lines.push(`| ${d.arcNum} | [${titleCase(d.arcName)}${d.slug.includes("-slice") ? " (slice)" : ""}](/blog/realizations/${d.slug}/) | ${lineCounts.get(d.slug)} |`);
+      const ch = chunkCounts.get(d.slug) || 0;
+      lines.push(`| ${d.arcNum} | [${titleCase(d.arcName)}${d.slug.includes("-slice") ? " (slice)" : ""}](/blog/realizations/${d.slug}/) | ${lineCounts.get(d.slug)}${ch ? ` · ${ch} parts` : ""} |`);
     }
     lines.push("");
   }
   return lines.join("\n");
+}
+
+// Every .md under OUT_DIR, relative — for orphan detection across nested chunk
+// directories (a flat readdir cannot see a fragmented arc's pages).
+async function servedFiles(dir, prefix = "") {
+  if (!existsSync(dir)) return [];
+  const out = [];
+  for (const e of await readdir(dir, { withFileTypes: true })) {
+    const rel = prefix ? `${prefix}/${e.name}` : e.name;
+    if (e.isDirectory()) out.push(...(await servedFiles(join(dir, e.name), rel)));
+    else if (e.name.endsWith(".md")) out.push(rel);
+  }
+  return out;
 }
 
 async function main() {
@@ -115,43 +197,62 @@ async function main() {
     process.exit(1);
   }
   const docs = await discover();
-  const bodies = new Map();
   const lineCounts = new Map();
+  const chunkCounts = new Map();
+  const refusals = [];
+  // relPath -> content, for EVERY file the mirror owns. Built once; the writer
+  // and --check both read this, so they cannot disagree about the shape.
+  const want = new Map();
+
   for (const d of docs) {
     const body = await readFile(d.abs, "utf-8");
-    bodies.set(d.slug, body);
     lineCounts.set(d.slug, body.split("\n").length);
+    const { files, chunks, refused } = filesFor(d, body);
+    if (chunks) chunkCounts.set(d.slug, chunks);
+    if (refused) refusals.push({ slug: d.slug, why: refused });
+    for (const [rel, content] of files) want.set(rel, content);
   }
-  const idx = indexPage(docs, lineCounts);
+  want.set("index.md", indexPage(docs, lineCounts, chunkCounts));
+
+  // A source over the threshold that could NOT be split safely is a real problem:
+  // it will render whole and the size wall will fail the build. Say so loudly at
+  // mirror time rather than letting the wall be the first news.
+  for (const r of refusals) {
+    console.error(`  ⚠ realizations: ${r.slug} is over ${Math.round(FRAGMENT_BYTES / 1024)} KB but was NOT split — ${r.why}`);
+    console.error(`    it will render whole; check-page-size may fail the build. Fix the source's heading structure, or split it by hand.`);
+  }
 
   if (CHECK) {
     let drift = 0;
-    const seen = new Set(["index.md"]);
-    for (const d of docs) {
-      seen.add(`${d.slug}.md`);
-      const served = existsSync(join(OUT_DIR, `${d.slug}.md`)) ? await readFile(join(OUT_DIR, `${d.slug}.md`), "utf-8") : "";
-      if (served !== pageFor(d, bodies.get(d.slug))) drift++;
+    for (const [rel, content] of want) {
+      const path = join(OUT_DIR, rel);
+      const served = existsSync(path) ? await readFile(path, "utf-8") : "";
+      if (served !== content) drift++;
     }
-    const idxServed = existsSync(join(OUT_DIR, "index.md")) ? await readFile(join(OUT_DIR, "index.md"), "utf-8") : "";
-    if (idxServed !== idx) drift++;
-    // stale pages no longer backed by a source file
-    const onDisk = existsSync(OUT_DIR) ? (await readdir(OUT_DIR)).filter((f) => f.endsWith(".md")) : [];
-    const orphans = onDisk.filter((f) => !seen.has(f));
+    const orphans = (await servedFiles(OUT_DIR)).filter((f) => !want.has(f));
     if (drift || orphans.length) {
       console.error(`  ⚠ realizations: ${drift} page(s) stale${orphans.length ? `, ${orphans.length} orphan(s)` : ""} — run \`npm run mirror\``);
     } else {
-      console.error(`  ✓ realizations: ${docs.length} arc logs current.`);
+      console.error(`  ✓ realizations: ${docs.length} arc logs current${chunkCounts.size ? ` (${chunkCounts.size} fragmented)` : ""}.`);
     }
     process.exit(0);
   }
 
-  // rebuild the dir from scratch so a renamed/removed arc can't leave a stale page
+  // rebuild the dir from scratch so a renamed/removed arc — or an arc that has
+  // grown past the threshold and changed shape — cannot leave a stale page
   if (existsSync(OUT_DIR)) await rm(OUT_DIR, { recursive: true, force: true });
-  await mkdir(OUT_DIR, { recursive: true });
-  await writeFile(join(OUT_DIR, "index.md"), idx);
-  for (const d of docs) await writeFile(join(OUT_DIR, `${d.slug}.md`), pageFor(d, bodies.get(d.slug)));
+  for (const [rel, content] of want) {
+    const path = join(OUT_DIR, rel);
+    await mkdir(dirname(path), { recursive: true });
+    await writeFile(path, content);
+  }
+
   const totalLines = [...lineCounts.values()].reduce((a, b) => a + b, 0);
-  console.error(`  ✓ realizations: ${docs.length} arc logs + index (${totalLines} lines) → ${OUT_DIR}/ — arcs ${docs[0].arcNum}…${docs[docs.length - 1].arcNum}`);
+  const frag = [...chunkCounts.entries()].map(([s2, n]) => `${s2} (${n})`).join(", ");
+  console.error(
+    `  ✓ realizations: ${docs.length} arc logs + index (${totalLines} lines, ${want.size} files) → ${OUT_DIR}/ — arcs ${docs[0].arcNum}…${docs[docs.length - 1].arcNum}`,
+  );
+  if (frag) console.error(`    fragmented: ${frag}`);
 }
 
 main().catch((e) => {

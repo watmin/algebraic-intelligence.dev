@@ -33,6 +33,7 @@
 import { readFile, writeFile, mkdir, rm, readdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { slugify, chunkTitle } from "./lib/chunk.mjs";
 
 // Each monolith: its canonical source (relative to this repo root, reaching into
 // a sibling repo), the raw-whole serve path, the content-collection directory the
@@ -69,29 +70,9 @@ const MONOLITHS = [
   },
 ];
 
-// A heading line → a stable, filesystem- and URL-safe slug.
-function slugify(heading) {
-  return heading
-    .replace(/^#+\s*/, "")
-    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1") // unwrap [text](url) -> text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 70)
-    .replace(/-+$/g, "");
-}
-
-// A heading line → a clean page/sidebar title: marker stripped, any markdown link
-// unwrapped, trailing caps-slash facet run dropped (keep the first two " — "
-// fields), and length-capped so song entries don't dump 80 chars into the sidebar.
-function chunkTitle(heading) {
-  const bare = heading
-    .replace(/^#+\s*/, "")
-    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
-    .trim();
-  const beforeFacets = bare.split(" — ").slice(0, 2).join(" — ");
-  return beforeFacets.length > 90 ? beforeFacets.slice(0, 88) + "…" : beforeFacets;
-}
+// slugify + chunkTitle now live in scripts/lib/chunk.mjs — mirror-realizations
+// fragments large per-arc logs with the same segmentation, and the chunker is
+// one thing, so it exists once.
 
 const CHECK = process.argv.includes("--check");
 

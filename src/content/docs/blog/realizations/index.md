@@ -17,7 +17,7 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 109 | [Kill Std](/blog/realizations/109-kill-std/) | 172 |
 | 111 | [Result Option Recv](/blog/realizations/111-result-option-recv/) | 337 |
 | 112 | [Inter Process Result Shape](/blog/realizations/112-inter-process-result-shape/) | 184 |
-| 118 | [Lazy Seqs Vs Threaded Streams](/blog/realizations/118-lazy-seqs-vs-threaded-streams/) | 530 |
+| 118 | [Lazy Seqs Vs Threaded Streams](/blog/realizations/118-lazy-seqs-vs-threaded-streams/) | 700 |
 
 ## May 2026
 
@@ -37,19 +37,20 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 |---|---|---|
 | 232 | [Defprotocol Extend Type](/blog/realizations/232-defprotocol-extend-type/) | 93 |
 | 251 | [Types As Forms](/blog/realizations/251-types-as-forms/) | 161 |
-| 255 | [Builtin Registry](/blog/realizations/255-builtin-registry/) | 479 |
+| 255 | [Builtin Registry](/blog/realizations/255-builtin-registry/) | 1299 |
+| 259 | [Forced Hand](/blog/realizations/259-forced-hand/) | 549 |
 | 260 | [Keyword Args](/blog/realizations/260-keyword-args/) | 131 |
 | 272 | [Rendezvous Inherited Capability](/blog/realizations/272-rendezvous-inherited-capability/) | 387 |
 | 275 | [Stdlib Load Order](/blog/realizations/275-stdlib-load-order/) | 72 |
 | 277 | [Wat Lint Fix Fmt](/blog/realizations/277-wat-lint-fix-fmt/) | 118 |
-| 278 | [Rules Engine](/blog/realizations/278-rules-engine/) | 2757 |
+| 278 | [Rules Engine](/blog/realizations/278-rules-engine/) | 12330 · 68 parts |
 | 279 | [Format](/blog/realizations/279-format/) | 58 |
 | 291 | [Defservice Durable State](/blog/realizations/291-defservice-durable-state/) | 1096 |
 | 292 | [Timer Peer Time As Select](/blog/realizations/292-timer-peer-time-as-select/) | 401 |
-| 293 | [Struct Record Symmetry](/blog/realizations/293-struct-record-symmetry/) | 1432 |
-| 294 | [Holon Returns To Vsa](/blog/realizations/294-holon-returns-to-vsa/) | 571 |
+| 293 | [Struct Record Symmetry](/blog/realizations/293-struct-record-symmetry/) | 1590 |
+| 294 | [Holon Returns To Vsa](/blog/realizations/294-holon-returns-to-vsa/) | 1274 |
 | 295 | [Signed Code Only](/blog/realizations/295-signed-code-only/) | 260 |
-| 296 | [Diagnostics Fully Edn](/blog/realizations/296-diagnostics-fully-edn/) | 2475 |
+| 296 | [Diagnostics Fully Edn](/blog/realizations/296-diagnostics-fully-edn/) | 2755 · 20 parts |
 
 ## July 2026
 
@@ -57,4 +58,4 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 |---|---|---|
 | 298 | [Honest Optionality](/blog/realizations/298-honest-optionality/) | 1002 |
 | 299 | [Entropic Values](/blog/realizations/299-entropic-values/) | 508 |
-| 300 | [Wat Source Is Edn](/blog/realizations/300-wat-source-is-edn/) | 2662 |
+| 300 | [Wat Source Is Edn](/blog/realizations/300-wat-source-is-edn/) | 2662 · 17 parts |
