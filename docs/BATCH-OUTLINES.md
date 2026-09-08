@@ -85,7 +85,17 @@ Only slots past SLOT are listed. Everything else is in §2.
 
 | slot | state | consonare | notes |
 |---|---|---|---|
-| `ars-culta/005` (W10 — experiri) | **IN FLIGHT — reader cast** | — | pilot; validates the pipeline before any fan-out |
+| `ars-culta/005` (W10 — experiri) | **NOTES ✓ + VERIFIED** | — | notes at `docs/notes/ars-culta-005-experiri-NOTES.md`; scope, orphan-blob find, byte-identity and ledger strike all re-checked against the disk by the orchestrator. **BLOCKED on the builder: no verbatim quotes exist in the repo** (see below) |
+
+**⛔ `ars-culta/005` blocker — consonare rule 11.** The repository contains **no
+verbatim builder quotes** for this week. Two exist only in session memory, the
+load-bearing one being *"the final run is always the full run again, all spells
+return zero L1 and zero L2"* — the bar that produced the 17 rounds. Written from
+the commits alone this post reports a collaborative arc as a solo
+substrate-report, which is **Level-1 drift**. Three honest exits, and only three:
+the builder confirms the quotes; or the stretch was genuinely solo and the post
+carries `rune:consonare(solo)` with a reason; or the post does not ship. Inventing
+a plausible quote is not on the list.
 
 ### Source shapes a reader must be told about
 
