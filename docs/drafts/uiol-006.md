@@ -17,7 +17,7 @@ sidebar:
   order: 6
 ---
 
-Backfill: this covers the evening of 2026-07-25 and was written on 2026-09-07 from the commit bodies, the design doc, the `REALIZATIONS.md` far-side notes, and the probe files, all still in the tree. The floor counts quoted below are the record's, weighed by the orchestrator at the time; they were not re-run for this post. The day carries 25 commits — parametric `defservice`, the cache LRU, arc 170's stdio close. Those are not this post. This is one strand of five commits across about two hours and forty minutes, and it was not the plan.
+Backfill: this covers the evening of 2026-07-25 and was written on 2026-09-07 from the commit bodies, the design doc, the `REALIZATIONS.md` far-side notes, and the probe files, all still in the tree. The floor counts quoted below are the record's, weighed by the orchestrator at the time; they were not re-run for this post. The day carries 25 commits — parametric `defservice`, the cache LRU, arc 170's stdio close. Those are not this post. This is one strand of five commits across about two hours and forty minutes, and it was not the plan: it ends in a 299-site codemod across 109 files and a knob deleted an hour after it shipped.
 
 A `wat` service declares the exact shape of every request it accepts. The whitelist is authored code: each op has a `<Op>Request` record, written by hand, in the source. On July 25 the substrate found out that nothing had ever checked it.
 
@@ -59,7 +59,7 @@ One frame from any caller, no privilege required, and the service is gone for ev
 
 ## Nothing was authored (20:30)
 
-The builder's ruling on seeing it proven, carried verbatim into the head of every stone that followed rather than paraphrased:
+The builder's ruling, on seeing it proven:
 
 > "we must have a request-malformed ... the whitelist of what we accept is already explicit - a bad caller (malicious or dumb) cannot crash anything."
 
@@ -82,9 +82,13 @@ The guard went exactly where the size guard already sat: `guarded-arm` in `wat/s
       ((:wat::kernel::SendOutcome::Lost _c) (~serve-name self l selectables state)))))
 ```
 
-Read the three arms of the inner match: sent, client already gone, client lost — whatever happens to the refusal, the loop recurses into `serve` with state unchanged. The handler never ran, and the refusal cannot kill the service either. The client gets a matchable per-op variant, `:RequestMalformed [path <- Vector<String> expected <- String got <- String]`, carrying the offending coordinate: `["items" "[0]"] expected=:wat::core::String got=Integer`. A four-questions ruling settled that payload's shape opposite the orchestrator's instinct: `path` stays structured because segments are data the program computes on, but `expected`/`got` are Strings because `got` is not a type and cannot be made one — the value came off an untyped wire with no declaration, so its honest datum is its EDN shape, and structuring it would fabricate information.
+The inner match's three arms — sent, client already gone, client lost — all recurse into `serve` with state unchanged. The handler never ran, and the refusal cannot kill the service either. The client gets a matchable per-op variant, `:RequestMalformed [path <- Vector<String> expected <- String got <- String]`, carrying the offending coordinate: `["items" "[0]"] expected=:wat::core::String got=Integer`.
+
+A four-questions ruling settled that payload's shape opposite the orchestrator's instinct: `path` stays structured because segments are data the program computes on, but `expected`/`got` are Strings because `got` is not a type and cannot be made one — the value came off an untyped wire with no declaration, so its honest datum is its EDN shape, and structuring it would fabricate information.
 
 Stone 1 shipped with the hole open, in its own words: "⚠ THE DoS REMAINS LIVE FOR EVERY SERVICE THAT HAS NOT OPTED IN — which is all of them." It carried a transitional `:sanitize-requests :all | :none` knob, default `:none`, because unconditional generation would demand `:RequestMalformed` on every op-Response — 108 files, ~301 sites — a STOP for a one-service stone. The kill probe was deliberately kept reproducing the kill unchanged, as the before/after pair.
+
+Stone 1 had tried to avoid the choice. It built a verb, `:wat::runtime::variant-names-of`, to gate generation on whether a response enum already declares `:RequestMalformed` — conditional generation, no knob and no sweep — and then deleted it rather than leave scaffolding. It cannot work: `src/freeze.rs:618-619` runs `expand_all` before `register_types`, so at macro-expand time the registry holds nothing from the loading program, not even a surface declared three forms up in the same file. Grounded, not assumed — the verb was built, and it failed on `:wat::kernel::StdOut::WriteResponse`.
 
 ## The knob does not survive an hour (21:30)
 
@@ -108,39 +112,37 @@ No knob, no default, no escape hatch: a service that crashes on a malformed requ
 
 ## Turning the wall on is how you find out it is broken (21:30 onward)
 
-The validator had been sitting in the tree unused, and in the dark it had grown two dead arms. Neither was findable by reading.
+The validator had been sitting in the tree unused, and two of its arms had rotted unobserved. Neither was findable by reading.
 
 **Arm one, found on the way in.** `edn_to_typed_value_inner`'s aggregate dispatch was narrowed to `Nature::Struct`. Every `<Op>Request` is a `defrecord` — so the validator, switched on as written, would have **rejected all traffic**. Fixed to accept `Struct|Record`, with `coerce_struct_path` rebuilding using the declared nature, because a record rebuilt as a Struct would lie about its purity (`Nature::is_pure`: Struct permits impurity, Record guarantees it). `HolonRecord` was deliberately left out — its wire form is a `#wat-edn.holon/Bind` hologram this field-map walk cannot honestly rebuild.
 
 **Arm two, found by production traffic.** The `HashMap`/`HashSet` arm was a "not currently supported" stub. Unconditional generation pointed it at well-formed real traffic: `Store::PutRequest` carries `StoredRow.index-keys <- HashMap<String,IndexKey>`, so every journal write came back `RequestMalformed` at `["rows" "[0]" "index-keys"]` — **29 of 36 first-run failures**. It was implemented, not exempted: "STOP-1 was for a GENUINELY un-validatable type; an arm nobody wrote is not that."
 
-Stone 1 also built a verb, `:wat::runtime::variant-names-of`, to gate generation on whether a response enum declares `:RequestMalformed` — and then deleted it rather than leaving scaffolding. It cannot work: `src/freeze.rs:618-619` runs `expand_all` before `register_types`, so at macro-expand time the registry holds nothing from the loading program, not even a surface declared three forms up in the same file. Grounded, not assumed — the verb was built, and it failed on `:wat::kernel::StdOut::WriteResponse`. Note the shape: refusing to leave dead scaffolding, on the day dead scaffolding was the bug.
-
 ## The correction: a caller is not traffic
 
-The day's own summary, written into the curare commit (`753b1b9`, 22:36) after a run that took the floor 4163 → 4178:
+The day's own summary, written into the curare commit (`753b1b9`, 22:36) — curare, the pass that keeps the record true — after a run that took the floor 4163 → 4178:
 
 > **THE DURABLE LESSON:** nearly every find was a wall that existed but could not be turned on, so it rotted unobserved — the write-only derive, TWO dead arms in `edn_to_typed_value`, the eight hardcoded opaque paths, 11 vacuous gates. **Walls need traffic or they stop being walls.**
 
-The commits explain the rot with a duration, and the duration is wrong. `2870147` says `edn_to_typed_value` had zero production callers "since arc 258 Stone 258.5b deleted its last one" — and that sentence was then written into `src/edn_shim.rs` as a source comment, twice, by `0efaa5b` and `b9d61bd`. It propagated three times and does not survive the disk. Stone 258.5b is `4b2d185`, 2026-06-16, and it deleted *a* caller — the `recv'`/`select'` coercion at `src/runtime.rs:23829`. Immediately after it, `src/services/verbs.rs:257` still calls the walker from `eval_kernel_readln_prime`, the body of `(readln' <cap> -> :T)`, coercing a parsed stdin line to its ascribed type. *That* caller died on **2026-07-22**, in `1212c9a`, when the `-> :T` ascription was annihilated. The validator was caller-free for **three days, not five weeks**, and the attribution to arc 258 is wrong in three places in the tree, one of them a comment in the source it describes. The correction has not been made; it is the builder's to make.
+The commits explain the rot with a duration, and the duration is wrong. `2870147` says `edn_to_typed_value` had zero production callers "since arc 258 Stone 258.5b deleted its last one" — and that sentence was then written into `src/edn_shim.rs` as a source comment, twice, by `0efaa5b` and `b9d61bd`. It propagated three times and does not survive the disk. Stone 258.5b is `4b2d185`, 2026-06-16, and it deleted *a* caller — the `recv'`/`select'` coercion at `src/runtime.rs:23829`. Immediately after it, `src/services/verbs.rs:257` still calls the walker from `eval_kernel_readln_prime`, the body of `(readln' <cap> -> :T)`, coercing a parsed stdin line to its ascribed type. *That* caller died on **2026-07-22**, in `1212c9a`, when the `-> :T` ascription was annihilated. The validator was caller-free for **three days, not five weeks**, and the attribution to arc 258 is wrong in three places in the tree, one of them a comment in the source it describes.
 
 The refutation is worth more than the claim it replaces, because the rot never needed the callers gone. The `Nature::Struct` narrowing is older than the collapse it was blamed on: `edn_to_typed_value_inner` handled `TypeDef::Struct` and never `TypeDef::Record`, verified at `0dab460^`, and arc 293's unify-2b translated that arm faithfully and mechanically into `TypeDef::Aggregate(a) if a.holder == Holder::Struct`. The collapse only re-expressed a blindness records already had — so the walker was record-blind for four weeks while it had a live production caller. Whether any corpus site ever wrote `(readln' cap -> :SomeRecord)` is unverified; if none did, that is precisely why nobody noticed. The second arm gives itself away in its own excuse — "Not currently supported as a readln target" — naming the live caller it was rotting under.
 
 So the sharper form of the law is **a caller is not traffic**. A branch nothing exercises rots identically whether or not the function around it is called. That is the difference between "dead code rots", which is obvious, and what happened here, which is not.
 
-## The other instances, and the one the day did not list
+## The other instances (14:42–18:13), and the one the day did not list
 
-The curare names four. All four are on disk.
+The curare names four. All four are on disk — the two dead arms above, and three more found earlier the same day, before the frame that killed the service.
 
 The **write-only derive**: `:wat::core::Span` had no decode schema at all — its wat-reader derive emits `ToEdn` only — so no error's `:location` could ever STRICT-decode. Found while grounding something else (`b244501`, 14:42), on a ruling in the same register: "annihilate this - we are meant to be edn all the way down - masking it in a string is unacceptable."
 
-The **eight hardcoded opaque paths** (`7deed6a`, 18:13): `validate_aggregate_containment` works and sees through type parameters, but `is_pure_type` knows Rust opaques as eight hardcoded path strings, and anything absent falls to `None => true` — portable by convention, so every `#[wat_dispatch]` opaque minted since is invisible to it. Three probes exit 0 where they must exit 3, and one is `(defrecord :probe::Smuggle [c <- :wat::cache::Lru<String,i64>])` — the substrate's own cache primitive, landed six hours earlier that same day, smuggled straight through its own containment wall. Recorded, not fixed: "did you find a legit flaw in our enforcement?" — yes — "i'm not chasing it now." Whether a later commit closed it is not verified here.
-
-The **eleven vacuous gates** (`91bbb8c`, 17:26) are the same law, five hours before the DoS. The sqlite S1 gate's `(assert-eq n 1)` was mutated to `n 4242` — an assertion that cannot hold — and the test passed. `call_beside` returned `Result<Value, RuntimeError>`; a fired assertion lands a `Failure` in the returned `RunResult` while the evaluation still succeeds, so `Ok` came back regardless. `.is_ok()` answers "did it evaluate?" while every author who wrote it believed it answered "did it pass?" The builder's pivot:
+The **eleven vacuous gates** (`91bbb8c`, 17:26) are the same law, two and a half hours before the DoS. The sqlite S1 gate's `(assert-eq n 1)` was mutated to `n 4242` — an assertion that cannot hold — and the test passed. `call_beside` returned `Result<Value, RuntimeError>`; a fired assertion lands a `Failure` in the returned `RunResult` while the evaluation still succeeds, so `Ok` came back regardless. `.is_ok()` answers "did it evaluate?" while every author who wrote it believed it answered "did it pass?" The builder's pivot:
 
 > "we pivot and address this - now ... i do not care what amount of work is necessary for this - this behavior is unacceptable - what is the type check that sets all heretics ablaze in one shot?"
 
-The one shot was deleting the type that made the mistake expressible: `call_beside` now returns `#[must_use] enum DeftestOutcome { Passed, Failed { failure }, DidNotRun { error } }`, whose must-use message reads "a deftest verdict that is not read is a gate that does not gate", and `RunResult` went record → enum for the same reason — a reason-free pass and a failure with an ignorable `Option` slot is what let the Rust side look away. Removing `Result` lit **378 sites in one compile**, wider than the hand-count, because the family included `.expect()`/`.expect_err()` and not just `.is_ok()`. Eleven gates proved nothing, one of them the sqlite gate certifying a shipped stone; five came through a channel the brief never named, and two of those five were caught by the new wall at runtime, not by the audit. No assertion was weakened or tuned, and every previously-vacuous gate's assertions turned out to hold — the cost was not bugs shipped, it was certainty that was never earned.
+The one shot was deleting the type that made the mistake expressible: `call_beside` now returns `#[must_use] enum DeftestOutcome { Passed, Failed { failure }, DidNotRun { error } }`, whose must-use message reads "a deftest verdict that is not read is a gate that does not gate", and `RunResult` went record → enum for the same reason — a reason-free pass and a failure with an ignorable `Option` slot is what let the Rust side look away. Removing `Result` lit **378 sites in one compile**, wider than the hand-count, because the family included `.expect()`/`.expect_err()` and not just `.is_ok()`. The cost was not bugs shipped but certainty that was never earned: no assertion was weakened or tuned, and every previously-vacuous gate's assertions turned out to hold. Eleven gates proved nothing — one of them the sqlite gate certifying a shipped stone, five through a channel the brief never named, two of those five caught by the new wall at runtime rather than by the audit.
+
+The **eight hardcoded opaque paths** (`7deed6a`, 18:13): `validate_aggregate_containment` works and sees through type parameters, but `is_pure_type` knows Rust opaques as eight hardcoded path strings, and anything absent falls to `None => true` — portable by convention, so every `#[wat_dispatch]` opaque minted since is invisible to it. Three probes exit 0 where they must exit 3, and one is `(defrecord :probe::Smuggle [c <- :wat::cache::Lru<String,i64>])` — the substrate's own cache primitive, landed six hours earlier that same day, smuggled straight through its own containment wall. Recorded, not fixed: "did you find a legit flaw in our enforcement?" — yes — "i'm not chasing it now." Whether a later commit closed it is not verified here.
 
 The instance the day did not list is the tag-driven decode itself: same class, worst consequence — a wall that could not be turned on, and it killed a service.
 
