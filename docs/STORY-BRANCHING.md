@@ -737,13 +737,24 @@ substrate, the name is worth re-casting.
    **25 MiB per-file** cap — 88% of the limit. A re-encode that grows it breaks
    the deploy. File count is fine (1,710 of 20,000; chunking adds ~120).
 
-4. **`CHRONICLE-COVERAGE.md`: one row per front**, not one row per repo. Last
-   reconciled 2026-06-17; currently the stale cache.
-5. **`WRITING-GUIDE.md` §Series-Specific Notes is wrong.** It describes "Series 6
-   (XDP + eBPF scrubber)" and "Series 7 (current state and roadmap)". Live, 006 is
-   the trading lab → wat, 007 is the signed record, 008 the command channel. The
-   voice anchor consonare casts against carries a series map that does not match
-   the site.
+4. ~~**`CHRONICLE-COVERAGE.md`: one row per front**, not one row per repo.~~
+   **SHIPPED 2026-09-08.** Restructured to five front rows (the closed Story plus
+   four fronts), every HEAD re-measured, the per-repo table kept as a secondary
+   reverse index. Front rows are measured with **explicit exclusion**
+   (`rev-list <branch> ^origin/main ^origin/grok-rete`) and the file states why:
+   measured that day, `claude-compute` was **133 ahead by the naive range and 24
+   by its own work**. It also surfaced something nobody was tracking — `holon-rs`
+   moved to `c19f378` on 08-03 while the old file called it "quiet since 05-22".
+5. ~~**`WRITING-GUIDE.md` §Series-Specific Notes is wrong.**~~ **SHIPPED
+   2026-09-08.** Rewritten against the live posts: eight body rows with real post
+   counts and real subjects, and a new **"Writing for a front, not a body"**
+   section — a front is perpetual present, is a purpose rather than a branch, and
+   orders by event rather than calendar. Four of the seven original entries named
+   the wrong subject and 008 was missing entirely. The replaced text is quoted in
+   the file's own header note, because **a voice anchor carrying a wrong map is
+   worse than one carrying none** — a writer trusts it instead of opening the
+   posts. Also records the ordering trap: the sidebar is era-grouped, so
+   `series-008-*` precedes `series-006-036`.
 
 ---
 

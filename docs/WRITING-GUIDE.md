@@ -215,43 +215,49 @@ hand-waving summary.
 
 ## Series-Specific Notes
 
-### Series 1 (Problem Space)
-These posts establish the conceptual foundation. They need to be precise
-about the mathematics — binding, bundling, similarity — because everything
-downstream depends on the reader understanding these correctly.
+> **Rewritten 2026-09-08 against the live site.** The version this replaces was a
+> *plan*: it described "Series 6 (XDP + eBPF scrubber)" and "Series 7 (current
+> state and roadmap)", and had no Series 8 at all. The site was not built that
+> way. **A voice anchor carrying a wrong map is worse than one carrying none**,
+> because a writer trusts it instead of opening the posts. If this map and
+> `src/content/docs/blog/story/` disagree, the posts win — fix this file.
 
-### Series 2 (Python experiments)
-The challenge batches are the story here. For each challenge: what the
-problem was, what we tried, what the data showed, what we changed.
-The Python codebase and the docs/ directory have 83 files of notes —
-use them. Don't summarize the challenges; recount them.
+**The story is PAST and it ENDS.** It closes at `series-006-036` and hands off to
+the Fronts. Everything below is a body that finished; nothing new is written into
+one. New writing goes to a front (see the next section).
 
-### Series 3 (Rust port)
-The benchmarks and the implementation decisions are the core. Explain
-why specific choices were made (e.g., why `ndarray` over `Vec<f32>`
-for certain operations, what the SIMD intrinsics are actually doing).
-The performance numbers are well-documented — include all of them.
+| body | posts | what it actually covers |
+|---|---|---|
+| **001 — Primers** | 5 | Not narrative. Technical reference: VSA, atoms, ops, memory, wat. Be precise about the mathematics — binding, bundling, similarity — because everything downstream needs the reader to have it right. |
+| **002 — Python experiments** | 3 | The initial commit through the first six challenge batches. Rete emerging on day two, the 123× speedup, and the primitives forged in the Sudoku failure. The challenge batches ARE the story — recount them, do not summarize them. |
+| **003 — The Rust port** | 5 | February. Python was the specification language — 239 tests, every primitive proven — so translating it was nearly single-shot. Then the labs, 1.3M pps, the rule engine, engrams. The benchmarks and the implementation decisions are the core; include the numbers. |
+| **004 — The L7 lab** | 2 | Feb 23–26. Same architecture, one layer up: TLS-terminating proxy, dual SubspaceDetector, and the expression tree. |
+| **005 — The spectral firewall** | 3 | Mar 1–3. A concept doc becomes working code in three days — four-layer geometric anomaly detection at 41µs, denial tokens sealed with AES-256-GCM, self-calibration, the residual profile. |
+| **006 — The substrate** | **36** | The largest body by far. Opens on the trading lab (Mar 15–24: the pixel obsession, the pivot to Rust, the recognition that the signal was in the vocabulary) and becomes **wat** — the language, the grimoire, the arcs, the warding. Ends at `036`, the hinge. This is the body most backfill posts sit adjacent to, and where the gold anchors' voice comes from. |
+| **007 — The signed record** | 7 | datamancy becomes a cryptographically verified static MCP: one pinned ECDSA P-256 key, every spell verified against a KMS-signed manifest before a byte reaches the model, so content-tamper can never become prompt-injection. |
+| **008 — The command channel** | 3 | A career spent severing botnet C2, inverted into building one — broadcasting an ethos to members who opt in, over a chain of trust instead of compromise. Same architecture as the swarm, opposite soul. |
 
-### Series 4 (Baseline lab)
-The agent architecture is the interesting part. How do LangChain/LangGraph
-agents produce traffic that looks like real user behavior? What does
-the generated HTTP corpus actually look like? Be specific about the
-setup — 4090, model being run, agent prompts and behavior patterns.
+**Ordering warning.** The sidebar is grouped by **era**, not sorted by filename:
+`series-008-*` sits in an *earlier* era group than `series-006-036`. Read
+`astro.config.mjs` for reading order; never infer it from `ls`.
 
-### Series 5 (DDoS problem)
-The framing series. These posts should be opinionated. We have a
-specific view on why existing scrubbers are brittle — state it clearly
-and back it up with the mechanics of why rule-based systems drift.
+## Writing for a front, not a body
 
-### Series 6 (XDP + eBPF scrubber)
-The most technically dense series. Do not simplify. Explain the eBPF
-verifier constraints we worked within, the exact structure of the XDP
-program, how the compiled tree communicates with the sidecar, why the
-Rete approach maps onto packet classification, and what "765ms before
-drift-based detection" means at the packet level. Pull directly from
-`filter/src/lib.rs` — it's 2065 lines and it has the answers.
+New work goes to `blog/fronts/<front>/NNN-slug`. A front differs from a body in
+three ways that change how you write:
 
-### Series 7 (Current state and roadmap)
-Honest assessment. What works, what's rough, what's next. The L7
-scrubber and WAF are on the roadmap — state what we know about what
-that will require and where the baseline lab traffic corpus fits in.
+- **A front is perpetual present; a body is past and closed.** Never write a front
+  post toward a finish line, and never give a front a completion verb.
+- **A front is a PURPOSE, not a branch.** One front can span several git branches
+  and several repos. Do not let a post become "what happened on branch X".
+- **Posts are ordered by the EVENT that triggered them** — a closure, a reversal,
+  a campaign, an incident, an opening — not by the calendar. A week may hold
+  several posts, or none.
+
+**Backfill posts carry `backfill: true` and say so on the page**, in a note naming
+what they were written from and when. The note is not an apology, and it is not
+neutral: the post that scored 9 ended its note on **what the reader is about to
+get**, and the two that scored 7 ended theirs on a limitation and on an inventory.
+Give it a hook.
+
+The full doctrine is `docs/STORY-BRANCHING.md`.
