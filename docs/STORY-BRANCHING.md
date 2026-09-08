@@ -222,30 +222,68 @@ could only assume the work had been given up. The builder's own words:
 
 The mechanism is cheap. Keeping it honest is the standing obligation.
 
-### 2.6 The weekly scaffold — and the rule against filler
+### 2.6 The unit — a week forward, an EVENT backward
 
-The journal's unit is **the week**. One post per week **per front that had work
-that week**. A quiet week produces **no post** — manufacturing a post about
-nothing fails Honest, and the gaps are themselves true (portal was silent through
-W3–W7 while the substrate ran).
+**Amended 2026-09-07, on measurement.** The first cut said *one post per week per
+front that had work*. That rule is right for the **forward cadence** and wrong for
+the **backfill**, and the difference is not a detail:
 
-Measured scaffold for the batch (weeks from Mon 2026-06-22):
+> **Going forward, the week is the honest unit because the week is when you
+> write.** The cadence creates the unit. **Backfilling imposes a calendar on work
+> that never had one.**
 
-| front | weeks with work | posts |
+Arc 278 did not happen in weeks. It happened in strands that open on one Monday
+and close on another. A probe on W5 (2026-07-20→26, 180 commits) returned
+**MIXED, lopsided to SLICE**: its two largest strands both opened *before* the
+week (R51 `:born #inst "2026-07-19"`) and closed *after* it (`591adcdf6`,
+07-28 — "the last raising IPC verb walled"), and R57 explicitly retracts R55's
+claim that the law was "complete". Exactly one strand was self-contained — the
+RequestMalformed DoS — and it is **one day**, not one week.
+
+The probe's verdict, which is the rule now:
+
+> a per-week grid will both **over-count** (nine slice-posts) and **under-count**
+> (it has no cell for a one-day story)
+
+**So the backfill allocates by EVENT. More than one post may share a week, and a
+week may hold none.** Five unit kinds, each with a datable trigger:
+
+| unit | trigger |
+|---|---|
+| **closure** | an `INSCRIPTION` lands; the arc is done |
+| **reversal** | a closure is *undone* — the INSCRIPTION deleted, the arc reopened |
+| **campaign** | a long strand with real recognition, still open; bounded by its own realizations |
+| **incident** | a self-contained story, often one day, that the calendar would bury |
+| **opening** | a front begins; the branch diverges |
+
+### 2.6.1 The census that decided it
+
+Two instruments over 2026-06-22→08-30 on `origin/main`, both cheap and both
+re-runnable. Recorded because the slate is derived from them, not asserted.
+
+**Recognition density is INVERSE to commit density.** Realization-writing commits
+per week: W1 43 · **W2 127** · W3 18 · W4 12 · W5 39 · W6 14 · W7 3 · W8 6 ·
+W9 6 · W10 3.
+
+| week | commits | realization commits |
 |---|---|---|
-| wat Under Its Own Law | W1–W10 (114–462 commits each) | 10 |
+| W2 06-29→07-05 | 349 | **127** (+11,678 lines, 70 distinct R-entries — verified not a migration) |
+| W9 08-17→08-23 | **442** | **6** |
 
-**Ten weeks is the ceiling**, so at most 10 posts per front in this batch.
-| portal (console) | W1, W2, W8, W9, W10 | 5 |
-| The Exemplar | W10 (opened 08-24) | 1 |
-| Services in Anger | W10 (opened 08-30) | 1 |
-| **The Story** | the hinge | **1** |
-| | | **18** |
+The busiest week by commits wrote almost nothing down. A calendar grid weights by
+the wrong axis.
 
-For scale: this is *less* dense than the chronicle's own history — the era "The
-Shape Keeps Its Promise" ran 6 posts over ~2 weeks.
+**Closure is RARE.** Five closure events in ~2,600 commits, and only three that
+held: arc **292** (06-23, already narrated as `series-006-035`) · arc **296**
+(06-30, then **reopened** — INSCRIPTION deleted) · arc **298** (07-01) · arc
+**170** (07-29) · arc **118** (08-19, opened as arc 004 on 2026-04-20 — a
+four-month arc). The window is overwhelmingly *open* work, which is exactly why
+the chronicle's narrate-only-what-closed rule had nothing to say for eleven weeks.
 
-### 2.4 The cadence rule
+**W2 is not a week, it is an era** — 296×43 · 278×34 · 300×25 · 298×12 · 293×8,
+five arcs peaking at once, in the week immediately after the chronicle stopped.
+
+### 2.4 The cadence rule### 2.4 The cadence rule
 
 > **The journaling frontier trails the working frontier by one cadence.**
 

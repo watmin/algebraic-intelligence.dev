@@ -73,11 +73,13 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | 1 | — | — | — | — | — | — |
-| wat Under Its Own Law | 10 | 10 | — | — | — | — | — | — |
-| Ars Culta | 5 | 5 | — | — | — | — | — | — |
+| wat Under Its Own Law | 9 | 9 | — | — | — | — | — | — |
+| Ars Culta | 2 | 1 | **1** | — | — | **1** | — | — |
 | The Exemplar | 1 | 1 | — | — | — | — | — | — |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **18** | **18** | — | — | — | — | — | — |
+| **total** | **14** | **13** | **1** | — | — | **1** | — | — |
+
+Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
 ### Live slot detail
 
@@ -85,9 +87,9 @@ Only slots past SLOT are listed. Everything else is in §2.
 
 | slot | state | consonare | notes |
 |---|---|---|---|
-| `ars-culta/005` (W10 — experiri) | **NOTES ✓ + VERIFIED** | — | notes at `docs/notes/ars-culta-005-experiri-NOTES.md`; scope, orphan-blob find, byte-identity and ledger strike all re-checked against the disk by the orchestrator. **BLOCKED on the builder: no verbatim quotes exist in the repo** (see below) |
+| `ars-culta/002` (experiri) | **NOTES ✓ + VERIFIED** | — | notes at `docs/notes/ars-culta-005-experiri-NOTES.md`; scope, orphan-blob find, byte-identity and ledger strike all re-checked against the disk by the orchestrator. **BLOCKED on the builder: no verbatim quotes exist in the repo** (see below) |
 
-**⛔ `ars-culta/005` blocker — consonare rule 11.** The repository contains **no
+**⛔ `ars-culta/002` blocker — consonare rule 11.** The repository contains **no
 verbatim builder quotes** for this week. Two exist only in session memory, the
 load-bearing one being *"the final run is always the full run again, all spells
 return zero L1 and zero L2"* — the bar that produced the 17 rounds. Written from
@@ -162,6 +164,15 @@ flattened exactly what the branching exists to preserve.
 4. **Where the work went — the hand-off.** Names the four fronts and their
    volumes as *evidence that work continued*, then points at them. **Does not
    narrate them.** This section is a door, not a room.
+
+   **This section also absorbs the console.** Ars Culta's backfill was cut 5 → 2
+   because four of its five weeks *are this post's subject* — the tooling being
+   put in place so work could be handed to other machines. The specifics belong
+   here as evidence, not as four posts of their own: `cohaerere` minted (06-26),
+   `partire` warded (06-27), the dual-surface — resources **and** tools (08-16),
+   the publish hardening that refuses a manifest whose `previous` has no snapshot
+   (08-16), and vigilia's *"embedding is the fallback"* (08-22). That is what
+   "building the capacity to run four fronts" actually consisted of.
 5. **Why the story ends here.** A single line of narration cannot hold concurrent
    orthogonal work without flattening it, and flattening it is the one
    dishonesty available. The chronicle was the honest form for one machine; at
@@ -189,73 +200,71 @@ mechanism over summary), then `consonare` cast against the gold anchors, then
 
 ---
 
-## 2 — The front slots (17), measured
+## 2 — The slate, allocated by EVENT
 
-Weeks run Monday. Volumes are commits in that week on that front's branches.
-**Empty weeks produce no post** (`STORY-BRANCHING.md` §2.6).
+**Reshaped 2026-09-07** from a calendar grid to event units, on the census in
+`STORY-BRANCHING.md` §2.6.1. **More than one post may share a week; a week may
+hold none.** 14 posts, down from 18 — and every one is *about* something, where a
+weekly slice was about whatever fell inside seven days.
 
-### wat Under Its Own Law — `fronts/under-its-own-law/` — 10 posts
+### wat Under Its Own Law — `fronts/under-its-own-law/` — 9 posts
 
-| slot | week | commits | outline |
+| # | kind | unit | trigger |
 |---|---|---|---|
-| 001 | W1 · 06-22..06-28 | 308 | — owes the read |
-| 002 | W2 · 06-29..07-05 | 349 | — owes the read |
-| 003 | W3 · 07-06..07-12 | 129 | — owes the read |
-| 004 | W4 · 07-13..07-19 | 125 | — owes the read |
-| 005 | W5 · 07-20..07-26 | 180 | — owes the read |
-| 006 | W6 · 07-27..08-02 | 289 | — owes the read |
-| 007 | W7 · 08-03..08-09 | 178 | — owes the read |
-| 008 | W8 · 08-10..08-16 | 218 | — owes the read |
-| 009 | W9 · 08-17..08-23 | 442 | — owes the read |
-| 010 | W10 · 08-24..08-30 | 375 | — owes the read |
+| 001 | **closure** | arc **298** — Honest Optionality | INSCRIPTION 2026-07-01 |
+| 002 | **reversal** | arc **296** — closed, and would not stay closed | INSCRIPTION added 06-30, **deleted** at `3a4f49202` |
+| 003 | **campaign** | arc **300** + the EDN-surface line — *VNVS LECTOR NE DIVIDANTVR* | 25 realization commits, W2 |
+| 004 | **campaign** | arcs **293/294** — struct-record symmetry; `HOLONAST-WAS-A-COAT` | 18 + 15 realization commits, W1–W2 + 08-25 |
+| 005 | **campaign** | arc **278** — the rules engine, W2→W6 | 116 realization commits; the largest, still open |
+| 006 | **incident** | the RequestMalformed DoS — *walls need traffic* | one day, 2026-07-25 (`753b1b9c2`, `91bbb8cd3`) |
+| 007 | **closure** | arc **170** — *PER PORTAM COGITAMVS* | INSCRIPTION 2026-07-29 |
+| 008 | **campaign** | arc **255** — four axes stop being hand-lists | 6 realization commits W8; the four-axes day 08-30 |
+| 009 | **closure** | arc **118** — opened as arc 004 on 2026-04-20 | INSCRIBED 2026-08-19; a four-month arc |
 
-> **⚠ These are AUTHOR dates, corrected 2026-09-07.** The first cut used
-> `git log --since/--until`, which filters on **committer** date, while the
-> displayed `%ad` is **author** date — so the table showed one week's numbers
-> against another week's commits. Individual weeks move by up to 47 (W8: 265 →
-> 218; W7: 148 → 178), though the overall shape holds and no week flips from busy
-> to empty. **"When did the work happen" means author date**; use the awk filter,
-> not `--since/--until`:
->
-> ```
-> git log --format='%ad%x09%s' --date=short origin/main | awk -F'\t' '$1>="<start>" && $1<="<end>"'
-> ```
->
-> A second instrument flaw found in the same pass: an arc-tag regex matching only
-> parenthesised `(170)` missed this corpus's `170:` and `278 24y` forms entirely,
-> reporting 4 arc mentions in a week that actually has 180. Validate a pattern
-> against known ground truth before quoting its count.
+Ordered by trigger date, not by week. Note 005 (arc 278) may not survive as one
+post — 116 realization commits is a lot for one page, and the strip test will
+decide whether it is one campaign or two. **That is a reader's finding to make,
+not a planner's to assume.**
 
-Known anchors, unread: arc **170** closes 07-29 (the arc behind the 170
-chronicle) · arc **118** closes 08-19 · arc **296** closes 06-30 then **reopens**
-· arc **255**'s four-axes day 08-30 · arc **294**'s repudiation of
-`series-006-016 "The Loop Closes"` (`HOLONAST-WAS-A-COAT`) · arc **109** as
-surface annihilation.
+### Ars Culta — `fronts/ars-culta/` — 2 posts
 
-### Ars Culta — `fronts/ars-culta/` — 5 posts
+Reduced from 5. The builder's own read: *"the work i'm doing on portal hasn't
+triggered any realization or deep commentary — its just been getting tooling in
+place to have my work offloaded to other hosts."* That story is **the hinge's**
+(§1), and four weekly posts would have retold it four times. What remains is the
+work that is not the hinge's subject:
 
-| slot | week | work |
-|---|---|---|
-| 001 | W1 · 06-22 | `cohaerere` minted + published; `partire` warded; 17 scratch design commits |
-| 002 | W2 · 06-29 | the grimoire ethos — failure + constraint engineering as first-load discipline, warded + published; the site's brand/logo/theme + landing reframe (26 commits) |
-| — | W3–W7 | **silent.** No posts. The gap is true. |
-| 003 | W8 · 08-10 | grimoire dual-surface (resources *and* tools); publish hardening — refuse a manifest whose `previous` has no snapshot |
-| 004 | W9 · 08-17 | grimoire + vigilia — *"embedding is the fallback"* |
-| 005 | W10 · 08-24 | **`experiri` minted + published 08-28** — the executing ward, warded 17 rounds, 0 un-dispositioned |
+| # | kind | unit | trigger |
+|---|---|---|---|
+| 001 | **campaign** | the grimoire ethos — failure + constraint engineering encoded as first-load discipline | published 2026-06-30 |
+| 002 | **campaign** | `experiri` — the first ward that RUNS rather than reads | published + warded 17 rounds, 2026-08-28 |
+
+`002` is **read and verified** (§0). It is **blocked** on consonare rule 11 — no
+verbatim exchange exists in the corpus, and the builder does not recall the
+session, so the memory-only quote cannot be ratified. Its disposition will be
+`rune:consonare(solo)` with a reason naming the infrastructure character of the
+stretch, or it does not ship.
+
+`cohaerere`/`partire` (W1), the dual-surface and publish hardening (W8), and
+vigilia's *"embedding is the fallback"* (W9) fold into 001 as the same motion —
+the channel being hardened — rather than taking slots of their own.
 
 ### The Exemplar — `fronts/exemplar/` — 1 post
 
-| slot | week | commits | note |
+| # | kind | unit | trigger |
 |---|---|---|---|
-| 001 | W10 · 08-24 | 235 | the front opens 08-24; 122 docs authored in-window |
+| 001 | **opening** | the front opens; `wat-rete` begins becoming the exemplar | `grok-rete` diverges 2026-08-24; 235 commits, 122 docs in-window |
 
 ### Services in Anger — `fronts/services/` — 1 post
 
-| slot | week | commits | note |
+| # | kind | unit | trigger |
 |---|---|---|---|
-| 001 | W10 · 08-24 | 180 | opens 08-30; `claude-compute` wraps itself 08-30 (its own CURARE), `sns-sqs` runs on |
+| 001 | **opening** | the front opens; **`excursus` is invented** — a third documentation form for large efforts that are not arcs | `claude-compute` + `sns-sqs` diverge 08-30; `claude-compute` wraps itself the same day with its own CURARE |
 
----
+**⚠ These two fronts have NOT had a census.** Their allocation is one post each
+because each is one week old at the cutoff, not because anyone measured their
+recognition density the way `main`'s was measured. If either turns out to hold
+more, it holds more. Do not treat 1 as a finding.
 
 ## 3 — Order of work
 
