@@ -51,56 +51,65 @@ is the one time they aren't, so it gets said out loud rather than papered over.
 > **deleted when the batch ships**. It is not a perpetual PROGRESS.md.
 > **Where it disagrees with the disk, the disk wins and this file is stale.**
 
-### ⛔ CURRENT — 2026-09-08 (second replacement). Replace in place; never append.
+### ⛔ CURRENT — 2026-09-08 (third replacement). Replace in place; never append.
 
-**Nothing is pushed.** This repo is **~40 commits ahead of origin/main**, tree
-clean, build green: **672 pages, all nine postbuild guards, largest page 0.77 MB.**
-Push is deploy; no deploy has happened.
+**Nothing is pushed.** ~49 commits ahead of origin/main, tree clean, build green:
+**678 pages, 73 narrative posts, 12 front posts, all nine guards.**
 
-**FOUR POSTS WIRED AND LIVE IN THE BUILD:**
-- `blog/story/series-006-036-one-machine-all-the-way-down` — the hinge, Story → Fronts → Epilogue.
-- `blog/fronts/under-its-own-law/006-a-caller-is-not-traffic` — consonare **9**.
-- `blog/fronts/under-its-own-law/007-the-smallest-of-three` — consonare **7**, shipped.
-- `blog/fronts/ars-culta/002-a-declaration-is-only-a-promise` — consonare **7**, shipped with `rune:consonare(solo)`.
+**EIGHT OF SEVENTEEN SHIPPED.** All four fronts exist, carry landings, and are
+wired into the nav. **Ars Culta is COMPLETE** — both slots shipped, and its two
+posts interlock: `001`'s ledger row, the one certifying its own week, is one of
+the two rows `002`'s gate struck.
 
-Both track landings exist (`under-its-own-law/index`, `ars-culta/index`), and
-**Ars Culta is wired into the nav** with its naming reasoning in the config comment.
+| front | shipped | remaining |
+|---|---|---|
+| The Story (hinge) | 1/1 | — |
+| wat Under Its Own Law | 4/9 | 001, 003 drafting · 004, 005, 008 reading |
+| Ars Culta | **2/2** | — |
+| The Exemplar | 1/4 | 002, 003, 004 reading |
+| Services in Anger | 0/1 | 001 drafting |
 
-**⚠ THE BLOCKER ON THOSE TWO POSTS WAS FABRICATED.** They were held at 7 against
-a *"house standard of 9"* that **appears nowhere in this repo**. `consonare`'s own
-rule is **"If MATCHES at 7+ — the draft ships"**; DRIFTED begins at 6. Eleven
-correction agents were spent clearing a bar that did not exist, and the
-corrections took one post 8 → 7. Recorded as the second instance of **FM-9**
-(a compaction summary inventing its own instruments). **Before holding anything
-to a threshold, grep for the threshold.**
+**THE PIPELINE WORKS AND THE NUMBERS SAY WHY.** The two posts written before the
+reading passes took **four consonare casts each to reach 7**. The four written
+after took **one cast each to reach 8**. Nothing about the writing changed. What
+changed is that the briefs carried the reading pass's corrections already — the
+refuted census, the mislabelled letters, the scope cuts — so no writer spent a
+draft on a wrong premise, and nobody ran an additive correction loop afterward.
 
-**`docs/drafts/` now holds only `uiol-006.md`** — the source draft of a post
-already shipped. Everything else moved into the content collection.
+**Every correction pass is subtractive.** Measured each time, prose only. The one
+pass where the total rose, the increase was entirely a rune comment; the prose
+fell 2870 → 2859.
 
-**TWELVE UNITS AT SLOT.** Rooms mapped for three: arc 118's closure (`ba3bd70cb`,
-floor 4772/4772, a four-month arc), arc 296's reversal (INSCRIPTION added
-`7f17054a8` 06-30, **deleted `3a4f49202` 07-01**), The Exemplar's opening
-(`de827fb4c` 08-24). §2 holds the full slate; §3 the order of work — items 1–5
-are all shipped, so the remaining work is step 4, the reading pass.
+**FIVE FINDINGS FOR THE BUILDER** in `FINDINGS-FOR-THE-BUILDER.md`, all verified
+by the orchestrator against the disk, none fixed — `wat-rs` is read-only:
+F-1 (arc 296's DESIGN still says CLOSED, pointing at a file deleted 70 days ago,
+while two younger docs cite its absence as proof it is open) · F-2 (three doc
+lines assert a cache the code no longer has) · **F-3, the largest — arc 298's
+annihilated `<runtime>:0:0` sentinel is back at HEAD, taking the `Option<Span>`
+the design explicitly rejected, with a doc comment calling it honest** · F-4 (one
+migration, two site counts, no population named) · F-5 (the excursus README's
+"seventeen" is eleven — **and this site published that number before counting
+it**).
 
-**Still the builder's, and cheaper before a push than after:**
-1. **Post titles.** Every one is a writer's proposal. **Lower stakes than
-   previously recorded**: in Starlight the *filename* is the URL, so a title is
-   display-only and swapping one breaks no link. `ars-culta/002` carries its two
-   unchosen alternates in an HTML comment under the frontmatter.
-2. **The hinge quotes the working session**, not commits — a different provenance
-   from every other post, and the builder's words going public. His to strike.
+**⚠ THE MISTAKE WORTH CARRYING.** F-5 is mine. I took a README's self-report and
+shipped it to a live page. The README exists specifically to decode misleading
+labels, which made me trust it *more* rather than less. **A source's self-report
+is a claim, not a measurement** — the correction stayed visible on the page.
+
+**Still the builder's:** post titles (display-only — the filename is the URL, so
+a swap breaks no link; alternates are recorded above) and whether the hinge may
+quote his working-session words.
 
 **Sibling state:** `wat-rs` `3dc4f62b7`, 0 ahead, three untracked files that are
-the builder's — do not touch. `datamancy.dev` has **moved past the cutoff**:
-`peragrare` minted and warded 2026-09-07/08 (`2ce6dd5`, `7980bf4`). First-weekly
-material, not this batch.
+his — do not touch. `datamancy.dev` `7980bf4` has moved past the cutoff
+(`peragrare`, 09-07/08): first-weekly material, not this batch.
 
 > **⛔ YOU ARE NEW.** You did not live the session written above. It is a cache,
-> not your memory, and it was written by an instance that twice discovered it had
-> invented its own instruments. Run `recolligere` from the signed channel and the
-> freshness probe in `docs/COMPACTION-AMNESIA-RECOVERY.md` §2 step 0 **before you
-> act on one line of it.**
+> not your memory, and the instance that wrote it discovered three times that it
+> had invented its own instruments — a freshness probe, a scoring standard, and a
+> count it never ran. Run `recolligere` from the signed channel and the freshness
+> probe in `docs/COMPACTION-AMNESIA-RECOVERY.md` §2 step 0 **before you act on one
+> line of it.**
 
 ### ⛔ Off-limits source material
 
