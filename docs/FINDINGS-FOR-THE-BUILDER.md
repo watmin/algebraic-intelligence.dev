@@ -352,8 +352,15 @@ ruling is unambiguous:
   EDN ≅ HolonAST --encode--> a holon --stored in--> Hologram
 ```
 
-Verified at HEAD: `HolonAST` still has **1,051 occurrences** in `src/` and
-`crates/`, and `pub struct Hologram` still stands. Nothing reduced to anything.
+Verified at HEAD: `pub struct Hologram` still stands and `HolonAST` is
+everywhere. **Nothing reduced to anything.**
+
+*(A note on that count, because this file is about counts. An earlier draft of
+this finding said "1,051 occurrences in `src/` and `crates/`". 1,051 is the
+**line** count for `src/`+`crates/`; the **occurrence** counts are 1,165 for
+`src/` and 1,186 for `src/`+`crates/`. A writer re-measured and caught it. Four
+numbers, one symbol, and the sentence around it decides which is right — the same
+class as F-4 and F-6.)*
 
 **The failure mode is the one worth naming: I read an arc's crowning realization
 and never checked whether it was still standing.** A keystone is exactly the

@@ -10,11 +10,11 @@ sidebar:
 
 Backfill: this covers 2026-08-30 and was written on 2026-09-08 from the day's 87 commit bodies, arc 255's `REALIZATIONS.md`, and the tree as it stood at `8e79b8d39` — the last commit inside the window, 15:38 — rather than at HEAD, which is a week further on and mid-migration. The arc's directory holds 411 files by `git ls-tree -r`; only 19 of them predate 2026-06-23, so almost none of what follows is inherited. Floor counts, line counts and the two captured `E0599` failures are the record's, weighed by the orchestrator at the time and not re-run here. The day opens fourteen seconds past midnight by minting an axis that did not exist that morning, and the first thing the new axis does is convict the test file whose entire thesis was that the axes are declared.
 
-A `wat` verb declares its own properties. At the registration site, in the doc comment, as directives: `@Purity`, `@Determinism`, `@Category`. The proc-macro has refused a registration that omits them for months — that duration is the commit's claim, not a measurement taken here — so the declarations were there, at every site, in the source, correct.
+A `wat` verb declares its own properties. At the registration site, in the doc comment, as directives: `@Purity`, `@Determinism`, `@Category`. The proc-macro had been refusing a registration that omits them for months — that duration is the commit's claim, not a measurement taken here — so the declarations were there, at every site, in the source, correct.
 
 Nothing asked.
 
-## Four copies of one truth
+## Before 2026-08-30 — four copies of one truth
 
 Four consumers needed to know whether a verb was pure, deterministic, or total. Each kept its own answer.
 
@@ -24,13 +24,14 @@ The two big lists overlapped on 102 names. A hundred were macro-only, seventy-fi
 
 > That is not two lists drifting — it is **two DIFFERENT PROPERTIES wearing one name.**
 
-Proving that took thirteen hours and the rest of this post.
+Two properties, one name, months of shipping, and nothing in the build comparing them.
 
 ## The two weeks before: a wall does not know who wrote it (08-14/15)
 
 Arc 255's method got named a fortnight earlier, across four realizations written on 08-14 and 08-15.
 
-R6 records an afternoon that started at "can `:wat::core::string` become `:wat::string`?" and descended eight layers — is `join` in it, what does `join` accept, `Seqable`, what about the elements, `str` is partial, the total renderer already exists, adopting it broadcasts a crate name, the tag namespace, the trait — and at the floor of nearly every layer found the thing already built and already right. Nothing shipped. 1263 sites became three items. That same descent is what voided arc 294's keystone, the `HolonAST → Hologram` rename, ruled void at `341eb81e8`; and `src/holon/`, the home arc 294 was owed, was minted four days before this post's day by an arc-255 commit, `d43f75887` on 08-26, moving the VSA algebra out of `runtime.rs`.
+R6 records an afternoon that started at "can `:wat::core::string` become `:wat::string`?" and descended eight layers — is `join` in it, what does `join` accept, `Seqable`, what about the elements, `str` is partial, the total renderer already exists, adopting it broadcasts a crate name, the tag namespace, the trait — and at the floor of nearly every layer found the thing already built and already right. Nothing shipped. 1263 sites became three items.
+
 
 R6's structural claim is what the four-axis design answers:
 
@@ -42,7 +43,7 @@ The builder had already named the condition that makes it inescapable:
 
 The entire record is in the apparatus's hand, which means it is authored by the one party that cannot check it. A registry is not the apparatus's map. It is the code's own declaration, at the site, refused by the compiler when absent.
 
-R7 catalogues four walls firing on their own author in a single afternoon, under the rune `MVRVS AVCTOREM NON NOVIT` — a wall does not know who wrote it. The central floor came back 28 red while the rider's own eight-test gate came back 8/8 green. The `no_inlined_edn` lint convicted three string literals written that hour by the stone it was defending. The totality wall refused its author's own probe declaration at check time, because `cosine` returns a `CosineOutcome` and the draft had written `-> f64`; the builder, on sight:
+R7 catalogues four walls firing on their own author in a single afternoon, under the rune `MVRVS AVCTOREM NON NOVIT` — a wall does not know who wrote it. The central floor came back 28 red while the rider's own eight-test gate came back 8/8 green. The `no_inlined_edn` lint convicted that stone's own probe — three string literals written that hour. The totality wall refused its author's own probe declaration at check time, because `cosine` returns a `CosineOutcome` and the draft had written `-> f64`; the builder, on sight:
 
 > "heh.. we made holon total the other day.... some ops can fail... gotta match on them..."
 
@@ -64,7 +65,7 @@ The axis is declared in `wat`, not in Rust. `wat/runtime-meta.wat` gains `(:wat:
 
 A green build proves nothing about which direction that generation runs, so the door was broken. `:Partial` was renamed in the `.wat` file and the Rust went red on cue — `error[E0599]: no variant … named 'Partial' found for enum 'Totality'`, four times, `EXIT=101` — then renamed back. The wat is the source of truth because the Rust cannot survive without it.
 
-Four variants shipped, and the fourth is the decision the rest of the day rests on:
+Four variants shipped, and the seam commit's lesson list puts the fourth first:
 
 | variant | meaning |
 |---|---|
@@ -75,7 +76,7 @@ Four variants shipped, and the fourth is the decision the rest of the day rests 
 
 Collapsing `Unreviewed` into `Partial` would conflate "cannot" with "did not look," and a guessed `:Total` is a lie inside a fence that admits code into a `where`. It is default-deny, and it is the only variant expected to disappear.
 
-Orthogonality got stated on day one and never derived from anything: `i64::/` is pure, and deterministic, and undefined at a zero divisor. Three axes, three independent answers, one verb.
+Orthogonality was stated that morning and derived from nothing: `i64::/` is pure, and deterministic, and undefined at a zero divisor. Three axes, three independent answers, one verb.
 
 ## 01:08 — declaring nothing becomes illegal
 
@@ -95,7 +96,7 @@ This is the hinge for all four axes, and the stone states why in a sentence writ
 
 > A clean build IS the proof, and **no search pattern of mine can be wrong about it** — which matters, because one was again.
 
-430 sites got edited. All 430 got the identical line, `@Total Unreviewed`, including doc blocks that plainly describe partial behaviour. Seeding from the existing hand-lists would have made the sweep judgement-bearing and a mis-seeded verb invisible; sweeping with one constant leaves every ruling still to be made and countable. The commit *subject* says "430 verbs declare" and that headline is off by one against its own body: `431 registration sites · 431 declare · 0 missing`. 430 is the number of sites the sweep edited, because one — `src/intrinsic/i64.rs:171` — already carried the directive.
+430 sites got edited. All 430 got the identical line, `@Total Unreviewed`, including doc blocks that plainly describe partial behaviour. Seeding from the existing hand-lists would have made the sweep judgement-bearing and a mis-seeded verb invisible; sweeping with one constant leaves every ruling still to be made and countable. 430 is the number of sites the sweep edited, which is not the number that declare: `src/intrinsic/i64.rs:171` already carried the directive, so 431 sites declare when the build comes back green.
 
 Three tests went red, and all three were this stone's doing. Two of them were `probe_arc255_axes_are_declared_not_derived`:
 
@@ -161,7 +162,7 @@ LISTED_BUT_NONDETERMINISTIC   4   macro-call-site · fresh-symbol · keys · val
 LISTED_BUT_TOTAL_PARTIAL      1   :wat::i64::/
 ```
 
-Zero effectful verbs blessed, across 202 entries. Default-deny had held perfectly on the axis that matters most.
+Zero effectful verbs blessed. Default-deny had held perfectly across all 202 entries.
 
 The stone's own first answer was wrong. It opened by removing `:wat::hashmap::keys` and `values` as drift, and the removal is retracted. The builder's question is what broke it open:
 
@@ -194,7 +195,7 @@ The Layer-1 baseline had reserved `expand_time_legal` on 2026-06-21 and never bu
 
 The expand-time axis walked the remaining rungs in under an hour.
 
-`985be9a78` at 14:39 makes `@ExpandTime` required — `DocError::MissingExpandTime` at `crates/wat-doc/src/lib.rs:250`, raised at `:721`. The scoreboard in the body is `431 registration sites · 431 declare · 0 missing`, and the 202-name allow-list is untouched with zero diff: the mandate and the derivation are deliberately separate stones. The door was broken again, on `:wat::i64::+` this time, and the error named that verb. The axes probe's claim was extended in advance rather than patched afterwards — `assert_eq!(doc.expand_time, ExpandTime::Unreviewed, "@ExpandTime is parsed from the doc, not inferred")` — because `@Total`'s equivalent stone had been briefed against `-p wat-doc -p wat-macros` and so could not see three reds living in the `tests/` tree, which belongs to the `wat` package.
+`985be9a78` at 14:39 makes `@ExpandTime` required — `DocError::MissingExpandTime` at `crates/wat-doc/src/lib.rs:250`, raised at `:721`. Its subject reads "430 verbs declare"; its body reads `431 registration sites · 431 declare · 0 missing`. A commit subject is a headline, not a measurement — 430 is once again the count the sweep edited, because `fresh-symbol` already carried the directive, and 431 is the population. The 202-name allow-list is untouched with zero diff: the mandate and the derivation are deliberately separate stones. The door was broken again, on `:wat::i64::+` this time, and the error named that verb. The axes probe's claim was extended in advance rather than patched afterwards — `assert_eq!(doc.expand_time, ExpandTime::Unreviewed, "@ExpandTime is parsed from the doc, not inferred")` — because `@Total`'s equivalent stone had been briefed against `-p wat-doc -p wat-macros` and so could not see three reds living in the `tests/` tree, which belongs to the `wat` package.
 
 `f84f37ba0` moves 141 blessings home, each carrying its group's reasoning. The rider refused to transcribe two of them and was right: `keys` and `values` are accepted arms of the predicate while a comment eight lines below still claimed expand-1 had removed them. Expand-1 removed them, retracted the removal before shipping, and corrected one copy of the paperwork. A patch that fixes one copy of a claim has fixed one copy of a claim — introduced by the retraction inside the stone whose whole job was auditing that class.
 
@@ -223,7 +224,7 @@ What survives is not zero hand-lists. It is two residues of 11 and 59 names, and
 
 That invariant is a comment, not a check. Add a registered verb to the 59-name residue and nothing fires. The 70 unhomed verbs still keep their rulings in a `matches!` rather than at a registration site, and they retire row by row as the homing campaign reaches them — which is why the seam's closing line reads as it does: every axis converged on the same residue, verbs with no home, and the homing campaign and the property campaign are one campaign with both worklists on disk.
 
-And `is_expand_time_legal` still cannot see the property where it actually lives. The honest instrument for expand-time determinism is expanding a macro twice and comparing the output, which tests the property where it lives, for every verb, with no curated list at all. It is written down in `b1a456d47`'s own note. It is not built.
+And `is_expand_time_legal` still measures a verb where the property belongs to a use. The honest instrument for expand-time determinism is expanding a macro twice and comparing the output — that tests the property where it lives, for every verb, with no curated list at all. It is written down in `b1a456d47`'s own note. It is not built.
 
 ## 23:34 — the authority cannot answer about itself
 

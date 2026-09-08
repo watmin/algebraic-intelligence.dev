@@ -1,6 +1,6 @@
 ---
 title: "The Coat That Fit"
-description: "June 25 – August 16, 2026: two arcs that share a close tracker because they cannot close independently. Arc 293 opened on a bug the builder graded catastrophic — a wat struct and a wat record could not be operated on uniformly — and fixed it by collapsing three Value variants into one and deleting inheritance outright. Pushing the same question one layer down surfaced arc 294: the holon record was built backwards, with the derived VSA hologram in the identity slot and the source EDN demoted to a cache. The cure put the data back in its chair. The crowning recognition — that the central type's name had been lying since the bootstrap — was ruled void by the builder seven weeks later, and every deliverable it was supposed to crown had already shipped."
+description: "June 25 – August 16, 2026: two arcs that share one close tracker because they cannot close independently. Arc 293 opened on a bug the builder graded catastrophic — a wat struct and a wat record could not be operated on uniformly — and answered it by collapsing three Value variants into one and deleting inheritance outright. Pushing the same question one layer down surfaced arc 294: the holon record was built backwards, the derived VSA hologram sitting in the identity slot while the source EDN was demoted to a cache. The cure put the data back in its chair. The crowning recognition — that the central type's name had been lying since the bootstrap — was ruled void by the builder seven weeks later, and every deliverable it was supposed to crown had already shipped."
 covers: 2026-06-25/2026-08-16
 written: 2026-09-08
 backfill: true
@@ -30,7 +30,7 @@ Arc 293 opened on a defect with no workaround. `293/REALIZATIONS.md:168`:
 
 A `wat` struct and a `wat` record are both bags of named properties. They differed in three `Value` variants, three constructors, three identity fields, and 256 match sites. Any function that wanted to read a field had to know which of the three it was holding, which meant no function could be written once.
 
-Three realizations landed that day. R1 re-derived structural surfaces by hating the word "parent". R3 found the factorization — holder by surface, what a thing is underneath what it shows. R2 is the shape the whole unit turns on, `293/REALIZATIONS.md:163`:
+Three realizations landed that day. R1 re-derived structural surfaces by hating the word "parent". R3 found the factorization: holder × surface — what a thing is, underneath what it shows. R2 is the shape the whole unit turns on, `293/REALIZATIONS.md:163`:
 
 > "the 'holder of things' is always a struct under the hood, right? … wat structs, records, holon-records should all be backed by a single common struct and then the 'struct-ness' or 'record-ness' is a thing on that common struct — { properties-as-struct, kind-as-enum }."
 
@@ -42,7 +42,7 @@ The fix was not a shim over the three. It was a decomplection: one property bag,
 
 ## The cosines, and the detour turns out to be the body (2026-06-26)
 
-294 opened the next day on a probe the builder framed as a question rather than a plan — whether a simple EDN measurement works or does not.
+294 opened the next day on a probe the builder framed as a question rather than a plan: "294 — i think we're going to prove a simple edn measurement does or doesn't work?"
 
 The first swing disconfirmed. `(cosine {:a 1 :b 2} {:a 1 :b 3})` over plain hand-typed EDN was rejected at type-check: the surface demanded `HolonAST | Record | Vector` and never EDN (`294/REALIZATIONS.md:127–136`). The data was not the thing you could measure. The derived hologram was, and the surface made you name the derivation before it would let you ask.
 
@@ -61,9 +61,13 @@ That is the project's origin walking back into the room. `294/REALIZATIONS.md:11
 >
 > "wat was my detouring all of the holon work because i fucking hate rust but need rust's perf."
 
-The chronicle starts with holon, a VSA library. `wat` was the route to holon's performance, and the route had become the body of the work. `afb731de3` landed direct-EDN measurement over collections and scalars the same day; `e7ad4dec6` landed the showpiece the day after — the same `#holon` bytes read in Clojure and in `wat`. `ef0b4b4d4` notes that `cargo wat`'s first run is the homecoming cosines.
+`afb731de3` landed direct-EDN measurement over collections and scalars the same day; `e7ad4dec6` landed the showpiece the day after — the same `#holon` bytes read in Clojure and in `wat`. `ef0b4b4d4` notes that `cargo wat`'s first run is the homecoming cosines.
 
-The ignition quotes are at `294/REALIZATIONS.md:16–19`:
+The chronicle starts with holon, a VSA library. `wat` was the route to holon's performance, and by June the route had become the body of the work. Three months of it had gone by without a holon thing, and the first one measured came back rejected by the substrate's own surface.
+
+## One inversion wearing six faces (2026-06-26)
+
+The ignition, `294/REALIZATIONS.md:16–19`:
 
 > "we built it well enough for us to find what i'm calling catastrophic flaws … we can decide to gut what we did and do it better."
 >
@@ -72,8 +76,6 @@ The ignition quotes are at `294/REALIZATIONS.md:16–19`:
 > "i was never happy with the tagged stuff … it was a bridge to its annihilation."
 >
 > "edn goes in and vectors get built … holon can host all of edn."
-
-## One inversion wearing six faces (2026-06-26)
 
 `294/DESIGN.md:19–24` states the disease in one sentence and the cure in one more:
 
@@ -96,7 +98,7 @@ Flaws 1 through 4 became strikes. Flaw 5 was re-sorted later and is still open. 
 
 ## The strikes (2026-06-28 → 06-29)
 
-Six commits across two days, four of them load-bearing:
+Seven commits across two days:
 
 | commit | date | what |
 |---|---|---|
@@ -112,7 +114,7 @@ The builder in `9d1e3ff3b`'s body:
 
 > "annihilate the variance ... i break shit because its already broken, successfully."
 
-The inheritance kill is the one that reaches furthest. `AggregateDef.parent` was deleted, and with it `collect_all_record_fields`, `inherited_count`, `ROOT_PARENTS` and `abs_idx`. The reason it could go is that `parent` had been a stringly-typed shadow of the holder tag the collapse had just introduced — the same discriminator, spelled as a string, in a second place. His ruling on it, at `CLOSE-SEQUENCE-293-294.md:42`, is four words:
+`c7572929d` deleted `AggregateDef.parent`, and with it `collect_all_record_fields`, `inherited_count`, `ROOT_PARENTS` and `abs_idx`. It could go because `parent` had been a stringly-typed shadow of the holder tag the collapse had just introduced — the same discriminator, spelled as a string, in a second place. The builder's ruling on it, at `CLOSE-SEQUENCE-293-294.md:42`, is four words:
 
 > "parent as an attribute is wrong"
 
@@ -146,11 +148,11 @@ R7 also had to rule on a collision that turned out not to be one. The purity axi
 
 Item 9a made a bare aggregate name the kwargs macro and demoted positional construction to the type-name prime `:ns::T'`. The flip landed and the floor went to 645 failures.
 
-The descent runs through twenty-three commit subjects, one per drop: `967aa344e` takes 645 to 165, then 165→150, 131→100, 100→79, 79→76, 76→74, 74→73, 73→69, 69→65, 65→64, 34→26, 22→18, 18→15, 15→13, 13→9, 9→7, 7→6, 6→4, 4→3, 3→2, and `6d6bc6855` lands the floor at 1.
+The descent is written into twenty-three commit subjects, one per drop — `967aa344e` 645→165, `525cd24cc` 165→150, `b6d0bc37f` 100→79, `73cfeefeb` 34→26, `1b9a9c43b` 15→13, `295186158` 4→3, and `6d6bc6855` floor = 1.
 
 The record declines to make the descent the point. `294/REALIZATIONS.md:551`: "the apparatus **guessed the class wrong nearly every time**, and each wrong guess had the same author: an assertion that could not speak." Seven roots, none predicted from the failure text — including `fadb03dfa`, "macro registration is SEQUENTIAL during expansion," which was the whole `defservice`/`deftest` cluster in one line.
 
-The miniature is at `:568–:574`. `peer_ipc` had been staring the builder down since the flip; his read was that it was likely simpler than anyone realized. It was two lines. A bare-positional construction errored, and the `Err` arm called `drain_server_stderr(&server)` to report the error — against a child still blocked on `readln`. The diagnostic path deadlocked on the failure it exists to report, and the test around it had reasoned carefully about hangs in the happy path while never considering that the error path could hang first.
+The miniature is at `:568–:574`. `peer_ipc` had been staring the builder down since the flip, and his read of it was "likely simpler than we realize." It was two lines. A bare-positional construction errored, and the `Err` arm called `drain_server_stderr(&server)` to report the error — against a child still blocked on `readln`. The diagnostic path deadlocked on the failure it exists to report, and the test around it had reasoned carefully about hangs in the happy path while never considering that the error path could hang first.
 
 His demands across that stretch (`:526`, `:527`, `:532`):
 
@@ -214,7 +216,7 @@ The void arrived out of an arc-255 afternoon, on the same day as `294.g`, the fi
 
 294.g is flaw 3 closing. The discriminator between a holon record and a base record moved off the body's shape and onto the registry's `Nature`, so the hologram stopped needing to ride the wire and started being derived on arrival. 294.h is flaw 4, and the builder's line in its body is the whole justification: "i don't think we need HolonRepresentable at all now."
 
-Three of the strikes carry a beat the strike itself does not.
+Three of the strikes have a second half.
 
 **294.i — the correction that became the design.** The apparatus had read `opaque_nil` as a missing encoder and proposed writing encoders for the VSA types, which the commit body says would have meant inventing EDN for things that have none. The builder's model:
 
@@ -241,7 +243,7 @@ Neither arc has closed. `CLOSE-SEQUENCE-293-294.md:207` still shows 293.5 gated 
 
 What did land is the inversion, corrected in every face it wore. Identity is the EDN fields; the hologram is a derived index; the wire ships plain EDN under a real home; one holder-dispatched constructor builds all three kinds; inheritance is gone because its discriminator already existed with a better spelling. None of that depended on the rename, and none of it moved when the rename stopped existing.
 
-The keystone is the exception, and it fails in a way worth separating from ordinary error. `HolonAST` was minted for VSA, accreted a code-AST role and a wire role, and the arc read that accretion as the name having lied. That reading was half right: the borrowed roles were real and shedding them was correct. What it got wrong is what remained — still a syntax tree, one for building holons rather than for code — and it got it wrong while every individual measurement was accurate. The apparatus counted `Hologram`'s references correctly and filed them under the wrong heading, because it was grepping a map it had drawn. The correction could not come from the party holding the pen.
+The keystone is the exception, and it failed differently from ordinary error. `HolonAST` was minted for VSA, accreted a code-AST role and a wire role, and the arc read that accretion as the name having lied. That reading was half right: the borrowed roles were real and shedding them was correct. What it got wrong is what remained — still a syntax tree, one for building holons rather than for code — and it got it wrong while every individual measurement was accurate. The apparatus counted `Hologram`'s references correctly and filed them under the wrong heading, because it was grepping a map it had drawn. The correction could not come from the party holding the pen.
 
 A campaign can be entirely right about the rot and entirely wrong about the cure, and the two verdicts are independent. A recognition is not a finding until the other road has read it.
 

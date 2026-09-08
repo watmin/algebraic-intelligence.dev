@@ -11,7 +11,7 @@ sidebar:
 
 > *"do we believe that wat-gen is now an exemplar?... did we empower the next set of wat engineers to bulid robust tests cleanly?"*
 
-That question is where the word entered the corpus, and the front is the attempt to answer it for one subsystem rather than for the tree.
+The word had been a label in this corpus since May. That question is where it stops being a description and becomes a bar — and the front is the attempt to clear it for one subsystem rather than for the tree.
 
 `wat-rete` is the rules engine inside `wat` — a RETE network with `defrule` and `defquery` on the Clara and Clojure spelling. It is the largest module in `src/`, larger than the runtime. It was chosen not because it was the worst but because it was the furthest along: the first subsystem, in the builder's words, **to demand totality**.
 
