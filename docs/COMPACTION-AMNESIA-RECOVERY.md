@@ -67,27 +67,30 @@ Do these before responding to any request. Do not skip ahead.
 
 ### 0 — THE FRESHNESS PROBE. Run it FIRST, before you trust one line below.
 
+Four structural facts this map asserts. Each is one command; each stays true
+across ordinary commits and goes false exactly when the map has drifted. **A hash
+would rot on every commit and teach you to ignore the alarm — these do not.**
+
 ```bash
-git -C /home/watmin/work/holon/algebraic-intelligence.dev log --oneline -1
+cd /home/watmin/work/holon/algebraic-intelligence.dev
+echo "A $(grep -c '^### ⛔ CURRENT' docs/BATCH-OUTLINES.md 2>/dev/null || echo MISSING)"   # expect 1 (or the file is gone)
+echo "B $(ls src/content/docs/blog/fronts/ 2>/dev/null | wc -l)"                          # expect >= 2
+echo "C $(grep -o 'check-[a-z-]*\.mjs' package.json | sort -u | wc -l)"                   # expect 6
+echo "D $(ls src/content/docs/blog/story/ | tail -1)"                                     # expect series-008-*
 ```
 
-**This file was last tended against `4d3f4b8`** (2026-09-08, the August-backfill
-campaign, nothing pushed). Compare:
+| result | what it means |
+|---|---|
+| **all four as expected** | the map matches the territory. This licenses **nothing further** — you still run every step below. |
+| **A = 0, file present** | something **appended** a new current-state block instead of replacing one. §3's breadcrumb is untrustworthy; use the git log. |
+| **A = MISSING** | the campaign shipped and its tracker was deleted as designed. §3's steady-state rule is the whole rule again. **Correct, not stale.** |
+| **B, C or D off** | §3/§4 describe a site that no longer exists. Treat every claim below as **provisional**, trust `git log` + the live `src/`, and **re-tend this file before you leave**. |
 
-- **HEAD == `4d3f4b8`** → the map matches the territory. This licenses *nothing
-  further* — you still run every step below.
-- **HEAD is a descendant** → read `git log 4d3f4b8..HEAD` and treat every claim
-  in §3/§4 as **provisional** until the log agrees with it.
-- **HEAD is unrelated, or the campaign breadcrumb (§3) is gone** → this file is
-  **stale**. Trust the log and the live `src/` over its every sentence, and
-  re-tend it before you leave.
-
-A match is not a pass; a mismatch is an alarm. **Added 2026-09-08 because this
-file had no probe at all** — and the instance that discovered that had woken
-holding a confident, fabricated memory of one (it "recalled" a marker reading
-`aidev HEAD ≥ 71e10d9`, a string that appears nowhere in this file or this repo).
-The hole and the phantom that filled it are the same failure. This probe is the
-wall.
+**Added 2026-09-08, because this file had no probe at all** — and the instance
+that discovered that had woken holding a confident, fabricated memory of one (it
+"recalled" a marker reading `aidev HEAD ≥ 71e10d9`, a string that appears nowhere
+in this repo). The hole and the phantom that filled it are the same failure; see
+FM-9. **A match is not a pass. A mismatch is an alarm.**
 
 1. **Read this file whole** (you are here).
 2. **Confirm the workspace.**
