@@ -73,7 +73,7 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | 1 | — | — | — | — | — | — |
-| wat Under Its Own Law | 9 | 9 | — | — | — | — | — | — |
+| wat Under Its Own Law | 9 | 7 | *2 in flight* | — | — | — | — | — |
 | Ars Culta | 2 | 1 | **1** | — | — | **1** | — | — |
 | The Exemplar | 3 | 3 | — | — | — | — | — | — |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
@@ -87,6 +87,8 @@ Only slots past SLOT are listed. Everything else is in §2.
 
 | slot | state | consonare | notes |
 |---|---|---|---|
+| `uiol-007` (arc 170 closure) | **IN FLIGHT — reader cast** | — | scoped to the CLOSE only; the arc's body is already served as 210 chunk pages |
+| `uiol-006` (the DoS incident) | **IN FLIGHT — reader cast** | — | one day, 2026-07-25; the batch's only *incident* unit |
 | `ars-culta/002` (experiri) | **NOTES ✓ + VERIFIED** | — | notes at `docs/notes/ars-culta-005-experiri-NOTES.md`; scope, orphan-blob find, byte-identity and ledger strike all re-checked against the disk by the orchestrator. **BLOCKED on the builder: no verbatim quotes exist in the repo** (see below) |
 
 **⛔ `ars-culta/002` blocker — consonare rule 11.** The repository contains **no
