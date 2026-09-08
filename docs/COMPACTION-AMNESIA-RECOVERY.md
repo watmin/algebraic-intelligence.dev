@@ -334,6 +334,34 @@ guard makes the declared-close *heading* mechanical (build fails without it);
 populated-vs-None stays consonare's soft call. Don't ship prose you haven't
 measured against the anchor.
 
+### FM-8 — A `cd` in a compound command persists, and the next `git commit` lands in the WRONG REPO
+
+**Happened 2026-09-08, caught by the curare, not by a guard.** A verification
+block ran `cd ../wat-rs && git log ...`. The Bash tool's working directory
+**persists between calls**. The very next command was
+`git add -A docs/ && git commit` — intended for this repo — and it committed
+**inside `wat-rs`**, a repo §1 marks read-only. Worse, `git add -A docs/` swept up
+one of the builder's own untracked files (`BRIEF-native-where-vsa-ops.md`, 272
+lines) and committed it under an unrelated message.
+
+It was never pushed. Recovered with `git reset --mixed origin/main`, which
+restored `wat-rs` to `3dc4f62b7`, 0 ahead, and returned the builder's file to
+untracked exactly as he left it. `--mixed`, never `--hard`: hard would have
+deleted his work.
+
+**The cure is mechanical, not vigilance.** Every git command that WRITES uses an
+explicit `-C`:
+
+```bash
+git -C /home/watmin/work/holon/algebraic-intelligence.dev add -A docs/
+git -C /home/watmin/work/holon/algebraic-intelligence.dev commit -F -
+```
+
+§1's iron rule already said "use `git -C <path>` — never `cd`". This is that rule
+being proven by its violation. The related tell: an unexpected hash. `wat-rs`'s
+HEAD read as a 9-char hash carrying *this project's* commit message, which is
+what surfaced it — **if a sibling repo's HEAD says something you wrote, stop.**
+
 ### FM-7 — Citing an archived tracker as the current state
 The old planning trackers live in `docs/archived/` (PROGRESS, TIMELINE,
 CONTENT-TRACKER, PLAN) — historical, **not maintained** (the dir's `README.md`

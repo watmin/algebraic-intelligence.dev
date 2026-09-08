@@ -51,6 +51,51 @@ is the one time they aren't, so it gets said out loud rather than papered over.
 > **deleted when the batch ships**. It is not a perpetual PROGRESS.md.
 > **Where it disagrees with the disk, the disk wins and this file is stale.**
 
+### ⛔ CURRENT — 2026-09-08. Replace this block in place; never append.
+
+**Nothing is pushed.** `algebraic-intelligence.dev` is **34 commits ahead of
+origin/main**, tree clean. Push is deploy; no deploy has happened.
+
+**Wired and building** (`npm run build` green, 668 pages, largest 0.77 MB):
+- `blog/story/series-006-036-one-machine-all-the-way-down` — the hinge. Story
+  → Fronts → Epilogue is live in the nav; the epilogue now sits last.
+- `blog/fronts/index` + `blog/fronts/under-its-own-law/index` — the track scaffolding.
+- `blog/fronts/under-its-own-law/006-a-caller-is-not-traffic` — **consonare 9**.
+
+**Drafted, NOT wired** (`docs/drafts/`): `uiol-007` and `ars-culta-002`, both
+**stuck at consonare 7 after four casts and three correction passes each**.
+The escalation rule in this file says stop correcting them. The open fork is
+recorded below and is the builder's.
+
+**Twelve units at SLOT**, all measured. Rooms already mapped for three: arc 118's
+closure (`ba3bd70cb`, floor 4772/4772, a four-month arc), arc 296's reversal
+(INSCRIPTION added `7f17054a8` 06-30, **deleted `3a4f49202` 07-01** — closed and
+reopened in a day), and The Exemplar's opening (`de827fb4c` 08-24, which opens
+with a curare on its own first day).
+
+**Unruled by the builder, and all three cost more after a push than before it:**
+1. **`uiol-007`: rewrite from notes, or ship at 7?** Four casts, never above 8;
+   the scars are structural. Orchestrator's lean: rewrite.
+2. **Post titles.** Every one is a writer's proposal. Titles are always the
+   builder's, and the title is the URL.
+3. **The hinge's quotes come from the working session**, not from commits —
+   a different provenance from every other post, and the builder's words going
+   public. His to strike.
+
+**One factual fix owed on `ars-culta-002`** regardless of the ship/rewrite call:
+it says *the gate* struck two ledger rows, three times including the headline.
+Verified — the gate was live in that commit (`ledger:check` in `package.json`,
+invoked at `publish.mjs:133`) — but the artifacts show the **commit** moved the
+rows and the gate is *why they could not stand*. The causal claim is one step
+stronger than the evidence.
+
+**Sibling state:** `wat-rs` `3dc4f62b7`, 0 ahead, three untracked files that are
+the builder's — do not touch. `datamancy.dev` has **moved past the cutoff**:
+`peragrare` minted and warded 2026-09-07/08 (`2ce6dd5`, `7980bf4`). That is new
+Ars Culta material for the first weekly, not this batch.
+
+### The pipeline states
+
 ### The pipeline states
 
 `SLOT` → `NOTES` → `DRAFT` → `CONSONARE` → `VERIFIED` → `WIRED` → `SHIPPED`
