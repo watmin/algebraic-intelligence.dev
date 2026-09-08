@@ -41,6 +41,69 @@ is the one time they aren't, so it gets said out loud rather than papered over.
 
 ---
 
+## 0 — STATUS LEDGER
+
+> ⚠ **This tracker is bounded and mortal.** `docs/archived/README.md` records that
+> this project's hand-maintained trackers drifted and were retired (FM-7): *"the
+> live state of the site is the git log → the rendered content → the memory."*
+> That still holds. This ledger is legitimate only because it is **a campaign
+> tracker with a declared death**: it covers 18 posts of one backfill batch and is
+> **deleted when the batch ships**. It is not a perpetual PROGRESS.md.
+> **Where it disagrees with the disk, the disk wins and this file is stale.**
+
+### The pipeline states
+
+`SLOT` → `NOTES` → `DRAFT` → `CONSONARE` → `VERIFIED` → `WIRED` → `SHIPPED`
+
+| state | means | who |
+|---|---|---|
+| **SLOT** | measured week + volume; no substance yet | — |
+| **NOTES** | working notes produced (the `series-008-002-NOTES.md` form) **and weighed against the disk by the orchestrator** | reader agent → orchestrator |
+| **DRAFT** | post drafted from notes + gold anchors + WRITING-GUIDE | writer agent |
+| **CONSONARE** | graded by an **unprimed** third agent; verdict + score recorded | consonare cast |
+| **VERIFIED** | every hash / date / `file:line` fact-checked — **consonare does NOT check facts**, so this is the orchestrator's job and it is where arc 109 got mis-summarized once already | orchestrator |
+| **WIRED** | nav entry + `check-nav` + `check-contributions` green | orchestrator |
+| **SHIPPED** | committed | orchestrator |
+
+### Per-front progress — 4 concurrent, orthogonal tracks
+
+Fronts advance independently and will not stay in step. That is the point; do not
+batch them into lockstep waves.
+
+| front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
+|---|---|---|---|---|---|---|---|---|
+| The Story (hinge) | 1 | 1 | — | — | — | — | — | — |
+| wat Under Its Own Law | 10 | 10 | — | — | — | — | — | — |
+| Ars Culta | 5 | 5 | — | — | — | — | — | — |
+| The Exemplar | 1 | 1 | — | — | — | — | — | — |
+| Services in Anger | 1 | 1 | — | — | — | — | — | — |
+| **total** | **18** | **18** | — | — | — | — | — | — |
+
+### Live slot detail
+
+Only slots past SLOT are listed. Everything else is in §2.
+
+| slot | state | consonare | notes |
+|---|---|---|---|
+| `ars-culta/005` (W10 — experiri) | **IN FLIGHT — reader cast** | — | pilot; validates the pipeline before any fan-out |
+
+### Source shapes a reader must be told about
+
+Three, and a reader pointed at only the first will report an empty week:
+
+1. **`docs/arc/**/REALIZATIONS*.md`** — may be **appended to on a branch**. sns-sqs
+   added R69 to arc 278's log; a file-level diff shows only "+70 lines" and loses it.
+2. **`docs/excursus/2026/08/**`** — `sns-sqs` **only** (84 files). Full strike
+   vocabulary (BRIEF / EXPECTATIONS / SCORE / HANDOFF ×16, DESIGN, NOTE, PROBE).
+   Not on `main`, not in the arc tree, invisible to the realizations mirror.
+3. **Ars Culta's sources are not in `wat-rs` at all** — `datamancy.dev`,
+   `datamancy`, `pulsare`, `cingere`, `scratch`, and this repo.
+
+**Walk the commits, not the files.** Globbing finds the end state and loses the
+sequence, the intent, and anything folded into an existing document.
+
+---
+
 ## 1 — The hinge · `series-006-036` · The Story's last post
 
 **Status:** outline ready. **Written:** now, from the present, looking back.
