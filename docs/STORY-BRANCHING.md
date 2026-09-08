@@ -133,12 +133,46 @@ current tree it discriminates correctly without tuning: `wat-revival` did real
 work in the window (the `:- [...]` codemod — 1675 sites across 386 files) and
 authored **zero** docs, so it gets no track and that work belongs to the trunk.
 
-### 2.3 Parked is not dead
+### 2.5 The contributions close — front posts owe it too
 
-`PARKED IS NOT DEAD` is already the substrate's own language (arc 294's `SEAM.md`).
-A front track that stops needs an honest terminal state, not silent abandonment.
-**[OPEN]** — what that state is called on the page, and whether it is a frontmatter
-field, a closing section, or a nav marker.
+A front post carries `## Likely Contributions to the Field` on the same terms as
+a trunk post: **if contributions may have happened, note them; if there is
+nothing, there is nothing.** The heading is always present (mechanical, guarded);
+populated-vs-None stays consonare's soft call.
+
+The builder's gloss, which is sharper than what `check-contributions.mjs`
+currently says and should be carried into `WRITING-GUIDE.md`:
+
+> *"this is a place where we reflect on something we may have legitimately built
+> that's beyond common knowledge."*
+
+Not a summary, not a victory lap — a check on whether the work went past what is
+commonly known. Consequence: the guard extension (§7.1) enforces **both**
+nav-wiring and the contributions heading over `blog/fronts/**`.
+
+### 2.3 Track status — a front says what it is
+
+**SETTLED 2026-09-07.** A track carries `status` in its index frontmatter:
+
+```yaml
+status: live | landed | parked
+parked: 2026-11-02        # date + one line of why, when parked
+```
+
+- **live** — running. The default.
+- **landed** — merged and told. Its arrival post exists.
+- **parked** — stopped without landing. `PARKED IS NOT DEAD` (arc 294's `SEAM.md`)
+  — it may resume. Carries a date and one line of why.
+
+**Why this is not optional.** An unlabelled track that goes quiet does not read
+as "paused"; it reads as abandoned. This site proved that on itself: it stopped
+updating for **76 days** (2026-06-23 → 2026-09-07) and said nothing, and a reader
+could only assume the work had been given up. The builder's own words:
+
+> *"we stopped updating the website for 2 months… readers can only assume we gave
+> up. So — you can pick a label; it's on us to label them correctly."*
+
+The mechanism is cheap. Keeping it honest is the standing obligation.
 
 ### 2.4 The cadence rule
 
@@ -324,8 +358,16 @@ The Epilogue                     ← eternal, order 999, last
 relative to each other — is answered on `fronts/index.md` with a Mermaid branch
 diagram carrying real dates (the repo already depends on `astro-mermaid`).
 
-**[OPEN]** — front ordering within the group (by open date? by activity?), and
-whether a closed front collapses or moves to an "arrived" sub-group.
+**Front ordering is by when the front OPENED** — time of creation, oldest first
+(ruled 2026-09-07). Not by activity, not by status; a front that goes quiet does
+not move. Current order:
+
+1. **wat Under Its Own Law** — continuous with the trunk; the oldest.
+2. **The Exemplar** — opened 2026-08-24.
+3. **Services in Anger** — opened 2026-08-30.
+
+**[OPEN]** — whether a landed or parked front collapses by default in the nav.
+Ordering itself is settled.
 
 ## 5 — The cutoff
 
@@ -392,16 +434,62 @@ substrate, the name is worth re-casting.
 
 1. **Extend `check-nav.mjs` and `check-contributions.mjs`** to cover
    `blog/fronts/**` before the first front post exists. Non-negotiable — §3.1.
-2. **A page-size wall.** `300-wat-source-is-edn` already renders to a **1.2 MB**
-   single page; arc 278's realizations grew 2,755 → **12,329 lines** and would
-   render to roughly **4.5 MB** — past the ~3.5 MB that forced the arc-170
-   chunking. `check-pages` counts that each source rendered; it never measures
-   what it rendered. The 170 lesson was absorbed as a one-off migration, not a
-   wall. **This blocks `npm run mirror`** — running it today ships the 4.5 MB page.
-3. **Multi-front realizations mirror.** `mirror-realizations.mjs` hardcodes
-   `SRC_ROOT = "../wat-rs/docs/arc"` — one working tree, therefore one branch. It
-   is structurally incapable of seeing more than one front. Needs one pass per
-   front, each landing under that front's track.
+2. **The size wall — a build guard, measured in rendered bytes.** **File size is
+   the metric**: it is what Cloudflare actually constrains, and what broke us
+   before. `check-pages` counts that each source rendered; it never measures what
+   it rendered.
+
+   *Measured 2026-09-07 across the last build (555 HTML pages):* 535 are under
+   256 KB · 15 are 256–512 KB · 4 are 512 KB–1 MB · **1 is over 1 MB**
+   (`300-wat-source-is-edn`, 1.10 MB). The site's own record names two things
+   that broke: the arc-170 realizations at **~3.5 MB** and the BOOK at **4.2 MB**,
+   both *build-memory* hogs (not Cloudflare rejections).
+
+   > **WALL: fail the build on any rendered page > 1.5 MB.**
+
+   Nothing today exceeds it (max 1.10 MB), and it sits well under the 3.5 MB
+   known-breakage line — a real ratchet with headroom. An earlier proposal of
+   500 KB was **wrong**: it would have failed five pages that build fine today,
+   including already-chunked BOOK chapters.
+
+3. **The fragmenter — chunk on source file size.** Rendered ÷ source measures
+   **~3.3–4.6×** across the unchanged arcs (markdown → Starlight HTML), so ~4× is
+   the planning ratio.
+
+   > **FRAGMENT: any realizations source > 250 KB (≈1 MB rendered).**
+
+   Today that is exactly three files — `278-rules-engine` (**1,469 KB** source →
+   **~5.9 MB** rendered, past the arc-170 breakage line), `296-diagnostics-fully-edn`
+   (331 KB), `300-wat-source-is-edn` (328 KB). The next largest, `293` at 141 KB
+   (~0.56 MB), stays whole and sits comfortably under the wall. So in normal
+   operation the fragmenter keeps every page well clear and **the wall never
+   fires** — it is the backstop, not the routine.
+
+   **Section count is NOT the metric, and was rejected on the data.** A ~30-section
+   cutoff would catch only 278 (68 sections) and miss 296 (20) and 300 (17) — the
+   two pages already over 1 MB. Sections do not predict size: `170-slice-1` has 8
+   sections in 2,052 lines; `272` has 7 in 386. Inside 278 the sections run
+   **36 to 1,179 lines**.
+
+   **The break-er-up-er already exists.** `mirror-monoliths.mjs` chunks on
+   `/^## /` into `<NN>-<slug>.md` pages — that is how arc-170 became 206 pages. It
+   has simply never been pointed at the per-arc realizations. 278 probes clean for
+   it: 1 `#`, 68 `##` (all `## RN — …`), 235 `###` nested *inside* entries, so
+   `##` is a true top-level seam; 68 chunk pages, median 147 lines.
+
+   **Safety, per source.** mirror-monoliths' own comment says its split is safe
+   *"because the source has no `##` subheadings inside an entry body (verified)."*
+   That verification is per-file. The fragmenter must **refuse to chunk** a file
+   whose heading structure looks unsafe rather than silently mangling it.
+
+   **Expect total bytes to go UP.** arc-170's 206 chunks are 41 MB in `dist/`. The
+   win is that no single page is a hog, not that the site shrinks.
+
+3b. **UNRELATED LIVE RISK, found by the same measurement.**
+   `dist/demo-self-calibrating.mp4` is **22.10 MB** against Cloudflare Pages'
+   **25 MiB per-file** cap — 88% of the limit. A re-encode that grows it breaks
+   the deploy. File count is fine (1,710 of 20,000; chunking adds ~120).
+
 4. **`CHRONICLE-COVERAGE.md`: one row per front**, not one row per repo. Last
    reconciled 2026-06-17; currently the stale cache.
 5. **`WRITING-GUIDE.md` §Series-Specific Notes is wrong.** It describes "Series 6
@@ -416,13 +504,12 @@ substrate, the name is worth re-casting.
 
 - ~~The `language` front's name~~ — **SETTLED 2026-09-07: "wat Under Its Own Law."**
   intueri cast; builder ruled. §3.4
-- **[OPEN]** Whether a front post owes the `## Likely Contributions` close, or
-  whether that is a Story-only obligation (consonare Rule 13's scope). Decides
-  whether the guard extension enforces the heading or only nav-wiring.
-- **[OPEN]** The parked-front terminal state — `PARKED IS NOT DEAD` is already
-  the substrate's language, but a track needs somewhere to *say* it: frontmatter,
-  closing section, or nav marker. §2.3
-- **[OPEN]** Front ordering in the sidebar; closed-front presentation. §4.2
+- ~~Whether a front post owes the `## Likely Contributions` close~~ — **RULED
+  2026-09-07: YES, same rule as the trunk.** §2.5
+- ~~The parked-front terminal state~~ — **SETTLED 2026-09-07:** `status: live |
+  landed | parked` in the track index's frontmatter. §2.3
+- ~~Front ordering~~ — **RULED: by open date, oldest first.** §4.2
+- **[OPEN]** Whether a landed/parked front collapses by default in the nav. §4.2
 - **[OPEN]** Epilogue: sidebar re-placement only, no file move. §3.2
 - **[OPEN]** Whether the no-worktree doctrine (site recovery §1, wat-rs FM 7-bis)
   was revisited when the Grok front took its own worktree at
