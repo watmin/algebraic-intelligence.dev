@@ -8,7 +8,7 @@ sidebar:
   order: 1
 ---
 
-Backfill: this covers 2026-08-28 through 2026-08-30 and was written on 2026-09-08 from the commit bodies on both branches, the `docs/excursus/` tree, and the per-stone briefs, all still in the tree. Floor counts and program outputs quoted below are the record's — each is an orchestrator's own re-run, quoted from the commit that states it, and none were re-run for this post. Three days, two machines, 60 own commits, and one arc number nobody asked for — for the second time, with the same number.
+Backfill: three days, two machines, 60 own commits, and one arc number nobody asked for — for the second time, with the same number. This covers 2026-08-28 through 2026-08-30 and was written on 2026-09-08 from the commit bodies on both branches, the `docs/excursus/` tree, and the per-stone briefs, all still in the tree. Floor counts and program outputs below are the record's, quoted from the commit that states each one and not re-run for this post.
 
 Two branches, neither on the builder's desk. On `claude-compute`, `main` and `grok-rete` are merged on a third branch so someone can watch what their union actually does. On `sns-sqs`, a publish-subscribe surface gets built in userland because something needs one. Sixty own commits between 2026-08-28 12:14 and 2026-08-30 23:48, and across those three days both branches find out the same thing about their own instruments.
 
@@ -40,7 +40,7 @@ The doc's load-bearing claim — "across two full refreshes, every single failur
 
 > "the drifting thing is whatever main last made corpus-wide-illegal. Twice a name, once a form; next time assume neither."
 
-Two more findings ride in the same commit. A narrow census is a false all-clear — a grep found `Vector` and missed `HashSet`, and the floor going 41 → 38 instead of 41 → 0 is what said so; run the codemod and read its report. And FM 20: `wat-sync.sh` exited 0 on a red floor, committed by the gate's own author, fixed so the floor's status is the script's status.
+A narrow census is a false all-clear — a grep found `Vector` and missed `HashSet`, and the floor going 41 → 38 instead of 41 → 0 is what said so; run the codemod and read its report. And FM 20: `wat-sync.sh` exited 0 on a red floor, committed by the gate's own author, fixed so the floor's status is the script's status.
 
 ## SNS lands, and the Store cannot delete (08-30 03:18)
 
@@ -103,11 +103,9 @@ Why the write-up did not fire: both memory tags were dangling. The host was boot
 
 The correction itself, `331543758` at 14:03, is one commit: 21 files moved, 26 swept, 6 test files renamed from `probe_arc301_*` to `probe_ex001_*`, and the arc-109 cross-link repointed and fully qualified, since `2026/08/` alone is now ambiguous — two trees carry dates. One thing was left alone on purpose: `SEAM.md`'s "arc 301" is a historical citation, and rewriting it would invert its meaning. The commit justifies that by name from the same line-scoping rule `wat-drift` learned two days earlier by corrupting a comment. The two branches were reading each other's lessons in real time.
 
-Eleven commit subjects between `fe1e923d5` (03:18) and `8e41d13be` (13:54) carry `(301)`. The range holds twelve commits; the twelfth is `167878ec5`, a `NOTE(109)`. The excursus README says seventeen, and this site published seventeen once before anyone ran the count — the number is eleven across every ref in the repository, and the correction is ours by counting rather than by reading.
+Eleven commit subjects between `fe1e923d5` (03:18) and `8e41d13be` (13:54) carry `(301)` — the README says seventeen, and so did this site until someone ran the count.
 
-## What the form makes impossible
-
-The answer was not a stronger rule. The rule was already written, already tagged, and already broken twice.
+## What the form makes impossible (08-30 17:54)
 
 **It removes the occasion instead of discouraging the act.** `docs/excursus/YYYY/MM/NNN-slug/` is a sibling of the arc tree with the same sortable scheme, the same per-stone apparatus, and its own number space starting at 001. Exploration now has a home, so starting work no longer requires reaching into the arc numbers at all. A rule that careful sessions break twice is not being ignored; it is under-provisioned, and the missing provision was a place, not a warning.
 
@@ -194,9 +192,9 @@ after   "service severed: its owner released the service handle"
 
 That is the message that sent a prior session hunting a timer. The window's last commit, `ca405009b` at 23:48, retires the hunt. Two tests had stood `#[ignore]`d for 38 days on a stated blocker — a `remove-at` index shift at `service.wat:958/961` evicting the client peer — that was inferred from the symptom and never measured, then inherited by a design's scout note as a subtle post-migration runtime bug with `poll'` as prime suspect. Three measurements retire it: `remove-at` is at `service.wat:1591/1594`, the cited lines having drifted about 630 so the citation named innocent code; the mechanism reaches target at both loci, so `poll'` multiplexes correctly; and the eviction reproduces with no timer armed at all, so self-scheduling was a bystander.
 
-> **The lint could not have caught this.** It screens for a PROMISE wearing a condition's clothes ("circle back to arc 255"). **This reason was a checkable fact that happened to be FALSE — more convincing than a vague one, and unfalsifiable without re-deriving it. A symptom was reasoned into a cause, written where it reads as measured, and believed for five weeks.**
+The lint could not have caught this. It screens for a promise wearing a condition's clothes — "circle back to arc 255". This reason was a checkable fact that happened to be false: more convincing than a vague one, and unfalsifiable without re-deriving it. A symptom was reasoned into a cause, written where it reads as measured, and believed for five weeks.
 
-One hygiene fix rides along in the same commit: the probe for the sever path produced its sever via the tail-position release, so repairing that release would have turned the gate red for the one reason meaning everything works. A gate must not be wired so that fixing the language breaks it. The handle-in-a-`let` behaviour it turns on is the same incidental [the DoS evening recorded on 2026-07-25](/blog/fronts/under-its-own-law/006-a-caller-is-not-traffic/), five weeks and one branch earlier.
+The probe for the sever path produced its sever via the tail-position release, so repairing that release would have turned the gate red for the one reason meaning everything works. A gate must not be wired so that fixing the language breaks it. The handle-in-a-`let` behaviour it turns on is the same incidental [the DoS evening recorded on 2026-07-25](/blog/fronts/under-its-own-law/006-a-caller-is-not-traffic/), five weeks and one branch earlier.
 
 ## Two branches, one class
 
@@ -209,7 +207,7 @@ One hygiene fix rides along in the same commit: the probe for the sever path pro
 
 The 301 incident is the third instance, and the instrument there was a written rule. It answered the question it was built for — *do not mint an arc unasked* — against a world where the only place to put a BRIEF was an arc directory. Both branches spent three days learning to ask what their instruments were blind to; the excursus tree is what that question looks like applied to the paperwork instead of the code.
 
-The front is live, and the substrate's own verdict on the excursion is measurable rather than rhetorical: a composition drawn to need zero substrate change extracted a `delete` verb, a replaced `put`, a constant-width instant, a value-then-optional serialization config, a journal sort key, a widened completeness guard and a severed-peer sentinel — and then proved 8,000 distinct outcomes with zero duplicates on a queue whose only concurrency control is an actor's loop. Building something in anger is not a demonstration of a substrate. It is an audit of it.
+The front is live, and the substrate's own verdict on the excursion is measurable rather than rhetorical: a composition drawn to need zero substrate change extracted a `delete` verb, a replaced `put`, a constant-width instant, a journal sort key, a widened completeness guard and a severed-peer sentinel — and then proved 8,000 distinct outcomes with zero duplicates on a queue whose only concurrency control is an actor's loop. Building something in anger is not a demonstration of a substrate. It is an audit of it.
 
 ## Likely Contributions to the Field
 

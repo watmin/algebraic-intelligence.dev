@@ -8,7 +8,7 @@ sidebar:
   order: 3
 ---
 
-Backfill: this covers 2026-07-02 through 2026-08-25 and was written on 2026-09-08 from arc 300's `DESIGN.md`, its design stones and notes, its `REALIZATIONS.md`, and the commit bodies, all still on disk in `wat-rs` at `3dc4f62b7`. The floor counts are the record's — quoted from commit bodies that say the orchestrator re-ran them — and were not re-run for this post. The head counts, file counts and the two lexer sites below were measured against HEAD in the session that produced the notes, and they are the numbers that decide how this ends: the law this arc is named for is not a claim you have to take on faith. It is two lines of Rust, in the tree today, disagreeing about the alphabet.
+Backfill: this covers 2026-07-02 through 2026-08-25 and was written on 2026-09-08 from arc 300's `DESIGN.md`, its design stones and notes, its `REALIZATIONS.md`, and the commit bodies, all still on disk in `wat-rs` at `3dc4f62b7`. The floor counts are the record's — quoted from commit bodies that say the orchestrator re-ran them — and were not re-run for this post. The head counts, file counts and the two lexer sites below were measured against HEAD in the session that produced the notes.
 
 `wat` has two readers. `crates/wat-reader/` reads wat source — 2,962 lines across its lexer and parser. `crates/wat-edn/` reads EDN — 1,380 lines. The split exists to break a build cycle, and `crates/wat-reader/Cargo.toml:10-13` says so. Arc 300 opened to end it, because wat's claim about itself is that its source is EDN, and if that is true then *one* reader should read it.
 
@@ -35,6 +35,8 @@ That is the only stone of the five that landed. It is also additive — it made 
 The conversion itself was written as rete `defrule`s, so the rule engine and the corpus it rewrites are the same program. `83b291f9b` states the invariant it runs under:
 
 > rete is always pure in wat: the rules DEDUCE classification facts; the deductions are QUERIED OUT and ACTIONED (transform + I/O) by the drive, OUTSIDE rete. No `:then` ever transforms a value.
+
+The lawgiver had exempted itself in def-position only, and the one stone that landed added a form rather than retiring one.
 
 ## July 2 — a gate that checked the tool against a copy of the tool
 
@@ -160,11 +162,9 @@ The stone was then executed by a different arc. `a9c1f1edd`, on August 20, says 
 
 Arc 300's `DESIGN.md:15` and `:86` still record the pre-`:-` spelling, `(wat.type/Vector [wat.type/i64])`. The design that filed a note titled "the type converter emits the superseded form" is now itself stale against the disk in exactly that way. And `src/edn_shim.rs`, which the 300 documents cite by line number throughout, no longer exists — the converter moved into `src/edn/render.rs`, so every `edn_shim.rs:NNNN` coordinate in the arc's paperwork is dead.
 
-Both drives still route through the same door — `wat-scripts/fixes/to-faithful-clojure-rete.wat:227` and `to-faithful-clojure-net.wat:258` both call `:wat::keyword::to-type-form`, which now emits the ruled form. No commit anywhere says "300.0 is done" or "STOP-0 is lifted." That state was read off the code in the session that produced these notes, not off the record.
+Both drives still route through the same door — `wat-scripts/fixes/to-faithful-clojure-rete.wat:227` and `to-faithful-clojure-net.wat:258` both call `:wat::keyword::to-type-form`, which now emits the ruled form. No commit anywhere says "300.0 is done" or "STOP-0 is lifted."
 
-The same stone carries a self-correction the apparatus filed against itself, in `42faf6d69`: "I raised this as an 'open builder question' in the prior commit. It was already ruled; I should not have re-opened it. Corrected here, closed."
-
-## August — the comparator, and a row pinned wrong on purpose
+## August 13–25 — the comparator, and a row pinned wrong on purpose
 
 The builder's ruling on the comparator was three fragments long — "we fix the bug — c5 first.", "we fix the bug", "the comparator... we need to fix that... no warts." C5b (`1f1873e19`) found that `(< 9007199254740992.0 9007199254740993)` returned `false`. 2⁵³+1 is not representable in f64, so coercing the exact operand down to a float rounded it onto 2⁵³ and the two compared equal. Both directions returned `false`; only one of those two answers is correct, and it is correct by accident, which is why the gate demands both.
 
@@ -172,7 +172,8 @@ The fix is a door rather than a patch. `src/value/numeric_order.rs` owns `numeri
 
 The ruling was EXACT, which makes wat knowingly non-clj-faithful above 2⁵³ inside an arc whose thesis is Clojure faithfulness. The reasoning is on the record: C5's shipped contract already promised "the numeric-value comparison," so EXACT makes the shipped contract true, and the clj-faithful choice "would have edited the contract down to the bug." It ships with its honesty clause attached — the claim that clj agrees above 2⁵³ is carried unverified, because there is no JVM in the loop by standing direction: "i do not wish to have the jvm requirement in our CI tooling."
 
-C5b also deliberately captured a wrong answer in its own gate, row 12, with a comment saying so: NaN mapped to `Ordering::Equal`, so `(<= 1 NaN)` was `true`. C5c (`e718e2b8b`) is that row, and nothing else. Its body: "Today that row is the thing that had to change, and it was findable in one grep instead of a rediscovery. **Flag-don't-fold paid for itself inside 24 hours.**" The same commit records that the MCP eval server had been answering from a binary up to two days old, silently — "Every 'verified live this session' I attached to an MCP result was unearned" — while the substrate had printed "⚠ wat: the installed binary looks STALE (older than the source)" hours earlier, where it was read as noise.
+C5b also deliberately captured a wrong answer in its own gate, row 12, with a comment saying so: NaN mapped to `Ordering::Equal`, so `(<= 1 NaN)` was `true`. C5c (`e718e2b8b`) is that row, and nothing else. Its body: "Today that row is the thing that had to change, and it was findable in one grep instead of a rediscovery. **Flag-don't-fold paid for itself inside 24 hours.**"
+
 
 `=` and `not=` were left alone. `(not= 1 NaN)` is still `true`, IEEE's one exception — "that was gate row 7 and the trap for an over-eager fix."
 
@@ -206,7 +207,7 @@ The builder's ruling, on being shown it (`DESIGN-STONE-D…:3-4`):
 
 ## At HEAD, 2026-09-08
 
-The complete set of `300.x` stone commits in the repository is three: `384f5d6fc` for 300.1, and `bc8afe76c` plus `83b291f9b` for 300.2 as a probe and a rules rewrite, run against a `/tmp` copy with `wat/source.wat` explicitly untouched by its own body. Stones 300.3, 300.4 and 300.5 have no commits. `wat/core.wat` carries 800 `:wat::core::` occurrences in head position — the DESIGN's baseline for the same file was 560 heads, and the file's 1,305 is its total occurrence count across 931 matching lines, which is a different question with a different answer. `grep -o 'wat\.core/'` returns two hits in that file and both sit on one comment line at `wat/core.wat:2120`, so the faithful surface has zero code sites in that file. The corpus that drive must eventually convert has grown from 1,173 `.wat` files to 1,888.
+The complete set of `300.x` stone commits in the repository is three: `384f5d6fc` for 300.1, and `bc8afe76c` plus `83b291f9b` for 300.2 as a probe and a rules rewrite, run against a `/tmp` copy with `wat/source.wat` explicitly untouched by its own body. Stones 300.3, 300.4 and 300.5 have no commits. `wat/core.wat` carries 800 `:wat::core::` occurrences in head position, against the DESIGN's baseline of 560. `grep -o 'wat\.core/'` returns two hits in that file and both sit on one comment line at `wat/core.wat:2120`, so the faithful surface has zero code sites in that file. The corpus that drive must eventually convert has grown from 1,173 `.wat` files to 1,888.
 
 And the two readers are still two. `crates/wat-reader/src/lexer.rs:536` refuses a non-ASCII character outright; `crates/wat-edn/src/lexer.rs:281` decodes the UTF-8 scalar and accepts it. `dd5ae8645` promised that "the 300 convergence unifies them later." Later has not arrived, and `NE DIVIDANTVR` is therefore not a slogan you have to grade on intent — it is two files, and today it measures divided.
 
@@ -215,10 +216,9 @@ An arc that shipped one additive stone and drove no files still produced a live 
 ## Likely Contributions to the Field
 
 - **Two readers of one language diverge on the axis nobody registered as a decision.** Not the type system and not the evaluation rule — the alphabet. One reader accepted `é` in a symbol and the other panicked on it, because one iterated characters and one iterated bytes. Any system that ships a second parser for its own source has this exposure, and the divergence will not be where the design review looked.
-- **You cannot check a tool against a copy of the tool.** The batch drive was gated "byte-identical to `fix-text`" and `fix-text` carried the identical span bug; the gate reported nineteen files clean while the output was corrupt. Two wrongs agreeing is a same-source diff, not a correctness check. The honest gate is a round trip — the converted file must parse and re-freeze.
+- **A gate cannot see the subject it shares a defect with, and only a control says which gates are blind.** The batch drive was gated "byte-identical to `fix-text`" while `fix-text` carried the identical span bug — nineteen files reported clean, output corrupt; two wrongs agreeing is a same-source diff, not a correctness check, and the honest gate is a round trip. The same blindness has a cheaper tell: restoring the desugar turned one of three span tests red, which is how the other two were revealed as vacuous — they read the top-level form's span while the phantom lived one level down on a synthesized child, under a doc comment claiming a guarantee it had never provided.
 - **A synthetic benchmark tests the shape you thought to write; a real consumer tests the shape the problem demands.** The rete engine passed Clara parity because the parity runs were single-pass joins. The first multi-layer cascade found that the fixpoint path re-inserts every derived fact each round. The parity claim was true for what it measured and silent about what it did not.
 - **A deferred type is a bill, and it comes due in full.** wat could not reach parity as an EDN reader because it had no rational number, and the exemption sat in the ward's own list saying so. Closing that one line produced bigint, rational arithmetic, checked overflow instead of silent wrapping, float contagion, exact cross-type ordering above 2⁵³, and an IEEE NaN policy.
 - **A numeric tower is a pattern you install arms into, not an engine you build.** With `+ - * /` as clause-dispatched folds over a per-type two-ary intrinsic, a new numeric type costs one contagion arm per mixed-operand pair — which is why mixed int/float arithmetic, abandoned years earlier as large, turned out to be two arms.
 - **Being the newest precedent is what makes a hole authoritative, and documentation is how it survives.** `\c` desugared to a function call, and this arc's own Stone B cited that desugar as the newest scalar precedent while deliberately diverging from it. Four accurate comments described the gap as a fact of the language and none asked whether it should be true — including two that documented `watast_to_edn`/`edn_to_watast` as a total bijection, a claim that held only because no `WatAST` could produce an `Edn::Char`. The missing feature was the proof.
-- **A negative control that turns one of three tests red has told you the other two are vacuous.** The span gate read the top-level form's span; the phantom lived one level down on a synthesized child. Its doc comment claimed a guarantee it had never provided, and only running the control could say so.
 - **A campaign can be worth more for what its preparation found than for what it shipped.** Arc 300 set out to migrate 1,173 files and drove none of them, while the corpus grew to 1,888. Every artifact it produced came from checking a premise it needed before the migration could start, which is an argument for keeping the preparation's findings as first-class output rather than as overhead against a deliverable that never landed.
