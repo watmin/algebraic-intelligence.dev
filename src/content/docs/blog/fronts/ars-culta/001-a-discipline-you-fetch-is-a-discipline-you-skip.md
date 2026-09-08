@@ -9,9 +9,9 @@ sidebar:
 ---
 
 
-<!-- rune:consonare(solo) — the quotation obligation cannot be discharged from this corpus, and the shape of the corpus is the reason. Measured across all 101 commits on every ref: `git log --all -i --grep='builder'` returns exactly one hit, and it is a reference to his role in the publish ceremony, not speech; `watmin`, `ruled`, `he said`, `asked` and `steer` each return 0. The only attributed builder quote in the tree is four words in a table cell — `docs/WARDING-LEDGER.md:44`, "encode in the grimoire" — quoted here in full and nowhere extended. The cause is structural rather than social: in `wat-rs` the commit body is the record, so a week of rulings is recoverable from git; in `datamancy.dev` the commit body is a publish receipt — three of this window's four publish commits carry an empty or stamp-only body — and the record is a ledger table, which summarises a cast and never transcribes a conversation. The agency obligation is discharged: the calls reported here are the builder's and the post names him as their agent, and the KMS gate makes that structural rather than rhetorical — the apparatus can ward but cannot sign. -->
+<!-- rune:consonare(solo) — STEERED BUT UNTRANSCRIBED, which is the honest shape of this claim: the stretch was not unsteered, and the quotation obligation cannot be discharged from this corpus because of how the corpus records rather than because no one was there. Measured across all 101 commits on every ref: `git log --all -i --grep='builder'` returns exactly one hit, and it is a reference to his role in the publish ceremony, not speech; `watmin`, `ruled`, `he said`, `asked` and `steer` each return 0. The only attributed builder quote in the tree is four words in a table cell — `docs/WARDING-LEDGER.md:44`, "encode in the grimoire" — quoted here in full and nowhere extended. The cause is structural rather than social: in `wat-rs` the commit body is the record, so a week of rulings is recoverable from git; in `datamancy.dev` the commit body is a publish receipt — three of this window's four publish commits carry an empty or stamp-only body — and the record is a ledger table, which summarises a cast and never transcribes a conversation. The agency obligation is discharged: the calls reported here are the builder's and the post names him as their agent, and the KMS gate makes that structural rather than rhetorical — the apparatus can ward but cannot sign. -->
 
-Backfill: this covers 2026-06-26 through 2026-06-30 and was written on 2026-09-08 from the commit bodies, the grimoire's own published text, `docs/WARDING-LEDGER.md`, and the signed manifests and content-addressed blobs, all still on disk. `git log` over that window in `datamancy.dev` returns exactly ten commits, which is the entire population — one branch, nothing else landed. Every effort in it is three commits: the content, the ledger pin, the publish. The change at the center is one paragraph, and it is the most interesting placement decision in the repository.
+Backfill: this covers 2026-06-26 through 2026-06-30 and was written on 2026-09-08 from the commit bodies, the grimoire's own published text, `docs/WARDING-LEDGER.md`, and the signed manifests and content-addressed blobs, all still on disk. `git log` over that window in `datamancy.dev` returns exactly ten commits, which is the entire population — one branch, nothing else landed. Every effort in it is three commits: the content, the ledger pin, the publish. The change at the center is one paragraph.
 
 The grimoire has two shelves. The **ethos** arrives with the index, unconditionally — `grimoire/SKILL.md` opens by saying so:
 
@@ -19,7 +19,7 @@ The grimoire has two shelves. The **ethos** arrives with the index, unconditiona
 
 The **spells** are the other shelf: each one is a separate fetch at `/<name>/SKILL.md`, made when its moment arrives. That distinction is not filing. It is availability, and it decides whether a discipline runs at all.
 
-The week of June 26–30 put a second problem-solving discipline on the first shelf. The artifact is small and the post should say so before anything else: `c4726bc` is **+10/−7** on `grimoire/SKILL.md`, `8cb9d0a` is **+16/−16**. Six numbered principles became seven. The argument is not that a lot was written — it is that one paragraph on the first-load surface is a different kind of object from a chapter in a manual.
+The week of June 26–30 put a second problem-solving discipline on the first shelf. The artifact is small. `c4726bc` is **+10/−7** on `grimoire/SKILL.md`, `8cb9d0a` is **+16/−16**. Six numbered principles became seven. The argument is not that a lot was written — it is that one paragraph on the first-load surface is a different kind of object from a chapter in a manual.
 
 ## June 26 and 27 — two wards minted, and one of them mustered on everything after it
 
@@ -67,9 +67,9 @@ Read what that row does. A ward went looking for the missing spell, found it mis
 
 The disciplines are duals, and their filing is asymmetric for the same reason their direction is.
 
-## The half that most writing on this skips
+## The two edges
 
-The same paragraph carries its own falsifiability test, and it is the sharper contribution:
+The same paragraph carries its own falsifiability test:
 
 > Two edges to watch: a *cannot* you cannot derive from the nature of the thing is a **convention wearing a wall's clothes** and will rot — *the discipline is the derivation, not the `no`*; and the *cannot* is a **gift to the caller**, not a restriction — when the only path is the right one, the wrong one is not there (this and the Good-UX question — see the four questions, next — are one act seen from two sides).
 
@@ -81,7 +81,7 @@ The second edge inverts the usual sale. Constraint is normally offered as safety
 
 `8cb9d0a` submits the edit to the grimoire's own guard: a full applicable `vigilia` in docs-kind — `nesciens`, `cohaerere`, `exigere`, with `circumspicere` last — embedded by value, fresh subagents, six combat rounds.
 
-Round 1's L1 is the best fact in the week. The one-day-old paragraph pointed constraint engineering at *"in full: `extirpare`"* — and `extirpare` held only the shared ladder, not the forward discipline. The paragraph about making the wrong thing structurally impossible shipped a pointer to a document that did not contain what the pointer promised. The ledger records the fix: the claim was softened to the ladder alone, and the forward discipline was housed in the ethos itself. `c4726bc`'s *"(in full: `extirpare` — the shared ladder both climb)"* becomes *"(Both climb the one ladder `extirpare` teaches — convention → check → no-form; the forward discipline itself is this principle, and its home is this ethos.)"* The pointed-at document was corrected in the same commit, its description narrowed from "every ward" to "every **atomic** ward."
+The one-day-old paragraph pointed constraint engineering at *"in full: `extirpare`"* — and `extirpare` held only the shared ladder, not the forward discipline. The paragraph about making the wrong thing structurally impossible shipped a pointer to a document that did not contain what the pointer promised. The ledger records the fix: the claim was softened to the ladder alone, and the forward discipline was housed in the ethos itself. `c4726bc`'s *"(in full: `extirpare` — the shared ladder both climb)"* becomes *"(Both climb the one ladder `extirpare` teaches — convention → check → no-form; the forward discipline itself is this principle, and its home is this ethos.)"* The pointed-at document was corrected in the same commit, its description narrowed from "every ward" to "every **atomic** ward."
 
 The combat then ran past the original edit into a spreading root-fix on a single word. `cast` had been used loosely for both primers and wards; the fix reserved it for the ward-spawn act across **six sites** — principle 5, the how-to-cast section, the blockquote, the intro, the install line, the anti-pattern — and then closed the taxonomy by declaring and tagging the meta-spell (`vigilia`, `vigilia-slot: aggregator`), so the primer/ward and atomic/meta split is, in the ledger's phrase, "complete by construction."
 
@@ -95,7 +95,9 @@ Three claims around it do verify independently, and all three were checked for t
 
 Two stamps, two events, and they should not be merged: `07-19-10Z` is when the warding was recorded, `08-34-32Z` is when the bytes were published. Between them sits the one thing the apparatus cannot do. `8cb9d0a`'s body: "**NOT YET PUBLISHED** — live MCP serves the prior ethos until `manifest:publish` + sign + ship (KMS/SSO-gated, the builder's step)." The signing key is held non-exportably in KMS. The apparatus warded the change, wrote the row, committed, and stopped — because it structurally cannot sign. That is principle 2 operating on the repository that published principle 2, on the day it published it.
 
-A note on what this week was not. In June, trial by combat was practice plus a ledger row and nothing else. `CONTRIBUTING.md` at `8cb9d0a` has a three-step *Add or edit a spell* section with no warding step at all; the clause "**Ward it before it ships — trial by combat**" lands at `2ce6dd5` on 2026-09-07, two months later. The rule was written from the practice, not the other way round.
+## September 7, and what June was not
+
+In June, trial by combat was practice plus a ledger row and nothing else. `CONTRIBUTING.md` at `8cb9d0a` has a three-step *Add or edit a spell* section with no warding step at all; the clause "**Ward it before it ships — trial by combat**" lands at `2ce6dd5` on 2026-09-07, two months later. The rule was written from the practice, not the other way round.
 
 ## The certificate expired on schedule
 
@@ -110,6 +112,8 @@ So the row was rung 1 when it was written, became rung 2 two months later, and t
 > **A row is a claim, not a permanent guarantee.** It says "warded as of this measurement." Drift after the stamp is caught by *re-running the watch*, never by trusting the row. … The green check is not the bar; the disposition is.
 
 `1db0ada` is where [A Declaration Is Only a Promise](/blog/fronts/ars-culta/002-a-declaration-is-only-a-promise/) starts.
+
+A certificate is a claim with a date on it, and the discipline that wrote the paragraph is what came back two months later to check the paragraph's own receipt.
 
 ## Likely Contributions to the Field
 
