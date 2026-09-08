@@ -78,6 +78,7 @@ The three live fronts:
 | **wat Under Its Own Law** | the language is made subject to the discipline it imposes on its users — every law wat enforces outward, turned on wat's own body | `main` | johndesktop |
 | the exemplar | one reference implementation all of wat measures against, as the other subsystems mature | `grok-rete` | reason |
 | services in anger | where services are flawed and deficient; the repeatable patterns for using wat in real use | `claude-compute` + `sns-sqs` | compute |
+| **Ars Culta** | the craft that is tended — the grimoire, the tooling, the record; the console that arms the other three (§2.1.4, §3.6) | `datamancy.dev`, `pulsare`, `cingere`, this repo | portal |
 
 Hosts do not decide names, but they are **content**: `portal` (the laptop where
 all the work began, abandoned because constant Rust builds DoS'd it), the
@@ -117,7 +118,7 @@ encoding (06-30), `cohaerere` (06-26), and the publish hardening (08-16).
 `pulsare` and `cingere` are **September** — they fall past the cutoff and belong
 to the first weekly update, not this batch.
 
-**[OPEN]** — portal's front NAME. Not yet cast. intueri, on the §3.4 precedent.
+**SETTLED 2026-09-07: `Ars Culta`.** The reasoning is in §3.6.
 
 ### 2.1.2 The story ENDS — ruled 2026-09-07
 
@@ -313,6 +314,7 @@ than an actual file move.
     the whole meaning (real use, not a demo).
   - `under-its-own-law` — **"wat Under Its Own Law."** SETTLED — intueri cast
     2026-09-07, ruled by the builder. See §3.4.
+  - `ars-culta` — **"Ars Culta."** SETTLED 2026-09-07. See §3.6.
 
 ### 3.4 The `main` front's name — the cast and its record
 
@@ -368,6 +370,71 @@ are `annihilate-the-angle-bracket` (+ wave 2) · `set-the-angle-form-ablaze` ·
 `edn-only-rust-stdio-enforcement`. **109 is surface annihilation, and belongs
 with 300, not with housekeeping.** Judged as decomposition it drags every
 candidate toward "tidying."
+
+### 3.6 `Ars Culta` — the portal front's name
+
+**Ars Culta** — *ars, artis*: skill, craft, systematic technique (nearer Greek
+*technē* than English "art"). *culta*: perfect passive participle of *colō,
+colere* — to till, to dwell in, to tend, to practise, to honor, **to worship**.
+
+**The craft that is tended.**
+
+Why this and not the alternatives, since a name outlives the argument that chose
+it:
+
+- **The agent is the builder.** Every serious candidate was passive; the fork was
+  *who acts*. `Ars Incluta` (*inclutus* < PIE \*ḱlu-tós, "heard") means the craft
+  that is **spoken of** — the agent is outside, and the claim is ratified by other
+  people. `Ars Culta` means the craft that has been **tended** — the agent is the
+  practitioner. For a front whose whole premise is *"building wat for the sake of
+  building wat,"* the tending is the subject and the renown is not.
+- **It is the builder's own word.** He said *"I am a devotee of Hephaestus here."*
+  The Latin for devotee is **cultor** — tiller, tender, worshipper — and `culta`
+  is that word's participle. *cultor · cultus · cultura*, whence English *cult*
+  and *culture*. The devotion is the root of the name, not decoration on it.
+- **It cannot overclaim.** `Incluta` asserts renown, which is true or false
+  depending on other people; `WRITING-GUIDE.md` says *confident but not
+  overclaiming*, and a section label reading "the renowned craft" is the site
+  vouching for its own fame. "Tended" is a claim about effort that nobody can
+  take away.
+- **A cold reader gets nearer.** English carries no visible reflex of *inclutus*;
+  *culta* lands near *cultivate* and *culture*, and those guesses are correct —
+  which matters for a sidebar label that has no definition to jump to.
+
+**Rejected, with reasons worth keeping:**
+
+- **`Fabrica`** — the better word for *making* (it carries the craft, not just the
+  room, and English "forge" descends from it via Old French). **Killed on a live
+  referent collision:** every occurrence of the fabr- stem in this corpus is
+  "fabricate" in its pejorative sense, and it is one of the chronicle's named
+  sins — *"the practitioner fabricated a cast"*, *"fabricated false anchors four
+  times"*. On this site the root means **lying**.
+- **`Officina`** — clean (zero prior use) and correct, but it names the *room*.
+  *Officina* < *opus* + *facere*: the shop where work happens. `Ars Culta` names
+  the craft and the tending of it.
+- **`Ars Incluta` / `Arte Inclutus`** — Homer's epithet for Hephaestus is
+  κλυτοτέχνης, and *inclutus* is not a translation of *klytos* but its **cognate**
+  (both continue \*ḱlu-tós; cf. Sanskrit *śrutá-*, Old Irish *cloth*, Greek
+  *kléos*). Beautiful, and the wrong axis — see above. Noted also: *Ars Incluta*
+  is not the epithet's shape; κλυτοτέχνης qualifies the god, so the faithful
+  rendering is *arte inclutus* or *inclutus artifex*.
+- **"portal" / "the console" / "the instrument layer"** — all void, and the record
+  should say why plainly. "portal" is a hostname, killed by §3.3's own rule. The
+  other two were **the orchestrator's own inventions**, fed to a ward as if they
+  were candidates; the findings against them were findings about made-up words.
+  The `Console` collision was additionally judged against the *chronicle* — a
+  historical record in which retired types naturally appear. That is the
+  recovery file's own FM-2: *presence is not aliveness*.
+
+**Calibration note (`curare`).** intueri was cast on this name and **did not
+produce it.** Its recommendation (`Discipline as a Dependency`) and runner-up
+(`Minted from Failure`) were both set aside; its structural finding was
+withdrawn; two of its three Level-1 verdicts were against words the orchestrator
+had invented. The cast said so itself: *"the body here does not exist… five
+outlined posts is a plan, not prose."* The §3.4 cast paid because arc 109's
+realizations were on disk to judge against. **A name for a track with no written
+body is not a target a ward can measure.** Do not cast on the remaining front
+names until their posts exist.
 
 ### 3.5 Naming precedent — the nav records its own casts
 

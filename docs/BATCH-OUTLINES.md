@@ -142,7 +142,7 @@ chronicle) · arc **118** closes 08-19 · arc **296** closes 06-30 then **reopen
 `series-006-016 "The Loop Closes"` (`HOLONAST-WAS-A-COAT`) · arc **109** as
 surface annihilation.
 
-### portal (the console) — name **[OPEN]**, intueri not yet cast — 5 posts
+### Ars Culta — `fronts/ars-culta/` — 5 posts
 
 | slot | week | work |
 |---|---|---|
