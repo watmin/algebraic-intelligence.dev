@@ -46,11 +46,18 @@ export async function discoverPosts() {
     const base = root.dir.replace(/^src\/content\/docs\//, "");
     for (const rel of (await walk(root.dir, root.recursive)).sort()) {
       const noExt = rel.replace(/\.mdx?$/, "");
+      // Starlight collapses an index page onto its parent path: blog/fronts/index.md
+      // is reachable at /blog/fronts/ and its slug is `blog/fronts`. Computing the
+      // slug straight from the filename yields `blog/fronts/index`, which no nav
+      // entry can ever match — so a correctly-wired landing would fail check-nav
+      // forever. Collapse it the way the renderer does.
+      const isLanding = /(^|\/)index$/.test(noExt);
+      const slugPath = isLanding ? noExt.replace(/(^|\/)index$/, "") : noExt;
       posts.push({
         file: `${root.dir}/${rel}`,
-        slug: `${base}/${noExt}`,
+        slug: slugPath ? `${base}/${slugPath}` : base,
         kind: root.kind,
-        isLanding: /(^|\/)index$/.test(noExt),
+        isLanding,
       });
     }
   }

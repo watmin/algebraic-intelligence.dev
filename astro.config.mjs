@@ -353,7 +353,37 @@ export default defineConfig({
             { slug: "blog/story/epilogue" },
           ],
         },
-        {
+                  // THE FRONTS — the perpetual present, peer to The Story (which is the
+          // past, at rest) and preceding The Epilogue (eternal, order 999).
+          // A front is a PURPOSE, not a branch or a host: Services in Anger
+          // carries two branches, Ars Culta arms the other three. Ordered by
+          // when each front OPENED — time of creation, oldest first — never by
+          // activity or status; a front that goes quiet does not move.
+          //
+          // Each track AUTOGENERATES from its directory, so a weekly post needs
+          // no nav edit (the same mechanism Realizations uses). check-nav knows
+          // about autogenerate coverage and will fail the build on a front post
+          // that no group reaches. See docs/STORY-BRANCHING.md §3.2, §4.2.
+          {
+            label: "The Fronts",
+            collapsed: false,
+            items: [
+              { slug: "blog/fronts" },
+              // intueri (cast 2026-09-07) named this front for the one move all
+              // its arcs share — the language made subject to the law it
+              // imposes outward. "Language maturity" was the working shorthand
+              // and was graded Level-2: it named the location (whatever happens
+              // on main), not the work, and collided by REFERENT with the May
+              // era "The Language", which already spent maturation, arc 109 and
+              // Clojure-faithfulness. See docs/STORY-BRANCHING.md §3.4.
+              {
+                label: "wat Under Its Own Law",
+                collapsed: false,
+                autogenerate: { directory: "blog/fronts/under-its-own-law" },
+              },
+            ],
+          },
+          {
           // Using `link:` (URL) instead of `slug:` (content-collection lookup)
           // because Starlight's slug validation has been failing on Cloudflare's
           // build env for blog/book — the 36k-line BOOK trunk seems to hit some
