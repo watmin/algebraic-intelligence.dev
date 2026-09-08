@@ -1,7 +1,7 @@
 ---
 title: "The Law Caught in Its Own Words"
-description: "July 16–24, 129 commits: a law lands — wat never hides a failure — and then catches its own enforcement mechanism masking, because in a language with no catch a raise unwinds past the reader that was supposed to see it. Five kills failed before the sixth changed the type so a reason-free loss cannot be constructed. The deepest mask was in the test harness, which swallowed a crashing child and reported a pass. And the law's own completion was overturned the next day, by a consumer."
-covers: 2026-07-16/2026-07-24
+description: "July 16–24, 129 commits, and a refusal six days later: a law lands — wat never hides a failure — and then catches its own enforcement mechanism masking, because in a language with no catch a raise unwinds past the reader that was supposed to see it. Five kills failed before the sixth changed the type so a reason-free loss cannot be constructed. The deepest mask was in the test harness, which swallowed a crashing child and reported a pass. And the law's own completion was overturned the next day, by a consumer."
+covers: 2026-07-16/2026-07-30
 written: 2026-09-08
 backfill: true
 sidebar:
@@ -40,7 +40,7 @@ R41 is also explicit about what it had not closed. `RecvError` at `comms/mod.rs:
 
 ## "R41 is wrong then" (R53, 2026-07-22)
 
-The far-side task was mundane: a crash was reaching the caller as a bare `recv': peer closed`. Rather than theorize about it, the arc measured it — a 4×2 probe across `{panic, runtime-error} × {thread, process} × {client, admin}`. Two results came back. The admin always gets the exact reason, delivered as an unwinding raise. The client's runtime-error path is a bare mute.
+The task that surfaced it was mundane — the comms transport, where a crash was reaching the caller as a bare `recv': peer closed`. Rather than theorize about it, the arc measured it — a 4×2 probe across `{panic, runtime-error} × {thread, process} × {client, admin}`. Two results came back. The admin always gets the exact reason, delivered as an unwinding raise. The client's runtime-error path is a bare mute.
 
 Read together, those two rows indict the mechanism R41 had blessed. Surfacing a failure by raising it is only surfacing at the throw site; wat has no `try`/`catch`, so the raise unwinds past every frame between there and wherever it lands, including the reader the law exists to inform. R53:
 
@@ -174,8 +174,12 @@ What ships at the end is not a policy anyone has to remember. `recv'` and `send'
 
 ## Likely Contributions to the Field
 
-- **A law's enforcement mechanism can be an instance of what the law outlaws.** "Every failure must be visible" was enforced by making failures raise, in a language with no `try`/`catch` — so the enforcement blew past the reader it existed to inform. This is not wat-specific: an exception is a control-flow transfer that is legible at the throw site and invisible at every site between there and the handler, and calling that "surfacing" is a category error. The check is mechanical — name who is supposed to see it, then ask whether the mechanism guarantees they are still on the stack.
-- **Five failed kills is a signal about the cut, not about effort.** Each of the first five bound a known mute site and left mute representable, so the class regrew somewhere nobody had listed. The sixth changed the type so a reason-free loss has no constructor. Enumerating instances and removing a form are different operations, and only the second one terminates — so a repeated recurrence is evidence the cut is at the wrong level, not evidence that more sites need finding.
+- **A law's enforcement mechanism can be an instance of what the law outlaws.** "Every failure must be visible" was enforced by making failures raise, in a language with no `try`/`catch` — so the enforcement blew past the reader it existed to inform. This is not wat-specific: an exception is a control-flow transfer that is legible at the throw site and invisible at every site between there and the handler, and calling that "surfacing" is a category error.
+
+
+- **Five failed kills is a signal about the cut, not about effort.** Each of the first five bound a known mute site and left mute representable, so the class regrew somewhere nobody had listed. The sixth changed the type so a reason-free loss has no constructor.
+
+
 - **The verifier is the last place a mask survives and the first place to look.** The test harness bound a crashing child's outcome to `_` and reported a pass. Every green number the suite had produced was, for that class, a claim with nothing behind it. The harness is the artifact nobody audits, because auditing it feels like auditing the ruler — which is exactly what makes it the highest-yield target once a class of masking is known to exist.
 - **A value you must face is not enough if you can drop it.** Returning an outcome fixes the flee; it does not fix the swallow. Two defects, two cures: the type removes the raise, and compile-time gates on both discard positions — the `_` binding and the non-final statement — remove the drop. A guarantee that holds only when the caller is diligent is a convention wearing a type's clothes.
 - **"Done" is not a state a negative property can be in.** You can prove a thing exists; you cannot prove no mask remains, because an undiscovered mask is invisible by definition. So completeness is a hypothesis, and the instrument that tests it is a consumer doing real work in a corner the declaration never reached — three of them landed within a day of "nothing wears a mask here."

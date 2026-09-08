@@ -143,6 +143,7 @@ breaks no link.**
 | `under-its-own-law/001` | **No Absence Is Implicit** | There Is No Nowhere · Half a Round Trip |
 | `exemplar/002` | **A Wrong Number Is Not an Error** | Every Failure Prints as a Speedup · The Mean and the Minimum, Nine Thousand Lines Apart |
 | `exemplar/003` | **A Prose File Cannot Go Red** | A Summary of a List Rots Faster Than the List · Eight of Nine |
+| `under-its-own-law/005b` | **The Law Caught in Its Own Words** | A Raise Is Not a Surfacing · Mute Has No Form |
 | `under-its-own-law/005a` | **The Differential That Never Ran** | The Regime Where Both Are Right · Not a Wall, a Flaw |
 | `under-its-own-law/004` | **Built Backwards** | Portable Was the Symptom · The Data Back in Its Chair |
 | `under-its-own-law/008` | **The Compiler Is the Census** | Declaring Nothing Is Illegal · Two Different Properties Wearing One Name |
@@ -174,11 +175,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | **12** | — | **3** | — | — | — | — | **9** |
+| wat Under Its Own Law | **12** | — | **2** | — | — | — | — | **10** |
 | Ars Culta | 2 | — | — | — | — | — | — | **2** |
 | The Exemplar | 4 | — | **1** | — | — | — | — | **3** |
 | Services in Anger | 1 | — | — | — | — | — | — | **1** |
-| **total** | **20** | — | **4** | — | — | — | — | **16** |
+| **total** | **20** | — | **3** | — | — | — | — | **17** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
