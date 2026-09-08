@@ -132,6 +132,7 @@ breaks no link.**
 | shipped post | wired title | the alternates |
 |---|---|---|
 | `ars-culta/001` | **A Discipline You Fetch Is a Discipline You Skip** | The Shelf That Loads First · Constraint Engineering Has No Moment |
+| `under-its-own-law/001` | **No Absence Is Implicit** | There Is No Nowhere · Half a Round Trip |
 | `under-its-own-law/002` | **Closed Before It Was Measured** | The Inscription Git Kept · A Checklist for a Property |
 | `under-its-own-law/009` | **The Wall's First Violator** | A Law and Its Exemption on the Same Page · Cheaper to Obey |
 | `ars-culta/002` | **A Declaration Is Only a Promise** | The Ward That Runs · A Broken Driver Finds a Jackpot |
@@ -159,11 +160,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | 9 | 3 | **2** | — | — | — | — | **4** |
+| wat Under Its Own Law | 9 | 3 | **1** | — | — | — | — | **5** |
 | Ars Culta | 2 | — | — | — | — | — | — | **2** |
 | The Exemplar | **4** | 3 | — | — | — | — | — | **1** |
 | Services in Anger | 1 | — | **1** | — | — | — | — | — |
-| **total** | **17** | **6** | **3** | — | — | — | — | **8** |
+| **total** | **17** | **6** | **2** | — | — | — | — | **9** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 

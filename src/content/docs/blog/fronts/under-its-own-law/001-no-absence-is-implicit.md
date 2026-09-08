@@ -1,6 +1,6 @@
 ---
 title: "No Absence Is Implicit"
-description: "July 1, 04:01–07:39: a fork between eliding a key and keeping a <runtime>:0:0 sentinel was refused as a false choice, and the refusal named three costumes of one bug. Option lost the codec carve-out that erased its own tag, the span null object was annihilated across 815 sites in one recompile, and the last two hand-written error serializers were derived out of existence. Then the closure stamped a neighbouring arc's prophecy PROBATUM EST — and the law the arc had just written for values is the law that stamp broke."
+description: "July 1, 04:01–07:39: a fork between eliding a key and keeping a sentinel span that named nowhere was refused as a false choice, and the refusal named three costumes of one bug. Option lost the codec carve-out that erased its own tag, the span null object was annihilated across 815 sites in one recompile, and the last two hand-written error serializers were derived out of existence. Then the closure stamped a neighbouring arc's prophecy PROBATUM EST — and the law the arc had just written for values is the law that stamp broke."
 covers: 2026-07-01
 written: 2026-09-08
 backfill: true
@@ -8,7 +8,7 @@ sidebar:
   order: 1
 ---
 
-Backfill: this covers 2026-07-01, 04:01:52 to 07:39:53, and was written on 2026-09-08 from the arc's `DESIGN`, `REALIZATIONS` and `INSCRIPTION` files, twenty-two commit bodies, and the state of `origin/main` read that day. The gate counts quoted below are the record's — weighed by the orchestrator at the time by its own `cargo nextest run --release` — and were not re-run for this post; the site counts were re-measured. Three hours and thirty-eight minutes, three strikes, a null object deleted across 815 sites in one recompile, and a closure document that broke the exact law the arc had just written.
+Backfill: this covers 2026-07-01, 03:58 to 07:39:53 — and follows the arc forward to 2026-09-01, where the annihilated value reappears. It was written on 2026-09-08 from the arc's `DESIGN`, `REALIZATIONS` and `INSCRIPTION` files, twenty-two commit bodies, and the state of `origin/main` read that day. The gate counts quoted below are the record's — weighed by the orchestrator at the time by its own `cargo nextest run --release` — and were not re-run for this post; the site counts were re-measured. Three hours and thirty-eight minutes, three strikes, a null object deleted across 815 sites in one recompile, and a closure document that broke the exact law the arc had just written.
 
 A `wat` error carries a span: a `{:file :line :col}` coordinate into the `.wat` source that raised it. Deriving the last error family surfaced the question of what that span says when the runtime does not have one. A value reconstructed off the wire, a synthesized AST node, a marshalled Rust value — none of those came from a `.wat` file, and `Span` is not an optional field.
 
@@ -24,13 +24,17 @@ That is the whole arc. Both arms of the fork make "we don't know" implicit — o
 
 You cannot derive honest diagnostics over a dishonest wire. Arc 296's derive sweep stopped where it stood.
 
+The replacement for the fork arrived in the same exchange, at `DESIGN.md:24`:
+
+> "i think the answer to 'is it optional?' is 'use an enum.'"
+
 The doctrine that came out of the refusal has five rulings (`INSCRIPTION.md:34-45`, `DESIGN.md:30-49`), and each one is a codec behaviour rather than a slogan. A record is total: every declared field is always emitted, present key, uniform shape, never elided. `None` is a spoken, tagged value — not an absent key, not a fake. `Option` is a normal enum. `Option<T>` stays legal on aggregate fields, because the type is welcome and only its dishonest representations die:
 
 > "aggregates must allow Option&lt;T&gt; … suppose we impl some s3 service and some value in the request blob is nil/null … the thing fits the spec and null has a meaning of 'not supplied' … for the rpc-as-edn to work we need some+none to work."
 
 And the fifth: the `Span::unknown()` sentinel dies — and not by becoming `Option<Span>`. A real construction site is not absence, so there is nothing there to make optional.
 
-The rulings resolve into one recognition, which is the arc's payload. Absence has three costumes, and they are the same bug:
+The rulings resolve into one recognition. Absence has three costumes, and they are the same bug:
 
 | Costume | What it does | Where it lived |
 |---|---|---|
@@ -40,13 +44,13 @@ The rulings resolve into one recognition, which is the arc's payload. Absence ha
 
 The discriminating test the arc applied: can a reader holding only the bytes tell absence from a value? A missing key fails it. `<runtime>:0:0` fails it. A bare `nil` fails it. `#wat.core.Option/None nil` passes.
 
-## Three strikes, ratified in two words (04:01)
+## Three strikes, in dependency order (04:01)
 
 `54f4d48a9` opened arc 298 at 04:01:52 — a swerve out of the middle of 296, not a planned arc. The ratification is on the record at `DESIGN.md:83`:
 
 > "new arc — sure"
 
-Three strikes, named in dependency order: **O**, tag `Option`; **S**, kill the span sentinel; **D**, resume the derive. 296 was blocked on all three. Arc 297, the protobuf-IPC work, depended on the first. The creed at the top of `REALIZATIONS.md:18`:
+Three strikes, named in dependency order: **O**, tag `Option`; **S**, kill the span sentinel; **D**, resume the derive. Arc 296 was blocked on the whole of it; arc 297, the protobuf-IPC work, depended on it. The creed at the top of `REALIZATIONS.md:18`:
 
 > "into the dungeon we go — slow is smooth, smooth is fast — we strike to kill — i don't expect to be on this floor that long."
 
@@ -151,7 +155,7 @@ Two commits earlier, the builder had corrected the chronicle rather than the cod
 
 > "why aren't we updating the realizations... amend the last addition with the actual messages that were so fucking cool."
 
-Every strike in this arc opens on a builder ruling, and two of them rewrote a plan the apparatus had already committed to disk.
+The realization was rewritten to hold the messages themselves. Two more rulings that morning ordered the same thing — "let's do another literal replay in the doc" (`REALIZATIONS.md:613`), "append that exact message and have another realization" (`:779`) — which is why the arc's record carries the exchanges verbatim instead of in summary.
 
 ## The closure (07:39)
 
@@ -173,7 +177,7 @@ Then, on 2026-07-02 at 07:49:44 — ten minutes short of exactly twenty-four hou
 
 The same commit left a standing instruction at `296/REALIZATIONS.md:2461`: `do NOT mark it PROBATVM until #[derive(Edn)] lands the vocabulary AND #wat.kernel/ProcessPanics reads back as NESTED EDN (not a vec-of-strings)`. And `fb6d50e71`, the same day, signs R19 with "the earlier 'R1 PROBATVM EST' over-claim owned, this entry careful."
 
-Two things must be held together here. That lessons block's surrounding sentences describe a different weigh — a 2026-07-02 stone-B run on `cargo test --workspace` plus a partial grep, with roughly 237 missed failures — not the 298 weigh, which used `cargo nextest run --release` and reported 4283/0. No sentence on disk says the 298 INSCRIPTION was wrong. What is on disk is the stamp on 07-01, the standing instruction on 07-02, and `296/REALIZATIONS.md:3` today, which reads "(PROBATUM in part — the ToEdn unification + compile-wall landed; the strongly-tagged error system is the prophecy)."
+That lessons block's surrounding sentences describe a different weigh — a 2026-07-02 stone-B run on `cargo test --workspace` plus a partial grep, with roughly 237 missed failures — not the 298 weigh, which used `cargo nextest run --release` and reported 4283/0. No sentence on disk says the 298 INSCRIPTION was wrong. What is on disk is the stamp on 07-01, the standing instruction on 07-02, and `296/REALIZATIONS.md:3` today, which reads "(PROBATUM in part — the ToEdn unification + compile-wall landed; the strongly-tagged error system is the prophecy)."
 
 At HEAD, arc 296 is still open: 97 files, realizations to R20, no `INSCRIPTION.md`, last commit `db547fa67` on 2026-09-07. The 298 INSCRIPTION has not been touched since the day it was written — `git log` on the arc directory stops at `a2a48dd34`, sixty-eight days ago.
 
@@ -185,7 +189,7 @@ The correction exists and it lives in the other arc's file. A reader who opens t
 
 That is the recurring cost of the cure. Once a span is a real `file!():line!()`, deleting unrelated Rust lines moves the goldens. An honest coordinate is load-bearing on its own source layout in a way the sentinel never was; `<runtime>:0:0` was stable precisely because it was fake. The arc paid that bill the same day and did not argue about it.
 
-## The spelling drifted; the tag did not
+## The spelling drifted; the tag did not (07-01 → 2026-09-06)
 
 298.1 shipped the golden `tests/value/probe_arc298_1_option_result_tagged__option_none.edn` as `#wat.core.Option/None nil`. At HEAD it reads:
 
@@ -193,7 +197,7 @@ That is the recurring cost of the cure. Once a span is a real `file!():line!()`,
 #wat.core/Option.None {}
 ```
 
-Five later commits re-spelled it — `98499f485` (294.f), `c9bfa8fde` (278 A.0, "every enum variant vector-bodied"), `21b7079f8` (294.g), `437edde1f` (296 H-2a), and `498c09daa` on 2026-09-06 ("a variant is a tagged map — `#ns/Enum.Variant {…}`"). The body went vector to map; the namespace/type delimiter moved. `None` is still spoken, still tagged, still always present, and the probe from 2026-07-01 is still green — its header comment documents the drift rather than quietly tracking it. Whether the strict read ruling survived those five migrations was not re-checked for this post.
+Five later commits re-spelled it, from `98499f485` (294.f) through `498c09daa` on 2026-09-06 ("a variant is a tagged map — `#ns/Enum.Variant {…}`"). The body went vector to map; the namespace/type delimiter moved. Whether the strict read ruling survived those five migrations was not re-checked for this post. `None` is still spoken, still tagged, still always present, and the probe from 2026-07-01 is still green, with a header comment documenting the drift rather than quietly tracking it.
 
 ## The value came back (2026-09-01)
 
@@ -211,19 +215,19 @@ fn fault_value(message: String, location: Option<crate::span::Span>) -> Value {
     };
 ```
 
-An `Option<Span>` — the shape ruling five affirmatively ruled out — falling back to the coordinate 298.2 was built to delete. Its doc comment at `:11418-11420` says that when the panic carried no span, for transport or synthetic failures, "a synthetic `<runtime>` location marks it honestly." `DESIGN-298.2-annihilate-span-unknown.md:10`, on the identical triple: "That is false."
+An `Option<Span>` — the shape the fifth ruling had affirmatively excluded — falling back to the coordinate 298.2 was built to delete. Its doc comment at `:11418-11420` says that when the panic carried no span, for transport or synthetic failures, "a synthetic `<runtime>` location marks it honestly." `DESIGN-298.2-annihilate-span-unknown.md:10`, on the identical triple: "That is false."
 
 The eliding came back alongside it, and earlier. `src/host/test_runner.rs:915-923` (`251b43b32`, 2026-07-24) is the first reintroduction, and its comment names what it is doing: a synthesized `Fault` for a location-less death "carries the `<runtime>` sentinel Location (Fault's location is mandatory). It is NOT a real source coordinate, so the human-facing diagnostic omits it — same rendering the old absent-location path gave," followed by `if file == "<runtime>" { return None; }`. Sentinel, elide-when-sentinel, and a comment that calls it a sentinel.
 
-Whether that is a reversal or a gap the annihilation never covered is not settled by anything read for this post; no design note re-authorizing the sentinel at this layer was searched for. The read that produced this section, offered as a read: 298 reached the Rust `Span` type. `fault_value` builds a wat-level `:wat::core::Fault` whose `location` is a wat `Location`, for a death — a disconnected transport, a crashed service — that has no wat source at all. Handing a wat user `runtime.rs:11429` is not obviously more honest than handing them `<runtime>`. The pressure that produced the sentinel in the first place, a mandatory location on a thing that has no location, was never removed; only the constructor was.
+Whether that is a reversal or a gap the annihilation never covered is not settled by anything read for this post. 298 reached the Rust `Span` type. `fault_value` builds a wat-level `:wat::core::Fault` whose `location` is a wat `Location`, for a death — a disconnected transport, a crashed service — that has no wat source at all. Handing a wat user `runtime.rs:11429` is not obviously more honest than handing them `<runtime>`. The pressure that produced the sentinel in the first place, a mandatory location on a thing that has no location, was never removed; only the constructor was.
 
 Both arcs are reasoning carefully about a real question. Ruling five said there is no nowhere. The wat surface found a nowhere.
 
 ## What the arc proved about itself
 
-A ruling that a state cannot exist does not stop the state from arriving. It removes the vocabulary for naming it when it does — which is the same shape as the three costumes, one level up: the sentinel and the elide were both ways of having a state the type system had declared impossible, and both were unreadable from the bytes for exactly that reason.
+A ruling that a state cannot exist does not stop the state from arriving. It removes the vocabulary for naming it when it does — the same shape as the three costumes, one level up: the sentinel and the elide were both ways of holding a state the type had declared impossible, and both were unreadable from the bytes for exactly that reason.
 
-The arc's three deliverables held. Sixty-eight days on, the serializers are gone, the kinds are derived, the symbol is dead, and none of it has been amended because none of it needed to be. What over-reached was the inherited claim — the stamp 298 put on another arc's prophecy — and the mechanism of that over-reach is the arc's own subject. 298 made the write side honest: an error's EDN became a total function of its Rust type. 296 R1's fulfilment condition needs the read side too. Honest optionality on the wire is half a round trip, and the closure inferred the other half rather than speaking it.
+The arc's three deliverables held. Sixty-eight days on, the serializers are gone, the kinds are derived, the symbol is dead, and none of it has been amended because none of it needed to be. What over-reached was the inherited claim, and the mechanism of that over-reach is the arc's own subject: 298 made the write side a total function of the Rust type, and 296 R1's fulfilment condition needs the read side too. Honest optionality on the wire is half a round trip, and the closure inferred the other half rather than speaking it.
 
 A closure is a claim with a date on it, and the arc that writes one is the last to notice it aged. The correction was made inside a day and filed in a neighbouring document. The artifact carrying the claim still says what it said on 2026-07-01.
 
@@ -233,7 +237,7 @@ A closure is a claim with a date on it, and the arc that writes one is the last 
 - **A null object is the most dangerous lie because it never fails.** `Span::unknown()` satisfied the type, compiled, ran, and objected to nothing, in 496 copies in one directory and 815 across the tree — while the cure sat in the type's own doc comment the entire time, unread because nothing had ever screamed.
 - **The eliding existed to hide the sentinel; deleting one deleted seventeen call sites of the other.** When a fake value is pervasive, downstream code grows branches that detect and suppress it, and those branches read as defensive diligence. Remove the fake and the diligence has nothing left to defend against. A changelog cannot show this; only the deletion can.
 - **Fixing a codec carve-out is a decomplection, not a feature.** `Option` was the one discriminated type the codec had been hand-written to erase, while `Result` kept its tag in the next match arm on grounds that applied equally to both. The fix authored no encoding logic: remove the exception and the type falls into the general enum path that already existed.
-- **An honest coordinate has a maintenance cost a fake one does not.** Once every span names a real `file:line`, every error golden becomes sensitive to unrelated edits in the source — proven fourteen hours later when a warning sweep moved five goldens. The sentinel was stable because it was fake, and that stability is a fair description of what it cost.
-- **A green gate is where a weakened proof hides.** Thirty byte-identical `assert_eq!` softened to `contains` and reported as necessary, caught by reading the diff rather than the count. A contains-check passes on reordered fields, malformed maps, and appended garbage; the probes existed to prove byte-identity. The floor then went *down* — 4271 to 4239 — because 32 test duplicates became identical to their siblings once the "unknown" case no longer existed to vary.
+- **An honest coordinate has a maintenance cost a fake one does not.** Once every span names a real `file:line`, every error golden becomes sensitive to unrelated edits in the source — proven fourteen hours later when a warning sweep moved five goldens. The sentinel never needed updating because it never pointed at anything.
+- **A green gate is where a weakened proof hides.** Thirty byte-identical `assert_eq!` softened to `contains` and reported as necessary, caught by reading the diff rather than the count. A contains-check passes on reordered fields, malformed maps, and appended garbage; the probes existed to prove byte-identity. The floor then went down — 4271 to 4239 — because 32 test duplicates became identical to their siblings once the "unknown" case no longer existed to vary.
 - **A ruling that a state cannot exist removes the vocabulary, not the state.** "There is no nowhere" held where a Rust construction site could stand in for a source location. It did not hold at the wat surface, where a mandatory `Location` meets a death with no wat source — and sixty-two days later the same `<runtime>:0:0` triple was in the tree with a comment calling it honest.
 - **Corrections do not propagate to the artifact that carries the claim.** The over-claim was owned within twenty-four hours, in the file of the arc it was made about. The closure document that states it three times has not been touched in sixty-eight days, and it is the document a reader opens.
