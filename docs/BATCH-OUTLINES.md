@@ -152,6 +152,54 @@ property that **what ships is what was graded**.
   time ("five hours" where the clock says 2h26m) were caught by the orchestrator
   and by a corrector working past its brief — never by the ward.
 
+### The correction loop — how it goes wrong
+
+Learned on `uiol-007` (8 → 7 → 7) and `ars-culta-002` (7 → 7 → 7). Both regressed
+or stalled under correction, and the root cause was the same and was **the
+orchestrator's**, not the writers':
+
+> **A correction pass that grows the post is suspect.** Voice defects are
+> *removed*, not explained. Every fix briefed as "land this / name that / carry
+> one more" adds prose, and additive fixes to a voice problem produce more voice.
+
+Four rules, each paid for:
+
+1. **Cut, don't move.** When a ward flags a line as out-of-register, deleting it
+   is the fix. Relocating it preserves the register and only changes its address —
+   that is how a scoping caveat became a Level-1 self-narration in the lead, and
+   how a `--grep` note landed as a fact connected to nothing.
+2. **Brief three to five findings, never all of them.** A cast returns 5–8; each
+   round I briefed every one; the accumulation became the next grader's headline
+   finding — "editorial register" on one post, "a document defending itself" on
+   the other (five sourcing disclaimers, where the anchors bound themselves once).
+3. **Open every corrector brief with:** *"If you write a new sentence to answer a
+   finding, you have failed the pass."* And **require the word count to fall.**
+   The two passes that worked took 121 and 105 words out; the pass that regressed
+   put 112 in.
+4. **When a corrector flags its own fix as borderline, act on it.** One did —
+   *"What the rigidity bought inside this post's own scope is the next section's
+   subject"* — I let it stand, and the next grader found it. An agent's own doubt
+   about its own edit is the cheapest finding available.
+
+**And the escalation rule:** if two correction passes do not raise the score,
+stop correcting. The spell's own guidance is that voice cannot be fixed
+surgically when the shape is wrong — the next move is a fresh draft from the
+notes, not a fifth surgery.
+
+### Instruments that lied, and their replacements
+
+Every one of these produced a plausible number for a question I had not asked.
+The pattern is constant: **state what the instrument can see before quoting it.**
+
+| wrong | right | what it cost |
+|---|---|---|
+| `git log -S "quote"` | `git log --grep` | `-S` pickaxes DIFF content, not messages. All nine quotes came back NOT FOUND; I was one step from reporting the writer had fabricated every quote in a post. |
+| `... \| cut -c1-150` | `... \| fold -w N` | Read a truncation as the content and concluded a corrector had not made an edit it had made. |
+| `--since/--until` + `%ad` | `awk` over `%ad` | `--since/--until` filter on **committer** date while `%ad` prints **author** date; up to 47 commits' difference per week in the grid that allocates posts. |
+| `mb..branch` for own-work | `branch ^main ^other` | Branches inherit from each other. 109 of `claude-compute`'s 133 commits are `grok-rete`'s; a merge-base range gave a third of one front's output to another. |
+| arc-tag regex `\(([0-9]{3})` | match `NNN:` and `NNN 24y` too | Reported 4 arc mentions in a week of 180 commits. |
+| row count in a table | count of *live* rows | The warding ledger keeps struck rows in a separate section; "three live rows" was four. |
+
 ### Source shapes a reader must be told about
 
 Three, and a reader pointed at only the first will report an empty week:
