@@ -1,12 +1,3 @@
-<!--
-TITLE PROPOSALS — builder's call, never mine. Frontmatter carries #1 as a placeholder.
-
-  1. The Smallest of Three
-  2. The Prerequisite Ate Its Successors
-  3. Planned in Rust, Arrived in wat
-
-No song. Always the builder's.
--->
 ---
 title: "The Smallest of Three"
 description: "Late April 2026, one scratch repo, three sketches: a program-as-an-MCP-server, a REPL, and a small ask to let `main` see its arguments. The smallest one opened as arc 170 and closed eighty-one days later by shipping the other two — and the REPL, planned as a Rust crate wrapping a line-editing library, arrived as a stdlib wat module while the MCP bridge stayed in Rust because wat's own law refused to carry it."
@@ -17,7 +8,7 @@ sidebar:
   order: 7
 ---
 
-Backfill: this covers 2026-04-29 through 2026-07-29 and was written on 2026-09-07 from a sibling scratch repository, arc 170's DESIGN and INSCRIPTION, the commit bodies, and the shipped source, all still on disk. The April directories in that scratch repository were reconstructed on 2026-05-01 by replaying `Write` and `Edit` tool calls out of six Claude session transcripts, after the assistant itself deleted the scratch tree during a repo move (`7fc430a`, scratch repo). The documents carry their own dates; the commit does not. It describes the CLI as it stood on 07-29, not as it stands now: the flag family kept growing after the close. Arc 170's body is already published here as [210 rendered pages](/blog/arc-170-realizations/), its closing realization verbatim. What follows is the prehistory that record does not contain, and the fourteen hours that closed it.
+Backfill: this covers 2026-04-29 through 2026-07-29 and was written on 2026-09-07 from a sibling scratch repository, arc 170's DESIGN and INSCRIPTION, the commit bodies, and the shipped source, all still on disk. The April directories in that scratch repository were reconstructed on 2026-05-01 by replaying `Write` and `Edit` tool calls out of six Claude session transcripts, after the assistant itself deleted the scratch tree during a repo move (`7fc430a`, scratch repo). The documents carry their own dates; the commit does not. It describes the CLI as it stood on 07-29, not as it stands now: the flag family kept growing after the close.
 
 ## Three sketches in one week (2026-04-29 → 2026-05-03)
 
@@ -43,7 +34,7 @@ The second, `012-wat-repl`, was split out on 2026-05-02 (`68f79d9`) on a distinc
 
 > i think we rename and split... break the repl part into its own and the breakpoint/pry into its own.... ruby's irb doesn't do what pry does but pry builds upon irb....
 
-Its README plans a self-contained Rust crate at `wat-rs/crates/wat-repl/`, depending on `rustyline` for line editing and history, with a Rust shim driving eval dispatch, an embeddable entry point `(:wat::repl::start :context ctx)`, and a CLI reached as `wat repl`. The plan is specific enough to be measured against, which is what makes what arrived in July a reading of the substrate rather than a change of mind.
+Its README plans a self-contained Rust crate at `wat-rs/crates/wat-repl/`, depending on `rustyline` for line editing and history, with a Rust shim driving eval dispatch, an embeddable entry point `(:wat::repl::start :context ctx)`, and a CLI reached as `wat repl`.
 
 ## The smallest ask already had the word `repl` in it (2026-05-03 → 05-09)
 
@@ -56,13 +47,11 @@ The third, `019-wat-cli-options` (`078381c`), is the earliest artifact recording
 > $1 = the wat file
 > $N = whatever whitespace deliminted string values appaer after the file
 
-It is the smallest of the three by a wide margin: a mandatory parameter shape on one function. Its own cross-reference section files `--mcp` under arc 006 and `wat repl` under arc 012, as a reserved subcommand belonging to somebody else's arc. Both were other people's work.
+It is the smallest of the three by a wide margin: a mandatory parameter shape on one function. Its own cross-reference section files `--mcp` under arc 006 and `wat repl` under arc 012, as a reserved subcommand belonging to somebody else's arc.
 
 And the same document says where a REPL comes from:
 
 > because wat is static, users /must/ compile their own cli if they want their symbols found - that's the agreement.. they can export their own binary with wat forms bound in the binary.. but they can and should make their own wat to get stuff like repl to work for them...
-
-The word `repl` is in the original argv ask, as the example of the thing argv would let somebody else build.
 
 Arc 170 opened on 05-09, at `b433da7`. Beat one of its own conversation log is four words — make :user::main accept argv — and by beat fifteen the subject is the wire form of a spawned program (we don't communicate strings - we communciate ast) and by beat sixteen it is whether a program needs a name at all (why do we even need a name if the forms /are/ the thing that matters?). The framing line the arc kept:
 
@@ -136,7 +125,7 @@ That refusal is this front's shape exactly. The law wat enforces outward — EDN
 
 ## How it closed (2026-07-29, 15:32)
 
-The INSCRIPTION landed at `10234ed`, and the recognition it carries — the song, the three faces, the admission — is [published in full](/blog/arc-170-realizations/210-the-closing-realization-per-portam-cogitamvs-arc-170-opened-on-argv-an/).
+The INSCRIPTION landed at `10234ed`, and the recognition it carries is [published in full](/blog/arc-170-realizations/210-the-closing-realization-per-portam-cogitamvs-arc-170-opened-on-argv-an/).
 
 The stated precondition was measured rather than assumed. The DESIGN had carried since 2026-05-13 that clippy and rustc must both be clean before an INSCRIPTION ships. At close, `cargo build --release --all-targets` returned zero warnings and `cargo clippy --release --workspace` returned roughly 1,150, of which 831 were a single lint. The builder was shown the number and rescoped in the open:
 
@@ -146,7 +135,7 @@ The stated precondition was measured rather than assumed. The DESIGN had carried
 
 The deferral grep was mandatory before the INSCRIPTION could ship, and its single permitted match is the affirmative form *out of arc 170's scope*, with every item under it carrying a named owner or an explicit statement that no arc owns it and why. The convention shipped as a convention, with a probe in `wat-scripts/scratch-pad/` that hands a rogue record to a two-type clause and type-checks green — the live witness that goes red the day the set is genuinely closed. The DESIGN was trued because it was lying: its status header still read IN FLIGHT with the deadlock as current blocker, two days after that deadlock had been made unconstructible.
 
-The INSCRIPTION says seventy-nine days; the calendar from 2026-05-09 to 2026-07-29 is eighty-one, and seventy-nine lands on 07-27 — the day the deadlock died and the closure condition was set. The branch came home at 3,428 commits ahead of `main` and zero behind, floor `4183 passed, 262 skipped` as the INSCRIPTION states it.
+The INSCRIPTION says seventy-nine days; the calendar from 2026-05-09 to 2026-07-29 is eighty-one, and seventy-nine lands on 07-27 — the day the deadlock died and the closure condition was set. The branch came home at 3,428 commits ahead of `main` and zero behind, floor `4183 passed, 262 skipped` as the INSCRIPTION states it. The smallest of the three sketches closed by shipping the other two.
 
 ## Likely Contributions to the Field
 

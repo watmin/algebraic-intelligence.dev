@@ -114,7 +114,7 @@ Each of the three is a place a gate could have quietly lied.
 
 Then the gate ran. Going into `1db0ada` the ledger held four live rows. Two were moved into a new `## Struck rows` section by that same commit — `scripts/lib/spells.mjs` with `scripts/generate-vigilia-skill.mjs`, stamped 2026-06-05, and `grimoire/SKILL.md` with `extirpare/SKILL.md`, stamped 2026-06-30 — and both were invalidated by the commit that shipped the gate. `spells.mjs` gained new gates during the landing; the grimoire index gained its Runes section, and the strike note says why that row could not stand: **that section shipped three successive false universals before converging.** The struck rows are kept verbatim under a `<details>` block — history preserved, claim withdrawn.
 
-Two rows survived, and the third the ledger holds today is `experiri`'s own, written 67 seconds later — which is not a tidying habit either. `scripts/publish.mjs` now runs `ledger:check` inside ship, so the row must cite a commit that does not exist until the publish is made. Two commits is the shape the gate forces.
+Two rows survived, and the third the ledger holds today is `experiri`'s own, written 67 seconds later — which is not a tidying habit. `scripts/publish.mjs` now runs `ledger:check` inside ship, so the row must cite a commit that does not exist until the publish is made. Two commits is the shape the gate forces.
 
 ## The fossil the append-only store kept
 
