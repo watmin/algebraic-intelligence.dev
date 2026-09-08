@@ -169,11 +169,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | **12** | 3 | **3** | — | — | — | — | **6** |
+| wat Under Its Own Law | **12** | — | **6** | — | — | — | — | **6** |
 | Ars Culta | 2 | — | — | — | — | — | — | **2** |
 | The Exemplar | 4 | — | **3** | — | — | — | — | **1** |
 | Services in Anger | 1 | — | — | — | — | — | — | **1** |
-| **total** | **20** | **3** | **6** | — | — | — | — | **11** |
+| **total** | **20** | — | **9** | — | — | — | — | **11** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
