@@ -141,6 +141,7 @@ breaks no link.**
 | `services/001` | **A Place to Be Wrong In** | The Number That Was Not Asked For · What the Instrument Cannot See |
 | `ars-culta/001` | **A Discipline You Fetch Is a Discipline You Skip** | The Shelf That Loads First · Constraint Engineering Has No Moment |
 | `under-its-own-law/001` | **No Absence Is Implicit** | There Is No Nowhere · Half a Round Trip |
+| `exemplar/002` | **A Wrong Number Is Not an Error** | Every Failure Prints as a Speedup · The Mean and the Minimum, Nine Thousand Lines Apart |
 | `exemplar/003` | **A Prose File Cannot Go Red** | A Summary of a List Rots Faster Than the List · Eight of Nine |
 | `under-its-own-law/005a` | **The Differential That Never Ran** | The Regime Where Both Are Right · Not a Wall, a Flaw |
 | `under-its-own-law/004` | **Built Backwards** | Portable Was the Symptom · The Data Back in Its Chair |
@@ -175,9 +176,9 @@ batch them into lockstep waves.
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
 | wat Under Its Own Law | **12** | — | **3** | — | — | — | — | **9** |
 | Ars Culta | 2 | — | — | — | — | — | — | **2** |
-| The Exemplar | 4 | — | **2** | — | — | — | — | **2** |
+| The Exemplar | 4 | — | **1** | — | — | — | — | **3** |
 | Services in Anger | 1 | — | — | — | — | — | — | **1** |
-| **total** | **20** | — | **5** | — | — | — | — | **15** |
+| **total** | **20** | — | **4** | — | — | — | — | **16** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
