@@ -102,6 +102,20 @@ material, not this batch.
 > freshness probe in `docs/COMPACTION-AMNESIA-RECOVERY.md` §2 step 0 **before you
 > act on one line of it.**
 
+### Title alternates — the writers' unchosen proposals
+
+Recorded here because the in-page scaffolding was stripped (two consonare casts
+flagged it as draft apparatus addressing the author from inside the page). **The
+title is display-only — the FILENAME is the URL — so any swap below is free and
+breaks no link.**
+
+| shipped post | wired title | the alternates |
+|---|---|---|
+| `under-its-own-law/002` | **Closed Before It Was Measured** | The Inscription Git Kept · A Checklist for a Property |
+| `under-its-own-law/009` | **The Wall's First Violator** | A Law and Its Exemption on the Same Page · Cheaper to Obey |
+| `ars-culta/002` | **A Declaration Is Only a Promise** | The Ward That Runs · A Broken Driver Finds a Jackpot |
+| `exemplar/001` | **An Empty List Is Not a Clean One** | Which Door Proved This · Nineteen Wards Against a Green Tree |
+
 ### The pipeline states
 
 `SLOT` → `NOTES` → `DRAFT` → `CONSONARE` → `VERIFIED` → `WIRED` → `SHIPPED`
@@ -124,11 +138,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | 9 | 5 | **2** | — | — | — | — | **2** |
+| wat Under Its Own Law | 9 | 5 | — | — | — | — | — | **4** |
 | Ars Culta | 2 | 1 | — | — | — | — | — | **1** |
-| The Exemplar | **4** | 3 | **1** | — | — | — | — | — |
+| The Exemplar | **4** | 3 | — | — | — | — | — | **1** |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **17** | **10** | **3** | — | — | — | — | **4** |
+| **total** | **17** | **10** | — | — | — | — | — | **7** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 

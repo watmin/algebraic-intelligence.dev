@@ -26,7 +26,7 @@ Closed: 2026-06-30 (slices 296.2–296.5 landed, gate 4157/0/91)
 
 Same calendar day, both dates. The file lasted 28 hours and 52 minutes and then was removed as illegitimate. It exists now only in git, at `7f17054a8`.
 
-That is not the interesting part. The interesting part is that the closure was ordered, the executor complied exactly, all six of its acceptance rows passed, and every one of those six rows is still true today with the arc still open.
+The closure was ordered, the executor complied exactly, all six of its acceptance rows passed, and every one of those six rows is still true today with the arc still open.
 
 ## June 30. 07:07. An afternoon that was not one
 
@@ -104,7 +104,7 @@ Run those four greps against HEAD today and they return the same answers. `src/d
 
 ## The wall was the wrong wall
 
-`ToEdn` requires one method: `to_edn() -> OwnedValue`. It guarantees that an error can be turned into EDN. It guarantees nothing about what is in the EDN. R3 states it flatly at `REALIZATIONS.md:317-318`:
+Eleven and a half hours after the closure, `ToEdn` still required exactly one method: `to_edn() -> OwnedValue`. It guarantees that an error can be turned into EDN. It guarantees nothing about what is in the EDN. R3 states it flatly at `REALIZATIONS.md:317-318`:
 
 > `ToEdn` requires only `to_edn() -> OwnedValue`; it does **not** enforce the `:wat::core::Error` floor.
 
@@ -146,7 +146,7 @@ The arc's own realizations file said the arc was rising for seventeen hours whil
 
 The judgment is right and the arc was right to make it. The attribution is not what the disk shows. `BRIEF-296-error-edn-trait.md:64` was committed two hours and seven minutes before `7f17054a8`, and it is the line quoted above: write the inscription, flip the status to closed, gate. The executor did the thing the acceptance row told it to do. There is no negligence in this story to find; the defect is upstream of the person who complied, in a scorecard that made "the arc is finished" a row you could pass.
 
-The sentence that would have been accurate here was written by this same project a month later, about a different strand: a commit body in arc 278 naming its own orchestrator's brief as the defect rather than the rider's work. It was not written on July 1, and no later commit or document in the arc corrects the attribution — searched, not assumed. A reversal that misidentifies its own cause is still a reversal; it just has one more thing left to reverse.
+No later commit or document in the arc corrects the attribution. A reversal that misidentifies its own cause is still a reversal; it just has one more thing left to reverse.
 
 ## July 1. 16:35. The bar becomes a property
 

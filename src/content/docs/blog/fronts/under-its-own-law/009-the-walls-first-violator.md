@@ -15,7 +15,7 @@ Title candidates:
   3. Cheaper to Obey
 -->
 
-Backfill: this covers 2026-04-20 through 2026-08-19 and was written on 2026-09-08 from arc 004's and arc 118's `DESIGN.md` / `INSCRIPTION.md` / `REALIZATIONS.md`, the `MEASURED-*.md` stone notes, the commit bodies, and the working tree, all read in one session. The floor counts and bench figures below are the record's — weighed by the orchestrator at the time, not re-run for this post — and the floor has since grown to 5127 (`3ed8a89d4`, 2026-09-03). Two spellings have moved: the arc writes `Seqable<T>` and `Stream<T>`, and angle-bracket parametrics became illegal three days after inscription (`ab52b7188`, 2026-08-22), so the arc's spelling is quoted for the arc's story; and `wat/stream.wat` was annihilated on 2026-06-27, but the path is not empty at HEAD — it was reclaimed for an unrelated purpose on 2026-09-06. What the post is actually about is a single page that carried a law and its own exemption, and the moment four months later when the wall built to end that class refused the language that wrote it.
+Backfill: this covers 2026-04-20 through 2026-08-19 and was written on 2026-09-08 from arc 004's and arc 118's `DESIGN.md` / `INSCRIPTION.md` / `REALIZATIONS.md`, the `MEASURED-*.md` stone notes, the commit bodies, and the working tree, all read in one session. The floor counts and bench figures below are the record's — weighed by the orchestrator at the time, not re-run for this post — and the floor has since grown to 5127 (`3ed8a89d4`, 2026-09-03). Two spellings have moved: the arc writes `Seqable<T>` and `Stream<T>`, and angle-bracket parametrics became illegal three days after inscription (`ab52b7188`, 2026-08-22), so the arc's spelling is quoted for the arc's story; and `wat/stream.wat` was annihilated on 2026-06-27, but the path is not empty at HEAD — it was reclaimed for an unrelated purpose on 2026-09-06.
 
 ## April 20: two sentences, three inches apart
 
@@ -40,7 +40,7 @@ Then at `:192`, under a heading reading "Not shipped (intentionally — stdlib-a
 
 And at `:197`, the discipline stated as policy: each combinator ships when a real caller demands it, with a citation.
 
-Seventy-odd lines apart, in one file, two laws that apply to the same object and point opposite ways. The first asks why a thing is missing. The second asks who has asked for it. No one broke a rule. A different question was asked, and the question that displaced the law was itself a named, documented, load-bearing house discipline — so nothing screamed, because the deferral was compliant. That is the whole mechanism, and arc 118's fifth realization states the general form of it: every gate we own checks whether an answer is true; none check whether the question was the right one.
+Seventy-four lines apart — `INSCRIPTION.md:120` and `:194` — in one file, two laws that apply to the same object and point opposite ways. The first asks why a thing is missing. The second asks who has asked for it. No one broke a rule. A different question was asked, and the question that displaced the law was itself a named, documented, load-bearing house discipline — so nothing screamed, because the deferral was compliant. That is the whole mechanism, and arc 118's fifth realization states the general form of it: every gate we own checks whether an answer is true; none check whether the question was the right one.
 
 The lazy sequence stayed a thread for four months.
 
@@ -88,7 +88,7 @@ The diff adds `pub forced: Arc<OnceLock<Arc<Stream>>>` to both `LazyCell` and `N
 
 and writes, in its place, a narrower restatement of the rule that the patch happens to satisfy: dropping the `Cons` and trying to recover the head is still impossible, that is the single-pass rule. A pickaxe over the field settles the timeline with no ambiguity — `git log -S'forced' -- src/stream/mod.rs src/seq/mod.rs` returns exactly four commits, the memo genuinely did not exist between 2026-06-27 and 2026-08-16, and there is no fifth.
 
-"That is not rewind" is true. WHNF caching is not a rewind buffer. It is also not what the ruling was protecting: the ruling's reason was retention, and the patch reintroduced retention while satisfying the ruling's letter — in the same diff that deleted the ruling's text. This does not need anyone to have known what they were overwriting, and the record does not say they did. The mechanism does not require intent, which is exactly what makes it worth naming. It is the April instance one tier down and twelve weeks later: a law obeyed to the letter by a substitution that costs less.
+"That is not rewind" is true. WHNF caching is not a rewind buffer. It is also not what the ruling was protecting: the ruling's reason was retention, and the patch reintroduced retention while satisfying the ruling's letter — in the same diff that deleted the ruling's text. This does not need anyone to have known what they were overwriting, and the record does not say they did. It is the April instance one tier down and twelve weeks later: a law obeyed to the letter by a substitution that costs less.
 
 What it is not is an evasion that stood. It stood for 46 hours.
 
@@ -212,6 +212,8 @@ The closing register is the builder's, and it is not triumphant:
 He had already refused the discipline that cost the four months, in one line, in a different argument, before anyone had gone back and found arc 004's inscription:
 
 > the lack of foldr callers doesn't negate their emergence
+
+The law was on the page in April. What took four months to build was a place it could not be answered from.
 
 ## Likely Contributions to the Field
 

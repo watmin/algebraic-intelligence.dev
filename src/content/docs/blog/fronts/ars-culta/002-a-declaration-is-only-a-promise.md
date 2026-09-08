@@ -8,13 +8,6 @@ sidebar:
   order: 2
 ---
 
-<!--
-TITLE PROPOSALS (builder picks; #1 is wired as the default — the FILENAME is the URL,
-  so swapping the title later costs nothing and breaks no link)
-  1. "A Declaration Is Only a Promise"
-  2. "The Ward That Runs"
-  3. "A Broken Driver Finds a Jackpot"
--->
 
 <!-- rune:consonare(solo) — rule 11 carries two obligations. The quotation obligation cannot be discharged from this corpus; the agency obligation is discharged, with a hedge. Quotation: datamancy.dev holds no attributed builder quotes in this window (measured: 0, against 247 on main), so the trial's exchanges could only be supplied by fabricating one. Agency: the calls this post reports are the builder's, and the post names him as their agent rather than rendering them agentless — which calls he made personally and which through an agent is not recoverable here. -->
 

@@ -8,15 +8,8 @@ sidebar:
   order: 1
 ---
 
-<!--
-TITLE PROPOSALS (builder picks; #1 is wired as the default — the FILENAME is the URL,
-  so swapping the title later costs nothing and breaks no link)
-  1. "An Empty List Is Not a Clean One"
-  2. "Which Door Proved This"
-  3. "Nineteen Wards Against a Green Tree"
--->
 
-Backfill: this covers Monday 2026-08-24 through Sunday 2026-08-30 and was written on 2026-09-08 from the 214 commit bodies on `grok-rete`, the vigilia's work list, and the branch's own docs — all still on disk. Both endpoints are real boundaries: the 24th is `git merge-base origin/grok-rete origin/main`, and the 30th is the day the front's central question got answered. Every floor count below is quoted from a commit body rather than re-run. What the week produced is not a subsystem being announced as exemplary. It is a subsystem that measured, against a committed instrument, exactly how far short it falls — and published the distance.
+Backfill: this covers Monday 2026-08-24 through Sunday 2026-08-30 and was written on 2026-09-08 from the 214 commit bodies on `grok-rete`, the vigilia's work list, and the branch's own docs — all still on disk. Both endpoints are real boundaries: the 24th is `git merge-base origin/grok-rete origin/main`, and the 30th is the day the front's central question got answered. Every floor count below is quoted from a commit body rather than re-run.
 
 August 24, 18:00:10 −0700, `de827fb4c`. The commit is a merge of `grok-rete` into `main`, and it demonstrates the front's whole method before the front has a name:
 
@@ -46,7 +39,7 @@ At the cutoff commit `e6858e858`, `src/rete/` is **42,384 lines across roughly n
 
 The part that matters for why this subsystem and not another is that it ships with more than one of itself. `src/rete/mod.rs:1-8` states it plainly — "The wat files are compile + `$oracle` reference, not the production fire path." The production path is `fire-rules`, sealed Rust in `src/rete/kernel/`. Beside it lives `fire-rules$oracle`, the same engine written in wat, whose entire job is to disagree. And on August 26, `b2939f12b` closed two defect families with an exit rule naming a third: "Clara 0.24.0 ran on both and agrees, byte-identical to native and the `$oracle`." Clara is the Clojure rules engine — a third-party twin, outside the project entirely. By the 30th there is a benchmark harness running the same axes against it, and `b35327830` reads **`33/33 :accuracy :match, 33/33 :winner :us`**.
 
-That third implementation earned its keep in a way the second could not. The Clara twin surfaced an *acceptance* divergence — wat admits a binding inside `:not` that Clara refuses at compile time — which the commit describes as invisible to any wat-vs-wat differential. Two implementations of one thing in one language share the premises that make them wrong together.
+That third implementation earned its keep in a way the second could not. The Clara twin surfaced an acceptance divergence — wat admits a binding inside `:not` that Clara refuses at compile time — which the commit describes as invisible to any wat-vs-wat differential. Two implementations of one thing in one language share the premises that make them wrong together.
 
 The builder's own ground for holding this subsystem up, from `57e2adc9b` on the 30th, arrives while striking a finding that had been filed against rete and did not belong to it:
 
@@ -66,7 +59,7 @@ The tooling had already proved itself against the subsystem this front is about.
 
 > "we polish the gen testing doc - after - the wat-gen tooling is deemed an exemplar - code, then docs."
 
-What shipped alongside it is the shape every later gate copies: `tests/lint/gen_doc_surface_matches.rs`, which fails the build if a verb in `wat/gen.wat` is missing from the doc, and fails it in the other direction if a `:wat::gen::` name in the doc does not exist. Mutation-proven in both directions, with clean discrimination — each catches only its own direction — and it states its own ceiling in the file: it cannot check that a documented verb is documented correctly.
+What shipped alongside it is the shape every later gate copies: `tests/lint/gen_doc_surface_matches.rs`, which fails the build if a verb in `wat/gen.wat` is missing from the doc, and fails it in the other direction if a `:wat::gen::` name in the doc does not exist. Mutation-proven in both directions, with clean discrimination — each catches only its own direction — and it states its own ceiling in the file: it cannot check that a documented verb is documented correctly. A gate that names what it cannot see is the difference the order was asking for.
 
 ## A bar has to be an instrument
 
@@ -108,7 +101,9 @@ The commit's answer: it was chosen to match `DEFAULT_MAX_FIRE_ROUNDS`, "That is 
 
 > "what i64::+ did you attempt to use?... :wat::rete::i64::+ is total.."
 
-That pushback unravelled a conclusion committed an hour earlier: all three attempted exploits had been refused for one unrelated reason, which is what finally proved the probes had never tested the hole at all. The hole was then demonstrated for real, and closed. At least four commits in the window carry a subject saying the builder's pushback corrected the apparatus. And the register is not always formal — `2361bf8b3`, in full: "bro - those if ladders are awful - you gotta use cond".
+That pushback unravelled a conclusion committed an hour earlier: all three attempted exploits had been refused for one unrelated reason, which is what finally proved the probes had never tested the hole at all. The hole was then demonstrated for real, and closed. The pushback is not always formal, and does not need to be — `2361bf8b3`, in full:
+
+> "bro - those if ladders are awful - you gotta use cond"
 
 ## The morning of the 30th — the list was empty
 
@@ -144,9 +139,9 @@ The engine had a compiler that proved things and a deserializer that did not, an
 
 The concrete shapes:
 
-**A1.** Nothing checked that a child id resolves, that a Negation, Exists or Accumulate `aid` names an Alpha, or that `child > parent` — while `node.rs:192` and `arm.rs:592` both state that the passes *require* ascending id order. Closed by adding a fourth wall between phases 3 and 5.
+**A1.** Nothing checked that a child id resolves, that a Negation, Exists or Accumulate `aid` names an Alpha, or that `child > parent` — while `node.rs:192` and `arm.rs:592` both state that the passes require ascending id order. Closed by adding a fourth wall between phases 3 and 5.
 
-**A2.** A `panic!` licensed by a comment reading "AccFold compile proved i64" — a proof `import_export` never runs. No `catch_unwind` sits on the program path, so a wire value takes the host down with a Rust panic, no span, no rule named. The fix rule the list writes down generalises past this engine: a wire-reachable invariant may not be spelled `panic!`, and a rune here must name the door, not the compiler. Nine arms became refusals.
+**A2.** A `panic!` licensed by a comment reading "AccFold compile proved i64" — a proof `import_export` never runs. No `catch_unwind` sits on the program path, so a wire value takes the host down with a Rust panic, no span, no rule named. The fix rule the list writes down generalises past this engine: a wire-reachable invariant may not be spelled `panic!`, and a rune here must name the door, not the compiler. Nine arms became refusals. A2's own rider then surfaced a sub-row, A2b — a silent zero, closed by splitting `operand_slot`'s conflated `None` into the two things it had been standing for.
 
 **A4.** `SESSION_ORIGIN` was one `Cell` per thread, rebased by every `compile-all`. A second session re-bases the first, `saturating_sub` floors the reading at 0, and the first session has no ceiling at all for the rest of its life. `arm_lease.rs:141` is a green test holding two live sessions on one thread. The closure states its own size rather than claiming a win: "The strike converted an unsafe silent failure (a session with no ceiling at all) into a safe conservative one. A per-session origin is not a per-session allocator." And the mutation prescribed to prove the fix did nothing — swapping `or_insert` for `insert` in `mark_session_origin` left every arm of the probe green, because with distinct keys the two behave identically.
 
