@@ -77,7 +77,7 @@ batch them into lockstep waves.
 | Ars Culta | 2 | 1 | **1** | — | — | **1** | — | — |
 | The Exemplar | 3 | 3 | — | — | — | — | — | — |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **16** | **13** | **3** | — | — | **3** | — | — |
+| **total** | **16** | **13** | **3** | **1** | **1** | **3** | — | — |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
@@ -110,7 +110,7 @@ post because the closing realization is already published verbatim. With scratch
 in scope, the unit has one strong section (the prehistory) and one strong
 mechanism (the anatomy of the closing act) — which is a **short** post, or a fold.
 The builder rules.
-| `uiol-006` (the DoS incident) | **NOTES ✓ + VERIFIED** | — | **strongest unit read so far — ready to draft.** 10 quotes, all four instances grounded, and the inherited arc-258 claim REFUTED on the disk |
+| `uiol-006` (the DoS incident) | **CONSONARE ✓ — MATCHES / 9** | 7→8→9 | **strongest unit read so far — ready to draft.** 10 quotes, all four instances grounded, and the inherited arc-258 claim REFUTED on the disk |
 | `ars-culta/002` (experiri) | **NOTES ✓ + VERIFIED** | — | notes at `docs/notes/ars-culta-005-experiri-NOTES.md`; scope, orphan-blob find, byte-identity and ledger strike all re-checked against the disk by the orchestrator. **BLOCKED on the builder: no verbatim quotes exist in the repo** (see below) |
 
 **⛔ `ars-culta/002` blocker — consonare rule 11.** The repository contains **no
@@ -122,6 +122,35 @@ substrate-report, which is **Level-1 drift**. Three honest exits, and only three
 the builder confirms the quotes; or the stretch was genuinely solo and the post
 carries `rune:consonare(solo)` with a reason; or the post does not ship. Inventing
 a plausible quote is not on the list.
+
+### What the pilot cost, and what it proved
+
+`uiol-006` ran the full pipeline: **SLOT → NOTES → VERIFIED → DRAFT →
+CONSONARE(7) → correct → CONSONARE(8) → correct → CONSONARE(9)**. Nine agent
+casts including the reader. That is the *calibration* run, not the per-post cost
+— the remaining units inherit the briefs, the source-shape map, the quote-search
+command, and the two correction passes' lessons.
+
+**Shipped as graded at 9.** One mild repair scar remains and is deliberately NOT
+fixed: at `:89–91` the section closes Stone 1 twice, because the first correction
+pass relocated the `variant-names-of` paragraph there and it reads as
+chronologically prior with an unnamed antecedent. The ward defines 9 as *"one
+borderline line… the post can ship at 9"*, and editing after a grading breaks the
+property that **what ships is what was graded**.
+
+**Lessons the next writer inherits rather than rediscovers:**
+
+- **Relocating a paragraph into a section requires naming its antecedent in its
+  new home**, or the seam shows. This scar is exactly that.
+- **Length is measured in WORDS, not lines.** The anchors run 1,778–3,667 words;
+  `series-006-011` is 399 lines at 3,667 words. A line-count target sent the first
+  writer trimming against a number that meant nothing.
+- **Italics have a measurable band: 1.09–2.91 per 1k words.** The first draft came
+  in at 10.62. Check it before casting: `sed 's/\*\*[^*]*\*\*//g' F | grep -oE '\*[^*]+\*' | wc -l`.
+- **Hashes are 7 characters**, matching the anchors.
+- **consonare does not check facts.** Both a fabricated hash and a wrong elapsed
+  time ("five hours" where the clock says 2h26m) were caught by the orchestrator
+  and by a corrector working past its brief — never by the ward.
 
 ### Source shapes a reader must be told about
 
