@@ -142,7 +142,9 @@ breaks no link.**
 | `ars-culta/001` | **A Discipline You Fetch Is a Discipline You Skip** | The Shelf That Loads First · Constraint Engineering Has No Moment |
 | `under-its-own-law/001` | **No Absence Is Implicit** | There Is No Nowhere · Half a Round Trip |
 | `exemplar/002` | **A Wrong Number Is Not an Error** | Every Failure Prints as a Speedup · The Mean and the Minimum, Nine Thousand Lines Apart |
+| `exemplar/004` | **Laws Prove Self-Consistency, Not Usefulness** | A Generator Is an Indexed Set · Seven of Ten Verbs Had No Caller |
 | `exemplar/003` | **A Prose File Cannot Go Red** | A Summary of a List Rots Faster Than the List · Eight of Nine |
+| `under-its-own-law/005d` | **The Watch That Found Nothing** | Cold Is Not Unexercised · The Denominator Was Two Files |
 | `under-its-own-law/005c` | **A Fence Around Its Own Tongue** | You Cannot Compile a Lie · The Closed Alphabet |
 | `under-its-own-law/005b` | **The Law Caught in Its Own Words** | A Raise Is Not a Surfacing · Mute Has No Form |
 | `under-its-own-law/005a` | **The Differential That Never Ran** | The Regime Where Both Are Right · Not a Wall, a Flaw |
@@ -176,11 +178,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | **12** | — | **1** | — | — | — | — | **11** |
+| wat Under Its Own Law | **12** | — | — | — | — | — | — | **12** |
 | Ars Culta | 2 | — | — | — | — | — | — | **2** |
-| The Exemplar | 4 | — | **1** | — | — | — | — | **3** |
+| The Exemplar | 4 | — | — | — | — | — | — | **4** |
 | Services in Anger | 1 | — | — | — | — | — | — | **1** |
-| **total** | **20** | — | **2** | — | — | — | — | **18** |
+| **total** | **20** | — | — | — | — | — | — | **20** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 

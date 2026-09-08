@@ -8,11 +8,12 @@ sidebar:
   order: 4
 ---
 
-Backfill: this covers 2026-08-25 through the small hours of 2026-08-27 and was written on 2026-09-08 from the 34 commit bodies carrying the strand's own `fuzz:` and `gen:` prefixes, the gen vigilia's work list, and `wat/gen.wat` and `docs/GENERATIVE-TESTING.md` as they stand at the week's cutoff — all still on disk. Nothing below was re-run: every card count, millisecond and violation number is quoted from a commit body. That 34 counts a subject prefix and not the strand's footprint — another handful of `docs:` commits are strand work and carry no prefix, which puts the real number nearer 40 of the week's 214. The clock is the spine of this one: eight of its beats fall inside a single day, between two in the morning and ten at night.
+Backfill: this covers 2026-08-25 through the small hours of 2026-08-27 and was written on 2026-09-08 from the 34 commit bodies carrying the strand's own `fuzz:` and `gen:` prefixes, the gen vigilia's work list, and `wat/gen.wat` and `docs/GENERATIVE-TESTING.md` as they stand at the week's cutoff — all still on disk. Nothing below was re-run: every card count, millisecond and violation number is quoted from a commit body. That 34 counts a subject prefix and not the strand's footprint — another handful of `docs:` commits are strand work and carry no prefix, which puts the real number nearer 40 of the week's 214.
 
 `wat-gen` is a generative and property-testing library written in wat — the language's own Lisp, not its Rust substrate — and its target is `wat-rete`, the rules engine this front is about. It was minted as a scratch file at 02:05 on August 25, `wat-scripts/lib/gen.wat`, and it was `wat/gen.wat`, in the standard library, fifteen hours and forty-seven minutes later.
+<!-- rune:consonare(register) — the all-caps runs below are verbatim commit-body emphasis, retained rather than down-cased because editing a quote to fit the page's register falsifies the quote. The density is higher than any gold anchor carries; the quote frames are what license it. -->
 
-The front takes its name from a word that had been sitting in this repo's commit bodies since May 27 — `7d5fbcbdb`, "arc 240 Stone 240.3a — WorkUnitLog.wat recipe exemplar" — as a label you attach to something that came out well. What happens across these three days is a promotion. Both of the week's builder rulings that use the word are addressed to `wat-gen` and not to the rules engine: `78e344bac` at 00:36 on the 26th orders the work by it, and `6511e91a0` at 13:50 asks whether the library has met it. The engine's own exemplar initiative is minted four days downstream, at `9d05bd4b7`, 02:08 on the 30th, whose body re-points the arc's breadcrumb to lead with the initiative rather than with the last thing done. The standard was invented against a library that generates test cases, and the engine inherited it.
+<!-- rune:consonare(solo) — August 25 is a solo build stretch. The builder's rulings on this strand begin at 00:36 on the 26th and every one of them is quoted below; the absence of a quoted collaborator across the 25th is the record's shape rather than an erasure. Declared rather than left silent, because a reader cannot otherwise tell an unsteered day from a dropped exchange. -->
 
 ## August 25, 02:05 — a generator is an indexed set
 
@@ -74,7 +75,7 @@ family B  fact cond + accumulate + a SECOND `where`  native = 0,       oracle = 
 
 Family B's minimal pair is two queries that differ by one trailing, trivially-true `where`: qB1 agrees at 1, and qB2 drops native to 0. Neither family was reachable from the existing corpus, for the reason the design commit had named ten hours earlier — the accumulate axes compare derived facts, and `production_delta` dedups those by value, so "**a rule deriving one distinct fact reads identically whether its token passed once or four times.** Comparing beta rows instead is the whole reason this fuzzer exists, and it is now the reason it found something."
 
-Neither was fixed that afternoon: "NOT FIXED — audited and accumulated, per the standing method." The probes assert *correct* behaviour and are `#[ignore]`d, so a fix makes them pass and un-ignoring them is the completion step, and the gate ships as a ratchet pinned at 22 rather than at zero. The argument is written down — "Asserting zero would redden the floor and block unrelated work; **deleting the accumulate shape to keep a gate green is the trade this codebase refuses.** Movement either way is a red test demanding an explanation." It is also the shape an ignore pile grows in, and what separates the two is that a ratchet fires on movement in either direction where a pile fires on neither.
+Neither was fixed that afternoon: "NOT FIXED — audited and accumulated, per the standing method." The probes assert *correct* behaviour and are `#[ignore]`d, so a fix makes them pass and un-ignoring them is the completion step, and the gate ships as a ratchet pinned at 22 rather than at zero. The argument is written down — "Asserting zero would redden the floor and block unrelated work; deleting the accumulate shape to keep a gate green is the trade this codebase refuses. Movement either way is a red test demanding an explanation." It is also the shape an ignore pile grows in, and what separates the two is that a ratchet fires on movement in either direction where a pile fires on neither.
 
 Two hours later, `03e34f0f3` found the third: `:not` over a class that exists only by derivation.
 
@@ -99,7 +100,7 @@ It moved to zero on the 26th at 15:56, `b2939f12b`: families A and C closed, and
 
 The second change in `8eeff8adc` turns the failure surface into a value. The scratch version raised on an empty generator, which is the defect the library's own no-hidden-failures law forbids, written hours after reading it. The reasoning then goes a level past the obvious:
 
-> **But a nicer raise was never the fix:** the hazard is that `violations = 0` reads as success whether the property held at ten thousand points or was never applied at all … `Checked` carries BOTH numbers, so a violation count cannot be extracted without the point count arriving in the same arm — **THE WRONG READING HAS NO FORM.**
+> But a nicer raise was never the fix: the hazard is that `violations = 0` reads as success whether the property held at ten thousand points or was never applied at all … `Checked` carries BOTH numbers, so a violation count cannot be extracted without the point count arriving in the same arm — **THE WRONG READING HAS NO FORM.**
 
 ## 21:20 — feature complete, established by expression
 
@@ -113,7 +114,7 @@ The commit's refusal list applies 11:18's lesson nine hours after it landed: one
 
 `c43473e38`: "curare: the vigilia against `wat/gen.wat` — 17 wards, and the tooling failed its audit." The body opens "NOTHING IS FIXED; this is the audit." Seventeen wards were cast that night; `circumspicere` was cast the following day, which is why the file's own header counts eighteen.
 
-The first finding lands in the comment written four hours earlier. `(ints 5 2)` produces a negative cardinality, card −3, which sails through the emptiness guard, and `check` reports `Checked(-3, 0)` for a property that always fails. "**This refutes, in that function's own comment, the claim I wrote there: 'the wrong reading has no form'.**" And a negative card does not merely produce a vacuous pass — `one-of` over `[card -2, card 3]` yields card 1 and `at(0) = 102`, so two of three real points vanish with no signal.
+The first finding lands in the comment written four hours earlier. `(ints 5 2)` produces a negative cardinality, card −3, which clears the emptiness guard, and `check` reports `Checked(-3, 0)` for a property that always fails. "**This refutes, in that function's own comment, the claim I wrote there: 'the wrong reading has no form'.**" And a negative card does not merely produce a vacuous pass — `one-of` over `[card -2, card 3]` yields card 1 and `at(0) = 102`, so two of three real points vanish with no signal.
 
 The rest, compressed: `lift2` and the record/coords path disagree at index 6, `Pair{0,12}` against `Pair{0,10}`, and L10 was written as the tripwire for exactly that drift and drives 0..5, stopping one short. `test-shrink-index` is passed by an identity implementation, mutation-proven. `record` re-evaluates its generator arguments once per point rather than "TWICE" as its comment claims — 1577 ms against 30 ms on the same 800-point space, 52×. From `secare`, a finding one layer down in the Rust: `is_pure_type`'s `Parametric` arm never consults the `TypeEnv`, so `(Gen :- [T])` passes the purity gate, "a Gen enters a defrecord and crosses the wire as `:at #wat.core/fn nil`. **card honest, at dead.**" And in the prose: a claim false since 2026-07-05, a header citing two files deleted the same day, four disagreeing law counts none of which is 23, six error strings naming retired verbs, and three shipped items still sitting on the list whose own header reads "There is one list. It is this one."
 
@@ -127,7 +128,7 @@ The cast's closing line is five words of doctrine: "`circumspicere` WAS NEVER CA
 
 ## August 26, 11:13–11:55 — the builder corrects the diagnosis, then draws the line
 
-`6570746e5` opens the day by contradicting a ward. The cast had reported `gen.wat` clean; it was not, "nothing said so, and the one cast that looked directly at it got the number wrong. **A GATE WOULD HAVE BEEN RIGHT WHERE A READING WAS NOT**." The commit's own first diagnosis then broke open under the builder:
+`6570746e5` opens the day by contradicting a ward. The cast had reported `gen.wat` clean; it was not, "nothing said so, and the one cast that looked directly at it got the number wrong. **A GATE WOULD HAVE BEEN RIGHT WHERE A READING WAS NOT**." The commit's own first diagnosis then gave way under the builder:
 
 > "format is absolutely a pure func?.... we definitely forgot to do whatever bitflip for this...."
 
@@ -139,7 +140,7 @@ The second call that morning stopped a gate from being built:
 
 Grounded rather than obeyed: arc 277 is open, with no INSCRIPTION and no SCORE, and "**A gate belongs to the arc that owns the rules it freezes, while that rule set is still growing.**"
 
-At 11:29 the doc left the arc for `docs/`, on his read of it — "this one is very likely worth of being in docs/ -- we need to polish it... but this one feels very compelling" — and `26cb50517` diagnosed why four separate findings were one thing: the file was arc narrative, and "**narrative goes stale where a reference does not.**" The example the commit picks costs a reader working code: the doc said "gen-check REFUSES an empty generator ... now RAISES", when it returns `CheckOutcome::EmptySpace`, "and the file **contradicted itself 110 lines later, leaving BOTH standing.** A reader stopping at the first writes a raise-handler for an API that returns a value."
+At 11:29 the doc left the arc for `docs/`, on his read of it — "this one is very likely worth of being in docs/ -- we need to polish it... but this one feels very compelling" — and `26cb50517` diagnosed why four separate findings were one thing: the file was arc narrative, and "narrative goes stale where a reference does not." The example the commit picks costs a reader working code: the doc said "gen-check REFUSES an empty generator ... now RAISES", when it returns `CheckOutcome::EmptySpace`, "and the file **contradicted itself 110 lines later, leaving BOTH standing.** A reader stopping at the first writes a raise-handler for an API that returns a value."
 
 At 11:55 the builder set the bar the strand is named for, in `37f04c402`:
 

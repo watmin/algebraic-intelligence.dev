@@ -60,7 +60,7 @@ What reading found was not a hot spot. `fire_fixpoint_delta_armed` is **1,774 li
 
 > IT IS ALSO THE ROOT OF THEATER THE HUNT COULD NOT REMOVE. Every clone found and not cut is justified in the source by the borrow checker … Not five inefficiencies — ONE arrangement producing five workarounds: a single `&mut FireSession` held across 1774 lines, so the compiler cannot see that a pass's reads and writes touch disjoint fields.
 
-Five candidate cuts, five source comments explaining why each clone was necessary, and every one of those comments true. The borrow that produced them is one borrow. That is the deepest rung of the project's own extirpation discipline stated as an engineering rule: eliminate the situation that produces the patch, not the patch.
+Five candidate cuts, five source comments explaining why each clone was necessary, and every one of those comments true. The borrow that produced them is one borrow. That is the project's own extirpation discipline stated as an engineering rule: eliminate the situation that produces the patch, not the patch.
 
 ## Two verdicts, both negative (2026-08-23 → 08-24)
 
@@ -102,7 +102,7 @@ The ruling was three words long in substance:
 
 > ★ AND F1 IMMEDIATELY FOUND TWO TRACKED FILES EVERY PRIOR CENSUS HAD DROPPED … both `#wat.parse/Lex`. Silently skipped by every wat-grep run ever made, including the ones that produced 1461, 1411 and 239 in this session's own notes and the `wat-scripts/grep/README` table. **"An unknown and unknowable denominator" was not rhetoric; it was two files.**
 
-The same stone carried an acceptance row that predicted a number and got a different one. The prediction was that the Named-vs-Written delta would come to 1411. Measured: **11,534** — keyword 1411 exactly as predicted, symbol 0, string 10,123. The gap is a boundary bug in the tool's own accounting: `ast-name` on a string literal returns the unquoted content while `Span` covers the quotes, so `Written` structurally refuses every string literal. That refusal subsumes, by construction, a hazard a prior rider had guarded by hand across 1,564 files. The prediction was wrong by a factor of eight and the stone is better for it, because the acceptance row was written before the run and the disagreement had to be explained rather than absorbed.
+The same stone carried an acceptance row that predicted a number and got a different one. The prediction was that the Named-vs-Written delta would come to 1411. Measured: **11,534** — keyword 1411 exactly as predicted, symbol 0, string 10,123. The gap is a boundary bug in the tool's own accounting: `ast-name` on a string literal returns the unquoted content while `Span` covers the quotes, so `Written` structurally refuses every string literal. That refusal subsumes, by construction, a hazard that had previously been guarded by hand across 1,564 files. The prediction was wrong by a factor of eight and the stone is better for it, because the acceptance row was written before the run and the disagreement had to be explained rather than absorbed.
 
 ## The fixed point, set in advance (2026-08-19 → 08-21)
 
@@ -132,7 +132,7 @@ So the window contains an honest empty result and a real defect population four 
 
 Five instruments were pointed at one subsystem in eleven days. A dump reported the export as larger than its source, and four questions turned that into a 614-byte residual. A profiler could not resolve operations of its own magnitude, so a reader found a single mutable borrow held across 1,774 lines wearing five separate justifications. A strike list closed two entries with no code change, one of them by proving that nothing in the project had ever executed a live branch. A census tool was found returning empty results for files it could not parse, under a comment naming the law against exactly that. A watch ran to a stop rule it had published in advance and stopped there.
 
-None of those found what the fuzzer found, and none of them were broken. Every one of them answered the question it was built to ask, and the record's job in this window was to keep straight which question that was. A green result carries the shape of its instrument, and the only defense is to write down what the instrument could not have seen at the moment you quote it. The campaign wrote it down five times in eleven days, and four days later the note was what made the seventy-two legible instead of humiliating.
+None of those found what the fuzzer found, and none of them were broken. Every one of them answered the question it was built to ask, and the record's job in this window was to keep straight which question that was. A green result carries the shape of its instrument, and the only defense is to write down what the instrument could not have seen at the moment you quote it. The campaign wrote it down five times in eleven days, and four days later the note was what made the seventy-two legible instead of a contradiction.
 
 ## Likely Contributions to the Field
 
