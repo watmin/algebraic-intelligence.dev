@@ -75,9 +75,9 @@ batch them into lockstep waves.
 | The Story (hinge) | 1 | 1 | — | — | — | — | — | — |
 | wat Under Its Own Law | 9 | 9 | — | — | — | — | — | — |
 | Ars Culta | 2 | 1 | **1** | — | — | **1** | — | — |
-| The Exemplar | 1 | 1 | — | — | — | — | — | — |
+| The Exemplar | 3 | 3 | — | — | — | — | — | — |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **14** | **13** | **1** | — | — | **1** | — | — |
+| **total** | **16** | **15** | **1** | — | — | **1** | — | — |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
@@ -249,29 +249,52 @@ stretch, or it does not ship.
 vigilia's *"embedding is the fallback"* (W9) fold into 001 as the same motion —
 the channel being hardened — rather than taking slots of their own.
 
-### The Exemplar — `fronts/exemplar/` — 1 post
+### The Exemplar — `fronts/exemplar/` — 3 posts
 
-| # | kind | unit | trigger |
+Censused 2026-09-07 over the commit corpus: **214 own commits in-window, 35 docs.**
+Raised from 1. Its rhythm is a **draw → strike → curare** cycle over a lettered
+finding list, and at least three strands separate cleanly:
+
+| # | kind | unit | evidence |
 |---|---|---|---|
-| 001 | **opening** | the front opens; `wat-rete` begins becoming the exemplar | `grok-rete` diverges 2026-08-24; 235 commits, 122 docs in-window |
+| 001 | **opening** | the front opens; `wat-rete` begins becoming the exemplar all of wat measures against | `grok-rete` diverges 2026-08-24 |
+| 002 | **campaign** | the lettered audit — A1/A2/A2b/A4/C1/L1/L2/T7 drawn and struck | *"families A and C CLOSED — they were ONE root, and the ratchet is now 0"* |
+| 003 | **campaign** | the record audits itself — the front turning its own instruments on its own bookkeeping | *"the exemplar-hunt table was fiction — all three 'open' rows stale"* · *"the theater summary said T7 remained; it closed four days earlier"* · *"index the inbound notes — two sat unread for five days, one a silent wrong answer"* |
+
+**A possible fourth**, held rather than assumed: 34 commits of `fuzz`/`gen`
+tooling — the generative and fuzz testing that is the *"extensive grunt work the
+arcs revealed."* Currently folded into 002. A reader may find it is its own post.
+There is also a loose prior-art finding worth watching — *"it is an ALLOCATION
+problem, not an instruction-count one — eBPF's missing half"* — which reaches back
+to the DDoS lineage the chronicle already narrates.
 
 ### Services in Anger — `fronts/services/` — 1 post
 
-| # | kind | unit | trigger |
+Censused 2026-09-07: **60 own commits in-window** (`claude-compute` 24,
+`sns-sqs` 36), 65 docs. **1 is correct, not stingy** — and this reverses my
+earlier guess that the front was under-allocated.
+
+In-window, `claude-compute` is doing integration and record-keeping
+(*"INTEGRATION: refresh to main's tip"*, *"CURARE: the hold, the corrected
+trigger, and the rerere hazard"*) and wraps itself on 08-30 with its own CURARE.
+`sns-sqs` lands the excursus corpus at the boundary — its `DESIGN.md` reads
+**"Status: DRAWN 2026-08-30"**, the cutoff day itself. **The SNS/SQS build, R69,
+and the chaos-engineering series are all post-cutoff** and belong to the first
+weekly.
+
+| # | kind | unit | evidence |
 |---|---|---|---|
-| 001 | **opening** | the front opens; **`excursus` is invented** — a third documentation form for large efforts that are not arcs | `claude-compute` + `sns-sqs` diverge 08-30; `claude-compute` wraps itself the same day with its own CURARE |
+| 001 | **opening** | the front opens — and **`excursus` is invented**: a third documentation form for large efforts that are not arcs, in full strike vocabulary outside the arc tree | `docs/excursus/2026/08/001-sns-sqs/` + `002-handle-lifetime-wall/`; `claude-compute` wraps 08-30 |
 
-**⚠ BOTH ARE ALMOST CERTAINLY UNDER-ALLOCATED.** The `1` is a placeholder from a
-calendar, not a measurement. Against them: **449** docs authored on `grok-rete`
-and **451** on `sns-sqs`; **191** and **226** attributed builder quotes in their
-commit bodies; and an entire third documentation form — `excursus` — invented on
-one of them. The builder's read: *"serious work went into the exemplar and
-services in anger."*
-
-They were under-counted because the first census weighted **realization density**,
-and these fronts do their journaling in commit bodies, BRIEFs, SCOREs and
-`excursus/` rather than in `REALIZATIONS.md`. **Both owe a proper census over the
-commit corpus before their slates are fixed.** Do not treat `1` as a finding.
+> **⚠ Instrument note, recorded because it nearly corrupted this slate.**
+> `claude-compute` branched off **`grok-rete`**, not off `main` — merge-base
+> `1facc1f94`, 2026-08-28 — so **109 of its 133 commits are The Exemplar's work,
+> inherited.** A branch-range census attributed a third of one front's output to
+> another and made both look alike (identical `gen`/`fuzz`/`docs` counts were the
+> tell). Fronts inherit from each other; **a front's own work must be measured
+> with explicit exclusion** — `git rev-list <branch> ^origin/main ^origin/grok-rete`
+> — never with a merge-base range. This is the doctrine's own "a front is a
+> purpose, not a branch" biting at the measurement layer.
 
 ## 3 — Order of work
 
