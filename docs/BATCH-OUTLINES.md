@@ -142,6 +142,7 @@ breaks no link.**
 | `ars-culta/001` | **A Discipline You Fetch Is a Discipline You Skip** | The Shelf That Loads First · Constraint Engineering Has No Moment |
 | `under-its-own-law/001` | **No Absence Is Implicit** | There Is No Nowhere · Half a Round Trip |
 | `exemplar/003` | **A Prose File Cannot Go Red** | A Summary of a List Rots Faster Than the List · Eight of Nine |
+| `under-its-own-law/005a` | **The Differential That Never Ran** | The Regime Where Both Are Right · Not a Wall, a Flaw |
 | `under-its-own-law/004` | **Built Backwards** | Portable Was the Symptom · The Data Back in Its Chair |
 | `under-its-own-law/008` | **The Compiler Is the Census** | Declaring Nothing Is Illegal · Two Different Properties Wearing One Name |
 | `under-its-own-law/003` | **The Reader That Lied** | Two Readers, One Alphabet · It Never Drove a File |
@@ -172,11 +173,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | **12** | — | **4** | — | — | — | — | **8** |
+| wat Under Its Own Law | **12** | — | **3** | — | — | — | — | **9** |
 | Ars Culta | 2 | — | — | — | — | — | — | **2** |
 | The Exemplar | 4 | — | **2** | — | — | — | — | **2** |
 | Services in Anger | 1 | — | — | — | — | — | — | **1** |
-| **total** | **20** | — | **6** | — | — | — | — | **14** |
+| **total** | **20** | — | **5** | — | — | — | — | **15** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 

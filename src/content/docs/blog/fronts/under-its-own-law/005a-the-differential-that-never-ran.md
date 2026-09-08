@@ -8,7 +8,7 @@ sidebar:
   order: 5
 ---
 
-Backfill: this covers 2026-07-03 and was written on 2026-09-08 from `REALIZATIONS.md` R18–R25, the three same-day interstitials, and the commit bodies of the twenty arc-directory commits plus three `src/`-side commits the arc-directory filter does not see. Nothing was re-run: the millisecond figures, the differential counts and the fact tallies below are the record's, quoted from commit bodies and the realizations that carry them. The record keeps no wall clock for the day, so its realizations are its ordering — R18 through R25, in that order, all of them 2026-07-03. It opens with a consumer that could not get the engine to cascade and closes on a three-minute hang that was not a wall.
+Backfill: this covers 2026-07-03 and was written on 2026-09-08 from `REALIZATIONS.md` R18–R25, the three same-day interstitials, and the commit bodies of the twenty arc-directory commits plus three `src/`-side commits the arc-directory filter does not see. Nothing was re-run: the millisecond figures, the differential counts and the fact tallies below are the record's, quoted from commit bodies and the realizations that carry them. The record keeps no wall clock for the day, so its realizations are its ordering — R18 through R25, in that order, all of them 2026-07-03.
 
 Two sentences sit on this project's disk, written three weeks apart, both in good faith.
 
@@ -65,7 +65,7 @@ The four questions ruled it, and the builder wrote the ruling in one line:
 
 Clara's right-hand side is arbitrary `eval`'d code. Re-firing re-executes side effects, so it cannot safely re-derive, so it has to store what it derived and retract it when the ground moves. `wat::rete`'s right-hand side is a restricted pure interpreter, inserts-only. It recomputes every memory from `facts` on every fire. Given that, correctness under non-monotonic negation costs a sort, not a machine. The scope reduction that the earlier post called reduced by design is what pays for it.
 
-The cost was named on the same day rather than discovered later. Recursion *through* negation — `win(X) :- move(X,Y), not win(Y)` — becomes a compile error under stratified-only. The record places the excluded class rather than defending the exclusion: that construct is Prolog and backward chaining, not Rete, and "Clara doesn't do it either… feed it a negative cycle and it oscillates. Stratified-only turns Clara's *silent runtime* misbehavior into an *honest compile-time* error." The builder had said as much on sight — "this looks more like a prolog thing?" — and then placed the paradigm: "we have prolog-y clojure's core.logic 'pending' — i have never used it, but we deduced that rete != that when we were working on rete — we build 'that' when we need it."
+The cost was named on the same day rather than discovered later. Recursion *through* negation — `win(X) :- move(X,Y), not win(Y)` — becomes a compile error under stratified-only. The record places the excluded class rather than defending the exclusion: that construct is Prolog and backward chaining, not Rete, and "Clara doesn't do it either… feed it a negative cycle and it oscillates. Stratified-only turns Clara's *silent runtime* misbehavior into an *honest compile-time* error." The engine gave up a construct it had never supported correctly and said so in the compiler rather than at runtime. The builder had said as much on sight — "this looks more like a prolog thing?" — and then placed the paradigm: "we have prolog-y clojure's core.logic 'pending' — i have never used it, but we deduced that rete != that when we were working on rete — we build 'that' when we need it."
 
 ## Oracle first (`bb6fb0f93` → `bdbf3021`)
 
@@ -77,7 +77,7 @@ The fix landed in the order the ruling demanded. `bb6fb0f93` — "278 wat-oracle
 clj+clara -> wat+rete (oracle) -> wat+rust-rete (native)  ALL AGREE
 ```
 
-It also adds a **three**-stratum differential beside the two-stratum one, and states the reason: "the R18 single-case-hides-the-flaw lesson made a test." A two-stratum case would have gone green on both implementations and proved the same amount as the single-pass grid had. The lesson is installed as coverage rather than written as prose.
+It also adds a three-stratum differential beside the two-stratum one, and states the reason: "the R18 single-case-hides-the-flaw lesson made a test." A two-stratum case would have gone green on both implementations and proved the same amount as the single-pass grid had. The lesson is installed as coverage rather than written as prose.
 
 ## The name arrives after the ruling (R19)
 
@@ -99,13 +99,13 @@ Between the fix and the correction, post-compaction, the apparatus re-enacted fo
 
 The cure was not a technique. It was loading the file. R20's own line: "the compacted self that will not read the record becomes, faithfully, the very failure the record documents." R21, the same day, states the posture that makes reading the record cheap enough to be routine — "we use wat-fix to unfuck the farm — do not fear refactors — they are typically one to three shot."
 
-## Purity bought correctness, not speed (`PVRITAS VERVM, NON CELERITATEM`)
+## Purity bought correctness, not speed
 
 With the negation fix green on all three engines, the argument that produced it kept running past its evidence, and the builder cut it:
 
 > you've been pushing a hard argument why we don't need TMS … 'because we're pure we don't need, they need it because they cannot replay' … but like … if you need to delete like … 1 item … you recalc the whole tree? … what is our complexity cost relative to whatever clara could be doing — i don't care how they are doing it, we study them, that's the game … making them is the point. wat is not clojure, wat's rete is not clara — its familiar and scales with my performance requirements 'being the absolute fucking best' because that's how i play mmos … we study both ways — our code and their external behavior — know them.
 
-The interstitial that came out of it corrects two of the arc's own realizations in place and leaves both standing — R5, "the snapshot is deferred computation," and R18 itself:
+The interstitial that came out of it, `PVRITAS VERVM, NON CELERITATEM`, corrects two of the arc's own realizations in place and leaves both standing — R5, "the snapshot is deferred computation," and R18 itself:
 
 > **The correction, owned.** R5 … and R18 … argued: *Clara stores derived state and retracts it (TMS) because its impure RHS cannot safely re-fire; wat re-derives from `{facts, rules}` every fire, so we don't need TMS.* Every word of that is **true about correctness** … But the argument was a *correctness* claim, and the apparatus let it drift into a *performance* claim — *"we don't need TMS"* quietly became *"we don't need incremental update."*
 
@@ -115,7 +115,7 @@ Retract one fact from a pure-replay engine and it recomputes everything. That is
 
 ## Not a wall, a flaw (R24 → `0a87b83f1`)
 
-The other half opened on a hang. Stratified negation at `[7,3000]` ran for three minutes. The tone the builder brought to it is the tone that finds quadratics:
+The other half opened on a hang. Stratified negation at `[7,3000]` ran for three minutes. The builder's read, before any theory:
 
 > the scaling limit … curious behavior … let's run a longer one to see how the perf scales.
 
@@ -138,4 +138,3 @@ What the day put on disk against that is a three-stratum test beside the two-str
 - **A correctness claim restated often enough gets heard as a performance claim.** "We don't need truth maintenance" was true about the answer and silent about the price: retract one fact and pure replay recomputes everything. Naming the two doctrines separately — purity for correctness, incremental update for speed — is what lets an optimization return without being mistaken for an admission.
 - **A single-case fix hides the class it did not reach, so record the lesson as coverage.** The native stratification commit deliberately ships a three-stratum differential beside the two-stratum one. A second stratum would have gone green on both implementations and proved as much as the grid had.
 - **A super-linear "scaling limit" is often a findable flaw wearing a wall's clothes.** Three minutes of hang decomposed into a per-fact linear membership scan, a per-stratum recompile, and a fan-out replaying every token six times a round. The instinct under a hang is to theorize an algorithmic barrier; the discipline is to ground the code until the quadratic shows its face.
-- **The stated cost of a design is part of the design.** Stratified-only forbids recursion through negation. The arc names the excluded construct, places it in the paradigm it belongs to, and points at where that paradigm would be built if a real need arrived — which turns a competitor's silent runtime oscillation into an honest compile-time error.
