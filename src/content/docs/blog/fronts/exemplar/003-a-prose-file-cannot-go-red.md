@@ -8,9 +8,9 @@ sidebar:
   order: 3
 ---
 
-Backfill: this covers 2026-08-29 and the week of record-keeping it sits at the end of, and was written on 2026-09-08 from the commit bodies on `grok-rete` between the merge-base `de827fb4c` and the cutoff `e6858e858`, plus the diffs to the two documents the day audits — all still on disk. Every date below is a git author date at −0700, never a date the record states about itself: the arc's prose runs on UTC, and the work list at the cutoff carries the string `2026-08-31` three times for events git puts on the 30th. Nothing was re-run; the floor counts are quoted from commit bodies. The day's three commits are the apparatus pointing its instruments at its own bookkeeping, two of them an hour apart, and the later one opens by saying so.
+`wat-rete` is the rules engine inside `wat`, and this front is the attempt to hold one subsystem to a bar the rest of the tree has not been asked to meet. The bar is administered by documents: a work list, a theater-hunt ledger, an arc breadcrumb, a set of notes other agents file into a directory. Five thousand passing tests and a compiler that refuses things sit under the engine. Nothing sits under the documents. For one week the same instruments aimed at the code were aimed at the record instead, and the record failed worse.
 
-`wat-rete` is the rules engine inside `wat`, and this front is the attempt to hold one subsystem to a bar the rest of the tree has not been asked to meet. The bar is administered by documents: a work list, a theater-hunt ledger, an arc breadcrumb, a set of notes other agents file into a directory. Thirty-four lint files, five thousand passing tests, and a compiler that refuses things sit under the engine. Nothing sits under the documents. For one week the same instruments aimed at the code were aimed at the record instead, and the record failed worse.
+Backfill: this covers 2026-08-29 and the week of record-keeping it sits at the end of, and was written on 2026-09-08 from the commit bodies on `grok-rete` between the merge-base `de827fb4c` and the cutoff `e6858e858`, plus the diffs to the two documents the day audits — all still on disk. Every date below is a git author date at −0700, never a date the record states about itself: the arc's prose runs on UTC, and the work list at the cutoff carries the string `2026-08-31` three times for events git puts on the 30th. Nothing was re-run; the floor counts are quoted from commit bodies. The day's three commits are the apparatus pointing its instruments at its own bookkeeping, two of them an hour apart, and the later one opens by saying so.
 
 ## August 24–25 — the current state, in four places at once
 
@@ -28,7 +28,7 @@ The builder's one standing ruling on the documents themselves lands the same eve
 
 > Builder's ruling: `docs/` root is for the standing doc set; work docs belong under the arc.
 
-Three files this arc had created at the `docs/` root move under `docs/arc/2026/06/278-rules-engine/`, with every citation repointed and proven to resolve.
+Three files this arc had created at the `docs/` root move under `docs/arc/2026/06/278-rules-engine/`, with every citation repointed and proven to resolve. Four current-states had forked because nothing said which one was current, and the rule that would have said so had never been run.
 
 ## August 26–27 — the mechanism, named
 
