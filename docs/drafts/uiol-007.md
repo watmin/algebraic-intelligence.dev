@@ -17,7 +17,7 @@ sidebar:
   order: 7
 ---
 
-Backfill: this covers 2026-04-29 through 2026-07-29 and was written on 2026-09-07 from a sibling scratch repository, arc 170's DESIGN and INSCRIPTION, the commit bodies, and the shipped source, all still on disk. It describes the CLI as it stood on 07-29, not as it stands now: the flag family kept growing after the close, and `--grep` joined on the builder's instruction that it must be `--grep` to match with `--repl` and `--mcp`, dated 2026-08-24. Arc 170's body is not this post — it is already published here as [210 rendered pages](/blog/arc-170-realizations/), and its closing realization is up verbatim. This post ends where that chronicle begins.
+Backfill: this covers 2026-04-29 through 2026-07-29 and was written on 2026-09-07 from a sibling scratch repository, arc 170's DESIGN and INSCRIPTION, the commit bodies, and the shipped source, all still on disk. The April directories in that scratch repository were reconstructed on 2026-05-01 by replaying `Write` and `Edit` tool calls out of six Claude session transcripts, after the assistant itself deleted the scratch tree during a repo move (`7fc430a`, scratch repo). The documents carry their own dates; the commit does not. It describes the CLI as it stood on 07-29, not as it stands now: the flag family kept growing after the close. Arc 170's body is already published here as [210 rendered pages](/blog/arc-170-realizations/), its closing realization verbatim. What follows is the prehistory that record does not contain, and the fourteen hours that closed it.
 
 ## Three sketches in one week (2026-04-29 → 2026-05-03)
 
@@ -39,13 +39,11 @@ The first sketch answered it the expensive way: walk the symbol table, emit JSON
 
 The arc's `the-collapse.md` records what that sentence removed rather than what it added: no symbol-table walk, no per-function tool registration, no stale tool list, no type-boundary mismatch, no transcoding pass, and — the one that matters — no second system of truth, because without a generated schema there is no published document that can drift from the substrate. What survives is what the arc's index wrote down that day: *JSON-RPC is just envelope; the payload is wat source as a string.* One tool.
 
-The provenance of that file is worth stating plainly, because it is why this material exists at all: the April directories were reconstructed on 2026-05-01 by replaying `Write` and `Edit` tool calls out of six Claude session transcripts, after the assistant itself deleted the scratch tree during a repo move (`7fc430a`, scratch repo). The documents carry their own dates; the commit does not, and no draft should pretend otherwise.
-
 The second, `012-wat-repl`, was split out on 2026-05-02 (`68f79d9`) on a distinction the builder drew by analogy:
 
 > i think we rename and split... break the repl part into its own and the breakpoint/pry into its own.... ruby's irb doesn't do what pry does but pry builds upon irb....
 
-Its README plans a self-contained Rust crate at `wat-rs/crates/wat-repl/`, depending on `rustyline` for line editing and history, with a Rust shim driving eval dispatch, an embeddable entry point `(:wat::repl::start :context ctx)`, and a CLI reached as `wat repl`.
+Its README plans a self-contained Rust crate at `wat-rs/crates/wat-repl/`, depending on `rustyline` for line editing and history, with a Rust shim driving eval dispatch, an embeddable entry point `(:wat::repl::start :context ctx)`, and a CLI reached as `wat repl`. The plan is specific enough to be measured against, which is what makes what arrived in July a reading of the substrate rather than a change of mind.
 
 ## The smallest ask already had the word `repl` in it (2026-05-03 → 05-09)
 
@@ -60,7 +58,7 @@ The third, `019-wat-cli-options` (`078381c`), is the earliest artifact recording
 
 It is the smallest of the three by a wide margin: a mandatory parameter shape on one function. Its own cross-reference section files `--mcp` under arc 006 and `wat repl` under arc 012, as a reserved subcommand belonging to somebody else's arc. Both were other people's work.
 
-And in the same document, the line that makes this post:
+And the same document says where a REPL comes from:
 
 > because wat is static, users /must/ compile their own cli if they want their symbols found - that's the agreement.. they can export their own binary with wat forms bound in the binary.. but they can and should make their own wat to get stuff like repl to work for them...
 
@@ -70,7 +68,7 @@ Arc 170 opened on 05-09, at `b433da7`. Beat one of its own conversation log is f
 
 > brutal rigidity brings the paradoxical unbounded flexibility if you play by the rules
 
-The DESIGN's own name for that expansion is the *substrate-as-teacher cascade*, and where it went — program-entry contracts, closure extraction, typed channels, three substrate services, the execve rebirth, and a branch named after a deadlock — is the chronicle's, not this post's. Read it [there](/blog/arc-170-realizations/). What the rigidity bought inside this post's own scope is the next section's subject: the parser's one global arity check became an enum with a variant per mode, and that is the only reason a mode wanting zero positionals could join as a variant rather than as another special case. What is worth carrying forward alongside it is one accounting from the INSCRIPTION: `argv` itself was among the last things in the arc to work, because the pipe it needed did not exist until the rest did.
+The DESIGN's own name for that expansion is the *substrate-as-teacher cascade*. The arc absorbed program-entry contracts, closure extraction, typed channels, three substrate services, the execve rebirth, and a branch named after a deadlock, all of it [chronicled there](/blog/arc-170-realizations/). The parser's one global arity check became an enum with a variant per mode, and that is the only reason a mode wanting zero positionals could join as a variant rather than as another special case. The INSCRIPTION records that `argv` itself was among the last things in the arc to work, because the pipe it needed did not exist until the rest did.
 
 ## The valve was an arity check written for a different mode (2026-07-26)
 
@@ -90,7 +88,7 @@ The comment written into that enum on 07-26 names the mode that would use it thr
 
 ## The REPL was planned in Rust and arrived in wat (2026-07-29, 01:39)
 
-Two days earlier the builder had set the closure condition, superseding the apparatus's read of an hour before, which had wanted the arc to close on the fork bug:
+Two days earlier the builder had set the closure condition, overruling a plan to close the arc on the fork bug:
 
 > i think our next move is figuring out a repl.... i want to inscribe 170 with a repl.
 
@@ -109,7 +107,7 @@ That is the terminal artifact of an eighty-one-day arc about argv: a `:user::mai
 
 The placement was the builder's call and it is recorded as a pushback. The file had first been put under `wat-scripts/` and reached by baking it — the commit's own word for that attempt is *timid*. The only thing keeping a shipped feature out of `wat/` was its `:user::main`, which is not a property of a REPL but of where an entry point was left. Moving it to the CLI made `wat/repl.wat` a stdlib module exposing `:repl::turn` and nothing else, and made the REPL a library: any program can call `(:repl::turn defs)` to embed a loop seeded with its own definitions, which a REPL-as-a-file could never offer.
 
-Under the front's own law, the interesting property is what the file says about its own speed:
+Under the front's own law, the file states its own speed as a discipline:
 
 > WHY IT IS SLOW ON PURPOSE. Every turn re-derives the entire world from `defs`. That is the R1/R9 dual-impl discipline: this is the correct-but-slow ORACLE. Its correctness is not argued, it is structural — the turn runs the ORDINARY program pipeline, so this REPL is exactly as strongly typed as a compiled program.
 
@@ -138,7 +136,7 @@ That refusal is this front's shape exactly. The law wat enforces outward — EDN
 
 ## How it closed (2026-07-29, 15:32)
 
-The INSCRIPTION landed at `10234ed`, and the part of it worth transferring is not the recognition — that is [published in full](/blog/arc-170-realizations/210-the-closing-realization-per-portam-cogitamvs-arc-170-opened-on-argv-an/), including the song, the three faces, and the admission — but the shape of the act.
+The INSCRIPTION landed at `10234ed`, and the recognition it carries — the song, the three faces, the admission — is [published in full](/blog/arc-170-realizations/210-the-closing-realization-per-portam-cogitamvs-arc-170-opened-on-argv-an/).
 
 The stated precondition was measured rather than assumed. The DESIGN had carried since 2026-05-13 that clippy and rustc must both be clean before an INSCRIPTION ships. At close, `cargo build --release --all-targets` returned zero warnings and `cargo clippy --release --workspace` returned roughly 1,150, of which 831 were a single lint. The builder was shown the number and rescoped in the open:
 
@@ -148,7 +146,7 @@ The stated precondition was measured rather than assumed. The DESIGN had carried
 
 The deferral grep was mandatory before the INSCRIPTION could ship, and its single permitted match is the affirmative form *out of arc 170's scope*, with every item under it carrying a named owner or an explicit statement that no arc owns it and why. The convention shipped as a convention, with a probe in `wat-scripts/scratch-pad/` that hands a rogue record to a two-type clause and type-checks green — the live witness that goes red the day the set is genuinely closed. The DESIGN was trued because it was lying: its status header still read IN FLIGHT with the deadlock as current blocker, two days after that deadlock had been made unconstructible.
 
-The branch came home at 3,428 commits ahead of `main` and zero behind, floor `4183 passed, 262 skipped` as the INSCRIPTION states it. The INSCRIPTION says seventy-nine days; the calendar from 2026-05-09 to 2026-07-29 is eighty-one, and seventy-nine lands on 07-27 — the day the deadlock died and the closure condition was set.
+The INSCRIPTION says seventy-nine days; the calendar from 2026-05-09 to 2026-07-29 is eighty-one, and seventy-nine lands on 07-27 — the day the deadlock died and the closure condition was set. The branch came home at 3,428 commits ahead of `main` and zero behind, floor `4183 passed, 262 skipped` as the INSCRIPTION states it.
 
 ## Likely Contributions to the Field
 
