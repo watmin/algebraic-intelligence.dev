@@ -17,7 +17,7 @@ sidebar:
   order: 7
 ---
 
-Backfill: this covers 2026-04-29 through 2026-07-29 and was written on 2026-09-07 from a sibling scratch repository, arc 170's DESIGN and INSCRIPTION, the commit bodies, and the shipped source, all still on disk. Arc 170's body is not this post — it is already published here as [210 rendered pages](/blog/arc-170-realizations/), and its closing realization is up verbatim. This post ends where that chronicle begins.
+Backfill: this covers 2026-04-29 through 2026-07-29 and was written on 2026-09-07 from a sibling scratch repository, arc 170's DESIGN and INSCRIPTION, the commit bodies, and the shipped source, all still on disk. It describes the CLI as it stood on 07-29, not as it stands now: the flag family kept growing after the close, and `--grep` joined on the builder's instruction that it must be `--grep` to match with `--repl` and `--mcp`, dated 2026-08-24. Arc 170's body is not this post — it is already published here as [210 rendered pages](/blog/arc-170-realizations/), and its closing realization is up verbatim. This post ends where that chronicle begins.
 
 ## Three sketches in one week (2026-04-29 → 2026-05-03)
 
@@ -25,7 +25,11 @@ Before arc 170 existed there was a scratch repo — a separate tree from `wat-rs
 
 Three of those directories matter here, and they were opened within five days of each other.
 
-The first, `006-wat-mcp`, self-dates its framing to 2026-04-29 and opens on a continuation of the debugger arc:
+- **`006-wat-mcp`** (2026-04-29) — a program-as-an-MCP-server. Shipped 07-29 as `wat --mcp`, with the loop in Rust.
+- **`012-wat-repl`** (2026-05-02) — a REPL, planned as a Rust crate wrapping a line-editing library. Shipped 07-29 as `wat/repl.wat`, 144 lines of wat in the distribution.
+- **`019-wat-cli-options`** (2026-05-03) — let `:user::main` accept argv. Opened as arc 170 on 05-09 and closed 07-29 by shipping the other two.
+
+The first, `006-wat-mcp`, self-dates its framing to that day and opens on a continuation of the debugger arc:
 
 > i just had a wild idea.... you talked about a :wat::pry::serve ... what if... we could have a program-as-an-mcp.... give the agent a way to run a program /and/ live debug it?...
 
@@ -43,7 +47,7 @@ The second, `012-wat-repl`, was split out on 2026-05-02 (`68f79d9`) on a distinc
 
 Its README plans a self-contained Rust crate at `wat-rs/crates/wat-repl/`, depending on `rustyline` for line editing and history, with a Rust shim driving eval dispatch, an embeddable entry point `(:wat::repl::start :context ctx)`, and a CLI reached as `wat repl`.
 
-## The smallest ask already had the word `repl` in it (2026-05-03)
+## The smallest ask already had the word `repl` in it (2026-05-03 → 05-09)
 
 The third, `019-wat-cli-options` (`078381c`), is the earliest artifact recording the ask that became arc 170 — six days before the arc opened:
 
@@ -62,13 +66,11 @@ And in the same document, the line that makes this post:
 
 The word `repl` is in the original argv ask, as the example of the thing argv would let somebody else build.
 
-## What the ask turned into (2026-05-09)
-
-Arc 170 opened on `b433da7`. Beat one of its own conversation log is four words — make :user::main accept argv — and by beat fifteen the subject is the wire form of a spawned program (we don't communicate strings - we communciate ast) and by beat sixteen it is whether a program needs a name at all (why do we even need a name if the forms /are/ the thing that matters?). The framing line the arc kept:
+Arc 170 opened on 05-09, at `b433da7`. Beat one of its own conversation log is four words — make :user::main accept argv — and by beat fifteen the subject is the wire form of a spawned program (we don't communicate strings - we communciate ast) and by beat sixteen it is whether a program needs a name at all (why do we even need a name if the forms /are/ the thing that matters?). The framing line the arc kept:
 
 > brutal rigidity brings the paradoxical unbounded flexibility if you play by the rules
 
-The DESIGN's own name for that expansion is the *substrate-as-teacher cascade*, and where it went — program-entry contracts, closure extraction, typed channels, three substrate services, the execve rebirth, and a branch named after a deadlock — is the chronicle's, not this post's. Read it [there](/blog/arc-170-realizations/). What is worth carrying forward is one accounting from the INSCRIPTION: `argv` itself was among the *last* things in the arc to work, because the pipe it needed did not exist until the rest did.
+The DESIGN's own name for that expansion is the *substrate-as-teacher cascade*, and where it went — program-entry contracts, closure extraction, typed channels, three substrate services, the execve rebirth, and a branch named after a deadlock — is the chronicle's, not this post's. Read it [there](/blog/arc-170-realizations/). What the rigidity bought inside this post's own scope is the next section's subject: the parser's one global arity check became an enum with a variant per mode, and that is the only reason a mode wanting zero positionals could join as a variant rather than as another special case. What is worth carrying forward alongside it is one accounting from the INSCRIPTION: `argv` itself was among the last things in the arc to work, because the pipe it needed did not exist until the rest did.
 
 ## The valve was an arity check written for a different mode (2026-07-26)
 
@@ -111,13 +113,13 @@ Under the front's own law, the interesting property is what the file says about 
 
 > WHY IT IS SLOW ON PURPOSE. Every turn re-derives the entire world from `defs`. That is the R1/R9 dual-impl discipline: this is the correct-but-slow ORACLE. Its correctness is not argued, it is structural — the turn runs the ORDINARY program pipeline, so this REPL is exactly as strongly typed as a compiled program.
 
-`defs` is a `Vector` of `WatAST` threaded through a tail call, and it is a loop parameter rather than a service, because state that never crosses callers does not need an address. The live environment is Rust-side, threaded separately by `eval-with-defs!`. The header also carries a confession: an earlier paragraph described a `:durable`/`:ephemeral` split — defservice vocabulary — for a file containing no defservice, a leftover from the demo REPLs that genuinely were a spawned service you dialled. It cost an hour of "is this a service or not" before anyone opened the file, and it is kept visible in the source because a stale comment reads as grounded precisely because it is specific.
+`defs` is a `Vector` of `WatAST` threaded through a tail call, and it is a loop parameter rather than a service, because state that never crosses callers does not need an address. The live environment is Rust-side, threaded separately by `eval-with-defs!`. The header also carries a confession: an earlier paragraph described a `:durable`/`:ephemeral` split — defservice vocabulary — for a file containing no defservice, a leftover from the demo REPLs that genuinely were a spawned service you dialled. It cost an hour of "is this a service or not" before the source itself settled the question, and it is kept visible in the source because a stale comment reads as grounded precisely because it is specific.
 
 The gate was proved by breaking it rather than by exit code. `defs` grows in exactly one place, the `FormOutcome::Declared` arm; severing that line failed `definitions_persist_across_turns` and only that test, while the other four stayed green — which is how a REPL gate is usually vacuous, since asserting exit 0 proves a process exists. The load-bearing test is that a form which fails to check is reported and the session continues, which is why a REPL's failures have to be values.
 
 ## The other one stayed in Rust, and wat's own law is why (2026-07-29, 11:59)
 
-Ten hours and twenty minutes later, `fd89bed` shipped `wat --mcp`: the 2026-04-29 sketch's wire, unchanged.
+Ten hours and twenty minutes later, `fd89bed` shipped `wat --mcp`: the 2026-04-29 sketch's wire, unchanged. Both modes are flags, which is the sketch's other reversal — `019` had reserved bare subcommand names for wat and a `user:` prefix for everyone else.
 
 ```
 in:  {"jsonrpc":"2.0","id":1,"method":"tools/call",
@@ -130,11 +132,9 @@ The commit states the property the sketch had reached for: the payload is never 
 
 But the loop is Rust, and the commit is explicit that this is the substrate's ruling and not convenience. wat's stdin and stdout are strict-EDN data channels by construction; a wat `println` EDN-encodes whatever it is handed. Printing a JSON frame from wat therefore delivers `"{\"jsonrpc\"…}"` — an escaped string literal, not a JSON object. Measured, not assumed. The channel is correctly refusing a foreign format, so the bridge sits at the transport beside argv and the frame reader, and `wat/mcp.wat` does not exist. It was named as a future stone in the same day's wrap-up and is still absent from the tree.
 
-That is this front's shape exactly. The law wat enforces outward — EDN all the way down, one honest encoding per channel — is what stopped wat from hosting its own JSON transport. The language did not get an exemption for its own tooling.
-
 What the two modes do share is semantics, deliberately: `eval_form_against_defs` was factored out of `:wat::eval-with-defs!` and is called by both the wat verb and the Rust loop, so `--repl` and `--mcp` cannot drift on how a form is classified, on which arm grows the definition set, or on what a failure looks like. The MCP module owns the codec and owns no semantics. Its gate was proved the same way: cutting the single line `session.defs.push(form)` turns three of five tests red.
 
-Both modes are flags, which is the sketch's other reversal — `019` had reserved bare subcommand names for wat and a `user:` prefix for everyone else. The family kept growing on the flag shape after the close; `--grep` joined on the builder's instruction that it must be `--grep` to match with `--repl` and `--mcp`, dated 2026-08-24. This post describes the CLI as it stood on 07-29, not as it stands now.
+That refusal is this front's shape exactly. The law wat enforces outward — EDN all the way down, one honest encoding per channel — is what stopped wat from hosting its own JSON transport. The language did not get an exemption for its own tooling.
 
 ## How it closed (2026-07-29, 15:32)
 
@@ -146,7 +146,7 @@ The stated precondition was measured rather than assumed. The DESIGN had carried
 
 `d33010c` is the very next commit after the INSCRIPTION, "clippy sweep 1/N"; `770eeaf`, the following day, reports zero. The rescoping was honoured inside twenty-four hours, which is what turns a rescope into a plan rather than a dismissal.
 
-The rest of the close is machinery: a mandatory pre-INSCRIPTION deferral grep, whose single permitted match is the affirmative form *out of arc 170's scope*, with every item under it carrying a named owner or an explicit statement that no arc owns it and why. A convention shipped as a convention, with a probe in `wat-scripts/scratch-pad/` that hands a rogue record to a two-type clause and type-checks green — the live witness that goes red the day the set is genuinely closed. And a DESIGN trued because it was lying: its status header still read IN FLIGHT with the deadlock as current blocker, two days after that deadlock had been made unconstructible.
+The deferral grep was mandatory before the INSCRIPTION could ship, and its single permitted match is the affirmative form *out of arc 170's scope*, with every item under it carrying a named owner or an explicit statement that no arc owns it and why. The convention shipped as a convention, with a probe in `wat-scripts/scratch-pad/` that hands a rogue record to a two-type clause and type-checks green — the live witness that goes red the day the set is genuinely closed. The DESIGN was trued because it was lying: its status header still read IN FLIGHT with the deadlock as current blocker, two days after that deadlock had been made unconstructible.
 
 The branch came home at 3,428 commits ahead of `main` and zero behind, floor `4183 passed, 262 skipped` as the INSCRIPTION states it. The INSCRIPTION says seventy-nine days; the calendar from 2026-05-09 to 2026-07-29 is eighty-one, and seventy-nine lands on 07-27 — the day the deadlock died and the closure condition was set.
 
