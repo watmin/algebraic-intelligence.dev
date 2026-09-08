@@ -198,16 +198,33 @@ Weeks run Monday. Volumes are commits in that week on that front's branches.
 
 | slot | week | commits | outline |
 |---|---|---|---|
-| 001 | W1 · 06-22 | 303 | — owes the read |
-| 002 | W2 · 06-29 | 344 | — |
-| 003 | W3 · 07-06 | 127 | — |
-| 004 | W4 · 07-13 | 114 | — |
-| 005 | W5 · 07-20 | 208 | — |
-| 006 | W6 · 07-27 | 287 | — |
-| 007 | W7 · 08-03 | 153 | — |
-| 008 | W8 · 08-10 | 259 | — |
-| 009 | W9 · 08-17 | 462 | — |
-| 010 | W10 · 08-24 | 345 | — |
+| 001 | W1 · 06-22..06-28 | 308 | — owes the read |
+| 002 | W2 · 06-29..07-05 | 349 | — owes the read |
+| 003 | W3 · 07-06..07-12 | 129 | — owes the read |
+| 004 | W4 · 07-13..07-19 | 125 | — owes the read |
+| 005 | W5 · 07-20..07-26 | 180 | — owes the read |
+| 006 | W6 · 07-27..08-02 | 289 | — owes the read |
+| 007 | W7 · 08-03..08-09 | 178 | — owes the read |
+| 008 | W8 · 08-10..08-16 | 218 | — owes the read |
+| 009 | W9 · 08-17..08-23 | 442 | — owes the read |
+| 010 | W10 · 08-24..08-30 | 375 | — owes the read |
+
+> **⚠ These are AUTHOR dates, corrected 2026-09-07.** The first cut used
+> `git log --since/--until`, which filters on **committer** date, while the
+> displayed `%ad` is **author** date — so the table showed one week's numbers
+> against another week's commits. Individual weeks move by up to 47 (W8: 265 →
+> 218; W7: 148 → 178), though the overall shape holds and no week flips from busy
+> to empty. **"When did the work happen" means author date**; use the awk filter,
+> not `--since/--until`:
+>
+> ```
+> git log --format='%ad%x09%s' --date=short origin/main | awk -F'\t' '$1>="<start>" && $1<="<end>"'
+> ```
+>
+> A second instrument flaw found in the same pass: an arc-tag regex matching only
+> parenthesised `(170)` missed this corpus's `170:` and `278 24y` forms entirely,
+> reporting 4 arc mentions in a week that actually has 180. Validate a pattern
+> against known ground truth before quoting its count.
 
 Known anchors, unread: arc **170** closes 07-29 (the arc behind the 170
 chronicle) · arc **118** closes 08-19 · arc **296** closes 06-30 then **reopens**
