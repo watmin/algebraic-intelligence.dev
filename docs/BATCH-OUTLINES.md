@@ -64,10 +64,17 @@ the two rows `002`'s gate struck.
 | front | shipped | remaining |
 |---|---|---|
 | The Story (hinge) | 1/1 | — |
-| wat Under Its Own Law | 4/9 | 001, 003 drafting · 004, 005, 008 reading |
+| wat Under Its Own Law | 6/**12** | 004, 008 + **arc 278 split into 005a–005d** |
 | Ars Culta | **2/2** | — |
-| The Exemplar | 1/4 | 002, 003, 004 reading |
-| Services in Anger | 0/1 | 001 drafting |
+| The Exemplar | 1/4 | 002 (re-scoped), 003, 004 — all at NOTES |
+| Services in Anger | **1/1** | — |
+
+**THE BATCH GREW 17 → 20, and that is the reading pass working.** Arc 278's room
+is 702 files and 12,329 lines of realizations; its reader was briefed to propose
+its own cut rather than be forced onto one page, and returned **four units with a
+declared orphan** (2026-07-04→07-07, 60 commits — strong material, wrong front).
+The Exemplar's `002` was **re-scoped rather than written**, because as briefed it
+was the post already shipped as `001`.
 
 **THE PIPELINE WORKS AND THE NUMBERS SAY WHY.** The two posts written before the
 reading passes took **four consonare casts each to reach 7**. The four written
@@ -162,11 +169,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | 9 | 3 | — | — | — | — | — | **6** |
+| wat Under Its Own Law | **12** | 3 | **3** | — | — | — | — | **6** |
 | Ars Culta | 2 | — | — | — | — | — | — | **2** |
-| The Exemplar | **4** | 3 | — | — | — | — | — | **1** |
+| The Exemplar | 4 | — | **3** | — | — | — | — | **1** |
 | Services in Anger | 1 | — | — | — | — | — | — | **1** |
-| **total** | **17** | **6** | — | — | — | — | — | **11** |
+| **total** | **20** | **3** | **6** | — | — | — | — | **11** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
@@ -411,7 +418,10 @@ weekly slice was about whatever fell inside seven days.
 | 002 | **reversal** | arc **296** — closed, and would not stay closed. **SCOPED 2026-09-08 to the first 29 hours** (06-30 07:07 → 07-01 16:35) — the arc is still OPEN at HEAD and is far too large for one post | INSCRIPTION added `7f17054a8` 06-30 10:21, **deleted** `3a4f49202` 07-01 15:13. **Elapsed 28h52m**, both verified |
 | 003 | **campaign** | arc **300** + the EDN-surface line — *VNVS LECTOR NE DIVIDANTVR* | 25 realization commits, W2 |
 | 004 | **campaign** | arcs **293/294** — struct-record symmetry; `HOLONAST-WAS-A-COAT` | 18 + 15 realization commits, W1–W2 + 08-25 |
-| 005 | **campaign** | arc **278** — the rules engine, W2→W6 | 116 realization commits; the largest, still open |
+| 005a | **campaign** | arc 278 · **the differential that never ran** — one day, 2026-07-03, 20 arc-dir commits | A real consumer went multi-round and found the fixpoint had never been differentially tested — **both impls wrong on different axes, diverging from each other.** The fix was not truth maintenance but *ordering the rules*, which purity is what makes possible. Then the builder cut the argument for over-reaching (purity bought correctness, not speed), and a three-minute "scaling wall" turned out to be a linear scan. **Hook:** `series-006-034` published *"beat Clara on every realistic workload"*; R18 records *"the single-pass parity that lied underneath."* |
+| 005b | **campaign** | arc 278 · **the law that caught itself** — 2026-07-16 → 07-24, 129 commits | *wat never hides a failure* — proclaimed, then caught blessing the exact mechanism that masks, then found masking **inside its own verifier** (the harness swallowed a crashing child and passed the test), then proved incomplete by *use* after "complete". Cure: one sentence enforced across seven verbs and two compile-time discard doors. **Ending:** the seventh outcome wall never shipped and was never abandoned — it was **refused for a stated reason** (`770eeaf7d`, a locus has no return value), which is a better close than a completion. |
+| 005c | **campaign** | arc 278 · **a fence around its own tongue** — 2026-07-31 → 08-06, 214 commits. **The richest unit: 9 recognitions survive the strip** | *"How do we compile our `where` clauses?"* is a total-knowledge demand, so it audited seven substrate lies nobody was hunting — and then the language **fenced its own query surface**: `is-pure ∧ is-det ∧ is-total ∧ is-rete`, with **`:wat::core::foldl` refused inside wat's own DSL**, and `total?` — which had shipped callable-and-unarmed — getting its first real consumer. |
+| 005d | **campaign** | arc 278 · **the watch that found nothing** — 2026-08-17 → 08-27, 103 commits | The compiled program named as a 614-byte residual; a theater hunt returning two honest **negative** verdicts; wat-grep violating the no-hidden-failures law **in code annotated with that law's name**; the vigilia run to a preset fixed point of two empty recasts — **and then a wat-native fuzzer finding 72 divergences four days later.** ⚠ **Half this unit is branch-only** (`b2939f12b` and the 08-25→08-27 fuzzer campaign are on `grok-rete`/`gen-tests`, not `main`); the notes carry a main-only fallback shape. |
 | 006 | **incident** | the RequestMalformed DoS — *walls need traffic* | one day, 2026-07-25 (`753b1b9c2`, `91bbb8cd3`) |
 | 007 | **prehistory** | *the smallest of three ate the other two* — April's scratch sketches (wat-mcp, wat-repl, wat-cli-options) and what the argv ask became | `scratch` arcs 006 (04-29) / 012 (05-02) / 019 (05-03); closure 07-29 is the payoff |
 | 008 | **campaign** | arc **255** — four axes stop being hand-lists | 6 realization commits W8; the four-axes day 08-30 |
@@ -481,7 +491,7 @@ the root."* A3, A5, A6, A7 all close on the 31st. **The opening post ends at
 | # | kind | unit | evidence |
 |---|---|---|---|
 | 001 | **opening** | the front opens; `wat-rete` begins becoming the exemplar all of wat measures against | `grok-rete` diverges 2026-08-24. The exemplar claim rests on five grounded things: rete is *"the first subsystem to demand totality"* (`57e2adc9b`); **three implementations** — native fire, a wat `$oracle` built to disagree, and Clara 0.24.0 in Clojure on a 33-cell grid (`33/33 :match, 33/33 :us`, `b35327830`), where the third-party twin found an acceptance divergence *"invisible to any wat-vs-wat differential"*; a committed instrument (`scripts/doc-coverage.sh`, whose header says *"A metric with no committed instrument is unfalsifiable"*); 111→0 undocumented fns ≥15 lines and 26→0 tests-that-cannot-fail; and the honest one — it is the only part of the tree with a published list of its own 111 open defects. **The verdict at cutoff is NO, in the breadcrumb's own capitals, and that is the spine.** |
-| 002 | **campaign** | the audit — Class A drawn: an invariant proven at ONE door and assumed at ALL of them | 19 wards cast against a tree 184 commits and +19,496 lines past the last cast, gates green throughout, returning **41 L1 + 70 L2** — every finding on a surface the 28 lints cannot see. **Five wards independently found five instances of one class.** The through-line: the named work list was **empty** on the morning of 08-30, and *an empty work list was evidence about how hard we had looked.* |
+| 002 | **campaign** | ⛔ **RE-SCOPED — as briefed this unit IS the shipped `001`.** `001`'s own `description:` already carries the nineteen-wards/41-L1-70-L2 sentence and its Class A section narrates the table. **002 becomes THE INSTRUMENTS:** Class C (*"Blocks trusting ANY recorded cost number in this arc"*) plus the 30th's unspent campaign — a mean-vs-minimum estimator reading `H−M` as **−93.33 ms**, a benchmark that called the wrong arm "the engine" **for eleven days**, `probare` acquitting the prose while `intueri` convicted the self-description, a `| tail -12` that destroyed a red's only evidence, a census that counted 37 where there were 96, and a harness with **one assertion across eight tests.** | 19 wards cast against a tree 184 commits and +19,496 lines past the last cast, gates green throughout, returning **41 L1 + 70 L2** — every finding on a surface the 28 lints cannot see. **Five wards independently found five instances of one class.** The through-line: the named work list was **empty** on the morning of 08-30, and *an empty work list was evidence about how hard we had looked.* |
 | 003 | **campaign** | the record audits itself — the front turning its instruments on its own bookkeeping | *"the exemplar-hunt table was fiction — all three 'open' rows stale"* · *"the theater summary said T7 remained; it closed four days earlier"* · *"index the inbound notes — two sat unread for five days, one a silent wrong answer"* |
 | 004 | **campaign** | **the generative strand — NEW, promoted by the reading pass (STOP-3)** | Exactly **34 commits**, building a different artifact (`wat/gen.wat`). Separable, and it is where the word *exemplar* enters: *"do we believe that wat-gen is now an exemplar?… did we empower the next set of wat engineers to bulid robust tests cleanly?"* (`6511e91a0`). The opening keeps one bridging sentence to it. |
 
@@ -510,6 +520,14 @@ The hinge's *"families A and C closed together"* is the **first** one and is
 correctly in-window — verified `b2939f12b`, 08-26. `exemplar-001` uses the
 **second** and correctly stops at "four of seven struck". A post that merges them
 would date one event to the other's day.
+
+**⛔ TWO ERRORS WERE FOUND IN THE SHIPPED `001` AND CORRECTED IN PLACE (2026-09-08).**
+It said the word *exemplar* did not enter the corpus as a designation — it had
+been a label in commit bodies **since 2026-05-27**, and even in-window
+`78e344bac` (08-26 00:36) precedes `6511e91a0` by **13 hours**. It also said
+`src/rete` was *"roughly ninety files"*; at the cutoff commit it is **56**. The
+true and better claim, now on the page: the strand is where the word stops being
+a description and becomes a bar.
 
 **Quote density is high here — 11 verbatim builder quotes with hashes, from 124
 `builder` lines across the 214 commit bodies.** Pattern for the writer: the

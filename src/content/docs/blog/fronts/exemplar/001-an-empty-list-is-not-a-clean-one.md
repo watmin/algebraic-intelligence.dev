@@ -35,7 +35,7 @@ A green result and an unasked question are the same bytes. Everything after that
 
 with the comment "a rule as pure data (not yet compiled into network nodes)", and `Query` as "a named parametric query (Clara defquery). No `:then`; answers are binding maps."
 
-At the cutoff commit `e6858e858`, `src/rete/` is **42,384 lines across roughly ninety files** — the largest module in `src/`, larger than the runtime. `purity.rs` is 2,599 lines, `export.rs` 2,332, `kernel/fire/mod.rs` 2,086, `vocabulary.rs` 1,879. `reachability.rs` is 1,917 and contributes **zero production lines**: `src/rete/mod.rs:86` wraps the entire file in `#[cfg(test)]`, which the work list records as invisible to any per-file scan, including the coverage script the front's own bar depends on.
+At the cutoff commit `e6858e858`, `src/rete/` is **42,384 lines across 56 files** — the largest module in `src/`, larger than the runtime. `purity.rs` is 2,599 lines, `export.rs` 2,332, `kernel/fire/mod.rs` 2,086, `vocabulary.rs` 1,879. `reachability.rs` is 1,917 and contributes **zero production lines**: `src/rete/mod.rs:86` wraps the entire file in `#[cfg(test)]`, which the work list records as invisible to any per-file scan, including the coverage script the front's own bar depends on.
 
 The part that matters for why this subsystem and not another is that it ships with more than one of itself. `src/rete/mod.rs:1-8` states it plainly — "The wat files are compile + `$oracle` reference, not the production fire path." The production path is `fire-rules`, sealed Rust in `src/rete/kernel/`. Beside it lives `fire-rules$oracle`, the same engine written in wat, whose entire job is to disagree. And on August 26, `b2939f12b` closed two defect families with an exit rule naming a third: "Clara 0.24.0 ran on both and agrees, byte-identical to native and the `$oracle`." Clara is the Clojure rules engine — a third-party twin, outside the project entirely. By the 30th there is a benchmark harness running the same axes against it, and `b35327830` reads **`33/33 :accuracy :match, 33/33 :winner :us`**.
 
@@ -49,7 +49,7 @@ Totality here means no raise, no crash, every refusal a matchable value. Rete ow
 
 ## August 26 — the word arrives as a question
 
-The word *exemplar* does not enter this corpus as a designation. It enters as the builder asking whether something already is one, and it is not about rete at all. `6511e91a0`:
+The word *exemplar* had been in this corpus as a label since May. What changes here is that it stops being a description and becomes a bar something has to clear — asked as a question, by the builder, about something that is not rete at all. `6511e91a0`:
 
 > "do we believe that wat-gen is now an exemplar?... did we empower the next set of wat engineers to bulid robust tests cleanly?"
 
