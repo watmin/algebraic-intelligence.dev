@@ -17,22 +17,30 @@ The work now runs on **four hosts**, as four concurrent and orthogonal fronts. A
 | front | what it is | where |
 |---|---|---|
 | [wat Under Its Own Law](/blog/fronts/under-its-own-law/) | the language made subject to the discipline it imposes on its users — every law `wat` enforces outward, turned on `wat`'s own body | `main` · johndesktop |
-| The Exemplar | one reference implementation the rest of `wat` measures itself against | `grok-rete` · reason |
-| Services in Anger | where services are flawed and deficient, and the repeatable patterns for using `wat` in real use | `claude-compute` + `sns-sqs` · compute |
-| Ars Culta | *the craft that is tended* — the grimoire, the tooling, the record | portal |
+| [The Exemplar](/blog/fronts/exemplar/) | one reference implementation the rest of `wat` measures itself against | `grok-rete` · reason |
+| [Services in Anger](/blog/fronts/services/) | where services are flawed and deficient, and the repeatable patterns for using `wat` in real use | `claude-compute` + `sns-sqs` · compute |
+| [Ars Culta](/blog/fronts/ars-culta/) | *the craft that is tended* — the grimoire, the tooling, the record | portal |
 
 ```mermaid
 gitGraph
-  commit id: "the story"
-  branch under-its-own-law
-  commit id: "main"
+  commit id: "the story ends"
+  commit id: "main = under its own law"
+  branch grok-rete
+  commit id: "08-24 the exemplar opens"
+  branch claude-compute
+  commit id: "08-28 forks off grok-rete"
   checkout main
-  branch exemplar
-  commit id: "08-24"
-  checkout main
-  branch services
-  commit id: "08-30"
+  branch sns-sqs
+  commit id: "08-30 excursus drawn"
 ```
+
+Two things in that graph are easy to get wrong, and both were got wrong here first.
+
+**`main` is not a trunk.** It is a front — *wat Under Its Own Law* — with no more claim to being the spine than the others have. There is nothing for the branches to merge *back into*; when a front finishes, it arrives rather than returns.
+
+**`claude-compute` branched off `grok-rete`, not off `main`.** One front's branch descends from another's, which is what *a front is a purpose, not a branch* looks like in the commit graph. It also makes the obvious measurement lie: asked for `claude-compute`'s work, a merge-base range answers **133 commits**, of which **109 belong to The Exemplar**. Its own work is **24**. Every count on this site that touches a front is taken with explicit exclusion for that reason.
+
+**Ars Culta is not in the graph at all**, because it is not a branch of this repository. It runs across four repositories from a laptop, which is exactly why it is the console and not a fourth hard problem.
 
 ## Why these opened
 
