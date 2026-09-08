@@ -283,3 +283,90 @@ the unit's spine was the file the sweep skipped. Its status block is roughly
 twenty hours stale.
 
 Same shape as F-1: a correction that moved the artifacts and left the claim.
+
+---
+
+## F-6 · `wat-rs` · `985be9a78`'s subject line disagrees with its own body's scoreboard
+
+**Status: OPEN. Small, and it is the second time this exact class has reached a
+live page on this site.**
+
+```
+985be9a78  subject
+  STONE expand-T3(255): declaring nothing is now ILLEGAL for @ExpandTime
+  — 430 verbs declare, compiler is the census
+
+985be9a78  body
+  431 registration sites · 431 declare · 0 missing
+  … 432; the measured number is 430 of 431.
+```
+
+**431 declare. 430 is the count the sweep edited** — one site already declared —
+and the subject line carries the smaller number without saying which population
+it counts. The body's scoreboard is unambiguous and correct; only the subject is
+loose.
+
+**It propagated.** This site's *wat Under Its Own Law* landing read *"430 verbs
+declare and the compiler becomes the census"* — quoting the subject verbatim,
+because a commit subject reads like a headline and headlines get trusted.
+Corrected to 431.
+
+That makes two, and they are one class:
+
+| | source | what happened |
+|---|---|---|
+| **F-5** | `excursus/README.md` said "seventeen" | it is eleven; this site published seventeen |
+| **F-6** | a commit subject said "430" | its own body says 431; this site published 430 |
+
+**The rule this earns: a commit subject is a headline, not a measurement.** When
+the body carries a scoreboard, the scoreboard wins — and it is one command away.
+Both times the source was internally self-correcting and nobody read far enough
+down to see it.
+
+**Not fixed here** — `wat-rs` is read-only from this repo, and a commit subject
+cannot be edited anyway. Recorded so no future post quotes 430.
+
+---
+
+## F-7 · this site asserted a claim `wat-rs` had already ruled VOID
+
+**Status: FIXED HERE. Recorded because the mechanism is the interesting part, and
+because it is ours, not the substrate's.**
+
+The *wat Under Its Own Law* landing page read:
+
+> A name that had been lying since the bootstrap is corrected.
+
+That is arc 294 R1's keystone — `HOLONAST-WAS-A-COAT`, the claim that *"HolonAST
+reduces to Hologram"*. **The builder ruled it void seven weeks later**, and the
+ruling is unambiguous:
+
+```
+341eb81e8  2026-08-14
+  294 RULING: HolonAST and Hologram are BOTH correctly named — R1's keystone is VOID
+
+  Builder, 2026-08-14: "HolonAST needs no change..... it is an AST for building …
+  HolonAST is an edn.... whatever you can express with edn..."
+
+  THE LAYERING, every name right:
+  EDN ≅ HolonAST --encode--> a holon --stored in--> Hologram
+```
+
+Verified at HEAD: `HolonAST` still has **1,051 occurrences** in `src/` and
+`crates/`, and `pub struct Hologram` still stands. Nothing reduced to anything.
+
+**The failure mode is the one worth naming: I read an arc's crowning realization
+and never checked whether it was still standing.** A keystone is exactly the
+sentence a summary keeps, and exactly the sentence most likely to have been ruled
+on later — because it is the one worth arguing about. **Read the epitaph before
+building on prior art.**
+
+The page now carries what the arc actually delivered, which survived the void:
+the holon record was built backwards, with the derived hologram in the identity
+slot and the source EDN demoted to a cache, and the cure put the data back in its
+chair. Every deliverable survived; only the keystone died.
+
+**This is the third source-trust failure on this site in one session** — F-5 (a
+README's self-report), F-6 (a commit subject over its own body), and now a
+realization whose retraction was seven weeks downstream. The common shape: **the
+most quotable sentence in a record is the one least likely to still be true.**

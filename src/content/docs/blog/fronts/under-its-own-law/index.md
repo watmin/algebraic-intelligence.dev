@@ -13,7 +13,7 @@ sidebar:
 
 This front is not "language maturity," though that was the working shorthand for it. Read the arcs' own realizations and the subject is narrower and sharper: **the enforcer submitting to itself.**
 
-Four axes stop being hand-maintained lists and start deriving from the registry, so 430 verbs declare and the compiler becomes the census. A stringly error in an EDN language is named as the language betraying its own point of existence, and errors become EDN. The old surface is retired so `wat` source is read by *one* reader — `VNVS LECTOR NE DIVIDANTVR`. A name that had been lying since the bootstrap is corrected. The angle bracket, the comma and the turbofish are annihilated from a corpus that is rewritten by tooling `wat` wrote for itself.
+Four axes stop being hand-maintained lists and start deriving from the registry, so 431 verbs declare and the compiler becomes the census. A stringly error in an EDN language is named as the language betraying its own point of existence, and errors become EDN. The old surface is retired so `wat` source is read by *one* reader — `VNVS LECTOR NE DIVIDANTVR`. A record found to have been built backwards — the derived hologram sitting in the identity slot while the source data was demoted to a cache — is put back in its chair. The angle bracket, the comma and the turbofish are annihilated from a corpus that is rewritten by tooling `wat` wrote for itself.
 
 Maturity is the flattering outside view. From inside, the language is being held to the law it enforces on everyone else.
 

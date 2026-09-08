@@ -491,7 +491,19 @@ the root."* A3, A5, A6, A7 all close on the 31st. **The opening post ends at
 | system | what the letters are | when |
 |---|---|---|
 | **defect families A, C** | earlier defect families, closed together | `b2939f12b`, **2026-08-26 15:56** — *"families A and C CLOSED — they were ONE root, and the ratchet is now 0"*. **Inside the window.** |
-| **work-list Class A (A1–A7)** | doors: *an invariant proven at ONE door, assumed at ALL of them* | drawn in `VIGILIA-2026-08-30-WORK-LIST.md` on the 30th, **CLOSED 2026-08-31 — past the cutoff.** Four of seven struck before midnight on the 30th. |
+| **work-list Class A (A1–A7)** | doors: *an invariant proven at ONE door, assumed at ALL of them* | drawn in `VIGILIA-2026-08-30-WORK-LIST.md` on the 30th. **The CLASS closed 2026-08-31 (the file's own header). FOUR OF SEVEN closed on the 30th** — `74e7f2dd7` 21:41 (A1, A2, A2b) and `af75d480f` 22:55 (A4), author == committer, both in window. A3/A5/A6/A7 are the 31st. |
+
+**Resolved 2026-09-08, after two readers disagreed.** The arc-278 reader flagged
+the "closed 08-31" claim as wrong because the two closure commits it found are
+dated 08-30; the exemplar reader had said the class closed 08-31. **Both are
+right and the distinction is the post's:** four members closed inside the window,
+the class closed outside it. `exemplar-001` shipped saying *"four of seven
+struck"*, which is correct as written.
+
+**⛔ AND THE WORK LIST IS NOT ON `main`.** It exists only on `origin/grok-rete`
+(checked: main 0, grok-rete 1, claude-compute 0, sns-sqs 0). **It therefore
+belongs to The Exemplar, not to wat Under Its Own Law** — `uiol-005` is a `main`
+unit and must not claim it.
 
 Both are real, both are "A", and they are eight weeks and two instruments apart.
 The hinge's *"families A and C closed together"* is the **first** one and is
