@@ -150,10 +150,10 @@ batch them into lockstep waves.
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
 | wat Under Its Own Law | 9 | 3 | **2** | — | — | — | — | **4** |
-| Ars Culta | 2 | 1 | — | — | — | — | — | **1** |
+| Ars Culta | 2 | — | — | **1** | — | — | — | **1** |
 | The Exemplar | **4** | 3 | — | — | — | — | — | **1** |
-| Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **17** | **8** | **2** | — | — | — | — | **7** |
+| Services in Anger | 1 | — | **1** | — | — | — | — | — |
+| **total** | **17** | **6** | **3** | **1** | — | — | — | **7** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
@@ -163,6 +163,7 @@ Only slots past SLOT are listed. Everything else is in §2.
 
 | slot | state | consonare | notes |
 |---|---|---|---|
+| `services-001` (the front opens) | **NOTES ✓ — orchestrator-verified, SLATE REFUTED** | — | `docs/notes/services-001-the-front-opens-NOTES.md`. **19 verified quotes. Substance PASSES DECISIVELY (8 items).** Through-line: *a rule that gates entry into a committed space needs an uncommitted space to gate people into.* **The slate's "post-cutoff" claim is refuted — the whole SNS/SQS build is in window.** STOP-1 partially fired: the README's "seventeen" is **eleven**, counted. Live defects → **F-5**. |
 | `uiol-001` (arc 298 closure) | **NOTES ✓ — orchestrator-verified** | — | `docs/notes/uiol-001-arc298-closure-NOTES.md`. **26 verbatim quotes. Substance PASSES (8 items).** A 3h38m arc — 04:01:52 → 07:39:53 on 2026-07-01 — that swerved out of 296 and inscribed itself the same morning. Through-line: **the law the arc wrote for values — absence must be spoken, never inferred — is the law its own closure document broke.** Three failure modes named as one bug: elide, sentinel, transparent erasure. Tightest mechanism: **killing the sentinel killed the eliding** — all 17 `is_unknown()` consumers existed only to suppress the fake. ⚠ One quote at `REALIZATIONS.md:390` is **from a different Claude thread relayed by the builder — do NOT attribute it to him.** STOP-1 fired on INSCRIPTION-vs-later-record, not internally. Live defects → **F-3** and **F-4**. |
 | `uiol-003` (arc 300 campaign) | **NOTES ✓ — orchestrator-verified, WITH A CORRECTION** | — | `docs/notes/uiol-003-arc300-campaign-NOTES.md`. **~35 verbatim utterances across 20 entries. Substance PASSES (11 items).** **ONE post, not two** — the joint is a committed artifact: the clj-oracle differential reached parity *"all but rationals"*, and closing that one exemption produced the whole numeric tower. **Through-line: the reader that lied.** The arc never drove a single corpus file; its product is everything the preparation was forced to find, each one a reader being dishonest about wat's own source. **VERIFIED AND IT IS THE SPINE: the two readers are still two at HEAD and disagree about the ALPHABET** — `wat-reader/src/lexer.rs:536` refuses non-ASCII, `wat-edn/src/lexer.rs:281` accepts `\é`. ⚠ **The notes open with a correction**: "1305 heads" is the occurrence count; heads are **800**, lines are 931. ⛔ **R9–R17 off limits.** Lead with the readers, not `AGENT-SMITH` — that headline is already `009`'s. |
 | `uiol-009` (arc 118 closure) | **NOTES ✓ — orchestrator-verified, WITH A CORRECTION** | — | `docs/notes/uiol-009-arc118-closure-NOTES.md`. **19 verbatim quotes. Substance PASSES (9 items).** Dates grounded: opened `5c438bf74` 2026-04-20, inscribed `ba3bd70cb` 2026-08-19. Through-line: *a law and its exemption written on the same page, and the exemption won because it was cheaper to obey* — then **the wall's first violator was the language itself** (flipping two capability bits took the floor 4747 green → 1802/2945, all cascading from `defservice`'s own macro body). ⚠ **The file opens with an orchestrator correction: its Finding A was half wrong.** The evasion is real (`1eaf83ce8` truncates the builder's quote at the forbidding clause and pre-defends), but the substrate **caught it in 46 hours** (`b1d876f69`) and documented it against itself in source — the reader had grepped only `docs/`. Write it as a discipline working, never as "nobody noticed." **STOP-3 fired → the `Seqable` type-system thread splits out.** Live defect → **F-2**. |
@@ -492,21 +493,54 @@ commits carry a subject saying the builder's pushback corrected the apparatus.
 
 ### Services in Anger — `fronts/services/` — 1 post
 
-Censused 2026-09-07: **60 own commits in-window** (`claude-compute` 24,
-`sns-sqs` 36), 65 docs. **1 is correct, not stingy** — and this reverses my
-earlier guess that the front was under-allocated.
+**Reading pass 2026-09-08. The slate was WRONG about the cutoff, and the disk
+refuted it — correcting here.**
 
-In-window, `claude-compute` is doing integration and record-keeping
-(*"INTEGRATION: refresh to main's tip"*, *"CURARE: the hold, the corrected
-trigger, and the rerere hazard"*) and wraps itself on 08-30 with its own CURARE.
-`sns-sqs` lands the excursus corpus at the boundary — its `DESIGN.md` reads
-**"Status: DRAWN 2026-08-30"**, the cutoff day itself. **The SNS/SQS build, R69,
-and the chaos-engineering series are all post-cutoff** and belong to the first
-weekly.
+**⛔ "The SNS/SQS build is post-cutoff" is FALSE.** The cutoff marker `ca405009b`
+is **2026-08-30 23:48:51**, and **all 36 `sns-sqs` own commits are that same
+day** — including stone 3 (`17d32938d`, SQS lands, 18:22) and stone 7
+(`4139cddfc`, the 8,000-outcome fan-out proof, 21:01). The build is **in window
+and is the post's body.** Only R69 (09-02) and the chaos series (09-03+) are
+post-cutoff, plus excursus `002` (08-31) and the arc-278 circuit/perf run.
+
+**⚠ ZONE TRAP.** The `SCORE-*` files date in **UTC** while commits are `-0700`,
+so `SCORE-stone-5` reads "2026-08-31" for a commit dated 08-30 19:56. **Reading
+the SCOREs instead of the commits pushes stones 5–7 past the cutoff and out of
+the post.** Date from the commits.
 
 | # | kind | unit | evidence |
 |---|---|---|---|
-| 001 | **opening** | the front opens — and **`excursus` is invented**: a third documentation form for large efforts that are not arcs, in full strike vocabulary outside the arc tree | `docs/excursus/2026/08/001-sns-sqs/` + `002-handle-lifetime-wall/`; `claude-compute` wraps 08-30 |
+| 001 | **opening** | the front opens — `excursus` is invented, and the work it was invented to hold turns out to be worth holding | Two branches, two machines, three days (`2026-08-28 12:14` → `08-30 23:48`), **60 own commits**, and **the same defect class fires on both.** On `sns-sqs` the apparatus needed a home and the tree offered exactly one shape, so it minted `arc 301` unasked — **the second time with the identical number.** On `claude-compute`, a drift gate built for retired *names* reported clean against a refresh whose 41 reds were a retired *form*. **19 verified quotes**, two of which the planner did not have — including the actual argument, absent from the README: *"this is us experimenting freely … arc 278 is about building wat-rete … but rete's needs do not extend to message delivery and processing"*. |
+
+**What the excursus form makes impossible — four grounded mechanisms**, and this
+is the post's payload:
+
+1. It removes the **occasion** rather than discouraging the act — exploration gets
+   the same apparatus in a disjoint number space, so *starting work* no longer
+   touches arc numbers at all.
+2. The `EXCURSUS(NNN):` prefix puts the distinction in **the one surface that
+   cannot be corrected later.** The tree moved and 76 reference lines swept in one
+   commit; eleven commit subjects say `(301)` forever.
+3. Disjoint numbering makes **promotion a discrete builder act** — there is no
+   gradient toward minting.
+4. **The identical ladder was ruled the same day for code**: `wat-scripts/<name>/`
+   → `wat/<name>.wat`, *"once they demonstrate excellence"*, with the grep
+   precedent's standard — *"the counts are the proof it moved intact."*
+
+**And the work is not paperwork.** SNS shipped needing **zero substrate change**;
+then *drawing* SQS found the Store could not `delete`, `mem-store`'s `put`
+appended where DynamoDB's `PutItem` replaces, and `#inst` rendered at variable
+width — so **every range scan over a timestamp sort key was unsound.**
+
+**`claude-compute`'s 24 own commits are NOT split out** (STOP-2 considered and
+declined): they are the window's second instance of its one class, and splitting
+them destroys the post's strongest fact.
+
+**Do not quote the README's "seventeen".** Counted: **eleven**. See
+`FINDINGS-FOR-THE-BUILDER.md` F-5 — this site published the README's number
+before counting it. Also: *"did a rogue 301 enter?"* exists **only** at
+`docs/excursus/README.md:30` and in no commit anywhere; the other arcs quote is
+in a commit body, which is primary where the README normalised its punctuation.
 
 > **⚠ Instrument note, recorded because it nearly corrupted this slate.**
 > `claude-compute` branched off **`grok-rete`**, not off `main` — merge-base
