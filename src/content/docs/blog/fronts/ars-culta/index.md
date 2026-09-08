@@ -4,7 +4,7 @@ description: "The front where the instruments are made. The grimoire that govern
 tableOfContents: false
 status: live
 sidebar:
-  order: 2
+  order: 0
 ---
 
 **Status: live.** Host `portal`, across `datamancy.dev`, `pulsare`, `cingere`, and this site.

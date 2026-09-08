@@ -4,7 +4,7 @@ description: "The front where wat stops being exercised and starts being used. R
 tableOfContents: false
 status: live
 sidebar:
-  order: 4
+  order: 0
 ---
 
 **Status: live.** Branches `claude-compute` and `sns-sqs`, host `compute`.

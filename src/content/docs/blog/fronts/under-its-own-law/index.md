@@ -4,7 +4,7 @@ description: "The front where the language is made subject to the discipline it 
 tableOfContents: false
 status: live
 sidebar:
-  order: 1
+  order: 0
 ---
 
 **Status: live.** Branch `main`, host `johndesktop`.

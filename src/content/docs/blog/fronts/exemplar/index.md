@@ -4,7 +4,7 @@ description: "The front where one subsystem is held to a standard the rest of th
 tableOfContents: false
 status: live
 sidebar:
-  order: 3
+  order: 0
 ---
 
 **Status: live.** Branch `grok-rete`, host `reason`. Diverged from `main` on 2026-08-24.
