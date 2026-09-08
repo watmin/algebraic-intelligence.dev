@@ -85,16 +85,57 @@ migration to `johndesktop`, `reason` (where the ML work began years ago),
 `compute` (an old home server repurposed). That migration is the physical
 constraint that produced the topology, and it belongs in the branch-point post.
 
-### 2.1.2 The story is AT REST, not ended
+### 2.1.4 The fourth front — portal, the console
+
+The builder runs **four** hosts, not three, and the fourth is a different shape.
+
+> *"my laptop is now being used to drive datamancy, automation tooling (pulsare,
+> cingere) and website updates… portal is my interface to the 3 remotes and the
+> 'deployer' of my automation updates to the remotes."*
+
+`portal` is the laptop where all the work began — abandoned as a build machine
+because constant Rust builds DoS'd it, and now returned as the **console**: the
+interface to the three remotes and the deployer of automation to them. Its
+purpose is the instrument layer — the grimoire (how the work is done), the
+tooling (how the machines talk), and the chronicle (the record of what they did).
+
+**It is honestly asymmetric and should be labelled so.** The other three fronts
+are hard problems on one substrate. Portal builds what they run on and records
+what they do. That keeps the builder's stated ceiling intact: **three concurrent
+hard problems, plus the console** — not four hard problems.
+
+**Portal is also where the series-007/008 body goes forward.** The Story ending
+(§2.1.2) leaves *The Signed Record* and *The Command Channel* — the datamancy /
+grimoire lineage — with no forward home. Portal is it. That lineage does not
+stop; it moves from a Story body to a live front.
+
+Measured in the batch window (2026-06-23 → 08-31): ~64 commits across
+`datamancy.dev` (15), `scratch` (19), this repo (28), `datamancy` (2). The
+marquee item is **`experiri` minted and published 2026-08-28 — the executing
+ward, warded 17 rounds, 0 un-dispositioned**; alongside the grimoire ethos
+encoding (06-30), `cohaerere` (06-26), and the publish hardening (08-16).
+`pulsare` and `cingere` are **September** — they fall past the cutoff and belong
+to the first weekly update, not this batch.
+
+**[OPEN]** — portal's front NAME. Not yet cast. intueri, on the §3.4 precedent.
+
+### 2.1.2 The story ENDS — ruled 2026-09-07
 
 `main` is a front, not a trunk — so **there is no spine for a synthesis return to
 be absorbed into.** A merge is therefore *arrival*: the front's own closing post,
 plus the topology recorded on the Fronts overview. Merging is its own story
 event and is allowed to be one.
 
-But the Story is not sealed. A recognition large enough reopens it with a new
-era. At rest, not finished — which is the only honest state for a chronicle whose
-subject is still running.
+**RULED 2026-09-07 (option (b), decided on the four questions — see §5.1): the
+Story ENDS.** It closes on a hinge post — honest commentary rather than a
+cliffhanger — and points forward to the Fronts and to the Epilogue. Everything
+after 2026-06-23, where the chronicle actually stopped, is front-shaped.
+
+The hinge's thesis is the builder's, and it is the batch's strongest line:
+
+> *"the story was a single machine all the way down… now i'm running 4."*
+
+That is what ends: not the work, but the era in which one machine carried it.
 
 ### 2.1.3 How this relates to `topology.md` (they do not conflict)
 
@@ -127,6 +168,12 @@ arrival for a merge that has not taught us anything yet.
 
 Applied to *purposes*, not refs: a front's journal is the union of its branches'
 realizations.
+
+**And not to one repo.** The threshold was first measured over `wat-rs` branches,
+which made it look like a `wat-rs/docs/arc/**` rule. It is not. **A front's
+journal is wherever that front journals.** The portal front (§2.1.4) journals
+across `datamancy.dev`, `datamancy`, `scratch`, `pulsare`, `cingere` and this
+repo — no `wat-rs` branch at all — and it clears the threshold comfortably.
 
 Measurable on disk, not a judgment call, and self-maintaining. Against the
 current tree it discriminates correctly without tuning: `wat-revival` did real
@@ -173,6 +220,27 @@ could only assume the work had been given up. The builder's own words:
 > up. So — you can pick a label; it's on us to label them correctly."*
 
 The mechanism is cheap. Keeping it honest is the standing obligation.
+
+### 2.6 The weekly scaffold — and the rule against filler
+
+The journal's unit is **the week**. One post per week **per front that had work
+that week**. A quiet week produces **no post** — manufacturing a post about
+nothing fails Honest, and the gaps are themselves true (portal was silent through
+W3–W7 while the substrate ran).
+
+Measured scaffold for the batch (weeks from Mon 2026-06-22):
+
+| front | weeks with work | posts |
+|---|---|---|
+| wat Under Its Own Law | W1–W10 (114–462 commits each) | 10 |
+| portal (console) | W1, W2, W8, W9, W10 | 5 |
+| The Exemplar | W10 (opened 08-24) | 1 |
+| Services in Anger | W10 (opened 08-30) | 1 |
+| **The Story** | the hinge | **1** |
+| | | **18** |
+
+For scale: this is *less* dense than the chronicle's own history — the era "The
+Shape Keeps Its Promise" ran 6 posts over ~2 weeks.
 
 ### 2.4 The cadence rule
 
