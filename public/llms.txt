@@ -79,6 +79,8 @@ The wards are the [datamancy grimoire](https://github.com/watmin/datamancy) — 
 - [datamancy](https://github.com/watmin/datamancy): The spell library — Latin-named wards, first inscribed 2026-05-19; the live signed catalog is the authoritative count.
 - [datamancy.dev](https://github.com/watmin/datamancy.dev): The grimoire's home — a cryptographically-verifiable static MCP serving the spells as raw markdown + the KMS-signed manifest.
 - [datamancer.dev](https://github.com/watmin/datamancer.dev): The practitioner's identity card. Raw markdown; chronicle / grimoire / source.
+- [pulsare](https://github.com/watmin/pulsare): The command channel. Two operators in named tmux windows, one working directory; the MCP writes the peer's inbox and knocks on their tab. Files are the payload; a missed knock is another knock. Python stdlib only.
+- [cingere](https://github.com/watmin/cingere): The console's instrument panel. A tmux bar and a Claude statusline read as one belt — host, session, CPU/memory sparks and uptime above; model, git, context spark, cache, diff, cost and rolling usage caps below.
 - [algebraic-intelligence.dev](https://github.com/watmin/algebraic-intelligence.dev): This site.
 
 ## Markdown companions — for agents that prefer the source
