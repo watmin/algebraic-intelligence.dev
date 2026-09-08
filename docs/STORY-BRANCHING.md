@@ -261,7 +261,21 @@ week may hold none.** Five unit kinds, each with a datable trigger:
 Two instruments over 2026-06-22→08-30 on `origin/main`, both cheap and both
 re-runnable. Recorded because the slate is derived from them, not asserted.
 
-**Recognition density is INVERSE to commit density.** Realization-writing commits
+**⚠ CORRECTED 2026-09-07 — read this before using the numbers below.** The first
+reading of this census was *"recognition density is inverse to commit density."*
+That inference is wrong, and the builder's correction is the right one:
+
+> *"the rate of realizations slowed down as we began to do the extensive grunt
+> work that the arcs revealed."*
+
+**Realization density measures DISCOVERY, not WORK.** A realization-quiet week is
+an execution week — the arcs had already revealed what needed doing, and the doing
+does not generate new recognitions. So the low W7–W10 numbers are **not** evidence
+that little worth narrating happened there, and a slate weighted on this axis
+alone leans early and wrong. Use it as ONE axis beside the commit corpus, never as
+the allocator.
+
+**Realization-writing commits**
 per week: W1 43 · **W2 127** · W3 18 · W4 12 · W5 39 · W6 14 · W7 3 · W8 6 ·
 W9 6 · W10 3.
 
@@ -279,6 +293,26 @@ held: arc **292** (06-23, already narrated as `series-006-035`) · arc **296**
 **170** (07-29) · arc **118** (08-19, opened as arc 004 on 2026-04-20 — a
 four-month arc). The window is overwhelmingly *open* work, which is exactly why
 the chronicle's narrate-only-what-closed rule had nothing to say for eleven weeks.
+
+**THE COMMIT CORPUS IS A PRIMARY SOURCE, NOT AN INDEX.** Measured 2026-09-07 —
+explicitly attributed builder quotes in commit *bodies* in the window:
+
+| front | repo / branch | attributed quotes |
+|---|---|---|
+| wat Under Its Own Law | `origin/main` | **247** |
+| Services in Anger | `origin/sns-sqs` · `origin/claude-compute` | **226** · **221** |
+| The Exemplar | `origin/grok-rete` | **191** |
+| Ars Culta | `datamancy.dev` | **0** |
+
+Verbatim and attributed — *"floats are decided.... capabilities are a kernel
+namespace thing?"*, *"we need to curare and compact - we'll continue on the far
+side."* So **consonare rule 11 is satisfiable from commits for three of four
+fronts**, and every reader brief must name the commit bodies as a quote source,
+not only the realizations.
+
+The zero on `datamancy.dev` is **repo-specific, not a reading failure** — that
+repo does not commit in this style. It is why `ars-culta/002` is blocked, and why
+`rune:consonare(solo)` is the honest disposition there rather than a shortfall.
 
 **W2 is not a week, it is an era** — 296×43 · 278×34 · 300×25 · 298×12 · 293×8,
 five arcs peaking at once, in the week immediately after the chronicle stopped.

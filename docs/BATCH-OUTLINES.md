@@ -261,10 +261,17 @@ the channel being hardened — rather than taking slots of their own.
 |---|---|---|---|
 | 001 | **opening** | the front opens; **`excursus` is invented** — a third documentation form for large efforts that are not arcs | `claude-compute` + `sns-sqs` diverge 08-30; `claude-compute` wraps itself the same day with its own CURARE |
 
-**⚠ These two fronts have NOT had a census.** Their allocation is one post each
-because each is one week old at the cutoff, not because anyone measured their
-recognition density the way `main`'s was measured. If either turns out to hold
-more, it holds more. Do not treat 1 as a finding.
+**⚠ BOTH ARE ALMOST CERTAINLY UNDER-ALLOCATED.** The `1` is a placeholder from a
+calendar, not a measurement. Against them: **449** docs authored on `grok-rete`
+and **451** on `sns-sqs`; **191** and **226** attributed builder quotes in their
+commit bodies; and an entire third documentation form — `excursus` — invented on
+one of them. The builder's read: *"serious work went into the exemplar and
+services in anger."*
+
+They were under-counted because the first census weighted **realization density**,
+and these fronts do their journaling in commit bodies, BRIEFs, SCOREs and
+`excursus/` rather than in `REALIZATIONS.md`. **Both owe a proper census over the
+commit corpus before their slates are fixed.** Do not treat `1` as a finding.
 
 ## 3 — Order of work
 
