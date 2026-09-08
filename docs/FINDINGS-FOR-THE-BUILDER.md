@@ -156,3 +156,90 @@ body, reads memo **ON** = 1× calls / **585 B per element retained forever**, me
 **OFF** = 3× calls / 288 B flat. The summary reverses both halves. `b1d876f69`
 settles it independently. A commit message cannot be edited; this is recorded so
 no post quotes that sentence.
+
+---
+
+## F-3 · `wat-rs` · arc 298's annihilated sentinel is back at HEAD, with a doc comment defending it
+
+**Status: OPEN — and it is the largest of these three.** Found 2026-09-08 during
+the reading pass for `uiol-001`. Verified by the orchestrator against the disk.
+
+Arc 298 annihilated `Span::unknown()` — the fake `<runtime>:0:0` null object —
+across either 496 or 815 sites (see F-4). Its design doc is unusually explicit
+about **both** the defect and the cure that was rejected:
+
+```
+DESIGN-298.2-annihilate-span-unknown.md:9
+  `Span::unknown()` claims a value was constructed nowhere
+  (`file "<runtime>", line 0, col 0`). That is false: every …
+
+DESIGN-298.2-annihilate-span-unknown.md:11
+  … a fake coordinate that lies to the user's tooling (jump-to-location lands
+  at `<runtime>:0:0`). The cure is not `Option<Span>` …
+```
+
+At HEAD, `src/runtime.rs:11424-11431`:
+
+```rust
+/// … a synthetic `<runtime>` location marks it honestly.
+fn fault_value(message: String, location: Option<crate::span::Span>) -> Value {
+    let location_value = match location {
+        Some(span) => value_from_span(span),
+        None => value_from_span(crate::span::Span::new(
+            Arc::new("<runtime>".to_string()), 0, 0,
+        )),
+    };
+```
+
+Three things the arc ruled on, all three now present in one function:
+
+| arc 298 said | HEAD does |
+|---|---|
+| `<runtime>:0:0` claims construction nowhere — **"That is false"** | constructs exactly `("<runtime>", 0, 0)` |
+| **"The cure is not `Option<Span>`"** | the parameter is `Option<crate::span::Span>` |
+| the sentinel is a fake coordinate that **lies to tooling** | the doc comment says it **"marks it honestly"** |
+
+Landed in `6dac41b9c`, 2026-09-01 — *"STONE(109) B: the seven kernel sub-modules
+mirror their edge"* — so it arrived as a passenger on unrelated work, which is
+how this class travels.
+
+**What is NOT established, and must not be asserted:** whether this is a
+*reversal* or a *gap the annihilation never covered*. The reading pass's own read
+— flagged as its read, not as a finding — is that arc 298 reached the Rust `Span`
+type and not the wat-level `Location` field, and that the pressure which produced
+the sentinel was never removed. If that is right, this is F-2's shape again: a
+correction that landed on one tier while the tier below kept the defect. The
+`Span::unknown()` **symbol** is still dead at HEAD; it is the **value** that came
+back.
+
+A second instance, older: `src/host/test_runner.rs:921` (`251b43b32`,
+2026-07-24) reintroduced the elide-when-sentinel branch — which matters because
+arc 298's tightest finding was that *killing the sentinel killed the eliding*: all
+17 `is_unknown()` consumers existed only to suppress the fake.
+
+**Not fixed here** — `wat-rs` is read-only from this repo.
+
+---
+
+## F-4 · `wat-rs` · arc 298's INSCRIPTION states two different site counts for one migration
+
+**Status: OPEN. Small, and it is the reason F-3 is hard to size.**
+
+The same closure document gives the same migration two numbers and says nowhere
+which population either counts:
+
+```
+INSCRIPTION.md:30    … propped up across **496 sites** and never questioned.
+INSCRIPTION.md:127   … force, 496 sites in one recompile, and the null-object died.
+INSCRIPTION.md:53    … 815 sites → `rust_caller_span!()` or a threaded wat span …
+```
+
+Measured at `923887292^`: **498 `src/` + 46 `crates/` + 271 `tests/` = 815.** So
+both numbers are probably true of different populations — `496` looks like the
+`src/`-side figure and `815` like the whole tree — but the document does not say,
+and a reader has no way to tell a scope difference from a typo.
+
+This is the [file-count-is-not-an-item-count] class: a number is only as good as
+the population it names, and this one names none.
+
+**Not fixed here** — one clause on each line resolves it.

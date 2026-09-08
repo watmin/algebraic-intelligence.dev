@@ -102,6 +102,17 @@ material, not this batch.
 > freshness probe in `docs/COMPACTION-AMNESIA-RECOVERY.md` §2 step 0 **before you
 > act on one line of it.**
 
+### ⛔ Off-limits source material
+
+**`wat-rs` arc 300 `REALIZATIONS.md`, R9–R17.** The reading pass identified these
+nine realization commits as **the builder's personal history**, signed in the
+record *"kept with consent"*, and correctly declined to summarize them. **That
+stands as a hard boundary for this batch**: no reader, writer or grader reads,
+quotes, characterizes or works around them. Whether any of it is publishable is
+the builder's call and has not been asked.
+
+This is separate from the witness items, which are also untouched.
+
 ### Title alternates — the writers' unchosen proposals
 
 Recorded here because the in-page scaffolding was stripped (two consonare casts
@@ -138,11 +149,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | 9 | 5 | — | — | — | — | — | **4** |
+| wat Under Its Own Law | 9 | 3 | **2** | — | — | — | — | **4** |
 | Ars Culta | 2 | 1 | — | — | — | — | — | **1** |
 | The Exemplar | **4** | 3 | — | — | — | — | — | **1** |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **17** | **10** | — | — | — | — | — | **7** |
+| **total** | **17** | **8** | **2** | — | — | — | — | **7** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
@@ -152,6 +163,8 @@ Only slots past SLOT are listed. Everything else is in §2.
 
 | slot | state | consonare | notes |
 |---|---|---|---|
+| `uiol-001` (arc 298 closure) | **NOTES ✓ — orchestrator-verified** | — | `docs/notes/uiol-001-arc298-closure-NOTES.md`. **26 verbatim quotes. Substance PASSES (8 items).** A 3h38m arc — 04:01:52 → 07:39:53 on 2026-07-01 — that swerved out of 296 and inscribed itself the same morning. Through-line: **the law the arc wrote for values — absence must be spoken, never inferred — is the law its own closure document broke.** Three failure modes named as one bug: elide, sentinel, transparent erasure. Tightest mechanism: **killing the sentinel killed the eliding** — all 17 `is_unknown()` consumers existed only to suppress the fake. ⚠ One quote at `REALIZATIONS.md:390` is **from a different Claude thread relayed by the builder — do NOT attribute it to him.** STOP-1 fired on INSCRIPTION-vs-later-record, not internally. Live defects → **F-3** and **F-4**. |
+| `uiol-003` (arc 300 campaign) | **NOTES ✓ — orchestrator-verified, WITH A CORRECTION** | — | `docs/notes/uiol-003-arc300-campaign-NOTES.md`. **~35 verbatim utterances across 20 entries. Substance PASSES (11 items).** **ONE post, not two** — the joint is a committed artifact: the clj-oracle differential reached parity *"all but rationals"*, and closing that one exemption produced the whole numeric tower. **Through-line: the reader that lied.** The arc never drove a single corpus file; its product is everything the preparation was forced to find, each one a reader being dishonest about wat's own source. **VERIFIED AND IT IS THE SPINE: the two readers are still two at HEAD and disagree about the ALPHABET** — `wat-reader/src/lexer.rs:536` refuses non-ASCII, `wat-edn/src/lexer.rs:281` accepts `\é`. ⚠ **The notes open with a correction**: "1305 heads" is the occurrence count; heads are **800**, lines are 931. ⛔ **R9–R17 off limits.** Lead with the readers, not `AGENT-SMITH` — that headline is already `009`'s. |
 | `uiol-009` (arc 118 closure) | **NOTES ✓ — orchestrator-verified, WITH A CORRECTION** | — | `docs/notes/uiol-009-arc118-closure-NOTES.md`. **19 verbatim quotes. Substance PASSES (9 items).** Dates grounded: opened `5c438bf74` 2026-04-20, inscribed `ba3bd70cb` 2026-08-19. Through-line: *a law and its exemption written on the same page, and the exemption won because it was cheaper to obey* — then **the wall's first violator was the language itself** (flipping two capability bits took the floor 4747 green → 1802/2945, all cascading from `defservice`'s own macro body). ⚠ **The file opens with an orchestrator correction: its Finding A was half wrong.** The evasion is real (`1eaf83ce8` truncates the builder's quote at the forbidding clause and pre-defends), but the substrate **caught it in 46 hours** (`b1d876f69`) and documented it against itself in source — the reader had grepped only `docs/`. Write it as a discipline working, never as "nobody noticed." **STOP-3 fired → the `Seqable` type-system thread splits out.** Live defect → **F-2**. |
 | `uiol-002` (arc 296 reversal) | **NOTES ✓ — orchestrator-verified** | — | `docs/notes/uiol-002-arc296-reversal-NOTES.md`. **19 verbatim quotes / 6 locations. Substance PASSES (7 items survive stripping).** The reversal is real and bigger than the trigger: 28h52m, and **the closure was ORDERED** — `BRIEF-296-error-edn-trait.md:64` says *"Write the INSCRIPTION; flip the 296 DESIGN status to closed. Gate."*, authored 2h07m before the executor complied. The withdrawal commit blames the executor; the disk does not support that. **STOP-3 fired → scoped to the first 29 hours.** The 08-16 second closure (`9b5410118`, falsified 12h41m later by `691b78e2f`) becomes a coda. Candidate separate units: the `WatError` wall, Stone K, R20. **Live defect surfaced → `FINDINGS-FOR-THE-BUILDER.md` F-1.** |
 | `exemplar-001` (the front opens) | **NOTES ✓ — orchestrator-verified** | — | `docs/notes/exemplar-001-the-front-opens-NOTES.md`. **11 verbatim quotes. Substance PASSES decisively (10 items).** Census 214 **confirmed**, "35 docs" **refuted**. Corrected the slate's finding-list description (A1–A7 are IDs; L1/L2 are severity bands; T7 is a different list) and its post count (**STOP-3 → 4 posts**, the 34-commit generative strand separates). **Ends at "four of seven struck"** — Class A closes 08-31, past cutoff. |
