@@ -458,6 +458,20 @@ the root."* A3, A5, A6, A7 all close on the 31st. **The opening post ends at
 | 003 | **campaign** | the record audits itself — the front turning its instruments on its own bookkeeping | *"the exemplar-hunt table was fiction — all three 'open' rows stale"* · *"the theater summary said T7 remained; it closed four days earlier"* · *"index the inbound notes — two sat unread for five days, one a silent wrong answer"* |
 | 004 | **campaign** | **the generative strand — NEW, promoted by the reading pass (STOP-3)** | Exactly **34 commits**, building a different artifact (`wat/gen.wat`). Separable, and it is where the word *exemplar* enters: *"do we believe that wat-gen is now an exemplar?… did we empower the next set of wat engineers to bulid robust tests cleanly?"* (`6511e91a0`). The opening keeps one bridging sentence to it. |
 
+**⛔ TWO DIFFERENT LETTERED SYSTEMS LIVE ON THIS FRONT. Do not conflate them —
+`002` is literally "the lettered audit", so it is the post most at risk.**
+
+| system | what the letters are | when |
+|---|---|---|
+| **defect families A, C** | earlier defect families, closed together | `b2939f12b`, **2026-08-26 15:56** — *"families A and C CLOSED — they were ONE root, and the ratchet is now 0"*. **Inside the window.** |
+| **work-list Class A (A1–A7)** | doors: *an invariant proven at ONE door, assumed at ALL of them* | drawn in `VIGILIA-2026-08-30-WORK-LIST.md` on the 30th, **CLOSED 2026-08-31 — past the cutoff.** Four of seven struck before midnight on the 30th. |
+
+Both are real, both are "A", and they are eight weeks and two instruments apart.
+The hinge's *"families A and C closed together"* is the **first** one and is
+correctly in-window — verified `b2939f12b`, 08-26. `exemplar-001` uses the
+**second** and correctly stops at "four of seven struck". A post that merges them
+would date one event to the other's day.
+
 **Quote density is high here — 11 verbatim builder quotes with hashes, from 124
 `builder` lines across the 214 commit bodies.** Pattern for the writer: the
 builder's interventions in this window are almost never approvals; at least four
