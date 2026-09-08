@@ -124,11 +124,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | 9 | 7 | — | — | — | — | — | **2** |
+| wat Under Its Own Law | 9 | 6 | **1** | — | — | — | — | **2** |
 | Ars Culta | 2 | 1 | — | — | — | — | — | **1** |
-| The Exemplar | 3 | 3 | — | — | — | — | — | — |
+| The Exemplar | **4** | 3 | **1** | — | — | — | — | — |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **16** | **12** | — | — | — | — | — | **4** |
+| **total** | **17** | **11** | **2** | — | — | — | — | **4** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
@@ -138,6 +138,8 @@ Only slots past SLOT are listed. Everything else is in §2.
 
 | slot | state | consonare | notes |
 |---|---|---|---|
+| `uiol-002` (arc 296 reversal) | **NOTES ✓ — orchestrator-verified** | — | `docs/notes/uiol-002-arc296-reversal-NOTES.md`. **19 verbatim quotes / 6 locations. Substance PASSES (7 items survive stripping).** The reversal is real and bigger than the trigger: 28h52m, and **the closure was ORDERED** — `BRIEF-296-error-edn-trait.md:64` says *"Write the INSCRIPTION; flip the 296 DESIGN status to closed. Gate."*, authored 2h07m before the executor complied. The withdrawal commit blames the executor; the disk does not support that. **STOP-3 fired → scoped to the first 29 hours.** The 08-16 second closure (`9b5410118`, falsified 12h41m later by `691b78e2f`) becomes a coda. Candidate separate units: the `WatError` wall, Stone K, R20. **Live defect surfaced → `FINDINGS-FOR-THE-BUILDER.md` F-1.** |
+| `exemplar-001` (the front opens) | **NOTES ✓ — orchestrator-verified** | — | `docs/notes/exemplar-001-the-front-opens-NOTES.md`. **11 verbatim quotes. Substance PASSES decisively (10 items).** Census 214 **confirmed**, "35 docs" **refuted**. Corrected the slate's finding-list description (A1–A7 are IDs; L1/L2 are severity bands; T7 is a different list) and its post count (**STOP-3 → 4 posts**, the 34-commit generative strand separates). **Ends at "four of seven struck"** — Class A closes 08-31, past cutoff. |
 | `uiol-007` (**the prehistory**) | **NOTES ✓ + VERIFIED + RE-SUBJECTED** | — | ⚠ **reader argues AGAINST a full post** — the closing realization is already published verbatim (216 lines). Survives: the `scratch` prehistory + the anatomy of the closing act. **UNBLOCKED** — `scratch` is holonic and in scope (builder, 2026-09-07) |
 
 **`uiol-007` — scratch provenance, for the drafter.** The prehistory is real and
@@ -364,7 +366,7 @@ weekly slice was about whatever fell inside seven days.
 | # | kind | unit | trigger |
 |---|---|---|---|
 | 001 | **closure** | arc **298** — Honest Optionality | INSCRIPTION 2026-07-01 |
-| 002 | **reversal** | arc **296** — closed, and would not stay closed | INSCRIPTION added 06-30, **deleted** at `3a4f49202` |
+| 002 | **reversal** | arc **296** — closed, and would not stay closed. **SCOPED 2026-09-08 to the first 29 hours** (06-30 07:07 → 07-01 16:35) — the arc is still OPEN at HEAD and is far too large for one post | INSCRIPTION added `7f17054a8` 06-30 10:21, **deleted** `3a4f49202` 07-01 15:13. **Elapsed 28h52m**, both verified |
 | 003 | **campaign** | arc **300** + the EDN-surface line — *VNVS LECTOR NE DIVIDANTVR* | 25 realization commits, W2 |
 | 004 | **campaign** | arcs **293/294** — struct-record symmetry; `HOLONAST-WAS-A-COAT` | 18 + 15 realization commits, W1–W2 + 08-25 |
 | 005 | **campaign** | arc **278** — the rules engine, W2→W6 | 116 realization commits; the largest, still open |
@@ -401,24 +403,49 @@ stretch, or it does not ship.
 vigilia's *"embedding is the fallback"* (W9) fold into 001 as the same motion —
 the channel being hardened — rather than taking slots of their own.
 
-### The Exemplar — `fronts/exemplar/` — 3 posts
+### The Exemplar — `fronts/exemplar/` — 4 posts
 
-Censused 2026-09-07 over the commit corpus: **214 own commits in-window, 35 docs.**
-Raised from 1. Its rhythm is a **draw → strike → curare** cycle over a lettered
-finding list, and at least three strands separate cleanly:
+**Reading pass 2026-09-08. The planner's census was half right, and the finding
+list was described wrongly. Corrected here; both were verified by the
+orchestrator against the disk, not taken from the agent's report.**
+
+- **214 own in-window commits — CONFIRMED, reproduces exactly.**
+  `git rev-list origin/grok-rete ^origin/main --no-merges`, author-date filtered
+  08-24…08-30. Zero merges.
+- **"35 docs" — REFUTED. It reproduces under no definition.** `docs:` subject
+  prefix = **10**; docs-only file sets = **75**; commits touching `docs/` = **155**.
+  A post must not quote a docs count until the builder names the definition;
+  **75 / 155 are the reproducible sentences.**
+- **⚠ The exclusion runs the OTHER WAY here.** `claude-compute` forked *off*
+  `grok-rete` on 08-28, so excluding `^origin/claude-compute` when measuring
+  `grok-rete` **deletes 109 of grok-rete's own 08-24…08-27 commits.** Exclude the
+  sibling when measuring `claude-compute` (24 own, vs 133 naive); do **not**
+  exclude it when measuring `grok-rete` (479 all-time ahead of main).
+
+**⛔ The lettered list was described wrongly in the previous slate, and a post
+written from that description would have been wrong on the record.**
+`A1`–`A7` are **finding IDs** in `docs/arc/2026/06/278-rules-engine/VIGILIA-2026-08-30-WORK-LIST.md`,
+each an *invariant proven at one door and assumed at all of them*. **`L1` and `L2`
+are severity bands, not findings** — that file's header reads **"41 L1 + 70 L2."**
+`T7` belongs to a *different* list, `NEXT-STRIKES-theater-hunt.md`. The old
+slate's "A1/A2/A2b/A4/C1/L1/L2/T7" mixed all three.
+
+**⛔ Boundary: Class A CLOSED 2026-08-31 — one day past the cutoff.** The header
+of that section reads *"CLASS A — the doors. CLOSED 2026-08-31 (A1…A7). This was
+the root."* A3, A5, A6, A7 all close on the 31st. **The opening post ends at
+"four of seven struck", never at "Class A closed."**
 
 | # | kind | unit | evidence |
 |---|---|---|---|
-| 001 | **opening** | the front opens; `wat-rete` begins becoming the exemplar all of wat measures against | `grok-rete` diverges 2026-08-24 |
-| 002 | **campaign** | the lettered audit — A1/A2/A2b/A4/C1/L1/L2/T7 drawn and struck | *"families A and C CLOSED — they were ONE root, and the ratchet is now 0"* |
-| 003 | **campaign** | the record audits itself — the front turning its own instruments on its own bookkeeping | *"the exemplar-hunt table was fiction — all three 'open' rows stale"* · *"the theater summary said T7 remained; it closed four days earlier"* · *"index the inbound notes — two sat unread for five days, one a silent wrong answer"* |
+| 001 | **opening** | the front opens; `wat-rete` begins becoming the exemplar all of wat measures against | `grok-rete` diverges 2026-08-24. The exemplar claim rests on five grounded things: rete is *"the first subsystem to demand totality"* (`57e2adc9b`); **three implementations** — native fire, a wat `$oracle` built to disagree, and Clara 0.24.0 in Clojure on a 33-cell grid (`33/33 :match, 33/33 :us`, `b35327830`), where the third-party twin found an acceptance divergence *"invisible to any wat-vs-wat differential"*; a committed instrument (`scripts/doc-coverage.sh`, whose header says *"A metric with no committed instrument is unfalsifiable"*); 111→0 undocumented fns ≥15 lines and 26→0 tests-that-cannot-fail; and the honest one — it is the only part of the tree with a published list of its own 111 open defects. **The verdict at cutoff is NO, in the breadcrumb's own capitals, and that is the spine.** |
+| 002 | **campaign** | the audit — Class A drawn: an invariant proven at ONE door and assumed at ALL of them | 19 wards cast against a tree 184 commits and +19,496 lines past the last cast, gates green throughout, returning **41 L1 + 70 L2** — every finding on a surface the 28 lints cannot see. **Five wards independently found five instances of one class.** The through-line: the named work list was **empty** on the morning of 08-30, and *an empty work list was evidence about how hard we had looked.* |
+| 003 | **campaign** | the record audits itself — the front turning its instruments on its own bookkeeping | *"the exemplar-hunt table was fiction — all three 'open' rows stale"* · *"the theater summary said T7 remained; it closed four days earlier"* · *"index the inbound notes — two sat unread for five days, one a silent wrong answer"* |
+| 004 | **campaign** | **the generative strand — NEW, promoted by the reading pass (STOP-3)** | Exactly **34 commits**, building a different artifact (`wat/gen.wat`). Separable, and it is where the word *exemplar* enters: *"do we believe that wat-gen is now an exemplar?… did we empower the next set of wat engineers to bulid robust tests cleanly?"* (`6511e91a0`). The opening keeps one bridging sentence to it. |
 
-**A possible fourth**, held rather than assumed: 34 commits of `fuzz`/`gen`
-tooling — the generative and fuzz testing that is the *"extensive grunt work the
-arcs revealed."* Currently folded into 002. A reader may find it is its own post.
-There is also a loose prior-art finding worth watching — *"it is an ALLOCATION
-problem, not an instruction-count one — eBPF's missing half"* — which reaches back
-to the DDoS lineage the chronicle already narrates.
+**Quote density is high here — 11 verbatim builder quotes with hashes, from 124
+`builder` lines across the 214 commit bodies.** Pattern for the writer: the
+builder's interventions in this window are almost never approvals; at least four
+commits carry a subject saying the builder's pushback corrected the apparatus.
 
 ### Services in Anger — `fronts/services/` — 1 post
 
