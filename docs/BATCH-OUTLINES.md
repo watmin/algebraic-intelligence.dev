@@ -87,7 +87,29 @@ Only slots past SLOT are listed. Everything else is in §2.
 
 | slot | state | consonare | notes |
 |---|---|---|---|
-| `uiol-007` (arc 170 closure) | **NOTES ✓ + VERIFIED** | — | ⚠ **reader argues AGAINST a full post** — the closing realization is already published verbatim (216 lines). Survives: the `scratch` prehistory + the anatomy of the closing act. **BLOCKED: is `scratch/` publishable?** |
+| `uiol-007` (arc 170 closure) | **NOTES ✓ + VERIFIED** | — | ⚠ **reader argues AGAINST a full post** — the closing realization is already published verbatim (216 lines). Survives: the `scratch` prehistory + the anatomy of the closing act. **UNBLOCKED** — `scratch` is holonic and in scope (builder, 2026-09-07) |
+
+**`uiol-007` — scratch provenance, for the drafter.** The prehistory is real and
+citable, with one nuance that must be stated rather than smoothed:
+
+- The `scratch` repo is at its tip (`62a6b60`, 2026-06-30, 0 behind origin) and
+  holds the May commits directly: `68f79d9` (05-02) *"arc 012 — extract wat-repl
+  as foundation"*; `078381c` (05-03) *"arc 019 — wat-cli-options: argv parsing DSL
+  + `:user::main` contract"*.
+- **The April material was RECOVERED FROM JSONL TRANSCRIPTS** on 2026-05-01
+  (`7fc430a`). The documents self-date — `2026/04/006-wat-mcp/one-tool-surface.md`
+  carries `date: 2026-04-29`, `**Started:** 2026-04-29`, and attributed
+  `User's framing 2026-04-29:` lines. So **the content date is 04-29 and the
+  commit date is 05-01**; a draft may cite the framing, but must not imply a
+  contemporaneous commit.
+- **Not to be confused with `wat-rs/wat-scripts/scratch-pad/`**, which is a
+  different thing, was modified 2026-09-07, and is post-cutoff regardless.
+
+**Standing recommendation unchanged:** the reader argued against a full-length
+post because the closing realization is already published verbatim. With scratch
+in scope, the unit has one strong section (the prehistory) and one strong
+mechanism (the anatomy of the closing act) — which is a **short** post, or a fold.
+The builder rules.
 | `uiol-006` (the DoS incident) | **NOTES ✓ + VERIFIED** | — | **strongest unit read so far — ready to draft.** 10 quotes, all four instances grounded, and the inherited arc-258 claim REFUTED on the disk |
 | `ars-culta/002` (experiri) | **NOTES ✓ + VERIFIED** | — | notes at `docs/notes/ars-culta-005-experiri-NOTES.md`; scope, orphan-blob find, byte-identity and ledger strike all re-checked against the disk by the orchestrator. **BLOCKED on the builder: no verbatim quotes exist in the repo** (see below) |
 
