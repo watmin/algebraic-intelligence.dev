@@ -1,5 +1,5 @@
 ---
-title: "The Coat That Fit"
+title: "Built Backwards"
 description: "June 25 – August 16, 2026: two arcs that share one close tracker because they cannot close independently. Arc 293 opened on a bug the builder graded catastrophic — a wat struct and a wat record could not be operated on uniformly — and answered it by collapsing three Value variants into one and deleting inheritance outright. Pushing the same question one layer down surfaced arc 294: the holon record was built backwards, the derived VSA hologram sitting in the identity slot while the source EDN was demoted to a cache. The cure put the data back in its chair. The crowning recognition — that the central type's name had been lying since the bootstrap — was ruled void by the builder seven weeks later, and every deliverable it was supposed to crown had already shipped."
 covers: 2026-06-25/2026-08-16
 written: 2026-09-08
@@ -22,7 +22,7 @@ The tracker exists because the entanglement had already produced a real mislabel
 
 `b1493d696` created the tracker the next day.
 
-## A catastrophic bug and the shape under it (2026-06-25)
+## A catastrophic bug and the shape under it (Jun 25)
 
 Arc 293 opened on a defect with no workaround. `293/REALIZATIONS.md:168`:
 
@@ -40,7 +40,7 @@ R2's own account of how it was reached is written into the record three separate
 
 The fix was not a shim over the three. It was a decomplection: one property bag, with the struct-ness or record-ness demoted to a tag on it.
 
-## The cosines, and the detour turns out to be the body (2026-06-26)
+## The cosines, and the detour turns out to be the body (Jun 26)
 
 294 opened the next day on a probe the builder framed as a question rather than a plan: "294 — i think we're going to prove a simple edn measurement does or doesn't work?"
 
@@ -65,7 +65,7 @@ That is the project's origin walking back into the room. `294/REALIZATIONS.md:11
 
 The chronicle starts with holon, a VSA library. `wat` was the route to holon's performance, and by June the route had become the body of the work. Three months of it had gone by without a holon thing, and the first one measured came back rejected by the substrate's own surface.
 
-## One inversion wearing six faces (2026-06-26)
+## One inversion wearing six faces (Jun 26)
 
 The ignition, `294/REALIZATIONS.md:16–19`:
 
@@ -96,7 +96,7 @@ The design enumerates six faces of that one inversion, each cited to a line (`:2
 
 Flaws 1 through 4 became strikes. Flaw 5 was re-sorted later and is still open. Flaw 6 was the arc's crown: the claim that stripping `HolonAST`'s borrowed roles leaves `Atom`/`Bind`/`Bundle`/`Permute` — the MAP-VSA algebra at `holon_ast.rs:59` — and therefore that `HolonAST` reduces to `Hologram`. The arc's name, `holon-returns-to-vsa`, was crowned for it; the builder's note on the name in `294/DESIGN.md:7–9` is "that one is just pleasant to read." 2026-08-14 is where that face goes.
 
-## The strikes (2026-06-28 → 06-29)
+## The strikes (Jun 28 → Jun 29)
 
 Seven commits across two days:
 
@@ -124,7 +124,7 @@ And in retrospect, `293/REALIZATIONS.md:1005`:
 
 The collapse held. At the 2026-08-30 tree (`8e79b8d39`), `src/types.rs:211` is `pub enum Nature`, `src/types.rs:311` is `pub struct AggregateDef` with no `parent`, and `src/value/value.rs:355` carries the epitaph: "Arc 293.R2.1: `wat__holon__Record` and `wat__core__Record` DELETED."
 
-## Portable was the symptom (2026-06-30)
+## Portable was the symptom (Jun 30)
 
 The wire wall needed its predicate finished and the marker needed a name. The apparatus ran a four-questions pass and two `intueri` casts and crowned `:Portable` / `:Anchored`, which the record grades at `293/REALIZATIONS.md:1015` as a good, honest answer to the wrong question.
 
@@ -144,11 +144,11 @@ The record's reading generalizes past `wat` (`:1046–1052`): a symptom-name is 
 
 R7 also had to rule on a collision that turned out not to be one. The purity axis it had just named is data-purity on a type; arc 255's `@Purity` axis is effect-purity on a function. R7 ruled them one family — the two uses sit in different syntactic positions (`:1030`) — and recorded that the apparatus had manufactured a wall where there was a seam, and the builder walked through it. `439ee19c9` and `4b933f9e4` landed the axis on 06-30; `Holder` became `Nature` at `4b9a6d7fb` on 07-06.
 
-## The flip, and 645 (2026-07-12 → 07-15)
+## The flip, and 645 (Jul 12 → Jul 15)
 
 Item 9a made a bare aggregate name the kwargs macro and demoted positional construction to the type-name prime `:ns::T'`. The flip landed and the floor went to 645 failures.
 
-The descent is written into twenty-three commit subjects, one per drop — `967aa344e` 645→165, `525cd24cc` 165→150, `b6d0bc37f` 100→79, `73cfeefeb` 34→26, `1b9a9c43b` 15→13, `295186158` 4→3, and `6d6bc6855` floor = 1.
+The descent is written into twenty-three commit subjects, one per drop, from `967aa344e` at 645→165 to `6d6bc6855` at a floor of 1.
 
 The record declines to make the descent the point. `294/REALIZATIONS.md:551`: "the apparatus **guessed the class wrong nearly every time**, and each wrong guess had the same author: an assertion that could not speak." Seven roots, none predicted from the failure text — including `fadb03dfa`, "macro registration is SEQUENTIAL during expansion," which was the whole `defservice`/`deftest` cluster in one line.
 
@@ -164,7 +164,7 @@ His demands across that stretch (`:526`, `:527`, `:532`):
 
 R6's rune is DOLOR INDEX EST: the ache was the instrument.
 
-## The ruling (2026-08-14)
+## The ruling (Aug 14)
 
 Seven weeks after the crown, `341eb81e8` landed under the subject "294 RULING: HolonAST and Hologram are BOTH correctly named — R1's keystone is VOID."
 
@@ -201,7 +201,7 @@ The rename never happened, and nothing reduced to anything. Read at `3dc4f62b7`,
 
 The void arrived out of an arc-255 afternoon, on the same day as `294.g`, the first of the wire strikes. The arc got shorter and kept going.
 
-## The wire strikes (2026-08-14 → 08-16)
+## The wire strikes (Aug 14 → Aug 16)
 
 | commit | date | what |
 |---|---|---|
@@ -245,7 +245,7 @@ What did land is the inversion, corrected in every face it wore. Identity is the
 
 The keystone is the exception, and it failed differently from ordinary error. `HolonAST` was minted for VSA, accreted a code-AST role and a wire role, and the arc read that accretion as the name having lied. That reading was half right: the borrowed roles were real and shedding them was correct. What it got wrong is what remained — still a syntax tree, one for building holons rather than for code — and it got it wrong while every individual measurement was accurate. The apparatus counted `Hologram`'s references correctly and filed them under the wrong heading, because it was grepping a map it had drawn. The correction could not come from the party holding the pen.
 
-A campaign can be entirely right about the rot and entirely wrong about the cure, and the two verdicts are independent. A recognition is not a finding until the other road has read it.
+A campaign can be entirely right about the rot and entirely wrong about the cure. A recognition is not a finding until the other road has read it.
 
 ## Likely Contributions to the Field
 

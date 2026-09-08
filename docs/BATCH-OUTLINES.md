@@ -141,6 +141,7 @@ breaks no link.**
 | `services/001` | **A Place to Be Wrong In** | The Number That Was Not Asked For · What the Instrument Cannot See |
 | `ars-culta/001` | **A Discipline You Fetch Is a Discipline You Skip** | The Shelf That Loads First · Constraint Engineering Has No Moment |
 | `under-its-own-law/001` | **No Absence Is Implicit** | There Is No Nowhere · Half a Round Trip |
+| `under-its-own-law/004` | **Built Backwards** | Portable Was the Symptom · The Data Back in Its Chair |
 | `under-its-own-law/008` | **The Compiler Is the Census** | Declaring Nothing Is Illegal · Two Different Properties Wearing One Name |
 | `under-its-own-law/003` | **The Reader That Lied** | Two Readers, One Alphabet · It Never Drove a File |
 | `under-its-own-law/002` | **Closed Before It Was Measured** | The Inscription Git Kept · A Checklist for a Property |
@@ -170,11 +171,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
-| wat Under Its Own Law | **12** | — | **5** | — | — | — | — | **7** |
+| wat Under Its Own Law | **12** | — | **4** | — | — | — | — | **8** |
 | Ars Culta | 2 | — | — | — | — | — | — | **2** |
 | The Exemplar | 4 | — | **3** | — | — | — | — | **1** |
 | Services in Anger | 1 | — | — | — | — | — | — | **1** |
-| **total** | **20** | — | **8** | — | — | — | — | **12** |
+| **total** | **20** | — | **7** | — | — | — | — | **13** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
