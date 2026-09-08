@@ -406,6 +406,22 @@ export default defineConfig({
                 collapsed: false,
                 autogenerate: { directory: "blog/fronts/ars-culta" },
               },
+              // "The Exemplar" — §3.3: the name says exactly what the work is,
+              // and survives the branch moving hosts. The front's own verdict at
+              // the batch cutoff is NO; the name is the target, not a claim.
+              {
+                label: "The Exemplar",
+                collapsed: false,
+                autogenerate: { directory: "blog/fronts/exemplar" },
+              },
+              // "Services in Anger" — §3.3: the builder's own phrase; "in anger"
+              // carries the whole meaning (real use, not a demo). One purpose
+              // spanning two branches, which is the doctrine's point exactly.
+              {
+                label: "Services in Anger",
+                collapsed: false,
+                autogenerate: { directory: "blog/fronts/services" },
+              },
             ],
           },
           {
