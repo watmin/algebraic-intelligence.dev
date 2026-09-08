@@ -104,7 +104,7 @@ The signed record names exactly one of the eight: a blind reader found reproduci
 
 The class is a proof-of-work record that silently outlives the thing it proved. The ledger already said a row holds only as long as a fresh cast still measures it warded — and nothing checked it. That rule was a convention; this commit makes it a build-time check. It does not close the class, and the repo does not pretend it does: the gate cannot see a spell with no row at all, so that step stays held by discipline.
 
-Each of the three is a place a gate could have quietly lied.
+Three of its design decisions are each a place a gate could have quietly lied.
 
 **Struck rows are excluded on purpose.** The parser slices the file at the `## Struck rows` heading and gates only what is above it, with the reason in the source: a struck row is explicitly not a claim, so gating it would make the honest disposition impossible to record.
 
@@ -114,7 +114,7 @@ Each of the three is a place a gate could have quietly lied.
 
 Then the gate ran. Going into `1db0ada` the ledger held four live rows. Two were moved into a new `## Struck rows` section by that same commit — `scripts/lib/spells.mjs` with `scripts/generate-vigilia-skill.mjs`, stamped 2026-06-05, and `grimoire/SKILL.md` with `extirpare/SKILL.md`, stamped 2026-06-30 — and both were invalidated by the commit that shipped the gate. `spells.mjs` gained new gates during the landing; the grimoire index gained its Runes section, and the strike note says why that row could not stand: **that section shipped three successive false universals before converging.** The struck rows are kept verbatim under a `<details>` block — history preserved, claim withdrawn.
 
-Two rows survived, and the third the ledger holds today is `experiri`'s own, written 67 seconds later — which is not a tidying habit either. `scripts/publish.mjs` now runs `ledger:check` inside ship, so the row must cite a commit that does not exist until the publish is made. Two commits is the shape the gate forces.
+Two rows survived, and the third the ledger holds today is `experiri`'s own, written 67 seconds later — which is not a tidying habit. `scripts/publish.mjs` now runs `ledger:check` inside ship, so the row must cite a commit that does not exist until the publish is made. Two commits is the shape the gate forces.
 
 ## The fossil the append-only store kept
 
@@ -130,7 +130,7 @@ So the store holds a paragraph superseded inside *its own* commit, by that commi
 
 ## What minting one ward forced everywhere else
 
-Every other file in `1db0ada` answers "why did this change?" the same way: an existing universal was false the moment an executing ward existed.
+Four other files in `1db0ada` answer "why did this change?" the same way: an existing universal was false the moment an executing ward existed.
 
 The **grimoire index** gained the `### Runes` section, because the rune convention had lived only in per-spell pages and the README, and `experiri`'s rune needed an optional second positional the index had never described. It also gained a safety line ahead of the casting instructions — one ward is not a scan; it executes the surface it audits, so cast it only where you can undo the side effects. Both strings live in the generator, so the index cannot drift.
 
