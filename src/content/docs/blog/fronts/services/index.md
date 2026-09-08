@@ -23,11 +23,13 @@ The front's most transferable artifact is not a service. It is a directory.
 
 > An arc is commissioned. `docs/arc/NNN` is opened when the builder asks, and only then. An arc number is identity — it appears in commit subjects, in filenames, in cross-arc links — so minting one silently commissions work in the builder's name.
 
-Exploration kept reaching for the next free number, on the reasoning that 300 was the highest so the new one must be 301. It reached seventeen commit subjects and seventy-five in-file references before the builder saw it:
+Exploration kept reaching for the next free number, on the reasoning that 300 was the highest so the new one must be 301. It reached eleven commit subjects and seventy-six in-file references before the builder saw it:
 
 > *"did a rogue 301 enter?"* — *"i did not ask for more arcs, at all — these are opened when i ask."*
 
-The directory was corrected; the seventeen commit subjects still read `(301)` and always will, because git history is append-only. So the README carries a decoder for its own scar tissue, naming the exact hash range whose labels lie.
+The directory was corrected; the eleven commit subjects still read `(301)` and always will, because git history is append-only. So the README carries a decoder for its own scar tissue, naming the exact hash range whose labels lie.
+
+Those two counts are ours, taken by counting. The README says seventeen, and seventeen is the number this page carried until someone actually ran the count — which is its own small instance of the thing the directory exists to prevent.
 
 What makes it worth a section rather than a footnote is the shape of the repair. The answer was not a rule saying *do not mint arcs* — that rule already existed, and had already been broken twice. The answer was a **place to put exploration that has no arc numbers in it at all**, with its own prefix in the log, so the two are distinguishable at a glance and the mistake has nowhere to be written down.
 

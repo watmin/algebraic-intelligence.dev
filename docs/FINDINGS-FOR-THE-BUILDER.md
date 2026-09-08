@@ -243,3 +243,43 @@ This is the [file-count-is-not-an-item-count] class: a number is only as good as
 the population it names, and this one names none.
 
 **Not fixed here** — one clause on each line resolves it.
+
+---
+
+## F-5 · `wat-rs` · the excursus README's own count is wrong, and it has propagated
+
+**Status: OPEN.** Found 2026-09-08 during the reading pass for `services-001`.
+Counted by the orchestrator.
+
+```
+docs/excursus/README.md:34 (origin/sns-sqs)
+  **Seventeen commit subjects still read `(301)` and always will**
+```
+
+Measured across all refs — `git log --all --format='%s' | grep -c '(301)'` — the
+count is **eleven**. The named hash range holds twelve commits, eleven of which
+carry `(301)`. The companion figure is fine: *"75 in-file references"* against 76
+lines by `git grep -c`.
+
+The wrong number is live in **three** places: the commit body, this README line,
+and `COMPACTION-AMNESIA-RECOVERY.md:1567` (FM 21) — so it has already propagated
+once inside the repo.
+
+**It propagated out of the repo too, and that half is ours.** This site's
+*Services in Anger* landing published "seventeen" for several hours because the
+number was taken from the README rather than counted. Corrected to eleven, with
+the page now saying the count is its own and noting the discrepancy. A README
+that exists to decode misleading labels is a bad place for an uncounted number,
+and it is the one document whose whole purpose is that someone will trust it.
+
+**Not fixed here** — `wat-rs` is read-only from this repo.
+
+### Related, same unit
+
+`docs/excursus/2026/08/001-sns-sqs/DESIGN.md:1` still reads `# Arc 301 — SNS and
+SQS` at the branch tip, four lines from a README stating *"Arc 301 does not
+exist."* The move commit swept 26 files and changed that one by **zero lines** —
+the unit's spine was the file the sweep skipped. Its status block is roughly
+twenty hours stale.
+
+Same shape as F-1: a correction that moved the artifacts and left the claim.
