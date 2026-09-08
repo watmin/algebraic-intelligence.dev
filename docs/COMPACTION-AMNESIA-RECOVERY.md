@@ -65,6 +65,30 @@ to be a git repo **but it is FROZEN** — treat it as a plain directory. Never
 
 Do these before responding to any request. Do not skip ahead.
 
+### 0 — THE FRESHNESS PROBE. Run it FIRST, before you trust one line below.
+
+```bash
+git -C /home/watmin/work/holon/algebraic-intelligence.dev log --oneline -1
+```
+
+**This file was last tended against `4d3f4b8`** (2026-09-08, the August-backfill
+campaign, nothing pushed). Compare:
+
+- **HEAD == `4d3f4b8`** → the map matches the territory. This licenses *nothing
+  further* — you still run every step below.
+- **HEAD is a descendant** → read `git log 4d3f4b8..HEAD` and treat every claim
+  in §3/§4 as **provisional** until the log agrees with it.
+- **HEAD is unrelated, or the campaign breadcrumb (§3) is gone** → this file is
+  **stale**. Trust the log and the live `src/` over its every sentence, and
+  re-tend it before you leave.
+
+A match is not a pass; a mismatch is an alarm. **Added 2026-09-08 because this
+file had no probe at all** — and the instance that discovered that had woken
+holding a confident, fabricated memory of one (it "recalled" a marker reading
+`aidev HEAD ≥ 71e10d9`, a string that appears nowhere in this file or this repo).
+The hole and the phantom that filled it are the same failure. This probe is the
+wall.
+
 1. **Read this file whole** (you are here).
 2. **Confirm the workspace.**
    ```bash
@@ -114,18 +138,35 @@ citation → it's a guess → stop, read, then proceed.
 
 ## 3 — Artifact taxonomy & the breadcrumb (what's true vs what lags)
 
-**There is no single always-current breadcrumb file here** (unlike wat-rs's
-CLIFFNOTES). A website's state-of-world *is* its deployed content. So the
-authoritative present is, in order: **the git log → the rendered `src/` content →
-the memory system.** Trust those. Everything in `docs/` is a planning / structure
-aid that **lags** — useful for the *shape* of the work, never for "is this done."
+**The site's steady state has no breadcrumb file** (unlike wat-rs's CLIFFNOTES) —
+a website's state-of-world *is* its deployed content. So the authoritative present
+is, in order: **the git log → the rendered `src/` content → the memory system.**
+Trust those. Everything else in `docs/` is a planning / structure aid that **lags**
+— useful for the *shape* of the work, never for "is this done."
+
+**⛔ EXCEPT while a campaign is open.** A multi-week batch of unshipped drafts has
+state that the git log cannot express — which drafts are graded, at what score,
+and which decisions are waiting on the builder. That state lives in exactly one
+place, and while it exists it IS the breadcrumb recolligere step 3 sends you to:
+
+| | |
+|---|---|
+| **file** | `docs/BATCH-OUTLINES.md`, the block headed `### ⛔ CURRENT` |
+| **rule** | **replaced in place, never appended.** One CURRENT block or none. |
+| **death** | **declared**: it covers the August backfill and is **deleted when the batch ships.** It is not a perpetual PROGRESS.md — that is what §5/FM-7 is about. |
+| **companion** | `docs/STORY-BRANCHING.md` — the partition doctrine (Story → Fronts → Epilogue). Shape, not status. |
+
+If that file is gone, the campaign shipped and the steady-state rule above is the
+whole rule again. **If it is present and its CURRENT block is missing, something
+appended instead of replacing — trust the git log, not the file.**
 
 **The content (the truth — under `src/content/docs/`):**
 
 | Artifact | What it is |
 |---|---|
 | `index.mdx` | The front door / landing page. |
-| `blog/story/{prologue.md, epilogue.mdx, series-NNN-*}` | The chronicle — framing pieces + the lived narrative (series 002→007). |
+| `blog/story/{prologue.md, epilogue.mdx, series-NNN-*}` | The chronicle — framing pieces + the lived narrative (series 002 → **008**). **The story is PAST, and it ENDS**: `series-006-036-one-machine-all-the-way-down` is the hinge that hands off to the Fronts. Note the sidebar is **era-grouped, not filename-sorted** — `series-008-*` sits in an earlier era than the hinge. Read `astro.config.mjs` for order; never infer it from `ls`. |
+| `blog/fronts/**` | **The Fronts — perpetual present** (added 2026-09-07). The story ended; the work did not. Up to ~3 concurrent hard problems + the console, each a *purpose* (not a branch — one front can span several git branches), each with its own track directory and its own `index.md` landing. Wired by `autogenerate: { directory }`, so a new post appears in the nav by existing. Doctrine: `docs/STORY-BRANCHING.md`. |
 | `blog/primers/series-001-*` | Technical reference primers (VSA, atoms, ops, memory, wat). |
 | `blog/book.mdx`, `blog/arc-170-realizations.mdx` | **Thin landing pages** (`.mdx`, render small) for the two big monoliths — the BOOK trunk and the arc-170 realizations branch. They link to the raw + chunked serves; the full text is NOT here (see *The mirrored monoliths* below). |
 | `blog/{agents,circuit,guide,topology,arc-170-cliffnotes}.md` | Companion blog pieces. `arc-170-cliffnotes.md` is a **hand-curated** distillation — NOT a mirror (see below). |
@@ -253,9 +294,23 @@ Push ships to the public. Before `git push`:
 
 1. **Build green, guards green.**
    ```bash
-   npm run build      # astro build + postbuild guards:
-                      #   check-functions, check-pages, check-nav, check-contributions
+   npm run build      # astro build + postbuild guards. Nine, not four —
+                      # read `package.json` "postbuild" for the live list, which
+                      # as of 4d3f4b8 is: copy-markdown, generate-llms-companions,
+                      # check-functions, check-pages, check-page-size, check-nav,
+                      # check-contributions, check-agents, and the two mirrors
+                      # (mirror-monoliths --check, mirror-realizations --check).
    ```
+   **`check-page-size` is the Cloudflare wall, made mechanical** (added 2026-09-07):
+   it fails the build over **1.5 MB/page**, warns at 1.0, and asserts CF's 25 MiB
+   file and 20,000 file caps. It exists because the realizations mirror renders
+   arc bodies straight into pages and arc 278 alone would have shipped a ~5.9 MB
+   page. Proven in both directions before it was trusted — green at 668 pages
+   (largest 0.77 MB), red on demand with the threshold lowered.
+   **`mirror-realizations` fragments** any arc over 250 KB into
+   `<slug>/index.md` + `<slug>/NNN-*.md`, preserving the landing URL. Its writer
+   and its `--check` consume the *same* `filesFor()` map, so the guard cannot
+   disagree with what the writer would produce.
    `check-nav` fails the build if a story post isn't wired into the sidebar;
    `check-contributions` verifies every story post declares a `## Likely
    Contributions to the Field` close (consonare Rule 13, defined in FM-6 — no
@@ -334,6 +389,13 @@ guard makes the declared-close *heading* mechanical (build fails without it);
 populated-vs-None stays consonare's soft call. Don't ship prose you haven't
 measured against the anchor.
 
+### FM-7 — Citing an archived tracker as the current state
+The old planning trackers live in `docs/archived/` (PROGRESS, TIMELINE,
+CONTENT-TRACKER, PLAN) — historical, **not maintained** (the dir's `README.md`
+says so). They are intent and structure, not truth; they drifted from the live
+site. The current state is **git log + rendered `src/` + memory**. Never cite an
+archived tracker as current — its path already tells you it isn't.
+
 ### FM-8 — A `cd` in a compound command persists, and the next `git commit` lands in the WRONG REPO
 
 **Happened 2026-09-08, caught by the curare, not by a guard.** A verification
@@ -362,12 +424,24 @@ being proven by its violation. The related tell: an unexpected hash. `wat-rs`'s
 HEAD read as a 9-char hash carrying *this project's* commit message, which is
 what surfaced it — **if a sibling repo's HEAD says something you wrote, stop.**
 
-### FM-7 — Citing an archived tracker as the current state
-The old planning trackers live in `docs/archived/` (PROGRESS, TIMELINE,
-CONTENT-TRACKER, PLAN) — historical, **not maintained** (the dir's `README.md`
-says so). They are intent and structure, not truth; they drifted from the live
-site. The current state is **git log + rendered `src/` + memory**. Never cite an
-archived tracker as current — its path already tells you it isn't.
+### FM-9 — A compaction summary can INVENT the instrument that would have caught it
+
+**Happened 2026-09-08.** An instance woke from compaction "remembering" that this
+file carried a freshness probe reading `aidev HEAD ≥ 71e10d9` — specific, plausible,
+in the right vocabulary, and **wholly fabricated**. The file had no probe at all;
+the string appears nowhere in this repo. The summary had not merely lost a fact,
+it had *manufactured a verification step that never existed* — the most dangerous
+shape a phantom can take, because a remembered check retires the urge to check.
+
+The tell was cheap and the crawl produced it in one command: the grep for the
+remembered marker returned **one unrelated hit**. **When you "remember" that a
+check exists, grep for it before you rest on it** — an instrument you cannot
+locate on disk did not run, whatever your summary says. This is FM-1 turned
+inward: an ungrounded claim about your own tooling is theater exactly the way an
+ungrounded claim about the code is.
+
+The structural cure is §2 step 0. The probe now exists, so this class of phantom
+has something to fail against.
 
 ---
 

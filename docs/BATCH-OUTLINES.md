@@ -96,8 +96,6 @@ Ars Culta material for the first weekly, not this batch.
 
 ### The pipeline states
 
-### The pipeline states
-
 `SLOT` → `NOTES` → `DRAFT` → `CONSONARE` → `VERIFIED` → `WIRED` → `SHIPPED`
 
 | state | means | who |
