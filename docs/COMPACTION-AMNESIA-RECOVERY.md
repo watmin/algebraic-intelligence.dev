@@ -443,8 +443,23 @@ locate on disk did not run, whatever your summary says. This is FM-1 turned
 inward: an ungrounded claim about your own tooling is theater exactly the way an
 ungrounded claim about the code is.
 
-The structural cure is §2 step 0. The probe now exists, so this class of phantom
-has something to fail against.
+**Second instance, same day, and this one had a price.** The same summary also
+carried a *"house standard of 9"* for consonare scores. That string appears
+nowhere in this repo either. `consonare`'s own band says **"If MATCHES at 7+ —
+the draft ships,"** and 7 is *"one clear violation type, surgical fix-able"* —
+DRIFTED starts at 6. Two finished drafts sat blocked at 7 against a bar that did
+not exist, and **eleven correction agents** were spent trying to clear it. The
+corrections then made one post worse (8 → 7), which is its own recorded lesson.
+
+The generalization is the point: **a phantom instrument invents a check that
+never ran; a phantom STANDARD invents a bar nothing has to clear.** The second is
+more expensive, because it does not merely skip work — it manufactures work, and
+the work looks like diligence the whole time. **When you are about to hold
+something to a threshold, grep for the threshold.** If the number lives only in
+your summary, it is not the project's bar, it is yours.
+
+The structural cure for both is §2 step 0. The probe now exists, so this class of
+phantom has something to fail against.
 
 ---
 

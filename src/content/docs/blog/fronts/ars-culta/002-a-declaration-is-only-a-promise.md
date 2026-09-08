@@ -1,18 +1,20 @@
-<!--
-TITLE PROPOSALS (builder picks; frontmatter below carries a placeholder, not a choice)
-  1. "A Declaration Is Only a Promise"
-  2. "The Ward That Runs"
-  3. "A Broken Driver Finds a Jackpot"
--->
 ---
-title: "PROPOSAL — A Declaration Is Only a Promise"
-description: "August 28, one publish and one ledger row: the grimoire mints its first ward that does not read but runs. experiri exists for the class no reading instrument can reach — the spec and the code agree and are jointly wrong. Its unit is (declaration × position), and because an executing auditor fails in the opposite direction from a reading one, the whole 40KB page is built to refuse to believe itself. The same commit shipped the gate enforcing the warding ledger's re-prove rule, and that gate's first act was to strike two of the builder's own rows."
+title: "A Declaration Is Only a Promise"
+description: "August 28, one publish and one ledger row: the grimoire mints its first ward that does not read but runs. experiri exists for the class no reading instrument can reach — the spec and the code agree and are jointly wrong. Its unit is (declaration × position), and because an executing auditor fails in the opposite direction from a reading one, the whole 40KB page is built to refuse to believe itself. The same commit shipped the gate enforcing the warding ledger's re-prove rule, and struck two of the builder's own rows against it."
 covers: 2026-08-28
 written: 2026-09-07
 backfill: true
 sidebar:
   order: 2
 ---
+
+<!--
+TITLE PROPOSALS (builder picks; #1 is wired as the default — the FILENAME is the URL,
+  so swapping the title later costs nothing and breaks no link)
+  1. "A Declaration Is Only a Promise"
+  2. "The Ward That Runs"
+  3. "A Broken Driver Finds a Jackpot"
+-->
 
 <!-- rune:consonare(solo) — rule 11 carries two obligations. The quotation obligation cannot be discharged from this corpus; the agency obligation is discharged, with a hedge. Quotation: datamancy.dev holds no attributed builder quotes in this window (measured: 0, against 247 on main), so the trial's exchanges could only be supplied by fabricating one. Agency: the calls this post reports are the builder's, and the post names him as their agent rather than rendering them agentless — which calls he made personally and which through an agent is not recoverable here. -->
 
@@ -96,7 +98,7 @@ Every other row in the ledger converges. The 2026-08-28 row, by its own wording,
 
 The signed record names exactly one of the eight: a blind reader found reproducible (declaration × position) asymmetries in CPython's `argparse` action registry — `parsers` reachable from `add_subparsers`, a `TypeError` from `add_argument` — independently reproduced. The other seven are not written down in `datamancy.dev`, so this post does not name them. A row meaning "converged on the surfaces driven" rather than "closed" is a different claim from every other row in the table, and one the ward's own arithmetic forced the builder to make about the ward he had just minted.
 
-## The gate that struck two of the builder's four rows
+## The gate arrives, and two of the builder's four rows cannot stand
 
 `1db0ada` also created `scripts/check-warding-ledger.mjs`, 126 lines, whose header names the class against the ledger's own header:
 
@@ -112,7 +114,7 @@ Three of its design decisions are each a place a gate could have quietly lied.
 
 **Two git failures are told apart.** `git` exits 1 for "path changed" and 128 for "bad revision", and a bare catch folds them together and reports a change against a ref git never resolved — what a shallow CI clone produces for every stamped commit. So the script resolves the ref first with `git cat-file -e`, reports the two conditions separately, and the same commit adds `fetch-depth: 0` to the workflow. A gate caught fabricating a diagnosis, repaired to refuse instead of guess.
 
-Then the gate ran. Going into `1db0ada` the ledger held four live rows. Two were moved into a new `## Struck rows` section by that same commit — `scripts/lib/spells.mjs` with `scripts/generate-vigilia-skill.mjs`, stamped 2026-06-05, and `grimoire/SKILL.md` with `extirpare/SKILL.md`, stamped 2026-06-30 — and both were invalidated by the commit that shipped the gate. `spells.mjs` gained new gates during the landing; the grimoire index gained its Runes section, and the strike note says why that row could not stand: **that section shipped three successive false universals before converging.** The struck rows are kept verbatim under a `<details>` block — history preserved, claim withdrawn.
+Going into `1db0ada` the ledger held four live rows. Two were moved into a new `## Struck rows` section by that same commit — `scripts/lib/spells.mjs` with `scripts/generate-vigilia-skill.mjs`, stamped 2026-06-05, and `grimoire/SKILL.md` with `extirpare/SKILL.md`, stamped 2026-06-30 — and both were invalidated by the commit that shipped the gate. `spells.mjs` gained new gates during the landing; the grimoire index gained its Runes section, and the strike note says why that row could not stand: **that section shipped three successive false universals before converging.** The struck rows are kept verbatim under a `<details>` block — history preserved, claim withdrawn.
 
 Two rows survived, and the third the ledger holds today is `experiri`'s own, written 67 seconds later — which is not a tidying habit. `scripts/publish.mjs` now runs `ledger:check` inside ship, so the row must cite a commit that does not exist until the publish is made. Two commits is the shape the gate forces.
 
@@ -140,7 +142,7 @@ The **README**'s rune paragraph was rewritten. It had said runes suppress the fi
 
 **`scripts/lib/spells.mjs`** gained two build gates, both carrying the same confession in the comment: "They matched by inspection until this line existed." The first requires a `## The rune` section in every non-primer spell, because the index now tells readers a ward's rune rules live there — and that universal, the comment notes, has shipped false three times. The second requires frontmatter `name` to equal the directory name, and its reasoning names the mechanism: the two travel down different pipes and meet only at the consumer, so a mismatch ships a signed manifest whose catalog advertises a spell that 404s, and nothing downstream would notice, because each pipe is internally consistent. A signed-but-unfetchable catalog entry is now a red build.
 
-Seventeen rounds subtracted, the gate's first act struck two of the builder's own rows, and the row for the ward itself refuses to claim closure. A declaration is only a promise — the grimoire's own included.
+Seventeen rounds subtracted, two of the builder's own rows struck against the new rule, and the row for the ward itself refuses to claim closure. A declaration is only a promise — the grimoire's own included.
 
 ## Likely Contributions to the Field
 

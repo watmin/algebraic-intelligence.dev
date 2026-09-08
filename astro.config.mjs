@@ -394,6 +394,18 @@ export default defineConfig({
                 collapsed: false,
                 autogenerate: { directory: "blog/fronts/under-its-own-law" },
               },
+              // Named 2026-09-07 (STORY-BRANCHING.md §3.6). The fork between the
+              // candidates was WHO ACTS: `Ars Incluta` is the craft spoken of —
+              // agent outside, renown ratified by others; `Ars Culta` is the
+              // craft tended — agent is the practitioner. `Fabrica` read better
+              // for "making" and died on a live referent collision: every
+              // fabr- stem in this corpus is "fabricate" in its pejorative
+              // sense, one of the chronicle's named sins.
+              {
+                label: "Ars Culta",
+                collapsed: false,
+                autogenerate: { directory: "blog/fronts/ars-culta" },
+              },
             ],
           },
           {

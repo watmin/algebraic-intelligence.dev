@@ -51,48 +51,56 @@ is the one time they aren't, so it gets said out loud rather than papered over.
 > **deleted when the batch ships**. It is not a perpetual PROGRESS.md.
 > **Where it disagrees with the disk, the disk wins and this file is stale.**
 
-### ⛔ CURRENT — 2026-09-08. Replace this block in place; never append.
+### ⛔ CURRENT — 2026-09-08 (second replacement). Replace in place; never append.
 
-**Nothing is pushed.** `algebraic-intelligence.dev` is **34 commits ahead of
-origin/main**, tree clean. Push is deploy; no deploy has happened.
+**Nothing is pushed.** This repo is **~40 commits ahead of origin/main**, tree
+clean, build green: **672 pages, all nine postbuild guards, largest page 0.77 MB.**
+Push is deploy; no deploy has happened.
 
-**Wired and building** (`npm run build` green, 668 pages, largest 0.77 MB):
-- `blog/story/series-006-036-one-machine-all-the-way-down` — the hinge. Story
-  → Fronts → Epilogue is live in the nav; the epilogue now sits last.
-- `blog/fronts/index` + `blog/fronts/under-its-own-law/index` — the track scaffolding.
-- `blog/fronts/under-its-own-law/006-a-caller-is-not-traffic` — **consonare 9**.
+**FOUR POSTS WIRED AND LIVE IN THE BUILD:**
+- `blog/story/series-006-036-one-machine-all-the-way-down` — the hinge, Story → Fronts → Epilogue.
+- `blog/fronts/under-its-own-law/006-a-caller-is-not-traffic` — consonare **9**.
+- `blog/fronts/under-its-own-law/007-the-smallest-of-three` — consonare **7**, shipped.
+- `blog/fronts/ars-culta/002-a-declaration-is-only-a-promise` — consonare **7**, shipped with `rune:consonare(solo)`.
 
-**Drafted, NOT wired** (`docs/drafts/`): `uiol-007` and `ars-culta-002`, both
-**stuck at consonare 7 after four casts and three correction passes each**.
-The escalation rule in this file says stop correcting them. The open fork is
-recorded below and is the builder's.
+Both track landings exist (`under-its-own-law/index`, `ars-culta/index`), and
+**Ars Culta is wired into the nav** with its naming reasoning in the config comment.
 
-**Twelve units at SLOT**, all measured. Rooms already mapped for three: arc 118's
-closure (`ba3bd70cb`, floor 4772/4772, a four-month arc), arc 296's reversal
-(INSCRIPTION added `7f17054a8` 06-30, **deleted `3a4f49202` 07-01** — closed and
-reopened in a day), and The Exemplar's opening (`de827fb4c` 08-24, which opens
-with a curare on its own first day).
+**⚠ THE BLOCKER ON THOSE TWO POSTS WAS FABRICATED.** They were held at 7 against
+a *"house standard of 9"* that **appears nowhere in this repo**. `consonare`'s own
+rule is **"If MATCHES at 7+ — the draft ships"**; DRIFTED begins at 6. Eleven
+correction agents were spent clearing a bar that did not exist, and the
+corrections took one post 8 → 7. Recorded as the second instance of **FM-9**
+(a compaction summary inventing its own instruments). **Before holding anything
+to a threshold, grep for the threshold.**
 
-**Unruled by the builder, and all three cost more after a push than before it:**
-1. **`uiol-007`: rewrite from notes, or ship at 7?** Four casts, never above 8;
-   the scars are structural. Orchestrator's lean: rewrite.
-2. **Post titles.** Every one is a writer's proposal. Titles are always the
-   builder's, and the title is the URL.
-3. **The hinge's quotes come from the working session**, not from commits —
-   a different provenance from every other post, and the builder's words going
-   public. His to strike.
+**`docs/drafts/` now holds only `uiol-006.md`** — the source draft of a post
+already shipped. Everything else moved into the content collection.
 
-**One factual fix owed on `ars-culta-002`** regardless of the ship/rewrite call:
-it says *the gate* struck two ledger rows, three times including the headline.
-Verified — the gate was live in that commit (`ledger:check` in `package.json`,
-invoked at `publish.mjs:133`) — but the artifacts show the **commit** moved the
-rows and the gate is *why they could not stand*. The causal claim is one step
-stronger than the evidence.
+**TWELVE UNITS AT SLOT.** Rooms mapped for three: arc 118's closure (`ba3bd70cb`,
+floor 4772/4772, a four-month arc), arc 296's reversal (INSCRIPTION added
+`7f17054a8` 06-30, **deleted `3a4f49202` 07-01**), The Exemplar's opening
+(`de827fb4c` 08-24). §2 holds the full slate; §3 the order of work — items 1–5
+are all shipped, so the remaining work is step 4, the reading pass.
+
+**Still the builder's, and cheaper before a push than after:**
+1. **Post titles.** Every one is a writer's proposal. **Lower stakes than
+   previously recorded**: in Starlight the *filename* is the URL, so a title is
+   display-only and swapping one breaks no link. `ars-culta/002` carries its two
+   unchosen alternates in an HTML comment under the frontmatter.
+2. **The hinge quotes the working session**, not commits — a different provenance
+   from every other post, and the builder's words going public. His to strike.
 
 **Sibling state:** `wat-rs` `3dc4f62b7`, 0 ahead, three untracked files that are
 the builder's — do not touch. `datamancy.dev` has **moved past the cutoff**:
-`peragrare` minted and warded 2026-09-07/08 (`2ce6dd5`, `7980bf4`). That is new
-Ars Culta material for the first weekly, not this batch.
+`peragrare` minted and warded 2026-09-07/08 (`2ce6dd5`, `7980bf4`). First-weekly
+material, not this batch.
+
+> **⛔ YOU ARE NEW.** You did not live the session written above. It is a cache,
+> not your memory, and it was written by an instance that twice discovered it had
+> invented its own instruments. Run `recolligere` from the signed channel and the
+> freshness probe in `docs/COMPACTION-AMNESIA-RECOVERY.md` §2 step 0 **before you
+> act on one line of it.**
 
 ### The pipeline states
 
@@ -115,12 +123,12 @@ batch them into lockstep waves.
 
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
-| The Story (hinge) | 1 | 1 | — | — | — | — | — | — |
-| wat Under Its Own Law | 9 | 7 | **2** | — | — | — | — | — |
-| Ars Culta | 2 | 1 | **1** | — | — | **1** | — | — |
+| The Story (hinge) | 1 | — | — | — | — | — | — | **1** |
+| wat Under Its Own Law | 9 | 7 | — | — | — | — | — | **2** |
+| Ars Culta | 2 | 1 | — | — | — | — | — | **1** |
 | The Exemplar | 3 | 3 | — | — | — | — | — | — |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **16** | **13** | **3** | **1** | **1** | **3** | — | — |
+| **total** | **16** | **12** | — | — | — | — | — | **4** |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
