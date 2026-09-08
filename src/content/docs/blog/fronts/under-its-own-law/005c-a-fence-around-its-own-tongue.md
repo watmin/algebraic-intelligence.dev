@@ -32,6 +32,8 @@ A second premise died the same day, and it had never been measured at all — a 
 
 > "uhhhhhh what hard limit does clara impose?… you guessed that 5 is the ceiling for that dumbass reason?… what the actual fuck…."
 
+There was no ceiling. A number nobody had measured had been sitting in the design as a constraint, and the grep that produced it was the only evidence it ever had.
+
 ## July 31 to August 1 — the peer that cannot convict itself
 
 R61 opens on a result the project had never seen. A deep-cascade axis of the Clara differential came back `:winner :clara` — the first time a measurement handed the peer a win.
@@ -78,15 +80,11 @@ The count that armed the wall came with its instrument stated:
 
 Two greps had answered 0 and 5435 to the same question; the number that shipped came from a pattern positive-controlled against ground truth first. And the commit refuses to arm on top of a hole it knows about: the verb-side rejection only `eprintln!`s, twenty-four work-units owed, "a warning is not a wall." Arming before that fix, in the body's own words, "ships a decorative wall to close a gap caused by an absent one."
 
-## August 2 to 6 — you cannot compile a lie
+## August 2 — you cannot compile a lie
 
 R63 is where the compiler question stops being about `where` clauses. Its mechanism paragraph:
 
 > An interpreter tolerates vagueness: it does whatever the op does at runtime, raise included. A compiler cannot — it must characterize every op *before* it runs. So *"how do we compile this?"* is the strictest possible question you can ask of a language surface, and asking it surfaces every place the surface was only *apparently* understood. … **You cannot compile a lie.**
-
-The builder's framing of what came back:
-
-> "'how do we compile our where clauses' uncovered what must be confronted."
 
 Seven findings, none of them hunted, all of them fallout from having to characterize operations that had previously only had to run:
 
@@ -135,10 +133,6 @@ The stone makes that total:
 And the corollary that keeps the surface expressive rather than merely small:
 
 > admitting a user fn is not a decision about the fn's NAME. `:usr::risk-score` will never be rete-namespaced and does not need to be. It is admitted because its *contents* are, and refused the moment they are not. Namespacing governs the **primitives**; the walk governs everything built out of them.
-
-The builder's version of the same trade:
-
-> "The DSL is for interfacing with rete and only rete forms are allowed. Users can build as complex forms as they want but they must use rete primitives. SQL doesn't require you to write C code sometimes."
 
 That is SQL's actual architecture — a closed operator set, unbounded composition on top of it, views on views — restated as a type-checker rule instead of a convention. And it lands on the language's own standard library without an exemption:
 
@@ -203,8 +197,6 @@ and the method he had given as an instruction before it had a name:
 R65's inversion:
 
 > the exhaustive matching we pay for in keystrokes every single day … is not the price of safety. It is the price of being able to change your mind later. The shield we carry turned out to be the ledger of everywhere we would have to look.
-
-The builder's stance on that cost, stated in R63 while the audit was still running: "our stance has always been the match verbosity is our shield… we will not lay it down."
 
 Then R65 puts a bound on its own claim:
 
