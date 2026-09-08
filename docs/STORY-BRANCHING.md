@@ -256,6 +256,31 @@ week may hold none.** Five unit kinds, each with a datable trigger:
 | **incident** | a self-contained story, often one day, that the calendar would bury |
 | **opening** | a front begins; the branch diverges |
 
+### 2.6.2 The mirror CHANGED what the story owes
+
+Recorded 2026-09-07, because it surprised the campaign that produced it.
+
+Running `npm run mirror` this session published ~12,700 lines of realizations,
+including arc 170's closing realization as its own rendered page —
+`210-the-closing-realization-per-portam-cogitamvs-…`, 216 lines, live. Its song,
+its three faces, its *"convicts its own builder"* line: all now served verbatim.
+
+**A story post that reframes a published realization is redundant by
+construction.** The reader on `uiol-007` reached that verdict independently and
+argued *against* a full-length post on the unit it was briefed to read — which is
+the correct answer and the one the brief had to make it safe to give.
+
+So the doctrine gains a clause:
+
+> **The story's job is what the raw record cannot carry.** Where the realizations
+> are served, the chronicle does not re-narrate them — it supplies what they lack:
+> the prehistory that lives in another repository, the shape of a decision, the
+> anatomy of an act the record only reports the result of.
+
+This is the trunk/branch relation from `topology.md` arriving at the story layer:
+the branch holds the depth, and the trunk writes what the branch's walk *earned*
+rather than repeating the walk.
+
 ### 2.6.1 The census that decided it
 
 Two instruments over 2026-06-22→08-30 on `origin/main`, both cheap and both

@@ -73,11 +73,11 @@ batch them into lockstep waves.
 | front | slots | SLOT | NOTES | DRAFT | CONSONARE | VERIFIED | WIRED | SHIPPED |
 |---|---|---|---|---|---|---|---|---|
 | The Story (hinge) | 1 | 1 | — | — | — | — | — | — |
-| wat Under Its Own Law | 9 | 7 | *2 in flight* | — | — | — | — | — |
+| wat Under Its Own Law | 9 | 7 | **2** | — | — | — | — | — |
 | Ars Culta | 2 | 1 | **1** | — | — | **1** | — | — |
 | The Exemplar | 3 | 3 | — | — | — | — | — | — |
 | Services in Anger | 1 | 1 | — | — | — | — | — | — |
-| **total** | **16** | **15** | **1** | — | — | **1** | — | — |
+| **total** | **16** | **13** | **3** | — | — | **3** | — | — |
 
 Counts reshaped 2026-09-07: 18 → 14, from a calendar grid to event units (§2).
 
@@ -87,8 +87,8 @@ Only slots past SLOT are listed. Everything else is in §2.
 
 | slot | state | consonare | notes |
 |---|---|---|---|
-| `uiol-007` (arc 170 closure) | **IN FLIGHT — reader cast** | — | scoped to the CLOSE only; the arc's body is already served as 210 chunk pages |
-| `uiol-006` (the DoS incident) | **IN FLIGHT — reader cast** | — | one day, 2026-07-25; the batch's only *incident* unit |
+| `uiol-007` (arc 170 closure) | **NOTES ✓ + VERIFIED** | — | ⚠ **reader argues AGAINST a full post** — the closing realization is already published verbatim (216 lines). Survives: the `scratch` prehistory + the anatomy of the closing act. **BLOCKED: is `scratch/` publishable?** |
+| `uiol-006` (the DoS incident) | **NOTES ✓ + VERIFIED** | — | **strongest unit read so far — ready to draft.** 10 quotes, all four instances grounded, and the inherited arc-258 claim REFUTED on the disk |
 | `ars-culta/002` (experiri) | **NOTES ✓ + VERIFIED** | — | notes at `docs/notes/ars-culta-005-experiri-NOTES.md`; scope, orphan-blob find, byte-identity and ledger strike all re-checked against the disk by the orchestrator. **BLOCKED on the builder: no verbatim quotes exist in the repo** (see below) |
 
 **⛔ `ars-culta/002` blocker — consonare rule 11.** The repository contains **no
