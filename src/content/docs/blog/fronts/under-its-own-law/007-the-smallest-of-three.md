@@ -57,7 +57,7 @@ Arc 170 opened on 05-09, at `b433da7`. Beat one of its own conversation log is f
 
 > brutal rigidity brings the paradoxical unbounded flexibility if you play by the rules
 
-The DESIGN's own name for that expansion is the *substrate-as-teacher cascade*. The arc absorbed program-entry contracts, closure extraction, typed channels, three substrate services, the execve rebirth, and a branch named after a deadlock, all of it [chronicled there](/blog/arc-170-realizations/). The parser's one global arity check became an enum with a variant per mode, and that is the only reason a mode wanting zero positionals could join as a variant rather than as another special case. The INSCRIPTION records that `argv` itself was among the last things in the arc to work, because the pipe it needed did not exist until the rest did.
+The DESIGN's own name for that expansion is the *substrate-as-teacher cascade*. The arc absorbed program-entry contracts, closure extraction, typed channels, three substrate services, the execve rebirth, and a branch named after a deadlock, all of it [chronicled there](/blog/realizations/170-program-entry-points/). The parser's one global arity check became an enum with a variant per mode, and that is the only reason a mode wanting zero positionals could join as a variant rather than as another special case. The INSCRIPTION records that `argv` itself was among the last things in the arc to work, because the pipe it needed did not exist until the rest did.
 
 ## The valve was an arity check written for a different mode (2026-07-26)
 
@@ -125,7 +125,7 @@ That refusal is this front's shape exactly. The law wat enforces outward — EDN
 
 ## How it closed (2026-07-29, 15:32)
 
-The INSCRIPTION landed at `10234ed`, and the recognition it carries is [published in full](/blog/arc-170-realizations/210-the-closing-realization-per-portam-cogitamvs-arc-170-opened-on-argv-an/).
+The INSCRIPTION landed at `10234ed`, and the recognition it carries is [published in full](/blog/realizations/170-program-entry-points/210-the-closing-realization-per-portam-cogitamvs-arc-170-opened-on-argv-an/).
 
 The stated precondition was measured rather than assumed. The DESIGN had carried since 2026-05-13 that clippy and rustc must both be clean before an INSCRIPTION ships. At close, `cargo build --release --all-targets` returned zero warnings and `cargo clippy --release --workspace` returned roughly 1,150, of which 831 were a single lint. The builder was shown the number and rescoped in the open:
 

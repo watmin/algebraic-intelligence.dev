@@ -60,7 +60,7 @@ The user expects more branches. Each major arc that grows enough depth to need i
 The shape this site presents matches the substrate's shape:
 
 - **The trunk** lives at `/blog/book/`. One long linear document. Eighty-six chapters and counting.
-- **The branches** live as siblings — `/blog/arc-170-realizations/` is the first. Each future arc that produces an INTERSTITIAL will get its own page.
+- **The branches** live as siblings — `/blog/realizations/170-program-entry-points/` is the first. Each future arc that produces an INTERSTITIAL will get its own page.
 - **The cliff notes** live alongside each branch. Load these first.
 - **The synthesis returns** continue to land as chapters in the trunk. Read the trunk's recent chapters to see what the branches earned.
 

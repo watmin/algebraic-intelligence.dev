@@ -6,7 +6,9 @@ sidebar:
   order: 296
 ---
 
-This arc's findings log is **332 KB** across **20** entries — too large to render as one page, so it is served one page per entry, the same way the [arc-170 chronicle](/blog/arc-170-realizations/) is.
+This arc's findings log is **332 KB** across **20** entries — too large to render as one page, so it is served one page per entry below.
+
+**Raw, whole.** → [the full log, one file](/blog/realizations/296-diagnostics-fully-edn.md) — the continuous scroll, and an agent's one fetch.
 
 | # | Entry |
 |---|---|

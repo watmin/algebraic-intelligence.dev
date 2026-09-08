@@ -53,21 +53,13 @@ const MONOLITHS = [
     // have silently absorbed into a neighbor.
     segment: /^## /,
   },
-  {
-    name: "Arc 170 — Full Realizations",
-    src: "../wat-rs/docs/arc/2026/05/170-program-entry-points/INTERSTITIAL-REALIZATIONS.md",
-    whole: "public/blog/arc-170-realizations.md",
-    chunks: "src/content/docs/blog/arc-170-realizations",
-    // Split on EVERY level-2 heading, not just `## <date>`: each `##` starts a
-    // page and everything under it (until the next `##`) belongs to it. This
-    // captures the dated song/realization entries AND the standing sections
-    // (`## Standing convention`, `## Cross-references`) AND non-conforming entry
-    // headings (the `§`-prefixed Song #23) — all of which a date-only regex
-    // silently absorbed into a neighbor. Safe because the source has no `## `
-    // subheadings inside an entry body (verified): every `## ` is a top-level
-    // entry or section, so nothing fragments.
-    segment: /^## /,
-  },
+  // Arc 170's chronicle was the second monolith here until 2026-09-08. It moved
+  // to mirror-realizations, which now serves every arc's findings log — 170's
+  // included — fragmented, in arc order, with a raw whole. It was here because
+  // it was the first log too big to render, not because it was a different kind
+  // of document: 1736 KB against arc 278's 1472 KB, and both mirrors already
+  // shared one chunker. Two mechanisms for one artifact class, and this was the
+  // one that had to go.
 ];
 
 // slugify + chunkTitle now live in scripts/lib/chunk.mjs — mirror-realizations

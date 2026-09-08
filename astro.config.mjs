@@ -456,14 +456,6 @@ export default defineConfig({
             // The arc-170 realizations branch: same shape (overview landing + the
             // log split into per-entry content pages). This is the actual content;
             // the old hand-curated cliff notes were retired (stale, redundant).
-            {
-              label: "Arc 170 — Realizations",
-              collapsed: true,
-              items: [
-                { link: "/blog/arc-170-realizations/", label: "Overview" },
-                { label: "By entry", collapsed: true, autogenerate: { directory: "blog/arc-170-realizations" } },
-              ],
-            },
             // Every OTHER arc's REALIZATIONS log — the focused R1/R2/R3 findings
             // logs, distinct from the 170 chronicle above. Auto-discovered from
             // wat-rs/docs/arc/** by scripts/mirror-realizations.mjs (one page per

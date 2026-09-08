@@ -1,0 +1,16 @@
+# Cloudflare Pages redirects. First match wins, so specific rules precede splats.
+#
+# 2026-09-08 — arc 170's realizations moved out of their own top-level serve and
+# into /blog/realizations/, where every other arc's findings log already lived.
+# 170 was special-cased because it was the first log too large to render whole,
+# not because it was a different kind of document; measured, it is 1736 KB against
+# arc 278's 1472 KB.
+#
+# These 212 URLs were published and are load-bearing: /blog/arc-170-realizations.md
+# is named in public/llms.txt and in blog/agents.md as an agent's one-fetch source.
+# The two mirrors already shared one chunker, so all 210 chunk slugs survived the
+# move byte-identical (verified by diffing the old and new filename sets) — which
+# is what makes a splat safe here rather than 210 hand-written lines.
+/blog/arc-170-realizations.md    /blog/realizations/170-program-entry-points.md    301
+/blog/arc-170-realizations/*     /blog/realizations/170-program-entry-points/:splat 301
+/blog/arc-170-realizations       /blog/realizations/170-program-entry-points/      301

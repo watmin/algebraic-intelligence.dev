@@ -6,7 +6,9 @@ sidebar:
   order: 278
 ---
 
-This arc's findings log is **1469 KB** across **68** entries — too large to render as one page, so it is served one page per entry, the same way the [arc-170 chronicle](/blog/arc-170-realizations/) is.
+This arc's findings log is **1469 KB** across **68** entries — too large to render as one page, so it is served one page per entry below.
+
+**Raw, whole.** → [the full log, one file](/blog/realizations/278-rules-engine.md) — the continuous scroll, and an agent's one fetch.
 
 | # | Entry |
 |---|---|

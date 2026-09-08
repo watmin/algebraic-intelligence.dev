@@ -66,11 +66,11 @@ const line = (url, label) => (label ? `- [${url}](${url}) — ${label}` : `- [${
 const S = [];
 
 // 1. Trunk + branches — the top-level blog pages + the two static raw serves
-//    (book.md ~36k lines and arc-170-realizations.md — served static, not in the
+//    (book.md ~36k lines and 170-program-entry-points.md — served static, not in the
 //    content collection, so the walker never sees them; add explicitly).
 S.push("### Trunk and branches", "");
 S.push(line(`${SITE}/blog/book.md`, "The Book (trunk; ~36k lines, raw)"));
-S.push(line(`${SITE}/blog/arc-170-realizations.md`, "Arc 170 Full Realizations (the branch; raw)"));
+S.push(line(`${SITE}/blog/realizations/170-program-entry-points.md`, "Arc 170 Full Realizations (the branch; raw)"));
 for (const f of all.filter((f) => /^blog\/[^/]+\.mdx?$/.test(f))) {
   const name = f.slice("blog/".length).replace(/\.mdx?$/, ".md");
   S.push(line(companion(f), TOP_LEVEL_LABELS[name] || ""));
@@ -95,7 +95,7 @@ listed("Arc realizations — per-arc findings logs", "blog/realizations");
 listed("The Witness — the sibling instance's account", "blog/witness");
 
 pointer("The Book — chapters", "blog/book", "/blog/book/", "trunk raw at /blog/book.md");
-pointer("Arc 170 — full realizations (chunks)", "blog/arc-170-realizations", "/blog/arc-170-realizations/", "whole raw at /blog/arc-170-realizations.md");
+pointer("Arc 170 — full realizations (chunks)", "blog/realizations/170-program-entry-points", "/blog/realizations/170-program-entry-points/", "whole raw at /blog/realizations/170-program-entry-points.md");
 pointer("Fenestra Aetherii — the image gallery", "fenestra-aetherii", "/fenestra-aetherii/", "image collections (Incantationes)");
 
 // Implementations + Labs — one page per immediate subdir (auto-discovers new ones).

@@ -84,10 +84,10 @@
 
 /blog/book/
   Link: </llms.txt>; rel="describedby"; type="text/markdown"
-  Link: </blog/arc-170-realizations/>; rel="related"; title="Arc 170 — Full Realizations (branch)"
+  Link: </blog/realizations/170-program-entry-points/>; rel="related"; title="Arc 170 — Full Realizations (branch)"
   Link: </blog/topology/>; rel="up"; title="The Topology"
 
-/blog/arc-170-realizations/
+/blog/realizations/170-program-entry-points/
   Link: </blog/book/>; rel="up"; title="The Book (trunk)"
   Link: </blog/topology/>; rel="help"; title="The Topology"
 

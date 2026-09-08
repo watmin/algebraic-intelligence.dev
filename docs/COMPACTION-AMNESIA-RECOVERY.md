@@ -171,7 +171,7 @@ appended instead of replacing — trust the git log, not the file.**
 | `blog/story/{prologue.md, epilogue.mdx, series-NNN-*}` | The chronicle — framing pieces + the lived narrative (series 002 → **008**). **The story is PAST, and it ENDS**: `series-006-036-one-machine-all-the-way-down` is the hinge that hands off to the Fronts. Note the sidebar is **era-grouped, not filename-sorted** — `series-008-*` sits in an earlier era than the hinge. Read `astro.config.mjs` for order; never infer it from `ls`. |
 | `blog/fronts/**` | **The Fronts — perpetual present** (added 2026-09-07). The story ended; the work did not. Up to ~3 concurrent hard problems + the console, each a *purpose* (not a branch — one front can span several git branches), each with its own track directory and its own `index.md` landing. Wired by `autogenerate: { directory }`, so a new post appears in the nav by existing. Doctrine: `docs/STORY-BRANCHING.md`. |
 | `blog/primers/series-001-*` | Technical reference primers (VSA, atoms, ops, memory, wat). |
-| `blog/book.mdx`, `blog/arc-170-realizations.mdx` | **Thin landing pages** (`.mdx`, render small) for the two big monoliths — the BOOK trunk and the arc-170 realizations branch. They link to the raw + chunked serves; the full text is NOT here (see *The mirrored monoliths* below). |
+| `blog/book.mdx` | **Thin landing pages** (`.mdx`, render small) for the two big monoliths — the BOOK trunk and the arc-170 realizations branch. They link to the raw + chunked serves; the full text is NOT here (see *The mirrored monoliths* below). |
 | `blog/{agents,circuit,guide,topology,arc-170-cliffnotes}.md` | Companion blog pieces. `arc-170-cliffnotes.md` is a **hand-curated** distillation — NOT a mirror (see below). |
 | `demos/`, `projects/` | Reference pages (several still placeholder per the tracker — verify against the live page, not the tracker). |
 | `astro.config.mjs` | **The sidebar/nav — the source of truth for what is wired & published.** A post not in here is not navigable. |
@@ -179,8 +179,8 @@ appended instead of replacing — trust the git log, not the file.**
 | `scripts/check-*.mjs` | The drift gates (run by `npm run build` postbuild — §4). |
 | `public/_headers`, `functions/_middleware.ts` | Cloudflare Pages deploy config. |
 
-**The mirrored monoliths (BOOK + realizations) — how they serve, and the one
-manual step a future you will forget.** The BOOK (`holon-lab-trading/BOOK.md`,
+**The mirrored monoliths (the BOOK) and the per-arc realizations — how they
+serve, and the one manual step a future you will forget.** The BOOK (`holon-lab-trading/BOOK.md`,
 ~38k lines) and the arc-170 realizations (`wat-rs/docs/arc/2026/05/170-program-entry-points/INTERSTITIAL-REALIZATIONS.md`,
 ~15k lines) are too large to render as single HTML pages (the realizations once
 rendered to a 3.5 MB page). **`scripts/mirror-monoliths.mjs`** serves each in two

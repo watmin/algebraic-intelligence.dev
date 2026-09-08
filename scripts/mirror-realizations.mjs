@@ -14,7 +14,7 @@
 //
 // The arc-170 INTERSTITIAL chronicle is EXCLUDED here — it's the huge
 // chronological song-log, served chunked by mirror-monoliths at
-// /blog/arc-170-realizations. (Its sibling REALIZATIONS-SLICE-* files ARE indexed
+// /blog/realizations/170-program-entry-points. (Its sibling REALIZATIONS-SLICE-* files ARE indexed
 // here — they're ordinary focused docs.)
 //
 // LOCAL maintenance tool (not part of the Cloudflare build — that runner has no
@@ -33,7 +33,13 @@ import { splitSafety, chunkPages } from "./lib/chunk.mjs";
 const SRC_ROOT = "../wat-rs/docs/arc";
 const OUT_DIR = "src/content/docs/blog/realizations";
 const SIDEBAR_OUT = "src/sidebar-realizations.mjs";
-const CHRONICLE_LINK = "/blog/arc-170-realizations/";
+// A fragmented arc is unreadable as one page but is still ONE DOCUMENT, and an
+// agent wants it in one fetch. mirror-monoliths served exactly this for arc 170
+// ("the continuous scroll; an agent's one fetch") and folding 170 in here would
+// have silently dropped the capability. So every fragmented arc gets a raw whole
+// instead — the merge extends the capability rather than trading it away.
+const RAW_DIR = "public/blog/realizations";
+const CHRONICLE_LINK = "/blog/realizations/170-program-entry-points/";
 const CHECK = process.argv.includes("--check");
 
 // FRAGMENTATION. A per-arc log that renders past ~1 MB is a build-memory hazard
@@ -55,12 +61,32 @@ const FRAGMENT_BYTES = 250 * 1024;
 const titleCase = (s) =>
   s.split("-").filter(Boolean).map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 
-// Discover every REALIZATIONS*.md under the arc tree, except the 170 chronicle.
+// Discover every arc's findings log.
+//
+// TWO RULES, and both were learned rather than designed.
+//
+// 1. INTERSTITIAL-REALIZATIONS.md is INCLUDED (arc 170's chronicle). It used to
+//    be special-cased into mirror-monoliths with its own top-level nav group, a
+//    thin landing and a raw serve. Measured, that exception did not survive:
+//    170's source is 1736 KB against arc 278's 1472 KB — 18% apart, the same
+//    order of magnitude — and 278 is served here, fragmented, with no ceremony.
+//    Both mirrors already shared one chunker, so the split was two mechanisms
+//    doing one job. The builder's read: "i don't see a reason for it to stand
+//    out given many other realizations have met the fragmentation bar."
+//
+// 2. REALIZATIONS-SLICE-*.md is EXCLUDED. These match the glob and are not
+//    findings logs — `170/REALIZATIONS-SLICE-1.md` opens "Realizations — slice
+//    1 review" and reviews what one slice shipped against what DESIGN settled.
+//    The glob was matching a FILENAME PREFIX and reading it as a document kind.
+//    Note that R-numbering cannot discriminate here: 15 genuine logs carry zero
+//    `## R1` headings because the older arcs did not number them. The title is
+//    the tell — every real one says "Arc N — Realizations" or "Realizations —
+//    Arc N"; the slice review says "slice 1 review".
 async function discover() {
   const all = await readdir(SRC_ROOT, { recursive: true });
   return all
-    .filter((p) => /(^|\/)REALIZATIONS[^/]*\.md$/.test(p))
-    .filter((p) => !/INTERSTITIAL-REALIZATIONS\.md$/.test(p))
+    .filter((p) => /(^|\/)(INTERSTITIAL-)?REALIZATIONS[^/]*\.md$/.test(p))
+    .filter((p) => !/REALIZATIONS-SLICE-/i.test(p))
     .map((rel) => {
       // rel = "2026/06/272-rendezvous-inherited-capability/REALIZATIONS.md"
       const parts = rel.split("/");
@@ -71,7 +97,7 @@ async function discover() {
       const arcNum = m ? parseInt(m[1], 10) : 0;
       const arcName = m ? m[2] : arcDir;
       // a REALIZATIONS-SLICE-1.md → suffix " (Slice 1)" / slug "-slice-1"
-      const sm = file.match(/REALIZATIONS-(.+)\.md$/i);
+      const sm = file.match(/^REALIZATIONS-(.+)\.md$/i);
       const suffix = sm ? sm[1].toLowerCase() : "";
       const slug = suffix ? `${arcNum}-${arcName}-${suffix}` : `${arcNum}-${arcName}`;
       const title = `Arc ${arcNum} — ${titleCase(arcName)}${suffix ? ` (${titleCase(suffix)})` : ""}`;
@@ -124,7 +150,9 @@ function filesFor(doc, body) {
     `  order: ${doc.arcNum}`,
     "---",
     "",
-    `This arc's findings log is **${kb} KB** across **${pages.length}** entries — too large to render as one page, so it is served one page per entry, the same way the [arc-170 chronicle](${CHRONICLE_LINK}) is.`,
+    `This arc's findings log is **${kb} KB** across **${pages.length}** entries — too large to render as one page, so it is served one page per entry below.`,
+    "",
+    `**Raw, whole.** → [the full log, one file](/blog/realizations/${doc.slug}.md) — the continuous scroll, and an agent's one fetch.`,
     "",
     "| # | Entry |",
     "|---|---|",
@@ -284,6 +312,13 @@ async function main() {
   }
 
   await writeFile(SIDEBAR_OUT, sidebarModule(docs, chunkCounts));
+
+  if (existsSync(RAW_DIR)) await rm(RAW_DIR, { recursive: true, force: true });
+  await mkdir(RAW_DIR, { recursive: true });
+  for (const d of docs) {
+    if (!chunkCounts.has(d.slug)) continue;
+    await writeFile(join(RAW_DIR, `${d.slug}.md`), await readFile(d.abs, "utf-8"));
+  }
 
   const totalLines = [...lineCounts.values()].reduce((a, b) => a + b, 0);
   const frag = [...chunkCounts.entries()].map(([s2, n]) => `${s2} (${n})`).join(", ");

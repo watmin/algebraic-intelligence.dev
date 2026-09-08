@@ -6,7 +6,9 @@ sidebar:
   order: 300
 ---
 
-This arc's findings log is **328 KB** across **17** entries — too large to render as one page, so it is served one page per entry, the same way the [arc-170 chronicle](/blog/arc-170-realizations/) is.
+This arc's findings log is **328 KB** across **17** entries — too large to render as one page, so it is served one page per entry below.
+
+**Raw, whole.** → [the full log, one file](/blog/realizations/300-wat-source-is-edn.md) — the continuous scroll, and an agent's one fetch.
 
 | # | Entry |
 |---|---|

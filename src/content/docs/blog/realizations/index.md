@@ -8,7 +8,7 @@ sidebar:
 
 The **realizations** are the findings logs the substrate accretes as it's built — the sharp distinctions, prior-art collisions, dead ends, and doctrines named *while the context was live*, one file per arc. This is the index; each row is that arc's whole log.
 
-> The big one — the **arc-170 interstitial chronicle** (the chronological song-log, 16k+ lines) — lives on its own at [Arc 170 — Full Realizations](/blog/arc-170-realizations/). The focused per-arc logs are below.
+> The big one — the **arc-170 interstitial chronicle** (the chronological song-log, 16k+ lines) — lives on its own at [Arc 170 — Full Realizations](/blog/realizations/170-program-entry-points/). The focused per-arc logs are below.
 
 ## April 2026
 
@@ -28,7 +28,7 @@ The **realizations** are the findings logs the substrate accretes as it's built 
 | 144 | [Uniform Reflection Foundation](/blog/realizations/144-uniform-reflection-foundation/) | 215 |
 | 158 | [Untyped Let Bindings](/blog/realizations/158-untyped-let-bindings/) | 223 |
 | 163 | [Retirement Leftover Audit](/blog/realizations/163-retirement-leftover-audit/) | 198 |
-| 170 | [Program Entry Points (slice)](/blog/realizations/170-program-entry-points-slice-1/) | 2053 |
+| 170 | [Program Entry Points](/blog/realizations/170-program-entry-points/) | 17695 · 210 parts |
 | 209 | [Defservice](/blog/realizations/209-defservice/) | 338 |
 
 ## June 2026

@@ -12,7 +12,7 @@ export default [
   { slug: "blog/realizations/144-uniform-reflection-foundation" },
   { slug: "blog/realizations/158-untyped-let-bindings" },
   { slug: "blog/realizations/163-retirement-leftover-audit" },
-  { slug: "blog/realizations/170-program-entry-points-slice-1" },
+  { label: "Arc 170 — Program Entry Points", collapsed: true, autogenerate: { directory: "blog/realizations/170-program-entry-points" } },
   { slug: "blog/realizations/209-defservice" },
   { slug: "blog/realizations/232-defprotocol-extend-type" },
   { slug: "blog/realizations/251-types-as-forms" },
