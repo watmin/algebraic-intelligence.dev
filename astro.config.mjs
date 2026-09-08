@@ -350,7 +350,20 @@ export default defineConfig({
                 { slug: "blog/story/series-006-035-time-is-a-select" },
               ],
             },
-            { slug: "blog/story/epilogue" },
+            // THE STORY'S LAST ERA. The chronicle ends here — not on a
+            // cliffhanger but on the reason it can no longer be one line: at
+            // four concurrent fronts, narrating them in sequence would impose
+            // an order the work does not have, which is a false causal claim.
+            // The post hands off to The Fronts (the next group) and to the
+            // Epilogue, which now sits LAST rather than inside this group.
+            // Story (past, at rest) → Fronts (present) → Epilogue (eternal).
+            {
+              label: "The Work Branches",
+              collapsed: false,
+              items: [
+                { slug: "blog/story/series-006-036-one-machine-all-the-way-down" },
+              ],
+            },
           ],
         },
                   // THE FRONTS — the perpetual present, peer to The Story (which is the
@@ -426,6 +439,12 @@ export default defineConfig({
             { link: "/blog/circuit/", label: "The Circuits (legacy)" },
           ],
         },
+        // THE EPILOGUE — eternal, and last. Hoisted out of "Landing on the
+        // Greats" so the page matches the shape of the work: The Story (the
+        // past, at rest) → The Fronts (the present) → The Epilogue. Its own
+        // frontmatter has always asked for this — `sidebar.order: 999`,
+        // "Perpetual Epilogue", "This isn't done. Updated as the work continues."
+        { slug: "blog/story/epilogue" },
         {
           // The Witness — the sibling ("website thread") instance's account of
           // watching wat emerge through nothing but the mirrored realizations.

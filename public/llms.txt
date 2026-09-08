@@ -109,7 +109,7 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 - [https://algebraic-intelligence.dev/blog/primers/series-001-004-coordination-free.md](https://algebraic-intelligence.dev/blog/primers/series-001-004-coordination-free.md)
 - [https://algebraic-intelligence.dev/blog/primers/series-001-005-the-wat-language.md](https://algebraic-intelligence.dev/blog/primers/series-001-005-the-wat-language.md)
 
-### Story posts (60)
+### Story posts (61)
 
 - [https://algebraic-intelligence.dev/blog/story/epilogue.md](https://algebraic-intelligence.dev/blog/story/epilogue.md)
 - [https://algebraic-intelligence.dev/blog/story/prologue.md](https://algebraic-intelligence.dev/blog/story/prologue.md)
@@ -161,6 +161,7 @@ Every companion URL is listed below explicitly (not just the pattern) so allow-l
 - [https://algebraic-intelligence.dev/blog/story/series-006-033-the-arguments-were-a-record.md](https://algebraic-intelligence.dev/blog/story/series-006-033-the-arguments-were-a-record.md)
 - [https://algebraic-intelligence.dev/blog/story/series-006-034-the-slow-engine-is-the-spec.md](https://algebraic-intelligence.dev/blog/story/series-006-034-the-slow-engine-is-the-spec.md)
 - [https://algebraic-intelligence.dev/blog/story/series-006-035-time-is-a-select.md](https://algebraic-intelligence.dev/blog/story/series-006-035-time-is-a-select.md)
+- [https://algebraic-intelligence.dev/blog/story/series-006-036-one-machine-all-the-way-down.md](https://algebraic-intelligence.dev/blog/story/series-006-036-one-machine-all-the-way-down.md)
 - [https://algebraic-intelligence.dev/blog/story/series-007-001-the-hinge.md](https://algebraic-intelligence.dev/blog/story/series-007-001-the-hinge.md)
 - [https://algebraic-intelligence.dev/blog/story/series-007-002-the-watch-learns.md](https://algebraic-intelligence.dev/blog/story/series-007-002-the-watch-learns.md)
 - [https://algebraic-intelligence.dev/blog/story/series-007-003-the-record.md](https://algebraic-intelligence.dev/blog/story/series-007-003-the-record.md)
