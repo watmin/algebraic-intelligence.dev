@@ -1,8 +1,8 @@
 # Batch outlines — the August backfill
 
 > **Companion to `STORY-BRANCHING.md`.** That doc settles the *shape*; this one
-> holds the *slots* and, as they're written, the outlines. Cutoff: **2026-08-31**
-> (§5 there). 18 posts: 1 Story hinge + 17 front posts.
+> holds the *slots* and, as they're written, the outlines. Cutoff: **Sun 2026-08-30**,
+> week-aligned (§5 there). 18 posts: 1 Story hinge + 17 front posts.
 >
 > **Only the hinge is outlined.** The other 17 owe a read of ~12,700 lines of
 > realizations first — which owes the fragmenter, which owes `npm run mirror`.
@@ -58,42 +58,57 @@ is the one time they aren't, so it gets said out loud rather than papered over.
 (`2eef971`, 2026-07-04). Use the real figure — a post whose move is honesty about
 a silence cannot round the silence down.
 
-### Section sketch (7 + the declared close)
+### The hinge JUMPS the gap — it does not narrate it
 
-1. **The pause, stated first.** No throat-clearing. The chronicle stopped on
-   2026-06-23; this is the first post since. Not because the work stopped —
-   **2931 commits on `main` alone** in that window — but because the work outran
-   the telling.
+**This is the load-bearing constraint on the post.** The builder:
+
+> *"the story just jumps ~3 months to the future to express that work never
+> stopped, updates to the site stopped… and now there's concurrent, orthogonal
+> work happening and the updates will reflect the various efforts these fronts
+> are working on."*
+
+The hinge does **not** tell the story of the 76 days. The fronts do that — 17
+posts of it. The hinge states the jump, explains why the shape changed, names
+where the work went, and hands off. It should be **short**. An earlier draft of
+this outline had it narrating the era, which would have done the fronts' job and
+flattened exactly what the branching exists to preserve.
+
+### Section sketch (6 + the declared close)
+
+1. **The jump, stated first.** No throat-clearing. The chronicle stopped
+   2026-06-23; this is the first post since — 76 days. **The work never stopped;
+   the telling did.** 2931 commits on `main` alone in that window.
 2. **The machine that couldn't.** `portal`, the laptop where all of this began.
-   The mechanism, not the anecdote: a Rust build is not an event, it is the
-   steady state, and constant builds made the machine unusable *while* the work
-   was happening. This is a structural limit on how much parallel thought one
-   person can hold, not a hardware complaint.
-3. **Four hosts that don't contend.** `portal` → `johndesktop` (the migration
-   forced by §2). Then `reason` (where the ML work began years ago) and `compute`
-   (an old home server repurposed). The property that matters: **each host
-   contends only with itself.** Isolation of resources is isolation of attention.
-4. **What the isolation bought.** Three orthogonal hard problems on one
-   substrate, concurrently — wat Under Its Own Law (`main`), The Exemplar
-   (`grok-rete`, opened 08-24), Services in Anger (`claude-compute` + `sns-sqs`,
-   08-30) — plus the console. Real volumes per front; the numbers are the
-   argument.
-5. **The second operator.** The duet: Grok on its own branch and its own worktree
-   from **2026-08-03**, then `grok-rete` from 08-24. Frontier models on separate
-   hosts, not threads on one. `pulsare` and `cingere` are **September** — a
-   forward-pointer here, not content.
-6. **Why the story ends here.** A single line of narration cannot represent
-   concurrent orthogonal work without flattening it — and flattening it is the
-   one dishonesty available. The chronicle was the honest form for one machine.
-   At four it stops being one. So the Story ends and the Fronts begin.
-7. **The backfill, declared.** The fronts' first posts cover June→August and are
-   written now. Say it in the hinge, not only in the front indexes.
-8. **`## Likely Contributions to the Field`** — per the builder's gloss, *"a place
+   Mechanism, not anecdote: a Rust build is not an event, it is the steady state,
+   and constant builds made the machine unusable *while* the work was happening.
+   A structural limit on how much parallel thought one person can hold.
+3. **Four hosts that don't contend.** `portal` → `johndesktop`, then `reason`
+   (where the ML work began years ago) and `compute` (an old home server
+   repurposed). The property that matters: **each host contends only with
+   itself.** Isolation of resources is isolation of attention.
+4. **Where the work went — the hand-off.** Names the four fronts and their
+   volumes as *evidence that work continued*, then points at them. **Does not
+   narrate them.** This section is a door, not a room.
+5. **Why the story ends here.** A single line of narration cannot hold concurrent
+   orthogonal work without flattening it, and flattening it is the one
+   dishonesty available. The chronicle was the honest form for one machine; at
+   four it stops being one.
+6. **The backfill, declared — and why it is a feature.** The fronts' first posts
+   cover June→August and are written now. Said plainly. And the form this
+   produces is richer than a live journal would have been: each backfilled post
+   carries **both vantages at once** — the week's work as it happened, and the
+   view from the far side of the pause, which knows how it turned out. A live
+   entry has only the first. The builder:
+
+   > *"we'll get to have a history/journaling lesson along with reflective nature
+   > from the future on this… this should be a rich consumer experience."*
+
+7. **`## Likely Contributions to the Field`** — per the builder's gloss, *"a place
    where we reflect on something we may have legitimately built that's beyond
-   common knowledge."* Candidates, to be judged honestly rather than asserted:
-   resource isolation across hosts as the enabling condition for one person
-   running concurrent LLM-driven orthogonal work; and the journal-as-branches
-   structure itself, where the record's topology matches the work's.
+   common knowledge."* Candidates, to be judged rather than asserted: resource
+   isolation across hosts as the enabling condition for one person running
+   concurrent LLM-driven orthogonal work; and the journal-as-branches structure,
+   where the record's topology matches the work's.
 
 **Voice check before it ships:** `WRITING-GUIDE.md` first (the weeds rule —
 mechanism over summary), then `consonare` cast against the gold anchors, then
@@ -160,3 +175,15 @@ surface annihilation.
    something real to cite.
 4. **the reading pass** — then and only then, fill the 17 slots.
 5. the guard extension (`blog/fronts/**`) before the first front post exists.
+
+---
+
+## 4 — After the batch: W11 is the first weekly
+
+**W11 (Mon 2026-08-31 → Sun 09-06)** is already complete on disk and is the first
+post-batch weekly: `main` 369 · `grok-rete` 242 · `sns-sqs` 222 · **`pulsare` 6 ·
+`cingere` 22**. The automation tooling lands here rather than in the backfill,
+which is the right home for it — the batch ends with the work becoming four
+hosts; the first weekly shows the instruments that made that survivable.
+
+Posts in W11 onward are written in-week and carry no `backfill` field.

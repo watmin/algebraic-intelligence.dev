@@ -233,6 +233,8 @@ Measured scaffold for the batch (weeks from Mon 2026-06-22):
 | front | weeks with work | posts |
 |---|---|---|
 | wat Under Its Own Law | W1–W10 (114–462 commits each) | 10 |
+
+**Ten weeks is the ceiling**, so at most 10 posts per front in this batch.
 | portal (console) | W1, W2, W8, W9, W10 | 5 |
 | The Exemplar | W10 (opened 08-24) | 1 |
 | Services in Anger | W10 (opened 08-30) | 1 |
@@ -439,18 +441,31 @@ Ordering itself is settled.
 
 ## 5 — The cutoff
 
-**End of August 2026.** The last 4–7 days stay running and unjournaled, per §2.4.
-Pinned markers:
+**End of W10 — Sunday 2026-08-30.** Week-aligned, because the week is the
+journal's unit (§2.6); an 08-31 cutoff was ragged, since 08-31 is a *Monday* and
+would have pulled one day of W11 into the batch. The batch is therefore **exactly
+ten weeks**, W1 (Mon 06-22) → W10 (Sun 08-30), and the last 4-7 days stay running
+per §2.4. Re-pinned markers:
 
-| front | marker | date | inside | running |
-|---|---|---|---|---|
-| `main` (trunk) | `cdabf403d` | 08-31 | 2618 commits | 311 |
-| `grok-rete` (reason) | `6d7775643` | 08-31 | 122 docs | 329 docs |
-| `sns-sqs` (queue) | `1736d7a69` | 08-31 | 151 docs | 301 docs |
-| `claude-compute` (compute) | `f92f55dbd` | 08-30 | 133 commits, 15 docs | **0 — complete** |
-| `wat-revival` | `d06ce33da` | 08-30 | — | no track (0 docs) |
+| front | marker | date |
+|---|---|---|
+| `main` (wat Under Its Own Law) | `146a90b92` | 08-30 |
+| `grok-rete` (The Exemplar) | `e6858e858` | 08-30 |
+| `sns-sqs` (Services in Anger) | `ca405009b` | 08-30 |
+| `claude-compute` (Services in Anger) | `f92f55dbd` | 08-30 — its own CURARE; branch landed |
+| `wat-revival` | — | no track (0 docs) |
 
-What the line catches, and why it lands well:
+**W11 (Mon 08-31 → Sun 09-06) is the FIRST WEEKLY UPDATE**, and it is already
+complete on disk: `main` 369 · `grok-rete` 242 · `sns-sqs` 222 · **`pulsare` 6 ·
+`cingere` 22**. The cadence restarts by itself, and the automation tooling lands
+in the first weekly rather than being crammed into the backfill.
+
+Note `claude-compute` has zero commits in W11 — it wrapped on 08-30. Its front,
+**Services in Anger**, stays `live` regardless: a front is a purpose with
+possibly several branches, and `sns-sqs` runs on. The doctrine handles the
+transition without amendment.
+
+What the line catches:
 
 - **`claude-compute` is a completed track** — opened, ran, and wrapped inside the
   window, its final commit its own CURARE. A front track that ships with its
