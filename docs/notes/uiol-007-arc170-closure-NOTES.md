@@ -1,3 +1,43 @@
+> ## ⚠ ORCHESTRATOR RE-FRAMING — 2026-09-07, read before the notes below
+>
+> **This unit's SUBJECT changed after these notes were written, and the notes are
+> better for it than the brief they answered.**
+>
+> They were commissioned as *"arc 170's closure."* The reader argued against that
+> post — correctly — because the closing realization is published verbatim on this
+> site (216 lines, live, `/blog/arc-170-realizations/210-…`), so reframing it is
+> redundant by construction. Ruled on the four questions: the full post failed
+> **Honest** (hollow by consonare rule 12), a two-section short post failed
+> **Obvious** (a container, not a subject), cutting it failed **Good UX**.
+>
+> **The unit is now THE PREHISTORY.** Its subject:
+>
+> > In April three things were sketched in a scratch repo — an MCP server, a REPL,
+> > and a small ask to let `main` take argv. **The smallest one became an 81-day
+> > arc that closed by shipping the other two** — and the REPL, planned as a
+> > rustyline Rust crate, arrived as a stdlib *wat* module.
+>
+> The closure is the **payoff**, not the subject. The post ends where the
+> published chronicle begins, so it earns the link instead of competing with it.
+>
+> **§3a is now the spine, not background.** It is the only substance on the page
+> published nowhere else — verified by the reader's own grep: neither the
+> INSCRIPTION nor the interstitial chronicle references scratch arcs 006/012/019.
+>
+> **HELD, not dropped:** the anatomy of the closing act — precondition measured
+> not assumed, the miss rescoped in the open and done inside 24 hours, a deferral
+> grep as a gate, every out-of-scope item with a named owner. Real material about
+> *how this project closes things*, which does not fit a prehistory post. It
+> becomes a short closing section, or it waits for a unit that is about method.
+>
+> **Citation constraints carried:** the April material was recovered from JSONL
+> transcripts on 2026-05-01 (`7fc430a`) though the documents self-date to 04-29 —
+> cite the framing, never imply a contemporaneous commit. The merge was a
+> fast-forward, so no draft may say "the merge commit." 79 days is the
+> INSCRIPTION's figure; the calendar says 81.
+
+---
+
 # Working notes — uiol-007: the closure of arc 170 (INSCRIPTION 2026-07-29)
 
 **Status:** raw notes, not a draft. Read-only pass over `wat-rs` @ `origin/main` (plus the sibling
