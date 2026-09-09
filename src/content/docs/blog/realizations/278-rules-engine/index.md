@@ -3,7 +3,7 @@ title: "Arc 278 — Rules Engine"
 description: "Realizations — the findings log for Arc 278 — Rules Engine, served in 68 parts."
 tableOfContents: false
 sidebar:
-  order: 278
+  order: 0
 ---
 
 This arc's findings log is **1469 KB** across **68** entries — too large to render as one page, so it is served one page per entry below.

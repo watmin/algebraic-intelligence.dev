@@ -147,7 +147,13 @@ function filesFor(doc, body) {
     `description: ${JSON.stringify(`Realizations — the findings log for ${doc.title}, served in ${pages.length} parts.`)}`,
     "tableOfContents: false",
     "sidebar:",
-    `  order: ${doc.arcNum}`,
+    // ORDER 0, NOT the arc number. This landing sits INSIDE its own group beside
+    // chunk pages ordered 1..N, and Starlight's order is scoped to the directory.
+    // With `order: 300` against chunks 1..17 the landing sorted LAST; with
+    // `order: 170` against chunks 1..210 it sorted 170th — buried mid-list. The
+    // arc number orders this arc among OTHER arcs, and that is decided by the
+    // generated sidebar fragment's array position, not here.
+    "  order: 0",
     "---",
     "",
     `This arc's findings log is **${kb} KB** across **${pages.length}** entries — too large to render as one page, so it is served one page per entry below.`,

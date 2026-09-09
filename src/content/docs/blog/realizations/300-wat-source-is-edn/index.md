@@ -3,7 +3,7 @@ title: "Arc 300 — Wat Source Is Edn"
 description: "Realizations — the findings log for Arc 300 — Wat Source Is Edn, served in 17 parts."
 tableOfContents: false
 sidebar:
-  order: 300
+  order: 0
 ---
 
 This arc's findings log is **328 KB** across **17** entries — too large to render as one page, so it is served one page per entry below.

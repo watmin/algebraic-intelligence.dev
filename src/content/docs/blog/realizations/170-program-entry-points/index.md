@@ -3,7 +3,7 @@ title: "Arc 170 — Program Entry Points"
 description: "Realizations — the findings log for Arc 170 — Program Entry Points, served in 210 parts."
 tableOfContents: false
 sidebar:
-  order: 170
+  order: 0
 ---
 
 This arc's findings log is **1733 KB** across **210** entries — too large to render as one page, so it is served one page per entry below.

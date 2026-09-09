@@ -3,7 +3,7 @@ title: "Arc 296 — Diagnostics Fully Edn"
 description: "Realizations — the findings log for Arc 296 — Diagnostics Fully Edn, served in 20 parts."
 tableOfContents: false
 sidebar:
-  order: 296
+  order: 0
 ---
 
 This arc's findings log is **332 KB** across **20** entries — too large to render as one page, so it is served one page per entry below.
