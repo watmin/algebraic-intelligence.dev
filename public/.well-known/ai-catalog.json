@@ -1,0 +1,104 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "algebraic-intelligence.dev — the chronicle",
+    "identifier": "did:web:algebraic-intelligence.dev"
+  },
+  "x-note": "This site is a chronicle, not a service: there is no REST API and no live MCP server here, and the entries below are documents rather than endpoints. The MCP server this project runs lives at datamancy.dev and is catalogued in its own manifest; see /.well-known/mcp/server-card.json for the pointer and its trust chain. Every entry is a URL this origin actually serves — each was verified against the build output before it was listed.",
+  "entries": [
+    {
+      "identifier": "urn:air:algebraic-intelligence.dev:doc:agent-map",
+      "displayName": "Agent map (llms.txt) — start here",
+      "description": "The root index for agents: one section per track, with the markdown-companion convention and the raw whole-document sources named.",
+      "type": "text/markdown",
+      "url": "https://algebraic-intelligence.dev/llms.txt",
+      "representativeQueries": [
+        "what is on algebraic-intelligence.dev and where do I start",
+        "does this site have a machine-readable index for agents",
+        "how do I fetch this site's pages as markdown instead of HTML"
+      ]
+    },
+    {
+      "identifier": "urn:air:algebraic-intelligence.dev:doc:topology",
+      "displayName": "The Topology — how to read this site",
+      "description": "The reading order and the shape of the record: the Story (past, closed), the Fronts (four concurrent workstreams), the Book, the per-arc realizations.",
+      "type": "text/markdown",
+      "url": "https://algebraic-intelligence.dev/blog/topology.md",
+      "representativeQueries": [
+        "how is this site organised and in what order should I read it",
+        "what is the difference between the story and the fronts here",
+        "where does the chronicle keep its engineering findings"
+      ]
+    },
+    {
+      "identifier": "urn:air:algebraic-intelligence.dev:catalog:mcp-server-card",
+      "displayName": "MCP server card — pointer to the signed grimoire at datamancy.dev",
+      "description": "Explicit no-server-here card. Names the real MCP server (datamancy.dev), its KMS-signed manifest, the signature algorithm, and where the public key is pinned.",
+      "type": "application/mcp-server-card+json",
+      "url": "https://algebraic-intelligence.dev/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "does algebraic-intelligence.dev expose an MCP server",
+        "where is the datamancy MCP server and how is it verified",
+        "what signs the datamancy spell manifest"
+      ]
+    },
+    {
+      "identifier": "urn:air:algebraic-intelligence.dev:catalog:agent-skills",
+      "displayName": "Agent Skills index",
+      "description": "This site's own skills, each self-certified by a sha256 over a SKILL.md this origin hosts, plus pointers to the authoritative grimoire.",
+      "type": "application/json",
+      "url": "https://algebraic-intelligence.dev/.well-known/agent-skills/index.json",
+      "representativeQueries": [
+        "what agent skills does this site publish",
+        "how do I load the datamancy grimoire as a skill",
+        "are this site's skills content-addressed"
+      ]
+    },
+    {
+      "identifier": "urn:air:algebraic-intelligence.dev:corpus:book",
+      "displayName": "The Book — the full trunk, one file",
+      "description": "The complete philosophical record of the project as a single raw markdown document, for one-fetch ingestion. Also served chapter by chapter as HTML.",
+      "type": "text/markdown",
+      "url": "https://algebraic-intelligence.dev/blog/book.md",
+      "representativeQueries": [
+        "give me the whole book from this project in one fetch",
+        "what is the philosophy behind wat and holon",
+        "is there a single-file corpus of this project's long-form writing"
+      ]
+    },
+    {
+      "identifier": "urn:air:algebraic-intelligence.dev:corpus:realizations",
+      "displayName": "Realizations — every arc's findings log",
+      "description": "The engineering findings logs, one page per arc in arc order, fragmented when large. Each fragmented arc also serves a raw whole at /blog/realizations/<arc>.md for one-fetch reading.",
+      "type": "text/html",
+      "url": "https://algebraic-intelligence.dev/blog/realizations/",
+      "representativeQueries": [
+        "what did this project learn while building its rules engine",
+        "where are the per-arc engineering findings for wat",
+        "show me the realizations log for a specific arc"
+      ]
+    },
+    {
+      "identifier": "urn:air:algebraic-intelligence.dev:catalog:api-catalog",
+      "displayName": "API catalog (RFC 9727 linkset)",
+      "description": "Honest minimal catalog: no JSON or REST API is served here; the linkset points agents at the documentation surface instead.",
+      "type": "application/linkset+json",
+      "url": "https://algebraic-intelligence.dev/.well-known/api-catalog",
+      "representativeQueries": [
+        "does this site have a REST or JSON API",
+        "what machine-readable endpoints does algebraic-intelligence.dev serve"
+      ]
+    },
+    {
+      "identifier": "urn:air:algebraic-intelligence.dev:doc:auth",
+      "displayName": "auth.md — agent authentication policy",
+      "description": "Explicit no-authentication document: nothing here is gated, there is no agent registration, and no OAuth flow to complete.",
+      "type": "text/markdown",
+      "url": "https://algebraic-intelligence.dev/auth.md",
+      "representativeQueries": [
+        "do I need credentials to read algebraic-intelligence.dev",
+        "how does an agent authenticate against this site"
+      ]
+    }
+  ]
+}

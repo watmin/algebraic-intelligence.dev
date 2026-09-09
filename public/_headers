@@ -11,6 +11,7 @@
   Link: </blog/book/>; rel="canonical-source"
   Link: <https://github.com/watmin>; rel="author"
   Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"
+  Link: </.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"
 
 /llms.txt
   Content-Type: text/markdown; charset=utf-8
@@ -22,6 +23,23 @@
 # grants stance. H1 contains "auth.md" as the SKILL.md spec requires.
 /auth.md
   Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=300
+
+# ARD (Agentic Resource Discovery) manifest — https://agenticresourcediscovery.org/
+# Catalogs this origin's agent-facing documents so registries can build semantic
+# embeddings from each entry's representativeQueries.
+#
+# Content-Type is bare `application/json` on purpose, with NO charset parameter:
+# the spec states the type exactly, JSON is UTF-8 by definition (RFC 8259 §8.1),
+# and a validator doing a string compare would reject `application/json;
+# charset=utf-8`. The sibling well-known docs keep their charset; this one does
+# not, and that asymmetry is deliberate.
+#
+# Access-Control-Allow-Origin is required by the spec so browser-based agents can
+# read the manifest cross-origin. It is the only CORS header on this site.
+/.well-known/ai-catalog.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=300
 
 # API Catalog per RFC 9727 — honest minimal entry: no JSON/REST API, but the

@@ -34,6 +34,7 @@ Standard machine-readable documents under `/.well-known/`, plus the site-root `a
 
 | Path | Spec | What it says |
 |---|---|---|
+| [`/.well-known/ai-catalog.json`](https://algebraic-intelligence.dev/.well-known/ai-catalog.json) | ARD 1.0 | The capability manifest: eight entries, each a document this origin actually serves, with 2–5 `representativeQueries` so registries can embed them semantically. Served as bare `application/json` with `Access-Control-Allow-Origin: *` — the only CORS header on this site. |
 | [`/.well-known/api-catalog`](https://algebraic-intelligence.dev/.well-known/api-catalog) | RFC 9727 | No REST API; the linkset points at the docs (llms.txt, topology). |
 | [`/.well-known/oauth-authorization-server`](https://algebraic-intelligence.dev/.well-known/oauth-authorization-server) | RFC 8414 | No auth flows (`grant_types_supported` is empty) — plus an `agent_auth` block whose `register_uri`/`claim_uri` serve `/auth.md`, because the document **is** the response. |
 | [`/.well-known/oauth-protected-resource`](https://algebraic-intelligence.dev/.well-known/oauth-protected-resource) | RFC 9728 | Nothing is gated (`x-authentication-required: false`). The populated fields are spec-vocabulary placeholders; the file's own `x-note` explains each. |
